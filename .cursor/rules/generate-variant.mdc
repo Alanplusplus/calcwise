@@ -1,0 +1,224 @@
+---
+description: "Generate calculator variant pages for programmatic SEO"
+globs: 
+alwaysApply: false
+---
+
+# Generate Calculator Variant Pages
+
+Variant pages are pre-configured versions of existing calculators targeting specific long-tail keywords. Each variant has unique preset values, a unique title/description, and unique editorial content explaining that specific scenario.
+
+## When to Use
+
+User says something like:
+- "Generate mortgage variants for different price points"
+- "Create savings goal variants for common goals"
+- "Add scenario pages for the retirement calculator"
+
+## Architecture
+
+Variants live at `/calculators/[base-slug]/[variant-slug]` and reuse the same calculator component but with different:
+1. Pre-filled default values
+2. Page title and meta description
+3. Introductory text specific to the scenario
+4. Scenario-specific tips and considerations
+
+## Step 1: Define Variants Data
+
+Create or update `src/lib/variants/[base-slug].ts`:
+
+```typescript
+export interface CalculatorVariant {
+  slug: string;
+  title: string;
+  description: string;
+  defaults: Record<string, string>;
+  intro: string;
+  tips: string[];
+}
+
+export const mortgageVariants: CalculatorVariant[] = [
+  {
+    slug: "200000",
+    title: "Mortgage Calculator for a $200,000 Home",
+    description: "Calculate monthly payments for a $200,000 home loan. See payment breakdowns for 15 and 30-year terms at current rates.",
+    defaults: { homePrice: "200000", downPayment: "40000", loanTerm: "30", interestRate: "6.5" },
+    intro: "A $200,000 home is at the entry-level price point in many US markets...",
+    tips: [
+      "At 20% down ($40,000), you avoid PMI — saving $100-$150/month",
+      "Your monthly P&I payment would be approximately $1,011 at 6.5%",
+      "Total interest over 30 years: approximately $204,000",
+    ],
+  },
+  // ... more variants
+];
+```
+
+## Step 2: Create Dynamic Route
+
+Create `src/app/calculators/[base-slug]/[variant]/page.tsx`:
+
+```typescript
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { getCalculator } from "@/lib/calculators";
+import { site } from "@/lib/site";
+import { [Name]Calculator } from "../[Name]Calculator";
+import { variants } from "@/lib/variants/[base-slug]";
+import { CategoryIcon } from "@/components/Icons";
+
+interface Props {
+  params: Promise<{ variant: string }>;
+}
+
+export async function generateStaticParams() {
+  return variants.map((v) => ({ variant: v.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { variant: slug } = await params;
+  const variant = variants.find((v) => v.slug === slug);
+  if (!variant) return {};
+  return {
+    title: variant.title,
+    description: variant.description,
+    openGraph: { title: `${variant.title} | ${site.name}`, description: variant.description },
+  };
+}
+
+export default async function VariantPage({ params }: Props) {
+  const { variant: slug } = await params;
+  const variant = variants.find((v) => v.slug === slug);
+  if (!variant) notFound();
+
+  const calc = getCalculator("[base-slug]")!;
+
+  return (
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <nav className="mb-6 text-sm text-ink-500">
+        <Link href="/" className="hover:text-brand-600">Home</Link>
+        <span className="mx-2">/</span>
+        <Link href="/calculators/[base-slug]" className="hover:text-brand-600">{calc.shortTitle}</Link>
+        <span className="mx-2">/</span>
+        <span className="text-ink-700">{variant.title}</span>
+      </nav>
+
+      <div className="mb-8 flex items-start gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+          <CategoryIcon name={calc.slug} />
+        </div>
+        <div>
+          <h1 className="text-3xl font-bold text-ink-900">{variant.title}</h1>
+          <p className="mt-2 text-lg text-ink-600">{variant.description}</p>
+        </div>
+      </div>
+
+      {/* Scenario intro */}
+      <div className="mb-6 rounded-lg border border-brand-200 bg-brand-50 p-4">
+        <p className="text-ink-700">{variant.intro}</p>
+      </div>
+
+      {/* Calculator with preset values */}
+      <div className="rounded-xl border border-ink-200 bg-white p-6 shadow-card sm:p-8">
+        <[Name]Calculator defaults={variant.defaults} />
+      </div>
+
+      {/* Scenario-specific tips */}
+      <div className="mt-8">
+        <h2 className="text-xl font-bold text-ink-900">Key Considerations</h2>
+        <ul className="mt-4 space-y-3">
+          {variant.tips.map((tip, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
+              <span className="text-ink-700">{tip}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Link back to main calculator */}
+      <div className="mt-8">
+        <Link href="/calculators/[base-slug]" className="text-sm font-medium text-brand-600 hover:text-brand-800">
+          &larr; Back to {calc.title}
+        </Link>
+      </div>
+    </div>
+  );
+}
+```
+
+## Step 3: Modify Calculator to Accept Defaults
+
+Update the calculator component to accept optional `defaults` prop:
+
+```typescript
+interface Props {
+  defaults?: Record<string, string>;
+}
+
+export function MortgageCalculator({ defaults }: Props) {
+  const [homePrice, setHomePrice] = useState(defaults?.homePrice || "350000");
+  // ...
+}
+```
+
+## Step 4: Update Sitemap
+
+Add variant pages to `src/app/sitemap.ts`:
+
+```typescript
+import { mortgageVariants } from "@/lib/variants/mortgage";
+
+const variantPages = mortgageVariants.map((v) => ({
+  url: `${base}/calculators/mortgage/${v.slug}`,
+  lastModified: new Date(),
+  changeFrequency: "monthly" as const,
+  priority: 0.7,
+}));
+```
+
+## Recommended Variant Sets
+
+### Mortgage Calculator Variants
+- `/calculators/mortgage/200000` — $200K home
+- `/calculators/mortgage/300000` — $300K home
+- `/calculators/mortgage/400000` — $400K home
+- `/calculators/mortgage/500000` — $500K home
+- `/calculators/mortgage/750000` — $750K home
+- `/calculators/mortgage/1000000` — $1M home
+- `/calculators/mortgage/15-year` — 15-year term comparison
+- `/calculators/mortgage/fha` — FHA loan (3.5% down)
+- `/calculators/mortgage/va` — VA loan (0% down)
+
+### Savings Goal Variants
+- `/calculators/savings-goal/house-down-payment` — Saving for a house
+- `/calculators/savings-goal/emergency-fund` — Building emergency fund
+- `/calculators/savings-goal/wedding` — Saving for a wedding
+- `/calculators/savings-goal/vacation` — Saving for a trip
+- `/calculators/savings-goal/new-car` — Saving for a car
+- `/calculators/savings-goal/college-fund` — Saving for education
+
+### Retirement Variants
+- `/calculators/retirement/early-40` — Retire at 40 (FIRE)
+- `/calculators/retirement/early-50` — Retire at 50
+- `/calculators/retirement/age-55` — Retire at 55
+- `/calculators/retirement/age-60` — Retire at 60
+- `/calculators/retirement/age-65` — Standard retirement
+- `/calculators/retirement/age-67` — Full Social Security age
+
+### Debt Payoff Variants
+- `/calculators/debt-payoff/credit-card-5000` — $5K credit card
+- `/calculators/debt-payoff/credit-card-10000` — $10K credit card
+- `/calculators/debt-payoff/credit-card-20000` — $20K credit card
+- `/calculators/debt-payoff/student-loan-30000` — $30K student loans
+- `/calculators/debt-payoff/student-loan-50000` — $50K student loans
+
+## Critical Rules for Variants
+
+1. **Each page MUST have unique content** — the intro text, tips, and scenario description must be substantively different from other variants
+2. **Do NOT create 50 variants at once** — start with 5-8 per calculator, add more based on Search Console data
+3. **Each variant must target a real search keyword** — verify with "mortgage calculator $300,000" type searches
+4. **Default values must make sense** — e.g. 20% down payment for the given price, current market rates
+5. **Add internal links between variants** — "See also: $300K mortgage | $500K mortgage"
+6. **NO thin pages** — if a variant would be identical to another except for one number, don't create it

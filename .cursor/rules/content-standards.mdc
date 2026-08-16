@@ -1,0 +1,77 @@
+---
+description: "CalcWise content quality standards and editorial guidelines"
+globs: "src/app/**/*.tsx"
+alwaysApply: true
+---
+
+# CalcWise Content Standards
+
+## Absolute Rules
+
+1. **NO emoji** — use SVG icons from `src/components/Icons.tsx`
+2. **NO generic filler** — every paragraph must contain specific numbers, examples, or actionable advice
+3. **English only** — all content targets US/UK audience
+4. **Domain** — site URL is `https://www.calcwise.tools`
+5. **Privacy** — all calculations client-side, never collect user financial data
+
+## Content Quality Requirements
+
+### For Calculator Articles (800+ words)
+- Include the mathematical formula with variable explanations
+- At least 1 concrete example with real dollar amounts
+- At least 1 comparison (15yr vs 30yr, different rates, etc.)
+- 3-5 FAQ questions at the end
+- Internal links to 2-3 related calculators
+- At least 1 infographic image (use kie-image skill, 3:2 ratio, 2K resolution)
+
+### For Guide Articles (1500+ words)
+- Start with a specific problem/question
+- Include a TL;DR / quick answer near the top
+- At least 1 detailed case study with a named persona
+- At least 1 data comparison table
+- Step-by-step actionable instructions
+- Calculator CTA linking to relevant tool
+- FAQ section with JSON-LD schema
+- At least 1 infographic image
+
+### For Variant Pages
+- Unique intro text explaining the specific scenario
+- 3-5 scenario-specific tips/considerations
+- Pre-filled calculator with sensible defaults
+- Internal links to related variants
+
+## Image Generation (kie-image)
+
+Always use for infographics in articles:
+
+```bash
+node ~/.cursor/skills/kie-image/generate.mjs "[prompt]" "3:2" --resolution 2K
+```
+
+Good prompt patterns:
+- "Clean minimal infographic on white background showing [concept]. [specific data/labels]. Blue and green color scheme. Professional financial style, no decorative elements, data-focused."
+- "Simple comparison chart on white background. Left: [option A]. Right: [option B]. [specific numbers]. Clean professional design."
+- "Timeline infographic showing [financial journey]. [milestones with dollar amounts]. Horizontal layout. Blue color scheme. Minimal professional style."
+
+Download to `public/images/` and use with `next/image`:
+```tsx
+<Image src="/images/[name].png" alt="[descriptive]" width={1024} height={683} className="rounded-lg border border-ink-200" />
+```
+
+## SEO Requirements
+
+- Every page has unique `title` (50-60 chars) and `description` (120-155 chars)
+- Breadcrumb navigation on all pages except home
+- Internal links: each page should link to 2-4 other pages on the site
+- Heading hierarchy: one H1, logical H2/H3 structure
+- Image alt text: descriptive, includes relevant keyword naturally
+- URL structure: `/calculators/[slug]`, `/guides/[slug]`, `/calculators/[slug]/[variant]`
+
+## Tech Stack Reference
+
+- Framework: Next.js 16 (App Router, SSG)
+- Styling: Tailwind CSS 4 with custom theme in globals.css
+- Icons: Custom SVG components in `src/components/Icons.tsx`
+- Data: TypeScript files in `src/lib/`
+- Deployment: Vercel (auto-deploy on push to main)
+- Domain: www.calcwise.tools (calcwise.tools 301 → www)

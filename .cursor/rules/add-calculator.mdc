@@ -1,0 +1,131 @@
+---
+description: "Add a new financial calculator to CalcWise"
+globs: 
+alwaysApply: false
+---
+
+# Add New Calculator
+
+When the user asks to add a new calculator, follow this workflow:
+
+## Input
+
+The user provides a calculator topic (e.g. "auto loan calculator", "inflation calculator").
+
+## Step 1: Register in Data
+
+Add the calculator entry to `src/lib/calculators.ts`:
+
+```typescript
+{
+  slug: "the-slug",
+  title: "Full Calculator Title",
+  shortTitle: "Short Name",
+  description: "One sentence description (50-160 chars) targeting the main search keyword.",
+  category: "loans" | "savings" | "debt" | "planning",
+}
+```
+
+Add a corresponding SVG icon to `src/components/Icons.tsx` in the `iconMap`.
+
+## Step 2: Create Calculator Directory
+
+Create `src/app/calculators/[slug]/` with three files:
+
+### page.tsx (route entry)
+
+```typescript
+import type { Metadata } from "next";
+import { getCalculator } from "@/lib/calculators";
+import { site } from "@/lib/site";
+import { CalculatorShell } from "@/components/CalculatorShell";
+import { [Name]Calculator } from "./[Name]Calculator";
+import { [Name]Article } from "./[Name]Article";
+
+const calc = getCalculator("[slug]")!;
+
+export const metadata: Metadata = {
+  title: calc.title,
+  description: calc.description,
+  openGraph: { title: `${calc.title} | ${site.name}`, description: calc.description, type: "website" },
+};
+
+export default function [Name]Page() {
+  return (
+    <CalculatorShell calculator={calc} article={<[Name]Article />}>
+      <[Name]Calculator />
+    </CalculatorShell>
+  );
+}
+```
+
+### [Name]Calculator.tsx (interactive widget)
+
+- Must be a `"use client"` component
+- Use `InputField` component from `@/components/InputField`
+- All calculation logic in a `useMemo` hook
+- Format currency with `toLocaleString("en-US", { style: "currency", currency: "USD" })`
+- Show results in colored cards (bg-brand-50, bg-accent-50, bg-ink-100)
+- Include data tables or breakdowns where applicable
+- NO emoji anywhere
+
+### [Name]Article.tsx (educational content)
+
+- Must contain 800-1200 words minimum
+- Structure: How it works → Key concepts → Practical examples → Tips → FAQ (3-5 questions)
+- Include at least one infographic image generated with kie-image skill:
+
+```bash
+node ~/.cursor/skills/kie-image/generate.mjs "[descriptive prompt for infographic]" "3:2" --resolution 2K
+```
+
+Download to `public/images/[slug]-[description].png` and embed with:
+
+```tsx
+import Image from "next/image";
+
+<figure className="my-8">
+  <Image
+    src="/images/[slug]-[description].png"
+    alt="Descriptive alt text for SEO"
+    width={1024}
+    height={683}
+    className="rounded-lg border border-ink-200"
+  />
+  <figcaption className="mt-2 text-center text-sm text-ink-500">
+    Caption explaining the visual.
+  </figcaption>
+</figure>
+```
+
+Content requirements:
+- Add unique perspective: specific dollar-amount examples, comparison tables, scenario analysis
+- Include at least one concrete "case study" example (e.g. "Sarah earns $75,000/year and wants to...")
+- Add a comparison table where relevant (e.g. 15yr vs 30yr, different rates)
+- NO generic filler — every paragraph must provide actionable insight
+- NO emoji anywhere
+
+## Step 3: Update Sitemap
+
+The sitemap auto-generates from `calculators` array — no manual update needed.
+
+## Step 4: Verify
+
+Run `npm run build` and confirm the new page appears in the route list.
+
+## Step 5: Commit
+
+```bash
+git add -A && git commit -m "Add [calculator name] calculator"
+```
+
+## Quality Checklist
+
+- [ ] Calculator logic uses correct financial formula
+- [ ] All inputs have sensible defaults
+- [ ] Results update reactively as user types
+- [ ] Article has 800+ words with unique examples
+- [ ] At least 1 infographic image generated and embedded
+- [ ] No emoji used anywhere
+- [ ] SVG icon added to Icons.tsx iconMap
+- [ ] Build passes with no errors
