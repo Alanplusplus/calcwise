@@ -5,10 +5,10 @@ export function CompoundInterestArticle() {
     <>
       <figure className="my-8">
         <Image
-          src="/images/compound-interest-growth.png"
+          src="/images/compound-interest-growth.webp"
           alt="Infographic showing compound interest growth vs simple interest over 30 years, starting with $10,000 at 7% annual return"
-          width={1024}
-          height={683}
+          width={1200}
+          height={800}
           className="rounded-lg border border-ink-200"
         />
         <figcaption className="mt-2 text-center text-sm text-ink-500">

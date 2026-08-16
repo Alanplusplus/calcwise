@@ -5,10 +5,10 @@ export function MortgageArticle() {
     <>
       <figure className="my-8">
         <Image
-          src="/images/mortgage-payment-breakdown.png"
+          src="/images/mortgage-payment-breakdown.webp"
           alt="Infographic showing how mortgage payments shift from mostly interest to mostly principal over 30 years"
-          width={1024}
-          height={683}
+          width={1200}
+          height={800}
           className="rounded-lg border border-ink-200"
         />
         <figcaption className="mt-2 text-center text-sm text-ink-500">

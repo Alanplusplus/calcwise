@@ -5,10 +5,10 @@ export function DebtPayoffArticle() {
     <>
       <figure className="my-8">
         <Image
-          src="/images/debt-payoff-strategies.png"
+          src="/images/debt-payoff-strategies.webp"
           alt="Infographic comparing Avalanche method (highest interest first) vs Snowball method (smallest balance first) for debt payoff"
-          width={1024}
-          height={683}
+          width={1200}
+          height={800}
           className="rounded-lg border border-ink-200"
         />
         <figcaption className="mt-2 text-center text-sm text-ink-500">

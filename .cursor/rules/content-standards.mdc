@@ -40,22 +40,38 @@ alwaysApply: true
 - Pre-filled calculator with sensible defaults
 - Internal links to related variants
 
-## Image Generation (kie-image)
+## Image Generation (kie-image) & Post-Processing
 
-Always use for infographics in articles:
+Always use for infographics in articles. All images MUST be webp format, max 1200px wide.
+
+### Generation + Conversion Pipeline
 
 ```bash
+# 1. Generate image
 node ~/.cursor/skills/kie-image/generate.mjs "[prompt]" "3:2" --resolution 2K
+
+# 2. Download as temp PNG
+curl -o /tmp/temp-image.png "[result_url]"
+
+# 3. Resize to 1200px wide and convert to webp (quality 80)
+sips --resampleWidth 1200 /tmp/temp-image.png --out /tmp/temp-resized.png
+cwebp -q 80 /tmp/temp-resized.png -o public/images/[name].webp
+
+# 4. Clean up temp files
+rm /tmp/temp-image.png /tmp/temp-resized.png
 ```
+
+For guides, save to `public/images/guides/[slug].webp`.
+For calculator articles, save to `public/images/[slug]-infographic.webp`.
 
 Good prompt patterns:
 - "Clean minimal infographic on white background showing [concept]. [specific data/labels]. Blue and green color scheme. Professional financial style, no decorative elements, data-focused."
 - "Simple comparison chart on white background. Left: [option A]. Right: [option B]. [specific numbers]. Clean professional design."
 - "Timeline infographic showing [financial journey]. [milestones with dollar amounts]. Horizontal layout. Blue color scheme. Minimal professional style."
 
-Download to `public/images/` and use with `next/image`:
+Use with `next/image` (dimensions will be 1200x800 for 3:2 ratio, 1200x675 for 16:9):
 ```tsx
-<Image src="/images/[name].png" alt="[descriptive]" width={1024} height={683} className="rounded-lg border border-ink-200" />
+<Image src="/images/[name].webp" alt="[descriptive]" width={1200} height={800} className="rounded-lg border border-ink-200" />
 ```
 
 ## SEO Requirements

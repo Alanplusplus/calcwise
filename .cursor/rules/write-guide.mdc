@@ -117,10 +117,20 @@ Show: calculations using the relevant formula, final result
 ### Infographic Generation
 
 ```bash
+# 1. Generate image
 node ~/.cursor/skills/kie-image/generate.mjs "[clean minimal infographic, white background, relevant to the guide topic, include specific numbers/labels, blue and green color scheme, professional financial style, no decorative elements]" "3:2" --resolution 2K
+
+# 2. Download + resize to 1200px wide + convert to webp
+curl -o /tmp/guide-infographic.png "[result_url]"
+sips --resampleWidth 1200 /tmp/guide-infographic.png --out /tmp/guide-resized.png
+cwebp -q 80 /tmp/guide-resized.png -o public/images/guides/[slug].webp
+rm /tmp/guide-infographic.png /tmp/guide-resized.png
 ```
 
-Download to `public/images/guides/[slug].png`.
+Embed with next/image (1200x800 for 3:2 ratio, 1200x675 for 16:9):
+```tsx
+<Image src="/images/guides/[slug].webp" alt="[descriptive]" width={1200} height={800} className="rounded-lg border border-ink-200" />
+```
 
 ### Calculator CTA Format
 ```tsx

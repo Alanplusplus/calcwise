@@ -31,6 +31,12 @@ export function Header() {
             </Link>
           ))}
           <Link
+            href="/guides"
+            className="text-sm font-medium text-ink-600 transition-colors hover:text-brand-600"
+          >
+            Guides
+          </Link>
+          <Link
             href="/about"
             className="text-sm font-medium text-ink-600 transition-colors hover:text-brand-600"
           >
@@ -66,6 +72,13 @@ export function Header() {
                 {cat.name}
               </Link>
             ))}
+            <Link
+              href="/guides"
+              onClick={() => setMobileOpen(false)}
+              className="text-sm font-medium text-ink-600"
+            >
+              Guides
+            </Link>
             <Link
               href="/about"
               onClick={() => setMobileOpen(false)}

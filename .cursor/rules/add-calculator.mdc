@@ -80,10 +80,20 @@ export default function [Name]Page() {
 - Include at least one infographic image generated with kie-image:
 
 ```bash
+# 1. Generate
 node ~/.cursor/skills/kie-image/generate.mjs "[descriptive prompt for infographic, clean minimal style, white background, blue/green color scheme, professional financial data visualization, no decorative elements]" "3:2" --resolution 2K
+
+# 2. Download + resize + convert to webp
+curl -o /tmp/calc-infographic.png "[result_url]"
+sips --resampleWidth 1200 /tmp/calc-infographic.png --out /tmp/calc-resized.png
+cwebp -q 80 /tmp/calc-resized.png -o public/images/[slug]-infographic.webp
+rm /tmp/calc-infographic.png /tmp/calc-resized.png
 ```
 
-Download to `public/images/[slug]-infographic.png` and embed with next/image.
+Embed with next/image (1200x800 for 3:2 ratio):
+```tsx
+<Image src="/images/[slug]-infographic.webp" alt="[descriptive]" width={1200} height={800} className="rounded-lg border border-ink-200" />
+```
 
 Content requirements:
 - At least one concrete case study with a named persona and specific dollar amounts

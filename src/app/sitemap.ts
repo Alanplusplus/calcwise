@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { calculators, categories } from "@/lib/calculators";
+import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -7,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     { url: base, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1.0 },
+    { url: `${base}/guides`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${base}/faq`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.4 },
@@ -28,5 +30,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages];
+  const guidePages = guides
+    .filter((g) => g.published)
+    .map((g) => ({
+      url: `${base}/guides/${g.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages];
 }
