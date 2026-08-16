@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { categories } from "@/lib/calculators";
 import { site } from "@/lib/site";
+import { CalculatorIcon } from "./Icons";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -12,6 +13,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-ink-200 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
+          <CalculatorIcon className="h-6 w-6 text-brand-600" />
           <span className="text-2xl font-bold text-brand-700">{site.name}</span>
           <span className="hidden text-sm text-ink-500 sm:inline">
             {site.tagline}
@@ -22,7 +24,7 @@ export function Header() {
           {categories.map((cat) => (
             <Link
               key={cat.slug}
-              href={`/#${cat.slug}`}
+              href={`/calculators/category/${cat.slug}`}
               className="text-sm font-medium text-ink-600 transition-colors hover:text-brand-600"
             >
               {cat.name}
@@ -57,7 +59,7 @@ export function Header() {
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
-                href={`/#${cat.slug}`}
+                href={`/calculators/category/${cat.slug}`}
                 onClick={() => setMobileOpen(false)}
                 className="text-sm font-medium text-ink-600"
               >

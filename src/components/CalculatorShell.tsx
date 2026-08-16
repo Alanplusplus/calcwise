@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { calculators } from "@/lib/calculators";
+import { CategoryIcon } from "./Icons";
 import type { Calculator } from "@/lib/calculators";
 
 interface Props {
@@ -21,15 +22,24 @@ export function CalculatorShell({ calculator, children, article }: Props) {
           Home
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-ink-700">{calculator.title}</span>
+        <Link href={`/calculators/category/${calculator.category}`} className="hover:text-brand-600">
+          {calculator.category.charAt(0).toUpperCase() + calculator.category.slice(1)}
+        </Link>
+        <span className="mx-2">/</span>
+        <span className="text-ink-700">{calculator.shortTitle}</span>
       </nav>
 
       {/* Title */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">
-          {calculator.icon} {calculator.title}
-        </h1>
-        <p className="mt-2 text-lg text-ink-600">{calculator.description}</p>
+      <div className="mb-8 flex items-start gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+          <CategoryIcon name={calculator.slug} />
+        </div>
+        <div>
+          <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">
+            {calculator.title}
+          </h1>
+          <p className="mt-2 text-lg text-ink-600">{calculator.description}</p>
+        </div>
       </div>
 
       {/* Calculator Widget */}
@@ -50,10 +60,12 @@ export function CalculatorShell({ calculator, children, article }: Props) {
             <Link
               key={c.slug}
               href={`/calculators/${c.slug}`}
-              className="rounded-lg border border-ink-200 bg-white p-4 transition-shadow hover:shadow-card-hover"
+              className="flex items-center gap-3 rounded-lg border border-ink-200 bg-white p-4 transition-shadow hover:shadow-card-hover"
             >
-              <span className="text-lg">{c.icon}</span>
-              <h3 className="mt-1 text-sm font-semibold text-ink-800">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-brand-50 text-brand-600">
+                <CategoryIcon name={c.slug} className="h-4 w-4" />
+              </div>
+              <h3 className="text-sm font-semibold text-ink-800">
                 {c.shortTitle}
               </h3>
             </Link>

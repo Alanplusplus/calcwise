@@ -1,6 +1,21 @@
+import Image from "next/image";
+
 export function DebtPayoffArticle() {
   return (
     <>
+      <figure className="my-8">
+        <Image
+          src="/images/debt-payoff-strategies.png"
+          alt="Infographic comparing Avalanche method (highest interest first) vs Snowball method (smallest balance first) for debt payoff"
+          width={1024}
+          height={683}
+          className="rounded-lg border border-ink-200"
+        />
+        <figcaption className="mt-2 text-center text-sm text-ink-500">
+          Two proven debt payoff strategies: Avalanche saves more money, Snowball builds momentum.
+        </figcaption>
+      </figure>
+
       <h2>How This Debt Payoff Calculator Works</h2>
       <p>
         Enter your current debt balance, interest rate, and monthly payment to

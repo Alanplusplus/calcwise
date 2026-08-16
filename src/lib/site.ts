@@ -3,6 +3,6 @@ export const site = {
   tagline: "Smart Financial Calculators",
   description:
     "Free online financial calculators to help you make smarter money decisions. Mortgage, savings, investment, debt payoff, and retirement planning tools.",
-  url: "https://calcwise.tools",
+  url: "https://www.calcwise.tools",
   author: "CalcWise Team",
 };

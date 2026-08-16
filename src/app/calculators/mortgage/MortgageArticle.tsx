@@ -1,6 +1,21 @@
+import Image from "next/image";
+
 export function MortgageArticle() {
   return (
     <>
+      <figure className="my-8">
+        <Image
+          src="/images/mortgage-payment-breakdown.png"
+          alt="Infographic showing how mortgage payments shift from mostly interest to mostly principal over 30 years"
+          width={1024}
+          height={683}
+          className="rounded-lg border border-ink-200"
+        />
+        <figcaption className="mt-2 text-center text-sm text-ink-500">
+          Over time, more of each payment goes to principal as your balance decreases.
+        </figcaption>
+      </figure>
+
       <h2>How to Use This Mortgage Calculator</h2>
       <p>
         Enter your home price, down payment amount, loan term, and interest rate

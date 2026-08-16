@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { categories, getCalculatorsByCategory } from "@/lib/calculators";
 import { site } from "@/lib/site";
+import { CategoryIcon, CheckCircleIcon, LockIcon, BoltIcon } from "@/components/Icons";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,10 +30,18 @@ export default function HomePage() {
         {categories.map((category) => {
           const calcs = getCalculatorsByCategory(category.slug);
           return (
-            <div key={category.slug} id={category.slug} className="mb-12">
-              <h2 className="text-2xl font-bold text-ink-900">
-                {category.name}
-              </h2>
+            <div key={category.slug} className="mb-12">
+              <div className="flex items-center justify-between">
+                <h2 className="text-2xl font-bold text-ink-900">
+                  {category.name}
+                </h2>
+                <Link
+                  href={`/calculators/category/${category.slug}`}
+                  className="text-sm font-medium text-brand-600 hover:text-brand-800"
+                >
+                  View all &rarr;
+                </Link>
+              </div>
               <p className="mt-1 text-ink-500">{category.description}</p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -43,7 +52,9 @@ export default function HomePage() {
                     className="group rounded-xl border border-ink-200 bg-white p-5 shadow-card transition-shadow hover:shadow-card-hover"
                   >
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl">{calc.icon}</span>
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                        <CategoryIcon name={calc.slug} />
+                      </div>
                       <div>
                         <h3 className="font-semibold text-ink-800 group-hover:text-brand-600">
                           {calc.shortTitle}
@@ -69,8 +80,8 @@ export default function HomePage() {
           </h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-3">
             <div>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-xl">
-                🎯
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                <CheckCircleIcon className="h-6 w-6" />
               </div>
               <h3 className="mt-3 font-semibold text-ink-800">Accurate Results</h3>
               <p className="mt-1 text-sm text-ink-500">
@@ -79,8 +90,8 @@ export default function HomePage() {
               </p>
             </div>
             <div>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent-100 text-xl">
-                🔒
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent-100 text-accent-600">
+                <LockIcon className="h-6 w-6" />
               </div>
               <h3 className="mt-3 font-semibold text-ink-800">100% Private</h3>
               <p className="mt-1 text-sm text-ink-500">
@@ -89,8 +100,8 @@ export default function HomePage() {
               </p>
             </div>
             <div>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-xl">
-                ⚡
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                <BoltIcon className="h-6 w-6" />
               </div>
               <h3 className="mt-3 font-semibold text-ink-800">Free Forever</h3>
               <p className="mt-1 text-sm text-ink-500">

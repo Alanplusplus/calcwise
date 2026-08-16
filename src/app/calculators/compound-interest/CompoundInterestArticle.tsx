@@ -1,6 +1,21 @@
+import Image from "next/image";
+
 export function CompoundInterestArticle() {
   return (
     <>
+      <figure className="my-8">
+        <Image
+          src="/images/compound-interest-growth.png"
+          alt="Infographic showing compound interest growth vs simple interest over 30 years, starting with $10,000 at 7% annual return"
+          width={1024}
+          height={683}
+          className="rounded-lg border border-ink-200"
+        />
+        <figcaption className="mt-2 text-center text-sm text-ink-500">
+          Compound interest creates exponential growth compared to simple interest over time.
+        </figcaption>
+      </figure>
+
       <h2>How Compound Interest Works</h2>
       <p>
         Compound interest is interest calculated on both the initial principal

@@ -4,7 +4,6 @@ export interface Calculator {
   shortTitle: string;
   description: string;
   category: string;
-  icon: string;
 }
 
 export interface Category {
@@ -43,7 +42,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Mortgage",
     description: "Calculate your monthly mortgage payment, total interest, and view a full amortization schedule for your home loan.",
     category: "loans",
-    icon: "🏠",
   },
   {
     slug: "compound-interest",
@@ -51,7 +49,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Compound Interest",
     description: "See how your money grows over time with compound interest. Compare different compounding frequencies and contribution schedules.",
     category: "savings",
-    icon: "📈",
   },
   {
     slug: "savings-goal",
@@ -59,7 +56,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Savings Goal",
     description: "Figure out how much you need to save each month to reach your financial goal by your target date.",
     category: "savings",
-    icon: "🎯",
   },
   {
     slug: "investment-return",
@@ -67,7 +63,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Investment Return",
     description: "Calculate the total return and annualized performance of your investments including dividends and contributions.",
     category: "savings",
-    icon: "💹",
   },
   {
     slug: "debt-payoff",
@@ -75,7 +70,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Debt Payoff",
     description: "Create a debt payoff plan using avalanche or snowball methods. See exactly when you'll be debt-free.",
     category: "debt",
-    icon: "💳",
   },
   {
     slug: "retirement",
@@ -83,7 +77,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Retirement",
     description: "Estimate how much you need to save for retirement and whether you're on track to meet your goals.",
     category: "planning",
-    icon: "🏖️",
   },
   {
     slug: "loan-comparison",
@@ -91,7 +84,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Loan Comparison",
     description: "Compare two or more loan offers side by side to find the best deal based on total cost and monthly payments.",
     category: "loans",
-    icon: "⚖️",
   },
   {
     slug: "emergency-fund",
@@ -99,7 +91,6 @@ export const calculators: Calculator[] = [
     shortTitle: "Emergency Fund",
     description: "Determine how much you should have in your emergency fund based on your monthly expenses and risk factors.",
     category: "planning",
-    icon: "🛡️",
   },
 ];
 

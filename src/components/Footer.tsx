@@ -21,7 +21,7 @@ export function Footer() {
               {categories.map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href={`/#${cat.slug}`}
+                    href={`/calculators/category/${cat.slug}`}
                     className="text-sm text-ink-500 hover:text-brand-600"
                   >
                     {cat.name}
@@ -42,6 +42,11 @@ export function Footer() {
               <li>
                 <Link href="/contact" className="text-sm text-ink-500 hover:text-brand-600">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-sm text-ink-500 hover:text-brand-600">
+                  FAQ
                 </Link>
               </li>
             </ul>
