@@ -6,23 +6,26 @@ alwaysApply: false
 
 # Add New Calculator
 
-When the user asks to add a new calculator, follow this workflow:
+When the user says "新增一个计算器页面" or similar, follow this automated workflow.
 
-## Input
+## Step 0: Read Plan & Pick Next Item
 
-The user provides a calculator topic (e.g. "auto loan calculator", "inflation calculator").
+1. Read `.cursor/plans/calculators.json`
+2. Find the first item with `"status": "pending"`
+3. Use that item's data (slug, title, shortTitle, category, keywords) as the work target
+4. Announce: "Working on: [title]"
 
 ## Step 1: Register in Data
 
-Add the calculator entry to `src/lib/calculators.ts`:
+Add the calculator to `src/lib/calculators.ts` array:
 
 ```typescript
 {
-  slug: "the-slug",
-  title: "Full Calculator Title",
-  shortTitle: "Short Name",
-  description: "One sentence description (50-160 chars) targeting the main search keyword.",
-  category: "loans" | "savings" | "debt" | "planning",
+  slug: "[from plan]",
+  title: "[from plan]",
+  shortTitle: "[from plan]",
+  description: "[write 50-160 char description targeting the keywords from plan]",
+  category: "[from plan]",
 }
 ```
 
@@ -68,64 +71,50 @@ export default function [Name]Page() {
 - Show results in colored cards (bg-brand-50, bg-accent-50, bg-ink-100)
 - Include data tables or breakdowns where applicable
 - NO emoji anywhere
+- Accept optional `defaults?: Record<string, string>` prop for variant pages
 
 ### [Name]Article.tsx (educational content)
 
 - Must contain 800-1200 words minimum
-- Structure: How it works → Key concepts → Practical examples → Tips → FAQ (3-5 questions)
-- Include at least one infographic image generated with kie-image skill:
+- Structure: Infographic → How it works → Key concepts → Concrete case study → Comparison table → Tips → FAQ (3-5 questions)
+- Include at least one infographic image generated with kie-image:
 
 ```bash
-node ~/.cursor/skills/kie-image/generate.mjs "[descriptive prompt for infographic]" "3:2" --resolution 2K
+node ~/.cursor/skills/kie-image/generate.mjs "[descriptive prompt for infographic, clean minimal style, white background, blue/green color scheme, professional financial data visualization, no decorative elements]" "3:2" --resolution 2K
 ```
 
-Download to `public/images/[slug]-[description].png` and embed with:
-
-```tsx
-import Image from "next/image";
-
-<figure className="my-8">
-  <Image
-    src="/images/[slug]-[description].png"
-    alt="Descriptive alt text for SEO"
-    width={1024}
-    height={683}
-    className="rounded-lg border border-ink-200"
-  />
-  <figcaption className="mt-2 text-center text-sm text-ink-500">
-    Caption explaining the visual.
-  </figcaption>
-</figure>
-```
+Download to `public/images/[slug]-infographic.png` and embed with next/image.
 
 Content requirements:
-- Add unique perspective: specific dollar-amount examples, comparison tables, scenario analysis
-- Include at least one concrete "case study" example (e.g. "Sarah earns $75,000/year and wants to...")
-- Add a comparison table where relevant (e.g. 15yr vs 30yr, different rates)
+- At least one concrete case study with a named persona and specific dollar amounts
+- At least one comparison table (e.g. different scenarios, rates, terms)
 - NO generic filler — every paragraph must provide actionable insight
 - NO emoji anywhere
+- Internal links to 2-3 related calculators
 
-## Step 3: Update Sitemap
+## Step 3: Verify Build
 
-The sitemap auto-generates from `calculators` array — no manual update needed.
+Run `npm run build` and confirm the new page appears.
 
-## Step 4: Verify
-
-Run `npm run build` and confirm the new page appears in the route list.
-
-## Step 5: Commit
+## Step 4: Commit & Push
 
 ```bash
-git add -A && git commit -m "Add [calculator name] calculator"
+git add -A && git commit -m "Add [calculator title]" && git push
 ```
+
+## Step 5: Update Plan Progress
+
+Update `.cursor/plans/calculators.json`: change the item's status from `"pending"` to `"done"` and add `"completedAt": "[ISO date]"`.
 
 ## Quality Checklist
 
 - [ ] Calculator logic uses correct financial formula
 - [ ] All inputs have sensible defaults
 - [ ] Results update reactively as user types
-- [ ] Article has 800+ words with unique examples
+- [ ] Article has 800+ words with unique case study and comparison table
 - [ ] At least 1 infographic image generated and embedded
 - [ ] No emoji used anywhere
 - [ ] SVG icon added to Icons.tsx iconMap
 - [ ] Build passes with no errors
+- [ ] Git committed and pushed
+- [ ] Plan JSON updated with "done" status

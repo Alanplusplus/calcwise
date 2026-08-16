@@ -1,0 +1,110 @@
+{
+  "description": "Guide articles to write, in priority order. Pick the first 'pending' item each time.",
+  "items": [
+    {
+      "slug": "how-much-house-can-i-afford",
+      "title": "How Much House Can I Afford? Complete Guide by Income Level",
+      "targetKeyword": "how much house can I afford",
+      "linkedCalculators": ["mortgage", "home-affordability", "down-payment"],
+      "status": "pending"
+    },
+    {
+      "slug": "pay-off-mortgage-early-vs-invest",
+      "title": "Pay Off Mortgage Early vs Invest: The Math Behind the Decision",
+      "targetKeyword": "is it better to pay off mortgage early or invest",
+      "linkedCalculators": ["mortgage", "compound-interest", "investment-return"],
+      "status": "pending"
+    },
+    {
+      "slug": "save-50000-in-3-years",
+      "title": "How to Save $50,000 in 3 Years: A Realistic Plan",
+      "targetKeyword": "how to save 50000 in 3 years",
+      "linkedCalculators": ["savings-goal", "compound-interest"],
+      "status": "pending"
+    },
+    {
+      "slug": "15-year-vs-30-year-mortgage",
+      "title": "15-Year vs 30-Year Mortgage: Which Saves You More Money?",
+      "targetKeyword": "15 year vs 30 year mortgage",
+      "linkedCalculators": ["mortgage", "loan-comparison"],
+      "status": "pending"
+    },
+    {
+      "slug": "debt-avalanche-vs-snowball",
+      "title": "Debt Avalanche vs Snowball Method: Which Gets You Debt-Free Faster?",
+      "targetKeyword": "debt avalanche vs snowball",
+      "linkedCalculators": ["debt-payoff", "credit-card-payoff"],
+      "status": "pending"
+    },
+    {
+      "slug": "how-much-to-retire-at-55",
+      "title": "How Much Do I Need to Retire at 55? A Complete Breakdown",
+      "targetKeyword": "how much do I need to retire at 55",
+      "linkedCalculators": ["retirement", "compound-interest", "fire-calculator"],
+      "status": "pending"
+    },
+    {
+      "slug": "emergency-fund-where-to-keep",
+      "title": "Where to Keep Your Emergency Fund for the Best Interest Rate",
+      "targetKeyword": "where to keep emergency fund",
+      "linkedCalculators": ["emergency-fund", "savings-goal", "cd-calculator"],
+      "status": "pending"
+    },
+    {
+      "slug": "50-30-20-budget-rule",
+      "title": "The 50/30/20 Budget Rule Explained with Real Examples",
+      "targetKeyword": "50 30 20 budget rule",
+      "linkedCalculators": ["budget-50-30-20", "savings-goal"],
+      "status": "pending"
+    },
+    {
+      "slug": "rent-vs-buy-decision",
+      "title": "Rent vs Buy in 2026: How to Make the Right Decision",
+      "targetKeyword": "should I rent or buy a house",
+      "linkedCalculators": ["rent-vs-buy", "mortgage", "home-affordability"],
+      "status": "pending"
+    },
+    {
+      "slug": "compound-interest-real-examples",
+      "title": "Compound Interest: 5 Real-Life Examples That Show Its Power",
+      "targetKeyword": "compound interest examples real life",
+      "linkedCalculators": ["compound-interest", "retirement", "savings-goal"],
+      "status": "pending"
+    },
+    {
+      "slug": "how-to-pay-off-credit-card-fast",
+      "title": "How to Pay Off $10,000 in Credit Card Debt: 5 Proven Strategies",
+      "targetKeyword": "how to pay off credit card debt fast",
+      "linkedCalculators": ["debt-payoff", "credit-card-payoff"],
+      "status": "pending"
+    },
+    {
+      "slug": "401k-vs-roth-ira",
+      "title": "401(k) vs Roth IRA: Which Retirement Account Is Better for You?",
+      "targetKeyword": "401k vs Roth IRA",
+      "linkedCalculators": ["retirement", "compound-interest", "income-tax"],
+      "status": "pending"
+    },
+    {
+      "slug": "how-to-start-investing-1000",
+      "title": "How to Start Investing with $1,000: A Beginner's Step-by-Step Guide",
+      "targetKeyword": "how to start investing with $1000",
+      "linkedCalculators": ["investment-return", "compound-interest", "roi"],
+      "status": "pending"
+    },
+    {
+      "slug": "net-worth-by-age",
+      "title": "Average Net Worth by Age: Where Do You Stand?",
+      "targetKeyword": "net worth by age",
+      "linkedCalculators": ["net-worth", "retirement", "compound-interest"],
+      "status": "pending"
+    },
+    {
+      "slug": "high-yield-savings-vs-cd",
+      "title": "High-Yield Savings Account vs CD: Which Is Better in 2026?",
+      "targetKeyword": "high yield savings vs CD",
+      "linkedCalculators": ["savings-goal", "cd-calculator", "compound-interest"],
+      "status": "pending"
+    }
+  ]
+}

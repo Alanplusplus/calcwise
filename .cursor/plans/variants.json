@@ -1,0 +1,62 @@
+{
+  "description": "Variant pages to generate per calculator. Pick the first 'pending' batch each time.",
+  "batches": [
+    {
+      "baseCalculator": "mortgage",
+      "status": "pending",
+      "variants": [
+        { "slug": "200000", "title": "Mortgage Calculator for a $200,000 Home", "defaults": { "homePrice": "200000", "downPayment": "40000" } },
+        { "slug": "300000", "title": "Mortgage Calculator for a $300,000 Home", "defaults": { "homePrice": "300000", "downPayment": "60000" } },
+        { "slug": "400000", "title": "Mortgage Calculator for a $400,000 Home", "defaults": { "homePrice": "400000", "downPayment": "80000" } },
+        { "slug": "500000", "title": "Mortgage Calculator for a $500,000 Home", "defaults": { "homePrice": "500000", "downPayment": "100000" } },
+        { "slug": "750000", "title": "Mortgage Calculator for a $750,000 Home", "defaults": { "homePrice": "750000", "downPayment": "150000" } },
+        { "slug": "15-year", "title": "15-Year Mortgage Calculator", "defaults": { "homePrice": "350000", "downPayment": "70000", "loanTerm": "15" } },
+        { "slug": "fha-loan", "title": "FHA Loan Calculator (3.5% Down Payment)", "defaults": { "homePrice": "300000", "downPayment": "10500" } }
+      ]
+    },
+    {
+      "baseCalculator": "savings-goal",
+      "status": "pending",
+      "variants": [
+        { "slug": "house-down-payment", "title": "Save for a House Down Payment", "defaults": { "goalAmount": "60000", "currentSavings": "5000", "timeframe": "4" } },
+        { "slug": "wedding", "title": "Wedding Savings Calculator", "defaults": { "goalAmount": "30000", "currentSavings": "2000", "timeframe": "2" } },
+        { "slug": "new-car", "title": "Save for a New Car", "defaults": { "goalAmount": "25000", "currentSavings": "3000", "timeframe": "3" } },
+        { "slug": "vacation", "title": "Vacation Savings Calculator", "defaults": { "goalAmount": "5000", "currentSavings": "500", "timeframe": "1" } },
+        { "slug": "college-fund", "title": "College Fund Savings Calculator", "defaults": { "goalAmount": "100000", "currentSavings": "10000", "timeframe": "18" } }
+      ]
+    },
+    {
+      "baseCalculator": "retirement",
+      "status": "pending",
+      "variants": [
+        { "slug": "retire-at-40", "title": "Retire at 40 (FIRE) Calculator", "defaults": { "currentAge": "25", "retirementAge": "40", "desiredIncome": "50000" } },
+        { "slug": "retire-at-50", "title": "Retire at 50 Calculator", "defaults": { "currentAge": "30", "retirementAge": "50", "desiredIncome": "60000" } },
+        { "slug": "retire-at-55", "title": "Retire at 55 Calculator", "defaults": { "currentAge": "30", "retirementAge": "55", "desiredIncome": "60000" } },
+        { "slug": "retire-at-60", "title": "Retire at 60 Calculator", "defaults": { "currentAge": "35", "retirementAge": "60", "desiredIncome": "70000" } },
+        { "slug": "retire-at-67", "title": "Retire at 67 (Full SS Age) Calculator", "defaults": { "currentAge": "35", "retirementAge": "67", "desiredIncome": "75000" } }
+      ]
+    },
+    {
+      "baseCalculator": "debt-payoff",
+      "status": "pending",
+      "variants": [
+        { "slug": "5000-credit-card", "title": "Pay Off $5,000 Credit Card Debt", "defaults": { "balance": "5000", "interestRate": "21.9", "monthlyPayment": "200" } },
+        { "slug": "10000-credit-card", "title": "Pay Off $10,000 Credit Card Debt", "defaults": { "balance": "10000", "interestRate": "19.9", "monthlyPayment": "300" } },
+        { "slug": "20000-credit-card", "title": "Pay Off $20,000 Credit Card Debt", "defaults": { "balance": "20000", "interestRate": "18.9", "monthlyPayment": "500" } },
+        { "slug": "30000-student-loan", "title": "Pay Off $30,000 Student Loan", "defaults": { "balance": "30000", "interestRate": "5.5", "monthlyPayment": "350" } },
+        { "slug": "50000-student-loan", "title": "Pay Off $50,000 Student Loan", "defaults": { "balance": "50000", "interestRate": "6.0", "monthlyPayment": "550" } }
+      ]
+    },
+    {
+      "baseCalculator": "compound-interest",
+      "status": "pending",
+      "variants": [
+        { "slug": "1000-start", "title": "Compound Interest on $1,000", "defaults": { "principal": "1000", "monthlyContribution": "100", "annualRate": "7", "years": "30" } },
+        { "slug": "5000-start", "title": "Compound Interest on $5,000", "defaults": { "principal": "5000", "monthlyContribution": "200", "annualRate": "7", "years": "20" } },
+        { "slug": "10000-start", "title": "Compound Interest on $10,000", "defaults": { "principal": "10000", "monthlyContribution": "500", "annualRate": "7", "years": "20" } },
+        { "slug": "100000-start", "title": "Compound Interest on $100,000", "defaults": { "principal": "100000", "monthlyContribution": "1000", "annualRate": "7", "years": "20" } },
+        { "slug": "10-percent", "title": "Compound Interest at 10% Annual Return", "defaults": { "principal": "10000", "monthlyContribution": "500", "annualRate": "10", "years": "20" } }
+      ]
+    }
+  ]
+}

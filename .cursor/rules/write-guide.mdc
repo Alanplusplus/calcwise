@@ -6,39 +6,51 @@ alwaysApply: false
 
 # Write Financial Guide Article
 
-When the user asks to write a guide or article, follow this workflow.
+When the user says "撰写一篇长文指南文章" or similar, follow this automated workflow.
 
-## Purpose
+## Step 0: Read Plan & Pick Next Item
 
-Guide articles target long-tail keywords that link back to calculator pages. They provide deeper educational content for specific financial scenarios and improve the site's topical authority.
+1. Read `.cursor/plans/guides.json`
+2. Find the first item with `"status": "pending"`
+3. Use that item's data (slug, title, targetKeyword, linkedCalculators) as the work target
+4. Announce: "Working on guide: [title]"
 
-## Input
+## Step 1: Create Guide Page
 
-The user provides a topic (e.g. "how to save for a house down payment", "should I pay off mortgage early or invest").
+Create `src/app/guides/[slug]/page.tsx`.
 
-## Step 1: Create Guide Directory
+If `src/app/guides/` directory doesn't exist yet, create it with a layout or index page as well.
 
-Create `src/app/guides/[slug]/page.tsx`:
+### Page structure:
 
 ```typescript
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 export const metadata: Metadata = {
   title: "[Guide Title]",
-  description: "[150 char description targeting the main long-tail keyword]",
+  description: "[150 char targeting the keyword from plan]",
   openGraph: {
-    title: "[Guide Title] | " + site.name,
-    description: "[same as above]",
+    title: "[Guide Title] | " + "[site.name]",
+    description: "[same]",
     type: "article",
   },
 };
 
-export default function [Name]GuidePage() {
+const faqs = [
+  { question: "...", answer: "..." },
+  { question: "...", answer: "..." },
+  { question: "...", answer: "..." },
+];
+
+export default function GuidePage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      <FaqJsonLd faqs={faqs} />
+
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">Home</Link>
         <span className="mx-2">/</span>
@@ -47,11 +59,11 @@ export default function [Name]GuidePage() {
         <span className="text-ink-700">[Short Title]</span>
       </nav>
 
-      <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">[Guide Title]</h1>
-      <p className="mt-2 text-ink-500 text-sm">Last updated: [Month Year]</p>
+      <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">[Title]</h1>
+      <p className="mt-2 text-sm text-ink-500">Last updated: August 2026</p>
 
       <article className="prose mt-8">
-        {/* CONTENT HERE */}
+        {/* ALL CONTENT INLINE HERE */}
       </article>
     </div>
   );
@@ -60,139 +72,96 @@ export default function [Name]GuidePage() {
 
 ## Step 2: Write Content (1500-2500 words)
 
-### Structure Template
+### Mandatory Structure
 
-1. **Hook/Problem Statement** (100 words) — Start with the specific problem the reader has
-2. **Quick Answer** (50 words) — Give the TL;DR upfront for featured snippet potential
-3. **Infographic** — Generate and embed a visual summary
-4. **Detailed Explanation** (400-600 words) — Deep dive into the concept
-5. **Concrete Case Study** (300-400 words) — Real numbers, real scenario
-6. **Comparison Table** — At least one data table comparing options
-7. **Step-by-Step Guide** (200-300 words) — Actionable steps
-8. **Calculator CTA** — Link to the relevant CalcWise calculator
-9. **FAQ Section** (200-300 words) — 3-5 questions with JSON-LD schema
+1. **TL;DR Box** — Quick answer in a styled callout box
+2. **Infographic** — Generate with kie-image and embed
+3. **Detailed Explanation** (400-600 words)
+4. **Concrete Case Study** (300-400 words) — Named persona, real numbers
+5. **Comparison Table** — HTML table with data
+6. **Step-by-Step Actionable Guide** (200-300 words)
+7. **Calculator CTA** — Link to relevant CalcWise calculator(s) from plan's `linkedCalculators`
+8. **FAQ Section** (200-300 words) — 3-5 questions + JSON-LD schema
 
-### Content Quality Rules
+### TL;DR Box Format
+```tsx
+<div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">
+  <p className="font-semibold text-ink-800">Quick Answer</p>
+  <p className="mt-1 text-ink-700">[1-2 sentence direct answer to the title question]</p>
+</div>
+```
 
-- Every section must contain specific dollar amounts, percentages, or timeframes
-- Include at least ONE detailed case study with a persona:
-  ```
-  Example: "Marcus, a 32-year-old software engineer earning $95,000/year,
-  wants to buy a home in Denver (median price: $550,000)..."
-  ```
-- Include at least ONE comparison table:
-  ```tsx
-  <div className="overflow-x-auto my-6">
-    <table className="w-full text-sm border border-ink-200 rounded-lg overflow-hidden">
-      <thead className="bg-ink-100">
-        <tr>
-          <th className="px-4 py-2 text-left">Option</th>
-          <th className="px-4 py-2 text-right">Monthly Cost</th>
-          <th className="px-4 py-2 text-right">Total Over 5 Years</th>
-        </tr>
-      </thead>
-      <tbody>...</tbody>
-    </table>
-  </div>
-  ```
-- Link to relevant CalcWise calculators naturally:
-  ```tsx
-  <p>
-    Use our <Link href="/calculators/mortgage" className="text-brand-600 underline">
-    mortgage calculator</Link> to run your own numbers.
-  </p>
-  ```
-- NO generic advice without numbers
-- NO emoji anywhere
-- NO filler paragraphs
+### Case Study Format
+```
+Example persona: "Jessica, a 28-year-old marketing manager earning $72,000 in Austin, TX..."
+Include: specific salary, city, goal amount, timeline, monthly budget breakdown
+Show: calculations using the relevant formula, final result
+```
+
+### Comparison Table Format
+```tsx
+<div className="overflow-x-auto my-6">
+  <table className="w-full text-sm border-collapse">
+    <thead>
+      <tr className="border-b border-ink-200 bg-ink-50">
+        <th className="px-4 py-3 text-left font-semibold text-ink-700">...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-b border-ink-100">...</tr>
+    </tbody>
+  </table>
+</div>
+```
 
 ### Infographic Generation
 
-Generate at least 1 infographic per guide:
-
 ```bash
-node ~/.cursor/skills/kie-image/generate.mjs "[descriptive prompt]" "3:2" --resolution 2K
+node ~/.cursor/skills/kie-image/generate.mjs "[clean minimal infographic, white background, relevant to the guide topic, include specific numbers/labels, blue and green color scheme, professional financial style, no decorative elements]" "3:2" --resolution 2K
 ```
 
-Good infographic prompts for guides:
-- Decision flowcharts ("Should I rent or buy?")
-- Comparison visuals (side-by-side scenarios)
-- Timeline/milestone graphics (savings journey)
-- Breakdown charts (where does your money go)
+Download to `public/images/guides/[slug].png`.
 
-Download and embed:
-```bash
-curl -o public/images/guides/[slug]-infographic.png "[URL]"
-```
-
-### FAQ with JSON-LD
-
-At the end of the article, add FAQ section with schema:
-
+### Calculator CTA Format
 ```tsx
-import { FaqJsonLd } from "@/components/FaqJsonLd";
-
-const faqs = [
-  { question: "...", answer: "..." },
-  // 3-5 FAQs
-];
-
-// In the component:
-<FaqJsonLd faqs={faqs} />
-<section className="mt-12">
-  <h2>Frequently Asked Questions</h2>
-  {faqs.map((faq, i) => (
-    <div key={i} className="mt-6">
-      <h3>{faq.question}</h3>
-      <p>{faq.answer}</p>
-    </div>
-  ))}
-</section>
+<div className="rounded-lg border border-brand-200 bg-brand-50 p-6 my-8 text-center">
+  <p className="font-semibold text-ink-800">Run Your Own Numbers</p>
+  <p className="mt-1 text-sm text-ink-600">Use our free calculator to see results for your situation.</p>
+  <Link href="/calculators/[slug]" className="mt-3 inline-block rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-700">
+    Open [Calculator Name] Calculator
+  </Link>
+</div>
 ```
 
-## Step 3: Update Sitemap
+## Step 3: Create Guides Index (if not exists)
 
-Add to `src/app/sitemap.ts` if guides section doesn't auto-generate yet. Or add the guide to a guides data file if one exists.
+If `src/app/guides/page.tsx` doesn't exist, create it as a listing of all guides.
 
-## Step 4: Verify & Commit
+## Step 4: Update Sitemap
+
+Add guide pages to sitemap if not already auto-generating from a guides data file.
+
+## Step 5: Verify Build
 
 ```bash
 npm run build
-git add -A && git commit -m "Add guide: [title]"
 ```
 
-## Target Keywords for Guides (priority order)
+## Step 6: Commit & Push
 
-### Mortgage-related
-- "how much house can I afford on [salary] salary"
-- "is it better to pay off mortgage early or invest"
-- "how much down payment do I need for a house"
-- "15 year vs 30 year mortgage which is better"
-- "how to get a lower mortgage rate"
+```bash
+git add -A && git commit -m "Add guide: [title]" && git push
+```
 
-### Savings-related
-- "how to save [amount] in [timeframe]"
-- "where to keep emergency fund for best interest"
-- "high yield savings account vs CD which is better"
-- "how much to save each month by age"
-- "compound interest examples real life"
+## Step 7: Update Plan Progress
 
-### Debt-related
-- "how to pay off [amount] credit card debt fast"
-- "debt avalanche vs snowball which is better"
-- "should I consolidate my debt"
-- "how long to pay off student loans"
-- "balance transfer card vs personal loan for debt"
+Update `.cursor/plans/guides.json`: change the item's status from `"pending"` to `"done"` and add `"completedAt": "[ISO date]"`.
 
-### Retirement-related
-- "how much do I need to retire at [age]"
-- "401k vs Roth IRA which is better"
-- "am I saving enough for retirement"
-- "FIRE movement how much do I need"
-- "retirement savings by age benchmarks"
+## Content Quality Rules
 
-### General finance
-- "50/30/20 budget rule explained with examples"
-- "how to start investing with [amount]"
-- "index fund vs individual stocks for beginners"
-- "net worth by age average vs median"
+- NO emoji anywhere
+- NO generic filler — every paragraph has specific numbers
+- Target keyword should appear naturally in H1, first paragraph, and 2-3 subheadings
+- All dollar amounts use US formatting
+- Internal links to CalcWise calculators use relative paths
+- External claims should cite specific sources where possible
