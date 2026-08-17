@@ -92,6 +92,13 @@ export const calculators: Calculator[] = [
     description: "Determine how much you should have in your emergency fund based on your monthly expenses and risk factors.",
     category: "planning",
   },
+  {
+    slug: "auto-loan",
+    title: "Auto Loan Calculator",
+    shortTitle: "Auto Loan",
+    description: "Calculate your monthly car payment, total interest cost, and view the full amortization schedule for your auto loan.",
+    category: "loans",
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
