@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { calculators, categories } from "@/lib/calculators";
 import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
+import { mortgageVariants } from "@/lib/variants/mortgage";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -39,5 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages];
+  const mortgageVariantPages = mortgageVariants.map((v) => ({
+    url: `${base}/calculators/mortgage/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages];
 }

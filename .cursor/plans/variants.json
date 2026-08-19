@@ -3,7 +3,8 @@
   "batches": [
     {
       "baseCalculator": "mortgage",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-19T23:17:00.000Z",
       "variants": [
         { "slug": "200000", "title": "Mortgage Calculator for a $200,000 Home", "defaults": { "homePrice": "200000", "downPayment": "40000" } },
         { "slug": "300000", "title": "Mortgage Calculator for a $300,000 Home", "defaults": { "homePrice": "300000", "downPayment": "60000" } },

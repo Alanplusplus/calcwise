@@ -19,11 +19,15 @@ interface AmortizationRow {
   balance: number;
 }
 
-export function MortgageCalculator() {
-  const [homePrice, setHomePrice] = useState("350000");
-  const [downPayment, setDownPayment] = useState("70000");
-  const [loanTerm, setLoanTerm] = useState("30");
-  const [interestRate, setInterestRate] = useState("6.5");
+interface Props {
+  defaults?: Record<string, string>;
+}
+
+export function MortgageCalculator({ defaults }: Props) {
+  const [homePrice, setHomePrice] = useState(defaults?.homePrice || "350000");
+  const [downPayment, setDownPayment] = useState(defaults?.downPayment || "70000");
+  const [loanTerm, setLoanTerm] = useState(defaults?.loanTerm || "30");
+  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "6.5");
   const [showAmortization, setShowAmortization] = useState(false);
 
   const results = useMemo(() => {
