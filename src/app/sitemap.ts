@@ -3,6 +3,7 @@ import { calculators, categories } from "@/lib/calculators";
 import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
 import { mortgageVariants } from "@/lib/variants/mortgage";
+import { savingsGoalVariants } from "@/lib/variants/savings-goal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -47,5 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages];
+  const savingsGoalVariantPages = savingsGoalVariants.map((v) => ({
+    url: `${base}/calculators/savings-goal/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages];
 }

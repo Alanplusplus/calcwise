@@ -17,7 +17,8 @@
     },
     {
       "baseCalculator": "savings-goal",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-20T15:35:00.000Z",
       "variants": [
         { "slug": "house-down-payment", "title": "Save for a House Down Payment", "defaults": { "goalAmount": "60000", "currentSavings": "5000", "timeframe": "4" } },
         { "slug": "wedding", "title": "Wedding Savings Calculator", "defaults": { "goalAmount": "30000", "currentSavings": "2000", "timeframe": "2" } },
