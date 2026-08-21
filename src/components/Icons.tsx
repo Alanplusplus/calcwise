@@ -119,6 +119,7 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "loan-comparison": ScaleIcon,
   "emergency-fund": ShieldIcon,
   "auto-loan": CarIcon,
+  basic: CalculatorIcon,
 };
 
 export function CategoryIcon({ name, className = "h-5 w-5" }: { name: string; className?: string }) {

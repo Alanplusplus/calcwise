@@ -99,6 +99,13 @@ export const calculators: Calculator[] = [
     description: "Calculate your monthly car payment, total interest cost, and view the full amortization schedule for your auto loan.",
     category: "loans",
   },
+  {
+    slug: "basic",
+    title: "Basic Calculator",
+    shortTitle: "Basic",
+    description: "A simple everyday calculator for quick math — addition, subtraction, multiplication, division, percentages, and more.",
+    category: "planning",
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
