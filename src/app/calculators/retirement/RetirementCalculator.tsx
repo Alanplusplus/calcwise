@@ -7,14 +7,18 @@ function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 }
 
-export function RetirementCalculator() {
-  const [currentAge, setCurrentAge] = useState("30");
-  const [retirementAge, setRetirementAge] = useState("65");
-  const [currentSavings, setCurrentSavings] = useState("50000");
-  const [monthlyContribution, setMonthlyContribution] = useState("1000");
-  const [expectedReturn, setExpectedReturn] = useState("7");
-  const [desiredIncome, setDesiredIncome] = useState("60000");
-  const [withdrawalRate, setWithdrawalRate] = useState("4");
+interface Props {
+  defaults?: Record<string, string>;
+}
+
+export function RetirementCalculator({ defaults }: Props) {
+  const [currentAge, setCurrentAge] = useState(defaults?.currentAge || "30");
+  const [retirementAge, setRetirementAge] = useState(defaults?.retirementAge || "65");
+  const [currentSavings, setCurrentSavings] = useState(defaults?.currentSavings || "50000");
+  const [monthlyContribution, setMonthlyContribution] = useState(defaults?.monthlyContribution || "1000");
+  const [expectedReturn, setExpectedReturn] = useState(defaults?.expectedReturn || "7");
+  const [desiredIncome, setDesiredIncome] = useState(defaults?.desiredIncome || "60000");
+  const [withdrawalRate, setWithdrawalRate] = useState(defaults?.withdrawalRate || "4");
 
   const results = useMemo(() => {
     const age = parseInt(currentAge) || 30;
