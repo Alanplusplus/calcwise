@@ -580,26 +580,18 @@ export default function HowMuchHouseGuide() {
           <ul className="mt-4 space-y-2">
             <li>
               <Link
-                href="/guides/15-year-vs-30-year-mortgage"
-                className="text-brand-600 hover:underline"
-              >
-                15-Year vs 30-Year Mortgage: Which Saves You More Money?
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/rent-vs-buy-decision"
-                className="text-brand-600 hover:underline"
-              >
-                Rent vs Buy in 2026: How to Make the Right Decision
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/guides/pay-off-mortgage-early-vs-invest"
                 className="text-brand-600 hover:underline"
               >
                 Pay Off Mortgage Early vs Invest: The Math Behind the Decision
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/guides/save-50000-in-3-years"
+                className="text-brand-600 hover:underline"
+              >
+                How to Save $50,000 in 3 Years: A Realistic Plan
               </Link>
             </li>
           </ul>

@@ -753,26 +753,18 @@ export default function Save50000In3YearsGuide() {
           <ul className="mt-4 space-y-2">
             <li>
               <Link
-                href="/guides/50-30-20-budget-rule"
+                href="/guides/how-much-house-can-i-afford"
                 className="text-brand-600 hover:underline"
               >
-                The 50/30/20 Budget Rule Explained with Real Examples
+                How Much House Can I Afford? Complete Guide by Income Level
               </Link>
             </li>
             <li>
               <Link
-                href="/guides/emergency-fund-where-to-keep"
+                href="/guides/pay-off-mortgage-early-vs-invest"
                 className="text-brand-600 hover:underline"
               >
-                Where to Keep Your Emergency Fund for the Best Interest Rate
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/compound-interest-real-examples"
-                className="text-brand-600 hover:underline"
-              >
-                Compound Interest: 5 Real-Life Examples That Show Its Power
+                Pay Off Mortgage Early vs Invest: The Math Behind the Decision
               </Link>
             </li>
           </ul>

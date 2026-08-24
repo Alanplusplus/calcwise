@@ -716,18 +716,10 @@ export default function PayOffMortgageVsInvestGuide() {
             </li>
             <li>
               <Link
-                href="/guides/15-year-vs-30-year-mortgage"
+                href="/guides/save-50000-in-3-years"
                 className="text-brand-600 hover:underline"
               >
-                15-Year vs 30-Year Mortgage: Which Saves You More Money?
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/compound-interest-real-examples"
-                className="text-brand-600 hover:underline"
-              >
-                Compound Interest: 5 Real-Life Examples That Show Its Power
+                How to Save $50,000 in 3 Years: A Realistic Plan
               </Link>
             </li>
           </ul>
