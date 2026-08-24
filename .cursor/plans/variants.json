@@ -29,7 +29,8 @@
     },
     {
       "baseCalculator": "retirement",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-22T15:39:00.000Z",
       "variants": [
         { "slug": "retire-at-40", "title": "Retire at 40 (FIRE) Calculator", "defaults": { "currentAge": "25", "retirementAge": "40", "desiredIncome": "50000" } },
         { "slug": "retire-at-50", "title": "Retire at 50 Calculator", "defaults": { "currentAge": "30", "retirementAge": "50", "desiredIncome": "60000" } },

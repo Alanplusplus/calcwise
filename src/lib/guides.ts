@@ -18,4 +18,10 @@ export const guides: Guide[] = [
     description: "Should you pay off your mortgage early or invest the extra money? We run the real numbers at today's rates so you can see exactly which option builds more wealth.",
     published: true,
   },
+  {
+    slug: "save-50000-in-3-years",
+    title: "How to Save $50,000 in 3 Years: A Realistic Plan",
+    description: "A step-by-step plan to save $50,000 in 3 years on an average salary. Includes monthly targets, budget breakdowns, a real case study, and strategies that actually work.",
+    published: true,
+  },
 ];
