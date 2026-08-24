@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ArticleJsonLd } from "@/components/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Pay Off Mortgage Early vs Invest: The Math Behind the Decision",
@@ -48,6 +50,20 @@ export default function PayOffMortgageVsInvestGuide() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
+      <ArticleJsonLd
+        title="Pay Off Mortgage Early vs Invest: The Math Behind the Decision"
+        description="Should you pay off your mortgage early or invest the extra money? We run the real numbers at today's rates so you can see exactly which option builds more wealth."
+        slug="pay-off-mortgage-early-vs-invest"
+        datePublished="2026-08-17"
+        dateModified="2026-08-24"
+        image="/images/guides/pay-off-mortgage-early-vs-invest.webp"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "Pay Off Mortgage Early vs Invest", href: "/guides/pay-off-mortgage-early-vs-invest" },
+        ]}
+      />
       <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         {/* Hero */}
         <header>

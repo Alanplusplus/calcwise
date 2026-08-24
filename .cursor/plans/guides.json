@@ -21,7 +21,8 @@
       "title": "How to Save $50,000 in 3 Years: A Realistic Plan",
       "targetKeyword": "how to save 50000 in 3 years",
       "linkedCalculators": ["savings-goal", "compound-interest"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-08-24T11:30:00+08:00"
     },
     {
       "slug": "15-year-vs-30-year-mortgage",

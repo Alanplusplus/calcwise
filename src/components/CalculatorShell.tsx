@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { calculators } from "@/lib/calculators";
 import { CategoryIcon } from "./Icons";
+import { BreadcrumbJsonLd } from "./BreadcrumbJsonLd";
 import type { Calculator } from "@/lib/calculators";
 
 interface Props {
@@ -16,6 +17,12 @@ export function CalculatorShell({ calculator, children, article }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <BreadcrumbJsonLd
+        items={[
+          { name: calculator.category.charAt(0).toUpperCase() + calculator.category.slice(1), href: `/calculators/category/${calculator.category}` },
+          { name: calculator.shortTitle, href: `/calculators/${calculator.slug}` },
+        ]}
+      />
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">

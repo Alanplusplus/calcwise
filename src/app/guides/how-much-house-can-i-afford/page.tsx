@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ArticleJsonLd } from "@/components/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "How Much House Can I Afford? Complete Guide by Income Level",
@@ -48,6 +50,20 @@ export default function HowMuchHouseGuide() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
+      <ArticleJsonLd
+        title="How Much House Can I Afford? Complete Guide by Income Level"
+        description="Find out exactly how much home you can afford based on your salary. Includes income-based affordability tables, the 28/36 rule explained, a real case study, and common mistakes to avoid."
+        slug="how-much-house-can-i-afford"
+        datePublished="2026-08-10"
+        dateModified="2026-08-24"
+        image="/images/guides/house-affordability-infographic.webp"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "How Much House Can I Afford", href: "/guides/how-much-house-can-i-afford" },
+        ]}
+      />
       <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         {/* Hero */}
         <header>

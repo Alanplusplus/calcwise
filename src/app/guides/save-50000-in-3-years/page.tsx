@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ArticleJsonLd } from "@/components/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "How to Save $50,000 in 3 Years: A Realistic Plan",
@@ -48,6 +50,19 @@ export default function Save50000In3YearsGuide() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
+      <ArticleJsonLd
+        title="How to Save $50,000 in 3 Years: A Realistic Plan"
+        description="A step-by-step plan to save $50,000 in 3 years on an average salary. Includes monthly targets, budget breakdowns, a real case study, and strategies that actually work."
+        slug="save-50000-in-3-years"
+        datePublished="2026-08-24"
+        image="/images/guides/save-50000-in-3-years.webp"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "How to Save $50,000 in 3 Years", href: "/guides/save-50000-in-3-years" },
+        ]}
+      />
       <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         {/* Hero */}
         <header>
