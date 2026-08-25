@@ -200,6 +200,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["retirement", "savings-goal", "home-affordability"],
     relatedGuides: ["net-worth-by-age", "how-to-start-investing-1000"],
   },
+  {
+    slug: "paycheck",
+    title: "Paycheck Calculator",
+    shortTitle: "Paycheck",
+    description: "Estimate your take-home pay after federal and state taxes, Social Security, Medicare, and retirement contributions from each paycheck.",
+    category: "planning",
+    relatedCalculators: ["income-tax", "budget-50-30-20", "savings-goal"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {

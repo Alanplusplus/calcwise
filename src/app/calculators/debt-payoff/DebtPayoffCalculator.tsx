@@ -11,11 +11,15 @@ function formatCurrencyExact(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 });
 }
 
-export function DebtPayoffCalculator() {
-  const [balance, setBalance] = useState("15000");
-  const [interestRate, setInterestRate] = useState("18.9");
-  const [monthlyPayment, setMonthlyPayment] = useState("400");
-  const [extraPayment, setExtraPayment] = useState("100");
+interface Props {
+  defaults?: Record<string, string>;
+}
+
+export function DebtPayoffCalculator({ defaults }: Props) {
+  const [balance, setBalance] = useState(defaults?.balance || "15000");
+  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "18.9");
+  const [monthlyPayment, setMonthlyPayment] = useState(defaults?.monthlyPayment || "400");
+  const [extraPayment, setExtraPayment] = useState(defaults?.extraPayment || "100");
 
   const results = useMemo(() => {
     const bal = parseFloat(balance) || 0;

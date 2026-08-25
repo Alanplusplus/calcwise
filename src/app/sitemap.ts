@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import { mortgageVariants } from "@/lib/variants/mortgage";
 import { savingsGoalVariants } from "@/lib/variants/savings-goal";
 import { retirementVariants } from "@/lib/variants/retirement";
+import { debtPayoffVariants } from "@/lib/variants/debt-payoff";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -63,5 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages];
+  const debtPayoffVariantPages = debtPayoffVariants.map((v) => ({
+    url: `${base}/calculators/debt-payoff/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages];
 }

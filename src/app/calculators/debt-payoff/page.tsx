@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { DebtPayoffCalculator } from "./DebtPayoffCalculator";
 import { DebtPayoffArticle } from "./DebtPayoffArticle";
+import { debtPayoffVariants } from "@/lib/variants/debt-payoff";
 
 const calc = getCalculator("debt-payoff")!;
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function DebtPayoffPage() {
   return (
-    <CalculatorShell calculator={calc} article={<DebtPayoffArticle />}>
+    <CalculatorShell calculator={calc} article={<DebtPayoffArticle />} variants={debtPayoffVariants}>
       <DebtPayoffCalculator />
     </CalculatorShell>
   );
