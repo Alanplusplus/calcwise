@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { MortgageCalculator } from "./MortgageCalculator";
 import { MortgageArticle } from "./MortgageArticle";
+import { mortgageVariants } from "@/lib/variants/mortgage";
 
 const calc = getCalculator("mortgage")!;
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function MortgagePage() {
   return (
-    <CalculatorShell calculator={calc} article={<MortgageArticle />}>
+    <CalculatorShell calculator={calc} article={<MortgageArticle />} variants={mortgageVariants}>
       <MortgageCalculator />
     </CalculatorShell>
   );

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { RelatedGuides } from "@/components/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "Rent vs Buy in 2026: How to Make the Right Decision",
@@ -713,39 +714,7 @@ export default function RentVsBuyDecisionGuide() {
             ))}
           </div>
         </section>
-
-        {/* Related Guides */}
-        <section className="mt-12 border-t border-ink-200 pt-8">
-          <h2 className="text-lg font-semibold text-ink-800">
-            Related Guides
-          </h2>
-          <ul className="mt-4 space-y-2">
-            <li>
-              <Link
-                href="/guides/how-much-house-can-i-afford"
-                className="text-brand-600 hover:underline"
-              >
-                How Much House Can I Afford? Complete Guide by Income Level
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/pay-off-mortgage-early-vs-invest"
-                className="text-brand-600 hover:underline"
-              >
-                Pay Off Mortgage Early vs Invest: The Math Behind the Decision
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/15-year-vs-30-year-mortgage"
-                className="text-brand-600 hover:underline"
-              >
-                15-Year vs 30-Year Mortgage: Which Saves You More Money?
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <RelatedGuides currentSlug="rent-vs-buy-decision" relatedSlugs={["how-much-house-can-i-afford", "15-year-vs-30-year-mortgage"]} />
       </article>
     </>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { categories, getCalculatorsByCategory } from "@/lib/calculators";
+import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
 import { CategoryIcon, CheckCircleIcon, LockIcon, BoltIcon } from "@/components/Icons";
 import type { Metadata } from "next";
@@ -70,6 +71,38 @@ export default function HomePage() {
             </div>
           );
         })}
+      </section>
+
+      {/* Financial Guides */}
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-bold text-ink-900">Financial Guides</h2>
+          <Link
+            href="/guides"
+            className="text-sm font-medium text-brand-600 hover:text-brand-800"
+          >
+            View all &rarr;
+          </Link>
+        </div>
+        <p className="mt-1 text-ink-500">
+          In-depth articles with real numbers, case studies, and actionable advice.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {guides.filter((g) => g.published).slice(0, 4).map((guide) => (
+            <Link
+              key={guide.slug}
+              href={`/guides/${guide.slug}`}
+              className="group rounded-xl border border-ink-200 bg-white p-5 shadow-card transition-shadow hover:shadow-card-hover"
+            >
+              <h3 className="font-semibold text-ink-800 group-hover:text-brand-600 line-clamp-2">
+                {guide.title}
+              </h3>
+              <p className="mt-2 text-sm text-ink-500 line-clamp-2">
+                {guide.description}
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* Trust/Value Section */}

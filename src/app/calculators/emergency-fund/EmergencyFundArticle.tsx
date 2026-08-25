@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function EmergencyFundArticle() {
   return (
     <>
@@ -30,7 +32,14 @@ export function EmergencyFundArticle() {
       <h2>Where to Keep Your Emergency Fund</h2>
       <p>
         Your emergency fund needs to be both accessible and earning interest.
-        The best options in 2024-2026:
+        For a full comparison of account types, read{" "}
+        <Link
+          href="/guides/emergency-fund-where-to-keep"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Where to Keep Your Emergency Fund
+        </Link>
+        . The best options in 2024-2026:
       </p>
       <ul>
         <li><strong>High-yield savings account (4-5% APY):</strong> the gold standard. FDIC-insured, accessible within 1-2 days, no risk of loss. Look for online banks like Marcus, Ally, or Discover.</li>
@@ -50,6 +59,17 @@ export function EmergencyFundArticle() {
         <li><strong>Step 3:</strong> Once high-interest debt is eliminated, aggressively build to 3-6 months.</li>
         <li><strong>Step 4:</strong> If you&apos;re self-employed or in a volatile field, continue to 9-12 months.</li>
       </ul>
+      <p>
+        Use our{" "}
+        <Link
+          href="/calculators/savings-goal"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Savings Goal Calculator
+        </Link>{" "}
+        to figure out how much to save each month to reach your target emergency
+        fund.
+      </p>
 
       <h2>What Counts as an Emergency?</h2>
       <p>Use your emergency fund for genuine emergencies only:</p>
@@ -63,7 +83,15 @@ export function EmergencyFundArticle() {
       <p>
         <strong>Not emergencies:</strong> vacations, holiday gifts, sales,
         planned purchases, routine maintenance, or &quot;I forgot to budget for
-        it.&quot; Create separate sinking funds for predictable expenses.
+        it.&quot; Create separate sinking funds for predictable expenses, and
+        follow{" "}
+        <Link
+          href="/guides/50-30-20-budget-rule"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          The 50/30/20 Budget Rule
+        </Link>{" "}
+        to keep savings on track.
       </p>
 
       <h2>Frequently Asked Questions</h2>

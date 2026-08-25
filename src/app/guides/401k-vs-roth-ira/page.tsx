@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { RelatedGuides } from "@/components/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "401(k) vs Roth IRA: Which Retirement Account Is Better for You?",
@@ -740,37 +741,7 @@ export default function FourOhOneKVsRothIraGuide() {
             ))}
           </div>
         </section>
-
-        {/* Related Guides */}
-        <section className="mt-12 border-t border-ink-200 pt-8">
-          <h2 className="text-lg font-semibold text-ink-800">Related Guides</h2>
-          <ul className="mt-4 space-y-2">
-            <li>
-              <Link
-                href="/guides/how-much-to-retire-at-55"
-                className="text-brand-600 hover:underline"
-              >
-                How Much Do I Need to Retire at 55? A Complete Breakdown
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/save-50000-in-3-years"
-                className="text-brand-600 hover:underline"
-              >
-                How to Save $50,000 in 3 Years: A Realistic Plan
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/compound-interest-real-examples"
-                className="text-brand-600 hover:underline"
-              >
-                Compound Interest: 5 Real-Life Examples That Show Its Power
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <RelatedGuides currentSlug="401k-vs-roth-ira" relatedSlugs={["how-much-to-retire-at-55", "how-to-start-investing-1000"]} />
       </article>
     </>
   );

@@ -1,19 +1,28 @@
 import Link from "next/link";
 import { calculators } from "@/lib/calculators";
+import { guides, getGuidesBySlug } from "@/lib/guides";
 import { CategoryIcon } from "./Icons";
 import { BreadcrumbJsonLd } from "./BreadcrumbJsonLd";
 import type { Calculator } from "@/lib/calculators";
+import type { CalculatorVariant } from "@/lib/variants/mortgage";
 
 interface Props {
   calculator: Calculator;
   children: React.ReactNode;
   article?: React.ReactNode;
+  variants?: CalculatorVariant[];
 }
 
-export function CalculatorShell({ calculator, children, article }: Props) {
-  const related = calculators
-    .filter((c) => c.slug !== calculator.slug)
-    .slice(0, 4);
+export function CalculatorShell({ calculator, children, article, variants }: Props) {
+  const related = calculator.relatedCalculators
+    ? calculators.filter((c) => calculator.relatedCalculators!.includes(c.slug))
+    : calculators
+        .filter((c) => c.slug !== calculator.slug && c.category === calculator.category)
+        .slice(0, 4);
+
+  const relatedGuides = calculator.relatedGuides
+    ? getGuidesBySlug(calculator.relatedGuides)
+    : [];
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
@@ -54,6 +63,24 @@ export function CalculatorShell({ calculator, children, article }: Props) {
         {children}
       </div>
 
+      {/* Popular Scenarios (variant links) */}
+      {variants && variants.length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-lg font-bold text-ink-900">Popular Scenarios</h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {variants.map((v) => (
+              <Link
+                key={v.slug}
+                href={`/calculators/${calculator.slug}/${v.slug}`}
+                className="rounded-md border border-ink-200 bg-white px-3 py-1.5 text-sm text-ink-600 transition-colors hover:border-brand-300 hover:text-brand-600"
+              >
+                {v.title}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Article Content */}
       {article && (
         <article className="prose mt-12 max-w-none">{article}</article>
@@ -79,6 +106,29 @@ export function CalculatorShell({ calculator, children, article }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Helpful Articles (Related Guides) */}
+      {relatedGuides.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-ink-900">Helpful Articles</h2>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedGuides.map((g) => (
+              <Link
+                key={g.slug}
+                href={`/guides/${g.slug}`}
+                className="group rounded-lg border border-ink-200 bg-white p-5 transition-shadow hover:shadow-card-hover"
+              >
+                <h3 className="text-sm font-semibold text-ink-800 group-hover:text-brand-600">
+                  {g.title}
+                </h3>
+                <p className="mt-2 line-clamp-2 text-xs text-ink-500">
+                  {g.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

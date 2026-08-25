@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { RelatedGuides } from "@/components/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "How Much House Can I Afford? Complete Guide by Income Level",
@@ -571,31 +572,7 @@ export default function HowMuchHouseGuide() {
             ))}
           </div>
         </section>
-
-        {/* Related Guides */}
-        <section className="mt-12 border-t border-ink-200 pt-8">
-          <h2 className="text-lg font-semibold text-ink-800">
-            Related Guides
-          </h2>
-          <ul className="mt-4 space-y-2">
-            <li>
-              <Link
-                href="/guides/pay-off-mortgage-early-vs-invest"
-                className="text-brand-600 hover:underline"
-              >
-                Pay Off Mortgage Early vs Invest: The Math Behind the Decision
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/save-50000-in-3-years"
-                className="text-brand-600 hover:underline"
-              >
-                How to Save $50,000 in 3 Years: A Realistic Plan
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <RelatedGuides currentSlug="how-much-house-can-i-afford" relatedSlugs={["15-year-vs-30-year-mortgage", "rent-vs-buy-decision"]} />
       </article>
     </>
   );

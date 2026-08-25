@@ -3,6 +3,8 @@ export interface Guide {
   title: string;
   description: string;
   published: boolean;
+  relatedCalculators?: string[];
+  relatedGuides?: string[];
 }
 
 export const guides: Guide[] = [
@@ -11,89 +13,129 @@ export const guides: Guide[] = [
     title: "How Much House Can I Afford? Complete Guide by Income Level",
     description: "Learn exactly how much home you can afford based on your salary, debts, and down payment. Includes income-based tables, a real case study, and the formulas lenders actually use.",
     published: true,
+    relatedCalculators: ["mortgage", "home-affordability", "debt-payoff"],
+    relatedGuides: ["15-year-vs-30-year-mortgage", "rent-vs-buy-decision"],
   },
   {
     slug: "pay-off-mortgage-early-vs-invest",
     title: "Pay Off Mortgage Early vs Invest: The Math Behind the Decision",
     description: "Should you pay off your mortgage early or invest the extra money? We run the real numbers at today's rates so you can see exactly which option builds more wealth.",
     published: true,
+    relatedCalculators: ["mortgage", "compound-interest", "investment-return"],
+    relatedGuides: ["how-much-house-can-i-afford", "how-to-start-investing-1000"],
   },
   {
     slug: "save-50000-in-3-years",
     title: "How to Save $50,000 in 3 Years: A Realistic Plan",
     description: "A step-by-step plan to save $50,000 in 3 years on an average salary. Includes monthly targets, budget breakdowns, a real case study, and strategies that actually work.",
     published: true,
+    relatedCalculators: ["savings-goal", "compound-interest"],
+    relatedGuides: ["50-30-20-budget-rule", "high-yield-savings-vs-cd"],
   },
   {
     slug: "15-year-vs-30-year-mortgage",
     title: "15-Year vs 30-Year Mortgage: Which Saves You More Money?",
     description: "Compare 15-year vs 30-year mortgages with real numbers on a $350K loan. See monthly payments, total interest, break-even analysis, and who should choose each term.",
     published: true,
+    relatedCalculators: ["mortgage", "loan-comparison"],
+    relatedGuides: ["how-much-house-can-i-afford", "pay-off-mortgage-early-vs-invest"],
   },
   {
     slug: "debt-avalanche-vs-snowball",
     title: "Debt Avalanche vs Snowball Method: Which Gets You Debt-Free Faster?",
     description: "Compare debt avalanche and snowball methods with a real $38,000 debt portfolio. See which saves more money and which keeps you motivated to finish.",
     published: true,
+    relatedCalculators: ["debt-payoff", "credit-card-payoff"],
+    relatedGuides: ["how-to-pay-off-credit-card-fast", "50-30-20-budget-rule"],
   },
   {
     slug: "how-much-to-retire-at-55",
     title: "How Much Do I Need to Retire at 55? A Complete Breakdown",
     description: "Find out how much you need to retire at 55. Covers the 4% rule, healthcare costs before Medicare, portfolio targets by lifestyle, and a step-by-step plan.",
     published: true,
+    relatedCalculators: ["retirement", "compound-interest", "fire-calculator"],
+    relatedGuides: ["401k-vs-roth-ira", "compound-interest-real-examples"],
   },
   {
     slug: "emergency-fund-where-to-keep",
     title: "Where to Keep Your Emergency Fund for the Best Interest Rate",
     description: "Compare HYSAs, money market accounts, CDs, and more for your emergency fund. Real 2026 APY rates, a case study, and the CD ladder strategy explained.",
     published: true,
+    relatedCalculators: ["emergency-fund", "savings-goal", "cd-calculator"],
+    relatedGuides: ["high-yield-savings-vs-cd", "50-30-20-budget-rule"],
   },
   {
     slug: "50-30-20-budget-rule",
     title: "The 50/30/20 Budget Rule Explained with Real Examples",
     description: "Learn the 50/30/20 budget rule with real examples at $50K, $75K, and $100K income. Includes a case study, category breakdowns, and when the rule doesn't work.",
     published: true,
+    relatedCalculators: ["budget-50-30-20", "savings-goal", "emergency-fund"],
+    relatedGuides: ["save-50000-in-3-years", "emergency-fund-where-to-keep"],
   },
   {
     slug: "rent-vs-buy-decision",
     title: "Rent vs Buy in 2026: How to Make the Right Decision",
     description: "Should you rent or buy in 2026? Break-even analysis at 7% rates, hidden costs of buying, a real case study, and a step-by-step decision framework.",
     published: true,
+    relatedCalculators: ["rent-vs-buy", "mortgage", "home-affordability"],
+    relatedGuides: ["how-much-house-can-i-afford", "15-year-vs-30-year-mortgage"],
   },
   {
     slug: "compound-interest-real-examples",
     title: "Compound Interest: 5 Real-Life Examples That Show Its Power",
     description: "See compound interest in action with 5 real examples: $500/month for 40 years, credit card debt traps, student loans, and the Rule of 72 explained.",
     published: true,
+    relatedCalculators: ["compound-interest", "savings-goal", "retirement"],
+    relatedGuides: ["save-50000-in-3-years", "how-to-start-investing-1000"],
   },
   {
     slug: "how-to-pay-off-credit-card-fast",
     title: "How to Pay Off $10,000 in Credit Card Debt: 5 Proven Strategies",
     description: "Pay off $10,000 in credit card debt with 5 proven strategies. Compare timelines, total interest, and see which approach fits your situation best.",
     published: true,
+    relatedCalculators: ["debt-payoff", "credit-card-payoff"],
+    relatedGuides: ["debt-avalanche-vs-snowball", "50-30-20-budget-rule"],
   },
   {
     slug: "401k-vs-roth-ira",
     title: "401(k) vs Roth IRA: Which Retirement Account Is Better for You?",
     description: "Compare 401(k) vs Roth IRA: contribution limits, tax treatment, income limits, and when each wins. Includes a case study and the optimal hybrid strategy.",
     published: true,
+    relatedCalculators: ["retirement", "compound-interest", "income-tax"],
+    relatedGuides: ["how-much-to-retire-at-55", "how-to-start-investing-1000"],
   },
   {
     slug: "how-to-start-investing-1000",
     title: "How to Start Investing with $1,000: A Beginner's Step-by-Step Guide",
     description: "Start investing with just $1,000. Learn which account to open, what to buy (VTI, VOO, VTSAX), and how $100/month grows to six figures over time.",
     published: true,
+    relatedCalculators: ["investment-return", "compound-interest", "savings-goal"],
+    relatedGuides: ["compound-interest-real-examples", "401k-vs-roth-ira"],
   },
   {
     slug: "net-worth-by-age",
     title: "Average Net Worth by Age: Where Do You Stand?",
     description: "See average and median net worth by age from Federal Reserve data. Find out where you stand and how to close the gap with actionable strategies.",
     published: true,
+    relatedCalculators: ["net-worth", "retirement", "compound-interest"],
+    relatedGuides: ["how-to-start-investing-1000", "save-50000-in-3-years"],
   },
   {
     slug: "high-yield-savings-vs-cd",
     title: "High-Yield Savings Account vs CD: Which Is Better in 2026?",
     description: "Compare high-yield savings accounts vs CDs with August 2026 rates. See when each wins, a $30,000 comparison, and the optimal split strategy.",
     published: true,
+    relatedCalculators: ["savings-goal", "cd-calculator", "compound-interest"],
+    relatedGuides: ["emergency-fund-where-to-keep", "save-50000-in-3-years"],
   },
 ];
+
+export function getGuide(slug: string): Guide | undefined {
+  return guides.find((g) => g.slug === slug);
+}
+
+export function getGuidesBySlug(slugs: string[]): Guide[] {
+  return slugs
+    .map((slug) => guides.find((g) => g.slug === slug))
+    .filter((g): g is Guide => g !== undefined && g.published);
+}

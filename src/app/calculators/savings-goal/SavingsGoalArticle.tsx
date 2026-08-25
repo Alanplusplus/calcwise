@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function SavingsGoalArticle() {
   return (
     <>
@@ -7,6 +9,9 @@ export function SavingsGoalArticle() {
         timeframe, and the expected interest rate. The calculator determines
         exactly how much you need to save each month, week, or day to reach your
         goal on time — accounting for compound interest earned along the way.
+      </p>
+      <p>
+        See exactly how your savings grow with interest using our <Link href="/calculators/compound-interest" className="text-brand-600 hover:text-brand-800 font-medium">Compound Interest Calculator</Link>.
       </p>
 
       <h2>Setting Realistic Savings Goals</h2>
@@ -22,6 +27,9 @@ export function SavingsGoalArticle() {
         <li><strong>Vacation:</strong> total trip cost including flights, hotels, food, and activities</li>
         <li><strong>Education:</strong> tuition, books, and living expenses for a semester or full program</li>
       </ul>
+      <p>
+        Building an emergency fund? Our <Link href="/calculators/emergency-fund" className="text-brand-600 hover:text-brand-800 font-medium">Emergency Fund Calculator</Link> helps determine your target based on monthly expenses.
+      </p>
 
       <h2>Where to Keep Your Savings</h2>
       <p>
@@ -58,6 +66,9 @@ export function SavingsGoalArticle() {
         <li><strong>Cut one expense:</strong> redirecting a $150/month subscription or habit to savings adds $1,800/year.</li>
         <li><strong>Windfall rule:</strong> commit to saving at least 50% of any unexpected money (tax refunds, bonuses, gifts).</li>
       </ul>
+      <p>
+        For a complete savings strategy, read our guide: <Link href="/guides/save-50000-in-3-years" className="text-brand-600 hover:text-brand-800 font-medium">How to Save $50,000 in 3 Years</Link>.
+      </p>
 
       <h2>Frequently Asked Questions</h2>
 

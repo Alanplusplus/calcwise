@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function DebtPayoffArticle() {
   return (
@@ -43,6 +44,9 @@ export function DebtPayoffArticle() {
         likely to become debt-free because the psychological wins keep them
         going.
       </p>
+      <p>
+        Learn the full comparison in our guide: <Link href="/guides/debt-avalanche-vs-snowball" className="text-brand-600 hover:text-brand-800 font-medium">Debt Avalanche vs Snowball: Which Gets You Debt-Free Faster?</Link>
+      </p>
 
       <h2>The True Cost of Minimum Payments</h2>
       <p>
@@ -56,6 +60,9 @@ export function DebtPayoffArticle() {
         $16,000 in interest — more than the original balance. Increasing the
         payment to $300/month cuts the timeline to 44 months and total interest
         to about $3,100.
+      </p>
+      <p>
+        For credit card-specific strategies, try our <Link href="/calculators/credit-card-payoff" className="text-brand-600 hover:text-brand-800 font-medium">Credit Card Payoff Calculator</Link> which models minimum payments vs. fixed payments.
       </p>
 
       <h2>How Extra Payments Reduce Interest</h2>
@@ -93,6 +100,9 @@ export function DebtPayoffArticle() {
         debt at 20% costs you more than a dollar saved at 5% earns. The
         exception: maintain a small emergency fund ($1,000-$2,000) so
         unexpected expenses don&apos;t force you back into debt.
+      </p>
+      <p>
+        Once you&apos;re debt-free, start building wealth with our <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">Savings Goal Calculator</Link>.
       </p>
 
       <h3>Does paying off debt improve my credit score?</h3>

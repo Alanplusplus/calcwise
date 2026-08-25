@@ -26,8 +26,12 @@ Add the calculator to `src/lib/calculators.ts` array:
   shortTitle: "[from plan]",
   description: "[write 50-160 char description targeting the keywords from plan]",
   category: "[from plan]",
+  relatedCalculators: ["slug1", "slug2", "slug3"],  // 3-4 semantically related calculators
+  relatedGuides: ["guide-slug1", "guide-slug2"],     // 0-3 related guide articles (if any exist)
 }
 ```
+
+Choose `relatedCalculators` based on topic proximity (same financial domain, complementary tools). Choose `relatedGuides` from existing guides in `src/lib/guides.ts` that reference or relate to this calculator's topic.
 
 Add a corresponding SVG icon to `src/components/Icons.tsx` in the `iconMap`.
 
@@ -75,6 +79,7 @@ export default function [Name]Page() {
 
 ### [Name]Article.tsx (educational content)
 
+- Must `import Link from "next/link"` and include internal links
 - Must contain 800-1200 words minimum
 - Structure: Infographic → How it works → Key concepts → Concrete case study → Comparison table → Tips → FAQ (3-5 questions)
 - Include at least one infographic image generated with kie-image:
@@ -100,7 +105,10 @@ Content requirements:
 - At least one comparison table (e.g. different scenarios, rates, terms)
 - NO generic filler — every paragraph must provide actionable insight
 - NO emoji anywhere
-- Internal links to 2-3 related calculators
+- 2-3 inline `<Link>` elements to related calculators (from relatedCalculators field)
+- 1-2 inline `<Link>` elements to related guides (from relatedGuides field)
+- Links should flow naturally within paragraphs, not be dumped in one spot
+- Use className="text-brand-600 hover:text-brand-800 font-medium" for all internal links
 
 ## Step 3: Verify Build
 
@@ -121,7 +129,10 @@ Update `.cursor/plans/calculators.json`: change the item's status from `"pending
 - [ ] Calculator logic uses correct financial formula
 - [ ] All inputs have sensible defaults
 - [ ] Results update reactively as user types
+- [ ] `relatedCalculators` and `relatedGuides` populated in calculators.ts entry
 - [ ] Article has 800+ words with unique case study and comparison table
+- [ ] Article contains 2-3 inline Link elements to related calculators
+- [ ] Article contains 1-2 inline Link elements to related guides
 - [ ] At least 1 infographic image generated and embedded
 - [ ] No emoji used anywhere
 - [ ] SVG icon added to Icons.tsx iconMap

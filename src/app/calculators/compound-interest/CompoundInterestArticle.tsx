@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function CompoundInterestArticle() {
   return (
@@ -62,6 +63,9 @@ export function CompoundInterestArticle() {
         meaningful, but not dramatic. The real power comes from consistent
         contributions and time in the market, not the compounding frequency.
       </p>
+      <p>
+        Want to see how compound interest helps you reach a specific goal? Try our <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">Savings Goal Calculator</Link> to find the monthly contribution needed for your target.
+      </p>
 
       <h2>The Power of Starting Early</h2>
       <p>
@@ -86,6 +90,9 @@ export function CompoundInterestArticle() {
         why financial advisors stress starting as early as possible, even with
         small amounts.
       </p>
+      <p>
+        See how compounding powers your retirement savings with our <Link href="/calculators/retirement" className="text-brand-600 hover:text-brand-800 font-medium">Retirement Calculator</Link>, or read <Link href="/guides/compound-interest-real-examples" className="text-brand-600 hover:text-brand-800 font-medium">5 Real-Life Examples of Compound Interest</Link> for concrete scenarios.
+      </p>
 
       <h2>Realistic Return Rate Assumptions</h2>
       <p>When planning your investments, consider these historical benchmarks:</p>
@@ -99,6 +106,9 @@ export function CompoundInterestArticle() {
         For long-term planning (20+ years), using 7% accounts for inflation and
         gives a more conservative, realistic projection of your purchasing
         power.
+      </p>
+      <p>
+        Already have investments? Use our <Link href="/calculators/investment-return" className="text-brand-600 hover:text-brand-800 font-medium">Investment Return Calculator</Link> to measure your actual annualized performance.
       </p>
 
       <h2>Compound Interest vs. Simple Interest</h2>

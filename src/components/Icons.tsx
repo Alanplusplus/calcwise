@@ -115,11 +115,19 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "savings-goal": TargetIcon,
   "investment-return": TrendingUpIcon,
   "debt-payoff": CreditCardIcon,
+  "credit-card-payoff": CreditCardIcon,
   retirement: SunIcon,
   "loan-comparison": ScaleIcon,
   "emergency-fund": ShieldIcon,
   "auto-loan": CarIcon,
   basic: CalculatorIcon,
+  "home-affordability": HomeIcon,
+  "cd-calculator": ChartIcon,
+  "budget-50-30-20": CalculatorIcon,
+  "rent-vs-buy": ScaleIcon,
+  "fire-calculator": BoltIcon,
+  "income-tax": CalculatorIcon,
+  "net-worth": TrendingUpIcon,
 };
 
 export function CategoryIcon({ name, className = "h-5 w-5" }: { name: string; className?: string }) {

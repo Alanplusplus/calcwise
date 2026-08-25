@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function InvestmentReturnArticle() {
   return (
     <>
@@ -20,7 +22,15 @@ export function InvestmentReturnArticle() {
         Rate — normalizes that return to a per-year rate, accounting for
         compounding. A 50% total return over 5 years is approximately 8.45%
         annualized. CAGR is the best metric for comparing investments held for
-        different time periods.
+        different time periods. To project future growth with compounding, use
+        our{" "}
+        <Link
+          href="/calculators/compound-interest"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Compound Interest Calculator
+        </Link>
+        .
       </p>
 
       <h2>Historical Benchmark Returns</h2>
@@ -36,7 +46,14 @@ export function InvestmentReturnArticle() {
         Use these benchmarks to evaluate whether your investments are
         outperforming or underperforming the market. If your stock portfolio
         consistently trails the S&P 500, you might be better served by a simple
-        index fund.
+        index fund. If you&apos;re just getting started, read{" "}
+        <Link
+          href="/guides/how-to-start-investing-1000"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          How to Start Investing with $1,000
+        </Link>{" "}
+        for practical first steps.
       </p>
 
       <h2>Why Dividends Matter</h2>
@@ -50,7 +67,14 @@ export function InvestmentReturnArticle() {
         Reinvesting dividends amplifies compound growth significantly. $10,000
         invested in the S&P 500 in 1990 would be worth about $110,000 by 2024
         without reinvesting dividends, but approximately $210,000 with dividends
-        reinvested.
+        reinvested. For more concrete illustrations, see{" "}
+        <Link
+          href="/guides/compound-interest-real-examples"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Compound Interest: 5 Real-Life Examples
+        </Link>
+        .
       </p>
 
       <h2>Accounting for Inflation</h2>
@@ -77,8 +101,14 @@ export function InvestmentReturnArticle() {
         If you made regular contributions over time, your true return is more
         complex to calculate (you&apos;d need the internal rate of return or
         money-weighted return). This calculator is designed for lump-sum
-        investments. For regular contributions, use our Compound Interest
-        Calculator.
+        investments. For regular contributions, use our{" "}
+        <Link
+          href="/calculators/compound-interest"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Compound Interest Calculator
+        </Link>
+        .
       </p>
 
       <h3>Should I include fees in my calculation?</h3>

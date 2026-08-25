@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function MortgageArticle() {
   return (
@@ -51,8 +52,14 @@ export function MortgageArticle() {
 
       <h2>How Much House Can You Afford?</h2>
       <p>
-        Financial experts generally recommend keeping your total housing costs
-        below 28% of your gross monthly income (the &quot;28% rule&quot;). For
+        Financial experts generally recommend{" "}
+        <Link
+          href="/guides/how-much-house-can-i-afford"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          keeping your total housing costs below 28% of your gross monthly income
+        </Link>{" "}
+        (the &quot;28% rule&quot;). For
         example, if your household earns $8,000 per month before taxes, aim for
         a total housing payment of no more than $2,240.
       </p>
@@ -60,6 +67,9 @@ export function MortgageArticle() {
         Additionally, the &quot;36% rule&quot; suggests your total debt payments
         (housing + car loans + student loans + credit cards) should stay below
         36% of gross income.
+      </p>
+      <p>
+        Use our <Link href="/calculators/loan-comparison" className="text-brand-600 hover:text-brand-800 font-medium">Loan Comparison Calculator</Link> to compare different loan offers side by side, or explore our guide on <Link href="/guides/how-much-house-can-i-afford" className="text-brand-600 hover:text-brand-800 font-medium">How Much House Can You Afford</Link> for detailed income-based tables.
       </p>
 
       <h2>Tips to Lower Your Monthly Payment</h2>
@@ -119,6 +129,9 @@ export function MortgageArticle() {
         years if you can comfortably afford the higher payment without
         sacrificing emergency savings or retirement contributions.
       </p>
+      <p>
+        Read our in-depth comparison: <Link href="/guides/15-year-vs-30-year-mortgage" className="text-brand-600 hover:text-brand-800 font-medium">15-Year vs 30-Year Mortgage: Which Saves You More?</Link>
+      </p>
 
       <h3>What credit score do I need for a mortgage?</h3>
       <p>
@@ -133,6 +146,9 @@ export function MortgageArticle() {
         per month to a 30-year, $280,000 loan at 6.5% would save you
         approximately $48,000 in interest and shorten the loan by about 5
         years.
+      </p>
+      <p>
+        Learn more in our guide: <Link href="/guides/pay-off-mortgage-early-vs-invest" className="text-brand-600 hover:text-brand-800 font-medium">Pay Off Mortgage Early vs Invest</Link>.
       </p>
     </>
   );

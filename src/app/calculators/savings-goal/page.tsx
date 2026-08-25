@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { SavingsGoalCalculator } from "./SavingsGoalCalculator";
 import { SavingsGoalArticle } from "./SavingsGoalArticle";
+import { savingsGoalVariants } from "@/lib/variants/savings-goal";
 
 const calc = getCalculator("savings-goal")!;
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function SavingsGoalPage() {
   return (
-    <CalculatorShell calculator={calc} article={<SavingsGoalArticle />}>
+    <CalculatorShell calculator={calc} article={<SavingsGoalArticle />} variants={savingsGoalVariants}>
       <SavingsGoalCalculator />
     </CalculatorShell>
   );

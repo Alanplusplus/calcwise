@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getCalculator } from "@/lib/calculators";
+import { getCalculator, calculators } from "@/lib/calculators";
+import { getGuidesBySlug } from "@/lib/guides";
 import { site } from "@/lib/site";
 import { SavingsGoalCalculator } from "../SavingsGoalCalculator";
 import { savingsGoalVariants } from "@/lib/variants/savings-goal";
@@ -83,6 +84,39 @@ export default async function VariantPage({ params }: Props) {
           ))}
         </div>
       </div>
+
+      {calc.relatedCalculators && calc.relatedCalculators.length > 0 && (
+        <div className="mt-8 border-t border-ink-200 pt-6">
+          <p className="text-sm font-medium text-ink-600">Related Tools:</p>
+          <div className="mt-2 grid gap-2 sm:grid-cols-3">
+            {calculators.filter((c) => calc.relatedCalculators!.includes(c.slug)).map((c) => (
+              <Link key={c.slug} href={`/calculators/${c.slug}`}
+                className="flex items-center gap-2 rounded-lg border border-ink-200 bg-white p-3 text-sm text-ink-700 hover:border-brand-300 hover:text-brand-600">
+                <CategoryIcon name={c.slug} className="h-4 w-4 shrink-0 text-brand-500" />
+                {c.shortTitle}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {calc.relatedGuides && calc.relatedGuides.length > 0 && (() => {
+        const relGuides = getGuidesBySlug(calc.relatedGuides!);
+        return relGuides.length > 0 ? (
+          <div className="mt-6 border-t border-ink-200 pt-6">
+            <p className="text-sm font-medium text-ink-600">Learn More:</p>
+            <ul className="mt-2 space-y-2">
+              {relGuides.slice(0, 2).map((g) => (
+                <li key={g.slug}>
+                  <Link href={`/guides/${g.slug}`} className="text-sm text-brand-600 hover:text-brand-800 font-medium">
+                    {g.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null;
+      })()}
 
       <div className="mt-6">
         <Link href={`/calculators/${calc.slug}`} className="text-sm font-medium text-brand-600 hover:text-brand-800">

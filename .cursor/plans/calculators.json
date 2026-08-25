@@ -2,100 +2,15 @@
   "description": "Calculator pages to build, in priority order. Pick the first 'pending' item each time.",
   "items": [
     {
-      "slug": "auto-loan",
-      "title": "Auto Loan Calculator",
-      "shortTitle": "Auto Loan",
-      "category": "loans",
-      "keywords": ["auto loan calculator", "car payment calculator", "car loan monthly payment"],
-      "status": "pending"
-    },
-    {
-      "slug": "income-tax",
-      "title": "Income Tax Calculator",
-      "shortTitle": "Income Tax",
-      "category": "planning",
-      "keywords": ["income tax calculator", "federal tax calculator 2026", "how much tax do I owe"],
-      "status": "pending"
-    },
-    {
-      "slug": "paycheck",
-      "title": "Paycheck Calculator",
-      "shortTitle": "Paycheck",
-      "category": "planning",
-      "keywords": ["paycheck calculator", "take home pay calculator", "salary after taxes"],
-      "status": "pending"
-    },
-    {
-      "slug": "inflation",
-      "title": "Inflation Calculator",
-      "shortTitle": "Inflation",
-      "category": "planning",
-      "keywords": ["inflation calculator", "buying power calculator", "future value of money"],
-      "status": "pending"
-    },
-    {
-      "slug": "roi",
-      "title": "ROI Calculator",
-      "shortTitle": "ROI",
-      "category": "savings",
-      "keywords": ["ROI calculator", "return on investment calculator", "investment profit calculator"],
-      "status": "pending"
-    },
-    {
-      "slug": "cd-calculator",
-      "title": "CD Interest Calculator",
-      "shortTitle": "CD Interest",
-      "category": "savings",
-      "keywords": ["CD calculator", "certificate of deposit calculator", "CD interest rate calculator"],
-      "status": "pending"
-    },
-    {
-      "slug": "net-worth",
-      "title": "Net Worth Calculator",
-      "shortTitle": "Net Worth",
-      "category": "planning",
-      "keywords": ["net worth calculator", "calculate my net worth", "assets minus liabilities"],
-      "status": "pending"
-    },
-    {
       "slug": "home-affordability",
       "title": "Home Affordability Calculator",
       "shortTitle": "Home Affordability",
       "category": "loans",
       "keywords": ["how much house can I afford", "home affordability calculator", "mortgage affordability"],
-      "status": "pending"
-    },
-    {
-      "slug": "student-loan",
-      "title": "Student Loan Calculator",
-      "shortTitle": "Student Loan",
-      "category": "debt",
-      "keywords": ["student loan calculator", "student loan payment calculator", "student loan payoff"],
-      "status": "pending"
-    },
-    {
-      "slug": "rent-vs-buy",
-      "title": "Rent vs Buy Calculator",
-      "shortTitle": "Rent vs Buy",
-      "category": "planning",
-      "keywords": ["rent vs buy calculator", "should I rent or buy", "renting vs buying a home"],
-      "status": "pending"
-    },
-    {
-      "slug": "amortization",
-      "title": "Amortization Schedule Calculator",
-      "shortTitle": "Amortization",
-      "category": "loans",
-      "keywords": ["amortization schedule", "amortization calculator", "loan amortization table"],
-      "status": "pending"
-    },
-    {
-      "slug": "tip-calculator",
-      "title": "Tip Calculator",
-      "shortTitle": "Tip",
-      "category": "planning",
-      "keywords": ["tip calculator", "how much to tip", "restaurant tip calculator"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["how-much-house-can-i-afford", "rent-vs-buy-decision"]
     },
     {
       "slug": "credit-card-payoff",
@@ -103,31 +18,21 @@
       "shortTitle": "Credit Card Payoff",
       "category": "debt",
       "keywords": ["credit card payoff calculator", "how long to pay off credit card", "credit card interest calculator"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["debt-avalanche-vs-snowball", "how-to-pay-off-credit-card-fast"]
     },
     {
-      "slug": "simple-interest",
-      "title": "Simple Interest Calculator",
-      "shortTitle": "Simple Interest",
+      "slug": "cd-calculator",
+      "title": "CD Interest Calculator",
+      "shortTitle": "CD Interest",
       "category": "savings",
-      "keywords": ["simple interest calculator", "interest calculator", "simple interest formula"],
-      "status": "pending"
-    },
-    {
-      "slug": "salary-to-hourly",
-      "title": "Salary to Hourly Calculator",
-      "shortTitle": "Salary to Hourly",
-      "category": "planning",
-      "keywords": ["salary to hourly calculator", "annual salary to hourly rate", "hourly rate calculator"],
-      "status": "pending"
-    },
-    {
-      "slug": "down-payment",
-      "title": "Down Payment Calculator",
-      "shortTitle": "Down Payment",
-      "category": "loans",
-      "keywords": ["down payment calculator", "how much down payment for a house", "down payment percentage"],
-      "status": "pending"
+      "keywords": ["CD calculator", "certificate of deposit calculator", "CD interest rate calculator"],
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["high-yield-savings-vs-cd", "emergency-fund-where-to-keep"]
     },
     {
       "slug": "budget-50-30-20",
@@ -135,7 +40,21 @@
       "shortTitle": "50/30/20 Budget",
       "category": "planning",
       "keywords": ["50 30 20 budget calculator", "budget calculator", "50 30 20 rule calculator"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["50-30-20-budget-rule"]
+    },
+    {
+      "slug": "rent-vs-buy",
+      "title": "Rent vs Buy Calculator",
+      "shortTitle": "Rent vs Buy",
+      "category": "planning",
+      "keywords": ["rent vs buy calculator", "should I rent or buy", "renting vs buying a home"],
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["rent-vs-buy-decision"]
     },
     {
       "slug": "fire-calculator",
@@ -143,7 +62,86 @@
       "shortTitle": "FIRE",
       "category": "planning",
       "keywords": ["FIRE calculator", "financial independence calculator", "early retirement calculator"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["how-much-to-retire-at-55"]
+    },
+    {
+      "slug": "income-tax",
+      "title": "Income Tax Calculator",
+      "shortTitle": "Income Tax",
+      "category": "planning",
+      "keywords": ["income tax calculator", "federal tax calculator 2026", "how much tax do I owe"],
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["401k-vs-roth-ira"]
+    },
+    {
+      "slug": "net-worth",
+      "title": "Net Worth Calculator",
+      "shortTitle": "Net Worth",
+      "category": "planning",
+      "keywords": ["net worth calculator", "calculate my net worth", "assets minus liabilities"],
+      "status": "done",
+      "completedAt": "2026-08-25T01:30:00.000Z",
+      "priority": "tier1-broken-link",
+      "referencedBy": ["net-worth-by-age"]
+    },
+    {
+      "slug": "paycheck",
+      "title": "Paycheck Calculator",
+      "shortTitle": "Paycheck",
+      "category": "planning",
+      "keywords": ["paycheck calculator", "take home pay calculator", "salary after taxes"],
+      "status": "pending",
+      "priority": "tier2-high-value"
+    },
+    {
+      "slug": "student-loan",
+      "title": "Student Loan Calculator",
+      "shortTitle": "Student Loan",
+      "category": "debt",
+      "keywords": ["student loan calculator", "student loan payment calculator", "student loan payoff"],
+      "status": "pending",
+      "priority": "tier2-high-value"
+    },
+    {
+      "slug": "inflation",
+      "title": "Inflation Calculator",
+      "shortTitle": "Inflation",
+      "category": "planning",
+      "keywords": ["inflation calculator", "buying power calculator", "future value of money"],
+      "status": "pending",
+      "priority": "tier2-high-value"
+    },
+    {
+      "slug": "roi",
+      "title": "ROI Calculator",
+      "shortTitle": "ROI",
+      "category": "savings",
+      "keywords": ["ROI calculator", "return on investment calculator", "investment profit calculator"],
+      "status": "pending",
+      "priority": "tier2-high-value"
+    },
+    {
+      "slug": "amortization",
+      "title": "Amortization Schedule Calculator",
+      "shortTitle": "Amortization",
+      "category": "loans",
+      "keywords": ["amortization schedule", "amortization calculator", "loan amortization table"],
+      "status": "pending",
+      "priority": "tier3-long-tail"
+    },
+    {
+      "slug": "down-payment",
+      "title": "Down Payment Calculator",
+      "shortTitle": "Down Payment",
+      "category": "loans",
+      "keywords": ["down payment calculator", "how much down payment for a house", "down payment percentage"],
+      "status": "pending",
+      "priority": "tier3-long-tail"
     },
     {
       "slug": "dividend",
@@ -151,7 +149,35 @@
       "shortTitle": "Dividend",
       "category": "savings",
       "keywords": ["dividend calculator", "dividend income calculator", "dividend yield calculator"],
-      "status": "pending"
+      "status": "pending",
+      "priority": "tier3-long-tail"
+    },
+    {
+      "slug": "simple-interest",
+      "title": "Simple Interest Calculator",
+      "shortTitle": "Simple Interest",
+      "category": "savings",
+      "keywords": ["simple interest calculator", "interest calculator", "simple interest formula"],
+      "status": "pending",
+      "priority": "tier3-long-tail"
+    },
+    {
+      "slug": "salary-to-hourly",
+      "title": "Salary to Hourly Calculator",
+      "shortTitle": "Salary to Hourly",
+      "category": "planning",
+      "keywords": ["salary to hourly calculator", "annual salary to hourly rate", "hourly rate calculator"],
+      "status": "pending",
+      "priority": "tier3-long-tail"
+    },
+    {
+      "slug": "tip-calculator",
+      "title": "Tip Calculator",
+      "shortTitle": "Tip",
+      "category": "planning",
+      "keywords": ["tip calculator", "how much to tip", "restaurant tip calculator"],
+      "status": "pending",
+      "priority": "tier3-long-tail"
     },
     {
       "slug": "break-even",
@@ -159,7 +185,62 @@
       "shortTitle": "Break-Even",
       "category": "planning",
       "keywords": ["break even calculator", "break even point calculator", "break even analysis"],
-      "status": "pending"
+      "status": "pending",
+      "priority": "tier3-long-tail"
+    },
+    {
+      "slug": "auto-loan",
+      "title": "Auto Loan Calculator",
+      "shortTitle": "Auto Loan",
+      "category": "loans",
+      "keywords": ["auto loan calculator", "car payment calculator", "car loan monthly payment"],
+      "status": "done",
+      "completedAt": "2026-08-19T00:00:00.000Z"
+    },
+    {
+      "slug": "capital-gains-tax",
+      "title": "Capital Gains Tax Calculator",
+      "shortTitle": "Capital Gains Tax",
+      "category": "planning",
+      "keywords": ["capital gains tax calculator", "long term capital gains tax", "stock tax calculator"],
+      "status": "pending",
+      "priority": "tier3-new-opportunity"
+    },
+    {
+      "slug": "self-employment-tax",
+      "title": "Self-Employment Tax Calculator",
+      "shortTitle": "Self-Employment Tax",
+      "category": "planning",
+      "keywords": ["self employment tax calculator", "1099 tax calculator", "freelance tax calculator"],
+      "status": "pending",
+      "priority": "tier3-new-opportunity"
+    },
+    {
+      "slug": "house-payment",
+      "title": "House Payment Calculator",
+      "shortTitle": "House Payment",
+      "category": "loans",
+      "keywords": ["house payment calculator", "home payment calculator", "monthly house payment"],
+      "status": "pending",
+      "priority": "tier3-new-opportunity"
+    },
+    {
+      "slug": "debt-to-income",
+      "title": "Debt-to-Income Ratio Calculator",
+      "shortTitle": "Debt-to-Income",
+      "category": "debt",
+      "keywords": ["debt to income ratio calculator", "DTI calculator", "debt to income ratio"],
+      "status": "pending",
+      "priority": "tier3-new-opportunity"
+    },
+    {
+      "slug": "car-affordability",
+      "title": "Car Affordability Calculator",
+      "shortTitle": "Car Affordability",
+      "category": "loans",
+      "keywords": ["how much car can I afford", "car affordability calculator", "car budget calculator"],
+      "status": "pending",
+      "priority": "tier3-new-opportunity"
     }
   ]
 }

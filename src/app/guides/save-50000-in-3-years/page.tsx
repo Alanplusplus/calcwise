@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { RelatedGuides } from "@/components/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "How to Save $50,000 in 3 Years: A Realistic Plan",
@@ -744,31 +745,7 @@ export default function Save50000In3YearsGuide() {
             ))}
           </div>
         </section>
-
-        {/* Related Guides */}
-        <section className="mt-12 border-t border-ink-200 pt-8">
-          <h2 className="text-lg font-semibold text-ink-800">
-            Related Guides
-          </h2>
-          <ul className="mt-4 space-y-2">
-            <li>
-              <Link
-                href="/guides/how-much-house-can-i-afford"
-                className="text-brand-600 hover:underline"
-              >
-                How Much House Can I Afford? Complete Guide by Income Level
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/pay-off-mortgage-early-vs-invest"
-                className="text-brand-600 hover:underline"
-              >
-                Pay Off Mortgage Early vs Invest: The Math Behind the Decision
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <RelatedGuides currentSlug="save-50000-in-3-years" relatedSlugs={["50-30-20-budget-rule", "high-yield-savings-vs-cd"]} />
       </article>
     </>
   );

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function RetirementArticle() {
   return (
     <>
@@ -7,6 +9,9 @@ export function RetirementArticle() {
         age, savings rate, and expected investment returns. It then compares
         your projected nest egg to the amount needed to generate your desired
         annual income using the safe withdrawal rate.
+      </p>
+      <p>
+        See how compound growth builds your nest egg over time with our <Link href="/calculators/compound-interest" className="text-brand-600 hover:text-brand-800 font-medium">Compound Interest Calculator</Link>.
       </p>
 
       <h2>The 4% Rule Explained</h2>
@@ -69,6 +74,9 @@ export function RetirementArticle() {
         Best if you expect to be in a higher tax bracket in retirement or want
         tax-free income flexibility.
       </p>
+      <p>
+        Not sure which account to use? Compare options in our guide: <Link href="/guides/401k-vs-roth-ira" className="text-brand-600 hover:text-brand-800 font-medium">401(k) vs Roth IRA: Which Is Better for You?</Link>
+      </p>
 
       <h3>HSA (Health Savings Account)</h3>
       <p>
@@ -123,6 +131,9 @@ export function RetirementArticle() {
         This typically requires saving 50-70% of income and accumulating 25-33x
         your annual expenses. Many FIRE adherents retire in their 40s or 50s
         by maintaining low expenses and high savings rates.
+      </p>
+      <p>
+        Planning to retire before 60? Read our guide: <Link href="/guides/how-much-to-retire-at-55" className="text-brand-600 hover:text-brand-800 font-medium">How Much Do I Need to Retire at 55?</Link>
       </p>
     </>
   );

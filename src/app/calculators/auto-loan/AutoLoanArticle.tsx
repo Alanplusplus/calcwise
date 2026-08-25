@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function AutoLoanArticle() {
   return (
     <>
@@ -7,7 +9,15 @@ export function AutoLoanArticle() {
         formula. Each monthly payment covers two portions: interest on the
         remaining balance and a principal repayment that reduces what you owe.
         Early in the loan, most of your payment goes toward interest; as the
-        balance decreases, more of each payment goes toward principal.
+        balance decreases, more of each payment goes toward principal. The same
+        amortization formula applies to home loans — see our{" "}
+        <Link
+          href="/calculators/mortgage"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Mortgage Calculator
+        </Link>{" "}
+        for mortgage-specific scenarios.
       </p>
       <p>
         The formula for a fixed-rate amortizing loan is:
@@ -98,7 +108,14 @@ export function AutoLoanArticle() {
         <li>
           <strong>Get pre-approved</strong> from your bank or credit union
           before visiting a dealership. This gives you a baseline rate to
-          negotiate against.
+          negotiate against. Then use our{" "}
+          <Link
+            href="/calculators/loan-comparison"
+            className="text-brand-600 hover:text-brand-800 font-medium"
+          >
+            Loan Comparison Calculator
+          </Link>{" "}
+          to compare dealer financing side by side.
         </li>
         <li>
           <strong>Aim for 20% down</strong> to avoid negative equity and reduce
@@ -155,7 +172,14 @@ export function AutoLoanArticle() {
         Most auto loans allow early payoff without penalty, but check your
         contract for prepayment penalties. Paying extra toward principal each
         month — even $50-100 — can shave months off your loan and save
-        hundreds in interest.
+        hundreds in interest. Model different payoff strategies with our{" "}
+        <Link
+          href="/calculators/debt-payoff"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Debt Payoff Calculator
+        </Link>
+        .
       </p>
 
       <h3>What&apos;s GAP insurance and do I need it?</h3>

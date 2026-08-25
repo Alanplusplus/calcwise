@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function BasicArticle() {
   return (
     <>
@@ -55,6 +57,16 @@ export function BasicArticle() {
           down by multiplying each amount by your scaling factor.
         </li>
       </ul>
+      <p>
+        For savings and financial planning beyond quick arithmetic, try our{" "}
+        <Link
+          href="/calculators/savings-goal"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Savings Goal Calculator
+        </Link>{" "}
+        to plan monthly contributions toward a target amount.
+      </p>
 
       <h2>Tips for Accurate Calculations</h2>
       <ul>
@@ -92,7 +104,15 @@ export function BasicArticle() {
         (IEEE 754 double-precision), which provides approximately 15-17
         significant decimal digits of precision. For everyday math, this is
         more than sufficient. For scientific or financial calculations requiring
-        exact decimal precision, consider using our specialized calculators.
+        exact decimal precision, consider using our specialized calculators —
+        such as the{" "}
+        <Link
+          href="/calculators/compound-interest"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Compound Interest Calculator
+        </Link>{" "}
+        for long-term growth projections.
       </p>
 
       <h3>Can I use this on mobile?</h3>

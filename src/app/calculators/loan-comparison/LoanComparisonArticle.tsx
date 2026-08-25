@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function LoanComparisonArticle() {
   return (
     <>
@@ -23,7 +25,15 @@ export function LoanComparisonArticle() {
       <h3>Loan Term: Short vs. Long</h3>
       <p>
         A shorter term (e.g., 15 years vs. 30 years) means higher monthly
-        payments but dramatically less total interest. For a $250,000 mortgage:
+        payments but dramatically less total interest. For a $250,000 mortgage
+        (model your own numbers with our{" "}
+        <Link
+          href="/calculators/mortgage"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Mortgage Calculator
+        </Link>
+        ):
       </p>
       <ul>
         <li><strong>30 years at 6.5%:</strong> $1,580/month, $319,000 total interest</li>
@@ -32,7 +42,14 @@ export function LoanComparisonArticle() {
       <p>
         The 15-year loan costs $518 more per month but saves $191,000 in
         interest over the life of the loan. Choose the shorter term if you can
-        comfortably afford the higher payment.
+        comfortably afford the higher payment. For a deeper breakdown, read{" "}
+        <Link
+          href="/guides/15-year-vs-30-year-mortgage"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          15-Year vs 30-Year Mortgage
+        </Link>
+        .
       </p>
 
       <h3>Fixed vs. Variable Rate</h3>
@@ -60,7 +77,7 @@ export function LoanComparisonArticle() {
         <li><strong>15 vs. 30-year mortgage:</strong> lower rate and massive interest savings vs. lower monthly flexibility</li>
         <li><strong>Same term, different rates:</strong> compare offers from multiple lenders — even 0.25% matters over 30 years</li>
         <li><strong>Points vs. no points:</strong> paying upfront points for a lower rate vs. keeping cash — break-even is typically 4-7 years</li>
-        <li><strong>Auto loan terms:</strong> 48 vs. 60 vs. 72 months — longer terms cost significantly more in interest</li>
+        <li><strong>Auto loan terms:</strong> 48 vs. 60 vs. 72 months — longer terms cost significantly more in interest. Use our <Link href="/calculators/auto-loan" className="text-brand-600 hover:text-brand-800 font-medium">Auto Loan Calculator</Link> to compare specific offers.</li>
       </ul>
 
       <h2>Frequently Asked Questions</h2>

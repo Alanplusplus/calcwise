@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { RetirementCalculator } from "./RetirementCalculator";
 import { RetirementArticle } from "./RetirementArticle";
+import { retirementVariants } from "@/lib/variants/retirement";
 
 const calc = getCalculator("retirement")!;
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RetirementPage() {
   return (
-    <CalculatorShell calculator={calc} article={<RetirementArticle />}>
+    <CalculatorShell calculator={calc} article={<RetirementArticle />} variants={retirementVariants}>
       <RetirementCalculator />
     </CalculatorShell>
   );
