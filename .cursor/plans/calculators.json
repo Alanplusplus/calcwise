@@ -95,7 +95,8 @@
       "shortTitle": "Paycheck",
       "category": "planning",
       "keywords": ["paycheck calculator", "take home pay calculator", "salary after taxes"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-25T13:12:00.000Z",
       "priority": "tier2-high-value"
     },
     {

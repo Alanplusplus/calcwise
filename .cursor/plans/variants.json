@@ -41,7 +41,8 @@
     },
     {
       "baseCalculator": "debt-payoff",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-25T13:12:00.000Z",
       "variants": [
         { "slug": "5000-credit-card", "title": "Pay Off $5,000 Credit Card Debt", "defaults": { "balance": "5000", "interestRate": "21.9", "monthlyPayment": "200" } },
         { "slug": "10000-credit-card", "title": "Pay Off $10,000 Credit Card Debt", "defaults": { "balance": "10000", "interestRate": "19.9", "monthlyPayment": "300" } },
