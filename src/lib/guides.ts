@@ -128,6 +128,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["savings-goal", "cd-calculator", "compound-interest"],
     relatedGuides: ["emergency-fund-where-to-keep", "save-50000-in-3-years"],
   },
+  {
+    slug: "how-much-car-can-i-afford",
+    title: "How Much Car Can I Afford? The Complete 2026 Guide by Salary",
+    description: "Find out how much car you can afford based on your salary using the 20/4/10 rule. Includes affordability tables by income, a real case study, and total cost of ownership breakdown.",
+    published: true,
+    relatedCalculators: ["auto-loan", "budget-50-30-20", "savings-goal"],
+    relatedGuides: ["50-30-20-budget-rule", "save-50000-in-3-years"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

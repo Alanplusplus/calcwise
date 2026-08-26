@@ -119,6 +119,13 @@
       "linkedCalculators": ["savings-goal", "cd-calculator", "compound-interest"],
       "status": "done",
       "completedAt": "2026-08-24T18:45:00+08:00"
+    },
+    {
+      "slug": "how-much-car-can-i-afford",
+      "title": "How Much Car Can I Afford? The Complete 2026 Guide by Salary",
+      "targetKeyword": "how much car can I afford",
+      "linkedCalculators": ["auto-loan", "budget-50-30-20", "savings-goal"],
+      "status": "pending"
     }
   ]
 }
