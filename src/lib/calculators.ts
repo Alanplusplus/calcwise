@@ -209,6 +209,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["income-tax", "budget-50-30-20", "savings-goal"],
     relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
   },
+  {
+    slug: "student-loan",
+    title: "Student Loan Calculator",
+    shortTitle: "Student Loan",
+    description: "Calculate your student loan monthly payment, total interest cost, and payoff timeline. Compare standard, graduated, and accelerated repayment plans.",
+    category: "debt",
+    relatedCalculators: ["debt-payoff", "credit-card-payoff", "compound-interest"],
+    relatedGuides: ["debt-avalanche-vs-snowball", "compound-interest-real-examples"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {

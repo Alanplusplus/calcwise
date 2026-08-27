@@ -14,12 +14,16 @@ interface YearRow {
   interest: number;
 }
 
-export function CompoundInterestCalculator() {
-  const [principal, setPrincipal] = useState("10000");
-  const [monthlyContribution, setMonthlyContribution] = useState("500");
-  const [annualRate, setAnnualRate] = useState("7");
-  const [years, setYears] = useState("20");
-  const [compounding, setCompounding] = useState("12");
+interface Props {
+  defaults?: Record<string, string>;
+}
+
+export function CompoundInterestCalculator({ defaults }: Props) {
+  const [principal, setPrincipal] = useState(defaults?.principal || "10000");
+  const [monthlyContribution, setMonthlyContribution] = useState(defaults?.monthlyContribution || "500");
+  const [annualRate, setAnnualRate] = useState(defaults?.annualRate || "7");
+  const [years, setYears] = useState(defaults?.years || "20");
+  const [compounding, setCompounding] = useState(defaults?.compounding || "12");
 
   const results = useMemo(() => {
     const p = parseFloat(principal) || 0;

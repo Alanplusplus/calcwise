@@ -53,7 +53,8 @@
     },
     {
       "baseCalculator": "compound-interest",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-27T14:17:00.000Z",
       "variants": [
         { "slug": "1000-start", "title": "Compound Interest on $1,000", "defaults": { "principal": "1000", "monthlyContribution": "100", "annualRate": "7", "years": "30" } },
         { "slug": "5000-start", "title": "Compound Interest on $5,000", "defaults": { "principal": "5000", "monthlyContribution": "200", "annualRate": "7", "years": "20" } },

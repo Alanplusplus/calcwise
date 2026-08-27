@@ -105,7 +105,8 @@
       "shortTitle": "Student Loan",
       "category": "debt",
       "keywords": ["student loan calculator", "student loan payment calculator", "student loan payoff"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-27T14:17:00.000Z",
       "priority": "tier2-high-value"
     },
     {
