@@ -218,6 +218,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["debt-payoff", "credit-card-payoff", "compound-interest"],
     relatedGuides: ["debt-avalanche-vs-snowball", "compound-interest-real-examples"],
   },
+  {
+    slug: "inflation",
+    title: "Inflation Calculator",
+    shortTitle: "Inflation",
+    description: "Calculate how inflation erodes purchasing power over time. See the future cost of goods and the real value of your savings at any inflation rate.",
+    category: "planning",
+    relatedCalculators: ["compound-interest", "savings-goal", "retirement"],
+    relatedGuides: ["compound-interest-real-examples", "how-much-to-retire-at-55"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {

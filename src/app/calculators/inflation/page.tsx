@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import { getCalculator } from "@/lib/calculators";
+import { site } from "@/lib/site";
+import { CalculatorShell } from "@/components/CalculatorShell";
+import { InflationCalculator } from "./InflationCalculator";
+import { InflationArticle } from "./InflationArticle";
+
+const calc = getCalculator("inflation")!;
+
+export const metadata: Metadata = {
+  title: calc.title,
+  description: calc.description,
+  openGraph: {
+    title: `${calc.title} | ${site.name}`,
+    description: calc.description,
+    type: "website",
+  },
+};
+
+export default function InflationPage() {
+  return (
+    <CalculatorShell calculator={calc} article={<InflationArticle />}>
+      <InflationCalculator />
+    </CalculatorShell>
+  );
+}
