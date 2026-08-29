@@ -62,6 +62,18 @@
         { "slug": "100000-start", "title": "Compound Interest on $100,000", "defaults": { "principal": "100000", "monthlyContribution": "1000", "annualRate": "7", "years": "20" } },
         { "slug": "10-percent", "title": "Compound Interest at 10% Annual Return", "defaults": { "principal": "10000", "monthlyContribution": "500", "annualRate": "10", "years": "20" } }
       ]
+    },
+    {
+      "baseCalculator": "inflation",
+      "status": "done",
+      "completedAt": "2026-08-29T00:15:00.000Z",
+      "variants": [
+        { "slug": "retirement-30-years", "title": "Inflation Over 30 Years for Retirement Planning", "defaults": { "currentAmount": "50000", "inflationRate": "3", "years": "30" } },
+        { "slug": "college-cost-18-years", "title": "College Cost Inflation Over 18 Years", "defaults": { "currentAmount": "25000", "inflationRate": "5", "years": "18" } },
+        { "slug": "grocery-budget-10-years", "title": "Grocery Budget Inflation Over 10 Years", "defaults": { "currentAmount": "800", "inflationRate": "3.5", "years": "10" } },
+        { "slug": "healthcare-cost-20-years", "title": "Healthcare Cost Inflation Over 20 Years", "defaults": { "currentAmount": "5000", "inflationRate": "5.5", "years": "20" } },
+        { "slug": "100-dollar-purchasing-power", "title": "What Will $100 Be Worth in the Future?", "defaults": { "currentAmount": "100", "inflationRate": "3", "years": "20" } }
+      ]
     }
   ]
 }

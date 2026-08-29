@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { InflationCalculator } from "./InflationCalculator";
 import { InflationArticle } from "./InflationArticle";
+import { inflationVariants } from "@/lib/variants/inflation";
 
 const calc = getCalculator("inflation")!;
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function InflationPage() {
   return (
-    <CalculatorShell calculator={calc} article={<InflationArticle />}>
+    <CalculatorShell calculator={calc} article={<InflationArticle />} variants={inflationVariants}>
       <InflationCalculator />
     </CalculatorShell>
   );

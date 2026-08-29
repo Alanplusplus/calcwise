@@ -115,7 +115,8 @@
       "shortTitle": "Inflation",
       "category": "planning",
       "keywords": ["inflation calculator", "buying power calculator", "future value of money"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-29T00:10:00.000Z",
       "priority": "tier2-high-value"
     },
     {
