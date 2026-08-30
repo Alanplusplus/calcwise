@@ -10,6 +10,14 @@ const calc = getCalculator("compound-interest")!;
 export const metadata: Metadata = {
   title: calc.title,
   description: calc.description,
+  keywords: [
+    "compound interest calculator",
+    "compound interest",
+    "investment growth calculator",
+    "compounding calculator",
+    "savings compound interest",
+    "interest calculator",
+  ],
   openGraph: {
     title: `${calc.title} | ${site.name}`,
     description: calc.description,

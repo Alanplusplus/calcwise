@@ -11,6 +11,14 @@ const calc = getCalculator("retirement")!;
 export const metadata: Metadata = {
   title: calc.title,
   description: calc.description,
+  keywords: [
+    "retirement savings calculator",
+    "retirement calculator",
+    "how much do i need to retire",
+    "retirement planning calculator",
+    "financial planning calculator",
+    "am I on track for retirement",
+  ],
   openGraph: {
     title: `${calc.title} | ${site.name}`,
     description: calc.description,

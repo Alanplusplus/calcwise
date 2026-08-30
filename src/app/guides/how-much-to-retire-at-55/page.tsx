@@ -7,15 +7,22 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
 
 export const metadata: Metadata = {
-  title: "How Much Do I Need to Retire at 55? A Complete Breakdown",
+  title: "How Much Do I Need to Retire at 55? Complete 2026 Guide",
   description:
-    "Find out how much you need to retire at 55. Covers the 4% rule, healthcare costs, portfolio targets by lifestyle, and a step-by-step action plan.",
+    "Most people need $1.5M-$2.5M to retire at 55. This guide covers the 4% rule, healthcare costs before Medicare, portfolio targets by lifestyle, and a step-by-step action plan with real numbers.",
   keywords: [
     "how much do I need to retire at 55",
+    "how much to retire at 55",
+    "retire at 55",
+    "how much money do i need to retire at 55",
+    "how much do i need for retirement at 55",
+    "retirement at 55 how much do i need",
+    "is 55 a good age to retire",
+    "how to retire at 55",
     "retire at 55 calculator",
     "early retirement savings goal",
     "4 percent rule retirement",
-    "retirement planning at 55",
+    "55+ retirement",
   ],
 };
 

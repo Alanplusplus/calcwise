@@ -7,6 +7,8 @@ import { site } from "@/lib/site";
 import { RoiCalculator } from "../RoiCalculator";
 import { roiVariants } from "@/lib/variants/roi";
 import { CategoryIcon } from "@/components/Icons";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { WebApplicationJsonLd } from "@/components/WebApplicationJsonLd";
 
 interface Props {
   params: Promise<{ variant: string }>;
@@ -35,6 +37,18 @@ export default async function VariantPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Savings", href: "/calculators/category/savings" },
+          { name: calc.shortTitle, href: `/calculators/${calc.slug}` },
+          { name: variant.title, href: `/calculators/${calc.slug}/${slug}` },
+        ]}
+      />
+      <WebApplicationJsonLd
+        name={variant.title}
+        description={variant.description}
+        slug={`${calc.slug}/${slug}`}
+      />
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">Home</Link>
         <span className="mx-2">/</span>

@@ -8,10 +8,18 @@ import { FireArticle } from "./FireArticle";
 const calc = getCalculator("fire-calculator")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
-  description: calc.description,
+  title: "FIRE Calculator — Financial Independence, Retire Early",
+  description: "Calculate your FIRE number and see how soon you can reach financial independence. Based on your savings rate, expenses, and investment returns. Free and instant.",
+  keywords: [
+    "FIRE calculator",
+    "financial independence retire early",
+    "FIRE number calculator",
+    "early retirement calculator",
+    "financial independence calculator",
+    "retirement savings rate calculator",
+  ],
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `FIRE Calculator — Financial Independence, Retire Early | ${site.name}`,
     description: calc.description,
     type: "website",
   },

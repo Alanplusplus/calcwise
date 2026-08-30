@@ -3,6 +3,7 @@ import { calculators } from "@/lib/calculators";
 import { guides, getGuidesBySlug } from "@/lib/guides";
 import { CategoryIcon } from "./Icons";
 import { BreadcrumbJsonLd } from "./BreadcrumbJsonLd";
+import { WebApplicationJsonLd } from "./WebApplicationJsonLd";
 import type { Calculator } from "@/lib/calculators";
 import type { CalculatorVariant } from "@/lib/variants/mortgage";
 
@@ -31,6 +32,11 @@ export function CalculatorShell({ calculator, children, article, variants }: Pro
           { name: calculator.category.charAt(0).toUpperCase() + calculator.category.slice(1), href: `/calculators/category/${calculator.category}` },
           { name: calculator.shortTitle, href: `/calculators/${calculator.slug}` },
         ]}
+      />
+      <WebApplicationJsonLd
+        name={calculator.title}
+        description={calculator.description}
+        slug={calculator.slug}
       />
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-ink-500">

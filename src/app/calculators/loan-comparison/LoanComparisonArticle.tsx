@@ -3,15 +3,17 @@ import Link from "next/link";
 export function LoanComparisonArticle() {
   return (
     <>
-      <h2>How to Compare Loan Offers</h2>
+      <h2>How to Compare Loans Side by Side</h2>
       <p>
         When evaluating multiple loan offers, don&apos;t just look at the
-        monthly payment or interest rate in isolation. This calculator helps you
+        monthly payment or interest rate in isolation. This loan comparison calculator helps you
         see the full picture by comparing the total cost (principal + all
-        interest paid) of different loan terms and rates side by side.
+        interest paid) of different loan terms and rates side by side. Whether you are comparing
+        mortgage rates, auto loan offers, or student loan options, enter each offer&apos;s
+        details to instantly see which deal saves you the most money.
       </p>
 
-      <h2>Key Factors in Loan Comparison</h2>
+      <h2>Key Factors When You Compare Loan Rates</h2>
 
       <h3>Interest Rate vs. APR</h3>
       <p>
@@ -74,10 +76,11 @@ export function LoanComparisonArticle() {
 
       <h2>Common Loan Comparison Scenarios</h2>
       <ul>
-        <li><strong>15 vs. 30-year mortgage:</strong> lower rate and massive interest savings vs. lower monthly flexibility</li>
-        <li><strong>Same term, different rates:</strong> compare offers from multiple lenders — even 0.25% matters over 30 years</li>
+        <li><strong>15 vs. 30-year mortgage:</strong> lower rate and massive interest savings vs. lower monthly flexibility — see our guide on <Link href="/guides/15-year-vs-30-year-mortgage" className="text-brand-600 hover:text-brand-800 font-medium">15-Year vs 30-Year Mortgage</Link></li>
+        <li><strong>Same term, different rates:</strong> compare interest rates from multiple lenders — even 0.25% matters over 30 years</li>
         <li><strong>Points vs. no points:</strong> paying upfront points for a lower rate vs. keeping cash — break-even is typically 4-7 years</li>
         <li><strong>Auto loan terms:</strong> 48 vs. 60 vs. 72 months — longer terms cost significantly more in interest. Use our <Link href="/calculators/auto-loan" className="text-brand-600 hover:text-brand-800 font-medium">Auto Loan Calculator</Link> to compare specific offers.</li>
+        <li><strong>Comparing loan rates across lenders:</strong> use our loan rate comparison tool above to enter each lender&apos;s offer and see exactly how much each one costs over the full loan term</li>
       </ul>
 
       <h2>Frequently Asked Questions</h2>

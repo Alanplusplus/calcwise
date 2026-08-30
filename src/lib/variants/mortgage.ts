@@ -10,9 +10,9 @@ export interface CalculatorVariant {
 export const mortgageVariants: CalculatorVariant[] = [
   {
     slug: "200000",
-    title: "Mortgage Calculator for a $200,000 Home",
+    title: "$200,000 Mortgage Calculator — Monthly Payment & Total Interest",
     description:
-      "Calculate monthly payments, total interest, and view the amortization schedule for a $200,000 home purchase with various down payment options.",
+      "Calculate your monthly payment on a $200,000 mortgage. With 20% down at 6.5%, expect ~$1,011/mo. Compare 15- vs 30-year terms, see total interest, and view the full amortization schedule.",
     defaults: { homePrice: "200000", downPayment: "40000" },
     intro:
       "A $200,000 home is an attainable entry point in many mid-size American cities and rural markets. First-time buyers in the Midwest, South, and parts of the Mountain West frequently land in this price range. With a 20% down payment of $40,000, you can avoid PMI entirely and keep your monthly obligation manageable on a single median income.",
@@ -26,9 +26,9 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "300000",
-    title: "Mortgage Calculator for a $300,000 Home",
+    title: "$300,000 Mortgage Calculator — Monthly Payment & Amortization",
     description:
-      "Estimate your monthly mortgage payment and total cost for a $300,000 home. See how down payment size and loan term affect what you pay.",
+      "Run the numbers on a $300,000 home loan. With 20% down at 6.5%, your monthly P&I is ~$1,517. Compare loan terms, see total interest costs, and view the full amortization schedule.",
     defaults: { homePrice: "300000", downPayment: "60000" },
     intro:
       "The $300,000 price point sits close to the national median and represents the most common purchase bracket for American homebuyers. Suburban neighborhoods in growing metro areas like Raleigh, Columbus, and San Antonio frequently list homes in this range. A 20% down payment of $60,000 keeps your loan at $240,000 and eliminates the need for private mortgage insurance.",

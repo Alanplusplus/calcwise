@@ -9,10 +9,18 @@ import { debtPayoffVariants } from "@/lib/variants/debt-payoff";
 const calc = getCalculator("debt-payoff")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
-  description: calc.description,
+  title: "Debt Payoff Calculator — Snowball vs Avalanche Methods",
+  description: "Create a debt payoff plan using avalanche or snowball methods. See exactly when you'll be debt-free and how much interest you'll save. Works for credit cards, student loans, and more.",
+  keywords: [
+    "debt payoff calculator",
+    "debt snowball vs debt avalanche",
+    "how to get out of debt",
+    "how to get out of 10k credit card debt",
+    "debt payoff plan",
+    "credit card debt calculator",
+  ],
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `Debt Payoff Calculator — Snowball vs Avalanche | ${site.name}`,
     description: calc.description,
     type: "website",
   },

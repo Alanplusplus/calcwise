@@ -7,16 +7,20 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
 
 export const metadata: Metadata = {
-  title: "Average Net Worth by Age: Where Do You Stand?",
+  title: "Average Net Worth by Age in 2026 — Where Do You Stand?",
   description:
-    "See average and median net worth by age group using Federal Reserve SCF data. Compare your net worth to peers, understand what counts, and learn how to build wealth at any age.",
+    "See average and median net worth by age group using 2026 Federal Reserve SCF data. Under 35: $39K median. 35-44: $135K median. Compare your net worth to peers and learn how to build wealth faster.",
   keywords: [
     "net worth by age",
     "average net worth by age",
     "median net worth by age",
+    "net worth percentile by age",
     "what is a good net worth at 35",
+    "average net worth for 24 year old",
     "net worth benchmark",
     "Federal Reserve net worth data",
+    "75th percentile net worth by age",
+    "age and net worth",
   ],
 };
 
