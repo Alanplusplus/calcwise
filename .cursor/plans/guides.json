@@ -133,7 +133,8 @@
       "title": "Student Loan Repayment: 7 Strategies to Pay Off Debt Faster in 2026",
       "targetKeyword": "student loan repayment strategies",
       "linkedCalculators": ["student-loan", "debt-payoff", "compound-interest"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-08-30T11:45:00+08:00"
     },
     {
       "slug": "how-to-calculate-roi",

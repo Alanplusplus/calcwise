@@ -136,6 +136,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["auto-loan", "budget-50-30-20", "savings-goal"],
     relatedGuides: ["50-30-20-budget-rule", "save-50000-in-3-years"],
   },
+  {
+    slug: "student-loan-repayment-strategies",
+    title: "Student Loan Repayment: 7 Strategies to Pay Off Debt Faster in 2026",
+    description: "Learn 7 proven student loan repayment strategies with real numbers on a $40,000 balance. Compare standard repayment, IDR, refinancing, PSLF, and accelerated payoff methods.",
+    published: true,
+    relatedCalculators: ["student-loan", "debt-payoff", "compound-interest"],
+    relatedGuides: ["debt-avalanche-vs-snowball", "how-to-pay-off-credit-card-fast"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
