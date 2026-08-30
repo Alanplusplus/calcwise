@@ -125,7 +125,8 @@
       "shortTitle": "ROI",
       "category": "savings",
       "keywords": ["ROI calculator", "return on investment calculator", "investment profit calculator"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-30T11:15:00+08:00",
       "priority": "tier2-high-value"
     },
     {

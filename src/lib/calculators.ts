@@ -227,6 +227,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["compound-interest", "savings-goal", "retirement"],
     relatedGuides: ["compound-interest-real-examples", "how-much-to-retire-at-55"],
   },
+  {
+    slug: "roi",
+    title: "ROI Calculator",
+    shortTitle: "ROI",
+    description: "Calculate your return on investment for any project or asset. Compare initial costs, ongoing expenses, and revenue to find total and annualized ROI.",
+    category: "savings",
+    relatedCalculators: ["investment-return", "compound-interest", "savings-goal"],
+    relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {

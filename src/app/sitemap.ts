@@ -8,6 +8,7 @@ import { retirementVariants } from "@/lib/variants/retirement";
 import { debtPayoffVariants } from "@/lib/variants/debt-payoff";
 import { compoundInterestVariants } from "@/lib/variants/compound-interest";
 import { inflationVariants } from "@/lib/variants/inflation";
+import { roiVariants } from "@/lib/variants/roi";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -87,5 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages];
+  const roiVariantPages = roiVariants.map((v) => ({
+    url: `${base}/calculators/roi/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages, ...roiVariantPages];
 }

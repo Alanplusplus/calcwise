@@ -74,6 +74,18 @@
         { "slug": "healthcare-cost-20-years", "title": "Healthcare Cost Inflation Over 20 Years", "defaults": { "currentAmount": "5000", "inflationRate": "5.5", "years": "20" } },
         { "slug": "100-dollar-purchasing-power", "title": "What Will $100 Be Worth in the Future?", "defaults": { "currentAmount": "100", "inflationRate": "3", "years": "20" } }
       ]
+    },
+    {
+      "baseCalculator": "roi",
+      "status": "done",
+      "completedAt": "2026-08-30T11:15:00+08:00",
+      "variants": [
+        { "slug": "marketing-campaign", "title": "Marketing Campaign ROI Calculator", "defaults": { "investmentCost": "5000", "revenue": "18000", "years": "1", "ongoingCost": "2000", "revenueGrowth": "0" } },
+        { "slug": "rental-property", "title": "Rental Property ROI Calculator", "defaults": { "investmentCost": "60000", "revenue": "24000", "years": "5", "ongoingCost": "8000", "revenueGrowth": "3" } },
+        { "slug": "business-equipment", "title": "Business Equipment ROI Calculator", "defaults": { "investmentCost": "50000", "revenue": "30000", "years": "5", "ongoingCost": "4000", "revenueGrowth": "0" } },
+        { "slug": "stock-portfolio", "title": "Stock Portfolio ROI Calculator", "defaults": { "investmentCost": "50000", "revenue": "56000", "years": "3", "ongoingCost": "150", "revenueGrowth": "8" } },
+        { "slug": "education-degree", "title": "Education & Degree ROI Calculator", "defaults": { "investmentCost": "80000", "revenue": "15000", "years": "10", "ongoingCost": "0", "revenueGrowth": "3" } }
+      ]
     }
   ]
 }
