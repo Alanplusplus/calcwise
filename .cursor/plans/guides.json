@@ -127,6 +127,90 @@
       "linkedCalculators": ["auto-loan", "budget-50-30-20", "savings-goal"],
       "status": "done",
       "completedAt": "2026-08-26T21:45:00+08:00"
+    },
+    {
+      "slug": "student-loan-repayment-strategies",
+      "title": "Student Loan Repayment: 7 Strategies to Pay Off Debt Faster in 2026",
+      "targetKeyword": "student loan repayment strategies",
+      "linkedCalculators": ["student-loan", "debt-payoff", "compound-interest"],
+      "status": "pending"
+    },
+    {
+      "slug": "how-to-calculate-roi",
+      "title": "How to Calculate ROI: Formula, Examples, and Common Mistakes",
+      "targetKeyword": "how to calculate ROI",
+      "linkedCalculators": ["roi", "investment-return", "compound-interest"],
+      "status": "pending"
+    },
+    {
+      "slug": "amortization-schedule-explained",
+      "title": "Amortization Schedule Explained: How Your Loan Payments Actually Work",
+      "targetKeyword": "amortization schedule explained",
+      "linkedCalculators": ["amortization", "mortgage", "auto-loan"],
+      "status": "pending"
+    },
+    {
+      "slug": "how-much-down-payment-for-house",
+      "title": "How Much Down Payment Do You Need for a House in 2026?",
+      "targetKeyword": "how much down payment for a house",
+      "linkedCalculators": ["down-payment", "mortgage", "home-affordability"],
+      "status": "pending"
+    },
+    {
+      "slug": "dividend-investing-beginners",
+      "title": "Dividend Investing for Beginners: How to Build Passive Income",
+      "targetKeyword": "dividend investing for beginners",
+      "linkedCalculators": ["dividend", "compound-interest", "investment-return"],
+      "status": "pending"
+    },
+    {
+      "slug": "capital-gains-tax-guide",
+      "title": "Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe",
+      "targetKeyword": "capital gains tax rate 2026",
+      "linkedCalculators": ["capital-gains-tax", "investment-return", "income-tax"],
+      "status": "pending"
+    },
+    {
+      "slug": "self-employment-tax-guide",
+      "title": "Self-Employment Tax Explained: What Freelancers and 1099 Workers Must Know",
+      "targetKeyword": "self employment tax",
+      "linkedCalculators": ["self-employment-tax", "income-tax", "budget-50-30-20"],
+      "status": "pending"
+    },
+    {
+      "slug": "debt-to-income-ratio-guide",
+      "title": "Debt-to-Income Ratio: What It Is and Why Lenders Care",
+      "targetKeyword": "what is debt to income ratio",
+      "linkedCalculators": ["debt-to-income", "mortgage", "home-affordability"],
+      "status": "pending"
+    },
+    {
+      "slug": "simple-vs-compound-interest",
+      "title": "Simple vs Compound Interest: What's the Difference and Why It Matters",
+      "targetKeyword": "simple vs compound interest",
+      "linkedCalculators": ["simple-interest", "compound-interest", "savings-goal"],
+      "status": "pending"
+    },
+    {
+      "slug": "break-even-analysis-guide",
+      "title": "Break-Even Analysis: How to Know When Your Business Starts Making Money",
+      "targetKeyword": "break even analysis",
+      "linkedCalculators": ["break-even", "roi", "savings-goal"],
+      "status": "pending"
+    },
+    {
+      "slug": "salary-vs-hourly-pay",
+      "title": "Salary vs Hourly Pay: Which Is Better for You in 2026?",
+      "targetKeyword": "salary vs hourly",
+      "linkedCalculators": ["salary-to-hourly", "paycheck", "budget-50-30-20"],
+      "status": "pending"
+    },
+    {
+      "slug": "tipping-guide-how-much",
+      "title": "How Much Should You Tip? The Complete 2026 Tipping Guide by Service",
+      "targetKeyword": "how much to tip",
+      "linkedCalculators": ["tip-calculator", "budget-50-30-20"],
+      "status": "pending"
     }
   ]
 }
