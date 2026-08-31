@@ -89,7 +89,8 @@
     },
     {
       "baseCalculator": "auto-loan",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-31T09:50:00+08:00",
       "variants": [
         { "slug": "15000-car", "title": "Auto Loan Calculator for a $15,000 Car", "defaults": { "vehiclePrice": "15000", "downPayment": "3000", "loanTerm": "48", "interestRate": "6.5" } },
         { "slug": "25000-car", "title": "Auto Loan Calculator for a $25,000 Car", "defaults": { "vehiclePrice": "25000", "downPayment": "5000", "loanTerm": "60", "interestRate": "6.0" } },

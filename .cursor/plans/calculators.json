@@ -135,7 +135,8 @@
       "shortTitle": "Amortization",
       "category": "loans",
       "keywords": ["amortization schedule", "amortization calculator", "loan amortization table"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-08-31T09:50:00+08:00",
       "priority": "tier3-long-tail"
     },
     {
