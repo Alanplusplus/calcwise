@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { AutoLoanCalculator } from "./AutoLoanCalculator";
 import { AutoLoanArticle } from "./AutoLoanArticle";
+import { autoLoanVariants } from "@/lib/variants/auto-loan";
 
 const calc = getCalculator("auto-loan")!;
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function AutoLoanPage() {
   return (
-    <CalculatorShell calculator={calc} article={<AutoLoanArticle />}>
+    <CalculatorShell calculator={calc} article={<AutoLoanArticle />} variants={autoLoanVariants}>
       <AutoLoanCalculator />
     </CalculatorShell>
   );

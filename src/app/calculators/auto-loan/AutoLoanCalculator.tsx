@@ -15,13 +15,17 @@ interface MonthRow {
   balance: number;
 }
 
-export function AutoLoanCalculator() {
-  const [vehiclePrice, setVehiclePrice] = useState("35000");
-  const [downPayment, setDownPayment] = useState("5000");
-  const [tradeIn, setTradeIn] = useState("0");
-  const [annualRate, setAnnualRate] = useState("6.5");
-  const [termMonths, setTermMonths] = useState("60");
-  const [salesTax, setSalesTax] = useState("7");
+interface Props {
+  defaults?: Record<string, string>;
+}
+
+export function AutoLoanCalculator({ defaults }: Props) {
+  const [vehiclePrice, setVehiclePrice] = useState(defaults?.vehiclePrice || "35000");
+  const [downPayment, setDownPayment] = useState(defaults?.downPayment || "5000");
+  const [tradeIn, setTradeIn] = useState(defaults?.tradeIn || "0");
+  const [annualRate, setAnnualRate] = useState(defaults?.annualRate || "6.5");
+  const [termMonths, setTermMonths] = useState(defaults?.termMonths || "60");
+  const [salesTax, setSalesTax] = useState(defaults?.salesTax || "7");
 
   const results = useMemo(() => {
     const price = parseFloat(vehiclePrice) || 0;

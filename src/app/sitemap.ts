@@ -9,6 +9,7 @@ import { debtPayoffVariants } from "@/lib/variants/debt-payoff";
 import { compoundInterestVariants } from "@/lib/variants/compound-interest";
 import { inflationVariants } from "@/lib/variants/inflation";
 import { roiVariants } from "@/lib/variants/roi";
+import { autoLoanVariants } from "@/lib/variants/auto-loan";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -95,5 +96,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages, ...roiVariantPages];
+  const autoLoanVariantPages = autoLoanVariants.map((v) => ({
+    url: `${base}/calculators/auto-loan/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages, ...roiVariantPages, ...autoLoanVariantPages];
 }
