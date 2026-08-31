@@ -236,6 +236,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["investment-return", "compound-interest", "savings-goal"],
     relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
   },
+  {
+    slug: "amortization",
+    title: "Amortization Schedule Calculator",
+    shortTitle: "Amortization",
+    description: "Generate a complete amortization schedule for any loan. See how each payment splits between principal and interest over the life of your loan.",
+    category: "loans",
+    relatedCalculators: ["mortgage", "auto-loan", "loan-comparison"],
+    relatedGuides: ["15-year-vs-30-year-mortgage", "pay-off-mortgage-early-vs-invest"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
