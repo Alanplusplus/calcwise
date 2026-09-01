@@ -101,7 +101,8 @@
     },
     {
       "baseCalculator": "student-loan",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-01T12:34:00+08:00",
       "variants": [
         { "slug": "20000-loan", "title": "Student Loan Calculator for $20,000", "defaults": { "loanAmount": "20000", "interestRate": "5.0", "loanTerm": "10" } },
         { "slug": "40000-loan", "title": "Student Loan Calculator for $40,000", "defaults": { "loanAmount": "40000", "interestRate": "5.5", "loanTerm": "10" } },

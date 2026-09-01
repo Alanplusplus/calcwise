@@ -141,7 +141,8 @@
       "title": "How to Calculate ROI: Formula, Examples, and Common Mistakes",
       "targetKeyword": "how to calculate ROI",
       "linkedCalculators": ["roi", "investment-return", "compound-interest"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-01T12:34:00+08:00"
     },
     {
       "slug": "amortization-schedule-explained",

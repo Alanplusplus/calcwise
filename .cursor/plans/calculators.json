@@ -145,7 +145,8 @@
       "shortTitle": "Down Payment",
       "category": "loans",
       "keywords": ["down payment calculator", "how much down payment for a house", "down payment percentage"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-01T12:34:00+08:00",
       "priority": "tier3-long-tail"
     },
     {
