@@ -144,6 +144,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["student-loan", "debt-payoff", "compound-interest"],
     relatedGuides: ["debt-avalanche-vs-snowball", "how-to-pay-off-credit-card-fast"],
   },
+  {
+    slug: "how-to-calculate-roi",
+    title: "How to Calculate ROI: Formula, Examples, and Common Mistakes",
+    description: "Learn how to calculate return on investment (ROI) with the simple formula, five real-world examples across marketing, real estate, and stocks, plus common mistakes that inflate your numbers.",
+    published: true,
+    relatedCalculators: ["roi", "investment-return", "compound-interest"],
+    relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

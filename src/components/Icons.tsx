@@ -149,6 +149,7 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   inflation: TrendingUpIcon,
   roi: ChartIcon,
   amortization: TableIcon,
+  "down-payment": HomeIcon,
 };
 
 export function TableIcon({ className = "h-5 w-5" }: IconProps) {

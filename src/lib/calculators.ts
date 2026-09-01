@@ -216,7 +216,7 @@ export const calculators: Calculator[] = [
     description: "Calculate your student loan monthly payment, total interest cost, and payoff timeline. Compare standard, graduated, and accelerated repayment plans.",
     category: "debt",
     relatedCalculators: ["debt-payoff", "credit-card-payoff", "compound-interest"],
-    relatedGuides: ["debt-avalanche-vs-snowball", "compound-interest-real-examples"],
+    relatedGuides: ["student-loan-repayment-strategies", "debt-avalanche-vs-snowball"],
   },
   {
     slug: "inflation",
@@ -234,7 +234,7 @@ export const calculators: Calculator[] = [
     description: "Calculate your return on investment for any project or asset. Compare initial costs, ongoing expenses, and revenue to find total and annualized ROI.",
     category: "savings",
     relatedCalculators: ["investment-return", "compound-interest", "savings-goal"],
-    relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
+    relatedGuides: ["how-to-calculate-roi", "how-to-start-investing-1000"],
   },
   {
     slug: "amortization",
@@ -244,6 +244,15 @@ export const calculators: Calculator[] = [
     category: "loans",
     relatedCalculators: ["mortgage", "auto-loan", "loan-comparison"],
     relatedGuides: ["15-year-vs-30-year-mortgage", "pay-off-mortgage-early-vs-invest"],
+  },
+  {
+    slug: "down-payment",
+    title: "Down Payment Calculator",
+    shortTitle: "Down Payment",
+    description: "Calculate how much down payment you need for a home, compare PMI costs at different percentages, and see how long it takes to save your target amount.",
+    category: "loans",
+    relatedCalculators: ["mortgage", "home-affordability", "savings-goal"],
+    relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
   },
 ];
 
