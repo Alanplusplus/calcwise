@@ -254,6 +254,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["mortgage", "home-affordability", "savings-goal"],
     relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
   },
+  {
+    slug: "dividend",
+    title: "Dividend Calculator",
+    shortTitle: "Dividend",
+    description: "Calculate dividend income, yield, and growth over time. See how reinvesting dividends with DRIP accelerates portfolio growth and compounds your returns.",
+    category: "savings",
+    relatedCalculators: ["investment-return", "compound-interest", "roi"],
+    relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {

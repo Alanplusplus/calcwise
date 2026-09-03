@@ -113,7 +113,8 @@
     },
     {
       "baseCalculator": "credit-card-payoff",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-03T09:11:00+08:00",
       "variants": [
         { "slug": "2000-balance", "title": "Pay Off $2,000 Credit Card Balance", "defaults": { "balance": "2000", "apr": "22.9", "monthlyPayment": "100" } },
         { "slug": "5000-balance", "title": "Pay Off $5,000 Credit Card Balance", "defaults": { "balance": "5000", "apr": "21.9", "monthlyPayment": "200" } },

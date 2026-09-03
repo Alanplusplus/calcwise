@@ -155,7 +155,8 @@
       "shortTitle": "Dividend",
       "category": "savings",
       "keywords": ["dividend calculator", "dividend income calculator", "dividend yield calculator"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-03T09:11:00+08:00",
       "priority": "tier3-long-tail"
     },
     {

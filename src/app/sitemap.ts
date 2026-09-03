@@ -11,6 +11,7 @@ import { inflationVariants } from "@/lib/variants/inflation";
 import { roiVariants } from "@/lib/variants/roi";
 import { autoLoanVariants } from "@/lib/variants/auto-loan";
 import { studentLoanVariants } from "@/lib/variants/student-loan";
+import { creditCardPayoffVariants } from "@/lib/variants/credit-card-payoff";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -111,5 +112,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages, ...roiVariantPages, ...autoLoanVariantPages, ...studentLoanVariantPages];
+  const creditCardPayoffVariantPages = creditCardPayoffVariants.map((v) => ({
+    url: `${base}/calculators/credit-card-payoff/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages, ...roiVariantPages, ...autoLoanVariantPages, ...studentLoanVariantPages, ...creditCardPayoffVariantPages];
 }
