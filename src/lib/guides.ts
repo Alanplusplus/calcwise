@@ -152,6 +152,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["roi", "investment-return", "compound-interest"],
     relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
   },
+  {
+    slug: "amortization-schedule-explained",
+    title: "Amortization Schedule Explained: How Your Loan Payments Actually Work",
+    description: "Understand how an amortization schedule splits every loan payment into principal and interest. See a real 30-year mortgage example, learn the formula, and strategies to pay less interest.",
+    published: true,
+    relatedCalculators: ["amortization", "mortgage", "auto-loan"],
+    relatedGuides: ["15-year-vs-30-year-mortgage", "how-much-house-can-i-afford"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
