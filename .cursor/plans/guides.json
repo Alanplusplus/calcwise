@@ -149,7 +149,8 @@
       "title": "Amortization Schedule Explained: How Your Loan Payments Actually Work",
       "targetKeyword": "amortization schedule explained",
       "linkedCalculators": ["amortization", "mortgage", "auto-loan"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-04T14:50:00+08:00"
     },
     {
       "slug": "how-much-down-payment-for-house",
