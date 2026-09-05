@@ -9,6 +9,10 @@ interface ArticleJsonLdProps {
   image?: string;
 }
 
+function toIsoWithTz(date: string): string {
+  return date.includes("T") ? date : `${date}T00:00:00+00:00`;
+}
+
 export function ArticleJsonLd({
   title,
   description,
@@ -23,8 +27,8 @@ export function ArticleJsonLd({
     headline: title,
     description,
     url: `${site.url}/guides/${slug}`,
-    datePublished,
-    dateModified: dateModified || datePublished,
+    datePublished: toIsoWithTz(datePublished),
+    dateModified: toIsoWithTz(dateModified || datePublished),
     author: {
       "@type": "Organization",
       name: site.name,
