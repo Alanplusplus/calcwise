@@ -74,13 +74,101 @@ export function LoanComparisonArticle() {
         <li>You don&apos;t have higher-interest debt to prioritize</li>
       </ul>
 
+      <h2>Step-by-Step: How to Compare Loan Offers</h2>
+      <p>
+        Follow this process to ensure you are making an apples-to-apples comparison
+        when evaluating multiple loan offers from different lenders:
+      </p>
+      <ol>
+        <li><strong>Gather at least 3 Loan Estimates:</strong> Apply with multiple lenders within a 14-day window. Each will provide a standardized Loan Estimate form breaking down rates, fees, and closing costs.</li>
+        <li><strong>Compare APR, not just interest rate:</strong> One lender may quote 6.25% with $4,000 in fees while another quotes 6.50% with $1,000 in fees. The APR accounts for these differences. Enter both into our calculator above.</li>
+        <li><strong>Match the loan terms:</strong> Only compare 30-year to 30-year, or 60-month to 60-month. Mixing terms makes the comparison misleading because shorter terms always show less total interest.</li>
+        <li><strong>Factor in closing costs:</strong> Add any upfront costs (origination fees, points, application fees) to the total cost. A low rate with high fees may cost more than a slightly higher rate with no fees.</li>
+        <li><strong>Check for prepayment penalties:</strong> Some loans charge penalties for paying ahead of schedule. If you plan to make extra payments or refinance, ensure the loan allows penalty-free prepayment.</li>
+      </ol>
+
+      <h2>Real-World Comparison: How 0.25% Changes Everything</h2>
+      <p>
+        A quarter-point difference in interest rate might seem trivial, but over a
+        long loan term, it adds up to thousands of dollars. Here is a side-by-side
+        comparison of a $300,000 mortgage at different rates over 30 years:
+      </p>
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full text-sm border border-ink-200">
+          <thead className="bg-ink-100">
+            <tr>
+              <th className="px-3 py-2 text-left font-medium text-ink-600">Rate</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Monthly P&amp;I</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Total Interest</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Savings vs. 7.00%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">7.00%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,996</td>
+              <td className="px-3 py-2 text-right text-ink-800">$418,527</td>
+              <td className="px-3 py-2 text-right text-ink-500">—</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">6.75%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,946</td>
+              <td className="px-3 py-2 text-right text-ink-800">$400,490</td>
+              <td className="px-3 py-2 text-right text-accent-700 font-medium">$18,037</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">6.50%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,896</td>
+              <td className="px-3 py-2 text-right text-ink-800">$382,633</td>
+              <td className="px-3 py-2 text-right text-accent-700 font-medium">$35,894</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">6.25%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,847</td>
+              <td className="px-3 py-2 text-right text-ink-800">$364,959</td>
+              <td className="px-3 py-2 text-right text-accent-700 font-medium">$53,568</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">6.00%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,799</td>
+              <td className="px-3 py-2 text-right text-ink-800">$347,515</td>
+              <td className="px-3 py-2 text-right text-accent-700 font-medium">$71,012</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Negotiating your rate down by just 0.50% on a $300,000 mortgage saves you
+        roughly $36,000 over the life of the loan — and $100 per month in cash flow.
+        That is why comparing rates across lenders matters so much. Use our{" "}
+        <Link
+          href="/calculators/mortgage"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Mortgage Calculator
+        </Link>{" "}
+        to run your own numbers with specific loan amounts.
+      </p>
+
       <h2>Common Loan Comparison Scenarios</h2>
       <ul>
         <li><strong>15 vs. 30-year mortgage:</strong> lower rate and massive interest savings vs. lower monthly flexibility — see our guide on <Link href="/guides/15-year-vs-30-year-mortgage" className="text-brand-600 hover:text-brand-800 font-medium">15-Year vs 30-Year Mortgage</Link></li>
         <li><strong>Same term, different rates:</strong> compare interest rates from multiple lenders — even 0.25% matters over 30 years</li>
         <li><strong>Points vs. no points:</strong> paying upfront points for a lower rate vs. keeping cash — break-even is typically 4-7 years</li>
         <li><strong>Auto loan terms:</strong> 48 vs. 60 vs. 72 months — longer terms cost significantly more in interest. Use our <Link href="/calculators/auto-loan" className="text-brand-600 hover:text-brand-800 font-medium">Auto Loan Calculator</Link> to compare specific offers.</li>
+        <li><strong>Student loan refinancing:</strong> compare your current federal loan rate against private refinancing offers — but be aware you lose federal protections like IDR and PSLF. See our <Link href="/guides/student-loan-repayment-strategies" className="text-brand-600 hover:text-brand-800 font-medium">Student Loan Repayment Strategies</Link> guide.</li>
         <li><strong>Comparing loan rates across lenders:</strong> use our loan rate comparison tool above to enter each lender&apos;s offer and see exactly how much each one costs over the full loan term</li>
+      </ul>
+
+      <h2>Mistakes to Avoid When Comparing Loans</h2>
+      <p>
+        Even experienced borrowers can make costly comparison errors:
+      </p>
+      <ul>
+        <li><strong>Comparing rate to APR:</strong> If Lender A quotes a rate and Lender B quotes an APR, you are not comparing the same thing. Always use APR-to-APR or rate-to-rate.</li>
+        <li><strong>Ignoring loan fees:</strong> A &ldquo;no closing cost&rdquo; loan often has a higher rate that costs more over time. Calculate the total cost including fees.</li>
+        <li><strong>Only looking at monthly payment:</strong> A longer term lowers the monthly payment but dramatically increases total interest. A $300,000 loan at 6.5% costs $382,633 in interest over 30 years but only $162,000 over 15 years — a $220,000 difference.</li>
+        <li><strong>Not rate-locking:</strong> Rates change daily. Once you find the best offer, lock the rate. An unlocked quote is not a guarantee.</li>
       </ul>
 
       <h2>Frequently Asked Questions</h2>

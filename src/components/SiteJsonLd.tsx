@@ -16,14 +16,6 @@ export function SiteJsonLd() {
     name: site.name,
     url: site.url,
     description: site.description,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${site.url}/calculators/{search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (

@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { InvestmentReturnCalculator } from "./InvestmentReturnCalculator";
 import { InvestmentReturnArticle } from "./InvestmentReturnArticle";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 const calc = getCalculator("investment-return")!;
 
@@ -17,10 +18,28 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+  {
+    question: "What is a good annualized return?",
+    answer: "For a diversified stock portfolio, matching the market (8–10% nominal) is considered good. Be wary of any investment promising consistent returns above 12%.",
+  },
+  {
+    question: "How do I account for additional contributions?",
+    answer: "Regular contributions require the internal rate of return or money-weighted return. This calculator is designed for lump-sum investments; use the Compound Interest Calculator for regular contributions.",
+  },
+  {
+    question: "Should I include fees in my calculation?",
+    answer: "Yes. Use your actual account value (after fees) as the Current Value to get your net return — what you actually earned after all costs.",
+  },
+];
+
 export default function InvestmentReturnPage() {
   return (
-    <CalculatorShell calculator={calc} article={<InvestmentReturnArticle />}>
-      <InvestmentReturnCalculator />
-    </CalculatorShell>
+    <>
+      <FaqJsonLd faqs={faqs} />
+      <CalculatorShell calculator={calc} article={<InvestmentReturnArticle />}>
+        <InvestmentReturnCalculator />
+      </CalculatorShell>
+    </>
   );
 }

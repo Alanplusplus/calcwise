@@ -5,6 +5,7 @@ import { CalculatorShell } from "@/components/CalculatorShell";
 import { SavingsGoalCalculator } from "./SavingsGoalCalculator";
 import { SavingsGoalArticle } from "./SavingsGoalArticle";
 import { savingsGoalVariants } from "@/lib/variants/savings-goal";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 const calc = getCalculator("savings-goal")!;
 
@@ -26,10 +27,28 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+  {
+    question: "What return rate should I use?",
+    answer: "High-yield savings: 4–5%. Diversified investment portfolio over 5+ years: 6–8%. Use 0% for checking accounts (not recommended beyond short-term goals).",
+  },
+  {
+    question: "What if I can't save the required monthly amount?",
+    answer: "Extend your timeframe, reduce your goal, or increase income/reduce expenses. Even saving a smaller amount is better than nothing — adjust the calculator to find a number you can commit to.",
+  },
+  {
+    question: "Should I save or pay off debt first?",
+    answer: "Build a small emergency fund ($1,000–$2,000) first, then pay off high-interest debt (above 7–8%), then resume saving. Exception: always capture an employer 401(k) match regardless of debt.",
+  },
+];
+
 export default function SavingsGoalPage() {
   return (
-    <CalculatorShell calculator={calc} article={<SavingsGoalArticle />} variants={savingsGoalVariants}>
-      <SavingsGoalCalculator />
-    </CalculatorShell>
+    <>
+      <FaqJsonLd faqs={faqs} />
+      <CalculatorShell calculator={calc} article={<SavingsGoalArticle />} variants={savingsGoalVariants}>
+        <SavingsGoalCalculator />
+      </CalculatorShell>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { NetWorthCalculator } from "./NetWorthCalculator";
 import { NetWorthArticle } from "./NetWorthArticle";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 const calc = getCalculator("net-worth")!;
 
@@ -25,10 +26,36 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+  {
+    question: "Should I include my home in net worth?",
+    answer: "Yes. Use the current estimated market value as an asset and your remaining mortgage balance as a liability. The difference is your home equity, which is part of your net worth.",
+  },
+  {
+    question: "What about retirement accounts I cannot touch until 59½?",
+    answer: "Include them. They are real assets that will fund your future. Just remember they are tax-advantaged and may have withdrawal restrictions — factor that into financial planning separately from liquid net worth.",
+  },
+  {
+    question: "How often should I calculate my net worth?",
+    answer: "Quarterly is a good cadence. Monthly is fine if you enjoy tracking progress, but daily updates are unnecessary since investment values fluctuate and most liabilities change slowly.",
+  },
+  {
+    question: "Is negative net worth normal?",
+    answer: "It is common for recent graduates with student loans or new homeowners with small down payments. What matters is the trend — is your net worth increasing over time?",
+  },
+  {
+    question: "What is a good net worth target?",
+    answer: "A common rule of thumb is one times your annual salary by 30, three times by 40, six times by 50, and eight times by 60. Adjust based on your retirement goals and expected expenses.",
+  },
+];
+
 export default function NetWorthPage() {
   return (
-    <CalculatorShell calculator={calc} article={<NetWorthArticle />}>
-      <NetWorthCalculator />
-    </CalculatorShell>
+    <>
+      <FaqJsonLd faqs={faqs} />
+      <CalculatorShell calculator={calc} article={<NetWorthArticle />}>
+        <NetWorthCalculator />
+      </CalculatorShell>
+    </>
   );
 }
