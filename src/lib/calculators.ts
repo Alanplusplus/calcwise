@@ -263,6 +263,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["investment-return", "compound-interest", "roi"],
     relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
   },
+  {
+    slug: "simple-interest",
+    title: "Simple Interest Calculator",
+    shortTitle: "Simple Interest",
+    description: "Calculate simple interest on loans or investments. Enter principal, rate, and time to see total interest earned, final amount, and daily interest accrual.",
+    category: "savings",
+    relatedCalculators: ["compound-interest", "cd-calculator", "savings-goal"],
+    relatedGuides: ["compound-interest-real-examples", "high-yield-savings-vs-cd"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
