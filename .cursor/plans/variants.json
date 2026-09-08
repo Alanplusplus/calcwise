@@ -125,7 +125,8 @@
     },
     {
       "baseCalculator": "home-affordability",
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-07T15:10:00+08:00",
       "variants": [
         { "slug": "50000-income", "title": "How Much House Can I Afford on $50,000 Salary", "defaults": { "annualIncome": "50000", "monthlyDebts": "300", "downPayment": "15000", "interestRate": "6.5" } },
         { "slug": "75000-income", "title": "How Much House Can I Afford on $75,000 Salary", "defaults": { "annualIncome": "75000", "monthlyDebts": "400", "downPayment": "30000", "interestRate": "6.5" } },

@@ -160,6 +160,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["amortization", "mortgage", "auto-loan"],
     relatedGuides: ["15-year-vs-30-year-mortgage", "how-much-house-can-i-afford"],
   },
+  {
+    slug: "how-much-down-payment-for-house",
+    title: "How Much Down Payment Do You Need for a House in 2026?",
+    description: "Find out how much down payment you need for a house in 2026. Compare conventional, FHA, VA, and USDA loan minimums with real dollar amounts, PMI costs, and savings strategies.",
+    published: true,
+    relatedCalculators: ["down-payment", "mortgage", "home-affordability"],
+    relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
