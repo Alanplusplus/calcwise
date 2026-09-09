@@ -152,6 +152,7 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "down-payment": HomeIcon,
   dividend: DividendIcon,
   "simple-interest": PercentIcon,
+  "salary-to-hourly": ClockIcon,
 };
 
 export function DividendIcon({ className = "h-5 w-5" }: IconProps) {
@@ -176,6 +177,14 @@ export function PercentIcon({ className = "h-5 w-5" }: IconProps) {
       <path strokeLinecap="round" strokeLinejoin="round" d="M18.75 5.25L5.25 18.75M7.5 8.25a.75.75 0 100-1.5.75.75 0 000 1.5zM16.5 17.25a.75.75 0 100-1.5.75.75 0 000 1.5z" />
       <circle cx="7.5" cy="7.5" r="2.5" strokeLinecap="round" />
       <circle cx="16.5" cy="16.5" r="2.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function ClockIcon({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   );
 }

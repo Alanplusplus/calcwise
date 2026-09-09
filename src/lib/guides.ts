@@ -168,6 +168,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["down-payment", "mortgage", "home-affordability"],
     relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
   },
+  {
+    slug: "dividend-investing-beginners",
+    title: "Dividend Investing for Beginners: How to Build Passive Income",
+    description: "Learn how to start dividend investing from scratch. Covers dividend yield, DRIP reinvestment, Dividend Aristocrats, and a step-by-step portfolio plan with real numbers.",
+    published: true,
+    relatedCalculators: ["dividend", "compound-interest", "investment-return"],
+    relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

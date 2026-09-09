@@ -5,6 +5,7 @@ import { CalculatorShell } from "@/components/CalculatorShell";
 import { DividendCalculator } from "./DividendCalculator";
 import { DividendArticle } from "./DividendArticle";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { dividendVariants } from "@/lib/variants/dividend";
 
 const calc = getCalculator("dividend")!;
 
@@ -45,7 +46,7 @@ export default function DividendPage() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
-      <CalculatorShell calculator={calc} article={<DividendArticle />}>
+      <CalculatorShell calculator={calc} article={<DividendArticle />} variants={dividendVariants}>
         <DividendCalculator />
       </CalculatorShell>
     </>

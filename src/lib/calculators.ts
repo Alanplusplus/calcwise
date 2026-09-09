@@ -261,7 +261,7 @@ export const calculators: Calculator[] = [
     description: "Calculate dividend income, yield, and growth over time. See how reinvesting dividends with DRIP accelerates portfolio growth and compounds your returns.",
     category: "savings",
     relatedCalculators: ["investment-return", "compound-interest", "roi"],
-    relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
+    relatedGuides: ["dividend-investing-beginners", "how-to-start-investing-1000", "compound-interest-real-examples"],
   },
   {
     slug: "simple-interest",
@@ -271,6 +271,15 @@ export const calculators: Calculator[] = [
     category: "savings",
     relatedCalculators: ["compound-interest", "cd-calculator", "savings-goal"],
     relatedGuides: ["compound-interest-real-examples", "high-yield-savings-vs-cd"],
+  },
+  {
+    slug: "salary-to-hourly",
+    title: "Salary to Hourly Calculator",
+    shortTitle: "Salary to Hourly",
+    description: "Convert your annual salary to an hourly rate, see your effective rate after PTO, and view a full pay period breakdown with after-tax estimates.",
+    category: "planning",
+    relatedCalculators: ["paycheck", "income-tax", "budget-50-30-20"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
   },
 ];
 
