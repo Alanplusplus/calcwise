@@ -165,7 +165,8 @@
       "title": "Dividend Investing for Beginners: How to Build Passive Income",
       "targetKeyword": "dividend investing for beginners",
       "linkedCalculators": ["dividend", "compound-interest", "investment-return"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-09T17:50:00+08:00"
     },
     {
       "slug": "capital-gains-tax-guide",

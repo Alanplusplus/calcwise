@@ -134,6 +134,18 @@
         { "slug": "150000-income", "title": "How Much House Can I Afford on $150,000 Salary", "defaults": { "annualIncome": "150000", "monthlyDebts": "600", "downPayment": "80000", "interestRate": "6.5" } },
         { "slug": "200000-income", "title": "How Much House Can I Afford on $200,000 Salary", "defaults": { "annualIncome": "200000", "monthlyDebts": "800", "downPayment": "120000", "interestRate": "6.5" } }
       ]
+    },
+    {
+      "baseCalculator": "dividend",
+      "status": "done",
+      "completedAt": "2026-09-09T17:50:00+08:00",
+      "variants": [
+        { "slug": "high-yield-stocks", "title": "High-Yield Dividend Stock Calculator", "defaults": { "investmentAmount": "15000", "sharePrice": "40", "dividendPerShare": "2.40", "dividendGrowth": "3", "sharePriceGrowth": "4", "years": "15", "monthlyContribution": "300" } },
+        { "slug": "dividend-aristocrats", "title": "Dividend Aristocrat Portfolio Calculator", "defaults": { "investmentAmount": "20000", "sharePrice": "65", "dividendPerShare": "1.95", "dividendGrowth": "8", "sharePriceGrowth": "8", "years": "25", "monthlyContribution": "400" } },
+        { "slug": "reit-income", "title": "REIT Dividend Income Calculator", "defaults": { "investmentAmount": "25000", "sharePrice": "35", "dividendPerShare": "2.10", "dividendGrowth": "4", "sharePriceGrowth": "5", "years": "20", "monthlyContribution": "250" } },
+        { "slug": "retirement-dividend-income", "title": "Retirement Dividend Income Calculator", "defaults": { "investmentAmount": "50000", "sharePrice": "55", "dividendPerShare": "1.65", "dividendGrowth": "6", "sharePriceGrowth": "7", "years": "25", "monthlyContribution": "500" } },
+        { "slug": "drip-vs-cash", "title": "DRIP vs Cash Dividends Calculator", "defaults": { "investmentAmount": "30000", "sharePrice": "50", "dividendPerShare": "2.00", "dividendGrowth": "5", "sharePriceGrowth": "7", "years": "20", "monthlyContribution": "300", "reinvest": "yes" } }
+      ]
     }
   ]
 }

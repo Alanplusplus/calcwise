@@ -175,7 +175,8 @@
       "shortTitle": "Salary to Hourly",
       "category": "planning",
       "keywords": ["salary to hourly calculator", "annual salary to hourly rate", "hourly rate calculator"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-09T17:50:00+08:00",
       "priority": "tier3-long-tail"
     },
     {
