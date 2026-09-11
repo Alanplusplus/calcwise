@@ -185,7 +185,8 @@
       "shortTitle": "Tip",
       "category": "planning",
       "keywords": ["tip calculator", "how much to tip", "restaurant tip calculator"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-11T10:15:00+08:00",
       "priority": "tier3-long-tail"
     },
     {

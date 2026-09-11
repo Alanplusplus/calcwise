@@ -173,7 +173,8 @@
       "title": "Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe",
       "targetKeyword": "capital gains tax rate 2026",
       "linkedCalculators": ["capital-gains-tax", "investment-return", "income-tax"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-11T10:15:00+08:00"
     },
     {
       "slug": "self-employment-tax-guide",

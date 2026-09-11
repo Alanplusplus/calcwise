@@ -146,6 +146,18 @@
         { "slug": "retirement-dividend-income", "title": "Retirement Dividend Income Calculator", "defaults": { "investmentAmount": "50000", "sharePrice": "55", "dividendPerShare": "1.65", "dividendGrowth": "6", "sharePriceGrowth": "7", "years": "25", "monthlyContribution": "500" } },
         { "slug": "drip-vs-cash", "title": "DRIP vs Cash Dividends Calculator", "defaults": { "investmentAmount": "30000", "sharePrice": "50", "dividendPerShare": "2.00", "dividendGrowth": "5", "sharePriceGrowth": "7", "years": "20", "monthlyContribution": "300", "reinvest": "yes" } }
       ]
+    },
+    {
+      "baseCalculator": "tip-calculator",
+      "status": "done",
+      "completedAt": "2026-09-11T10:15:00+08:00",
+      "variants": [
+        { "slug": "restaurant-dinner", "title": "Restaurant Dinner Tip Calculator", "defaults": { "billAmount": "120.00", "tipPercentage": "20", "numberOfPeople": "2" } },
+        { "slug": "group-dinner", "title": "Group Dinner Tip Calculator (6 People)", "defaults": { "billAmount": "350.00", "tipPercentage": "20", "numberOfPeople": "6" } },
+        { "slug": "coffee-shop", "title": "Coffee Shop Tip Calculator", "defaults": { "billAmount": "7.50", "tipPercentage": "15", "numberOfPeople": "1" } },
+        { "slug": "food-delivery", "title": "Food Delivery Tip Calculator", "defaults": { "billAmount": "45.00", "tipPercentage": "20", "numberOfPeople": "1" } },
+        { "slug": "salon-haircut", "title": "Hair Salon Tip Calculator", "defaults": { "billAmount": "65.00", "tipPercentage": "20", "numberOfPeople": "1" } }
+      ]
     }
   ]
 }
