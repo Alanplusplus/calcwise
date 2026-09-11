@@ -15,6 +15,7 @@ import { creditCardPayoffVariants } from "@/lib/variants/credit-card-payoff";
 import { cdVariants } from "@/lib/variants/cd-calculator";
 import { homeAffordabilityVariants } from "@/lib/variants/home-affordability";
 import { dividendVariants } from "@/lib/variants/dividend";
+import { tipCalculatorVariants } from "@/lib/variants/tip-calculator";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -127,5 +128,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages, ...roiVariantPages, ...autoLoanVariantPages, ...studentLoanVariantPages, ...creditCardPayoffVariantPages, ...cdVariantPages, ...homeAffordabilityVariantPages, ...dividendVariantPages];
+  const tipCalculatorVariantPages = tipCalculatorVariants.map((v) => ({
+    url: `${base}/calculators/tip-calculator/${v.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...calculatorPages, ...guidePages, ...mortgageVariantPages, ...savingsGoalVariantPages, ...retirementVariantPages, ...debtPayoffVariantPages, ...compoundInterestVariantPages, ...inflationVariantPages, ...roiVariantPages, ...autoLoanVariantPages, ...studentLoanVariantPages, ...creditCardPayoffVariantPages, ...cdVariantPages, ...homeAffordabilityVariantPages, ...dividendVariantPages, ...tipCalculatorVariantPages];
 }

@@ -281,6 +281,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["paycheck", "income-tax", "budget-50-30-20"],
     relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
   },
+  {
+    slug: "tip-calculator",
+    title: "Tip Calculator",
+    shortTitle: "Tip",
+    description: "Calculate the right tip amount for any service. Split bills among multiple people and see per-person totals with customizable tip percentages.",
+    category: "planning",
+    relatedCalculators: ["budget-50-30-20", "salary-to-hourly", "paycheck"],
+    relatedGuides: ["50-30-20-budget-rule"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {

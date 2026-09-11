@@ -176,6 +176,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["dividend", "compound-interest", "investment-return"],
     relatedGuides: ["how-to-start-investing-1000", "compound-interest-real-examples"],
   },
+  {
+    slug: "capital-gains-tax-guide",
+    title: "Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe",
+    description: "Understand 2026 capital gains tax rates, brackets, and strategies to minimize your tax bill. Covers short-term vs long-term rates, exemptions, and real examples.",
+    published: true,
+    relatedCalculators: ["income-tax", "investment-return", "compound-interest"],
+    relatedGuides: ["how-to-calculate-roi", "dividend-investing-beginners"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
