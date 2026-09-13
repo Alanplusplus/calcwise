@@ -9,6 +9,7 @@ import { compoundInterestVariants } from "@/lib/variants/compound-interest";
 import { CategoryIcon } from "@/components/Icons";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { WebApplicationJsonLd } from "@/components/WebApplicationJsonLd";
+import { VariantSections } from "@/components/VariantSections";
 
 interface Props {
   params: Promise<{ variant: string }>;
@@ -86,6 +87,8 @@ export default async function VariantPage({ params }: Props) {
           ))}
         </ul>
       </div>
+
+      <VariantSections variant={variant} />
 
       <div className="mt-8 border-t border-ink-200 pt-6">
         <p className="text-sm font-medium text-ink-600">See also:</p>

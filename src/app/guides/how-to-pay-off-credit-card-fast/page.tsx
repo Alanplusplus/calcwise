@@ -851,6 +851,295 @@ export default function HowToPayOffCreditCardFastGuide() {
           </div>
         </section>
 
+        {/* Payoff Plan by Balance Size */}
+        <section className="mt-12">
+          <h2 id="payoff-by-balance" className="text-2xl font-bold text-ink-900">
+            Payoff Plan by Balance Size
+          </h2>
+          <p className="mt-4 text-ink-700">
+            Your optimal strategy depends heavily on how much you owe. A $2,000
+            balance calls for a different playbook than $15,000. Here is a
+            breakdown by common balance levels, with payoff timelines at 22.9%
+            APR unless noted.
+          </p>
+
+          <div className="mt-8">
+            <h3 id="2000-balance" className="text-xl font-semibold text-ink-800">
+              $2,000 Balance
+            </h3>
+            <p className="mt-2 text-ink-700">
+              A $2,000 balance is the most common entry point for first-time
+              credit card debtors — usually the result of a single unexpected
+              expense like a car repair, medical bill, or emergency travel. At
+              22.9% APR, paying $100/month clears the balance in 24 months with
+              roughly $380 in interest. That is manageable on most budgets
+              without restructuring your entire financial life.
+            </p>
+            <p className="mt-4 text-ink-700">
+              This balance is small enough to brute-force with disciplined
+              fixed payments. Consolidation loans and transfer fees often cost
+              more than they save at this level. A 0% balance transfer with a 3%
+              fee ($60) saves about $320 in interest if you clear the balance
+              within 12 months — but only if you actually follow through. For
+              most people at $2,000, simply paying $100-$150/month and avoiding
+              new charges is the fastest path to zero.
+            </p>
+            <div className="mt-6 overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b-2 border-ink-200 bg-ink-50">
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Monthly Payment
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Months to Payoff
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Interest
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Cost
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-ink-100">
+                  <tr>
+                    <td className="px-4 py-3">~$40 (minimum)</td>
+                    <td className="px-4 py-3">108+ (9+ years)</td>
+                    <td className="px-4 py-3 text-red-700">~$1,900</td>
+                    <td className="px-4 py-3">~$3,900</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$100</td>
+                    <td className="px-4 py-3">24</td>
+                    <td className="px-4 py-3">~$380</td>
+                    <td className="px-4 py-3">~$2,380</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">$150</td>
+                    <td className="px-4 py-3">15</td>
+                    <td className="px-4 py-3">~$250</td>
+                    <td className="px-4 py-3">~$2,250</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$200</td>
+                    <td className="px-4 py-3">11</td>
+                    <td className="px-4 py-3">~$175</td>
+                    <td className="px-4 py-3">~$2,175</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <h3 id="5000-balance" className="text-xl font-semibold text-ink-800">
+              $5,000 Balance
+            </h3>
+            <p className="mt-2 text-ink-700">
+              At $5,000, credit card interest becomes genuinely expensive. Paying
+              only the minimum (~$100/month on a $5,000 balance at 22.9% APR)
+              stretches payoff across 19 years and costs roughly $6,800 in
+              interest — more than the original purchase. This is the turning
+              point where minimum payments stop being a nuisance and start being
+              a financial emergency.
+            </p>
+            <p className="mt-4 text-ink-700">
+              If your $5,000 is split across multiple cards, the avalanche method
+              (highest APR first) is the most effective approach. Direct every
+              extra dollar to the card charging the highest rate while paying
+              minimums on the rest. At $300-$500/month total, most people clear
+              a $5,000 portfolio in 11-20 months depending on how aggressively
+              they pay.
+            </p>
+            <div className="mt-6 overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b-2 border-ink-200 bg-ink-50">
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Monthly Payment
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Months to Payoff
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Interest
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Cost
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-ink-100">
+                  <tr>
+                    <td className="px-4 py-3">~$100 (minimum)</td>
+                    <td className="px-4 py-3">228 (19 years)</td>
+                    <td className="px-4 py-3 text-red-700">~$6,800</td>
+                    <td className="px-4 py-3">~$11,800</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$200</td>
+                    <td className="px-4 py-3">32</td>
+                    <td className="px-4 py-3">~$1,390</td>
+                    <td className="px-4 py-3">~$6,390</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">$300</td>
+                    <td className="px-4 py-3">20</td>
+                    <td className="px-4 py-3">~$855</td>
+                    <td className="px-4 py-3">~$5,855</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$500</td>
+                    <td className="px-4 py-3">11</td>
+                    <td className="px-4 py-3">~$460</td>
+                    <td className="px-4 py-3">~$5,460</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <h3 id="10000-balance" className="text-xl font-semibold text-ink-800">
+              $10,000 Balance
+            </h3>
+            <p className="mt-2 text-ink-700">
+              A $10,000 credit card balance sits above the national average and
+              puts real pressure on monthly cash flow. Minimum payments of
+              roughly $200/month at 22.9% APR take 27 years to eliminate and
+              cost approximately $14,600 in interest. At this level, the
+              strategies in this guide — balance transfers, consolidation loans,
+              and aggressive fixed payments — all become worth serious
+              consideration.
+            </p>
+            <p className="mt-4 text-ink-700">
+              A personal loan at 10% APR over 24 months on $10,000 costs roughly
+              $1,075 in interest ($11,075 total). The same balance on a credit
+              card at 19.9% APR paid off over 24 months at $500/month costs
+              about $2,614 in interest — a difference of $1,539. Consolidation
+              makes the most sense when you need a lower fixed payment and cannot
+              qualify for a 0% balance transfer.
+            </p>
+            <div className="mt-6 overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b-2 border-ink-200 bg-ink-50">
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Monthly Payment
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Months to Payoff
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Interest
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Cost
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-ink-100">
+                  <tr>
+                    <td className="px-4 py-3">~$200 (minimum)</td>
+                    <td className="px-4 py-3">324 (27 years)</td>
+                    <td className="px-4 py-3 text-red-700">~$14,600</td>
+                    <td className="px-4 py-3">~$24,600</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$300</td>
+                    <td className="px-4 py-3">44</td>
+                    <td className="px-4 py-3">~$3,155</td>
+                    <td className="px-4 py-3">~$13,155</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">$500</td>
+                    <td className="px-4 py-3">24</td>
+                    <td className="px-4 py-3">~$1,860</td>
+                    <td className="px-4 py-3">~$11,860</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$800</td>
+                    <td className="px-4 py-3">14</td>
+                    <td className="px-4 py-3">~$1,030</td>
+                    <td className="px-4 py-3">~$11,030</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <h3 id="15000-balance" className="text-xl font-semibold text-ink-800">
+              $15,000 Balance
+            </h3>
+            <p className="mt-2 text-ink-700">
+              $15,000 in credit card debt creates significant financial pressure.
+              Minimum payments of roughly $300/month at 22.9% APR stretch payoff
+              across 30 years and cost approximately $21,000 in interest — you
+              repay $36,000 on $15,000 borrowed. At this level, a structured
+              plan is not optional. Hoping the balance shrinks on its own is how
+              people end up carrying debt into retirement.
+            </p>
+            <p className="mt-4 text-ink-700">
+              Start by calling your card issuers and requesting an APR reduction.
+              Many will lower your rate by 2-5 percentage points if you have a
+              history of on-time payments. If you qualify, a 0% balance transfer
+              on a portion of the balance can save thousands — but only if you
+              are disciplined enough to pay off the transferred amount before the
+              promotional period ends. Combine a transfer with a fixed payment
+              plan of $600-$900/month to clear the full balance in under three
+              years.
+            </p>
+            <div className="mt-6 overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b-2 border-ink-200 bg-ink-50">
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Monthly Payment
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Months to Payoff
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Interest
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                      Total Cost
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-ink-100">
+                  <tr>
+                    <td className="px-4 py-3">~$300 (minimum)</td>
+                    <td className="px-4 py-3">360 (30 years)</td>
+                    <td className="px-4 py-3 text-red-700">~$21,000</td>
+                    <td className="px-4 py-3">~$36,000</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$400</td>
+                    <td className="px-4 py-3">53</td>
+                    <td className="px-4 py-3">~$5,960</td>
+                    <td className="px-4 py-3">~$20,960</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3">$600</td>
+                    <td className="px-4 py-3">31</td>
+                    <td className="px-4 py-3">~$3,420</td>
+                    <td className="px-4 py-3">~$18,420</td>
+                  </tr>
+                  <tr className="bg-ink-50/50">
+                    <td className="px-4 py-3">$900</td>
+                    <td className="px-4 py-3">19</td>
+                    <td className="px-4 py-3">~$2,050</td>
+                    <td className="px-4 py-3">~$17,050</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="mt-12 rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 text-center">
           <h2 className="text-2xl font-bold text-ink-900">

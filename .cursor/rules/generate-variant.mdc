@@ -20,14 +20,7 @@ When the user says "生成变体页面" or similar, follow this automated workfl
 Create `src/lib/variants/[baseCalculator].ts`:
 
 ```typescript
-export interface CalculatorVariant {
-  slug: string;
-  title: string;
-  description: string;
-  defaults: Record<string, string>;
-  intro: string;
-  tips: string[];
-}
+import type { CalculatorVariant } from "./types";
 
 export const [name]Variants: CalculatorVariant[] = [
   // For each variant in the plan batch:
@@ -43,11 +36,20 @@ export const [name]Variants: CalculatorVariant[] = [
       "[comparison to other options relevant to this price point/scenario]",
       "[actionable advice specific to this situation]",
     ],
+    keyResults: [
+      // 4-6 pre-calculated metrics for this scenario
+      { label: "[metric name]", value: "[specific value]" },
+    ],
+    comparisonNote: "[2-3 sentences comparing this scenario to adjacent variants]",
+    faq: [
+      // 3-4 scenario-specific Q&A pairs
+      { q: "[question unique to THIS scenario]", a: "[2-3 sentence answer]" },
+    ],
   },
 ];
 ```
 
-CRITICAL: Each variant MUST have unique `intro` and `tips` content. Do NOT use the same text with different numbers substituted.
+CRITICAL: Each variant MUST have unique `intro`, `tips`, `faq`, and `comparisonNote` content. Do NOT use the same text with different numbers substituted. Import the type from `./types`, NOT define it locally.
 
 ## Step 2: Modify Base Calculator Component
 
@@ -83,6 +85,7 @@ import { site } from "@/lib/site";
 import { [Name]Calculator } from "../[Name]Calculator";
 import { [name]Variants } from "@/lib/variants/[baseCalculator]";
 import { CategoryIcon } from "@/components/Icons";
+import { VariantSections } from "@/components/VariantSections";
 
 interface Props {
   params: Promise<{ variant: string }>;
@@ -148,6 +151,8 @@ export default async function VariantPage({ params }: Props) {
           ))}
         </ul>
       </div>
+
+      <VariantSections variant={variant} />
 
       {/* Related variants */}
       <div className="mt-8 border-t border-ink-200 pt-6">
@@ -251,3 +256,14 @@ Update `.cursor/plans/variants.json`: change the batch's status from `"pending"`
 6. NO emoji anywhere
 7. Variant pages MUST include Related Tools section (from calc.relatedCalculators)
 8. Variant pages MUST include Learn More section (from calc.relatedGuides)
+
+## Information Gain Requirements (added Sep 2026)
+
+Every new variant MUST include these additional fields beyond intro + tips:
+
+9. **`faq`** — 3-4 scenario-specific FAQ entries (each answer 2-3 sentences). Questions must be unique to THIS variant, not generic to the calculator.
+10. **`keyResults`** — 4-6 pre-calculated key metrics as `{ label, value }` pairs, shown in a summary table.
+11. **`comparisonNote`** — 2-3 sentences explaining how this scenario compares to other variants of the same calculator.
+12. **Information gain gate** — before creating a variant, confirm it passes all checks in `content-standards.mdc` under "Information Gain Gate for Variant Pages". If a proposed variant only differs from another by a dollar amount (e.g., $5K vs $10K with the same strategy), do NOT create it as a separate page. Instead, add it as an anchored section in a relevant guide article.
+13. **Use shared types** — import `CalculatorVariant` from `@/lib/variants/types.ts`, not from other variant files.
+14. **Use VariantSections component** — all variant page templates must include `<VariantSections variant={variant} />` from `@/components/VariantSections.tsx` to render FAQ, keyResults, and comparisonNote.

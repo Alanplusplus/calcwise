@@ -266,6 +266,157 @@ export default function HowMuchHouseGuide() {
           </p>
         </section>
 
+        {/* Income Tier Breakdowns */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold text-ink-900">
+            Detailed Breakdowns by Income Level
+          </h2>
+          <p className="mt-4 text-ink-700">
+            The table above gives you quick reference numbers. These three
+            income tiers walk through the full math — monthly gross income,
+            maximum housing and debt payments under the 28/36 rule, realistic
+            home price ranges, and the costs that tables alone cannot capture.
+          </p>
+
+          <h3 id="75000-income" className="mt-8 text-xl font-semibold text-ink-800">
+            $75,000 Income
+          </h3>
+          <p className="mt-4 text-ink-700">
+            At $75,000 per year, your gross monthly income is $6,250. Under the
+            28% rule, your maximum monthly housing payment (mortgage, taxes,
+            insurance, and HOA) is $1,750. Under the 36% back-end rule, your
+            total debt ceiling — including housing — is $2,250 per month. If you
+            carry no other debts, the full $1,750 goes toward housing. With a
+            $400/month car payment, your housing budget drops to $1,850 under
+            the back-end rule, but the 28% front-end cap of $1,750 still
+            applies.
+          </p>
+          <p className="mt-4 text-ink-700">
+            With a conventional loan at 10% down on a $300,000 home, expect a
+            home price range of roughly $280,000 to $330,000 depending on your
+            debts, credit score, and local tax rates. A 10% down payment on
+            $300,000 means $30,000 upfront plus closing costs. Because you are
+            below 20% down, private mortgage insurance (PMI) adds approximately
+            $80 to $150 per month until you reach 20% equity — typically 5-7
+            years of on-time payments.
+          </p>
+          <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <h4 className="font-semibold text-ink-800">At a Glance</h4>
+                <ul className="mt-2 space-y-1 text-sm text-ink-700">
+                  <li>Gross monthly income: $6,250</li>
+                  <li>Max housing (28%): $1,750/month</li>
+                  <li>Max total debt (36%): $2,250/month</li>
+                  <li>Home price range: $280,000 - $330,000</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-ink-800">Loan Details</h4>
+                <ul className="mt-2 space-y-1 text-sm text-ink-700">
+                  <li>Down payment: 10% (~$30,000)</li>
+                  <li>PMI: ~$80 - $150/month</li>
+                  <li>Loan type: Conventional</li>
+                  <li>Comfortable target: ~$270,000</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 id="100000-income" className="mt-10 text-xl font-semibold text-ink-800">
+            $100,000 Income
+          </h3>
+          <p className="mt-4 text-ink-700">
+            A $100,000 salary translates to $8,333 per month in gross income.
+            The 28% rule gives you a maximum housing budget of $2,333 per
+            month, and the 36% back-end rule caps total debt at $3,000. At this
+            income level, the comfortable home price range is approximately
+            $380,000 to $440,000 with 20% down, 6.5% interest, and typical
+            property tax and insurance rates. Lenders may pre-approve you for
+            $460,000 or more — but that maximum leaves almost no margin for
+            savings, maintenance, or lifestyle expenses.
+          </p>
+          <p className="mt-4 text-ink-700">
+            The key at this income level: do not max out. Targeting 25% of
+            gross income ($2,083/month) instead of 28% preserves roughly
+            $250/month for retirement contributions, emergency savings, or
+            unexpected costs. On a $350,000 mortgage at 6.5% over 30 years,
+            total interest paid equals approximately $446,000 — meaning you
+            pay more in interest over the life of the loan than the home&apos;s
+            purchase price. A $400,000 home at the top of your range pushes
+            that interest total above $510,000.
+          </p>
+          <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <h4 className="font-semibold text-ink-800">At a Glance</h4>
+                <ul className="mt-2 space-y-1 text-sm text-ink-700">
+                  <li>Gross monthly income: $8,333</li>
+                  <li>Max housing (28%): $2,333/month</li>
+                  <li>Recommended (25%): $2,083/month</li>
+                  <li>Home price range: $380,000 - $440,000</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-ink-800">Cost of Borrowing</h4>
+                <ul className="mt-2 space-y-1 text-sm text-ink-700">
+                  <li>$350K mortgage at 6.5%: ~$446K total interest</li>
+                  <li>Monthly P&amp;I on $350K: ~$2,212</li>
+                  <li>Max lender approval: ~$460,000</li>
+                  <li>Comfortable target: ~$360,000</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 id="150000-income" className="mt-10 text-xl font-semibold text-ink-800">
+            $150,000 Income
+          </h3>
+          <p className="mt-4 text-ink-700">
+            At $150,000 per year, gross monthly income reaches $12,500. Maximum
+            housing under the 28% rule is $3,500 per month, with total debt
+            capped at $4,500 under the 36% rule. The comfortable home price
+            range is approximately $540,000 to $620,000. Homes above $766,550
+            (the 2026 conforming loan limit in most areas) require jumbo
+            financing, which typically demands higher credit scores, larger down
+            payments (often 15-20%), and interest rates 0.25-0.5% above
+            conventional loans.
+          </p>
+          <p className="mt-4 text-ink-700">
+            At this income level, the mortgage interest deduction becomes
+            meaningfully valuable — potentially saving $3,000-$5,000 per year
+            in federal taxes on a $500,000+ mortgage, though the benefit
+            depends on whether you itemize deductions and your marginal tax
+            bracket. Total homeownership costs extend well beyond the mortgage:
+            on a $580,000 home, expect roughly $2,900/month in P&amp;I, $580 in
+            property taxes, $240 in insurance, and $480/month set aside for
+            maintenance — a true monthly cost of approximately $4,200, or 34%
+            of gross income before HOA fees or PMI.
+          </p>
+          <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <h4 className="font-semibold text-ink-800">At a Glance</h4>
+                <ul className="mt-2 space-y-1 text-sm text-ink-700">
+                  <li>Gross monthly income: $12,500</li>
+                  <li>Max housing (28%): $3,500/month</li>
+                  <li>Max total debt (36%): $4,500/month</li>
+                  <li>Home price range: $540,000 - $620,000</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-ink-800">Additional Considerations</h4>
+                <ul className="mt-2 space-y-1 text-sm text-ink-700">
+                  <li>Jumbo threshold: $766,550 (most areas)</li>
+                  <li>Tax deduction: ~$3,000 - $5,000/year</li>
+                  <li>True monthly cost on $580K home: ~$4,200</li>
+                  <li>Comfortable target: ~$540,000</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Section 3: Case Study */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-ink-900">

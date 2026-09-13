@@ -1,11 +1,4 @@
-export interface CalculatorVariant {
-  slug: string;
-  title: string;
-  description: string;
-  defaults: Record<string, string>;
-  intro: string;
-  tips: string[];
-}
+import type { CalculatorVariant } from "./types";
 
 export const roiVariants: CalculatorVariant[] = [
   {
@@ -29,6 +22,30 @@ export const roiVariants: CalculatorVariant[] = [
       "Factor in customer lifetime value (CLV) rather than first-purchase revenue. A $50 customer acquisition cost with a $200 CLV delivers 300% ROI, versus only 40% if you count just the first $70 purchase.",
       "Seasonal campaigns may show negative ROI in the short term. A $10,000 Q4 holiday campaign might generate $8,000 in immediate sales but drive $25,000 over the following 6 months through retargeting and email follow-ups.",
     ],
+    keyResults: [
+      { label: "Campaign cost", value: "$5,000 initial spend" },
+      { label: "Revenue generated", value: "$18,000 first-year revenue" },
+      { label: "Net ROI", value: "157% after $2,000 ongoing costs" },
+      { label: "Break-even timeline", value: "2-4 months for paid search campaigns" },
+      { label: "Revenue-to-spend ratio", value: "3.6x (360% gross return)" },
+      { label: "Net profit", value: "$11,000 on a $5,000 investment" },
+    ],
+    comparisonNote:
+      "A well-executed marketing campaign delivering 157% ROI in year one significantly outpaces rental property cash-on-cash returns of 20-25% and the S&P 500's historical 10.3% annual average. Unlike real estate or stocks, marketing ROI can be realized within months rather than years, though returns are less predictable and require ongoing spend to maintain momentum.",
+    faq: [
+      {
+        q: "How do I measure marketing ROI accurately?",
+        a: "Calculate ROI as (Revenue Generated - Total Marketing Costs) / Total Marketing Costs x 100, including ad spend, creative production, platform fees, and management costs. Track revenue through UTM parameters, conversion pixels, and CRM attribution so you tie sales back to specific campaigns rather than counting all revenue as marketing-driven.",
+      },
+      {
+        q: "What makes marketing attribution so challenging?",
+        a: "Customers often interact with multiple touchpoints before converting, so last-click attribution over-credits final ads while undervaluing awareness channels like social media or email. Multi-touch attribution models and customer surveys help distribute credit more accurately, though no single model captures the full customer journey perfectly.",
+      },
+      {
+        q: "What are typical marketing ROI benchmarks by channel?",
+        a: "Google Search ads typically deliver 200-800% ROI for high-intent keywords, while email marketing averages 3600% ROI due to near-zero marginal cost per send. Social media ads range from 100-400% depending on targeting precision, and content marketing often shows lower first-year ROI but compounds through SEO over 12-24 months.",
+      },
+    ],
   },
   {
     slug: "rental-property",
@@ -50,6 +67,30 @@ export const roiVariants: CalculatorVariant[] = [
       "Budget 1% of property value annually for maintenance and repairs ($3,000 on a $300,000 property). Underfunding maintenance reduces long-term ROI through deferred costs and lower resale value.",
       "Vacancy rates average 5-8% nationally. On $24,000 annual rent, expect to lose $1,200-$1,920 per year to vacancy. Factor this into your ongoing costs for a realistic ROI projection.",
       "Depreciation deductions (approximately $10,900/year on a $300,000 residential property) reduce taxable income without reducing cash flow, boosting after-tax ROI by 15-25% for investors in the 22-32% tax bracket.",
+    ],
+    keyResults: [
+      { label: "Down payment", value: "$60,000 (20% of $300,000 purchase)" },
+      { label: "Annual rental income", value: "$24,000 ($2,000/month)" },
+      { label: "Cap rate", value: "8.0% ($24,000 / $300,000)" },
+      { label: "Cash-on-cash return", value: "23.5% before mortgage payments" },
+      { label: "Operating expenses", value: "$8,000/year (taxes, insurance, maintenance)" },
+      { label: "Net operating income", value: "$16,000/year after expenses" },
+    ],
+    comparisonNote:
+      "Rental property cash-on-cash returns of 20-25% typically exceed the S&P 500's 10.3% historical average, but require active management, illiquid capital, and tolerance for vacancy risk. Stock market investing offers instant liquidity and zero maintenance, while rental properties provide leverage, tax advantages through depreciation, and inflation hedging through rising rents.",
+    faq: [
+      {
+        q: "What is the difference between cap rate and ROI?",
+        a: "Cap rate measures net operating income divided by property value ($16,000 / $300,000 = 5.3% after expenses, or 8.0% on gross rent), independent of financing. ROI measures your actual return on the cash you invested ($16,000 / $60,000 = 26.7%), so leverage amplifies ROI above the cap rate when you use a mortgage.",
+      },
+      {
+        q: "How does vacancy rate impact rental property ROI?",
+        a: "A 5-8% national average vacancy rate reduces $24,000 annual rent by $1,200-$1,920 per year, directly lowering cash-on-cash returns by 2-3 percentage points. Budget for at least one month of vacancy annually and factor turnover costs like cleaning and advertising into your ongoing expense projections.",
+      },
+      {
+        q: "How does leverage affect rental property returns?",
+        a: "With a $60,000 down payment on a $300,000 property, a 5% annual appreciation adds $15,000 in equity while you only invested $60,000 — a 25% return on equity from appreciation alone. Combined with rental income, leveraged returns can reach 30-40% annually, though mortgage interest and maintenance costs reduce net gains.",
+      },
     ],
   },
   {
@@ -73,6 +114,30 @@ export const roiVariants: CalculatorVariant[] = [
       "Energy-efficient equipment often qualifies for additional tax credits of 10-30%, further reducing effective cost. A $50,000 unit with a 10% energy credit has an effective cost of $45,000, boosting ROI by 11%.",
       "Factor in training costs. New equipment typically requires 20-40 hours of employee training per operator at $25-$50/hour. For 3 operators, that adds $1,500-$6,000 to the true investment cost.",
     ],
+    keyResults: [
+      { label: "Equipment cost", value: "$50,000 purchase price" },
+      { label: "Annual productivity gain", value: "$30,000 in labor and material savings" },
+      { label: "Payback period", value: "23 months (under 2 years)" },
+      { label: "5-year total ROI", value: "114.3% net of $4,000/year maintenance" },
+      { label: "Annual maintenance", value: "$4,000 (8% of purchase price)" },
+      { label: "Net annual benefit", value: "$26,000 after maintenance costs" },
+    ],
+    comparisonNote:
+      "A $50,000 equipment purchase delivering 114.3% ROI over five years typically outperforms hiring an additional full-time employee at $45,000-$55,000/year plus benefits, which costs $250,000+ over the same period. Equipment generates predictable savings without payroll taxes, benefits, or turnover costs, though it lacks the flexibility of human labor for varied tasks.",
+    faq: [
+      {
+        q: "How does depreciation affect equipment ROI calculations?",
+        a: "Depreciation spreads the $50,000 purchase cost over the equipment's useful life (typically 5-7 years for tax purposes), creating annual deductions that reduce taxable income without reducing cash flow. Section 179 allows deducting the full $50,000 in year one, potentially saving $11,000-$16,000 in taxes and boosting first-year ROI by 22-32%.",
+      },
+      {
+        q: "Should I lease or buy business equipment?",
+        a: "Leasing at $1,200/month costs $72,000 over five years versus a $50,000 purchase, but preserves capital for other investments. If your business earns 15%+ ROI on alternative uses of that $50,000, leasing may produce higher overall returns despite the higher total cost.",
+      },
+      {
+        q: "What is the Section 179 deduction and how does it help?",
+        a: "Section 179 allows businesses to deduct the full purchase price of qualifying equipment up to $1,220,000 (2026 limit) in the year of purchase rather than depreciating over multiple years. On a $50,000 purchase, this immediate deduction can save $11,000-$16,000 in taxes for businesses in the 22-32% bracket, dramatically improving first-year cash flow and ROI.",
+      },
+    ],
   },
   {
     slug: "stock-portfolio",
@@ -95,6 +160,30 @@ export const roiVariants: CalculatorVariant[] = [
       "Tax-loss harvesting can improve after-tax ROI by 0.5-1.5% annually. Selling losing positions to offset gains saves 15-20% of realized losses in tax, which can be reinvested for compounding benefit.",
       "Compare your 3-year total ROI against the S&P 500 for the same period. If the index returned more with zero effort, consider switching to passive index investing and redirecting your research time to higher-ROI activities.",
     ],
+    keyResults: [
+      { label: "Initial investment", value: "$50,000 portfolio value" },
+      { label: "Annualized return", value: "11.5% net of $150 annual fees" },
+      { label: "3-year total gain", value: "$18,632 (assuming 8% growth)" },
+      { label: "vs. inflation (3%)", value: "8.5% real return above inflation" },
+      { label: "vs. S&P 500 benchmark", value: "+1.2% above 10.3% historical average" },
+      { label: "Annual fees impact", value: "$150/year (0.3% expense ratio)" },
+    ],
+    comparisonNote:
+      "An 11.5% annualized stock portfolio return exceeds rental property cash-on-cash returns when measured on a fully passive basis, and far outpaces high-yield savings accounts at 4.5-5.0% APY. However, stocks carry greater short-term volatility — a 20-30% drawdown is possible in any given year — while savings accounts guarantee principal but lose purchasing power to inflation over time.",
+    faq: [
+      {
+        q: "What is the difference between time-weighted and money-weighted returns?",
+        a: "Time-weighted returns measure portfolio performance independent of when you add or withdraw money, making it the standard for comparing against benchmarks like the S&P 500. Money-weighted returns account for the timing and size of your contributions, so adding $20,000 right before a market crash will show a lower money-weighted return even if the portfolio strategy itself performed well.",
+      },
+      {
+        q: "How should I compare my portfolio to a benchmark?",
+        a: "Match your portfolio's asset allocation to an appropriate index — compare a 70/30 stock-bond mix to a blended benchmark, not the pure S&P 500. Over a 3-year period, outperforming the S&P 500 by 1-2% annually is meaningful; consistently underperforming by 2%+ suggests switching to low-cost index funds.",
+      },
+      {
+        q: "How much does tax drag reduce stock portfolio returns?",
+        a: "Taxable accounts lose 0.5-1.5% annually to taxes on dividends and capital gains, reducing a 10% pre-tax return to 8.5-9.5% after taxes for investors in the 22-24% bracket. Holding investments in tax-advantaged accounts (401k, IRA) or using tax-loss harvesting can recover most of this drag and improve after-tax ROI by 15-20% over a decade.",
+      },
+    ],
   },
   {
     slug: "education-degree",
@@ -116,6 +205,30 @@ export const roiVariants: CalculatorVariant[] = [
       "STEM degrees deliver the highest ROI: computer science graduates earn a median $85,000 starting salary versus $45,000 for liberal arts, creating a $40,000 annual premium that generates 200%+ 10-year ROI even at top-tier tuition.",
       "Community college for the first two years reduces total cost by $30,000-$60,000 while the salary premium remains identical. This single strategy can double or triple the ROI of a bachelor's degree.",
       "Professional certifications (CPA, PMP, AWS) averaging $2,000-$5,000 in cost often deliver 10-20% salary increases, producing ROI of 200-500% within the first year — far exceeding the per-dollar return of most degree programs.",
+    ],
+    keyResults: [
+      { label: "Total degree cost", value: "$80,000 over 4 years" },
+      { label: "Annual salary premium", value: "$15,000 above high school diploma" },
+      { label: "Break-even year", value: "Year 6 of career" },
+      { label: "10-year cumulative return", value: "$171,958 in additional earnings" },
+      { label: "10-year ROI", value: "115% on tuition investment" },
+      { label: "Lifetime earnings boost", value: "$600,000-$900,000 over 40-year career" },
+    ],
+    comparisonNote:
+      "A bachelor's degree with 115% ROI over 10 years compares favorably to entering the workforce directly at $35,000/year, which totals $350,000 in earnings over the same period versus $515,000 with a degree ($165,000 premium minus $80,000 tuition). However, skilled trades and certifications often deliver faster break-even timelines of 1-3 years compared to 5-7 years for a traditional four-year degree.",
+    faq: [
+      {
+        q: "How should I account for opportunity cost in education ROI?",
+        a: "Opportunity cost includes four years of foregone earnings at $35,000/year ($140,000 total), which raises the true investment from $80,000 tuition to $220,000. When fully accounted for, 10-year ROI drops from 115% to approximately 35%, though lifetime ROI remains strongly positive due to decades of compounded salary premiums.",
+      },
+      {
+        q: "Does ROI vary significantly by field of study?",
+        a: "STEM degrees deliver the highest ROI, with computer science graduates earning a $40,000 annual premium over liberal arts majors and achieving 200%+ 10-year ROI even at top-tier tuition. Healthcare, engineering, and business degrees typically break even within 4-6 years, while humanities and social science degrees may take 10-15 years to recoup costs.",
+      },
+      {
+        q: "Do graduate degrees show diminishing returns on ROI?",
+        a: "Master's degrees costing an additional $30,000-$60,000 typically add $10,000-$20,000 in annual salary premium, breaking even in 3-5 years for MBA and engineering programs. However, many PhD programs have negative short-term ROI due to 5-7 years of reduced earnings during study, though they can pay off over a 30-year academic or research career.",
+      },
     ],
   },
 ];

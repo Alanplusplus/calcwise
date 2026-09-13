@@ -34,11 +34,23 @@ alwaysApply: true
 - FAQ section with JSON-LD schema
 - At least 1 infographic image
 
-### For Variant Pages
+### For Variant Pages (Programmatic SEO)
 - Unique intro text explaining the specific scenario
-- 3-5 scenario-specific tips/considerations
+- 3-5 scenario-specific tips/considerations with concrete dollar amounts
 - Pre-filled calculator with sensible defaults
 - Internal links to related variants
+- 3-4 scenario-specific FAQ entries (`faq` field) with FaqJsonLd
+- 4-6 pre-calculated key results (`keyResults` field) shown in a summary table
+- A `comparisonNote` (2-3 sentences) explaining how this scenario compares to adjacent variants
+- Data structure: all variant data uses `CalculatorVariant` from `src/lib/variants/types.ts`
+
+### Information Gain Gate for Variant Pages
+Before creating a new variant, it MUST pass these checks:
+1. **Unique question test** — does this variant answer a question that no other page on the site answers?
+2. **Strategy differentiation** — does the advice genuinely differ from other variants of the same calculator? (Changing dollar amounts alone is NOT enough.)
+3. **Minimum 500 unique words** — intro + tips + FAQ answers + comparisonNote must total at least 500 words of unique text
+4. **No pure-number variants** — avoid creating variants that only differ by a dollar amount or percentage (e.g., "$5K balance" vs "$10K balance" for the same strategy). Instead, consolidate number-based breakdowns into a guide article with anchored sections.
+5. **Maximum 5-7 variants per calculator** — quality over quantity
 
 ## Image Generation (kie-image) & Post-Processing
 

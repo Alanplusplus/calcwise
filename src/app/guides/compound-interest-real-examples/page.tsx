@@ -761,6 +761,180 @@ export default function CompoundInterestRealExamplesGuide() {
           </p>
         </section>
 
+        {/* Growth by Starting Amount */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold text-ink-900">
+            Growth by Starting Amount
+          </h2>
+          <p className="mt-4 text-ink-700">
+            The five examples above cover different financial situations — but
+            they all raise the same question: how much does your starting
+            balance actually matter? The answer is less than most people think.
+            With the same monthly contribution rate and return, a larger lump
+            sum gives you a head start, but consistent contributions over
+            20-30 years drive the majority of the final balance in every
+            scenario below.
+          </p>
+
+          <h3 id="1000-start" className="mt-8 text-xl font-semibold text-ink-800">
+            $1,000 Start
+          </h3>
+          <p className="mt-4 text-ink-700">
+            Starting with just $1,000 and adding $100 per month at a 7% annual
+            return for 30 years grows to approximately $130,000. Of that total,
+            you contributed $37,000 out of pocket — the remaining $93,000 came
+            entirely from compound growth. That is a 3.5x multiplier on money
+            you actually saved, built from a modest four-figure starting point
+            and a contribution smaller than most car payments.
+          </p>
+          <p className="mt-4 text-ink-700">
+            The starting amount matters less than consistency. By year 10, the
+            same account is worth roughly $19,000 — only $13,000 of which came
+            from your contributions. The first decade establishes the compounding
+            base; the last two decades are where growth accelerates. Someone who
+            waits to save a $10,000 lump sum before investing would need nearly
+            8 years of $100/month contributions just to match what the $1,000
+            starter already accumulated — time that cannot be recovered.
+          </p>
+
+          <h3 id="5000-start" className="mt-8 text-xl font-semibold text-ink-800">
+            $5,000 Start
+          </h3>
+          <p className="mt-4 text-ink-700">
+            A $5,000 starting balance with $200 per month at 7% over 20 years
+            reaches approximately $124,000. You invested $53,000 total ($5,000
+            initial plus $48,000 in monthly contributions), and compound
+            interest generated roughly $71,000 on top — more than the entire
+            amount you put in. The $5,000 head start contributes meaningfully
+            in the early years, but by year 15 the monthly deposits have
+            outpaced the original lump sum in total dollars added.
+          </p>
+          <p className="mt-4 text-ink-700">
+            This scenario mirrors a typical early-career investor: a small
+            rollover from a previous 401(k), a signing bonus, or a year of
+            aggressive saving before committing to regular contributions. The
+            $200/month level is achievable on most household budgets and
+            produces a six-figure portfolio in two decades without requiring
+            exceptional returns or a large windfall to begin.
+          </p>
+
+          <h3 id="10000-start" className="mt-8 text-xl font-semibold text-ink-800">
+            $10,000 Start
+          </h3>
+          <p className="mt-4 text-ink-700">
+            Investing $10,000 upfront and adding $500 per month at 7% for 20
+            years grows to approximately $301,000. Total out-of-pocket
+            contributions reach $130,000 ($10,000 initial plus $120,000 in
+            monthly deposits), with compound growth adding roughly $171,000.
+            At this contribution level, the portfolio crosses $100,000 around
+            year 9 and $200,000 around year 14 — milestones that feel distant
+            at the start but arrive faster than linear math suggests.
+          </p>
+          <p className="mt-4 text-ink-700">
+            By year 10, a critical tipping point arrives: annual investment
+            growth on the portfolio (approximately $7,500) exceeds the $6,000
+            you contribute that year in monthly deposits. Your money is now
+            working harder than you are. From this point forward, compound
+            interest contributes more to the balance each year than your
+            contributions — the hallmark of a mature compounding portfolio.
+          </p>
+
+          <h3 id="100000-start" className="mt-8 text-xl font-semibold text-ink-800">
+            $100,000 Lump Sum
+          </h3>
+          <p className="mt-4 text-ink-700">
+            A $100,000 lump sum invested at 7% with $1,000 per month added for
+            20 years reaches approximately $925,000. You contribute $340,000
+            total ($100,000 initial plus $240,000 in monthly deposits), and
+            compound interest accounts for roughly $585,000 — nearly twice what
+            you put in. The large starting balance means compounding begins on
+            six figures from day one, so even modest monthly additions
+            amplify an already substantial base.
+          </p>
+          <p className="mt-4 text-ink-700">
+            By year 10, the portfolio is worth approximately $374,000 and
+            generates roughly $26,000 in annual growth — more than double the
+            $12,000 you contribute that year. This scenario reflects someone
+            who received an inheritance, sold a business, or rolled over a
+            sizable retirement account and continues investing systematically.
+            The lump sum provides immediate scale, but the $1,000/month
+            discipline is what pushes the total toward seven figures.
+          </p>
+
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="border-b-2 border-ink-200 bg-ink-50">
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Starting Amount
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Monthly Addition
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Years
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Final Balance
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Total Contributed
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Interest Earned
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-ink-100">
+                <tr>
+                  <td className="px-4 py-3">$1,000</td>
+                  <td className="px-4 py-3">$100</td>
+                  <td className="px-4 py-3">30</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">
+                    $130,114
+                  </td>
+                  <td className="px-4 py-3">$37,000</td>
+                  <td className="px-4 py-3">$93,114</td>
+                </tr>
+                <tr className="bg-ink-50/50">
+                  <td className="px-4 py-3">$5,000</td>
+                  <td className="px-4 py-3">$200</td>
+                  <td className="px-4 py-3">20</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">
+                    $124,379
+                  </td>
+                  <td className="px-4 py-3">$53,000</td>
+                  <td className="px-4 py-3">$71,379</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3">$10,000</td>
+                  <td className="px-4 py-3">$500</td>
+                  <td className="px-4 py-3">20</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">
+                    $300,851
+                  </td>
+                  <td className="px-4 py-3">$130,000</td>
+                  <td className="px-4 py-3">$170,851</td>
+                </tr>
+                <tr className="bg-ink-50/50">
+                  <td className="px-4 py-3">$100,000</td>
+                  <td className="px-4 py-3">$1,000</td>
+                  <td className="px-4 py-3">20</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">
+                    $924,801
+                  </td>
+                  <td className="px-4 py-3">$340,000</td>
+                  <td className="px-4 py-3">$584,801</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-ink-500">
+            *All scenarios assume 7% annual return with monthly compounding.
+            Actual investment returns vary year to year.
+          </p>
+        </section>
+
         {/* CTA Section */}
         <section className="mt-12 rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 text-center">
           <h2 className="text-2xl font-bold text-ink-900">

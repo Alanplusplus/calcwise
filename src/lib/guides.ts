@@ -184,6 +184,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["income-tax", "investment-return", "compound-interest"],
     relatedGuides: ["how-to-calculate-roi", "dividend-investing-beginners"],
   },
+  {
+    slug: "tipping-guide-how-much",
+    title: "How Much Should You Tip? The Complete 2026 Tipping Guide by Service",
+    description: "Learn exactly how much to tip at restaurants, coffee shops, for delivery, at salons, and for group dinners. Specific dollar amounts and etiquette rules for every situation.",
+    published: true,
+    relatedCalculators: ["tip-calculator", "budget-50-30-20"],
+    relatedGuides: ["50-30-20-budget-rule"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

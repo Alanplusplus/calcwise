@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 import { DividendCalculator } from "../DividendCalculator";
 import { dividendVariants } from "@/lib/variants/dividend";
 import { CategoryIcon } from "@/components/Icons";
+import { VariantSections } from "@/components/VariantSections";
 
 interface Props {
   params: Promise<{ variant: string }>;
@@ -72,6 +73,8 @@ export default async function VariantPage({ params }: Props) {
           ))}
         </ul>
       </div>
+
+      <VariantSections variant={variant} />
 
       {/* Related variants */}
       <div className="mt-8 border-t border-ink-200 pt-6">

@@ -1,5 +1,5 @@
 {
-  "description": "Variant pages to generate per calculator. Pick the first 'pending' batch each time.",
+  "description": "Variant pages to generate per calculator. Pick the first 'pending' batch each time. NOTE: As of Sep 2026, low-information-gain variants (pure dollar-amount variations) have been removed and consolidated into guide articles. New variants must pass the information gain gate in content-standards.mdc.",
   "batches": [
     {
       "baseCalculator": "mortgage",

@@ -5,7 +5,7 @@ import { CategoryIcon } from "./Icons";
 import { BreadcrumbJsonLd } from "./BreadcrumbJsonLd";
 import { WebApplicationJsonLd } from "./WebApplicationJsonLd";
 import type { Calculator } from "@/lib/calculators";
-import type { CalculatorVariant } from "@/lib/variants/mortgage";
+import type { CalculatorVariant } from "@/lib/variants/types";
 
 interface Props {
   calculator: Calculator;
