@@ -290,6 +290,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["budget-50-30-20", "salary-to-hourly", "paycheck"],
     relatedGuides: ["50-30-20-budget-rule"],
   },
+  {
+    slug: "break-even",
+    title: "Break-Even Calculator",
+    shortTitle: "Break-Even",
+    description: "Calculate your break-even point in units and revenue. See how fixed costs, variable costs, and price per unit determine when your business starts turning a profit.",
+    category: "planning",
+    relatedCalculators: ["roi", "budget-50-30-20", "savings-goal"],
+    relatedGuides: ["how-to-calculate-roi", "50-30-20-budget-rule"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
