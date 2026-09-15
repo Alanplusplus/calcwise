@@ -214,7 +214,8 @@
       "shortTitle": "Capital Gains Tax",
       "category": "planning",
       "keywords": ["capital gains tax calculator", "long term capital gains tax", "stock tax calculator"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-15T11:00:00+08:00",
       "priority": "tier3-new-opportunity"
     },
     {
