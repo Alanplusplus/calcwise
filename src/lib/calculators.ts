@@ -299,6 +299,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["roi", "budget-50-30-20", "savings-goal"],
     relatedGuides: ["how-to-calculate-roi", "50-30-20-budget-rule"],
   },
+  {
+    slug: "capital-gains-tax",
+    title: "Capital Gains Tax Calculator",
+    shortTitle: "Capital Gains Tax",
+    description: "Estimate your capital gains tax on stocks, real estate, and other investments. Compare short-term vs long-term rates and see your net profit after taxes.",
+    category: "planning",
+    relatedCalculators: ["income-tax", "investment-return", "roi", "dividend"],
+    relatedGuides: ["capital-gains-tax-guide", "how-to-calculate-roi", "dividend-investing-beginners"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {

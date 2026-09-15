@@ -155,6 +155,7 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "salary-to-hourly": ClockIcon,
   "tip-calculator": ReceiptIcon,
   "break-even": BreakEvenIcon,
+  "capital-gains-tax": CapitalGainsIcon,
 };
 
 export function DividendIcon({ className = "h-5 w-5" }: IconProps) {
@@ -195,6 +196,16 @@ export function ReceiptIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0c1.1.128 1.907 1.077 1.907 2.185zM9.75 9h.008v.008H9.75V9zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm4.125 4.5h.008v.008h-.008V13.5zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+    </svg>
+  );
+}
+
+export function CapitalGainsIcon({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 6.75h5.25V12" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21h7.5M12 21v-3" />
     </svg>
   );
 }

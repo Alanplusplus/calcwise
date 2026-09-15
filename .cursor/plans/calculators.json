@@ -195,7 +195,8 @@
       "shortTitle": "Break-Even",
       "category": "planning",
       "keywords": ["break even calculator", "break even point calculator", "break even analysis"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-14T11:50:00+08:00",
       "priority": "tier3-long-tail"
     },
     {
