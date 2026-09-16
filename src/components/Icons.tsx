@@ -156,6 +156,7 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "tip-calculator": ReceiptIcon,
   "break-even": BreakEvenIcon,
   "capital-gains-tax": CapitalGainsIcon,
+  "self-employment-tax": SelfEmploymentTaxIcon,
 };
 
 export function DividendIcon({ className = "h-5 w-5" }: IconProps) {
@@ -216,6 +217,15 @@ export function BreakEvenIcon({ className = "h-5 w-5" }: IconProps) {
       <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l6-6 4 4 8-8" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v18h18" />
       <circle cx="13" cy="11" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function SelfEmploymentTaxIcon({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 14l2 2 4-4" />
     </svg>
   );
 }

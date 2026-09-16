@@ -308,6 +308,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["income-tax", "investment-return", "roi", "dividend"],
     relatedGuides: ["capital-gains-tax-guide", "how-to-calculate-roi", "dividend-investing-beginners"],
   },
+  {
+    slug: "self-employment-tax",
+    title: "Self-Employment Tax Calculator",
+    shortTitle: "Self-Employment Tax",
+    description: "Calculate your self-employment tax (Social Security and Medicare) as a freelancer or 1099 contractor. See your SE tax, deductible half, and quarterly estimated payments.",
+    category: "planning",
+    relatedCalculators: ["income-tax", "paycheck", "budget-50-30-20", "salary-to-hourly"],
+    relatedGuides: ["401k-vs-roth-ira", "50-30-20-budget-rule"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
