@@ -317,6 +317,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["income-tax", "paycheck", "budget-50-30-20", "salary-to-hourly"],
     relatedGuides: ["401k-vs-roth-ira", "50-30-20-budget-rule"],
   },
+  {
+    slug: "house-payment",
+    title: "House Payment Calculator",
+    shortTitle: "House Payment",
+    description: "Calculate your total monthly house payment including principal, interest, property taxes, insurance, and PMI. See how each component adds up.",
+    category: "loans",
+    relatedCalculators: ["mortgage", "home-affordability", "down-payment", "rent-vs-buy"],
+    relatedGuides: ["how-much-house-can-i-afford", "how-much-down-payment-for-house", "rent-vs-buy-decision"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
