@@ -234,7 +234,8 @@
       "shortTitle": "House Payment",
       "category": "loans",
       "keywords": ["house payment calculator", "home payment calculator", "monthly house payment"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-17T09:50:00+08:00",
       "priority": "tier3-new-opportunity"
     },
     {
