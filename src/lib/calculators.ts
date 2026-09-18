@@ -326,6 +326,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["mortgage", "home-affordability", "down-payment", "rent-vs-buy"],
     relatedGuides: ["how-much-house-can-i-afford", "how-much-down-payment-for-house", "rent-vs-buy-decision"],
   },
+  {
+    slug: "debt-to-income",
+    title: "Debt-to-Income Ratio Calculator",
+    shortTitle: "Debt-to-Income",
+    description: "Calculate your debt-to-income ratio (DTI) to see how lenders evaluate your finances. Compare front-end and back-end DTI against mortgage qualification thresholds.",
+    category: "debt",
+    relatedCalculators: ["home-affordability", "mortgage", "budget-50-30-20", "credit-card-payoff"],
+    relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
