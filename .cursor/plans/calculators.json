@@ -254,8 +254,81 @@
       "shortTitle": "Car Affordability",
       "category": "loans",
       "keywords": ["how much car can I afford", "car affordability calculator", "car budget calculator"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-19T09:36:00+08:00",
       "priority": "tier3-new-opportunity"
+    },
+    {
+      "slug": "hourly-to-salary",
+      "title": "Hourly to Salary Calculator",
+      "shortTitle": "Hourly to Salary",
+      "category": "planning",
+      "keywords": ["hourly to salary calculator", "hourly to annual salary", "convert hourly to yearly"],
+      "status": "pending",
+      "priority": "tier4-expansion"
+    },
+    {
+      "slug": "margin-calculator",
+      "title": "Profit Margin Calculator",
+      "shortTitle": "Profit Margin",
+      "category": "planning",
+      "keywords": ["profit margin calculator", "gross margin calculator", "net margin calculator"],
+      "status": "pending",
+      "priority": "tier4-expansion"
+    },
+    {
+      "slug": "lease-vs-buy-car",
+      "title": "Lease vs Buy Car Calculator",
+      "shortTitle": "Lease vs Buy Car",
+      "category": "loans",
+      "keywords": ["lease vs buy car calculator", "should I lease or buy a car", "lease or buy comparison"],
+      "status": "pending",
+      "priority": "tier4-expansion"
+    },
+    {
+      "slug": "refinance-calculator",
+      "title": "Mortgage Refinance Calculator",
+      "shortTitle": "Refinance",
+      "category": "loans",
+      "keywords": ["refinance calculator", "mortgage refinance calculator", "should I refinance"],
+      "status": "pending",
+      "priority": "tier4-expansion"
+    },
+    {
+      "slug": "required-minimum-distribution",
+      "title": "Required Minimum Distribution Calculator",
+      "shortTitle": "RMD",
+      "category": "planning",
+      "keywords": ["RMD calculator", "required minimum distribution calculator", "IRA RMD calculator"],
+      "status": "pending",
+      "priority": "tier4-expansion"
+    },
+    {
+      "slug": "social-security",
+      "title": "Social Security Benefits Calculator",
+      "shortTitle": "Social Security",
+      "category": "planning",
+      "keywords": ["social security calculator", "social security benefits estimator", "when to claim social security"],
+      "status": "pending",
+      "priority": "tier4-expansion"
+    },
+    {
+      "slug": "business-loan",
+      "title": "Business Loan Calculator",
+      "shortTitle": "Business Loan",
+      "category": "loans",
+      "keywords": ["business loan calculator", "SBA loan calculator", "small business loan payment"],
+      "status": "pending",
+      "priority": "tier4-expansion"
+    },
+    {
+      "slug": "heloc-calculator",
+      "title": "HELOC Calculator",
+      "shortTitle": "HELOC",
+      "category": "loans",
+      "keywords": ["HELOC calculator", "home equity line of credit calculator", "HELOC payment calculator"],
+      "status": "pending",
+      "priority": "tier4-expansion"
     }
   ]
 }

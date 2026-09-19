@@ -192,6 +192,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["tip-calculator", "budget-50-30-20"],
     relatedGuides: ["50-30-20-budget-rule"],
   },
+  {
+    slug: "self-employment-tax-guide",
+    title: "Self-Employment Tax Explained: What Freelancers and 1099 Workers Must Know",
+    description: "Learn how self employment tax works in 2026: the 15.3% rate, Social Security wage base, deductible half, quarterly payments, and strategies to reduce what freelancers owe.",
+    published: true,
+    relatedCalculators: ["self-employment-tax", "income-tax", "budget-50-30-20"],
+    relatedGuides: ["401k-vs-roth-ira", "50-30-20-budget-rule"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

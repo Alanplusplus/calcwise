@@ -315,7 +315,7 @@ export const calculators: Calculator[] = [
     description: "Calculate your self-employment tax (Social Security and Medicare) as a freelancer or 1099 contractor. See your SE tax, deductible half, and quarterly estimated payments.",
     category: "planning",
     relatedCalculators: ["income-tax", "paycheck", "budget-50-30-20", "salary-to-hourly"],
-    relatedGuides: ["401k-vs-roth-ira", "50-30-20-budget-rule"],
+    relatedGuides: ["self-employment-tax-guide", "401k-vs-roth-ira", "50-30-20-budget-rule"],
   },
   {
     slug: "house-payment",
@@ -334,6 +334,15 @@ export const calculators: Calculator[] = [
     category: "debt",
     relatedCalculators: ["home-affordability", "mortgage", "budget-50-30-20", "credit-card-payoff"],
     relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
+  },
+  {
+    slug: "car-affordability",
+    title: "Car Affordability Calculator",
+    shortTitle: "Car Affordability",
+    description: "Find out how much car you can afford based on your income, expenses, and down payment. Uses the 20/4/10 rule to recommend a safe vehicle budget.",
+    category: "loans",
+    relatedCalculators: ["auto-loan", "budget-50-30-20", "debt-to-income", "loan-comparison"],
+    relatedGuides: ["how-much-car-can-i-afford", "50-30-20-budget-rule"],
   },
 ];
 

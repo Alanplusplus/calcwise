@@ -181,7 +181,8 @@
       "title": "Self-Employment Tax Explained: What Freelancers and 1099 Workers Must Know",
       "targetKeyword": "self employment tax",
       "linkedCalculators": ["self-employment-tax", "income-tax", "budget-50-30-20"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-19T09:36:00+08:00"
     },
     {
       "slug": "debt-to-income-ratio-guide",

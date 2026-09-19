@@ -159,6 +159,7 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "self-employment-tax": SelfEmploymentTaxIcon,
   "house-payment": HousePaymentIcon,
   "debt-to-income": DebtToIncomeIcon,
+  "car-affordability": CarAffordabilityIcon,
 };
 
 export function DividendIcon({ className = "h-5 w-5" }: IconProps) {
@@ -246,6 +247,15 @@ export function DebtToIncomeIcon({ className = "h-5 w-5" }: IconProps) {
     <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M10 9h4M10 12h2" />
+    </svg>
+  );
+}
+
+export function CarAffordabilityIcon({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 11.5h1.5m0 0H12m-1.5 0V10m0 1.5V13" />
     </svg>
   );
 }
