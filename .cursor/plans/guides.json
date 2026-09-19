@@ -189,7 +189,8 @@
       "title": "Debt-to-Income Ratio: What It Is and Why Lenders Care",
       "targetKeyword": "what is debt to income ratio",
       "linkedCalculators": ["debt-to-income", "mortgage", "home-affordability"],
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-20T07:33:00+08:00"
     },
     {
       "slug": "simple-vs-compound-interest",

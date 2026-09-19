@@ -264,7 +264,8 @@
       "shortTitle": "Hourly to Salary",
       "category": "planning",
       "keywords": ["hourly to salary calculator", "hourly to annual salary", "convert hourly to yearly"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-20T07:33:00+08:00",
       "priority": "tier4-expansion"
     },
     {
