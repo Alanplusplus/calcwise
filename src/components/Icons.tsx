@@ -160,6 +160,7 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "house-payment": HousePaymentIcon,
   "debt-to-income": DebtToIncomeIcon,
   "car-affordability": CarAffordabilityIcon,
+  "hourly-to-salary": ClockIcon,
 };
 
 export function DividendIcon({ className = "h-5 w-5" }: IconProps) {

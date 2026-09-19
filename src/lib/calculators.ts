@@ -333,7 +333,7 @@ export const calculators: Calculator[] = [
     description: "Calculate your debt-to-income ratio (DTI) to see how lenders evaluate your finances. Compare front-end and back-end DTI against mortgage qualification thresholds.",
     category: "debt",
     relatedCalculators: ["home-affordability", "mortgage", "budget-50-30-20", "credit-card-payoff"],
-    relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
+    relatedGuides: ["debt-to-income-ratio-guide", "how-much-house-can-i-afford", "rent-vs-buy-decision"],
   },
   {
     slug: "car-affordability",
@@ -343,6 +343,15 @@ export const calculators: Calculator[] = [
     category: "loans",
     relatedCalculators: ["auto-loan", "budget-50-30-20", "debt-to-income", "loan-comparison"],
     relatedGuides: ["how-much-car-can-i-afford", "50-30-20-budget-rule"],
+  },
+  {
+    slug: "hourly-to-salary",
+    title: "Hourly to Salary Calculator",
+    shortTitle: "Hourly to Salary",
+    description: "Convert your hourly wage to an annual salary, see gross and net pay at every frequency, and model overtime earnings with a full reference table.",
+    category: "planning",
+    relatedCalculators: ["salary-to-hourly", "paycheck", "income-tax", "budget-50-30-20"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
   },
 ];
 

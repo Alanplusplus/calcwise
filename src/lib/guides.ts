@@ -200,6 +200,14 @@ export const guides: Guide[] = [
     relatedCalculators: ["self-employment-tax", "income-tax", "budget-50-30-20"],
     relatedGuides: ["401k-vs-roth-ira", "50-30-20-budget-rule"],
   },
+  {
+    slug: "debt-to-income-ratio-guide",
+    title: "Debt-to-Income Ratio: What It Is and Why Lenders Care",
+    description: "Understand what debt-to-income ratio is, how lenders use front-end and back-end DTI to evaluate your mortgage application, and actionable strategies to lower your ratio before applying.",
+    published: true,
+    relatedCalculators: ["debt-to-income", "mortgage", "home-affordability"],
+    relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
