@@ -274,7 +274,8 @@
       "shortTitle": "Profit Margin",
       "category": "planning",
       "keywords": ["profit margin calculator", "gross margin calculator", "net margin calculator"],
-      "status": "pending",
+      "status": "done",
+      "completedAt": "2026-09-21T16:20:00+08:00",
       "priority": "tier4-expansion"
     },
     {
