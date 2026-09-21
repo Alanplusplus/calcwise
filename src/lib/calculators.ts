@@ -353,6 +353,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["salary-to-hourly", "paycheck", "income-tax", "budget-50-30-20"],
     relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
   },
+  {
+    slug: "margin-calculator",
+    title: "Profit Margin Calculator",
+    shortTitle: "Profit Margin",
+    description: "Calculate gross, operating, and net profit margins from revenue and costs. Compare margin scenarios and see how pricing changes affect your bottom line.",
+    category: "planning",
+    relatedCalculators: ["break-even", "roi", "budget-50-30-20"],
+    relatedGuides: ["how-to-calculate-roi", "50-30-20-budget-rule"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
