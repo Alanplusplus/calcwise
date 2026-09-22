@@ -362,6 +362,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["break-even", "roi", "budget-50-30-20"],
     relatedGuides: ["how-to-calculate-roi", "50-30-20-budget-rule"],
   },
+  {
+    slug: "lease-vs-buy-car",
+    title: "Lease vs Buy Car Calculator",
+    shortTitle: "Lease vs Buy Car",
+    description: "Compare the total cost of leasing vs buying a car over 3-6 years. See monthly payments, equity, and which option saves you more money.",
+    category: "loans",
+    relatedCalculators: ["auto-loan", "car-affordability", "loan-comparison", "down-payment"],
+    relatedGuides: ["how-much-car-can-i-afford", "50-30-20-budget-rule"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
