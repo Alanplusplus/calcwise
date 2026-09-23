@@ -371,6 +371,15 @@ export const calculators: Calculator[] = [
     relatedCalculators: ["auto-loan", "car-affordability", "loan-comparison", "down-payment"],
     relatedGuides: ["how-much-car-can-i-afford", "50-30-20-budget-rule"],
   },
+  {
+    slug: "refinance-calculator",
+    title: "Mortgage Refinance Calculator",
+    shortTitle: "Refinance",
+    description: "Calculate how much you could save by refinancing your mortgage. Compare your current loan to a new rate and see monthly savings, break-even point, and total interest saved.",
+    category: "loans",
+    relatedCalculators: ["mortgage", "amortization", "home-affordability", "loan-comparison"],
+    relatedGuides: ["15-year-vs-30-year-mortgage", "pay-off-mortgage-early-vs-invest", "how-much-house-can-i-afford"],
+  },
 ];
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
