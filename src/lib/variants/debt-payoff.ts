@@ -5,6 +5,7 @@ import type { CalculatorVariant } from "./types";
 export const debtPayoffVariants: CalculatorVariant[] = [
   {
     slug: "50000-student-loan",
+    lastUpdated: "2026-08-25",
     title: "Pay Off $50,000 Student Loan",
     description:
       "Build a payoff plan for $50,000 in student loans. See how payment increases and refinancing affect your total cost and freedom date.",

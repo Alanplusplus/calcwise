@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const cdVariants: CalculatorVariant[] = [
   {
     slug: "3-month",
+    lastUpdated: "2026-08-25",
     title: "3-Month CD Calculator",
     description:
       "Calculate your earnings on a 3-month certificate of deposit. See how a short-term CD compares to savings accounts and longer terms. Great for parking cash you'll need soon.",
@@ -43,6 +44,7 @@ export const cdVariants: CalculatorVariant[] = [
   },
   {
     slug: "6-month",
+    lastUpdated: "2026-08-25",
     title: "6-Month CD Calculator",
     description:
       "Calculate returns on a 6-month certificate of deposit. A popular short-term option that typically beats savings accounts while keeping your money accessible within half a year.",
@@ -83,6 +85,7 @@ export const cdVariants: CalculatorVariant[] = [
   },
   {
     slug: "1-year",
+    lastUpdated: "2026-08-25",
     title: "1-Year CD Calculator",
     description:
       "Calculate interest earned on a 12-month CD. The most popular CD term, balancing competitive rates with reasonable lock-up. See your total earnings at maturity.",
@@ -123,6 +126,7 @@ export const cdVariants: CalculatorVariant[] = [
   },
   {
     slug: "5-year",
+    lastUpdated: "2026-08-25",
     title: "5-Year CD Calculator",
     description:
       "Calculate the total return on a 5-year certificate of deposit. Lock in today's rate for maximum earnings. See how compounding grows your deposit over 60 months.",
@@ -163,6 +167,7 @@ export const cdVariants: CalculatorVariant[] = [
   },
   {
     slug: "jumbo-cd",
+    lastUpdated: "2026-08-25",
     title: "Jumbo CD Calculator — $100,000+ Deposits",
     description:
       "Calculate returns on a jumbo CD ($100,000+ deposit). See how larger deposits can earn premium rates and maximize your guaranteed interest income.",

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ArticleJsonLd } from "@/components/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe",
@@ -41,6 +43,20 @@ export default function GuidePage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <FaqJsonLd faqs={faqs} />
+      <ArticleJsonLd
+        title="Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe"
+        description="Understand 2026 capital gains tax rates, brackets for every filing status, and proven strategies to minimize your tax bill on stocks, real estate, and crypto."
+        slug="capital-gains-tax-guide"
+        datePublished="2026-09-11"
+        dateModified="2026-09-11"
+        image="/images/guides/capital-gains-tax-guide.webp"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "Capital Gains Tax", href: "/guides/capital-gains-tax-guide" },
+        ]}
+      />
 
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">Home</Link>

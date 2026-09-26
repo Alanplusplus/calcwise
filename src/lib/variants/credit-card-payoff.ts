@@ -6,6 +6,7 @@ import type { CalculatorVariant } from "./types";
 export const creditCardPayoffVariants: CalculatorVariant[] = [
   {
     slug: "minimum-payment",
+    lastUpdated: "2026-09-03",
     title: "Credit Card Minimum Payment Calculator",
     description:
       "See the true cost of making only minimum payments on your credit card. Discover how decades of interest add up and how much you save by paying a fixed amount each month.",

@@ -5,6 +5,7 @@ import type { CalculatorVariant } from "./types";
 export const compoundInterestVariants: CalculatorVariant[] = [
   {
     slug: "10-percent",
+    lastUpdated: "2026-08-27",
     title: "Compound Interest at 10% Annual Return",
     description:
       "Explore 10% annual growth on $10,000 with $500 monthly over 20 years. Reflects long-term S&P 500 returns for diversified equity investors.",

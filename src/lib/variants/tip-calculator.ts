@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const tipCalculatorVariants: CalculatorVariant[] = [
   {
     slug: "restaurant-dinner",
+    lastUpdated: "2026-09-11",
     title: "Restaurant Dinner Tip Calculator",
     description: "Calculate the right tip for a restaurant dinner. Pre-set for a typical $120 dinner with 20% gratuity split between 2 diners.",
     defaults: {
@@ -45,6 +46,7 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   },
   {
     slug: "group-dinner",
+    lastUpdated: "2026-09-11",
     title: "Group Dinner Tip Calculator (6 People)",
     description: "Calculate tip and per-person cost for a group dinner of 6. Pre-set for a $350 bill with 20% gratuity split equally among all guests.",
     defaults: {
@@ -87,6 +89,7 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   },
   {
     slug: "coffee-shop",
+    lastUpdated: "2026-09-11",
     title: "Coffee Shop Tip Calculator",
     description: "Calculate the right tip at a coffee shop or cafe. Pre-set for a $7.50 order with suggested tipping amounts for counter service.",
     defaults: {
@@ -129,6 +132,7 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   },
   {
     slug: "food-delivery",
+    lastUpdated: "2026-09-11",
     title: "Food Delivery Tip Calculator",
     description: "Calculate the appropriate tip for food delivery drivers. Pre-set for a $45 delivery order with recommended gratuity for driver compensation.",
     defaults: {
@@ -171,6 +175,7 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   },
   {
     slug: "salon-haircut",
+    lastUpdated: "2026-09-11",
     title: "Hair Salon Tip Calculator",
     description: "Calculate the right tip for your hairstylist or barber. Pre-set for a $65 salon service with standard 20% gratuity.",
     defaults: {

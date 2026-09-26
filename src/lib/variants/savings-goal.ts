@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const savingsGoalVariants: CalculatorVariant[] = [
   {
     slug: "house-down-payment",
+    lastUpdated: "2026-08-20",
     title: "Save for a House Down Payment",
     description:
       "Calculate how much to save each month to build your house down payment fund. Plan a $60,000 down payment with a realistic timeline and return rate.",
@@ -43,6 +44,7 @@ export const savingsGoalVariants: CalculatorVariant[] = [
   },
   {
     slug: "wedding",
+    lastUpdated: "2026-08-20",
     title: "Wedding Savings Calculator",
     description:
       "Plan your wedding budget by calculating how much to save each month. Reach a $30,000 wedding fund in 2 years with a structured savings plan.",
@@ -83,6 +85,7 @@ export const savingsGoalVariants: CalculatorVariant[] = [
   },
   {
     slug: "new-car",
+    lastUpdated: "2026-08-20",
     title: "Save for a New Car",
     description:
       "Figure out your monthly savings target to buy a new car without financing. Build a $25,000 car fund in 3 years with a clear savings plan.",
@@ -123,6 +126,7 @@ export const savingsGoalVariants: CalculatorVariant[] = [
   },
   {
     slug: "vacation",
+    lastUpdated: "2026-08-20",
     title: "Vacation Savings Calculator",
     description:
       "Plan and save for your dream vacation. Calculate the monthly savings needed to build a $5,000 travel fund within one year.",
@@ -163,6 +167,7 @@ export const savingsGoalVariants: CalculatorVariant[] = [
   },
   {
     slug: "college-fund",
+    lastUpdated: "2026-08-20",
     title: "College Fund Savings Calculator",
     description:
       "Start building your child's college fund today. Calculate how much to save monthly to reach $100,000 over 18 years with compound growth.",

@@ -1,0 +1,621 @@
+{
+  "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
+  "lastRunDate": "2026-09-26",
+  "cycle": 1,
+  "queue": [
+    {
+      "id": "p0-expand-investment-return",
+      "type": "calculator-article-expand",
+      "slug": "investment-return",
+      "priority": "P0",
+      "reason": "Article only ~551 words, below 800-word standard",
+      "status": "done",
+      "completedAt": "2026-09-26T14:25:49.234Z"
+    },
+    {
+      "id": "p0-expand-basic",
+      "type": "calculator-article-expand",
+      "slug": "basic",
+      "priority": "P0",
+      "reason": "Article only ~563 words, below 800-word standard",
+      "status": "done",
+      "completedAt": "2026-09-26T14:25:49.234Z"
+    },
+    {
+      "id": "p0-expand-savings-goal",
+      "type": "calculator-article-expand",
+      "slug": "savings-goal",
+      "priority": "P0",
+      "reason": "Article only ~663 words, below 800-word standard",
+      "status": "done",
+      "completedAt": "2026-09-26T14:25:49.234Z"
+    },
+    {
+      "id": "p0-expand-emergency-fund",
+      "type": "calculator-article-expand",
+      "slug": "emergency-fund",
+      "priority": "P0",
+      "reason": "Article only ~678 words, below 800-word standard",
+      "status": "done",
+      "completedAt": "2026-09-26T14:25:49.234Z"
+    },
+    {
+      "id": "p0-expand-debt-payoff",
+      "type": "calculator-article-expand",
+      "slug": "debt-payoff",
+      "priority": "P0",
+      "reason": "Article only ~724 words, below 800-word standard",
+      "status": "done",
+      "completedAt": "2026-09-26T14:25:49.234Z"
+    },
+    {
+      "id": "p0-expand-retirement",
+      "type": "calculator-article-expand",
+      "slug": "retirement",
+      "priority": "P0",
+      "reason": "Article only ~793 words, below 800-word standard",
+      "status": "done",
+      "completedAt": "2026-09-26T14:25:49.234Z"
+    },
+    {
+      "id": "p2-guide-how-much-house-can-i-afford",
+      "type": "guide-refresh",
+      "slug": "how-much-house-can-i-afford",
+      "priority": "P2",
+      "reason": "Published 2026-08-10, oldest guide — refresh rates, data tables, case study",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-pay-off-mortgage-early-vs-invest",
+      "type": "guide-refresh",
+      "slug": "pay-off-mortgage-early-vs-invest",
+      "priority": "P2",
+      "reason": "Published 2026-08-17 — refresh rate comparisons, update investment return assumptions",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-save-50000-in-3-years",
+      "type": "guide-refresh",
+      "slug": "save-50000-in-3-years",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh savings account rates, update strategy tips",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-15-year-vs-30-year-mortgage",
+      "type": "guide-refresh",
+      "slug": "15-year-vs-30-year-mortgage",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh mortgage rate comparison data",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-debt-avalanche-vs-snowball",
+      "type": "guide-refresh",
+      "slug": "debt-avalanche-vs-snowball",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh interest rate examples, update credit card APR data",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-how-much-to-retire-at-55",
+      "type": "guide-refresh",
+      "slug": "how-much-to-retire-at-55",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh healthcare cost data, update portfolio targets",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-emergency-fund-where-to-keep",
+      "type": "guide-refresh",
+      "slug": "emergency-fund-where-to-keep",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh HYSA and CD APY rates for current market",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-50-30-20-budget-rule",
+      "type": "guide-refresh",
+      "slug": "50-30-20-budget-rule",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh income examples, update cost-of-living data",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-rent-vs-buy-decision",
+      "type": "guide-refresh",
+      "slug": "rent-vs-buy-decision",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh mortgage rates, update rent vs buy break-even",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-compound-interest-real-examples",
+      "type": "guide-refresh",
+      "slug": "compound-interest-real-examples",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh rate assumptions, add new example if possible",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-how-to-pay-off-credit-card-fast",
+      "type": "guide-refresh",
+      "slug": "how-to-pay-off-credit-card-fast",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh average APR data, update balance transfer offers",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-401k-vs-roth-ira",
+      "type": "guide-refresh",
+      "slug": "401k-vs-roth-ira",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — verify 2026 contribution limits, refresh tax bracket data",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-how-to-start-investing-1000",
+      "type": "guide-refresh",
+      "slug": "how-to-start-investing-1000",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh fund expense ratios, update brokerage comparison",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-net-worth-by-age",
+      "type": "guide-refresh",
+      "slug": "net-worth-by-age",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — check for newer Federal Reserve data, refresh benchmarks",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-high-yield-savings-vs-cd",
+      "type": "guide-refresh",
+      "slug": "high-yield-savings-vs-cd",
+      "priority": "P2",
+      "reason": "Published 2026-08-24 — refresh current APY rates, update comparison table",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-how-much-car-can-i-afford",
+      "type": "guide-refresh",
+      "slug": "how-much-car-can-i-afford",
+      "priority": "P2",
+      "reason": "Published 2026-08-26 — refresh auto loan rates, update affordability tables",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-student-loan-repayment-strategies",
+      "type": "guide-refresh",
+      "slug": "student-loan-repayment-strategies",
+      "priority": "P2",
+      "reason": "Published 2026-08-30 — refresh IDR plan details, update refinance rates",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-how-to-calculate-roi",
+      "type": "guide-refresh",
+      "slug": "how-to-calculate-roi",
+      "priority": "P2",
+      "reason": "Published 2026-09-01 — refresh examples with current market data",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-amortization-schedule-explained",
+      "type": "guide-refresh",
+      "slug": "amortization-schedule-explained",
+      "priority": "P2",
+      "reason": "Published 2026-09-04 — refresh mortgage rate in example, update tips",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-how-much-down-payment-for-house",
+      "type": "guide-refresh",
+      "slug": "how-much-down-payment-for-house",
+      "priority": "P2",
+      "reason": "Published 2026-09-08 — refresh PMI rate data, update loan program details",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-dividend-investing-beginners",
+      "type": "guide-refresh",
+      "slug": "dividend-investing-beginners",
+      "priority": "P2",
+      "reason": "Published 2026-09-09 — refresh dividend yield data, update ETF comparisons",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-capital-gains-tax-guide",
+      "type": "guide-refresh",
+      "slug": "capital-gains-tax-guide",
+      "priority": "P2",
+      "reason": "Published 2026-09-11 — verify 2026 tax brackets, update examples",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-tipping-guide-how-much",
+      "type": "guide-refresh",
+      "slug": "tipping-guide-how-much",
+      "priority": "P2",
+      "reason": "Published 2026-09-13 — refresh tipping etiquette trends, update scenarios",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-self-employment-tax-guide",
+      "type": "guide-refresh",
+      "slug": "self-employment-tax-guide",
+      "priority": "P2",
+      "reason": "Published 2026-09-19 — verify 2026 SE tax wage base, refresh quarterly dates",
+      "status": "pending"
+    },
+    {
+      "id": "p2-guide-debt-to-income-ratio-guide",
+      "type": "guide-refresh",
+      "slug": "debt-to-income-ratio-guide",
+      "priority": "P2",
+      "reason": "Published 2026-09-20 — refresh DTI thresholds, update lender guidelines",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-mortgage",
+      "type": "calculator-refresh",
+      "slug": "mortgage",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — refresh rate assumptions, update case study numbers",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-compound-interest",
+      "type": "calculator-refresh",
+      "slug": "compound-interest",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — refresh examples, add new comparison scenario",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-savings-goal",
+      "type": "calculator-refresh",
+      "slug": "savings-goal",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — refresh savings rate data, update tips",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-investment-return",
+      "type": "calculator-refresh",
+      "slug": "investment-return",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — refresh market return assumptions",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-debt-payoff",
+      "type": "calculator-refresh",
+      "slug": "debt-payoff",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — update APR data, refresh payoff strategies",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-retirement",
+      "type": "calculator-refresh",
+      "slug": "retirement",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — refresh retirement savings benchmarks",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-loan-comparison",
+      "type": "calculator-refresh",
+      "slug": "loan-comparison",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — refresh sample loan rates in article",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-emergency-fund",
+      "type": "calculator-refresh",
+      "slug": "emergency-fund",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — update emergency fund sizing recommendations",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-auto-loan",
+      "type": "calculator-refresh",
+      "slug": "auto-loan",
+      "priority": "P3",
+      "reason": "Published 2026-08-19 — refresh auto loan rate data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-basic",
+      "type": "calculator-refresh",
+      "slug": "basic",
+      "priority": "P3",
+      "reason": "Published 2026-08-10 — refresh article with practical examples",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-credit-card-payoff",
+      "type": "calculator-refresh",
+      "slug": "credit-card-payoff",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — refresh average credit card APR data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-home-affordability",
+      "type": "calculator-refresh",
+      "slug": "home-affordability",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — refresh median home price and rate data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-cd-calculator",
+      "type": "calculator-refresh",
+      "slug": "cd-calculator",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — refresh current CD APY rates",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-budget-50-30-20",
+      "type": "calculator-refresh",
+      "slug": "budget-50-30-20",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — refresh income examples and cost data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-rent-vs-buy",
+      "type": "calculator-refresh",
+      "slug": "rent-vs-buy",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — refresh rent and mortgage rate data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-fire-calculator",
+      "type": "calculator-refresh",
+      "slug": "fire-calculator",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — refresh FIRE number assumptions",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-income-tax",
+      "type": "calculator-refresh",
+      "slug": "income-tax",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — verify 2026 tax bracket data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-net-worth",
+      "type": "calculator-refresh",
+      "slug": "net-worth",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — refresh net worth benchmarks by age",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-paycheck",
+      "type": "calculator-refresh",
+      "slug": "paycheck",
+      "priority": "P3",
+      "reason": "Published 2026-08-25 — verify 2026 withholding rates",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-student-loan",
+      "type": "calculator-refresh",
+      "slug": "student-loan",
+      "priority": "P3",
+      "reason": "Published 2026-08-27 — refresh federal student loan rates",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-inflation",
+      "type": "calculator-refresh",
+      "slug": "inflation",
+      "priority": "P3",
+      "reason": "Published 2026-08-29 — refresh CPI data and inflation rate",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-roi",
+      "type": "calculator-refresh",
+      "slug": "roi",
+      "priority": "P3",
+      "reason": "Published 2026-08-30 — refresh ROI examples with current data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-amortization",
+      "type": "calculator-refresh",
+      "slug": "amortization",
+      "priority": "P3",
+      "reason": "Published 2026-08-31 — refresh amortization example rates",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-down-payment",
+      "type": "calculator-refresh",
+      "slug": "down-payment",
+      "priority": "P3",
+      "reason": "Published 2026-09-01 — refresh PMI rate data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-dividend",
+      "type": "calculator-refresh",
+      "slug": "dividend",
+      "priority": "P3",
+      "reason": "Published 2026-09-03 — refresh dividend yield examples",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-simple-interest",
+      "type": "calculator-refresh",
+      "slug": "simple-interest",
+      "priority": "P3",
+      "reason": "Published 2026-09-07 — refresh interest rate examples",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-salary-to-hourly",
+      "type": "calculator-refresh",
+      "slug": "salary-to-hourly",
+      "priority": "P3",
+      "reason": "Published 2026-09-09 — refresh median salary data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-tip-calculator",
+      "type": "calculator-refresh",
+      "slug": "tip-calculator",
+      "priority": "P3",
+      "reason": "Published 2026-09-11 — refresh tipping norms and examples",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-break-even",
+      "type": "calculator-refresh",
+      "slug": "break-even",
+      "priority": "P3",
+      "reason": "Published 2026-09-14 — refresh business cost examples",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-capital-gains-tax",
+      "type": "calculator-refresh",
+      "slug": "capital-gains-tax",
+      "priority": "P3",
+      "reason": "Published 2026-09-15 — verify 2026 capital gains brackets",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-self-employment-tax",
+      "type": "calculator-refresh",
+      "slug": "self-employment-tax",
+      "priority": "P3",
+      "reason": "Published 2026-09-16 — verify 2026 SE tax wage base",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-house-payment",
+      "type": "calculator-refresh",
+      "slug": "house-payment",
+      "priority": "P3",
+      "reason": "Published 2026-09-17 — refresh property tax and insurance data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-debt-to-income",
+      "type": "calculator-refresh",
+      "slug": "debt-to-income",
+      "priority": "P3",
+      "reason": "Published 2026-09-18 — refresh DTI threshold guidelines",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-car-affordability",
+      "type": "calculator-refresh",
+      "slug": "car-affordability",
+      "priority": "P3",
+      "reason": "Published 2026-09-19 — refresh auto pricing and loan data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-hourly-to-salary",
+      "type": "calculator-refresh",
+      "slug": "hourly-to-salary",
+      "priority": "P3",
+      "reason": "Published 2026-09-20 — refresh wage data and tax examples",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-margin-calculator",
+      "type": "calculator-refresh",
+      "slug": "margin-calculator",
+      "priority": "P3",
+      "reason": "Published 2026-09-21 — refresh margin benchmarks by industry",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-lease-vs-buy-car",
+      "type": "calculator-refresh",
+      "slug": "lease-vs-buy-car",
+      "priority": "P3",
+      "reason": "Published 2026-09-22 — refresh lease rate and residual data",
+      "status": "pending"
+    },
+    {
+      "id": "p3-calc-refinance-calculator",
+      "type": "calculator-refresh",
+      "slug": "refinance-calculator",
+      "priority": "P3",
+      "reason": "Published 2026-09-23 — refresh refinance rate comparison data",
+      "status": "pending"
+    },
+    {
+      "id": "p5-new-calc-rmd",
+      "type": "new-calculator",
+      "slug": "required-minimum-distribution",
+      "priority": "P5",
+      "reason": "Pending calculator from calculators.json plan",
+      "status": "pending"
+    },
+    {
+      "id": "p5-new-calc-social-security",
+      "type": "new-calculator",
+      "slug": "social-security",
+      "priority": "P5",
+      "reason": "Pending calculator from calculators.json plan",
+      "status": "pending"
+    },
+    {
+      "id": "p5-new-calc-business-loan",
+      "type": "new-calculator",
+      "slug": "business-loan",
+      "priority": "P5",
+      "reason": "Pending calculator from calculators.json plan",
+      "status": "pending"
+    },
+    {
+      "id": "p5-new-calc-heloc",
+      "type": "new-calculator",
+      "slug": "heloc-calculator",
+      "priority": "P5",
+      "reason": "Pending calculator from calculators.json plan",
+      "status": "pending"
+    },
+    {
+      "id": "p5-new-guide-simple-vs-compound",
+      "type": "new-guide",
+      "slug": "simple-vs-compound-interest",
+      "priority": "P5",
+      "reason": "Pending guide from guides.json plan",
+      "status": "pending"
+    },
+    {
+      "id": "p5-new-guide-break-even",
+      "type": "new-guide",
+      "slug": "break-even-analysis-guide",
+      "priority": "P5",
+      "reason": "Pending guide from guides.json plan",
+      "status": "pending"
+    },
+    {
+      "id": "p5-new-guide-salary-vs-hourly",
+      "type": "new-guide",
+      "slug": "salary-vs-hourly-pay",
+      "priority": "P5",
+      "reason": "Pending guide from guides.json plan",
+      "status": "pending"
+    }
+  ]
+}

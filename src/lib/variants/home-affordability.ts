@@ -5,6 +5,7 @@ import type { CalculatorVariant } from "./types";
 export const homeAffordabilityVariants: CalculatorVariant[] = [
   {
     slug: "50000-income",
+    lastUpdated: "2026-09-07",
     title: "How Much House Can I Afford on $50,000 Salary",
     description:
       "Find out how much house you can afford earning $50,000 a year. See your maximum home price, monthly payment, and debt-to-income ratios at current mortgage rates.",
@@ -43,6 +44,7 @@ export const homeAffordabilityVariants: CalculatorVariant[] = [
   },
   {
     slug: "200000-income",
+    lastUpdated: "2026-09-07",
     title: "How Much House Can I Afford on $200,000 Salary",
     description:
       "See how much home you can buy on a $200,000 annual salary. Includes jumbo loan considerations, investment trade-offs, and premium market strategies.",

@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const roiVariants: CalculatorVariant[] = [
   {
     slug: "marketing-campaign",
+    lastUpdated: "2026-08-30",
     title: "Marketing Campaign ROI Calculator",
     description:
       "Calculate the return on investment for your marketing campaigns. Compare ad spend to revenue generated and find your true marketing ROI.",
@@ -49,6 +50,7 @@ export const roiVariants: CalculatorVariant[] = [
   },
   {
     slug: "rental-property",
+    lastUpdated: "2026-08-30",
     title: "Rental Property ROI Calculator",
     description:
       "Calculate the ROI on a rental property investment including purchase price, rental income, and operating expenses. Compare against alternative investments.",
@@ -95,6 +97,7 @@ export const roiVariants: CalculatorVariant[] = [
   },
   {
     slug: "business-equipment",
+    lastUpdated: "2026-08-30",
     title: "Business Equipment ROI Calculator",
     description:
       "Calculate the ROI on equipment purchases for your business. Factor in productivity gains, cost savings, and maintenance to determine if the investment pays off.",
@@ -141,6 +144,7 @@ export const roiVariants: CalculatorVariant[] = [
   },
   {
     slug: "stock-portfolio",
+    lastUpdated: "2026-08-30",
     title: "Stock Portfolio ROI Calculator",
     description:
       "Calculate the total and annualized ROI of your stock portfolio. Compare performance against market benchmarks like the S&P 500.",
@@ -187,6 +191,7 @@ export const roiVariants: CalculatorVariant[] = [
   },
   {
     slug: "education-degree",
+    lastUpdated: "2026-08-30",
     title: "Education & Degree ROI Calculator",
     description:
       "Calculate the ROI of a college degree or certification. Compare the cost of education against the lifetime earnings increase it provides.",

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ArticleJsonLd } from "@/components/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Self-Employment Tax Explained: What Freelancers and 1099 Workers Must Know",
@@ -41,6 +43,20 @@ export default function GuidePage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <FaqJsonLd faqs={faqs} />
+      <ArticleJsonLd
+        title="Self-Employment Tax Explained: What Freelancers and 1099 Workers Must Know"
+        description="Learn how self employment tax works in 2026: the 15.3% rate, Social Security wage base, deductible half, quarterly payments, and strategies to reduce what freelancers owe."
+        slug="self-employment-tax-guide"
+        datePublished="2026-09-19"
+        dateModified="2026-09-19"
+        image="/images/guides/self-employment-tax-guide.webp"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "Self-Employment Tax", href: "/guides/self-employment-tax-guide" },
+        ]}
+      />
 
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">Home</Link>

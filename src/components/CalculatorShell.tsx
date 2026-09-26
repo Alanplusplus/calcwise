@@ -4,6 +4,7 @@ import { guides, getGuidesBySlug } from "@/lib/guides";
 import { CategoryIcon } from "./Icons";
 import { BreadcrumbJsonLd } from "./BreadcrumbJsonLd";
 import { WebApplicationJsonLd } from "./WebApplicationJsonLd";
+import { ArticleJsonLd } from "./ArticleJsonLd";
 import type { Calculator } from "@/lib/calculators";
 import type { CalculatorVariant } from "@/lib/variants/types";
 
@@ -37,6 +38,14 @@ export function CalculatorShell({ calculator, children, article, variants }: Pro
         name={calculator.title}
         description={calculator.description}
         slug={calculator.slug}
+      />
+      <ArticleJsonLd
+        title={calculator.title}
+        description={calculator.description}
+        slug={calculator.slug}
+        datePublished={calculator.datePublished}
+        dateModified={calculator.lastUpdated}
+        urlPrefix="/calculators"
       />
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-ink-500">

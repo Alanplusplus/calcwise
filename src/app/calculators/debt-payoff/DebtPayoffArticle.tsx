@@ -48,6 +48,34 @@ export function DebtPayoffArticle() {
         Learn the full comparison in our guide: <Link href="/guides/debt-avalanche-vs-snowball" className="text-brand-600 hover:text-brand-800 font-medium">Debt Avalanche vs Snowball: Which Gets You Debt-Free Faster?</Link>
       </p>
 
+      <h2>Case Study: Avalanche vs Snowball on $28,000 of Debt</h2>
+      <p>
+        James, a 35-year-old engineer, owes $28,000 across three accounts: a
+        $12,000 credit card at 22.99% APR ($240 minimum), a $6,000 store card at
+        19.99% APR ($120 minimum), and a $10,000 auto loan at 6.9% APR ($198
+        minimum). His total minimums are $558 per month. After trimming dining
+        and streaming subscriptions, he frees up $400 extra and commits $958
+        per month to debt payoff.
+      </p>
+      <p>
+        Using the avalanche method, James attacks the 22.99% card first while
+        paying minimums elsewhere. That card clears in about 14 months; he then
+        rolls the full $958 toward the 19.99% balance. In this scenario, he
+        becomes debt-free in roughly 31 months and pays about $4,180 in total
+        interest on the original $28,000.
+      </p>
+      <p>
+        With the snowball method, he pays off the $6,000 store card first for a
+        quick win, then the $10,000 auto loan, then the $12,000 card. The
+        timeline stretches to about 33 months with roughly $4,720 in interest —
+        about $540 more than avalanche. James chooses avalanche because the
+        $540 savings matters more to him than an early psychological win, but
+        either path beats making minimums only, which would keep him in debt for
+        7+ years and cost over $9,000 in interest. Run your own balances in this
+        calculator, or compare consolidation offers with our{" "}
+        <Link href="/calculators/loan-comparison" className="text-brand-600 hover:text-brand-800 font-medium">Loan Comparison Calculator</Link>.
+      </p>
+
       <h2>The True Cost of Minimum Payments</h2>
       <p>
         Credit card companies set minimum payments intentionally low — often 1-2%
@@ -62,7 +90,8 @@ export function DebtPayoffArticle() {
         to about $3,100.
       </p>
       <p>
-        For credit card-specific strategies, try our <Link href="/calculators/credit-card-payoff" className="text-brand-600 hover:text-brand-800 font-medium">Credit Card Payoff Calculator</Link> which models minimum payments vs. fixed payments.
+        For credit card-specific strategies, try our <Link href="/calculators/credit-card-payoff" className="text-brand-600 hover:text-brand-800 font-medium">Credit Card Payoff Calculator</Link> which models minimum payments vs. fixed payments, and read{" "}
+        <Link href="/guides/how-to-pay-off-credit-card-fast" className="text-brand-600 hover:text-brand-800 font-medium">How to Pay Off Credit Card Debt Fast</Link> for a month-by-month action plan.
       </p>
 
       <h2>How Extra Payments Reduce Interest</h2>
@@ -119,6 +148,26 @@ export function DebtPayoffArticle() {
         interest rate and you&apos;re committed to not accumulating new debt.
         They simplify multiple payments into one and can reduce total interest.
         However, they don&apos;t solve the spending habits that created the debt.
+      </p>
+
+      <h3>Which debts should I pay off first if rates are similar?</h3>
+      <p>
+        When two debts sit within 1-2 percentage points of each other (for
+        example, 18.9% vs 19.5%), the dollar difference in interest is small.
+        In that case, snowball order — smallest balance first — often finishes
+        one account 2-3 months sooner and frees a minimum payment you can roll
+        into the next debt. If one rate is 5+ points higher (22% vs 7% on a car
+        loan), avalanche almost always wins by hundreds of dollars.
+      </p>
+
+      <h3>How do I stay motivated during a long payoff?</h3>
+      <p>
+        Set milestone targets every $2,500-$5,000 of progress and track your
+        &quot;interest saved to date&quot; in this calculator each month. James
+        in our case study above celebrated each paid-off statement with a
+        $20 coffee, not a $200 dinner — small rewards that do not add new
+        balances. Pair that habit with automating the extra $400 on payday so
+        the money never sits in checking where it is easy to spend.
       </p>
     </>
   );

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ArticleJsonLd } from "@/components/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Debt-to-Income Ratio: What It Is and Why Lenders Care",
@@ -41,6 +43,20 @@ export default function GuidePage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <FaqJsonLd faqs={faqs} />
+      <ArticleJsonLd
+        title="Debt-to-Income Ratio: What It Is and Why Lenders Care"
+        description="Understand what debt-to-income ratio is, how lenders use front-end and back-end DTI to evaluate your mortgage application, and actionable strategies to lower your ratio before applying."
+        slug="debt-to-income-ratio-guide"
+        datePublished="2026-09-20"
+        dateModified="2026-09-20"
+        image="/images/guides/debt-to-income-ratio-guide.webp"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "Debt-to-Income Ratio", href: "/guides/debt-to-income-ratio-guide" },
+        ]}
+      />
 
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">Home</Link>

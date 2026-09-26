@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const studentLoanVariants: CalculatorVariant[] = [
   {
     slug: "20000-loan",
+    lastUpdated: "2026-09-01",
     title: "Student Loan Calculator for $20,000",
     description:
       "Calculate monthly payments on a $20,000 student loan. At 5.0% over 10 years, expect ~$212/mo. See total interest, payoff timeline, and accelerated payoff options.",
@@ -43,6 +44,7 @@ export const studentLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "40000-loan",
+    lastUpdated: "2026-09-01",
     title: "Student Loan Calculator for $40,000",
     description:
       "Run the numbers on a $40,000 student loan at 5.5% interest. See your monthly payment (~$434/mo for 10 years), total interest cost, and how extra payments accelerate payoff.",
@@ -83,6 +85,7 @@ export const studentLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "60000-loan",
+    lastUpdated: "2026-09-01",
     title: "Student Loan Calculator for $60,000",
     description:
       "Plan repayment for $60,000 in student loans at 5.8%. Monthly payment is ~$660/mo over 10 years. Compare standard, accelerated, and income-driven repayment scenarios.",
@@ -123,6 +126,7 @@ export const studentLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "100000-loan",
+    lastUpdated: "2026-09-01",
     title: "Student Loan Calculator for $100,000",
     description:
       "Tackle a $100,000 student loan balance at 6.0% interest. See your $1,110/mo standard payment, total cost of $133,224, and strategies to reduce interest and accelerate payoff.",
@@ -163,6 +167,7 @@ export const studentLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "graduate-school",
+    lastUpdated: "2026-09-01",
     title: "Graduate School Student Loan Calculator",
     description:
       "Calculate payments on an $80,000 graduate school loan at 7.0% over 15 years. Monthly payment is ~$719/mo. Explore refinancing, PSLF, and accelerated payoff strategies.",

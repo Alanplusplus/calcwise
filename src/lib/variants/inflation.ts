@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const inflationVariants: CalculatorVariant[] = [
   {
     slug: "retirement-30-years",
+    lastUpdated: "2026-08-29",
     title: "Inflation Over 30 Years for Retirement Planning",
     description:
       "See how 30 years of inflation affects your retirement purchasing power. Model your future cost of living to set the right savings target today.",
@@ -43,6 +44,7 @@ export const inflationVariants: CalculatorVariant[] = [
   },
   {
     slug: "college-cost-18-years",
+    lastUpdated: "2026-08-29",
     title: "College Cost Inflation Over 18 Years",
     description:
       "Estimate future college costs using historical education inflation rates. Plan a 529 savings strategy based on what tuition will actually cost when your child enrolls.",
@@ -83,6 +85,7 @@ export const inflationVariants: CalculatorVariant[] = [
   },
   {
     slug: "grocery-budget-10-years",
+    lastUpdated: "2026-08-29",
     title: "Grocery Budget Inflation Over 10 Years",
     description:
       "Calculate how your monthly grocery spending will change over the next decade. Adjust your household budget with realistic food inflation projections.",
@@ -123,6 +126,7 @@ export const inflationVariants: CalculatorVariant[] = [
   },
   {
     slug: "healthcare-cost-20-years",
+    lastUpdated: "2026-08-29",
     title: "Healthcare Cost Inflation Over 20 Years",
     description:
       "Project healthcare expenses 20 years forward using medical inflation rates. Plan your HSA and insurance strategy around realistic future cost estimates.",
@@ -163,6 +167,7 @@ export const inflationVariants: CalculatorVariant[] = [
   },
   {
     slug: "100-dollar-purchasing-power",
+    lastUpdated: "2026-08-29",
     title: "What Will $100 Be Worth in the Future?",
     description:
       "See how $100 loses purchasing power over 5, 10, 20, and 30 years at different inflation rates. A simple way to understand why saving matters.",

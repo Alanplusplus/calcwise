@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const retirementVariants: CalculatorVariant[] = [
   {
     slug: "retire-at-40",
+    lastUpdated: "2026-08-22",
     title: "Retire at 40 (FIRE) Calculator",
     description:
       "Plan your path to financial independence and early retirement at 40. Calculate how much you need to save and invest to leave the workforce 25 years early.",
@@ -47,6 +48,7 @@ export const retirementVariants: CalculatorVariant[] = [
   },
   {
     slug: "retire-at-50",
+    lastUpdated: "2026-08-22",
     title: "Retire at 50 Calculator",
     description:
       "See what it takes to retire at 50. Calculate your savings target, monthly contributions needed, and whether your current plan gets you to early retirement.",
@@ -91,6 +93,7 @@ export const retirementVariants: CalculatorVariant[] = [
   },
   {
     slug: "retire-at-55",
+    lastUpdated: "2026-08-22",
     title: "Retire at 55 Calculator",
     description:
       "Calculate your retirement readiness for age 55. Find out how much to save monthly and what portfolio size you need to retire comfortably a decade early.",
@@ -135,6 +138,7 @@ export const retirementVariants: CalculatorVariant[] = [
   },
   {
     slug: "retire-at-60",
+    lastUpdated: "2026-08-22",
     title: "Retire at 60 Calculator",
     description:
       "Plan for retirement at 60 with this calculator. Estimate your savings needs, projected portfolio growth, and monthly income in retirement five years early.",
@@ -179,6 +183,7 @@ export const retirementVariants: CalculatorVariant[] = [
   },
   {
     slug: "retire-at-67",
+    lastUpdated: "2026-08-22",
     title: "Retire at 67 (Full SS Age) Calculator",
     description:
       "Calculate retirement savings for the standard retirement age of 67. See how Social Security, savings, and investment returns combine to fund your retirement.",

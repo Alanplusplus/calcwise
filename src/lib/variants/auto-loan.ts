@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const autoLoanVariants: CalculatorVariant[] = [
   {
     slug: "15000-car",
+    lastUpdated: "2026-08-31",
     title: "Auto Loan Calculator for a $15,000 Car",
     description:
       "Calculate monthly payments on a $15,000 car loan with a $3,000 down payment. See total interest, amortization schedule, and payoff timeline.",
@@ -48,6 +49,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "25000-car",
+    lastUpdated: "2026-08-31",
     title: "Auto Loan Calculator for a $25,000 Car",
     description:
       "Calculate monthly payments on a $25,000 car loan with a $5,000 down payment. Compare 48 and 60-month terms with full cost breakdown.",
@@ -93,6 +95,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "35000-car",
+    lastUpdated: "2026-08-31",
     title: "Auto Loan Calculator for a $35,000 Car",
     description:
       "Calculate monthly payments on a $35,000 vehicle loan. See how a $7,000 down payment and 60-month term affect your total cost and interest paid.",
@@ -138,6 +141,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "50000-car",
+    lastUpdated: "2026-08-31",
     title: "Auto Loan Calculator for a $50,000 Car",
     description:
       "Calculate monthly payments and total interest on a $50,000 vehicle purchase. Evaluate financing options for luxury and premium vehicles.",
@@ -183,6 +187,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   },
   {
     slug: "72-month",
+    lastUpdated: "2026-08-31",
     title: "72-Month Auto Loan Calculator",
     description:
       "Compare the true cost of a 72-month auto loan against shorter terms. See how extending to 6 years affects monthly payments, total interest, and equity.",

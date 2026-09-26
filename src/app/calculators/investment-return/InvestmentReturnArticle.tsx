@@ -85,6 +85,100 @@ export function InvestmentReturnArticle() {
         otherwise your purchasing power isn&apos;t actually growing.
       </p>
 
+      <h2>Case Study: Sarah Compares Three Strategies</h2>
+      <p>
+        Sarah, a 32-year-old marketing manager in Manchester, received a
+        $15,000 bonus in January 2019 and wanted to measure how three choices
+        performed over five years. She tracked each path with this calculator
+        using initial value, ending value, and dividends where applicable.
+      </p>
+      <ul>
+        <li>
+          <strong>Option A — S&P 500 index fund:</strong> She invested the full
+          $15,000, reinvested dividends, and paid a 0.03% expense ratio. By
+          December 2024 her account was about $24,200, implying roughly 9.8%
+          annualized before fees and about 9.5% net — close to the long-run US
+          equity benchmark.
+        </li>
+        <li>
+          <strong>Option B — High-yield savings:</strong> She parked $15,000 at
+          an average 4.2% APY with no market risk. After five years she had
+          roughly $18,400, or about 4.0% annualized — solid for cash, but far
+          below equity growth over the same window.
+        </li>
+        <li>
+          <strong>Option C — Single stock pick:</strong> She bought $15,000 of
+          one tech name, received $420 in dividends, and sold for $19,100 after
+          a volatile ride. Total gain $4,520 (30.1% total), but annualized
+          return was only about 5.4% because of a sharp drawdown in year three
+          that recovered late. Her{" "}
+          <Link
+            href="/calculators/roi"
+            className="text-brand-600 hover:text-brand-800 font-medium"
+          >
+            ROI Calculator
+          </Link>{" "}
+          entry helped her separate cash-on-cash profit from time-adjusted CAGR.
+        </li>
+      </ul>
+      <p>
+        Sarah&apos;s takeaway: headline percentages mislead when time and income
+        differ. She now benchmarks every holding against 7–10% long-run stock
+        expectations and uses our{" "}
+        <Link
+          href="/calculators/retirement"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Retirement Calculator
+        </Link>{" "}
+        to see whether her 401(k) and ISA contributions still put her on track
+        for £1.2M by age 65 at a conservative 6.5% blend.
+      </p>
+
+      <h2>$10,000 Growth at 6%, 8%, and 10% Annual Returns</h2>
+      <p>
+        Lump-sum growth assumes no additional contributions and annual
+        compounding. Small differences in rate widen dramatically over decades —
+        the gap between 6% and 10% on $10,000 over 30 years is more than
+        $117,000.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Annual rate</th>
+            <th>After 10 years</th>
+            <th>After 20 years</th>
+            <th>After 30 years</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6%</td>
+            <td>$17,908</td>
+            <td>$32,071</td>
+            <td>$57,435</td>
+          </tr>
+          <tr>
+            <td>8%</td>
+            <td>$21,589</td>
+            <td>$46,610</td>
+            <td>$100,627</td>
+          </tr>
+          <tr>
+            <td>10%</td>
+            <td>$25,937</td>
+            <td>$67,275</td>
+            <td>$174,494</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        A balanced portfolio might land near 6–7% after inflation; an aggressive
+        equity mix might approach 8–10% nominal over long periods, with higher
+        interim swings. Enter your own start amount, end value, and years held
+        above to see whether your realized CAGR sits in this range.
+      </p>
+
       <h2>Frequently Asked Questions</h2>
 
       <h3>What&apos;s a good annualized return?</h3>
@@ -116,6 +210,27 @@ export function InvestmentReturnArticle() {
         Yes. Use your actual account value (after fees have been deducted) as
         the &quot;Current Value.&quot; This gives you your net return — what you
         actually earned after all costs.
+      </p>
+
+      <h3>What is the difference between CAGR and average annual return?</h3>
+      <p>
+        Average annual return adds each year&apos;s percentage and divides by
+        the number of years. If you earn +20%, −10%, and +15% over three years,
+        the simple average is 8.3%. CAGR instead links those years geometrically
+        and might show about 7.4% — the rate that actually turns your starting
+        balance into your ending balance. Use CAGR when comparing funds or
+        reporting performance to avoid overstating results after volatile years.
+      </p>
+
+      <h3>How do taxes affect my reported return?</h3>
+      <p>
+        This tool measures pre-tax account growth unless you enter values already
+        net of tax. In the US, long-term capital gains on assets held over one
+        year are often taxed at 0%, 15%, or 20% depending on income; qualified
+        dividends follow similar brackets. A 10% pre-tax CAGR might feel like
+        8.5% after a 15% tax drag on gains. Track cost basis separately and
+        subtract estimated tax when judging whether you beat a 7% inflation-adjusted
+        target.
       </p>
     </>
   );

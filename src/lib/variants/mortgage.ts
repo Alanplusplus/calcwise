@@ -4,6 +4,7 @@ export type { CalculatorVariant };
 export const mortgageVariants: CalculatorVariant[] = [
   {
     slug: "200000",
+    lastUpdated: "2026-08-19",
     title: "$200,000 Mortgage Calculator — Monthly Payment & Total Interest",
     description:
       "Calculate your monthly payment on a $200,000 mortgage. With 20% down at 6.5%, expect ~$1,011/mo. Compare 15- vs 30-year terms, see total interest, and view the full amortization schedule.",
@@ -47,6 +48,7 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "300000",
+    lastUpdated: "2026-08-19",
     title: "$300,000 Mortgage Calculator — Monthly Payment & Amortization",
     description:
       "Run the numbers on a $300,000 home loan. With 20% down at 6.5%, your monthly P&I is ~$1,517. Compare loan terms, see total interest costs, and view the full amortization schedule.",
@@ -90,6 +92,7 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "400000",
+    lastUpdated: "2026-08-19",
     title: "Mortgage Calculator for a $400,000 Home",
     description:
       "Run the numbers on a $400,000 home purchase. Compare monthly payments, interest costs, and down payment scenarios for this popular price bracket.",
@@ -133,6 +136,7 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "500000",
+    lastUpdated: "2026-08-19",
     title: "Mortgage Calculator for a $500,000 Home",
     description:
       "Plan your budget for a $500,000 home. Calculate monthly payments, total interest, and explore how different loan terms change your costs.",
@@ -176,6 +180,7 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "750000",
+    lastUpdated: "2026-08-19",
     title: "Mortgage Calculator for a $750,000 Home",
     description:
       "Crunch the numbers on a $750,000 home. See monthly payments, interest totals, and how loan size affects your long-term financial plan.",
@@ -219,6 +224,7 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "15-year",
+    lastUpdated: "2026-08-19",
     title: "15-Year Mortgage Calculator",
     description:
       "Compare 15-year vs 30-year mortgage payments. See how a shorter term saves you money on interest while building equity faster.",
@@ -263,6 +269,7 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "fha-loan",
+    lastUpdated: "2026-08-19",
     title: "FHA Loan Calculator (3.5% Down Payment)",
     description:
       "Calculate FHA loan payments with just 3.5% down. Understand how mortgage insurance premiums affect your monthly cost on an FHA mortgage.",

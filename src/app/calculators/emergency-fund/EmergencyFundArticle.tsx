@@ -29,6 +29,34 @@ export function EmergencyFundArticle() {
         Don&apos;t include discretionary spending like dining out or entertainment.
       </p>
 
+      <h2>Case Study: Building a 6-Month Fund on $65,000</h2>
+      <p>
+        Priya is a single parent in Denver earning $65,000 per year. After
+        federal and state taxes, a 5% 401(k) contribution, and health insurance,
+        her take-home pay is about $3,900 per month. Her essential expenses —
+        rent ($1,650), groceries ($520), utilities ($180), car payment and
+        insurance ($410), childcare ($600), and minimum debt payments ($140) —
+        total $3,500 per month. A 6-month emergency fund target is $21,000, not
+        the $23,400 she would need if she included $400/month for dining and
+        streaming in the calculation.
+      </p>
+      <p>
+        Priya already has $1,200 saved. Using the{" "}
+        <Link
+          href="/calculators/budget-50-30-20"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          50/30/20 Budget Calculator
+        </Link>
+        , she allocates $390/month (10% of take-home) to the emergency fund while
+        paying down a $2,800 credit card at 22% APR. At that pace she reaches
+        $21,000 in about 4 years and 8 months; bumping contributions to $550
+        after the card is paid off cuts the timeline to under 3 years. She keeps
+        the fund in a high-yield account earning 4.4% APY — roughly $75/month in
+        interest once the balance passes $20,000, which covers one week of
+        groceries without touching principal.
+      </p>
+
       <h2>Where to Keep Your Emergency Fund</h2>
       <p>
         Your emergency fund needs to be both accessible and earning interest.
@@ -51,6 +79,68 @@ export function EmergencyFundArticle() {
         any volatile investment. You may need this money at the worst possible
         time — during a market crash that coincides with job loss.
       </p>
+
+      <h2>HYSA vs Money Market vs CD for Emergency Cash</h2>
+      <p>
+        On a $18,000 balance (six months at $3,000 essential expenses), where
+        you hold the money affects access, yield, and penalties:
+      </p>
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full text-sm border border-ink-200">
+          <thead className="bg-ink-100">
+            <tr>
+              <th className="px-3 py-2 text-left font-medium text-ink-600">Account type</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Typical APY</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Annual interest on $18k</th>
+              <th className="px-3 py-2 text-left font-medium text-ink-600">Access</th>
+              <th className="px-3 py-2 text-left font-medium text-ink-600">Main drawback</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">High-yield savings (HYSA)</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.3–4.8%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$770–$860</td>
+              <td className="px-3 py-2 text-ink-700">Transfer to checking in 1–2 business days</td>
+              <td className="px-3 py-2 text-ink-700">Some banks cap 6 withdrawals/month on legacy rules</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">Money market account</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.2–4.7%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$750–$850</td>
+              <td className="px-3 py-2 text-ink-700">Often same-day via debit or check writing</td>
+              <td className="px-3 py-2 text-ink-700">$500–$2,500 minimum balance at many credit unions</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">12-month CD</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.8–5.2%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$860–$940</td>
+              <td className="px-3 py-2 text-ink-700">Locked until maturity unless you pay a penalty</td>
+              <td className="px-3 py-2 text-ink-700">Early exit may forfeit 3–6 months of interest — poor for job-loss cash</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Most households should keep the full emergency reserve in a HYSA or money
+        market. If you want slightly higher yield on a slice you are unlikely to
+        touch for 12 months, model a CD with our{" "}
+        <Link
+          href="/calculators/cd-calculator"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          CD Calculator
+        </Link>{" "}
+        — but never lock more than 1–2 months of expenses in a CD until the main
+        fund is fully funded.
+      </p>
+
+      <h2>Actionable Tips While You Build</h2>
+      <ul>
+        <li><strong>Automate on payday:</strong> schedule a transfer for the day after each paycheck — $200 twice a month beats hoping $400 is left on the 28th.</li>
+        <li><strong>Sell one unused item per month:</strong> listing $50–$150 of gear on marketplace sites can fund an entire starter $1,000 fund in under a year without cutting groceries.</li>
+        <li><strong>Pause non-matching retirement briefly only if necessary:</strong> redirecting $300/month from taxable investing for 6 months adds $1,800; do not skip a 50% employer 401(k) match worth $2,000+ per year on a $40,000 salary.</li>
+      </ul>
 
       <h2>Building Your Fund: A Step-by-Step Approach</h2>
       <ul>
@@ -119,6 +209,16 @@ export function EmergencyFundArticle() {
         name (e.g., &quot;Job Loss Fund&quot; or &quot;Peace of Mind&quot;) to
         make it psychologically harder to raid. Set clear rules for what
         constitutes an emergency.
+      </p>
+
+      <h3>What if I use part of the fund — how fast should I refill it?</h3>
+      <p>
+        Treat replenishment like the original build. If you withdraw $4,500 for
+        an urgent roof repair and essential expenses are $3,000 per month, that
+        withdrawal erased 1.5 months of coverage. Split the refill across 6–12
+        months ($375–$750/month) while temporarily trimming wants — not needs —
+        so you are back to six full months before the next major risk, not
+        lingering at 4.5 months for two years.
       </p>
     </>
   );

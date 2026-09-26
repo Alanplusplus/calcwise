@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ArticleJsonLd } from "@/components/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Dividend Investing for Beginners: How to Build Passive Income",
@@ -41,6 +43,20 @@ export default function GuidePage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <FaqJsonLd faqs={faqs} />
+      <ArticleJsonLd
+        title="Dividend Investing for Beginners: How to Build Passive Income"
+        description="Learn how to start dividend investing from scratch. Covers dividend yield, DRIP reinvestment, Dividend Aristocrats, and a step-by-step portfolio plan with real numbers."
+        slug="dividend-investing-beginners"
+        datePublished="2026-09-09"
+        dateModified="2026-09-09"
+        image="/images/guides/dividend-investing-beginners.webp"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Guides", href: "/guides" },
+          { name: "Dividend Investing", href: "/guides/dividend-investing-beginners" },
+        ]}
+      />
 
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">Home</Link>

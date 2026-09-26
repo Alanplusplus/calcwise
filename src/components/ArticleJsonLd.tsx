@@ -7,6 +7,7 @@ interface ArticleJsonLdProps {
   datePublished: string;
   dateModified?: string;
   image?: string;
+  urlPrefix?: string;
 }
 
 function toIsoWithTz(date: string): string {
@@ -20,13 +21,15 @@ export function ArticleJsonLd({
   datePublished,
   dateModified,
   image,
+  urlPrefix = "/guides",
 }: ArticleJsonLdProps) {
+  const pageUrl = `${site.url}${urlPrefix}/${slug}`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description,
-    url: `${site.url}/guides/${slug}`,
+    url: pageUrl,
     datePublished: toIsoWithTz(datePublished),
     dateModified: toIsoWithTz(dateModified || datePublished),
     author: {
@@ -50,7 +53,7 @@ export function ArticleJsonLd({
     }),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${site.url}/guides/${slug}`,
+      "@id": pageUrl,
     },
   };
 

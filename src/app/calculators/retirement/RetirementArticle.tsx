@@ -51,6 +51,78 @@ export function RetirementArticle() {
         and where you plan to live.
       </p>
 
+      <h2>Case Study: Linda, 42, Targeting Retirement at 62</h2>
+      <p>
+        Linda earns $95,000 per year and wants $70,000 of annual spending in
+        retirement (about 74% of today&apos;s pre-tax income). Using the 4%
+        rule, her portfolio target is $70,000 ÷ 0.04 = $1,750,000. She already
+        has $142,000 in her 401(k) and Roth IRA combined and contributes $950
+        per month ($11,400 per year), including a 4% employer match on the
+        first 6% of salary.
+      </p>
+      <p>
+        Assuming 7% average annual returns before inflation, her existing
+        balance and contributions grow to roughly $1.62 million by age 62 —
+        about $130,000 short of her goal. To close the gap, she can raise
+        contributions by $175 per month (to $1,125 total), retire at 63 instead
+        of 62, or plan on $65,000 spending ($1,625,000 target), which her
+        projected nest egg nearly covers. She uses this calculator to test each
+        lever before committing. For aggressive early-retirement targets, pair
+        those runs with our{" "}
+        <Link href="/calculators/fire-calculator" className="text-brand-600 hover:text-brand-800 font-medium">FIRE Calculator</Link>{" "}
+        and the{" "}
+        <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">Savings Goal Calculator</Link>{" "}
+        to back into monthly savings for a fixed deadline.
+      </p>
+
+      <h2>Nest Egg Targets by Retirement Age</h2>
+      <p>
+        The table below assumes you want $65,000 per year from investments (not
+        including Social Security or a pension). Earlier retirement usually
+        requires a larger portfolio or a lower withdrawal rate because money
+        must last longer.
+      </p>
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full min-w-[320px] border-collapse text-left text-sm">
+          <thead>
+            <tr className="border-b border-ink-200 bg-ink-50">
+              <th className="px-3 py-2 font-semibold text-ink-900">Retire at age</th>
+              <th className="px-3 py-2 font-semibold text-ink-900">Typical withdrawal rate</th>
+              <th className="px-3 py-2 font-semibold text-ink-900">Portfolio needed ($65k/yr)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">55</td>
+              <td className="px-3 py-2">~3.25%</td>
+              <td className="px-3 py-2">~$2,000,000</td>
+            </tr>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">60</td>
+              <td className="px-3 py-2">~3.5%</td>
+              <td className="px-3 py-2">~$1,860,000</td>
+            </tr>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">65</td>
+              <td className="px-3 py-2">4%</td>
+              <td className="px-3 py-2">~$1,625,000</td>
+            </tr>
+            <tr>
+              <td className="px-3 py-2">67</td>
+              <td className="px-3 py-2">4%</td>
+              <td className="px-3 py-2">~$1,625,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        At 67, many US workers can claim full Social Security, so $65,000 from
+        investments might supplement $24,000-$30,000 in benefits rather than
+        replace an entire paycheck. Retiring at 55 with the same lifestyle often
+        means saving an extra $375,000-$400,000 versus a 65-year-old target, or
+        working part-time for the first decade to limit portfolio withdrawals.
+      </p>
+
       <h2>Retirement Account Types</h2>
 
       <h3>401(k) / 403(b)</h3>

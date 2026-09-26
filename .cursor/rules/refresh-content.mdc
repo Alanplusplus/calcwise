@@ -1,0 +1,125 @@
+---
+description: "Daily content freshness refresh for CalcWise SEO"
+globs: 
+alwaysApply: false
+---
+
+# Refresh Content (Daily)
+
+When the user says "刷新内容", "更新内容", "每日更新", "refresh content", or "daily update", follow this automated workflow.
+
+## Step 0: Read Plan & Pick Next Item
+
+1. Read `.cursor/plans/content-freshness.json`
+2. Find the first item with `"status": "pending"`
+3. Set `lastRunDate` to today's ISO date
+4. Announce: "Working on: [type] — [slug] (priority: [priority])"
+
+## Step 1: Route by Task Type
+
+### Type: `calculator-article-expand`
+
+Expand the calculator's Article component to meet the 800+ word standard:
+
+1. Read `src/app/calculators/[slug]/[Name]Article.tsx`
+2. Add content to reach 800+ words total:
+   - Add a new concrete case study with a named persona and specific dollar amounts
+   - Add a comparison table if one doesn't exist
+   - Add or expand FAQ section to 3-5 questions
+   - Add 1-2 new actionable tips with specific numbers
+   - Ensure 2-3 inline `<Link>` elements to related calculators
+   - Ensure 1-2 inline `<Link>` elements to related guides
+3. Every new paragraph must contain specific numbers, examples, or actionable advice — NO generic filler
+
+### Type: `guide-refresh`
+
+Update an existing guide with fresh data:
+
+1. Read `src/app/guides/[slug]/page.tsx`
+2. Make at least 3 of these substantive changes:
+   - Update interest rates, APY rates, or tax brackets to current values
+   - Refresh year references to the current year
+   - Update or add a new data row to comparison tables
+   - Add a new tip or expand an existing tip with current data
+   - Update case study dollar amounts to reflect current market conditions
+   - Add a new FAQ question or update an existing FAQ answer
+   - Verify and update all internal links
+3. Do NOT simply change dates without changing content — Google detects this
+
+### Type: `calculator-refresh`
+
+Update an existing calculator's article content:
+
+1. Read `src/app/calculators/[slug]/[Name]Article.tsx`
+2. Make at least 2 of these substantive changes:
+   - Update rate/amount examples to current market data
+   - Add a new comparison row or scenario
+   - Update or add a FAQ question with fresh data
+   - Refresh case study with current numbers
+   - Add a new actionable tip
+3. Check and update internal links
+
+### Type: `new-calculator`
+
+Delegate to the `add-calculator` rule — read `.cursor/rules/add-calculator.mdc` and follow its workflow.
+
+### Type: `new-guide`
+
+Delegate to the `write-guide` rule — read `.cursor/rules/write-guide.mdc` and follow its workflow.
+
+## Step 2: Update Date Fields
+
+After making content changes, update **all** date signals:
+
+### For calculator refreshes:
+1. In `src/lib/calculators.ts`, set the calculator's `lastUpdated` to today's ISO date (e.g., `"2026-09-26"`)
+2. The sitemap automatically reads `lastUpdated` — no separate sitemap edit needed
+3. `CalculatorShell` automatically passes dates to `ArticleJsonLd` — no separate edit needed
+
+### For guide refreshes:
+1. In `src/lib/guides.ts`, set the guide's `lastUpdated` to today's ISO date
+2. In `src/app/guides/[slug]/page.tsx`, update the `ArticleJsonLd` component's `dateModified` prop to today's date
+3. If the page has a visible "Last updated: Month Year" text, update it too
+
+### For calculator article expansions:
+1. In `src/lib/calculators.ts`, set the calculator's `lastUpdated` to today's ISO date
+
+## Step 3: Verify Build
+
+```bash
+npm run build
+```
+
+Confirm the page builds without errors.
+
+## Step 4: Commit & Push
+
+```bash
+git add -A && git commit -m "Refresh: [slug] — [brief description of changes]" && git push
+```
+
+## Step 5: Update Plan
+
+In `.cursor/plans/content-freshness.json`:
+1. Set the completed item's `status` to `"done"` and add `"completedAt": "[ISO datetime]"`
+2. Update `lastRunDate` to today's ISO date
+
+## Quality Checklist
+
+- [ ] Content changes are substantive (not just date bumps)
+- [ ] Every new paragraph has specific numbers or actionable advice
+- [ ] No emoji used anywhere
+- [ ] `lastUpdated` updated in the data model (calculators.ts or guides.ts)
+- [ ] `dateModified` updated in ArticleJsonLd (for guides)
+- [ ] Internal links are valid and point to existing pages
+- [ ] Build passes with no errors
+- [ ] Git committed and pushed
+- [ ] Plan JSON updated with "done" status
+
+## Queue Regeneration
+
+When all items in the queue are `"done"`:
+1. Increment `cycle` counter
+2. Regenerate P2 (guide-refresh) and P3 (calculator-refresh) items with `"pending"` status
+3. Skip P0 (one-time expansions) and P1 (one-time fixes) — they don't recur
+4. P5 (new content) items remain if still pending in their source plans

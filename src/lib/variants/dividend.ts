@@ -3,6 +3,7 @@ import type { CalculatorVariant } from "./types";
 export const dividendVariants: CalculatorVariant[] = [
   {
     slug: "high-yield-stocks",
+    lastUpdated: "2026-09-09",
     title: "High-Yield Dividend Stock Calculator",
     description: "Calculate income from high-yield dividend stocks paying 5%+ yields. See how reinvestment and dividend growth compound a $15,000 portfolio over time.",
     defaults: {
@@ -49,6 +50,7 @@ export const dividendVariants: CalculatorVariant[] = [
   },
   {
     slug: "dividend-aristocrats",
+    lastUpdated: "2026-09-09",
     title: "Dividend Aristocrat Portfolio Calculator",
     description: "Model a Dividend Aristocrat portfolio with 25+ years of consecutive dividend increases. See how steady 7-10% dividend growth compounds over decades.",
     defaults: {
@@ -95,6 +97,7 @@ export const dividendVariants: CalculatorVariant[] = [
   },
   {
     slug: "reit-income",
+    lastUpdated: "2026-09-09",
     title: "REIT Dividend Income Calculator",
     description: "Estimate monthly income from Real Estate Investment Trusts (REITs) with higher-than-average yields. Model a diversified REIT portfolio with reinvestment.",
     defaults: {
@@ -141,6 +144,7 @@ export const dividendVariants: CalculatorVariant[] = [
   },
   {
     slug: "retirement-dividend-income",
+    lastUpdated: "2026-09-09",
     title: "Retirement Dividend Income Calculator",
     description: "Plan your retirement dividend income stream. Calculate how much to invest today to generate $30,000-$50,000 in annual dividend income by retirement.",
     defaults: {
@@ -187,6 +191,7 @@ export const dividendVariants: CalculatorVariant[] = [
   },
   {
     slug: "drip-vs-cash",
+    lastUpdated: "2026-09-09",
     title: "DRIP vs Cash Dividends Calculator",
     description: "Compare reinvesting dividends (DRIP) versus taking cash. See how much wealth DRIP builds over 20 years compared to spending your dividend income.",
     defaults: {
