@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-09-26",
+  "lastRunDate": "2026-09-27",
   "cycle": 1,
   "queue": [
     {
@@ -63,7 +63,8 @@
       "slug": "how-much-house-can-i-afford",
       "priority": "P2",
       "reason": "Published 2026-08-10, oldest guide — refresh rates, data tables, case study",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-27T01:55:00.000Z"
     },
     {
       "id": "p2-guide-pay-off-mortgage-early-vs-invest",

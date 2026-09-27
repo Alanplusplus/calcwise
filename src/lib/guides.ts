@@ -26,7 +26,7 @@ export const guides: Guide[] = [
     description: "Should you pay off your mortgage early or invest the extra money? We run the real numbers at today's rates so you can see exactly which option builds more wealth.",
     published: true,
     datePublished: "2026-08-17",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-09-28",
     relatedCalculators: ["mortgage", "compound-interest", "investment-return"],
     relatedGuides: ["how-much-house-can-i-afford", "how-to-start-investing-1000"],
   },

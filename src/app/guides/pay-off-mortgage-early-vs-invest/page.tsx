@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "Is it better to pay off my mortgage early or invest?",
     answer:
-      "Mathematically, investing usually wins if your expected return exceeds your mortgage rate after tax. With a 6.5% mortgage and a historical 10% stock return, investing the extra money produces roughly $87,000 more over 20 years per $500/month. However, the guaranteed savings from paying off a mortgage carry zero risk, while market returns are not guaranteed.",
+      "Mathematically, investing usually wins if your expected return exceeds your mortgage rate after tax. With a 6.85% mortgage (the average 30-year fixed rate as of September 2026) and a historical 10% stock return, investing the extra money produces roughly $80,000 more over 20 years per $500/month. However, the guaranteed savings from paying off a mortgage carry zero risk, while market returns are not guaranteed.",
   },
   {
     question: "What if my mortgage rate is very low — say 3%?",
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "Should I factor in the mortgage interest deduction?",
     answer:
-      "Yes, but its impact is smaller than most people think. Since the 2017 Tax Cuts and Jobs Act raised the standard deduction, only about 10% of filers itemize. If you do itemize, the deduction lowers your effective mortgage rate by your marginal tax bracket — for example, a 6.5% rate becomes effectively 4.88% in the 25% bracket.",
+      "Yes, but its impact is smaller than most people think. Since the 2017 Tax Cuts and Jobs Act raised the standard deduction, only about 10% of filers itemize. If you do itemize, the deduction lowers your effective mortgage rate by your marginal tax bracket — for example, a 6.85% rate becomes effectively 5.14% in the 25% bracket.",
   },
   {
     question: "What about the emotional benefit of being debt-free?",
@@ -43,7 +43,12 @@ const faqs = [
   {
     question: "Can I do both — pay extra on my mortgage AND invest?",
     answer:
-      "Absolutely, and this is what many financial planners recommend. A common approach: invest enough to get your full employer 401(k) match (free money), fund a Roth IRA, then split remaining extra cash 50/50 between extra mortgage payments and taxable investing. This hedges your bets and builds wealth on two fronts.",
+      "Absolutely, and this is what many financial planners recommend. A common approach: invest enough to get your full employer 401(k) match (free money), fund a Roth IRA ($7,000 limit in 2026), then split remaining extra cash 50/50 between extra mortgage payments and taxable investing. This hedges your bets and builds wealth on two fronts.",
+  },
+  {
+    question: "Should I refinance before deciding to pay extra or invest?",
+    answer:
+      "If your current mortgage rate is significantly above today's rates, refinancing first is almost always the best move. Dropping from 7.5% to 6.85% on a $300,000 balance saves roughly $130/month in interest, freeing up more cash for either extra payments or investing. However, factor in closing costs (typically $3,000-$6,000) — you need to stay in the home long enough to break even, usually 18-24 months. Use our Mortgage Calculator and Refinance Calculator to run the exact numbers.",
   },
 ];
 
@@ -56,7 +61,7 @@ export default function PayOffMortgageVsInvestGuide() {
         description="Should you pay off your mortgage early or invest the extra money? We run the real numbers at today's rates so you can see exactly which option builds more wealth."
         slug="pay-off-mortgage-early-vs-invest"
         datePublished="2026-08-17"
-        dateModified="2026-08-24"
+        dateModified="2026-09-28"
         image="/images/guides/pay-off-mortgage-early-vs-invest.webp"
       />
       <BreadcrumbJsonLd
@@ -83,7 +88,7 @@ export default function PayOffMortgageVsInvestGuide() {
             questions in personal finance — and the answer depends on numbers
             most people never bother to run. This guide does the math for you.
           </p>
-          <p className="mt-2 text-sm text-ink-500">Last updated: August 2026</p>
+          <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
         </header>
 
         {/* TL;DR */}
@@ -163,8 +168,9 @@ export default function PayOffMortgageVsInvestGuide() {
           </p>
           <p className="mt-4 text-ink-700">
             When you make an extra mortgage payment, you're effectively earning
-            a risk-free return equal to your mortgage interest rate. With a 6.5%
-            mortgage, every extra dollar you pay earns you 6.5% by avoiding
+            a risk-free return equal to your mortgage interest rate. With a 6.85%
+            mortgage — the average 30-year fixed rate as of September 2026 —
+            every extra dollar you pay earns you 6.85% by avoiding
             future interest charges. No market crash, no bad quarter, no
             volatility — just a guaranteed, tax-free return.
           </p>
@@ -190,26 +196,26 @@ export default function PayOffMortgageVsInvestGuide() {
             The Numbers: $500/Month Extra Over 20 Years
           </h2>
           <p className="mt-4 text-ink-700">
-            Let's use a common scenario: you have a $300,000 mortgage at 6.5%
-            interest on a 30-year fixed term. You're 5 years in and have an
-            extra $500/month to either put toward your mortgage or invest in a
-            broad market index fund.
+            Let's use a common scenario: you have a $300,000 mortgage at 6.85%
+            interest (the September 2026 national average) on a 30-year fixed term.
+            You're 5 years in and have an extra $500/month to either put toward
+            your mortgage or invest in a broad market index fund.
           </p>
 
           <h3 className="mt-8 text-xl font-semibold text-ink-800">
             Option A: Pay Off Mortgage Early
           </h3>
           <p className="mt-2 text-ink-700">
-            Your standard monthly payment on a $300,000 mortgage at 6.5% is
-            $1,896. Adding $500/month brings your total to $2,396. Here's what
+            Your standard monthly payment on a $300,000 mortgage at 6.85% is
+            $1,966. Adding $500/month brings your total to $2,466. Here's what
             happens:
           </p>
           <ul className="mt-3 space-y-1 text-ink-700">
-            <li>Remaining balance (after 5 years): approximately $279,000</li>
-            <li>Without extra payments: 25 years remaining, $268,800 more in interest</li>
-            <li>With $500/month extra: paid off in ~16.5 years instead of 25</li>
-            <li>Total interest saved: approximately $121,600</li>
-            <li>You own your home free and clear 8.5 years early</li>
+            <li>Remaining balance (after 5 years): approximately $280,500</li>
+            <li>Without extra payments: 25 years remaining, $289,800 more in interest</li>
+            <li>With $500/month extra: paid off in ~16 years instead of 25</li>
+            <li>Total interest saved: approximately $132,400</li>
+            <li>You own your home free and clear 9 years early</li>
           </ul>
 
           <h3 className="mt-8 text-xl font-semibold text-ink-800">
@@ -249,13 +255,13 @@ export default function PayOffMortgageVsInvestGuide() {
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Financial benefit</td>
-                  <td className="px-4 py-3 font-medium">$121,600 saved</td>
+                  <td className="px-4 py-3 font-medium">$132,400 saved</td>
                   <td className="px-4 py-3 font-medium text-brand-700">$223,600 gained</td>
                   <td className="px-4 py-3 font-medium">$126,200 gained</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Mortgage paid off</td>
-                  <td className="px-4 py-3">8.5 years early</td>
+                  <td className="px-4 py-3">9 years early</td>
                   <td className="px-4 py-3">On schedule (year 30)</td>
                   <td className="px-4 py-3">On schedule (year 30)</td>
                 </tr>
@@ -274,14 +280,14 @@ export default function PayOffMortgageVsInvestGuide() {
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Net advantage vs. payoff</td>
                   <td className="px-4 py-3">Baseline</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">+$102,000</td>
-                  <td className="px-4 py-3">+$4,600</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">+$91,200</td>
+                  <td className="px-4 py-3">-$6,200</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *Assumes $300K mortgage at 6.5%, 30-year fixed, extra payments starting in year 6. Investment returns are nominal (pre-inflation). Tax implications not included — see tax section below.
+            *Assumes $300K mortgage at 6.85% (Sep 2026 avg), 30-year fixed, extra payments starting in year 6. Investment returns are nominal (pre-inflation). Tax implications not included — see tax section below.
           </p>
         </section>
 
@@ -295,10 +301,10 @@ export default function PayOffMortgageVsInvestGuide() {
               <div>
                 <h4 className="font-semibold text-ink-800">Their Situation</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                  <li>Combined gross income: $130,000/year in Denver, CO</li>
-                  <li>Mortgage: $340,000 at 6.25%, 30-year fixed (3 years in)</li>
-                  <li>Current monthly payment: $2,094</li>
-                  <li>Remaining balance: $326,000</li>
+                  <li>Combined gross income: $138,000/year in Denver, CO</li>
+                  <li>Mortgage: $355,000 at 6.75%, 30-year fixed (3 years in)</li>
+                  <li>Current monthly payment: $2,302</li>
+                  <li>Remaining balance: $341,000</li>
                   <li>Extra available per month: $800</li>
                   <li>Marcus&apos;s 401(k): contributing 6% (employer matches 4%)</li>
                   <li>Elena&apos;s 401(k): contributing 5% (employer matches 3%)</li>
@@ -309,7 +315,7 @@ export default function PayOffMortgageVsInvestGuide() {
                 <h4 className="font-semibold text-ink-800">The Decision</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Both already get full employer match (free 3-4% return)</li>
-                  <li>6.25% mortgage rate is in the "gray zone"</li>
+                  <li>6.75% mortgage rate is in the "gray zone"</li>
                   <li>Elena wants security of faster payoff</li>
                   <li>Marcus wants the upside of market returns</li>
                   <li>Solution: hybrid approach</li>
@@ -323,14 +329,17 @@ export default function PayOffMortgageVsInvestGuide() {
                 Marcus and Elena split their $800/month: $400 extra toward the
                 mortgage and $400 into a Vanguard Total Stock Market index fund
                 (VTSAX, 0.04% expense ratio). After 27 months, their mortgage
-                balance is $296,000 (vs. $311,000 without extra payments — $15,000
-                ahead), and their investment account holds $11,800 ($10,800
-                contributed + $1,000 growth). They estimate the mortgage will be
+                balance is $308,500 (vs. $324,000 without extra payments — $15,500
+                ahead), and their investment account holds $12,100 ($10,800
+                contributed + $1,300 growth). They estimate the mortgage will be
                 paid off about 6 years early, while the investment account will
-                hold roughly $175,000 by the time they hit year 20. They have the
+                hold roughly $180,000 by the time they hit year 20. They have the
                 psychological win of progress on both fronts, and the flexibility
                 to shift the ratio if rates drop (refi and invest more) or the
-                market tanks (lean into mortgage payments).
+                market tanks (lean into mortgage payments). Marcus also noted that
+                with the S&P 500 up roughly 14% year-to-date in 2026, the investment
+                side is outpacing their projections — but they're sticking with
+                the 50/50 split to stay disciplined through any future downturn.
               </p>
             </div>
           </div>
@@ -377,10 +386,10 @@ export default function PayOffMortgageVsInvestGuide() {
                   <td className="px-4 py-3 font-medium text-brand-700">Invest (by $129K)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">6.5%</td>
-                  <td className="px-4 py-3">$121,600</td>
+                  <td className="px-4 py-3">6.85% (Sep 2026 avg)</td>
+                  <td className="px-4 py-3">$132,400</td>
                   <td className="px-4 py-3 font-medium text-brand-700">$223,600</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">Invest (by $102K)</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">Invest (by $91K)</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">7.5%</td>
@@ -412,8 +421,10 @@ export default function PayOffMortgageVsInvestGuide() {
             <p className="mt-1 text-sm text-amber-700">
               The stock market's long-term average (10% nominal) essentially
               makes investing the mathematical winner at any mortgage rate below
-              about 8-9%. But remember: the 10% average includes years of -37%
-              (2008) and +29% (2019). The payoff return is guaranteed and
+              about 8-9%. But at today's 6.85% average rate, the gap between
+              mortgage payoff and investing is narrower than it was during the
+              3-4% rate era of 2020-2021. Remember: the 10% average includes years
+              of -37% (2008) and +29% (2019). The payoff return is guaranteed and
               consistent every single month.
             </p>
           </div>
@@ -435,8 +446,8 @@ export default function PayOffMortgageVsInvestGuide() {
           <p className="mt-2 text-ink-700">
             If you itemize deductions (only about 10% of filers since the 2017
             standard deduction increase), your effective mortgage rate is lower
-            than the stated rate. In the 22% tax bracket, a 6.5% mortgage
-            effectively costs 5.07%. This widens the gap in favor of investing.
+            than the stated rate. In the 22% tax bracket, a 6.85% mortgage
+            effectively costs 5.34%. This widens the gap in favor of investing.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
@@ -494,9 +505,10 @@ export default function PayOffMortgageVsInvestGuide() {
             </li>
             <li>
               <strong>You have low risk tolerance or sleep poorly.</strong> The
-              psychological burden of debt is real. A 2024 study by the
+              psychological burden of debt is real. A 2025 survey by the
               National Endowment for Financial Education found that mortgage
-              debt was the #2 source of financial stress (after credit cards).
+              debt was the #2 source of financial stress (after credit cards),
+              with 62% of homeowners reporting anxiety about their monthly payment.
             </li>
             <li>
               <strong>You're in a high-tax state with no itemized deductions.</strong> Without
@@ -539,8 +551,8 @@ export default function PayOffMortgageVsInvestGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Neither extra mortgage payments nor investments help if you
                   lose your income and can't make the regular payment. Keep
-                  $15,000-$30,000 in a high-yield savings account (4.5-5.0% APY
-                  in 2026) before aggressively tackling either option.
+                  $15,000-$30,000 in a high-yield savings account (4.25-4.75% APY
+                  as of September 2026) before aggressively tackling either option.
                 </p>
               </div>
             </div>
@@ -677,6 +689,12 @@ export default function PayOffMortgageVsInvestGuide() {
               className="rounded-lg border border-brand-300 bg-white px-6 py-3 font-medium text-brand-700 shadow-sm transition-colors hover:bg-brand-50"
             >
               Investment Return Calculator
+            </Link>
+            <Link
+              href="/calculators/refinance-calculator"
+              className="rounded-lg border border-brand-300 bg-white px-6 py-3 font-medium text-brand-700 shadow-sm transition-colors hover:bg-brand-50"
+            >
+              Refinance Calculator
             </Link>
           </div>
         </section>
