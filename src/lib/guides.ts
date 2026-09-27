@@ -16,7 +16,7 @@ export const guides: Guide[] = [
     description: "Learn exactly how much home you can afford based on your salary, debts, and down payment. Includes income-based tables, a real case study, and the formulas lenders actually use.",
     published: true,
     datePublished: "2026-08-10",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-09-27",
     relatedCalculators: ["mortgage", "home-affordability", "debt-payoff"],
     relatedGuides: ["15-year-vs-30-year-mortgage", "rent-vs-buy-decision"],
   },

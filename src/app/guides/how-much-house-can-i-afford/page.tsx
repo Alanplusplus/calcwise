@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "How much house can I afford on a $60,000 salary?",
     answer:
-      "With a $60K salary, lenders typically approve a mortgage between $168,000 and $180,000 using the 28/36 rule. Your actual amount depends on debts, down payment, credit score, and local interest rates.",
+      "With a $60K salary, lenders typically approve a mortgage between $170,000 and $185,000 using the 28/36 rule. At current rates near 6.25% (as of fall 2026), your monthly housing budget is roughly $1,400. Your actual amount depends on debts, down payment, credit score, and local property tax rates.",
   },
   {
     question: "What is the 28/36 rule for mortgages?",
@@ -33,17 +33,22 @@ const faqs = [
   {
     question: "How much should I put down on a house?",
     answer:
-      "While 20% is the traditional recommendation (to avoid PMI), many buyers put 3-10% down. FHA loans allow as little as 3.5%. A larger down payment means lower monthly payments and less interest paid over time.",
+      "While 20% is the traditional recommendation (to avoid PMI), many buyers put 3-10% down. FHA loans allow as little as 3.5%. A larger down payment means lower monthly payments and less interest paid over time. On a $350,000 home, 20% down ($70,000) saves you roughly $145/month in PMI costs compared to 5% down.",
   },
   {
     question: "Does my credit score affect how much house I can afford?",
     answer:
-      "Yes. A higher credit score gets you a lower interest rate, which directly increases your buying power. A score of 760+ typically gets the best rates. The difference between a 620 and 760 score can be 1-1.5% in rate, which translates to $50,000-100,000 in purchasing power.",
+      "Yes. A higher credit score gets you a lower interest rate, which directly increases your buying power. A score of 760+ typically gets the best rates. The difference between a 620 and 760 score can be 1-1.5% in rate, which translates to $50,000-100,000 in purchasing power on a 30-year loan.",
   },
   {
     question: "Should I use my maximum approved mortgage amount?",
     answer:
       "Financial advisors generally recommend staying well below your maximum approval. Lender maximums don't account for your lifestyle, savings goals, or unexpected expenses. A comfortable range is 2.5-3x your annual income.",
+  },
+  {
+    question: "Is fall 2026 a good time to buy a house?",
+    answer:
+      "With 30-year fixed rates averaging around 6.25% in September 2026 — down from the 7%+ peaks of late 2023 — buyers have slightly more purchasing power than in recent years. A buyer at $100K income gains roughly $15,000-$20,000 in additional buying power compared to when rates were 7%. However, the best time to buy depends on your personal financial readiness, not market timing. Make sure you have a stable income, adequate savings (down payment plus 3-6 months of expenses), and a manageable debt load before focusing on rate movements.",
   },
 ];
 
@@ -56,7 +61,7 @@ export default function HowMuchHouseGuide() {
         description="Find out exactly how much home you can afford based on your salary. Includes income-based affordability tables, the 28/36 rule explained, a real case study, and common mistakes to avoid."
         slug="how-much-house-can-i-afford"
         datePublished="2026-08-10"
-        dateModified="2026-08-24"
+        dateModified="2026-09-27"
         image="/images/guides/house-affordability-infographic.webp"
       />
       <BreadcrumbJsonLd
@@ -183,9 +188,11 @@ export default function HowMuchHouseGuide() {
             <p className="font-medium text-amber-800">Important Caveat</p>
             <p className="mt-1 text-sm text-amber-700">
               Some lenders will approve DTI ratios as high as 43% (or even 50% for
-              FHA). Just because you're approved doesn't mean it's comfortable.
-              These higher ratios leave almost no room for savings, emergencies, or
-              lifestyle expenses.
+              FHA). Just because you&apos;re approved doesn&apos;t mean it&apos;s
+              comfortable. These higher ratios leave almost no room for savings,
+              emergencies, or lifestyle expenses. With the average homeowner&apos;s
+              insurance premium rising roughly 10% year-over-year in 2025-2026,
+              it&apos;s more important than ever to leave a buffer in your budget.
             </p>
           </div>
         </section>
@@ -197,8 +204,10 @@ export default function HowMuchHouseGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             The table below shows approximate home prices you can afford at each
-            income level. Assumptions: 20% down payment, 6.5% interest rate,
-            30-year fixed mortgage, property tax 1.2%, insurance 0.5%.
+            income level. Assumptions: 20% down payment, 6.25% interest rate
+            (fall 2026 average), 30-year fixed mortgage, property tax 1.2%,
+            insurance 0.55%. Rates have eased from the 7%+ peaks of late 2023,
+            giving buyers roughly 5-8% more purchasing power compared to a year ago.
           </p>
 
           <div className="mt-6 overflow-x-auto">
@@ -223,38 +232,38 @@ export default function HowMuchHouseGuide() {
                 <tr>
                   <td className="px-4 py-3">$50,000</td>
                   <td className="px-4 py-3">$1,167</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$175,000</td>
-                  <td className="px-4 py-3 text-ink-500">$225,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$180,000</td>
+                  <td className="px-4 py-3 text-ink-500">$230,000</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">$75,000</td>
                   <td className="px-4 py-3">$1,750</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$270,000</td>
-                  <td className="px-4 py-3 text-ink-500">$345,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$280,000</td>
+                  <td className="px-4 py-3 text-ink-500">$355,000</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">$100,000</td>
                   <td className="px-4 py-3">$2,333</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$360,000</td>
-                  <td className="px-4 py-3 text-ink-500">$460,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$375,000</td>
+                  <td className="px-4 py-3 text-ink-500">$475,000</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">$125,000</td>
                   <td className="px-4 py-3">$2,917</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$450,000</td>
-                  <td className="px-4 py-3 text-ink-500">$575,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$465,000</td>
+                  <td className="px-4 py-3 text-ink-500">$590,000</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">$150,000</td>
                   <td className="px-4 py-3">$3,500</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$540,000</td>
-                  <td className="px-4 py-3 text-ink-500">$690,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$555,000</td>
+                  <td className="px-4 py-3 text-ink-500">$710,000</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">$200,000</td>
                   <td className="px-4 py-3">$4,667</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$720,000</td>
-                  <td className="px-4 py-3 text-ink-500">$920,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$740,000</td>
+                  <td className="px-4 py-3 text-ink-500">$945,000</td>
                 </tr>
               </tbody>
             </table>
@@ -292,12 +301,13 @@ export default function HowMuchHouseGuide() {
             applies.
           </p>
           <p className="mt-4 text-ink-700">
-            With a conventional loan at 10% down on a $300,000 home, expect a
-            home price range of roughly $280,000 to $330,000 depending on your
-            debts, credit score, and local tax rates. A 10% down payment on
-            $300,000 means $30,000 upfront plus closing costs. Because you are
+            With a conventional loan at 10% down and a 6.25% rate (fall 2026
+            average), expect a home price range of roughly $285,000 to $340,000
+            depending on your debts, credit score, and local tax rates. A 10%
+            down payment on $310,000 means $31,000 upfront plus closing costs
+            (typically 2-5% of the loan, or $5,600-$14,000). Because you are
             below 20% down, private mortgage insurance (PMI) adds approximately
-            $80 to $150 per month until you reach 20% equity — typically 5-7
+            $90 to $160 per month until you reach 20% equity — typically 5-7
             years of on-time payments.
           </p>
           <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
@@ -308,16 +318,16 @@ export default function HowMuchHouseGuide() {
                   <li>Gross monthly income: $6,250</li>
                   <li>Max housing (28%): $1,750/month</li>
                   <li>Max total debt (36%): $2,250/month</li>
-                  <li>Home price range: $280,000 - $330,000</li>
+                  <li>Home price range: $285,000 - $340,000</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-ink-800">Loan Details</h4>
+                <h4 className="font-semibold text-ink-800">Loan Details (6.25%)</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                  <li>Down payment: 10% (~$30,000)</li>
-                  <li>PMI: ~$80 - $150/month</li>
+                  <li>Down payment: 10% (~$31,000)</li>
+                  <li>PMI: ~$90 - $160/month</li>
                   <li>Loan type: Conventional</li>
-                  <li>Comfortable target: ~$270,000</li>
+                  <li>Comfortable target: ~$280,000</li>
                 </ul>
               </div>
             </div>
@@ -331,20 +341,23 @@ export default function HowMuchHouseGuide() {
             The 28% rule gives you a maximum housing budget of $2,333 per
             month, and the 36% back-end rule caps total debt at $3,000. At this
             income level, the comfortable home price range is approximately
-            $380,000 to $440,000 with 20% down, 6.5% interest, and typical
+            $390,000 to $450,000 with 20% down, 6.25% interest rate, and typical
             property tax and insurance rates. Lenders may pre-approve you for
-            $460,000 or more — but that maximum leaves almost no margin for
+            $475,000 or more — but that maximum leaves almost no margin for
             savings, maintenance, or lifestyle expenses.
           </p>
           <p className="mt-4 text-ink-700">
             The key at this income level: do not max out. Targeting 25% of
             gross income ($2,083/month) instead of 28% preserves roughly
             $250/month for retirement contributions, emergency savings, or
-            unexpected costs. On a $350,000 mortgage at 6.5% over 30 years,
-            total interest paid equals approximately $446,000 — meaning you
+            unexpected costs. On a $350,000 mortgage at 6.25% over 30 years,
+            total interest paid equals approximately $426,000 — meaning you
             pay more in interest over the life of the loan than the home&apos;s
             purchase price. A $400,000 home at the top of your range pushes
-            that interest total above $510,000.
+            that interest total above $490,000. Compared to when rates were
+            7%, a $100K earner now saves roughly $55/month on a $350K
+            mortgage — not transformative, but it adds up to $19,800 over
+            the life of the loan.
           </p>
           <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
             <div className="grid gap-4 sm:grid-cols-2">
@@ -354,16 +367,16 @@ export default function HowMuchHouseGuide() {
                   <li>Gross monthly income: $8,333</li>
                   <li>Max housing (28%): $2,333/month</li>
                   <li>Recommended (25%): $2,083/month</li>
-                  <li>Home price range: $380,000 - $440,000</li>
+                  <li>Home price range: $390,000 - $450,000</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-ink-800">Cost of Borrowing</h4>
+                <h4 className="font-semibold text-ink-800">Cost of Borrowing (6.25%)</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                  <li>$350K mortgage at 6.5%: ~$446K total interest</li>
-                  <li>Monthly P&amp;I on $350K: ~$2,212</li>
-                  <li>Max lender approval: ~$460,000</li>
-                  <li>Comfortable target: ~$360,000</li>
+                  <li>$350K mortgage at 6.25%: ~$426K total interest</li>
+                  <li>Monthly P&amp;I on $350K: ~$2,155</li>
+                  <li>Max lender approval: ~$475,000</li>
+                  <li>Comfortable target: ~$375,000</li>
                 </ul>
               </div>
             </div>
@@ -376,22 +389,23 @@ export default function HowMuchHouseGuide() {
             At $150,000 per year, gross monthly income reaches $12,500. Maximum
             housing under the 28% rule is $3,500 per month, with total debt
             capped at $4,500 under the 36% rule. The comfortable home price
-            range is approximately $540,000 to $620,000. Homes above $766,550
-            (the 2026 conforming loan limit in most areas) require jumbo
-            financing, which typically demands higher credit scores, larger down
-            payments (often 15-20%), and interest rates 0.25-0.5% above
-            conventional loans.
+            range is approximately $555,000 to $640,000. Homes above $802,650
+            (the 2026 conforming loan limit in most counties, up from $766,550
+            in 2025) require jumbo financing, which typically demands higher
+            credit scores (often 700+), larger down payments (15-20%), and
+            interest rates 0.25-0.5% above conventional loans.
           </p>
           <p className="mt-4 text-ink-700">
             At this income level, the mortgage interest deduction becomes
-            meaningfully valuable — potentially saving $3,000-$5,000 per year
+            meaningfully valuable — potentially saving $3,500-$5,500 per year
             in federal taxes on a $500,000+ mortgage, though the benefit
             depends on whether you itemize deductions and your marginal tax
             bracket. Total homeownership costs extend well beyond the mortgage:
-            on a $580,000 home, expect roughly $2,900/month in P&amp;I, $580 in
-            property taxes, $240 in insurance, and $480/month set aside for
-            maintenance — a true monthly cost of approximately $4,200, or 34%
-            of gross income before HOA fees or PMI.
+            on a $580,000 home at 6.25%, expect roughly $2,858/month in P&amp;I,
+            $580 in property taxes, $266 in insurance (0.55% of home value),
+            and $483/month set aside for maintenance — a true monthly cost of
+            approximately $4,187, or 33.5% of gross income before HOA fees or
+            PMI.
           </p>
           <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
             <div className="grid gap-4 sm:grid-cols-2">
@@ -401,16 +415,16 @@ export default function HowMuchHouseGuide() {
                   <li>Gross monthly income: $12,500</li>
                   <li>Max housing (28%): $3,500/month</li>
                   <li>Max total debt (36%): $4,500/month</li>
-                  <li>Home price range: $540,000 - $620,000</li>
+                  <li>Home price range: $555,000 - $640,000</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-ink-800">Additional Considerations</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                  <li>Jumbo threshold: $766,550 (most areas)</li>
-                  <li>Tax deduction: ~$3,000 - $5,000/year</li>
-                  <li>True monthly cost on $580K home: ~$4,200</li>
-                  <li>Comfortable target: ~$540,000</li>
+                  <li>Jumbo threshold: $802,650 (2026, most areas)</li>
+                  <li>Tax deduction: ~$3,500 - $5,500/year</li>
+                  <li>True monthly cost on $580K home: ~$4,187</li>
+                  <li>Comfortable target: ~$555,000</li>
                 </ul>
               </div>
             </div>
@@ -442,8 +456,8 @@ export default function HowMuchHouseGuide() {
                   <li>36% of gross: $2,850 total debt capacity</li>
                   <li>Available for housing: $2,850 - $450 = $2,400</li>
                   <li>Limiting factor: 28% rule → $2,217</li>
-                  <li>Loan amount at 6.5%: ~$290,000</li>
-                  <li>+ Down payment ($45K): ~$335,000 home</li>
+                  <li>Loan amount at 6.25%: ~$298,000</li>
+                  <li>+ Down payment ($45K): ~$343,000 home</li>
                 </ul>
               </div>
             </div>
@@ -451,12 +465,14 @@ export default function HowMuchHouseGuide() {
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">What They Did</h4>
               <p className="mt-2 text-sm text-ink-700">
-                The Johnsons were pre-approved for $395,000, but they chose a
-                $310,000 home. This gave them breathing room of ~$400/month —
-                enough for retirement savings, an emergency fund contribution, and
-                occasional travel. Two years in, they've had zero months where
-                bills felt tight, even after a job transition and unexpected car
-                repair.
+                The Johnsons were pre-approved for $405,000, but they chose a
+                $320,000 home in early 2026, locking in a 6.3% rate. This gave
+                them breathing room of ~$420/month — enough for retirement
+                savings, an emergency fund contribution, and occasional travel.
+                Their monthly P&amp;I on a $275,000 loan comes to $1,695, with
+                total housing costs (taxes, insurance, maintenance) at $2,180.
+                Six months in, they&apos;ve had zero months where bills felt tight,
+                even after a job transition and an unexpected $1,800 HVAC repair.
               </p>
             </div>
           </div>
@@ -489,9 +505,9 @@ export default function HowMuchHouseGuide() {
               <tbody className="divide-y divide-ink-100">
                 <tr>
                   <td className="px-4 py-3">Mortgage (P&I)</td>
-                  <td className="px-4 py-3 text-right">$1,770</td>
+                  <td className="px-4 py-3 text-right">$1,724</td>
                   <td className="px-4 py-3 text-ink-500">
-                    $280K loan, 6.5%, 30yr
+                    $280K loan, 6.25%, 30yr
                   </td>
                 </tr>
                 <tr className="bg-ink-50/50">
@@ -500,30 +516,30 @@ export default function HowMuchHouseGuide() {
                   <td className="px-4 py-3 text-ink-500">1.2% of home value</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">Homeowner's Insurance</td>
-                  <td className="px-4 py-3 text-right">$146</td>
-                  <td className="px-4 py-3 text-ink-500">~0.5% of home value</td>
+                  <td className="px-4 py-3">Homeowner&apos;s Insurance</td>
+                  <td className="px-4 py-3 text-right">$160</td>
+                  <td className="px-4 py-3 text-ink-500">~0.55% of home value (up from 0.5% in 2024)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">PMI (if &lt;20% down)</td>
-                  <td className="px-4 py-3 text-right">$140</td>
+                  <td className="px-4 py-3 text-right">$145</td>
                   <td className="px-4 py-3 text-ink-500">~0.5-1% of loan/year</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">Maintenance & Repairs</td>
+                  <td className="px-4 py-3">Maintenance &amp; Repairs</td>
                   <td className="px-4 py-3 text-right">$292</td>
                   <td className="px-4 py-3 text-ink-500">1% of home value/year</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">HOA (if applicable)</td>
                   <td className="px-4 py-3 text-right">$200</td>
-                  <td className="px-4 py-3 text-ink-500">Varies widely</td>
+                  <td className="px-4 py-3 text-ink-500">National median ~$200/month</td>
                 </tr>
                 <tr className="border-t-2 border-ink-200 font-semibold">
                   <td className="px-4 py-3">True Monthly Cost</td>
-                  <td className="px-4 py-3 text-right text-brand-700">$2,898</td>
+                  <td className="px-4 py-3 text-right text-brand-700">$2,871</td>
                   <td className="px-4 py-3 text-ink-500">
-                    64% more than just P&I
+                    67% more than just P&I
                   </td>
                 </tr>
               </tbody>
@@ -563,7 +579,11 @@ export default function HowMuchHouseGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Car payments, student loans, subscriptions, childcare,
                   groceries, utilities, health insurance. Be brutally honest — most
-                  people underestimate by 20-30%.
+                  people underestimate by 20-30%. Use our{" "}
+                  <Link href="/guides/debt-to-income-ratio-guide" className="text-brand-600 underline">
+                    DTI ratio guide
+                  </Link>{" "}
+                  to understand how lenders evaluate your debt load.
                 </p>
               </div>
             </div>
@@ -663,8 +683,9 @@ export default function HowMuchHouseGuide() {
               </h3>
               <p className="mt-1 text-sm text-red-700">
                 A 1% rate increase on a $300K loan adds ~$170/month ($61,000 over
-                30 years). Don't house-hunt based on today's rate if you're closing
-                in 6 months.
+                30 years). Fall 2026 rates are around 6.25%, but could shift by
+                closing. If rates rise to 7.25% before your lock expires, a
+                $350,000 budget shrinks by about $25,000 in purchasing power.
               </p>
             </div>
             <div className="rounded-lg border border-red-200 bg-red-50 p-4">
@@ -723,7 +744,7 @@ export default function HowMuchHouseGuide() {
             ))}
           </div>
         </section>
-        <RelatedGuides currentSlug="how-much-house-can-i-afford" relatedSlugs={["15-year-vs-30-year-mortgage", "rent-vs-buy-decision"]} />
+        <RelatedGuides currentSlug="how-much-house-can-i-afford" relatedSlugs={["15-year-vs-30-year-mortgage", "rent-vs-buy-decision", "how-much-down-payment-for-house"]} />
       </article>
     </>
   );
