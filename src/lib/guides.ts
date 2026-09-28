@@ -36,7 +36,7 @@ export const guides: Guide[] = [
     description: "A step-by-step plan to save $50,000 in 3 years on an average salary. Includes monthly targets, budget breakdowns, a real case study, and strategies that actually work.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-09-29",
     relatedCalculators: ["savings-goal", "compound-interest"],
     relatedGuides: ["50-30-20-budget-rule", "high-yield-savings-vs-cd"],
   },
