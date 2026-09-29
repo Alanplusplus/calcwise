@@ -23,27 +23,32 @@ const faqs = [
   {
     question: "How much more does a 15-year mortgage cost per month?",
     answer:
-      "On a $350,000 loan at August 2026 rates, a 15-year mortgage at 6.75% costs $3,097 per month versus $2,329 for a 30-year at 7.0% — a difference of $769 per month. That extra $769 buys you a mortgage-free life 15 years sooner and saves $280,788 in total interest over the life of the loan.",
+      "On a $350,000 loan at fall 2026 rates, a 15-year mortgage at 6.20% costs $2,991 per month versus $2,224 for a 30-year at 6.55% — a difference of $768 per month. That extra $768 buys you a mortgage-free life 15 years sooner and saves $262,092 in total interest over the life of the loan.",
   },
   {
     question: "Is a 15-year mortgage always cheaper in the long run?",
     answer:
-      "A 15-year mortgage always saves on total interest — on a $350,000 loan you pay $207,493 in interest versus $488,281 on a 30-year, a $280,788 difference. However, if you invest the $769 monthly payment difference at a 7% average return, your portfolio grows to $243,624 over 15 years. The 15-year still wins on guaranteed savings, but the gap narrows significantly when you factor in investment opportunity cost.",
+      "A 15-year mortgage always saves on total interest — on a $350,000 loan you pay $188,461 in interest versus $450,553 on a 30-year, a $262,092 difference. However, if you invest the $768 monthly payment difference at a 7% average return, your portfolio grows to $244,749 over 15 years. The 15-year still wins on guaranteed savings, but the gap narrows significantly when you factor in investment opportunity cost.",
   },
   {
-    question: "What are typical 15-year and 30-year mortgage rates in 2026?",
+    question: "What are typical 15-year and 30-year mortgage rates in fall 2026?",
     answer:
-      "As of August 2026, the national average 30-year fixed rate sits around 6.875% to 7.125%, while 15-year fixed rates average 6.625% to 6.875% — typically 0.25 to 0.50 percentage points lower. Freddie Mac's Primary Mortgage Market Survey shows the 15-year rate has averaged 0.38 percentage points below the 30-year rate over the past decade.",
+      "As of fall 2026, the national average 30-year fixed rate sits around 6.40% to 6.70%, while 15-year fixed rates average 6.00% to 6.35% — typically 0.25 to 0.50 percentage points lower. Rates have eased roughly 0.40 to 0.50 points since summer 2026 as the Fed signaled further rate cuts. Freddie Mac's Primary Mortgage Market Survey shows the 15-year rate has averaged 0.38 percentage points below the 30-year rate over the past decade.",
   },
   {
     question: "Can I switch from a 30-year to a 15-year mortgage later?",
     answer:
-      "Yes, through refinancing. If rates drop or your income rises, you can refinance a $350,000 remaining balance from a 30-year to a 15-year term. Refinancing costs typically run $3,000 to $6,000 in closing fees, so the break-even point is usually 18 to 36 months of interest savings. Alternatively, you can simulate a 15-year payoff by adding $769 per month in extra principal payments without refinancing.",
+      "Yes, through refinancing. If rates drop further or your income rises, you can refinance a $350,000 remaining balance from a 30-year to a 15-year term. Refinancing costs typically run $3,000 to $6,000 in closing fees, so the break-even point is usually 18 to 36 months of interest savings. Alternatively, you can simulate a 15-year payoff by adding $768 per month in extra principal payments without refinancing.",
   },
   {
     question: "Who should choose a 15-year mortgage over a 30-year?",
     answer:
       "Choose a 15-year mortgage if your housing payment stays below 28% of gross income ($3,383/month on a $145,000 salary), you have at least 6 months of emergency savings ($25,000+), you are within 20 years of retirement, or you prioritize guaranteed interest savings over market returns. Skip the 15-year if the higher payment would push your total debt above 36% of income or leave you with less than $15,000 in liquid savings.",
+  },
+  {
+    question: "How do falling mortgage rates in late 2026 affect the 15-year vs 30-year decision?",
+    answer:
+      "Lower rates benefit both terms, but they shrink the absolute dollar gap. At summer 2026 rates (6.75% / 7.0%), the 15-year saved roughly $280,000 in interest on a $350,000 loan. At fall 2026 rates (6.20% / 6.55%), that savings drops to about $262,000. The lower rates also reduce the monthly payment gap, making the 15-year more accessible to more buyers — the extra monthly cost dropped from $769 to $768. If rates continue falling, consider locking a 30-year now and refinancing to a 15-year later if rates drop below 5.5%.",
   },
 ];
 
@@ -56,6 +61,7 @@ export default function FifteenVsThirtyYearMortgageGuide() {
         description="Compare 15-year vs 30-year mortgages with real numbers on a $350K loan. See monthly payments, total interest, break-even analysis, and who wins."
         slug="15-year-vs-30-year-mortgage"
         datePublished="2026-08-24"
+        dateModified="2026-09-30"
         image="/images/guides/15-year-vs-30-year-mortgage.webp"
       />
       <BreadcrumbJsonLd
@@ -78,13 +84,13 @@ export default function FifteenVsThirtyYearMortgageGuide() {
           </h1>
           <p className="mt-4 text-lg text-ink-600">
             The difference between a 15-year and 30-year mortgage on a
-            $350,000 loan is not a rounding error — it is $769 per month and
-            $280,788 in total interest over the life of the loan. This guide
-            runs every number at August 2026 rates so you can see exactly what
+            $350,000 loan is not a rounding error — it is $768 per month and
+            $262,092 in total interest over the life of the loan. This guide
+            runs every number at fall 2026 rates so you can see exactly what
             each term costs, where the break-even point falls, and which option
             fits your budget.
           </p>
-          <p className="mt-2 text-sm text-ink-500">Last updated: August 2026</p>
+          <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
         </header>
 
         {/* TL;DR */}
@@ -94,24 +100,24 @@ export default function FifteenVsThirtyYearMortgageGuide() {
           </h2>
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
-              <strong>15-year at 6.75%:</strong> $3,097/month, $207,493 total
-              interest, $557,493 total cost on a $350,000 loan
+              <strong>15-year at 6.20%:</strong> $2,991/month, $188,461 total
+              interest, $538,461 total cost on a $350,000 loan
             </li>
             <li>
-              <strong>30-year at 7.0%:</strong> $2,329/month, $488,281 total
-              interest, $838,281 total cost on the same loan
+              <strong>30-year at 6.55%:</strong> $2,224/month, $450,553 total
+              interest, $800,553 total cost on the same loan
             </li>
             <li>
-              <strong>Monthly difference:</strong> $769 — enough to max a Roth
-              IRA ($583/month) with $186 left over
+              <strong>Monthly difference:</strong> $768 — enough to max a Roth
+              IRA ($583/month) with $185 left over
             </li>
             <li>
               <strong>Break-even on interest savings:</strong> Guaranteed from
-              day one — the 15-year saves $280,788 no matter what the market
+              day one — the 15-year saves $262,092 no matter what the market
               does
             </li>
             <li>
-              <strong>Best for most buyers in 2026:</strong> 30-year for
+              <strong>Best for most buyers in fall 2026:</strong> 30-year for
               flexibility, with extra payments when cash flow allows
             </li>
           </ul>
@@ -139,7 +145,7 @@ export default function FifteenVsThirtyYearMortgageGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/15-year-vs-30-year-mortgage.webp"
-              alt="Infographic comparing 15-year and 30-year mortgages on a $350,000 loan: $3,097 vs $2,329 monthly payments, $207,493 vs $488,281 in total interest, and $280,788 in lifetime savings with the shorter term"
+              alt="Infographic comparing 15-year and 30-year mortgages on a $350,000 loan: $2,991 vs $2,224 monthly payments, $188,461 vs $450,553 in total interest, and $262,092 in lifetime savings with the shorter term"
               width={1200}
               height={800}
               quality={80}
@@ -147,7 +153,7 @@ export default function FifteenVsThirtyYearMortgageGuide() {
               priority
             />
             <figcaption className="bg-ink-50 px-4 py-2 text-center text-sm text-ink-500">
-              Side-by-side comparison: a 15-year mortgage costs $769 more per month but saves $280,788 in total interest on a $350,000 loan
+              Side-by-side comparison: a 15-year mortgage costs $768 more per month but saves $262,092 in total interest on a $350,000 loan
             </figcaption>
           </figure>
         </section>
@@ -155,43 +161,45 @@ export default function FifteenVsThirtyYearMortgageGuide() {
         {/* Detailed Explanation */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-ink-900">
-            The Real Numbers: $350,000 at August 2026 Rates
+            The Real Numbers: $350,000 at Fall 2026 Rates
           </h2>
           <p className="mt-4 text-ink-700">
             The national median home price reached $412,300 in Q2 2026, according
             to the National Association of Realtors. A buyer putting 15% down
             on a median-priced home borrows roughly $350,000 — a round number
-            that makes the math easy to follow. At August 2026 rates, a 15-year
-            fixed mortgage averages 6.75% while the 30-year fixed sits at 7.0%.
-            That 0.25-percentage-point gap is typical: 15-year rates have
-            averaged 0.38 points below 30-year rates over the past decade.
+            that makes the math easy to follow. As of fall 2026, a 15-year
+            fixed mortgage averages 6.20% while the 30-year fixed sits at 6.55%.
+            Rates have eased roughly 0.40 to 0.50 points since summer 2026 as the
+            Federal Reserve signaled further rate cuts. That 0.35-percentage-point gap
+            between terms is typical: 15-year rates have averaged 0.38 points
+            below 30-year rates over the past decade.
           </p>
           <p className="mt-4 text-ink-700">
-            On that $350,000 principal, the 15-year payment comes to $3,097.18
-            per month. Over 180 payments, you send the lender $557,493 and pay
-            $207,493 in interest. The 30-year payment drops to $2,328.56 per
-            month — $769 less — but over 360 payments you send $838,281 total
-            and pay $488,281 in interest. That is $280,788 more in interest
+            On that $350,000 principal, the 15-year payment comes to $2,991
+            per month. Over 180 payments, you send the lender $538,461 and pay
+            $188,461 in interest. The 30-year payment drops to $2,224 per
+            month — $768 less — but over 360 payments you send $800,553 total
+            and pay $450,553 in interest. That is $262,092 more in interest
             charges for the privilege of a lower monthly bill.
           </p>
           <p className="mt-4 text-ink-700">
             The trade-off is cash flow versus total cost. The 15-year borrower
-            pays an extra $9,223 per year ($769 x 12) but owns the home outright
+            pays an extra $9,216 per year ($768 x 12) but owns the home outright
             in 2041 instead of 2056. After 15 years, the 15-year borrower has
-            zero mortgage balance. The 30-year borrower still owes $259,066 and
-            faces 180 more payments totaling $419,141. From year 16 onward, the
-            15-year borrower has $3,097 per month freed up — while the 30-year
+            zero mortgage balance. The 30-year borrower still owes $254,476 and
+            faces 180 more payments totaling $400,277. From year 16 onward, the
+            15-year borrower has $2,991 per month freed up — while the 30-year
             borrower continues writing checks.
           </p>
           <p className="mt-4 text-ink-700">
             The opportunity cost matters. If you take the 30-year and invest the
-            $769 monthly difference in a diversified index fund earning 7%
-            annually, that investment grows to $243,624 over 15 years. You still
-            owe $259,066 on the mortgage, so your net position is roughly
-            $15,442 worse off than the 15-year borrower who owns the home free
-            and clear. At a 10% return, the invested portfolio hits $318,420 —
-            enough to nearly pay off the remaining $259,066 balance with $59,354
-            left over. The break-even investment return sits around 8.2%: above
+            $768 monthly difference in a diversified index fund earning 7%
+            annually, that investment grows to $244,749 over 15 years. You still
+            owe $254,476 on the mortgage, so your net position is roughly
+            $9,727 worse off than the 15-year borrower who owns the home free
+            and clear. At a 10% return, the invested portfolio hits $320,837 —
+            enough to pay off the remaining $254,476 balance with $66,361
+            left over. The break-even investment return sits around 8.0%: above
             that, the 30-year plus investing wins; below it, the 15-year wins
             on total wealth.
           </p>
@@ -200,8 +208,8 @@ export default function FifteenVsThirtyYearMortgageGuide() {
             $6,500 to $8,500 on a $350,000 loan (roughly 2% of the purchase
             price). Lenders do not charge a premium for the shorter term. The
             only difference is qualification: because the 15-year payment is
-            $769 higher, you need roughly $2,750 more in monthly gross income to
-            qualify under the 28% housing ratio ($769 / 0.28 = $2,746).
+            $768 higher, you need roughly $2,743 more in monthly gross income to
+            qualify under the 28% housing ratio ($768 / 0.28 = $2,743).
           </p>
         </section>
 
@@ -220,29 +228,29 @@ export default function FifteenVsThirtyYearMortgageGuide() {
               <thead>
                 <tr className="border-b-2 border-ink-200 bg-ink-50">
                   <th className="px-4 py-3 text-left font-semibold text-ink-800">Metric</th>
-                  <th className="px-4 py-3 text-left font-semibold text-ink-800">15-Year (6.75%)</th>
-                  <th className="px-4 py-3 text-left font-semibold text-ink-800">30-Year (7.0%)</th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">15-Year (6.20%)</th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">30-Year (6.55%)</th>
                   <th className="px-4 py-3 text-left font-semibold text-ink-800">Difference</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-ink-100">
                 <tr>
                   <td className="px-4 py-3">Monthly principal + interest</td>
-                  <td className="px-4 py-3 font-medium">$3,097</td>
-                  <td className="px-4 py-3">$2,329</td>
-                  <td className="px-4 py-3 text-brand-700">+$769/mo (15yr)</td>
+                  <td className="px-4 py-3 font-medium">$2,991</td>
+                  <td className="px-4 py-3">$2,224</td>
+                  <td className="px-4 py-3 text-brand-700">+$768/mo (15yr)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Total payments over life of loan</td>
-                  <td className="px-4 py-3">$557,493</td>
-                  <td className="px-4 py-3">$838,281</td>
-                  <td className="px-4 py-3">+$280,788 (30yr)</td>
+                  <td className="px-4 py-3">$538,461</td>
+                  <td className="px-4 py-3">$800,553</td>
+                  <td className="px-4 py-3">+$262,092 (30yr)</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Total interest paid</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$207,493</td>
-                  <td className="px-4 py-3">$488,281</td>
-                  <td className="px-4 py-3 text-brand-700">$280,788 saved (15yr)</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$188,461</td>
+                  <td className="px-4 py-3">$450,553</td>
+                  <td className="px-4 py-3 text-brand-700">$262,092 saved (15yr)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Loan paid off by</td>
@@ -253,32 +261,32 @@ export default function FifteenVsThirtyYearMortgageGuide() {
                 <tr>
                   <td className="px-4 py-3">Balance after 15 years</td>
                   <td className="px-4 py-3 font-medium text-brand-700">$0</td>
-                  <td className="px-4 py-3">$259,066</td>
-                  <td className="px-4 py-3">$259,066 remaining</td>
+                  <td className="px-4 py-3">$254,476</td>
+                  <td className="px-4 py-3">$254,476 remaining</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Amount paid in first 15 years</td>
-                  <td className="px-4 py-3">$557,493</td>
-                  <td className="px-4 py-3">$419,141</td>
-                  <td className="px-4 py-3">+$138,352 (15yr)</td>
+                  <td className="px-4 py-3">$538,461</td>
+                  <td className="px-4 py-3">$400,277</td>
+                  <td className="px-4 py-3">+$138,184 (15yr)</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">Invest $769/mo at 7% for 15 years</td>
+                  <td className="px-4 py-3">Invest $768/mo at 7% for 15 years</td>
                   <td className="px-4 py-3">N/A</td>
-                  <td className="px-4 py-3">$243,624</td>
-                  <td className="px-4 py-3">Still $15,442 short of payoff</td>
+                  <td className="px-4 py-3">$244,749</td>
+                  <td className="px-4 py-3">Still $9,727 short of payoff</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Min. gross income (28% rule)</td>
-                  <td className="px-4 py-3">$11,061/mo ($132,732/yr)</td>
-                  <td className="px-4 py-3">$8,316/mo ($99,792/yr)</td>
-                  <td className="px-4 py-3">+$32,940/yr (15yr)</td>
+                  <td className="px-4 py-3">$10,684/mo ($128,205/yr)</td>
+                  <td className="px-4 py-3">$7,942/mo ($95,304/yr)</td>
+                  <td className="px-4 py-3">+$32,901/yr (15yr)</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *Rates reflect August 2026 national averages. Property taxes, insurance, and PMI not included. Investment return assumes 7% annual average in a taxable brokerage account.
+            *Rates reflect fall 2026 national averages (15-year: 6.20%, 30-year: 6.55%). Property taxes, insurance, and PMI not included. Investment return assumes 7% annual average in a taxable brokerage account.
           </p>
         </section>
 
@@ -289,19 +297,19 @@ export default function FifteenVsThirtyYearMortgageGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             The 15-year mortgage wins on guaranteed interest savings from month
-            one — $280,788 over the full term, with no market risk attached. But
+            one — $262,092 over the full term, with no market risk attached. But
             the 30-year plus invest strategy closes the gap over time. In year 1,
-            investing the $769 difference at 7% yields $9,525 while you only
-            paid $9,223 extra on the 15-year — a $302 advantage to investing.
-            By year 5, the investment portfolio reaches $55,028 versus
-            $46,117 in cumulative extra 15-year payments, a $8,911 lead.
+            investing the $768 difference at 7% yields $9,512 while you only
+            paid $9,216 extra on the 15-year — a $296 advantage to investing.
+            By year 5, the investment portfolio reaches $54,957 versus
+            $46,080 in cumulative extra 15-year payments, an $8,877 lead.
           </p>
           <p className="mt-4 text-ink-700">
-            The crossover happens around year 14, when $218,317 invested exceeds
-            the $129,128 in cumulative extra payments — but you still owe
-            $259,066 on the mortgage at that point. True wealth parity requires
-            either an 8.2%+ investment return over 15 years or reaching year 15
-            with a 10% return ($318,420 invested vs. $259,066 owed). Below 7%
+            The crossover happens around year 14, when the invested balance exceeds
+            the cumulative extra payments — but you still owe
+            $254,476 on the mortgage at that point. True wealth parity requires
+            either an 8.0%+ investment return over 15 years or reaching year 15
+            with a 10% return ($320,837 invested vs. $254,476 owed, a $66,361 surplus). Below 7%
             returns, the 15-year mortgage builds more net wealth every single
             year because the guaranteed interest savings outpace mediocre market
             performance.
@@ -309,11 +317,14 @@ export default function FifteenVsThirtyYearMortgageGuide() {
           <div className="mt-6 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4">
             <p className="font-medium text-amber-800">Key Insight</p>
             <p className="mt-1 text-sm text-amber-700">
-              The 15-year mortgage is a guaranteed 6.75% return on every extra
+              The 15-year mortgage is a guaranteed 6.20% return on every extra
               dollar. To beat it by investing, you need consistent after-tax
-              returns above 6.75% for 15 straight years — achievable historically
-              (S&amp;P 500 averages 10%) but not guaranteed. The 2000-2010
-              decade returned just 1.2% annually.
+              returns above 6.20% for 15 straight years — more achievable than
+              when rates were 6.75% in summer 2026 (S&amp;P 500 averages 10%),
+              but still not guaranteed. The 2000-2010
+              decade returned just 1.2% annually. The lower rate environment makes
+              the invest-the-difference strategy slightly more competitive than it
+              was a few months ago.
             </p>
           </div>
         </section>
@@ -341,7 +352,7 @@ export default function FifteenVsThirtyYearMortgageGuide() {
               planned retirement at 65
             </li>
             <li>
-              You value guaranteed returns over market volatility — $280,788 in
+              You value guaranteed returns over market volatility — $262,092 in
               interest savings with zero risk
             </li>
             <li>
@@ -354,12 +365,12 @@ export default function FifteenVsThirtyYearMortgageGuide() {
           </h3>
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
-              The $769/month difference would strain your budget or prevent
+              The $768/month difference would strain your budget or prevent
               retirement contributions (401(k) match, Roth IRA)
             </li>
             <li>
-              You plan to invest the payment difference — $769/month at 7%
-              grows to $243,624 in 15 years
+              You plan to invest the payment difference — $768/month at 7%
+              grows to $244,749 in 15 years
             </li>
             <li>
               Your income is variable (commission, freelance, startup equity)
@@ -372,7 +383,7 @@ export default function FifteenVsThirtyYearMortgageGuide() {
             </li>
             <li>
               You want to qualify for a larger home — the 30-year requires
-              $32,940 less annual income to meet the 28% ratio
+              $32,901 less annual income to meet the 28% ratio
             </li>
           </ul>
         </section>
@@ -401,12 +412,12 @@ export default function FifteenVsThirtyYearMortgageGuide() {
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Property tax: $348/month (1.0% of value)</li>
                   <li>Homeowners insurance: $165/month</li>
-                  <li>15-year PITI: $3,473/month (28.7% of gross income)</li>
-                  <li>30-year PITI: $2,755/month (22.8% of gross income)</li>
-                  <li>15-year total interest: $198,213 over 180 payments</li>
-                  <li>30-year total interest: $466,416 over 360 payments</li>
-                  <li>Total debt ratio (30yr): 30.2% — within 36% limit</li>
-                  <li>Total debt ratio (15yr): 36.8% — exceeds lender max</li>
+                  <li>15-year PITI: $3,371/month (27.9% of gross income)</li>
+                  <li>30-year PITI: $2,638/month (21.8% of gross income)</li>
+                  <li>15-year total interest: $180,061 over 180 payments</li>
+                  <li>30-year total interest: $430,472 over 360 payments</li>
+                  <li>Total debt ratio (30yr): 28.5% — well within 36% limit</li>
+                  <li>Total debt ratio (15yr): 34.5% — within limit but tight</li>
                 </ul>
               </div>
             </div>
@@ -414,19 +425,20 @@ export default function FifteenVsThirtyYearMortgageGuide() {
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">What They Chose: 30-Year with a Plan</h4>
               <p className="mt-2 text-sm text-ink-700">
-                David and Sarah chose the 30-year at 7.0% ($2,225/month P&amp;I)
-                because the 15-year pushed their total debt-to-income ratio to
-                36.8%, above most lenders&apos; 36% ceiling. Their monthly budget
-                with the 30-year: $2,755 housing + $800 debts + $1,450 groceries
-                and utilities + $800 retirement + $500 savings = $6,305 against
-                $8,200 take-home pay, leaving $1,895 in flex money. With the
-                15-year at $3,473/month, flex money drops to $1,177 — too tight
-                for Portland&apos;s $2,100/month average childcare cost they face
-                in 2027. They auto-deposit $400/month into a brokerage account
-                (half the $718 payment difference) and plan to refinance to a
+                David and Sarah chose the 30-year at 6.55% ($2,125/month P&amp;I)
+                even though the 15-year now technically fits within lender limits
+                at 34.5% total DTI. Their reasoning: with $2,100/month average
+                childcare costs starting in 2027, the 15-year&apos;s $3,371 PITI
+                plus $800 in existing debts leaves just $1,012/month for everything
+                else after childcare — too thin for comfort. Their monthly budget
+                with the 30-year: $2,638 housing + $800 debts + $1,450 groceries
+                and utilities + $800 retirement + $500 savings = $6,188 against
+                $8,200 take-home pay, leaving $2,012 in flex money. They
+                auto-deposit $400/month into a brokerage account
+                (roughly half the $733 payment difference) and plan to refinance to a
                 15-year when their student loans are paid off in 2029, freeing
                 $380/month. At that point, their projected income of $158,000
-                makes the 15-year PITI ($3,473) just 26.4% of gross — comfortably
+                makes the 15-year PITI ($3,371) just 25.6% of gross — comfortably
                 within range.
               </p>
             </div>
@@ -449,10 +461,10 @@ export default function FifteenVsThirtyYearMortgageGuide() {
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
                   Plug your loan amount into both term options. On $334,400,
-                  the difference is $718/month ($2,961 vs. $2,243). On $350,000,
-                  it is $769/month. Know your exact number before deciding — a
+                  the difference is $733/month ($2,858 vs. $2,125). On $350,000,
+                  it is $768/month. Know your exact number before deciding — a
                   $50,000 difference in loan size shifts the monthly gap by
-                  $110.
+                  $115.
                 </p>
               </div>
             </div>
@@ -468,9 +480,9 @@ export default function FifteenVsThirtyYearMortgageGuide() {
                   Add property taxes ($300-$600/month in most states), insurance
                   ($120-$250/month), and PMI if putting less than 20% down
                   ($150-$280/month). David and Sarah&apos;s 15-year PITI of
-                  $3,473 looked manageable on P&amp;I alone ($2,961) but
-                  breached the 36% total debt ratio once student loans and car
-                  payments were included.
+                  $3,371 looked manageable on P&amp;I alone ($2,858) but
+                  felt tight once student loans, car
+                  payments, and upcoming childcare costs were factored in.
                 </p>
               </div>
             </div>
@@ -485,9 +497,9 @@ export default function FifteenVsThirtyYearMortgageGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Could you cover the 15-year payment if one income dropped by
                   50% for 6 months? On $145,000 combined income, half is
-                  $72,500 ($6,042/month gross). A $3,473 housing payment would
-                  consume 57.5% of one income — risky. The $2,755 30-year payment
-                  consumes 45.6%, still tight but survivable with their $28,000
+                  $72,500 ($6,042/month gross). A $3,371 housing payment would
+                  consume 55.8% of one income — risky. The $2,638 30-year payment
+                  consumes 43.7%, still tight but survivable with their $28,000
                   emergency fund.
                 </p>
               </div>
@@ -501,11 +513,11 @@ export default function FifteenVsThirtyYearMortgageGuide() {
                   Compare the opportunity cost honestly
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  Will you actually invest the $769/month difference, or will it
+                  Will you actually invest the $768/month difference, or will it
                   absorb into lifestyle spending? Studies show 68% of people who
                   choose a 30-year for &quot;investment flexibility&quot; never
                   invest the difference. If you will not invest it, the 15-year
-                  saves $280,788 in guaranteed interest. If you will invest
+                  saves $262,092 in guaranteed interest. If you will invest
                   consistently, run the break-even at your expected return rate.
                 </p>
               </div>
@@ -519,12 +531,12 @@ export default function FifteenVsThirtyYearMortgageGuide() {
                   Consider the hybrid: 30-year with extra principal payments
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  Take the 30-year at $2,329/month and add $400/month in extra
-                  principal. You pay off the $350,000 loan in 22 years instead
-                  of 30, save $142,000 in interest, and retain the flexibility
+                  Take the 30-year at $2,224/month and add $400/month in extra
+                  principal. You pay off the $350,000 loan in 20 years instead
+                  of 30, save $172,795 in interest, and retain the flexibility
                   to skip extra payments during tight months. This is the
                   approach most financial planners recommend for buyers under age
-                  45 in 2026.
+                  45 in fall 2026.
                 </p>
               </div>
             </div>

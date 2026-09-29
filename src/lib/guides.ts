@@ -46,7 +46,7 @@ export const guides: Guide[] = [
     description: "Compare 15-year vs 30-year mortgages with real numbers on a $350K loan. See monthly payments, total interest, break-even analysis, and who should choose each term.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-09-30",
     relatedCalculators: ["mortgage", "loan-comparison"],
     relatedGuides: ["how-much-house-can-i-afford", "pay-off-mortgage-early-vs-invest"],
   },
