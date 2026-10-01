@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-09-27",
+  "lastRunDate": "2026-09-30",
   "cycle": 1,
   "queue": [
     {
@@ -72,7 +72,8 @@
       "slug": "pay-off-mortgage-early-vs-invest",
       "priority": "P2",
       "reason": "Published 2026-08-17 — refresh rate comparisons, update investment return assumptions",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-28T00:10:00.000Z"
     },
     {
       "id": "p2-guide-save-50000-in-3-years",
@@ -80,7 +81,8 @@
       "slug": "save-50000-in-3-years",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh savings account rates, update strategy tips",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-29T07:27:00.000Z"
     },
     {
       "id": "p2-guide-15-year-vs-30-year-mortgage",
@@ -88,7 +90,8 @@
       "slug": "15-year-vs-30-year-mortgage",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh mortgage rate comparison data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-09-30T07:50:00.000Z"
     },
     {
       "id": "p2-guide-debt-avalanche-vs-snowball",

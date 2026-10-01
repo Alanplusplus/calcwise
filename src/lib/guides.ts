@@ -56,7 +56,7 @@ export const guides: Guide[] = [
     description: "Compare debt avalanche and snowball methods with a real $38,000 debt portfolio. See which saves more money and which keeps you motivated to finish.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-01",
     relatedCalculators: ["debt-payoff", "credit-card-payoff"],
     relatedGuides: ["how-to-pay-off-credit-card-fast", "50-30-20-budget-rule"],
   },
