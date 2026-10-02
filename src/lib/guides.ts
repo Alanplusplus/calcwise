@@ -66,7 +66,7 @@ export const guides: Guide[] = [
     description: "Find out how much you need to retire at 55. Covers the 4% rule, healthcare costs before Medicare, portfolio targets by lifestyle, and a step-by-step plan.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-02",
     relatedCalculators: ["retirement", "compound-interest", "fire-calculator"],
     relatedGuides: ["401k-vs-roth-ira", "compound-interest-real-examples"],
   },
