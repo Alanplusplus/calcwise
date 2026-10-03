@@ -23,17 +23,17 @@ const faqs = [
   {
     question: "Where is the best place to keep an emergency fund in 2026?",
     answer:
-      "A high-yield savings account (HYSA) is the best default for most people. Top online banks currently offer 4.5-5.0% APY with FDIC insurance up to $250,000 per depositor, per bank. You get same-day or next-day access to your money without market risk. Keep 3-6 months of expenses in a HYSA and avoid keeping more than $500-1,000 in a traditional checking account earning 0.01% APY.",
+      "A high-yield savings account (HYSA) remains the best default for most people. As of October 2026, top online banks offer 4.2-4.75% APY with FDIC insurance up to $250,000 per depositor, per bank. Rates have dipped slightly from the 5.0%+ peaks of late 2023 as the Federal Reserve has cut the federal funds rate, but HYSAs still pay 420-475x more than traditional checking accounts at 0.01% APY. You get same-day or next-day access to your money without market risk. Keep 3-6 months of expenses in a HYSA and avoid keeping more than $500-1,000 in a traditional checking account.",
   },
   {
     question: "Should I keep my emergency fund in a checking account?",
     answer:
-      "No — not beyond a small buffer for immediate needs. A traditional checking account at a big bank pays roughly 0.01% APY. On a $25,000 balance, that earns $2.50 per year. The same $25,000 in a 5.0% APY HYSA earns $1,250 per year — a $1,247.50 difference. Keep $500-1,000 in checking for same-day transactions and park the rest in a HYSA.",
+      "No — not beyond a small buffer for immediate needs. A traditional checking account at a big bank pays roughly 0.01% APY. On a $25,000 balance, that earns $2.50 per year. The same $25,000 in a 4.50% APY HYSA earns $1,125 per year — a $1,122.50 difference. Keep $500-1,000 in checking for same-day transactions and park the rest in a HYSA.",
   },
   {
     question: "Can I use a CD for my emergency fund?",
     answer:
-      "Only with a CD ladder strategy, not a single long-term CD. A 12-month CD might pay 4.8-5.2% APY, but early withdrawal penalties typically cost 3-6 months of interest. A 3-rung ladder — splitting funds across 3-month, 6-month, and 12-month CDs — gives you quarterly liquidity while locking in higher rates than checking. Keep at least 1 month of expenses ($3,000-5,000 for most households) in a HYSA for instant access.",
+      "Only with a CD ladder strategy, not a single long-term CD. A 12-month CD might pay 4.4-4.8% APY as of October 2026, but early withdrawal penalties typically cost 3-6 months of interest. A 3-rung ladder — splitting funds across 3-month, 6-month, and 12-month CDs — gives you quarterly liquidity while locking in higher rates than checking. Keep at least 1 month of expenses ($3,000-5,000 for most households) in a HYSA for instant access. Note that CD rates have edged lower since mid-2024, so a HYSA may now offer a comparable yield with far better flexibility.",
   },
   {
     question: "Is it safe to invest my emergency fund in stocks or ETFs?",
@@ -43,7 +43,12 @@ const faqs = [
   {
     question: "How much should I keep in my emergency fund?",
     answer:
-      "Most financial planners recommend 3-6 months of essential expenses — not gross income. If your monthly essentials (housing, food, insurance, minimum debt payments, utilities) total $4,000, target $12,000-$24,000. Single-income households and freelancers should aim for 6 months ($24,000 on $4,000/month expenses). Dual-income households with stable jobs can often target 3 months ($12,000). Use our Emergency Fund Calculator to find your exact number.",
+      "Most financial planners recommend 3-6 months of essential expenses — not gross income. If your monthly essentials (housing, food, insurance, minimum debt payments, utilities) total $4,200, target $12,600-$25,200. Single-income households and freelancers should aim for 6 months ($25,200 on $4,200/month expenses). Dual-income households with stable jobs can often target 3 months ($12,600). Use our Emergency Fund Calculator to find your exact number.",
+  },
+  {
+    question: "What happens to my emergency fund rates when the Fed cuts rates?",
+    answer:
+      "When the Federal Reserve lowers the federal funds rate, HYSA and money market APYs follow within 1-3 weeks. In 2024-2026, top HYSAs dropped from 5.3% to around 4.2-4.75% as the Fed cut rates multiple times. CD rates also fell, but existing CDs keep their locked rate until maturity — one advantage of a CD ladder. Even at 4.25% APY, a HYSA still earns $1,062 per year on $25,000 versus $2.50 in a traditional checking account. The gap narrows but never closes.",
   },
 ];
 
@@ -56,6 +61,7 @@ export default function EmergencyFundWhereToKeepGuide() {
         description="Where to keep your emergency fund for the best interest rate. Compare HYSAs, money market accounts, CDs, and more with real APY numbers and a case study."
         slug="emergency-fund-where-to-keep"
         datePublished="2026-08-24"
+        dateModified="2026-10-03"
         image="/images/guides/emergency-fund-where-to-keep.webp"
       />
       <BreadcrumbJsonLd
@@ -84,11 +90,12 @@ export default function EmergencyFundWhereToKeepGuide() {
             cannot cover a $1,000 surprise expense. But where you keep that money
             matters as much as how much you saved. The difference between a
             traditional checking account and a high-yield savings account on
-            $25,000 is $1,250 per year in free money. This guide breaks down every
-            option, compares real 2026 rates, and shows you exactly where to park
+            $25,000 is over $1,100 per year in free money — even after the Federal
+            Reserve&apos;s recent rate cuts. This guide breaks down every
+            option, compares real October 2026 rates, and shows you exactly where to park
             your cash for maximum safety and interest.
           </p>
-          <p className="mt-2 text-sm text-ink-500">Last updated: August 2026</p>
+          <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
         </header>
 
         {/* TL;DR */}
@@ -97,17 +104,17 @@ export default function EmergencyFundWhereToKeepGuide() {
             TL;DR - Quick Answer
           </h2>
           <p className="mt-3 text-ink-700">
-            <strong>Best option:</strong> High-yield savings account at 4.5-5.0%
+            <strong>Best option:</strong> High-yield savings account at 4.2-4.75%
             APY. Keep 3-6 months of expenses liquid and FDIC insured.
           </p>
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
               <strong>Target size:</strong> 3-6 months of essential expenses
-              ($12,000-$24,000 for most households spending $4,000/month)
+              ($12,600-$25,200 for most households spending $4,200/month)
             </li>
             <li>
-              <strong>Top accounts:</strong> Online HYSAs from Ally Bank, Marcus
-              by Goldman Sachs, and Capital One 360 (4.5-5.0% APY as of August 2026)
+              <strong>Top accounts:</strong> Online HYSAs from Ally Bank (4.20% APY), Marcus
+              by Goldman Sachs (4.40% APY), and Capital One 360 (4.35% APY) as of October 2026
             </li>
             <li>
               <strong>Avoid:</strong> Traditional checking (0.01% APY), stocks,
@@ -115,7 +122,7 @@ export default function EmergencyFundWhereToKeepGuide() {
             </li>
             <li>
               <strong>Annual gain:</strong> Moving $25,000 from checking to a
-              5.0% HYSA earns an extra $1,247.50 per year
+              4.50% HYSA earns an extra $1,122.50 per year
             </li>
           </ul>
           <p className="mt-4 text-sm text-ink-600">
@@ -158,16 +165,18 @@ export default function EmergencyFundWhereToKeepGuide() {
             where their paycheck lands. That account probably earns 0.01% APY — the
             national average at the four largest U.S. banks in 2026. On a $25,000
             balance, that generates $2.50 in annual interest. You essentially earn
-            nothing while inflation erodes your purchasing power at roughly 2.8%
-            per year ($700 in real value lost annually on $25,000).
+            nothing while inflation erodes your purchasing power at roughly 2.5%
+            per year ($625 in real value lost annually on $25,000).
           </p>
           <p className="mt-4 text-ink-700">
-            Move that same $25,000 to a high-yield savings account paying 5.0%
-            APY and the math changes dramatically. You earn $1,250 per year in
-            interest — a $1,247.50 annual difference compared to checking. Over
-            five years, that compounds to roughly $6,900 in extra interest, enough
-            to cover 1.7 months of expenses for someone spending $4,000 per month
-            on essentials.
+            Move that same $25,000 to a high-yield savings account paying 4.50%
+            APY and the math changes dramatically. You earn $1,125 per year in
+            interest — a $1,122.50 annual difference compared to checking. Over
+            five years, that compounds to roughly $6,100 in extra interest, enough
+            to cover 1.5 months of expenses for someone spending $4,200 per month
+            on essentials. Yes, HYSA rates have eased from the 5.0%+ peaks of
+            late 2023 as the Fed has cut rates, but the gap between a HYSA and
+            checking remains enormous.
           </p>
           <p className="mt-4 text-ink-700">
             The account type also determines access speed and safety. Your
@@ -175,7 +184,7 @@ export default function EmergencyFundWhereToKeepGuide() {
             events that require cash within 24-48 hours, not weeks. A brokerage
             account might earn 8-10% historically, but it can drop 20-30% in a
             recession exactly when you need the money. The right account balances
-            three priorities: competitive interest (4.5%+ APY), instant liquidity
+            three priorities: competitive interest (4.0%+ APY), instant liquidity
             (same-day or next-day transfers), and full principal protection (FDIC
             insurance up to $250,000 per depositor, per bank).
           </p>
@@ -209,16 +218,17 @@ export default function EmergencyFundWhereToKeepGuide() {
                   <td className="px-4 py-3 font-medium text-brand-700">
                     High-yield savings
                   </td>
-                  <td className="px-4 py-3 font-medium">5.0%</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$1,250</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$6,901</td>
+                  <td className="px-4 py-3 font-medium">4.50%</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$1,125</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$6,188</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *5-year total assumes constant 5.0% APY with monthly compounding and no
-            withdrawals. Actual rates fluctuate with Federal Reserve policy.
+            *5-year total assumes constant 4.50% APY with monthly compounding and no
+            withdrawals. Actual rates fluctuate with Federal Reserve policy. HYSA
+            rates have declined from 5.3% in late 2023 as the Fed has cut rates.
           </p>
         </section>
 
@@ -229,8 +239,10 @@ export default function EmergencyFundWhereToKeepGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             Here is how every common account type stacks up for emergency fund
-            purposes. Rates reflect August 2026 market conditions from top
-            providers across each category.
+            purposes. Rates reflect October 2026 market conditions from top
+            providers across each category. Note that yields have shifted lower
+            since mid-2024 as the Federal Reserve cut the federal funds rate
+            from 5.25-5.50% to the current 4.00-4.25% range.
           </p>
 
           <div className="mt-6 overflow-x-auto">
@@ -266,7 +278,7 @@ export default function EmergencyFundWhereToKeepGuide() {
                   <td className="px-4 py-3 font-medium text-brand-700">
                     High-yield savings (HYSA)
                   </td>
-                  <td className="px-4 py-3 font-medium">4.5-5.0%</td>
+                  <td className="px-4 py-3 font-medium">4.2-4.75%</td>
                   <td className="px-4 py-3">Same/next day</td>
                   <td className="px-4 py-3">Yes</td>
                   <td className="px-4 py-3 font-medium">
@@ -275,28 +287,28 @@ export default function EmergencyFundWhereToKeepGuide() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Money market account</td>
-                  <td className="px-4 py-3">4.3-4.8%</td>
+                  <td className="px-4 py-3">4.0-4.5%</td>
                   <td className="px-4 py-3">Same day (check/debit)</td>
                   <td className="px-4 py-3">Yes</td>
                   <td className="px-4 py-3">Those wanting check-writing access</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Certificates of deposit (CDs)</td>
-                  <td className="px-4 py-3">4.8-5.2%</td>
+                  <td className="px-4 py-3">4.4-4.8%</td>
                   <td className="px-4 py-3">Locked (penalty to withdraw)</td>
                   <td className="px-4 py-3">Yes</td>
                   <td className="px-4 py-3">CD ladder strategy only</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Treasury bills (T-bills)</td>
-                  <td className="px-4 py-3">4.6-5.0%</td>
+                  <td className="px-4 py-3">4.1-4.5%</td>
                   <td className="px-4 py-3">1-3 business days</td>
                   <td className="px-4 py-3">No (U.S. gov backed)</td>
                   <td className="px-4 py-3">Tax-advantaged savers in high brackets</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Series I savings bonds</td>
-                  <td className="px-4 py-3">3.5-4.5% (variable)</td>
+                  <td className="px-4 py-3">3.1-3.8% (variable)</td>
                   <td className="px-4 py-3">12-month lock, 3-mo penalty if &lt;5 yrs</td>
                   <td className="px-4 py-3">No (U.S. gov backed)</td>
                   <td className="px-4 py-3">Inflation hedge, not primary emergency fund</td>
@@ -312,9 +324,9 @@ export default function EmergencyFundWhereToKeepGuide() {
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *APY ranges based on top-tier providers as of August 2026. I-bond rates
-            adjust every 6 months. Brokerage returns are historical averages, not
-            guaranteed.
+            *APY ranges based on top-tier providers as of October 2026. I-bond rates
+            adjust every 6 months (next reset: November 2026). Brokerage returns are historical averages, not
+            guaranteed. Rates have generally declined 0.5-0.8 percentage points since late 2023.
           </p>
         </section>
 
@@ -330,17 +342,19 @@ export default function EmergencyFundWhereToKeepGuide() {
                 1. High-Yield Savings Account (HYSA)
               </h3>
               <p className="mt-3 text-ink-700">
-                The HYSA is the gold standard for emergency funds in 2026. Online
-                banks like Ally (4.50% APY), Marcus by Goldman Sachs (4.65% APY),
-                and Capital One 360 (4.75% APY) offer rates 450-500x higher than
+                The HYSA remains the gold standard for emergency funds in late 2026. Online
+                banks like Ally (4.20% APY), Marcus by Goldman Sachs (4.40% APY),
+                and Capital One 360 (4.35% APY) offer rates 420-440x higher than
                 traditional checking accounts, with no minimum balance requirements
-                and no monthly fees on most accounts.
+                and no monthly fees on most accounts. Rates have come down from
+                early-2024 highs, but the HYSA is still the best risk-free place
+                for emergency cash.
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
                   <h4 className="font-semibold text-ink-800">Pros</h4>
                   <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                    <li>4.5-5.0% APY on $24,000 = $1,080-$1,200/year in interest</li>
+                    <li>4.2-4.75% APY on $24,000 = $1,008-$1,140/year in interest</li>
                     <li>FDIC insured up to $250,000 per bank</li>
                     <li>Transfers to checking in 1-2 business days (some instant)</li>
                     <li>No market risk — principal never drops</li>
@@ -351,7 +365,7 @@ export default function EmergencyFundWhereToKeepGuide() {
                 <div>
                   <h4 className="font-semibold text-ink-800">Cons</h4>
                   <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                    <li>Rates can drop when the Fed cuts rates (was 5.3% in 2023)</li>
+                    <li>Rates have already dropped from 5.3% in 2023 to 4.2-4.75% as the Fed cut rates</li>
                     <li>No check-writing on most HYSAs</li>
                     <li>Some accounts limit to 6 withdrawals/month (soft limit)</li>
                     <li>Separate from your primary bank — one extra login</li>
@@ -361,7 +375,8 @@ export default function EmergencyFundWhereToKeepGuide() {
               </div>
               <p className="mt-4 text-sm text-ink-600">
                 <strong>Verdict:</strong> Best for 80-90% of your emergency fund.
-                Put $18,000-$22,000 of a $24,000 fund here.
+                Put $18,000-$22,000 of a $24,000 fund here. Even at the current
+                lower rates, you still earn over $1,000/year on a $24,000 balance.
               </p>
             </div>
 
@@ -372,16 +387,16 @@ export default function EmergencyFundWhereToKeepGuide() {
               <p className="mt-3 text-ink-700">
                 Money market accounts (MMAs) function like savings accounts but
                 typically include check-writing and debit card access. Vanguard
-                Federal Money Market Fund (VMFXX) and Fidelity Government Money
-                Market (SPAXX) offer 4.3-4.8% APY. Bank MMAs from Discover and
-                Synchrony pay similar rates with FDIC insurance.
+                Federal Money Market Fund (VMFXX) yields about 4.25% and Fidelity Government Money
+                Market (SPAXX) offers 4.15% as of October 2026. Bank MMAs from Discover and
+                Synchrony pay 4.0-4.5% with FDIC insurance.
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
                   <h4 className="font-semibold text-ink-800">Pros</h4>
                   <ul className="mt-2 space-y-1 text-sm text-ink-700">
                     <li>Check and debit access for emergencies</li>
-                    <li>4.3-4.8% APY — nearly matches HYSA rates</li>
+                    <li>4.0-4.5% APY — nearly matches HYSA rates</li>
                     <li>FDIC insured at bank MMAs</li>
                     <li>Same-day access via debit card at ATMs</li>
                     <li>Often pairs well with existing brokerage accounts</li>
@@ -400,8 +415,8 @@ export default function EmergencyFundWhereToKeepGuide() {
               </div>
               <p className="mt-4 text-sm text-ink-600">
                 <strong>Verdict:</strong> Good alternative if you want check access
-                without sacrificing much yield. On $24,000, the 0.2% rate difference
-                vs. a HYSA costs about $48/year.
+                without sacrificing much yield. On $24,000, the 0.2-0.3% rate difference
+                vs. a HYSA costs about $48-72/year — a small price for debit card convenience.
               </p>
             </div>
 
@@ -412,7 +427,7 @@ export default function EmergencyFundWhereToKeepGuide() {
               <p className="mt-3 text-ink-700">
                 A CD ladder splits your emergency fund across multiple certificates
                 of deposit with staggered maturity dates. Instead of locking
-                $24,000 in a single 12-month CD at 5.0% APY (and paying a 6-month
+                $24,000 in a single 12-month CD at 4.65% APY (and paying a 6-month
                 interest penalty to access it early), you divide the money into
                 3-month, 6-month, and 12-month rungs. Each quarter, a CD matures
                 and you can reinvest or withdraw without penalty.
@@ -421,7 +436,7 @@ export default function EmergencyFundWhereToKeepGuide() {
                 <div>
                   <h4 className="font-semibold text-ink-800">Pros</h4>
                   <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                    <li>4.8-5.2% APY — highest FDIC-insured cash rates available</li>
+                    <li>4.4-4.8% APY — among the highest FDIC-insured cash rates available</li>
                     <li>Rate locked for the CD term regardless of Fed cuts</li>
                     <li>Quarterly liquidity with a 4-rung ladder</li>
                     <li>Disciplined structure prevents impulsive spending</li>
@@ -461,9 +476,9 @@ export default function EmergencyFundWhereToKeepGuide() {
                   <li>Age: 34, registered nurse at Banner Health</li>
                   <li>Gross salary: $78,000/year ($6,500/month)</li>
                   <li>Take-home after taxes/benefits: $4,850/month</li>
-                  <li>Monthly essentials: $4,000 (rent $1,650, car $420, food $550, insurance $380, utilities $180, minimum debt $820)</li>
-                  <li>Target emergency fund: 6 months = $24,000</li>
-                  <li>Current savings: $24,000 (goal reached after 18 months of saving $1,333/month)</li>
+                  <li>Monthly essentials: $4,200 (rent $1,750, car $420, food $580, insurance $400, utilities $190, minimum debt $860)</li>
+                  <li>Target emergency fund: 6 months = $25,200</li>
+                  <li>Current savings: $25,200 (goal reached after 18 months of saving $1,400/month)</li>
                   <li>Previously kept entire fund in Wells Fargo checking at 0.01% APY</li>
                 </ul>
               </div>
@@ -471,16 +486,16 @@ export default function EmergencyFundWhereToKeepGuide() {
                 <h4 className="font-semibold text-ink-800">Her New Structure</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>
-                    <strong>$4,000</strong> in Wells Fargo checking (1 month buffer +
+                    <strong>$4,200</strong> in Wells Fargo checking (1 month buffer +
                     daily spending)
                   </li>
                   <li>
-                    <strong>$14,000</strong> in Ally Bank HYSA at 4.50% APY (3.5 months
+                    <strong>$15,000</strong> in Ally Bank HYSA at 4.20% APY (3.6 months
                     of expenses, instant transfer)
                   </li>
                   <li>
                     <strong>$6,000</strong> in CD ladder across Ally (2 rungs: $3,000
-                    in 6-month CD at 4.90% APY, $3,000 in 12-month CD at 5.05% APY)
+                    in 6-month CD at 4.50% APY, $3,000 in 12-month CD at 4.65% APY)
                   </li>
                 </ul>
               </div>
@@ -493,32 +508,32 @@ export default function EmergencyFundWhereToKeepGuide() {
               <div className="mt-3 grid grid-cols-2 gap-2 text-sm sm:grid-cols-3">
                 <div className="rounded-lg bg-ink-50 p-3">
                   <p className="text-ink-500">Old setup (all checking)</p>
-                  <p className="font-semibold text-ink-800">$2.40/year</p>
+                  <p className="font-semibold text-ink-800">$2.52/year</p>
                 </div>
                 <div className="rounded-lg bg-brand-50 p-3">
                   <p className="text-ink-500">New setup (split accounts)</p>
-                  <p className="font-semibold text-brand-700">$928/year</p>
+                  <p className="font-semibold text-brand-700">$905/year</p>
                 </div>
                 <div className="rounded-lg bg-brand-50 p-3">
                   <p className="text-ink-500">Annual gain</p>
-                  <p className="font-semibold text-brand-700">+$925.60</p>
+                  <p className="font-semibold text-brand-700">+$902.48</p>
                 </div>
               </div>
               <p className="mt-4 text-sm text-ink-700">
                 Amanda&apos;s restructure took 45 minutes total — 15 minutes to open
-                the Ally HYSA, 15 minutes to initiate the $20,000 transfer from
+                the Ally HYSA, 15 minutes to initiate the $21,000 transfer from
                 Wells Fargo, and 15 minutes to set up the 2-rung CD ladder. Her
-                $14,000 HYSA earns $630/year. Her $6,000 in CDs earns $298/year
-                (blended 4.98% APY). The $4,000 in checking earns $0.40/year — but
+                $15,000 HYSA earns $630/year at 4.20% APY. Her $6,000 in CDs earns $275/year
+                (blended 4.58% APY). The $4,200 in checking earns $0.42/year — but
                 gives her instant access for a flat tire or urgent copay without
                 touching the higher-yield accounts.
               </p>
               <p className="mt-3 text-sm text-ink-700">
-                When her 6-month CD matured in February 2026, she rolled the
-                $3,073 ($3,000 principal + $73 interest) into a new 12-month CD
-                at 5.05% APY. She kept the matured funds in her HYSA for 2 weeks
+                When her 6-month CD matured in April 2026, she rolled the
+                $3,068 ($3,000 principal + $68 interest) into a new 12-month CD
+                at 4.65% APY. She kept the matured funds in her HYSA for 2 weeks
                 while comparing rates, then locked in the new CD. This rolling
-                strategy ensures she always has either a CD maturing or $14,000+
+                strategy ensures she always has either a CD maturing or $15,000+
                 available in her HYSA within 24 hours.
               </p>
             </div>
@@ -533,7 +548,7 @@ export default function EmergencyFundWhereToKeepGuide() {
           <p className="mt-4 text-ink-700">
             A CD ladder works by dividing your emergency fund into equal portions
             across CDs with different maturity dates. Here is a 4-rung ladder for
-            $16,000 of Amanda&apos;s fund (keeping $8,000 in HYSA for instant access):
+            $16,000 of Amanda&apos;s fund (keeping $9,200 in HYSA for instant access):
           </p>
 
           <div className="mt-6 overflow-x-auto">
@@ -565,48 +580,48 @@ export default function EmergencyFundWhereToKeepGuide() {
                   <td className="px-4 py-3">Rung 1</td>
                   <td className="px-4 py-3">$4,000</td>
                   <td className="px-4 py-3">3 months</td>
-                  <td className="px-4 py-3">4.75%</td>
-                  <td className="px-4 py-3">$4,047</td>
-                  <td className="px-4 py-3">November 2026</td>
+                  <td className="px-4 py-3">4.30%</td>
+                  <td className="px-4 py-3">$4,043</td>
+                  <td className="px-4 py-3">January 2027</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Rung 2</td>
                   <td className="px-4 py-3">$4,000</td>
                   <td className="px-4 py-3">6 months</td>
-                  <td className="px-4 py-3">4.90%</td>
-                  <td className="px-4 py-3">$4,098</td>
-                  <td className="px-4 py-3">February 2027</td>
+                  <td className="px-4 py-3">4.50%</td>
+                  <td className="px-4 py-3">$4,090</td>
+                  <td className="px-4 py-3">April 2027</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Rung 3</td>
                   <td className="px-4 py-3">$4,000</td>
                   <td className="px-4 py-3">9 months</td>
-                  <td className="px-4 py-3">4.95%</td>
-                  <td className="px-4 py-3">$4,149</td>
-                  <td className="px-4 py-3">May 2027</td>
+                  <td className="px-4 py-3">4.60%</td>
+                  <td className="px-4 py-3">$4,138</td>
+                  <td className="px-4 py-3">July 2027</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Rung 4</td>
                   <td className="px-4 py-3">$4,000</td>
                   <td className="px-4 py-3">12 months</td>
-                  <td className="px-4 py-3">5.05%</td>
-                  <td className="px-4 py-3">$4,202</td>
-                  <td className="px-4 py-3">August 2027</td>
+                  <td className="px-4 py-3">4.65%</td>
+                  <td className="px-4 py-3">$4,186</td>
+                  <td className="px-4 py-3">October 2027</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p className="mt-4 text-ink-700">
-            Total interest earned across all 4 rungs in the first year: $496 on
-            $16,000 — a blended rate of 4.91% APY. Compare that to leaving $16,000
-            in checking at 0.01% APY, which earns $1.60. The ladder generates $494.40
+            Total interest earned across all 4 rungs in the first year: $457 on
+            $16,000 — a blended rate of 4.51% APY. Compare that to leaving $16,000
+            in checking at 0.01% APY, which earns $1.60. The ladder generates $455.40
             more per year while providing access to $4,000 every 3 months without
             early withdrawal penalties.
           </p>
           <p className="mt-4 text-ink-700">
-            When Rung 1 matures in November 2026, Amanda has three choices: withdraw
-            the $4,047 if she needs it, roll it into a new 12-month CD at the current
+            When Rung 1 matures in January 2027, Amanda has three choices: withdraw
+            the $4,043 if she needs it, roll it into a new 12-month CD at the current
             rate, or move it to her HYSA. Most months she reinvests into a new
             12-month CD, creating a self-perpetuating ladder where one CD matures
             every quarter. Use our{" "}
@@ -623,7 +638,7 @@ export default function EmergencyFundWhereToKeepGuide() {
             <p className="font-medium text-brand-800">CD Ladder Rule of Thumb</p>
             <p className="mt-1 text-sm text-ink-700">
               Never put more than 50-67% of your emergency fund in CDs. Keep the
-              remaining 33-50% ($8,000-$12,000 of a $24,000 fund) in a HYSA for
+              remaining 33-50% ($8,400-$12,600 of a $25,200 fund) in a HYSA for
               same-day access. If you need $6,000 for an emergency root canal and
               your next CD does not mature for 8 weeks, the HYSA covers you without
               penalty.
@@ -643,10 +658,10 @@ export default function EmergencyFundWhereToKeepGuide() {
               </h3>
               <p className="mt-2 text-sm text-ink-700">
                 The average American keeps $5,300 in checking — often including
-                their entire emergency fund. At 0.01% APY, $24,000 in checking earns
-                $2.40 per year. That same $24,000 in a 4.50% HYSA earns $1,080 per
-                year. The $1,077.60 you leave on the table annually equals 27 days
-                of groceries for a household spending $550/month on food. Keep
+                their entire emergency fund. At 0.01% APY, $25,200 in checking earns
+                $2.52 per year. That same $25,200 in a 4.20% HYSA earns $1,058 per
+                year. The $1,055.48 you leave on the table annually equals 26 days
+                of groceries for a household spending $580/month on food. Keep
                 $500-1,000 in checking for immediate needs and move the rest today.
                 The transfer takes 5 minutes and the interest starts accruing
                 immediately.
@@ -657,15 +672,15 @@ export default function EmergencyFundWhereToKeepGuide() {
                 2. Investing your emergency fund in stocks
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                Stocks average 8-10% returns long-term, so investing a $24,000
+                Stocks average 8-10% returns long-term, so investing a $25,200
                 emergency fund seems smart — until you need the money during a
-                downturn. In 2022, the S&amp;P 500 dropped 18.1%. A $24,000 portfolio
-                would have fallen to $19,656 — a $4,344 shortfall when covering
-                6 months of $4,000/month expenses. Job losses and market crashes
+                downturn. In 2022, the S&amp;P 500 dropped 18.1%. A $25,200 portfolio
+                would have fallen to $20,639 — a $4,561 shortfall when covering
+                6 months of $4,200/month expenses. Job losses and market crashes
                 correlate: companies lay off workers during recessions, exactly when
                 your portfolio is down 15-25%. Emergency funds must prioritize
-                stability over growth. A 5.0% HYSA guarantees your $24,000 stays
-                $24,000.
+                stability over growth. A 4.20% HYSA guarantees your $25,200 stays
+                $25,200 while still earning over $1,058 per year in interest.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">

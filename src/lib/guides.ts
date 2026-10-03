@@ -73,10 +73,10 @@ export const guides: Guide[] = [
   {
     slug: "emergency-fund-where-to-keep",
     title: "Where to Keep Your Emergency Fund for the Best Interest Rate",
-    description: "Compare HYSAs, money market accounts, CDs, and more for your emergency fund. Real 2026 APY rates, a case study, and the CD ladder strategy explained.",
+    description: "Compare HYSAs, money market accounts, CDs, and more for your emergency fund. Real October 2026 APY rates, a case study, and the CD ladder strategy explained.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-03",
     relatedCalculators: ["emergency-fund", "savings-goal", "cd-calculator"],
     relatedGuides: ["high-yield-savings-vs-cd", "50-30-20-budget-rule"],
   },
