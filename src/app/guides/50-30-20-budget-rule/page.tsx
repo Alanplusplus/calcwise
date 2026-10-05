@@ -38,12 +38,17 @@ const faqs = [
   {
     question: "Does the 50/30/20 rule work in expensive cities?",
     answer:
-      "Often not at standard ratios. In high cost-of-living cities like San Francisco (median 1-BR rent $3,100/month in 2026), New York, or Denver, housing alone can consume 40-55% of take-home pay. Many residents adapt to a 60/20/20 or 70/20/10 split temporarily, then adjust as income rises or housing costs fall. The rule is a starting framework, not a rigid law.",
+      "Often not at standard ratios. In high cost-of-living cities like San Francisco (median 1-BR rent $3,200/month as of Q4 2026), New York ($3,500), or Denver ($1,850), housing alone can consume 40-55% of take-home pay. Many residents adapt to a 60/20/20 or 70/20/10 split temporarily, then adjust as income rises or housing costs stabilize. The rule is a starting framework, not a rigid law.",
   },
   {
     question: "What if my needs already exceed 50% of my income?",
     answer:
-      "You are not alone — roughly 40% of Americans in 2026 spend more than 50% on needs alone, up from 38% in 2024 due to rising housing and grocery costs. Focus on the biggest levers first: reduce housing (roommate, smaller place, refinancing at current rates around 6.6%), transportation (sell car, use transit), and food costs. Temporarily cut wants to 15-20% and savings to 10-15% while you close the gap. The goal is progress toward balance, not perfection on day one.",
+      "You are not alone — roughly 41% of Americans in late 2026 spend more than 50% on needs alone, driven largely by housing costs that rose 4.8% year-over-year nationally. Focus on the biggest levers first: reduce housing (roommate, smaller place, refinancing if your current rate is above 6.5%), transportation (sell car, use transit), and food costs. Temporarily cut wants to 15-20% and savings to 10-15% while you close the gap. The goal is progress toward balance, not perfection on day one.",
+  },
+  {
+    question: "How much should I have in emergency savings before following the 50/30/20 rule?",
+    answer:
+      "Financial planners recommend at least $1,000 as a starter emergency fund before optimizing your 50/30/20 split. Once you have that baseline, work toward 3-6 months of essential expenses (your needs bucket total). At $2,500/month in needs, that means $7,500-$15,000. Keep this in a high-yield savings account earning 4.5-4.8% APY (October 2026 rates) so it grows while remaining accessible. Only after this buffer is built should you redirect savings toward investments or accelerated debt payoff.",
   },
 ];
 
@@ -440,16 +445,16 @@ export default function Budget503020Guide() {
         {/* Section 4: Case Study */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-ink-900">
-            Case Study: Tyler, 26, $58K Salary in Denver
+            Case Study: Tyler, 27, $61.5K Salary in Denver
           </h2>
           <p className="mt-4 text-ink-700">
-            Tyler earns $60,000 as a project coordinator in Denver (up from
-            $58,000 in 2025 after a cost-of-living raise). After federal taxes,
+            Tyler earns $61,500 as a project coordinator in Denver (up from
+            $60,000 in 2025 after a 2.5% cost-of-living raise). After federal taxes,
             Colorado state tax (4.4%), FICA, and his employer health plan, he
-            takes home $3,950 per month. He heard about the 50/30/20 budget
+            takes home $4,050 per month. He heard about the 50/30/20 budget
             rule on a podcast and decided to audit his spending. What he found
-            was a common pattern: needs consuming 72% of his income, wants at
-            23%, and savings at just 5%.
+            was a common pattern: needs consuming 71% of his income, wants at
+            24%, and savings at just 5%.
           </p>
 
           <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
@@ -457,29 +462,29 @@ export default function Budget503020Guide() {
               <div>
                 <h4 className="font-semibold text-ink-800">Before: Tyler&apos;s Budget</h4>
                 <p className="mt-1 text-xs text-ink-500">
-                  Split: 72% needs / 23% wants / 5% savings
+                  Split: 71% needs / 24% wants / 5% savings
                 </p>
                 <ul className="mt-3 space-y-1 text-sm text-ink-700">
-                  <li>Rent (1BR, Capitol Hill): $1,580</li>
-                  <li>Utilities + internet: $180</li>
-                  <li>Groceries: $420</li>
-                  <li>Car payment + insurance + gas: $695</li>
-                  <li>Health insurance (employee share): $225</li>
-                  <li>Student loan (minimum): $280</li>
+                  <li>Rent (1BR, Capitol Hill): $1,620</li>
+                  <li>Utilities + internet: $185</li>
+                  <li>Groceries: $435</li>
+                  <li>Car payment + insurance + gas: $710</li>
+                  <li>Health insurance (employee share): $230</li>
+                  <li>Student loan (minimum): $285</li>
                   <li>Phone: $85</li>
                   <li className="font-medium text-ink-800 pt-1">
-                    Needs subtotal: $3,465
+                    Needs subtotal: $3,550
                   </li>
-                  <li className="pt-2">Dining out + delivery: $440</li>
-                  <li>Entertainment + streaming: $205</li>
-                  <li>Shopping + subscriptions: $275</li>
-                  <li>Gym: $50</li>
+                  <li className="pt-2">Dining out + delivery: $460</li>
+                  <li>Entertainment + streaming: $215</li>
+                  <li>Shopping + subscriptions: $280</li>
+                  <li>Gym: $55</li>
                   <li className="font-medium text-ink-800 pt-1">
-                    Wants subtotal: $970
+                    Wants subtotal: $1,010
                   </li>
-                  <li className="pt-2">Savings (inconsistent): $195</li>
+                  <li className="pt-2">Savings (inconsistent): $200</li>
                   <li className="font-medium text-amber-700 pt-1">
-                    Total: $4,630 (deficit covered by credit card)
+                    Total: $4,760 (deficit covered by credit card)
                   </li>
                 </ul>
               </div>
@@ -488,32 +493,32 @@ export default function Budget503020Guide() {
                   After: Tyler&apos;s 50/30/20 Budget
                 </h4>
                 <p className="mt-1 text-xs text-ink-500">
-                  Target: $1,975 needs / $1,185 wants / $790 savings
+                  Target: $2,025 needs / $1,215 wants / $810 savings
                 </p>
                 <ul className="mt-3 space-y-1 text-sm text-ink-700">
-                  <li>Rent (roommate, shared 2BR): $925</li>
-                  <li>Utilities + internet (split): $115</li>
-                  <li>Groceries (meal prep): $300</li>
-                  <li>Car payment + insurance + gas: $530</li>
-                  <li>Health insurance: $225</li>
-                  <li>Student loan (minimum): $280</li>
+                  <li>Rent (roommate, shared 2BR): $950</li>
+                  <li>Utilities + internet (split): $120</li>
+                  <li>Groceries (meal prep): $310</li>
+                  <li>Car payment + insurance + gas: $540</li>
+                  <li>Health insurance: $230</li>
+                  <li>Student loan (minimum): $285</li>
                   <li>Phone (switched to Mint Mobile): $55</li>
                   <li className="font-medium text-brand-700 pt-1">
-                    Needs subtotal: $2,430
+                    Needs subtotal: $2,490
                   </li>
-                  <li className="pt-2">Dining out (2x/week max): $260</li>
-                  <li>Entertainment + streaming: $165</li>
+                  <li className="pt-2">Dining out (2x/week max): $270</li>
+                  <li>Entertainment + streaming: $170</li>
                   <li>Personal shopping: $125</li>
                   <li>Gym (budget gym): $40</li>
-                  <li>Hobbies + social: $185</li>
+                  <li>Hobbies + social: $190</li>
                   <li className="font-medium text-brand-700 pt-1">
-                    Wants subtotal: $775
+                    Wants subtotal: $795
                   </li>
-                  <li className="pt-2">Emergency fund (HYSA at 4.75% APY): $300</li>
-                  <li>401(k) (4% + 3% employer match): $330</li>
-                  <li>Extra student loan payment: $150</li>
+                  <li className="pt-2">Emergency fund (HYSA at 4.60% APY): $310</li>
+                  <li>401(k) (4% + 3% employer match): $340</li>
+                  <li>Extra student loan payment: $155</li>
                   <li className="font-medium text-brand-700 pt-1">
-                    Savings subtotal: $780
+                    Savings subtotal: $805
                   </li>
                 </ul>
               </div>
@@ -523,23 +528,24 @@ export default function Budget503020Guide() {
               <h4 className="font-semibold text-ink-800">What Tyler Changed</h4>
               <p className="mt-2 text-sm text-ink-700">
                 Tyler&apos;s biggest move was finding a roommate, cutting rent
-                from $1,580 to $925 — a $655/month savings that alone closed
+                from $1,620 to $950 — a $670/month savings that alone closed
                 most of his budget gap. He switched phone carriers ($30 saved),
-                meal-prepped Sundays ($120 saved on groceries), and capped
-                dining out at twice per week ($180 saved). He enrolled in his
+                meal-prepped Sundays ($125 saved on groceries), and capped
+                dining out at twice per week ($190 saved). He enrolled in his
                 employer&apos;s 401(k) to capture the full 3% match, which
-                effectively adds $150/month in free money. He also moved his
-                emergency fund to a high-yield savings account earning 4.75%
-                APY — as of October 2026 — instead of leaving it in a
+                effectively adds $153/month in free money. He also moved his
+                emergency fund to a high-yield savings account earning 4.60%
+                APY — as of October 2026 (down slightly from 4.75% earlier
+                this year as the Fed eased rates) — instead of leaving it in a
                 traditional checking account earning virtually nothing.
               </p>
               <p className="mt-3 text-sm text-ink-700">
                 Tyler did not hit a perfect 50/30/20 split — his needs still
                 land at 61% because Denver rent is expensive even with a
-                roommate. But he moved from a $680/month credit card deficit
-                to a balanced budget with $780 in monthly savings. Over 12
-                months, that $780/month builds a $9,360 emergency fund (plus
-                roughly $220 in HYSA interest) while paying down $1,800 in
+                roommate. But he moved from a $710/month credit card deficit
+                to a balanced budget with $805 in monthly savings. Over 12
+                months, that $805/month builds a $9,660 emergency fund (plus
+                roughly $215 in HYSA interest) while paying down $1,860 in
                 extra student loan principal.
               </p>
             </div>
@@ -548,9 +554,9 @@ export default function Budget503020Guide() {
               <p className="font-medium text-brand-800">Key Takeaway</p>
               <p className="mt-1 text-sm text-ink-700">
                 Tyler&apos;s story shows the 50/30/20 budget rule works best
-                as a direction, not a destination. Getting from 72/23/5 to
+                as a direction, not a destination. Getting from 71/24/5 to
                 61/20/20 was a massive improvement. He plans to revisit his
-                split when he gets a raise or finds a cheaper apartment.
+                split when he gets his next raise or finds a cheaper apartment.
               </p>
             </div>
           </div>
@@ -575,13 +581,13 @@ export default function Budget503020Guide() {
               </h3>
               <p className="mt-2 text-sm text-ink-700">
                 In San Francisco, the median rent for a 1-bedroom reached
-                $3,100/month in mid-2026 — up from $2,800 just two years ago.
-                On a $6,250 take-home paycheck, that single expense consumes
-                50% of income before groceries, insurance, or transportation.
-                New York ($3,400 median 1-BR), Boston, Seattle, and Denver
-                face similar pressure. Residents in these cities often use a
-                modified 60/20/20 or 65/15/20 split until income rises or
-                housing costs stabilize.
+                $3,200/month by Q4 2026 — up from $2,900 at the start of the
+                year. On a $6,250 take-home paycheck, that single expense
+                consumes 51% of income before groceries, insurance, or
+                transportation. New York ($3,500 median 1-BR), Boston ($2,950),
+                Seattle ($2,400), and Denver ($1,850) face similar pressure.
+                Residents in these cities often use a modified 60/20/20 or
+                65/15/20 split until income rises or housing costs stabilize.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
@@ -590,13 +596,16 @@ export default function Budget503020Guide() {
               </h3>
               <p className="mt-2 text-sm text-ink-700">
                 If you carry $40,000 in credit card debt at the current
-                average APR of 22.8% (up from 20.7% in 2023), minimum payments
+                average APR of 22.6% (down marginally from 22.8% earlier in
+                2026 as issuers adjust to Fed rate cuts), minimum payments
                 alone might be $850-1,100/month — potentially more than your
                 entire 50% needs bucket. In this case, prioritize debt payoff
                 over the standard split. A temporary 50/10/40 approach (50%
                 needs, 10% wants, 40% debt payoff) may be necessary until
                 high-interest debt is eliminated. Consider balance transfer
-                cards offering 0% APR for 15-21 months to accelerate payoff.
+                cards offering 0% APR for 15-21 months to accelerate payoff —
+                several major issuers now offer 18-month 0% intro periods on
+                balances transferred by year-end 2026.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
@@ -616,12 +625,12 @@ export default function Budget503020Guide() {
                 Single Income, Dependents
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                Childcare alone averages $1,450/month nationally in 2026
-                ($2,200+ in major metros) — up roughly 12% from 2023. A parent
-                earning $4,167 take-home with $1,450 childcare and $1,300 rent
-                has only $417 left for all other needs. The 50/30/20 budget
-                rule was designed for dual-income households without dependents
-                — adjust expectations accordingly.
+                Childcare alone averages $1,520/month nationally as of late
+                2026 ($2,350+ in major metros) — up roughly 15% from 2023. A
+                parent earning $4,167 take-home with $1,520 childcare and
+                $1,350 rent has only $297 left for all other needs. The
+                50/30/20 budget rule was designed for dual-income households
+                without dependents — adjust expectations accordingly.
               </p>
             </div>
           </div>
@@ -657,8 +666,8 @@ export default function Budget503020Guide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Look at your last three paychecks and average the net deposit
                   amount. If you are paid biweekly, multiply by 26 and divide by
-                  12 to get your monthly figure. For Tyler at $60K in Denver,
-                  that number is $3,950/month. Do not use your gross salary —
+                  12 to get your monthly figure. For Tyler at $61.5K in Denver,
+                  that number is $4,050/month. Do not use your gross salary —
                   the 50/30/20 budget rule is always based on what you actually
                   receive.
                 </p>
@@ -682,7 +691,7 @@ export default function Budget503020Guide() {
                   </Link>
                   . It instantly shows your three dollar targets. Write these
                   three numbers on a sticky note: needs, wants, savings. At
-                  $3,950 take-home, that is $1,975 / $1,185 / $790.
+                  $4,050 take-home, that is $2,025 / $1,215 / $810.
                 </p>
               </div>
             </div>
@@ -717,7 +726,7 @@ export default function Budget503020Guide() {
                   accounts labeled &quot;Emergency,&quot; &quot;Retirement,&quot;
                   and &quot;Goals.&quot; For wants, consider a separate checking
                   account or a prepaid debit card loaded with your monthly
-                  $1,185 (or whatever your wants target is). When the wants
+                  $1,215 (or whatever your wants target is). When the wants
                   account hits zero, you stop spending on discretionary items
                   until next month.
                 </p>
@@ -733,8 +742,8 @@ export default function Budget503020Guide() {
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
                   Schedule an automatic transfer of your 20% savings amount for
-                  the morning after each payday. If paid biweekly at $790/month
-                  savings, transfer $395 per paycheck. This happens before you
+                  the morning after each payday. If paid biweekly at $810/month
+                  savings, transfer $405 per paycheck. This happens before you
                   have a chance to spend it. Use our{" "}
                   <Link
                     href="/calculators/savings-goal"
