@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-02",
+  "lastRunDate": "2026-10-03",
   "cycle": 1,
   "queue": [
     {
@@ -117,7 +117,8 @@
       "slug": "emergency-fund-where-to-keep",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh HYSA and CD APY rates for current market",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-03T20:10:00.000Z"
     },
     {
       "id": "p2-guide-50-30-20-budget-rule",

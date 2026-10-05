@@ -86,7 +86,7 @@ export const guides: Guide[] = [
     description: "Learn the 50/30/20 budget rule with real examples at $50K, $75K, and $100K income. Includes a case study, category breakdowns, and when the rule doesn't work.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-05",
     relatedCalculators: ["budget-50-30-20", "savings-goal", "emergency-fund"],
     relatedGuides: ["save-50000-in-3-years", "emergency-fund-where-to-keep"],
   },
