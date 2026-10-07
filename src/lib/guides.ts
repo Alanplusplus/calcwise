@@ -106,7 +106,7 @@ export const guides: Guide[] = [
     description: "See compound interest in action with 5 real examples: $500/month for 40 years, credit card debt traps, student loans, and the Rule of 72 explained.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-08",
     relatedCalculators: ["compound-interest", "savings-goal", "retirement"],
     relatedGuides: ["save-50000-in-3-years", "how-to-start-investing-1000"],
   },

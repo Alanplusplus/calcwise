@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-06",
+  "lastRunDate": "2026-10-07",
   "cycle": 1,
   "queue": [
     {
@@ -135,7 +135,8 @@
       "slug": "rent-vs-buy-decision",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh mortgage rates, update rent vs buy break-even",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-07T10:10:00.000Z"
     },
     {
       "id": "p2-guide-compound-interest-real-examples",
