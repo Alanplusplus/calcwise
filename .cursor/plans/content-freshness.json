@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-03",
+  "lastRunDate": "2026-10-06",
   "cycle": 1,
   "queue": [
     {
@@ -126,7 +126,8 @@
       "slug": "50-30-20-budget-rule",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh income examples, update cost-of-living data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-06T08:55:00.000Z"
     },
     {
       "id": "p2-guide-rent-vs-buy-decision",

@@ -93,10 +93,10 @@ export const guides: Guide[] = [
   {
     slug: "rent-vs-buy-decision",
     title: "Rent vs Buy in 2026: How to Make the Right Decision",
-    description: "Should you rent or buy in 2026? Break-even analysis at 7% rates, hidden costs of buying, a real case study, and a step-by-step decision framework.",
+    description: "Should you rent or buy in 2026? Break-even analysis at 6.65% rates, hidden costs of buying, a real case study, and a step-by-step decision framework.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-07",
     relatedCalculators: ["rent-vs-buy", "mortgage", "home-affordability"],
     relatedGuides: ["how-much-house-can-i-afford", "15-year-vs-30-year-mortgage"],
   },
