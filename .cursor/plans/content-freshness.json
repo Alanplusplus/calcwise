@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-07",
+  "lastRunDate": "2026-10-08",
   "cycle": 1,
   "queue": [
     {
@@ -144,7 +144,8 @@
       "slug": "compound-interest-real-examples",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh rate assumptions, add new example if possible",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-08T00:00:00.000Z"
     },
     {
       "id": "p2-guide-how-to-pay-off-credit-card-fast",
