@@ -15,6 +15,30 @@ When the user says "刷新内容", "更新内容", "每日更新", "refresh cont
 3. Set `lastRunDate` to today's ISO date
 4. Announce: "Working on: [type] — [slug] (priority: [priority])"
 
+## Step 0.5: Verify Live Data From Reliable Sources (REQUIRED)
+
+Before editing any rate, fee, limit, bracket, benchmark, or "current" statistic, look it up online (WebSearch / WebFetch, always include the current year in queries). NEVER write "current" numbers from memory or guess ranges.
+
+### Source priority (use the highest tier available)
+
+1. **Primary / official** (preferred, cite these on the page):
+   - Federal Reserve (`federalreserve.gov` G.19, H.15, Z.1, SCF), FRED (`fred.stlouisfed.org`)
+   - IRS (`irs.gov`), SSA (`ssa.gov`), BLS (`bls.gov`), Census (`census.gov`), BEA
+   - CFPB (`consumerfinance.gov`), FDIC (`fdic.gov` national rates), Freddie Mac PMMS (mortgage rates), HUD/FHA/VA/Fannie Mae
+   - NFCC (`nfcc.org`), Department of Education / `studentaid.gov`
+   - Issuer or provider pages for product terms (card issuers, lenders, brokerages, fund companies)
+2. **Reputable financial publishers** (acceptable for market ranges and product terms, cross-check with 2+ sources): Bankrate, NerdWallet, WSJ, Investopedia, Morningstar, Kiplinger
+3. **Not acceptable as the sole source**: anonymous blogs, AI-generated content farms, affiliate "best of" pages with no cited data, SEO aggregator sites. Their numbers may only be used if confirmed by a tier 1-2 source.
+
+### Rules
+
+- Every changed data point must be traceable to a source and a date (e.g. "Fed G.19, released Oct 7, 2026, August data").
+- If only tier 3 sources exist, or sources disagree, use a hedged range or leave the existing figure and note it. Do not invent precision.
+- Time-sensitive facts (rates, limits, brackets, promo terms) must state the as-of date in the page text (e.g. "as of August 2026").
+- Add a short "Sources:" line near the refreshed section with 1-3 links to tier 1 sources (`target="_blank" rel="noopener noreferrer"`).
+- After pulling new numbers, recompute all dependent math (monthly payments, interest totals, differences) and update every place on the page that uses the old figure so the page stays internally consistent. Illustrative scenario rates (e.g. "$10,000 at 22%") may stay rounded but should be within ~1 point of the verified average.
+- Keep a one-line note in the commit message of the primary source used.
+
 ## Step 1: Route by Task Type
 
 ### Type: `calculator-article-expand`
@@ -106,6 +130,8 @@ In `.cursor/plans/content-freshness.json`:
 
 ## Quality Checklist
 
+- [ ] All rates/fees/limits verified online from tier 1-2 sources (Step 0.5), with as-of dates and a "Sources:" line
+- [ ] Dependent calculations recomputed and consistent across the whole page
 - [ ] Content changes are substantive (not just date bumps)
 - [ ] Every new paragraph has specific numbers or actionable advice
 - [ ] No emoji used anywhere

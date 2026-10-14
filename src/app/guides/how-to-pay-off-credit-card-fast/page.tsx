@@ -49,7 +49,7 @@ const faqs = [
   {
     question: "What if I cannot afford $500/month — is a debt management plan worth it?",
     answer:
-      "A nonprofit debt management plan (DMP) through an NFCC-affiliated agency is worth considering when your budget tops out at $350-$550/month and you do not qualify for a 0% transfer or an 8-10% loan. Agencies typically negotiate card APRs down to roughly 6-9%, charge a setup fee of $30-$50, and a monthly fee of $25-$40. On $10,000 at 8% with a $535 monthly payment (including a $35 fee), you finish in about 22 months for roughly $740 in interest plus $770 in fees — about $11,510 total, versus $12,340+ at 22% APR. The tradeoff: enrolled cards are closed, and your score can dip temporarily.",
+      "A nonprofit debt management plan (DMP) through an NFCC-affiliated agency is worth considering when your budget tops out at $350-$550/month and you do not qualify for a 0% transfer or an 8-10% loan. According to the National Foundation for Credit Counseling, creditors typically lower DMP interest rates to 10% or less, agencies charge a setup fee of up to $75 and a monthly fee of $25-$50, and plans usually run 36-60 months. As an illustration, $10,000 at 8% with a $535 monthly payment (including a $35 fee) finishes in about 22 months for roughly $740 in interest plus $770 in fees — about $11,510 total, versus $12,340+ at 22% APR. At a lower payment of $300/month the same plan runs about 38 months. The tradeoff: enrolled cards are usually closed, and your score can dip temporarily.",
   },
   {
     question: "Can I pay off credit card debt while saving for other goals?",
@@ -548,8 +548,11 @@ export default function HowToPayOffCreditCardFastGuide() {
             exact debts.
           </p>
           <p className="mt-1 text-xs text-ink-500">
-            **DMP assumes a negotiated 8% APR, $500 toward principal plus a $35
-            monthly agency fee, and excludes the one-time setup fee of $30-$50.
+            **DMP assumes a negotiated 8% APR (NFCC says DMP rates are typically
+            10% or less), $500 toward principal plus a $35 monthly agency fee,
+            and excludes the one-time setup fee (up to $75 at most agencies).
+            Many real plans run 36-60 months because they use lower monthly
+            payments.
           </p>
         </section>
 
@@ -560,11 +563,12 @@ export default function HowToPayOffCreditCardFastGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             The strategies above only work if the rates you can actually get
-            resemble the assumptions. Federal Reserve G.19 releases in recent
-            quarters have put the average APR on accounts that are assessed
-            interest at roughly 21-22%, while new card offers commonly list
-            24% or higher. These are the ranges to plan around before you apply
-            for anything:
+            resemble the assumptions. The Federal Reserve&apos;s G.19 Consumer
+            Credit release (published October 7, 2026) reports an average
+            credit card APR of 21.19% across all accounts and 22.36% on
+            accounts that are charged interest, as of August 2026 — which is
+            why this guide models $10,000 at 22%. Here is how the other levers
+            compare before you apply for anything:
           </p>
           <div className="mt-6 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
@@ -583,34 +587,34 @@ export default function HowToPayOffCreditCardFastGuide() {
               </thead>
               <tbody className="divide-y divide-ink-100">
                 <tr>
-                  <td className="px-4 py-3">Existing card APR</td>
-                  <td className="px-4 py-3">20%-25%</td>
-                  <td className="px-4 py-3">$167-$208 interest in month one</td>
+                  <td className="px-4 py-3">Average card APR (Fed, Aug 2026)</td>
+                  <td className="px-4 py-3">21.19% all accounts; 22.36% accounts paying interest</td>
+                  <td className="px-4 py-3">$177-$186 interest in month one</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">0% transfer promo length</td>
-                  <td className="px-4 py-3">12-21 months</td>
-                  <td className="px-4 py-3">$833 vs $476/month needed to clear</td>
+                  <td className="px-4 py-3">Up to 21 months on dedicated transfer cards; 12-15 months on most rewards cards</td>
+                  <td className="px-4 py-3">$476/month clears $10,000 in 21 months; a 15-month promo needs $667</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Balance transfer fee</td>
-                  <td className="px-4 py-3">3%-5%</td>
-                  <td className="px-4 py-3">$300-$500 added to balance</td>
+                  <td className="px-4 py-3">3% if transferred in the first 60 days to 4 months, then 5% (min $5)</td>
+                  <td className="px-4 py-3">$300 early vs $500 late added to balance</td>
                 </tr>
                 <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">Personal loan APR (good credit)</td>
-                  <td className="px-4 py-3">8%-14%</td>
-                  <td className="px-4 py-3">$1,272-$2,300 interest over 36 months</td>
+                  <td className="px-4 py-3">Personal loan APR</td>
+                  <td className="px-4 py-3">11.90% bank average on 24-month loans (Fed); 6.99%+ for top-tier credit at some lenders</td>
+                  <td className="px-4 py-3">$1,272 (8%) to about $1,940 (11.9%) interest over 36 months</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Personal loan origination fee</td>
-                  <td className="px-4 py-3">0%-8%</td>
-                  <td className="px-4 py-3">$0-$800 deducted from proceeds</td>
+                  <td className="px-4 py-3">1%-10% typical; $0 at some lenders</td>
+                  <td className="px-4 py-3">$100-$1,000 deducted from proceeds</td>
                 </tr>
                 <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">Nonprofit DMP negotiated APR</td>
-                  <td className="px-4 py-3">6%-9%</td>
-                  <td className="px-4 py-3">$25-$40/month agency fee</td>
+                  <td className="px-4 py-3">Nonprofit DMP (NFCC agencies)</td>
+                  <td className="px-4 py-3">Rates typically 10% or less; setup up to $75; $25-$50 per month; 36-60 month plans</td>
+                  <td className="px-4 py-3">$1,500-$3,000 in fees over a 60-month plan at $25-$50/month</td>
                 </tr>
               </tbody>
             </table>
@@ -619,9 +623,14 @@ export default function HowToPayOffCreditCardFastGuide() {
             Two details change the winner. First, a 5% transfer fee turns the
             $300 cost in Strategy 2 into $500, which raises the total to $10,500
             — still $1,840 cheaper than the fixed $500 payment at 22%, but only
-            $772 cheaper than an 8% consolidation loan. Second, a 12-month promo
-            requires $875/month on a $10,500 post-fee balance, so shorter
-            promos only beat a loan if you can truly afford that payment. When
+            $772 cheaper than an 8% consolidation loan. If you only qualify for
+            the 11.9% bank average, that loan costs about $1,940 in interest, so
+            the transfer&apos;s advantage over the 5%-fee case grows to roughly $1,440. Second, a
+            12-month promo requires $875/month on a $10,500 post-fee balance,
+            so shorter promos only beat a loan if you can truly afford that
+            payment. Note that a 3% fee requires moving fast: the Citi
+            Simplicity and Chase Slate offers, for example, charge 3% only on
+            transfers made within the first 4 months, then 5%. When
             you cannot, compare both options side by side in the{" "}
             <Link
               href="/calculators/loan-comparison"
@@ -633,8 +642,8 @@ export default function HowToPayOffCreditCardFastGuide() {
           </p>
           <p className="mt-4 text-ink-700">
             A cheaper first step costs nothing: call each issuer and ask for a
-            hardship or rate-reduction review. Cardholders with 12+ months of
-            on-time payments often get 2-5 percentage points off. Dropping
+            hardship or rate-reduction review. Results vary by issuer and
+            payment history, but even a 4-point cut is worth the call: dropping
             $10,000 from 22% to 18% saves about $33/month in interest
             immediately — $396 in the first year without opening a single new
             account. Once your balances are under control, protect against
@@ -653,6 +662,28 @@ export default function HowToPayOffCreditCardFastGuide() {
               avalanche vs snowball comparison
             </Link>
             .
+          </p>
+          <p className="mt-4 text-xs text-ink-500">
+            Sources: Federal Reserve Board,{" "}
+            <a
+              href="https://www.federalreserve.gov/releases/g19/current/default.htm"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              G.19 Consumer Credit (October 7, 2026)
+            </a>
+            ; National Foundation for Credit Counseling,{" "}
+            <a
+              href="https://www.nfcc.org/blog/which-debt-repayment-method-is-right-for-you/"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              debt repayment methods
+            </a>
+            ; issuer terms as listed by Bankrate and NerdWallet in October 2026.
+            Offers change frequently — confirm current terms with the issuer.
           </p>
         </section>
 
