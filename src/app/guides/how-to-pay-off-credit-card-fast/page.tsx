@@ -24,37 +24,37 @@ const faqs = [
   {
     question: "How long does it take to pay off $10,000 in credit card debt?",
     answer:
-      "It depends entirely on your monthly payment. Paying only the minimum ($200/month on a typical $10,000 balance at 22% APR) takes 27 years and costs $16,800 in interest. A fixed $500/month payment clears the debt in 24 months with $2,340 in interest. Adding $1,000/month in side income on top of minimums pays it off in 11 months. A 0% balance transfer card with $476/month eliminates it in 21 months with zero interest.",
+      "It depends entirely on your monthly payment. Paying only the minimum (about $283 in month one on a $10,000 balance at 22% APR, shrinking as the balance falls) takes about 25 years and costs $17,266 in interest. A fixed $500/month payment clears the debt in 26 months with $2,571 in interest. Paying $1,200/month (for example, $200 of regular budget plus $1,000 of side income) pays it off in 10 months for $952 in interest. A 0% balance transfer card at $491/month eliminates it in 21 months with zero interest (you pay a $300 transfer fee, which is added to the balance).",
   },
   {
     question: "Is a balance transfer or debt consolidation loan better for $10,000?",
     answer:
-      "A 0% APR balance transfer wins on total cost if you can pay off the balance before the promotional period ends. On $10,000, a 21-month 0% transfer at $476/month costs $300 in transfer fees and $0 in interest — total cost $10,300. An 8% consolidation loan over 36 months at $313/month costs $1,272 in interest — total cost $11,272. Choose balance transfer if you can commit to the higher monthly payment; choose consolidation if you need a lower, fixed payment over a longer term.",
+      "A 0% APR balance transfer wins on total cost if you can pay off the balance before the promotional period ends. On $10,000, a 21-month 0% transfer at about $491/month ($10,300 including the 3% fee) costs $300 in transfer fees and $0 in interest — total cost $10,300. An 8% consolidation loan over 36 months at $313/month costs $1,281 in interest — total cost $11,281. Choose balance transfer if you can commit to the higher monthly payment; choose consolidation if you need a lower, fixed payment over a longer term.",
   },
   {
     question: "Should I use the debt snowball or avalanche method for credit cards?",
     answer:
-      "For credit card debt, avalanche (highest rate first) saves the most money. On three cards totaling $10,000 with $500/month available, avalanche costs approximately $2,340 in interest over 24 months. Snowball (smallest balance first) costs about $2,580 in interest over 26 months — $240 more, but delivers faster visible wins. If you have quit debt plans before, snowball's psychological momentum may be worth the extra cost. See our full comparison in the debt avalanche vs snowball guide.",
+      "For credit card debt, avalanche (highest rate first) saves the most money. On three cards totaling $10,000 (a $1,800 card at 19.99%, a $2,200 card at 22.99%, and a $6,000 card at 24.99%) with $500/month available, avalanche costs approximately $2,756 in interest and finishes in 26 months. Snowball (smallest balance first) costs about $2,953 in interest over the same 26 months — $197 more, but it clears the first card in month 8 instead of month 19. If you have quit debt plans before, snowball's psychological momentum may be worth the extra cost. See our full comparison in the debt avalanche vs snowball guide.",
   },
   {
     question: "How much should I pay monthly to pay off $10,000 fast?",
     answer:
-      "Aim for at least 5% of the balance per month ($500 on $10,000) to make meaningful progress. At 22% APR, $500/month pays off the debt in 24 months with $2,340 in interest. To finish in under one year, you need roughly $950-$1,200/month depending on your APR. Use our Credit Card Payoff Calculator to find the exact payment for your target date and interest rate.",
+      "Aim for at least 5% of the balance per month ($500 on $10,000) to make meaningful progress. At 22% APR, $500/month pays off the debt in 26 months with $2,571 in interest. To finish in 12 months, you need about $936/month at 22% APR (total interest about $1,230), and about $1,200/month to finish in 10 months. Use our Credit Card Payoff Calculator to find the exact payment for your target date and interest rate.",
   },
   {
     question: "Will a balance transfer or paying off cards hurt my credit score?",
     answer:
-      "A balance transfer application triggers a hard inquiry that typically costs 5-10 points for a few months, and a new card lowers your average account age slightly. Those dips are usually recovered within 3-6 months because your utilization falls fast. Moving $10,000 from three cards with $12,000 in combined limits (83% utilization) to a new card with a $10,500 limit and paying it down to $5,000 by month 12 drops utilization below 50%, which commonly lifts scores 30-60 points. Do not close the oldest paid-off card if it has no annual fee, since its age keeps helping your score.",
+      "A balance transfer application triggers a hard inquiry; according to myFICO, one additional inquiry takes fewer than five points off most people's FICO Scores, and FICO only counts inquiries from the past 12 months. A new card also lowers your average account age slightly. Against that, amounts owed make up 30% of a FICO Score, and utilization is a key part of it. Moving $10,000 from three cards with $12,000 in combined limits (83% utilization) to a new card with a $12,000 limit and paying the $10,300 balance (including the fee) down to $4,408 by month 12 at $491/month cuts utilization on that card from 86% to 37%, which helps your score over time. Do not close the oldest paid-off card if it has no annual fee, since its age keeps helping your score.",
   },
   {
     question: "What if I cannot afford $500/month — is a debt management plan worth it?",
     answer:
-      "A nonprofit debt management plan (DMP) through an NFCC-affiliated agency is worth considering when your budget tops out at $350-$550/month and you do not qualify for a 0% transfer or an 8-10% loan. According to the National Foundation for Credit Counseling, creditors typically lower DMP interest rates to 10% or less, agencies charge a setup fee of up to $75 and a monthly fee of $25-$50, and plans usually run 36-60 months. As an illustration, $10,000 at 8% with a $535 monthly payment (including a $35 fee) finishes in about 22 months for roughly $740 in interest plus $770 in fees — about $11,510 total, versus $12,340+ at 22% APR. At a lower payment of $300/month the same plan runs about 38 months. The tradeoff: enrolled cards are usually closed, and your score can dip temporarily.",
+      "A nonprofit debt management plan (DMP) through an NFCC-affiliated agency is worth considering when your budget tops out at $300-$490/month and you do not qualify for a 0% transfer or an 8-10% loan. According to the National Foundation for Credit Counseling, creditors typically lower DMP interest rates to 10% or less, agencies charge a setup fee of up to $75 and a monthly fee of $25-$50, and plans usually run 36-60 months. As an illustration, $10,000 at 8% with a $535 monthly payment (including a $35 fee) finishes in about 22 months for roughly $770 in interest plus $770 in fees — about $11,540 total, versus $12,571 at 22% APR with a $500 fixed payment. At a lower payment of $300/month the same plan runs about 38 months. The tradeoff: enrolled cards are usually closed, and your score can dip temporarily.",
   },
   {
     question: "Can I pay off credit card debt while saving for other goals?",
     answer:
-      "Build a starter emergency fund of $1,000-$2,000 first, then redirect every extra dollar to credit card debt. Credit cards at 18-25% APR guarantee a return no savings account can match. Once credit card debt is eliminated, redirect your former payment ($500-$1,200/month) toward savings goals like a house down payment or retirement. On a $52,000 salary, becoming debt-free in 21 months frees up $476/month that previously went to credit card payments.",
+      "Build a starter emergency fund of $1,000-$2,000 first, then redirect every extra dollar to credit card debt. Credit cards at 18-25% APR guarantee a return no savings account can match. Once credit card debt is eliminated, redirect your former payment ($500-$1,200/month) toward savings goals like a house down payment or retirement. On a $52,000 salary, becoming debt-free in 21 months frees up $491/month that previously went to credit card payments.",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function HowToPayOffCreditCardFastGuide() {
           <p className="mt-4 text-lg text-ink-600">
             $10,000 in credit card debt at 22% APR is not a life sentence — but
             paying only the minimum turns it into one. Left untouched, that balance
-            takes 27 years to eliminate and costs $16,800 in interest alone. This
+            takes about 25 years to eliminate and costs $17,266 in interest alone. This
             guide runs five specific strategies with real numbers so you can pick
             the fastest path to zero for your budget and personality.
           </p>
@@ -109,21 +109,21 @@ export default function HowToPayOffCreditCardFastGuide() {
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
               <strong>Minimum payments are a trap:</strong> $10,000 at 22% APR
-              with $200/month minimums takes 27 years and costs $16,800 in
-              interest
+              with minimum payments (about $283 in month one) takes about 25
+              years and costs $17,266 in interest
             </li>
             <li>
               <strong>Fastest low-cost option:</strong> 0% balance transfer at
-              $476/month for 21 months — total cost $10,300 ($300 transfer fee,
+              $491/month for 21 months — total cost $10,300 ($300 transfer fee,
               $0 interest)
             </li>
             <li>
               <strong>Best no-transfer option:</strong> Fixed $500/month payment
-              — debt-free in 24 months, $2,340 in interest
+              — debt-free in 26 months, $2,571 in interest
             </li>
             <li>
-              <strong>Fastest overall:</strong> Side income adding $1,000/month
-              — paid off in 11 months, roughly $980 in interest
+              <strong>Fastest overall:</strong> Paying $1,200/month ($200 budget
+              plus $1,000 side income) — paid off in 10 months, $952 in interest
             </li>
           </ul>
           <p className="mt-4 text-sm text-ink-600">
@@ -150,7 +150,7 @@ export default function HowToPayOffCreditCardFastGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/how-to-pay-off-credit-card-fast.webp"
-              alt="Infographic showing 5 strategies to pay off $10,000 credit card debt: minimum payments take 27 years, balance transfer clears in 21 months at $476 per month, aggressive fixed payment in 24 months, side income blast in 11 months"
+              alt="Infographic showing 5 strategies to pay off $10,000 credit card debt: minimum payments take about 25 years, balance transfer clears in 21 months at $491 per month, aggressive fixed payment in 26 months, side income blast in 10 months"
               width={1200}
               height={800}
               quality={80}
@@ -158,7 +158,7 @@ export default function HowToPayOffCreditCardFastGuide() {
               priority
             />
             <figcaption className="bg-ink-50 px-4 py-2 text-center text-sm text-ink-500">
-              Five paths from $10,000 in credit card debt to zero — from 27 years on minimums to 11 months with side income
+              Five paths from $10,000 in credit card debt to zero — from 25 years on minimums to 10 months with side income
             </figcaption>
           </figure>
         </section>
@@ -169,10 +169,11 @@ export default function HowToPayOffCreditCardFastGuide() {
             The True Cost of Paying Only the Minimum
           </h2>
           <p className="mt-4 text-ink-700">
-            Credit card issuers set minimum payments at roughly 1-2% of your
-            balance, plus any accrued interest. On a $10,000 balance at 22% APR,
-            your minimum payment starts around $200/month — and most of that goes
-            to interest, not principal.
+            A common minimum-payment formula is 1% of your balance plus that
+            month&apos;s interest (with a floor of about $25), and this guide
+            uses it for every &ldquo;minimum only&rdquo; figure. On a $10,000
+            balance at 22% APR, your minimum payment starts at $283.33/month —
+            and nearly two-thirds of it goes to interest, not principal.
           </p>
           <p className="mt-4 text-ink-700">
             Here is how the math works against you:
@@ -181,24 +182,24 @@ export default function HowToPayOffCreditCardFastGuide() {
             Monthly Interest = $10,000 &times; (22% &divide; 12) = $183.33
           </div>
           <p className="mt-4 text-ink-700">
-            On a $200 minimum payment, only $16.67 goes toward the principal in
-            month one. As the balance slowly drops, the minimum shrinks too —
-            stretching payoff over decades. At this pace:
+            Of the $283.33 minimum in month one, only $100 (1% of the balance)
+            goes toward the principal. As the balance slowly drops, the minimum
+            shrinks too — stretching payoff over decades. At this pace:
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
             <li>
-              <strong>Time to payoff:</strong> 27 years (324 months)
+              <strong>Time to payoff:</strong> about 25 years (299 months)
             </li>
             <li>
-              <strong>Total interest paid:</strong> $16,800
+              <strong>Total interest paid:</strong> $17,266
             </li>
             <li>
-              <strong>Total amount repaid:</strong> $26,800 on a $10,000
+              <strong>Total amount repaid:</strong> $27,266 on a $10,000
               purchase
             </li>
           </ul>
           <p className="mt-4 text-ink-700">
-            That $16,800 in interest is money that never bought you anything —
+            That $17,266 in interest is money that never bought you anything —
             no groceries, no rent, no vacation. It is pure cost for borrowing
             $10,000. Every strategy below exists to escape this trap as quickly
             as your budget allows.
@@ -208,8 +209,8 @@ export default function HowToPayOffCreditCardFastGuide() {
             <p className="font-medium text-amber-800">Key Insight</p>
             <p className="mt-1 text-sm text-amber-700">
               The gap between minimum payments and a fixed $500/month plan is
-              staggering: 27 years and $16,800 in interest versus 24 months and
-              $2,340. That is $14,460 saved simply by committing to a consistent,
+              staggering: 25 years and $17,266 in interest versus 26 months and
+              $2,571. That is $14,695 saved simply by committing to a consistent,
               higher payment — no balance transfer or loan required.
             </p>
           </div>
@@ -234,27 +235,28 @@ export default function HowToPayOffCreditCardFastGuide() {
           <p className="mt-2 text-ink-700">
             The simplest approach: pick a fixed monthly payment and never go
             below it, regardless of what the minimum drops to. On $10,000 at 22%
-            APR, paying exactly $500 every month eliminates the balance in 24
-            months with $2,340 in total interest.
+            APR, paying exactly $500 every month eliminates the balance in 26
+            months (the last payment is only about $73) with $2,571 in total
+            interest.
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
             <li>
               <strong>Monthly payment:</strong> $500 (fixed, never lower)
             </li>
             <li>
-              <strong>Months to payoff:</strong> 24
+              <strong>Months to payoff:</strong> 26
             </li>
             <li>
-              <strong>Total interest:</strong> $2,340
+              <strong>Total interest:</strong> $2,571
             </li>
             <li>
-              <strong>Total cost:</strong> $12,340
+              <strong>Total cost:</strong> $12,571
             </li>
           </ul>
           <p className="mt-4 text-ink-700">
             Month 1 breaks down as $183.33 in interest and $316.67 toward
-            principal. By month 12, the balance sits at approximately $5,340 and
-            monthly interest has dropped to $98 — meaning more of each $500
+            principal. By month 12, the balance sits at approximately $5,792 and
+            monthly interest has dropped to about $106 — meaning more of each $500
             payment attacks principal. This strategy requires no new accounts, no
             credit checks, and no transfer fees. If you can spare $500/month,
             start here.
@@ -268,11 +270,12 @@ export default function HowToPayOffCreditCardFastGuide() {
             A 0% introductory APR balance transfer card pauses interest charges
             for 12-21 months, letting every dollar go toward principal. Transfer
             the full $10,000 to a card offering 0% for 21 months, pay a 3%
-            transfer fee ($300), and commit to $476/month.
+            transfer fee ($300) that is added to the balance ($10,300), and
+            commit to $491/month ($10,300 &divide; 21).
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
             <li>
-              <strong>Monthly payment:</strong> $476
+              <strong>Monthly payment:</strong> $491 (final payment $485)
             </li>
             <li>
               <strong>Months to payoff:</strong> 21
@@ -288,7 +291,7 @@ export default function HowToPayOffCreditCardFastGuide() {
             </li>
           </ul>
           <p className="mt-4 text-ink-700">
-            This is the lowest total-cost strategy on the list — $2,040 less
+            This is the lowest total-cost strategy on the list — $2,271 less
             than the aggressive fixed payment approach. The critical rule: pay
             off the entire balance before the 0% period expires. Any remaining
             balance after month 21 typically jumps to 20-25% APR retroactively on
@@ -315,20 +318,21 @@ export default function HowToPayOffCreditCardFastGuide() {
               <strong>Months to payoff:</strong> 36
             </li>
             <li>
-              <strong>Total interest:</strong> $1,272
+              <strong>Total interest:</strong> $1,281
             </li>
             <li>
-              <strong>Total cost:</strong> $11,272
+              <strong>Total cost:</strong> $11,281
             </li>
           </ul>
           <p className="mt-4 text-ink-700">
-            Consolidation trades speed for affordability. You pay $1,272 in
-            interest versus $2,340 with the $500/month fixed approach, but the
+            Consolidation trades speed for affordability. You pay $1,281 in
+            interest versus $2,571 with the $500/month fixed approach, but the
             timeline stretches to three years. This works well if $500/month
             strains your budget or you want a single automatic payment instead of
             juggling multiple card due dates. Cut up the old cards after
-            consolidating — 78% of people who consolidate without closing accounts
-            run balances back up within two years.
+            consolidating — freshly zeroed cards with thousands in available
+            credit are the fastest way to end up owing both the loan and a new
+            card balance.
           </p>
 
           {/* Strategy 4 */}
@@ -338,8 +342,9 @@ export default function HowToPayOffCreditCardFastGuide() {
           <p className="mt-2 text-ink-700">
             If your $10,000 is spread across multiple cards, the debt snowball
             method targets the smallest balance first for quick psychological
-            wins. Here is a realistic three-card portfolio with $500/month total
-            available:
+            wins. Here is a realistic three-card portfolio (weighted average APR
+            about 23.7%) with $500/month total available. Minimums use the
+            same 1%-plus-interest formula described above:
           </p>
           <div className="mt-6 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
@@ -363,55 +368,56 @@ export default function HowToPayOffCreditCardFastGuide() {
                 <tr>
                   <td className="px-4 py-3">Store card</td>
                   <td className="px-4 py-3">$1,800</td>
-                  <td className="px-4 py-3">24.99%</td>
-                  <td className="px-4 py-3">$36</td>
+                  <td className="px-4 py-3">19.99%</td>
+                  <td className="px-4 py-3">$48</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Visa</td>
                   <td className="px-4 py-3">$2,200</td>
                   <td className="px-4 py-3">22.99%</td>
-                  <td className="px-4 py-3">$44</td>
+                  <td className="px-4 py-3">$64</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Mastercard</td>
                   <td className="px-4 py-3">$6,000</td>
-                  <td className="px-4 py-3">19.99%</td>
-                  <td className="px-4 py-3">$120</td>
+                  <td className="px-4 py-3">24.99%</td>
+                  <td className="px-4 py-3">$185</td>
                 </tr>
                 <tr className="bg-brand-50/50 font-medium">
                   <td className="px-4 py-3">Total</td>
                   <td className="px-4 py-3">$10,000</td>
                   <td className="px-4 py-3">—</td>
-                  <td className="px-4 py-3">$200</td>
+                  <td className="px-4 py-3">$297</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-4 text-ink-700">
-            Pay $200 in minimums across all three cards, then send the remaining
-            $300 to the $1,800 store card. When the store card clears in month 6,
-            roll its full $336 payment ($36 minimum + $300 extra) to the Visa.
-            When Visa clears in month 13, roll everything to the Mastercard.
+            Pay $297 in minimums across all three cards, then send the remaining
+            $203 to the $1,800 store card. When the store card clears in month 8,
+            roll its full $251 payment ($48 minimum + $203 extra) to the Visa.
+            When Visa clears in month 15, roll everything to the Mastercard.
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
             <li>
-              <strong>Monthly payment:</strong> $500 total ($200 minimums + $300
+              <strong>Monthly payment:</strong> $500 total ($297 minimums + $203
               extra)
             </li>
             <li>
               <strong>Months to payoff:</strong> 26
             </li>
             <li>
-              <strong>Total interest:</strong> $2,580
+              <strong>Total interest:</strong> $2,953
             </li>
             <li>
-              <strong>Total cost:</strong> $12,580
+              <strong>Total cost:</strong> $12,953
             </li>
           </ul>
           <p className="mt-4 text-ink-700">
-            Snowball costs $240 more in interest than targeting the highest-rate
-            card first (avalanche), but you eliminate the store card in month 6
-            and the Visa in month 13 — two visible wins before the final push.
+            Snowball costs $197 more in interest than targeting the highest-rate
+            card first (avalanche: $2,756 total interest, Mastercard cleared in
+            month 19), but you eliminate the store card in month 8 and the Visa
+            in month 15 — two visible wins before the final push.
             If you have abandoned debt plans before, those early zero-balance
             moments can be the difference between finishing and quitting.
           </p>
@@ -422,23 +428,23 @@ export default function HowToPayOffCreditCardFastGuide() {
           </h3>
           <p className="mt-2 text-ink-700">
             Temporarily increasing income is the fastest way out. On $10,000 at
-            22% APR, paying the $200 minimum plus $1,000 in side income each
-            month ($1,200 total) clears the balance in 11 months with
-            approximately $980 in interest.
+            22% APR, paying $200 from your regular budget plus $1,000 in side
+            income each month ($1,200 total, held constant) clears the balance
+            in 10 months with $952 in interest.
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
             <li>
-              <strong>Monthly payment:</strong> $1,200 ($200 minimum + $1,000
+              <strong>Monthly payment:</strong> $1,200 ($200 budget + $1,000
               side income)
             </li>
             <li>
-              <strong>Months to payoff:</strong> 11
+              <strong>Months to payoff:</strong> 10
             </li>
             <li>
-              <strong>Total interest:</strong> $980
+              <strong>Total interest:</strong> $952
             </li>
             <li>
-              <strong>Total cost:</strong> $10,980
+              <strong>Total cost:</strong> $10,952
             </li>
           </ul>
           <p className="mt-4 text-ink-700">
@@ -446,7 +452,7 @@ export default function HowToPayOffCreditCardFastGuide() {
             design ($40-60/hour, 20 hours/month), rideshare or delivery driving
             ($800-$1,200/month part-time), tutoring ($30-50/hour), or selling
             unused items plus ongoing resale (eBay, Facebook Marketplace). The
-            side income blast is not permanent — it is an 11-month sprint. Once
+            side income blast is not permanent — it is a 10-month sprint. Once
             the balance hits $0, redirect that $1,000 toward building an
             emergency fund so you never carry a credit card balance again.
           </p>
@@ -487,23 +493,23 @@ export default function HowToPayOffCreditCardFastGuide() {
               <tbody className="divide-y divide-ink-100">
                 <tr>
                   <td className="px-4 py-3">Minimum payments only</td>
-                  <td className="px-4 py-3">~$200 (declining)</td>
-                  <td className="px-4 py-3">324 (27 years)</td>
-                  <td className="px-4 py-3 text-red-700">$16,800</td>
-                  <td className="px-4 py-3">$26,800</td>
+                  <td className="px-4 py-3">$283 (declining)</td>
+                  <td className="px-4 py-3">299 (25 years)</td>
+                  <td className="px-4 py-3 text-red-700">$17,266</td>
+                  <td className="px-4 py-3">$27,266</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Aggressive fixed payment</td>
                   <td className="px-4 py-3">$500</td>
-                  <td className="px-4 py-3">24</td>
-                  <td className="px-4 py-3">$2,340</td>
-                  <td className="px-4 py-3">$12,340</td>
+                  <td className="px-4 py-3">26</td>
+                  <td className="px-4 py-3">$2,571</td>
+                  <td className="px-4 py-3">$12,571</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-brand-700">
                     Balance transfer (0% APR)
                   </td>
-                  <td className="px-4 py-3">$476</td>
+                  <td className="px-4 py-3">$491</td>
                   <td className="px-4 py-3 font-medium text-brand-700">21</td>
                   <td className="px-4 py-3 font-medium text-brand-700">$0*</td>
                   <td className="px-4 py-3 font-medium text-brand-700">
@@ -514,38 +520,41 @@ export default function HowToPayOffCreditCardFastGuide() {
                   <td className="px-4 py-3">Debt consolidation (8%)</td>
                   <td className="px-4 py-3">$313</td>
                   <td className="px-4 py-3">36</td>
-                  <td className="px-4 py-3">$1,272</td>
-                  <td className="px-4 py-3">$11,272</td>
+                  <td className="px-4 py-3">$1,281</td>
+                  <td className="px-4 py-3">$11,281</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">Debt snowball (3 cards)</td>
+                  <td className="px-4 py-3">Debt snowball (3 cards)***</td>
                   <td className="px-4 py-3">$500</td>
                   <td className="px-4 py-3">26</td>
-                  <td className="px-4 py-3">$2,580</td>
-                  <td className="px-4 py-3">$12,580</td>
+                  <td className="px-4 py-3">$2,953</td>
+                  <td className="px-4 py-3">$12,953</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Nonprofit DMP (~8% APR)**</td>
                   <td className="px-4 py-3">$535</td>
                   <td className="px-4 py-3">22</td>
-                  <td className="px-4 py-3">$740 + $770 fees</td>
-                  <td className="px-4 py-3">$11,510</td>
+                  <td className="px-4 py-3">$769 + $770 fees</td>
+                  <td className="px-4 py-3">$11,539</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Side income blast</td>
                   <td className="px-4 py-3">$1,200</td>
-                  <td className="px-4 py-3">11</td>
-                  <td className="px-4 py-3">$980</td>
-                  <td className="px-4 py-3">$10,980</td>
+                  <td className="px-4 py-3">10</td>
+                  <td className="px-4 py-3">$952</td>
+                  <td className="px-4 py-3">$10,952</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
             *Balance transfer total cost includes $300 transfer fee (3% of
-            $10,000). All calculations assume $10,000 starting balance at 22% APR
-            unless noted. Figures are approximate — use our calculators for your
-            exact debts.
+            $10,000), added to the balance and repaid at $491/month. All
+            calculations assume $10,000 starting balance at 22% APR unless
+            noted, monthly compounding, and minimums of 1% of the balance plus
+            interest. ***The three-card snowball uses the portfolio in Strategy 4
+            (weighted APR about 23.7%). Figures are rounded — use our
+            calculators for your exact debts.
           </p>
           <p className="mt-1 text-xs text-ink-500">
             **DMP assumes a negotiated 8% APR (NFCC says DMP rates are typically
@@ -594,7 +603,7 @@ export default function HowToPayOffCreditCardFastGuide() {
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">0% transfer promo length</td>
                   <td className="px-4 py-3">Up to 21 months on dedicated transfer cards; 12-15 months on most rewards cards</td>
-                  <td className="px-4 py-3">$476/month clears $10,000 in 21 months; a 15-month promo needs $667</td>
+                  <td className="px-4 py-3">$491/month clears $10,300 (balance plus 3% fee) in 21 months; a 15-month promo needs $687</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Balance transfer fee</td>
@@ -604,7 +613,7 @@ export default function HowToPayOffCreditCardFastGuide() {
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Personal loan APR</td>
                   <td className="px-4 py-3">11.90% bank average on 24-month loans (Fed); 6.99%+ for top-tier credit at some lenders</td>
-                  <td className="px-4 py-3">$1,272 (8%) to about $1,940 (11.9%) interest over 36 months</td>
+                  <td className="px-4 py-3">$1,281 (8%) to about $1,940 (11.9%) interest over 36 months</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Personal loan origination fee</td>
@@ -622,10 +631,10 @@ export default function HowToPayOffCreditCardFastGuide() {
           <p className="mt-4 text-ink-700">
             Two details change the winner. First, a 5% transfer fee turns the
             $300 cost in Strategy 2 into $500, which raises the total to $10,500
-            — still $1,840 cheaper than the fixed $500 payment at 22%, but only
-            $772 cheaper than an 8% consolidation loan. If you only qualify for
+            — still $2,071 cheaper than the fixed $500 payment at 22%, but only
+            $781 cheaper than an 8% consolidation loan. If you only qualify for
             the 11.9% bank average, that loan costs about $1,940 in interest, so
-            the transfer&apos;s advantage over the 5%-fee case grows to roughly $1,440. Second, a
+            even the 5%-fee transfer beats it by roughly $1,440. Second, a
             12-month promo requires $875/month on a $10,500 post-fee balance,
             so shorter promos only beat a loan if you can truly afford that
             payment. Note that a 3% fee requires moving fast: the Citi
@@ -682,6 +691,15 @@ export default function HowToPayOffCreditCardFastGuide() {
             >
               debt repayment methods
             </a>
+            ; myFICO on{" "}
+            <a
+              href="https://www.myfico.com/credit-education/credit-reports/does-checking-credit-score-lower-it"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              credit inquiries
+            </a>
             ; issuer terms as listed by Bankrate and NerdWallet in October 2026.
             Offers change frequently — confirm current terms with the issuer.
           </p>
@@ -699,8 +717,8 @@ export default function HowToPayOffCreditCardFastGuide() {
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Gross salary: $52,000/year ($3,250/month take-home)</li>
                   <li>Total credit card debt: $10,200 across 3 cards</li>
-                  <li>Minimum payments: $204/month combined</li>
-                  <li>Available for debt payoff: $500/month total</li>
+                  <li>Minimum payments: $300/month combined</li>
+                  <li>Available for debt payoff: $510/month total</li>
                   <li>Rent: $1,350/month (studio apartment)</li>
                   <li>Credit score: 712 (good — qualifies for 0% transfer)</li>
                 </ul>
@@ -708,9 +726,9 @@ export default function HowToPayOffCreditCardFastGuide() {
               <div>
                 <h4 className="font-semibold text-ink-800">Her 3 Cards</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                  <li>Target RedCard: $1,400 at 26.99% ($28 min)</li>
-                  <li>Chase Freedom: $2,800 at 23.99% ($56 min)</li>
-                  <li>Capital One Quicksilver: $6,000 at 21.99% ($120 min)</li>
+                  <li>Target RedCard: $1,400 at 26.99% ($46 min)</li>
+                  <li>Chase Freedom: $2,800 at 23.99% ($84 min)</li>
+                  <li>Capital One Quicksilver: $6,000 at 21.99% ($170 min)</li>
                 </ul>
               </div>
             </div>
@@ -721,17 +739,19 @@ export default function HowToPayOffCreditCardFastGuide() {
               </h4>
               <p className="mt-2 text-sm text-ink-700">
                 Rachel ran all five strategies through the Credit Card Payoff
-                Calculator. Minimum payments would cost her $17,136 in interest
-                over 27 years. The $500/month fixed plan cleared debt in 25 months
-                at $2,490 in interest. The balance transfer at $486/month ($10,200
-                + $306 transfer fee, spread over 21 months) cost $306 total —
-                saving $2,184 versus the fixed payment approach.
+                Calculator. Minimum payments would cost her $16,386 in interest
+                over about 21 years. The $510/month fixed plan (highest-rate card
+                first) cleared debt in 26 months at $2,722 in interest. The
+                balance transfer at $501/month ($10,200 + $306 transfer fee,
+                spread over 21 months) cost $306 total — saving $2,416 versus the
+                fixed payment approach.
               </p>
               <p className="mt-3 text-sm text-ink-700">
-                She considered snowball for the motivational wins but the $1,400
-                Target card would not clear until month 7 — too slow compared to
-                wiping everything at once via transfer. Consolidation at 8% over
-                36 months ($319/month) was affordable but added 15 extra months of
+                She considered snowball for the motivational wins, but although
+                the $1,400 Target card would clear in month 6, the last card would
+                not reach zero until month 26 — five months after the transfer
+                plan finishes. Consolidation at 8% over 36 months ($320/month,
+                $1,307 in interest) was affordable but added 15 extra months of
                 payments compared to the transfer.
               </p>
             </div>
@@ -743,7 +763,7 @@ export default function HowToPayOffCreditCardFastGuide() {
               <p className="mt-2 text-sm text-ink-700">
                 Rachel applied for a Citi Simplicity card offering 0% APR for 21
                 months on balance transfers. She transferred all $10,200, paid the
-                $306 fee (3%), and set up automatic payments of $486/month. She
+                $306 fee (3%), and set up automatic payments of $501/month. She
                 cut up all three original cards and removed them from her Apple
                 Wallet to prevent new charges.
               </p>
@@ -774,33 +794,33 @@ export default function HowToPayOffCreditCardFastGuide() {
                     </tr>
                     <tr className="bg-ink-50/50">
                       <td className="px-3 py-2">1</td>
-                      <td className="px-3 py-2">$486</td>
-                      <td className="px-3 py-2">$10,020</td>
+                      <td className="px-3 py-2">$501</td>
+                      <td className="px-3 py-2">$10,005</td>
                       <td className="px-3 py-2">$0</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">6</td>
-                      <td className="px-3 py-2">$486</td>
-                      <td className="px-3 py-2">$7,596</td>
+                      <td className="px-3 py-2">$501</td>
+                      <td className="px-3 py-2">$7,500</td>
                       <td className="px-3 py-2">$0</td>
                     </tr>
                     <tr className="bg-brand-50/50">
                       <td className="px-3 py-2">12</td>
-                      <td className="px-3 py-2">$486</td>
-                      <td className="px-3 py-2">$5,172</td>
+                      <td className="px-3 py-2">$501</td>
+                      <td className="px-3 py-2">$4,494</td>
                       <td className="px-3 py-2">$0</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">18</td>
-                      <td className="px-3 py-2">$486</td>
-                      <td className="px-3 py-2">$2,748</td>
+                      <td className="px-3 py-2">$501</td>
+                      <td className="px-3 py-2">$1,488</td>
                       <td className="px-3 py-2">$0</td>
                     </tr>
                     <tr className="bg-brand-50/50">
                       <td className="px-3 py-2 font-medium text-brand-700">
                         21
                       </td>
-                      <td className="px-3 py-2">$486</td>
+                      <td className="px-3 py-2">$486 (final)</td>
                       <td className="px-3 py-2 font-medium text-brand-700">
                         $0
                       </td>
@@ -814,7 +834,7 @@ export default function HowToPayOffCreditCardFastGuide() {
               <p className="mt-3 text-sm text-ink-700">
                 Rachel will be debt-free in May 2028 — 21 months from her August
                 2026 start date. Total cost: $10,506 ($10,200 principal + $306
-                transfer fee). Starting in month 22, she redirects the $486/month
+                transfer fee). Starting in month 22, she redirects the $501/month
                 toward a $5,000 emergency fund, reaching that goal in 10 more
                 months.
               </p>
@@ -845,7 +865,7 @@ export default function HowToPayOffCreditCardFastGuide() {
                   Log into each account and write down the exact numbers. Include
                   store cards, gas cards, and any card you have not used in
                   months. Rachel&apos;s list totaled $10,200 across three cards
-                  with $204/month in minimums.
+                  with $300/month in minimums.
                 </p>
               </div>
             </div>
@@ -890,8 +910,9 @@ export default function HowToPayOffCreditCardFastGuide() {
                   Choose your strategy from the comparison table
                 </h4>
                 <p className="mt-1 text-sm text-ink-700">
-                  Match your monthly budget to a strategy. Under $350/month:
-                  consolidation loan. $400-$550/month: balance transfer or fixed
+                  Match your monthly budget to a strategy. Under $490/month:
+                  consolidation loan ($313/month) or a nonprofit DMP.
+                  $490-$900/month: balance transfer ($491/month) or fixed
                   payment. $1,000+/month available: side income blast. Multiple
                   small cards and a history of quitting: snowball.
                 </p>
@@ -907,8 +928,8 @@ export default function HowToPayOffCreditCardFastGuide() {
                 </h4>
                 <p className="mt-1 text-sm text-ink-700">
                   Schedule your debt payment to transfer on the same day your
-                  paycheck arrives. Rachel set $486 to auto-pay her Citi card on
-                  the 1st and 15th ($243 each). Automating removes willpower from
+                  paycheck arrives. Rachel set $501 to auto-pay her Citi card on
+                  the 1st and 15th ($250 and $251). Automating removes willpower from
                   the equation — the money leaves before you can spend it.
                 </p>
               </div>
@@ -942,7 +963,7 @@ export default function HowToPayOffCreditCardFastGuide() {
                   When the final balance hits $0, immediately redirect your
                   former debt payment to an emergency fund (target 3-6 months of
                   expenses) and then toward retirement or other goals. You were
-                  living without that $486-$1,200/month — keep the habit, change
+                  living without that $491-$1,200/month — keep the habit, change
                   the destination.
                 </p>
               </div>
@@ -1027,16 +1048,18 @@ export default function HowToPayOffCreditCardFastGuide() {
               A $2,000 balance is the most common entry point for first-time
               credit card debtors — usually the result of a single unexpected
               expense like a car repair, medical bill, or emergency travel. At
-              22.9% APR, paying $100/month clears the balance in 24 months with
-              roughly $380 in interest. That is manageable on most budgets
+              22.9% APR, paying $100/month clears the balance in 26 months with
+              roughly $543 in interest. That is manageable on most budgets
               without restructuring your entire financial life.
             </p>
             <p className="mt-4 text-ink-700">
               This balance is small enough to brute-force with disciplined
               fixed payments. Consolidation loans and transfer fees often cost
               more than they save at this level. A 0% balance transfer with a 3%
-              fee ($60) saves about $320 in interest if you clear the balance
-              within 12 months — but only if you actually follow through. For
+              fee ($60) and a $172 monthly payment ($2,060 &divide; 12) clears in
+              12 months for $60 total, versus 14 months and about $284 in
+              interest if you paid the same $172 on the card — a saving of about
+              $224, but only if you actually follow through. For
               most people at $2,000, simply paying $100-$150/month and avoiding
               new charges is the fastest path to zero.
             </p>
@@ -1060,28 +1083,28 @@ export default function HowToPayOffCreditCardFastGuide() {
                 </thead>
                 <tbody className="divide-y divide-ink-100">
                   <tr>
-                    <td className="px-4 py-3">~$40 (minimum)</td>
-                    <td className="px-4 py-3">108+ (9+ years)</td>
-                    <td className="px-4 py-3 text-red-700">~$1,900</td>
-                    <td className="px-4 py-3">~$3,900</td>
+                    <td className="px-4 py-3">~$58 (minimum, declining)</td>
+                    <td className="px-4 py-3">141 (11.8 years)</td>
+                    <td className="px-4 py-3 text-red-700">~$2,729</td>
+                    <td className="px-4 py-3">~$4,729</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$100</td>
-                    <td className="px-4 py-3">24</td>
-                    <td className="px-4 py-3">~$380</td>
-                    <td className="px-4 py-3">~$2,380</td>
+                    <td className="px-4 py-3">26</td>
+                    <td className="px-4 py-3">~$543</td>
+                    <td className="px-4 py-3">~$2,543</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3">$150</td>
-                    <td className="px-4 py-3">15</td>
-                    <td className="px-4 py-3">~$250</td>
-                    <td className="px-4 py-3">~$2,250</td>
+                    <td className="px-4 py-3">16</td>
+                    <td className="px-4 py-3">~$330</td>
+                    <td className="px-4 py-3">~$2,330</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$200</td>
-                    <td className="px-4 py-3">11</td>
-                    <td className="px-4 py-3">~$175</td>
-                    <td className="px-4 py-3">~$2,175</td>
+                    <td className="px-4 py-3">12</td>
+                    <td className="px-4 py-3">~$241</td>
+                    <td className="px-4 py-3">~$2,241</td>
                   </tr>
                 </tbody>
               </table>
@@ -1094,9 +1117,9 @@ export default function HowToPayOffCreditCardFastGuide() {
             </h3>
             <p className="mt-2 text-ink-700">
               At $5,000, credit card interest becomes genuinely expensive. Paying
-              only the minimum (~$100/month on a $5,000 balance at 22.9% APR)
-              stretches payoff across 19 years and costs roughly $6,800 in
-              interest — more than the original purchase. This is the turning
+              only the minimum (~$145/month at first on a $5,000 balance at
+              22.9% APR) stretches payoff across 19 years and costs roughly
+              $8,450 in interest — more than the original purchase. This is the turning
               point where minimum payments stop being a nuisance and start being
               a financial emergency.
             </p>
@@ -1105,7 +1128,7 @@ export default function HowToPayOffCreditCardFastGuide() {
               (highest APR first) is the most effective approach. Direct every
               extra dollar to the card charging the highest rate while paying
               minimums on the rest. At $300-$500/month total, most people clear
-              a $5,000 portfolio in 11-20 months depending on how aggressively
+              a $5,000 portfolio in 12-21 months depending on how aggressively
               they pay.
             </p>
             <div className="mt-6 overflow-x-auto">
@@ -1128,28 +1151,28 @@ export default function HowToPayOffCreditCardFastGuide() {
                 </thead>
                 <tbody className="divide-y divide-ink-100">
                   <tr>
-                    <td className="px-4 py-3">~$100 (minimum)</td>
-                    <td className="px-4 py-3">228 (19 years)</td>
-                    <td className="px-4 py-3 text-red-700">~$6,800</td>
-                    <td className="px-4 py-3">~$11,800</td>
+                    <td className="px-4 py-3">~$145 (minimum, declining)</td>
+                    <td className="px-4 py-3">232 (19.3 years)</td>
+                    <td className="px-4 py-3 text-red-700">~$8,454</td>
+                    <td className="px-4 py-3">~$13,454</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$200</td>
-                    <td className="px-4 py-3">32</td>
-                    <td className="px-4 py-3">~$1,390</td>
-                    <td className="px-4 py-3">~$6,390</td>
+                    <td className="px-4 py-3">35</td>
+                    <td className="px-4 py-3">~$1,860</td>
+                    <td className="px-4 py-3">~$6,860</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3">$300</td>
-                    <td className="px-4 py-3">20</td>
-                    <td className="px-4 py-3">~$855</td>
-                    <td className="px-4 py-3">~$5,855</td>
+                    <td className="px-4 py-3">21</td>
+                    <td className="px-4 py-3">~$1,076</td>
+                    <td className="px-4 py-3">~$6,076</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$500</td>
-                    <td className="px-4 py-3">11</td>
-                    <td className="px-4 py-3">~$460</td>
-                    <td className="px-4 py-3">~$5,460</td>
+                    <td className="px-4 py-3">12</td>
+                    <td className="px-4 py-3">~$602</td>
+                    <td className="px-4 py-3">~$5,602</td>
                   </tr>
                 </tbody>
               </table>
@@ -1161,10 +1184,10 @@ export default function HowToPayOffCreditCardFastGuide() {
               $10,000 Balance
             </h3>
             <p className="mt-2 text-ink-700">
-              A $10,000 credit card balance sits above the national average and
-              puts real pressure on monthly cash flow. Minimum payments of
-              roughly $200/month at 22.9% APR take 27 years to eliminate and
-              cost approximately $14,600 in interest. At this level, the
+              A $10,000 credit card balance puts real pressure on monthly cash
+              flow. Minimum payments starting at roughly $291/month at 22.9% APR
+              take about 25 years to eliminate and cost approximately $18,000
+              in interest. At this level, the
               strategies in this guide — balance transfers, consolidation loans,
               and aggressive fixed payments — all become worth serious
               consideration. Note that this table uses 22.9% APR, so interest
@@ -1174,8 +1197,9 @@ export default function HowToPayOffCreditCardFastGuide() {
             <p className="mt-4 text-ink-700">
               A personal loan at 10% APR over 24 months on $10,000 costs roughly
               $1,075 in interest ($11,075 total). The same balance on a credit
-              card at 19.9% APR paid off over 24 months at $500/month costs
-              about $2,614 in interest — a difference of $1,539. Consolidation
+              card at 19.9% APR paid off at $500/month takes 25 months and costs
+              about $2,251 in interest — a difference of $1,176 (the loan&apos;s
+              payment is $461/month versus $500). Consolidation
               makes the most sense when you need a lower fixed payment and cannot
               qualify for a 0% balance transfer.
             </p>
@@ -1199,28 +1223,28 @@ export default function HowToPayOffCreditCardFastGuide() {
                 </thead>
                 <tbody className="divide-y divide-ink-100">
                   <tr>
-                    <td className="px-4 py-3">~$200 (minimum)</td>
-                    <td className="px-4 py-3">324 (27 years)</td>
-                    <td className="px-4 py-3 text-red-700">~$14,600</td>
-                    <td className="px-4 py-3">~$24,600</td>
+                    <td className="px-4 py-3">~$291 (minimum, declining)</td>
+                    <td className="px-4 py-3">301 (25 years)</td>
+                    <td className="px-4 py-3 text-red-700">~$17,995</td>
+                    <td className="px-4 py-3">~$27,995</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$300</td>
-                    <td className="px-4 py-3">44</td>
-                    <td className="px-4 py-3">~$3,155</td>
-                    <td className="px-4 py-3">~$13,155</td>
+                    <td className="px-4 py-3">54</td>
+                    <td className="px-4 py-3">~$6,044</td>
+                    <td className="px-4 py-3">~$16,044</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3">$500</td>
-                    <td className="px-4 py-3">24</td>
-                    <td className="px-4 py-3">~$1,860</td>
-                    <td className="px-4 py-3">~$11,860</td>
+                    <td className="px-4 py-3">26</td>
+                    <td className="px-4 py-3">~$2,716</td>
+                    <td className="px-4 py-3">~$12,716</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$800</td>
-                    <td className="px-4 py-3">14</td>
-                    <td className="px-4 py-3">~$1,030</td>
-                    <td className="px-4 py-3">~$11,030</td>
+                    <td className="px-4 py-3">15</td>
+                    <td className="px-4 py-3">~$1,535</td>
+                    <td className="px-4 py-3">~$11,535</td>
                   </tr>
                 </tbody>
               </table>
@@ -1233,16 +1257,16 @@ export default function HowToPayOffCreditCardFastGuide() {
             </h3>
             <p className="mt-2 text-ink-700">
               $15,000 in credit card debt creates significant financial pressure.
-              Minimum payments of roughly $300/month at 22.9% APR stretch payoff
-              across 30 years and cost approximately $21,000 in interest — you
-              repay $36,000 on $15,000 borrowed. At this level, a structured
+              Minimum payments starting at roughly $436/month at 22.9% APR
+              stretch payoff across 28 years and cost approximately $27,500 in
+              interest — you repay about $42,500 on $15,000 borrowed. At this level, a structured
               plan is not optional. Hoping the balance shrinks on its own is how
               people end up carrying debt into retirement.
             </p>
             <p className="mt-4 text-ink-700">
-              Start by calling your card issuers and requesting an APR reduction.
-              Many will lower your rate by 2-5 percentage points if you have a
-              history of on-time payments. If you qualify, a 0% balance transfer
+              Start by calling your card issuers and requesting an APR reduction;
+              a history of on-time payments strengthens your case, and each
+              point removed saves about $12.50/month on $15,000. If you qualify, a 0% balance transfer
               on a portion of the balance can save thousands — but only if you
               are disciplined enough to pay off the transferred amount before the
               promotional period ends. Combine a transfer with a fixed payment
@@ -1269,28 +1293,28 @@ export default function HowToPayOffCreditCardFastGuide() {
                 </thead>
                 <tbody className="divide-y divide-ink-100">
                   <tr>
-                    <td className="px-4 py-3">~$300 (minimum)</td>
-                    <td className="px-4 py-3">360 (30 years)</td>
-                    <td className="px-4 py-3 text-red-700">~$21,000</td>
-                    <td className="px-4 py-3">~$36,000</td>
+                    <td className="px-4 py-3">~$436 (minimum, declining)</td>
+                    <td className="px-4 py-3">341 (28.4 years)</td>
+                    <td className="px-4 py-3 text-red-700">~$27,537</td>
+                    <td className="px-4 py-3">~$42,537</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$400</td>
-                    <td className="px-4 py-3">53</td>
-                    <td className="px-4 py-3">~$5,960</td>
-                    <td className="px-4 py-3">~$20,960</td>
+                    <td className="px-4 py-3">67</td>
+                    <td className="px-4 py-3">~$11,609</td>
+                    <td className="px-4 py-3">~$26,609</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3">$600</td>
-                    <td className="px-4 py-3">31</td>
-                    <td className="px-4 py-3">~$3,420</td>
-                    <td className="px-4 py-3">~$18,420</td>
+                    <td className="px-4 py-3">35</td>
+                    <td className="px-4 py-3">~$5,579</td>
+                    <td className="px-4 py-3">~$20,579</td>
                   </tr>
                   <tr className="bg-ink-50/50">
                     <td className="px-4 py-3">$900</td>
-                    <td className="px-4 py-3">19</td>
-                    <td className="px-4 py-3">~$2,050</td>
-                    <td className="px-4 py-3">~$17,050</td>
+                    <td className="px-4 py-3">21</td>
+                    <td className="px-4 py-3">~$3,227</td>
+                    <td className="px-4 py-3">~$18,227</td>
                   </tr>
                 </tbody>
               </table>
