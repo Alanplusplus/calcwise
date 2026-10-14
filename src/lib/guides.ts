@@ -116,9 +116,9 @@ export const guides: Guide[] = [
     description: "Pay off $10,000 in credit card debt with 5 proven strategies. Compare timelines, total interest, and see which approach fits your situation best.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-14",
     relatedCalculators: ["debt-payoff", "credit-card-payoff"],
-    relatedGuides: ["debt-avalanche-vs-snowball", "50-30-20-budget-rule"],
+    relatedGuides: ["debt-avalanche-vs-snowball", "emergency-fund-where-to-keep", "50-30-20-budget-rule"],
   },
   {
     slug: "401k-vs-roth-ira",

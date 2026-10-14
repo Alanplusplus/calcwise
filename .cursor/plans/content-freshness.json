@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-08",
+  "lastRunDate": "2026-10-14",
   "cycle": 1,
   "queue": [
     {
@@ -153,7 +153,8 @@
       "slug": "how-to-pay-off-credit-card-fast",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh average APR data, update balance transfer offers",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-14T01:30:00.000Z"
     },
     {
       "id": "p2-guide-401k-vs-roth-ira",
