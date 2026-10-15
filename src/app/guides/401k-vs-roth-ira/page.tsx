@@ -9,7 +9,7 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 export const metadata: Metadata = {
   title: "401(k) vs Roth IRA: Which Retirement Account Is Better for You?",
   description:
-    "Compare 401(k) vs Roth IRA in 2026: contribution limits, tax treatment, employer match, income limits, and which account fits your income and career stage.",
+    "Compare 401(k) vs Roth IRA for 2026: $24,500 vs $7,500 limits, tax treatment, employer match, Roth income limits, and which account fits your income.",
   keywords: [
     "401k vs Roth IRA",
     "Roth IRA vs 401k",
@@ -24,12 +24,12 @@ const faqs = [
   {
     question: "Should I contribute to a 401(k) or Roth IRA first?",
     answer:
-      "Contribute enough to your 401(k) to capture your full employer match first — that is an immediate 50-100% return. Then max a Roth IRA ($7,000 in 2026) if your income is below the limits ($161,000 single / $240,000 married filing jointly). After that, return to your 401(k) and contribute up to the $23,500 limit. This hybrid approach captures free employer money, builds tax-free Roth assets, and maximizes total tax-advantaged savings.",
+      "Contribute enough to your 401(k) to capture your full employer match first — a 50% match is an immediate 50% return on those dollars. Then max a Roth IRA ($7,500 in 2026) if your income is below the phase-out ($153,000 single / $242,000 married filing jointly, with eligibility ending at $168,000 / $252,000). After that, return to your 401(k) and contribute up to the $24,500 limit. This hybrid approach captures free employer money, builds tax-free Roth assets, and maximizes total tax-advantaged savings.",
   },
   {
     question: "Can I have both a 401(k) and a Roth IRA?",
     answer:
-      "Yes, and most people should. A 401(k) and Roth IRA are separate accounts with separate contribution limits. In 2026 you can contribute up to $23,500 to a 401(k) and $7,000 to a Roth IRA — $30,500 total — as long as your income is below the Roth IRA phase-out thresholds. Having both gives you tax diversification: pre-tax 401(k) withdrawals and tax-free Roth withdrawals in retirement.",
+      "Yes, and most people should. A 401(k) and Roth IRA are separate accounts with separate contribution limits. In 2026 you can contribute up to $24,500 to a 401(k) and $7,500 to a Roth IRA — $32,000 total — as long as your income is below the Roth IRA phase-out thresholds. Having both gives you tax diversification: pre-tax 401(k) withdrawals and tax-free Roth withdrawals in retirement.",
   },
   {
     question: "Is a Roth IRA better than a 401(k) for taxes?",
@@ -39,12 +39,17 @@ const faqs = [
   {
     question: "What happens if I earn too much for a Roth IRA?",
     answer:
-      "In 2026, Roth IRA contributions phase out for single filers with modified adjusted gross income between $161,000 and $176,000, and for married couples filing jointly between $240,000 and $250,000. Above those ranges, direct Roth contributions are not allowed. High earners can use a backdoor Roth IRA (contribute to a traditional IRA, then convert to Roth), though the pro-rata rule applies if you hold existing traditional IRA balances.",
+      "In 2026, Roth IRA contributions phase out for single filers and heads of household with modified adjusted gross income between $153,000 and $168,000, and for married couples filing jointly between $242,000 and $252,000 (IRS Notice 2025-67). Above those ranges, direct Roth contributions are not allowed. High earners can use a backdoor Roth IRA (contribute to a traditional IRA, then convert to Roth), though the pro-rata rule applies if you hold existing traditional IRA balances.",
   },
   {
     question: "Does a Roth IRA have required minimum distributions (RMDs)?",
     answer:
-      "No. Roth IRAs have no RMDs during the original account owner's lifetime, which makes them powerful estate planning tools. Traditional 401(k) accounts require RMDs starting at age 73 under current law (SECURE 2.0). Roth 401(k) accounts also had RMDs, but starting in 2024 Roth 401(k) balances are exempt from RMDs — though rolling to a Roth IRA remains a common strategy for flexibility.",
+      "No. Roth IRAs have no RMDs during the original account owner's lifetime, which makes them powerful estate planning tools. Traditional 401(k) accounts require RMDs starting at age 73 under current law (SECURE 2.0), and missing one triggers a 25% excise tax on the amount not withdrawn (10% if corrected within 2 years). Roth 401(k) accounts also had RMDs, but starting in 2024 designated Roth balances are exempt while the owner is alive — though rolling to a Roth IRA remains a common strategy for flexibility.",
+  },
+  {
+    question: "What changed for 401(k) and Roth IRA savers in 2026?",
+    answer:
+      "Four numbers moved up. The 401(k) limit rose from $23,500 to $24,500, the IRA limit from $7,000 to $7,500, the 401(k) catch-up for age 50+ from $7,500 to $8,000 (total $32,500), and the IRA catch-up from $1,000 to $1,100 (total $8,600). Roth IRA phase-outs also rose to $153,000-$168,000 (single) and $242,000-$252,000 (married filing jointly). The biggest rule change is for higher earners: if your prior-year FICA wages from your employer exceeded $150,000, your 401(k) catch-up contributions must now be made as Roth (after-tax) contributions, so your plan needs a Roth option for you to keep making them.",
   },
 ];
 
@@ -54,9 +59,10 @@ export default function FourOhOneKVsRothIraGuide() {
       <FaqJsonLd faqs={faqs} />
       <ArticleJsonLd
         title="401(k) vs Roth IRA: Which Retirement Account Is Better for You?"
-        description="Compare 401(k) vs Roth IRA in 2026: contribution limits, tax treatment, employer match, income limits, and which account fits your income and career stage."
+        description="Compare 401(k) vs Roth IRA for 2026: $24,500 vs $7,500 limits, tax treatment, employer match, Roth income limits, and which account fits your income."
         slug="401k-vs-roth-ira"
         datePublished="2026-08-24"
+        dateModified="2026-10-15"
         image="/images/guides/401k-vs-roth-ira.webp"
       />
       <BreadcrumbJsonLd
@@ -84,11 +90,11 @@ export default function FourOhOneKVsRothIraGuide() {
             The 401(k) vs Roth IRA debate is not about picking one winner — it
             is about understanding how each account taxes your money differently
             and which fits your current income, career trajectory, and retirement
-            timeline. This guide breaks down the 2026 rules, runs the numbers on
-            a real case study, and shows you the hybrid strategy most financial
-            planners recommend.
+            timeline. This guide breaks down the 2026 IRS limits, runs the numbers
+            on a real case study using the 2026 tax brackets, and shows you the
+            hybrid strategy built around your employer match.
           </p>
-          <p className="mt-2 text-sm text-ink-500">Last updated: August 2026</p>
+          <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
         </header>
 
         {/* TL;DR */}
@@ -98,17 +104,19 @@ export default function FourOhOneKVsRothIraGuide() {
           </h2>
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
-              <strong>401(k) in 2026:</strong> Contribute up to $23,500 pre-tax;
-              employer match is free money you should never leave on the table
+              <strong>401(k) in 2026:</strong> Contribute up to $24,500 pre-tax
+              (up from $23,500); employer match is free money you should never
+              leave on the table
             </li>
             <li>
-              <strong>Roth IRA in 2026:</strong> Contribute up to $7,000
-              after-tax; all qualified withdrawals are tax-free in retirement
+              <strong>Roth IRA in 2026:</strong> Contribute up to $7,500
+              (up from $7,000) after-tax; all qualified withdrawals are tax-free
+              in retirement
             </li>
             <li>
               <strong>401(k) wins when:</strong> You are in a high tax bracket
               now, your employer offers a match, or you earn above Roth income
-              limits ($161K single / $240K married)
+              limits (phase-out ends at $168K single / $252K married)
             </li>
             <li>
               <strong>Roth wins when:</strong> You are early in your career in a
@@ -118,6 +126,11 @@ export default function FourOhOneKVsRothIraGuide() {
             <li>
               <strong>Best strategy for most people:</strong> Get the full 401(k)
               match, max the Roth IRA, then fill remaining capacity in the 401(k)
+            </li>
+            <li>
+              <strong>The math in one line:</strong> At the same tax rate now and
+              in retirement, Roth and traditional end up equal. The winner is
+              whichever account taxes you at the lower rate
             </li>
           </ul>
           <p className="mt-4 text-sm text-ink-600">
@@ -151,7 +164,7 @@ export default function FourOhOneKVsRothIraGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/401k-vs-roth-ira.webp"
-              alt="Infographic comparing 401(k) and Roth IRA: pre-tax vs after-tax contributions, 2026 contribution limits of $23,500 and $7,000, employer match, income limits, and withdrawal rules"
+              alt="Infographic comparing 401(k) and Roth IRA: pre-tax vs after-tax contributions, 2026 contribution limits of $24,500 and $7,500, employer match, income limits, and withdrawal rules"
               width={1200}
               height={800}
               quality={80}
@@ -180,10 +193,11 @@ export default function FourOhOneKVsRothIraGuide() {
           </p>
           <p className="mt-4 text-ink-700">
             That timing difference sounds abstract until you put real numbers on
-            it. A $23,500 contribution to a traditional 401(k) for someone in the
-            22% federal bracket saves $5,170 in taxes this year. The same person
-            putting $7,000 into a Roth IRA gets no deduction — but every dollar
-            of growth over the next 30 years comes out untaxed.
+            it. A $24,500 contribution to a traditional 401(k) for a single filer in
+            the 22% federal bracket (taxable income of $50,400-$105,700 in 2026)
+            saves $5,390 in taxes this year. The same person putting $7,500 into
+            a Roth IRA gets no deduction — but every dollar of growth over the
+            next 30 years comes out untaxed.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
@@ -197,28 +211,45 @@ export default function FourOhOneKVsRothIraGuide() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-ink-200 bg-ink-50 p-4">
               <p className="font-semibold text-ink-800">401(k)</p>
-              <p className="mt-1 text-2xl font-bold text-brand-700">$23,500</p>
+              <p className="mt-1 text-2xl font-bold text-brand-700">$24,500</p>
               <p className="mt-1 text-sm text-ink-600">
-                Employee contribution limit. Workers age 50+ can add a $7,500
-                catch-up contribution for a total of $31,000.
+                Employee contribution limit (up $1,000 from 2025). Workers age
+                50+ can add an $8,000 catch-up for a total of $32,500; ages
+                60-63 can add $11,250 for a total of $35,750.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-ink-50 p-4">
               <p className="font-semibold text-ink-800">Roth IRA</p>
-              <p className="mt-1 text-2xl font-bold text-brand-700">$7,000</p>
+              <p className="mt-1 text-2xl font-bold text-brand-700">$7,500</p>
               <p className="mt-1 text-sm text-ink-600">
-                Combined limit for Roth and traditional IRA contributions. Age
-                50+ catch-up adds $1,000 for a total of $8,000.
+                Combined limit for Roth and traditional IRA contributions (up
+                $500 from 2025). Age 50+ catch-up adds $1,100 for a total of
+                $8,600.
               </p>
             </div>
           </div>
           <p className="mt-4 text-ink-700">
-            Combined, a worker under 50 can funnel up to $30,500 per year into
+            Combined, a worker under 50 can funnel up to $32,000 per year into
             tax-advantaged retirement accounts — plus whatever employer match
             their company adds on top. That is a meaningful gap from the Roth IRA
             alone, which is one reason the 401(k) remains the primary retirement
             vehicle for most Americans.
           </p>
+          <div className="mt-4 rounded-lg border-l-4 border-brand-400 bg-brand-50 p-4">
+            <p className="font-medium text-brand-800">
+              New in 2026: Roth-Only Catch-Up for Higher Earners
+            </p>
+            <p className="mt-1 text-sm text-brand-700">
+              If you are 50 or older and your prior-year FICA wages from your
+              employer exceeded $150,000 (up from $145,000), your 401(k) catch-up
+              contributions must go in as Roth (after-tax) money. A 55-year-old
+              who earned $180,000 in 2025 can still defer $24,500 pre-tax in
+              2026, but the extra $8,000 catch-up is after-tax, which removes a
+              $1,920 deduction at the 24% bracket. The rule only applies if your
+              plan offers a Roth option; if it does not, you cannot make catch-up
+              contributions at all.
+            </p>
+          </div>
         </section>
 
         {/* Comparison Table */}
@@ -250,8 +281,8 @@ export default function FourOhOneKVsRothIraGuide() {
               <tbody className="divide-y divide-ink-100">
                 <tr>
                   <td className="px-4 py-3 font-medium">Contribution limit (2026)</td>
-                  <td className="px-4 py-3">$23,500 ($31,000 age 50+)</td>
-                  <td className="px-4 py-3">$7,000 ($8,000 age 50+)</td>
+                  <td className="px-4 py-3">$24,500 ($32,500 age 50+; $35,750 age 60-63)</td>
+                  <td className="px-4 py-3">$7,500 ($8,600 age 50+)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3 font-medium">Tax treatment</td>
@@ -260,13 +291,13 @@ export default function FourOhOneKVsRothIraGuide() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium">Employer match</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">Yes — often 50-100% of first 3-6%</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">Yes, if the plan offers one (average promised match: 4.7% of pay)</td>
                   <td className="px-4 py-3">No employer involvement</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3 font-medium">Income limits</td>
                   <td className="px-4 py-3">None for participation</td>
-                  <td className="px-4 py-3">Phase-out above $161K single / $240K married</td>
+                  <td className="px-4 py-3">Phase-out $153K-$168K single / $242K-$252K married</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium">Withdrawal rules</td>
@@ -275,12 +306,12 @@ export default function FourOhOneKVsRothIraGuide() {
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3 font-medium">Required minimum distributions</td>
-                  <td className="px-4 py-3">Yes — starting at age 73</td>
+                  <td className="px-4 py-3">Yes — starting at age 73 (25% excise tax if missed)</td>
                   <td className="px-4 py-3 font-medium text-brand-700">No RMDs during owner&apos;s lifetime</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium">Investment options</td>
-                  <td className="px-4 py-3">Limited to plan menu (often 15-30 funds)</td>
+                  <td className="px-4 py-3">Limited to the plan menu chosen by your employer</td>
                   <td className="px-4 py-3">Full brokerage choice (stocks, ETFs, bonds)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
@@ -291,6 +322,37 @@ export default function FourOhOneKVsRothIraGuide() {
               </tbody>
             </table>
           </div>
+          <p className="mt-4 text-xs text-ink-500">
+            Sources:{" "}
+            <a
+              href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              IRS IR-2025-111 (Nov. 13, 2025)
+            </a>
+            ,{" "}
+            <a
+              href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-required-minimum-distributions-rmds"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              IRS RMD rules
+            </a>
+            ,{" "}
+            <a
+              href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              IRS 2026 tax brackets (IR-2025-103)
+            </a>
+            . Employer match average from Vanguard&apos;s How America Saves 2026
+            (2025 plan data). Figures as of October 2026.
+          </p>
         </section>
 
         {/* When 401k Wins */}
@@ -308,12 +370,15 @@ export default function FourOhOneKVsRothIraGuide() {
             You Are in a High Tax Bracket Now
           </h3>
           <p className="mt-2 text-ink-700">
-            If you are earning $150,000+ and sitting in the 24-32% federal bracket,
-            every pre-tax 401(k) dollar saves you $2,400-$3,200 in immediate taxes.
-            If you expect to retire into a lower bracket — drawing $80,000/year
-            from a paid-off home in a no-income-tax state puts you in the 12-22%
-            range — you are effectively prepaying taxes at a higher rate by
-            choosing Roth over traditional. The 401(k) lets you defer that bill.
+            A single filer with taxable income above $105,700 (2026) sits in the
+            24% bracket or higher, and above $201,775 in the 32% bracket. Every
+            $10,000 of pre-tax 401(k) contributions saves $2,400-$3,200 in
+            immediate federal tax, and a full $24,500 deferral saves
+            $5,880-$7,840. If you expect to retire into a lower bracket — drawing
+            $80,000/year from a paid-off home in a no-income-tax state puts a
+            single filer in the 22% bracket after the $16,100 standard deduction —
+            you are effectively prepaying taxes at a higher rate by choosing Roth
+            over traditional. The 401(k) lets you defer that bill.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
@@ -321,19 +386,22 @@ export default function FourOhOneKVsRothIraGuide() {
           </h3>
           <p className="mt-2 text-ink-700">
             Employer matching is the single highest-return investment available
-            to most workers. A typical match — 50% of contributions up to 6% of
-            salary — on a $95,000 income adds $2,850 per year in free money. That
-            is an instant 50% return before any market growth. No Roth IRA
-            contribution can replicate that. Always contribute at least enough to
-            capture the full match before funding a Roth IRA.
+            to most workers. Vanguard&apos;s How America Saves 2026 report found
+            the average promised match was 4.7% of pay (median 4.0%) across its
+            plans, and the single most common formula was 50 cents per dollar on
+            the first 6% of pay. On a $95,000 income that formula adds $2,850 per
+            year in free money — an instant 50% return before any market growth.
+            No Roth IRA contribution can replicate that. Always contribute at
+            least enough to capture the full match before funding a Roth IRA.
           </p>
           <div className="mt-4 rounded-lg border-l-4 border-brand-400 bg-brand-50 p-4">
             <p className="font-medium text-brand-800">The Match Math</p>
             <p className="mt-1 text-sm text-brand-700">
               On a $95,000 salary with a 50% match up to 6%: contributing 6%
               ($5,700) triggers a $2,850 employer deposit. Over 30 years at 7%
-              average return, that match alone grows to approximately $287,000 —
-              money you never would have had without the 401(k).
+              average return (contributions at year-end), that match alone grows
+              to approximately $269,200 — money you never would have had without
+              the 401(k).
             </p>
           </div>
 
@@ -342,21 +410,24 @@ export default function FourOhOneKVsRothIraGuide() {
           </h3>
           <p className="mt-2 text-ink-700">
             In 2026, direct Roth IRA contributions phase out for single filers
-            with modified adjusted gross income above $161,000 and married couples
-            above $240,000. If you are above those thresholds, a Roth IRA is not
-            an option without a backdoor conversion strategy. Your 401(k) becomes
-            the primary tax-advantaged account by default — and its $23,500 limit
-            is more than three times the Roth cap anyway.
+            with modified adjusted gross income above $153,000 begin to lose
+            eligibility, and the door closes completely at $168,000. For married
+            couples filing jointly the range is $242,000-$252,000. If you are above
+            those thresholds, a Roth IRA is not an option without a backdoor
+            conversion strategy. Your 401(k) becomes the primary tax-advantaged
+            account by default — and its $24,500 limit is more than three times
+            the Roth cap anyway.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
             You Need the Higher Contribution Ceiling
           </h3>
           <p className="mt-2 text-ink-700">
-            Aggressive savers who want to put away more than $7,000 per year in
+            Aggressive savers who want to put away more than $7,500 per year in
             tax-advantaged accounts have no choice but the 401(k). Pair it with
-            an HSA ($4,300 individual / $8,550 family in 2026) and you can
-            shelter up to $32,050 per year before touching taxable accounts.
+            an HSA ($4,400 self-only / $8,750 family in 2026) and you can
+            shelter $28,900 (self-only) or $33,250 (family coverage) per year
+            before touching taxable accounts or a Roth IRA.
           </p>
         </section>
 
@@ -375,7 +446,9 @@ export default function FourOhOneKVsRothIraGuide() {
             Early Career, Lower Tax Bracket
           </h3>
           <p className="mt-2 text-ink-700">
-            A 28-year-old earning $55,000 sits in the 12% federal bracket. Paying
+            A 28-year-old earning $55,000 has $38,900 of taxable income after the
+            $16,100 standard deduction, which sits in the 12% federal bracket
+            (income up to $50,400 in 2026). Paying
             12% tax on Roth contributions now — when they are likely at their
             lifetime tax low — is far cheaper than paying 22-24% on traditional
             401(k) withdrawals decades later. Every year you are in the 12-22%
@@ -389,10 +462,10 @@ export default function FourOhOneKVsRothIraGuide() {
           <p className="mt-2 text-ink-700">
             If you believe tax rates will rise — due to national debt, policy
             changes, or your own income growth — paying taxes now at today&apos;s
-            rates is a hedge. A $7,000 Roth contribution today that grows to
-            $56,000 over 30 years at 7% comes out entirely tax-free. The same
-            growth in a traditional 401(k) would trigger roughly $12,320-$18,480
-            in federal taxes on withdrawal, depending on your retirement bracket.
+            rates is a hedge. A single $7,500 Roth contribution today that grows
+            to $57,100 over 30 years at 7% comes out entirely tax-free. Withdrawing
+            that same $57,100 from a traditional account would trigger roughly
+            $12,560-$18,270 in federal tax at a 22%-32% retirement bracket.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
@@ -426,11 +499,13 @@ export default function FourOhOneKVsRothIraGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             Priya earns $95,000 as a product manager at a tech company in Austin,
-            Texas. Texas has no state income tax, so her federal bracket (22%
-            marginal, roughly 14% effective) drives the analysis. Her employer
-            matches 50% of contributions up to 6% of salary. She has $44,000 in
-            her 401(k) and $9,000 in a Roth IRA, and she can allocate $1,625 per
-            month ($19,500/year) toward retirement beyond the match.
+            Texas. Texas has no state income tax, so federal tax drives the
+            analysis. After the $16,100 standard deduction her taxable income is
+            $78,900 before any 401(k) deferral, which puts her in the 22% bracket
+            ($50,400-$105,700 for single filers in 2026). Her employer matches 50%
+            of contributions up to 6% of salary. She has $44,000 in her 401(k) and
+            $9,000 in a Roth IRA, and she wants to put $19,500 of her own money
+            into retirement each year ($1,625 per month), on top of the match.
           </p>
 
           <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
@@ -439,101 +514,133 @@ export default function FourOhOneKVsRothIraGuide() {
                 <h4 className="font-semibold text-ink-800">Current Situation</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Age: 32 (target retirement: 62)</li>
-                  <li>Salary: $95,000/year</li>
+                  <li>Salary: $95,000/year, single filer</li>
                   <li>401(k) balance: $44,000</li>
                   <li>Roth IRA balance: $9,000</li>
                   <li>Employer match: 50% up to 6% ($2,850/year at full match)</li>
-                  <li>Available for retirement savings: $19,500/year + match</li>
-                  <li>Assumed return: 7% average annual</li>
+                  <li>Federal tax with no deferral: $12,070 (22% marginal)</li>
+                  <li>Assumed return: 7% average annual, year-end contributions</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-ink-800">Two Strategies Compared</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>
-                    <strong>Strategy A (401(k)-heavy):</strong> $19,500 to 401(k)
-                    + $2,850 match = $22,350/year pre-tax
+                    <strong>Strategy A (401(k) only):</strong> $21,600 to 401(k)
+                    + $2,850 match = $24,450/year pre-tax. The $4,752 tax saving
+                    brings her take-home cost to $16,848.
                   </li>
                   <li>
-                    <strong>Strategy B (Hybrid):</strong> $5,700 to 401(k) (match)
-                    + $7,000 Roth IRA + $6,800 to 401(k) + $2,850 match =
-                    $22,350/year total
+                    <strong>Strategy B (Hybrid):</strong> $12,000 to 401(k)
+                    ($5,700 for the match + $6,300 more) + $7,500 Roth IRA +
+                    $2,850 match = $22,350/year. The $2,640 tax saving brings
+                    her take-home cost to $16,860.
                   </li>
                 </ul>
+                <p className="mt-2 text-xs text-ink-500">
+                  Both strategies cost about the same out of pocket. Strategy A
+                  invests more dollars because pre-tax contributions are cheaper
+                  after the deduction than Roth contributions.
+                </p>
               </div>
             </div>
 
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">
-                30-Year Projection: Strategy A (401(k)-Heavy)
+                30-Year Projection at Age 62 (Nominal Dollars)
               </h4>
               <ul className="mt-2 space-y-1 text-sm text-ink-700">
                 <li>
-                  Existing $44,000 growing at 7% for 30 years: $44,000 x 1.07^30 =
-                  $335,073
+                  Existing balances: $44,000 x 1.07^30 = $334,939 (401(k)) and
+                  $9,000 x 1.07^30 = $68,510 (Roth IRA), identical in both
+                  strategies
                 </li>
                 <li>
-                  $22,350/year invested for 30 years at 7%: approximately $2,247,000
-                  in total contributions + growth
+                  <strong>Strategy A:</strong> $24,450/year grows to $2,309,566.
+                  Traditional balance: $2,644,505. Roth balance: $68,510. Total:
+                  ~$2,713,016
                 </li>
                 <li>
-                  <strong>Total pre-tax balance at 62: ~$2,582,073</strong>
-                </li>
-                <li>
-                  Estimated taxes on withdrawal at 18% effective rate: ~$464,773
-                </li>
-                <li>
-                  <strong>After-tax spendable amount: ~$2,117,300</strong>
+                  <strong>Strategy B:</strong> $14,850/year to the 401(k) grows to
+                  $1,402,743 and $7,500/year to the Roth IRA grows to $708,456.
+                  Traditional balance: $1,737,682. Roth balance: $776,966
+                  (31% of the total). Total: ~$2,514,648
                 </li>
               </ul>
             </div>
 
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">
-                30-Year Projection: Strategy B (Hybrid with Roth IRA)
+                After-Tax Spendable Wealth Depends on the Retirement Tax Rate
               </h4>
-              <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                <li>
-                  Existing 401(k) $44,000 + Roth $9,000 = $53,000 growing at 7%
-                  for 30 years: $53,000 x 1.07^30 = $403,495
-                </li>
-                <li>
-                  $15,350/year to 401(k) (including match) for 30 years at 7%:
-                  approximately $1,543,000
-                </li>
-                <li>
-                  $7,000/year to Roth IRA for 30 years at 7%: approximately
-                  $703,000 (all tax-free)
-                </li>
-                <li>
-                  <strong>Total balance at 62: ~$2,649,495</strong>
-                </li>
-                <li>
-                  Roth portion ($703,000 + growth on $9,000): ~$820,000 completely
-                  tax-free
-                </li>
-                <li>
-                  401(k) portion after 18% effective tax: ~$1,505,000 spendable
-                </li>
-                <li>
-                  <strong>After-tax spendable amount: ~$2,325,000</strong>
-                </li>
-              </ul>
+              <p className="mt-2 text-sm text-ink-700">
+                Traditional balances are taxed when withdrawn; Roth balances are
+                not. The table applies one flat average tax rate to every
+                traditional dollar to show how the winner flips.
+              </p>
+              <div className="mt-3 overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="border-b-2 border-ink-200 bg-ink-50">
+                      <th className="px-3 py-2 text-left font-semibold text-ink-800">
+                        Tax rate on traditional withdrawals
+                      </th>
+                      <th className="px-3 py-2 text-left font-semibold text-ink-800">
+                        Strategy A spendable
+                      </th>
+                      <th className="px-3 py-2 text-left font-semibold text-ink-800">
+                        Strategy B spendable
+                      </th>
+                      <th className="px-3 py-2 text-left font-semibold text-ink-800">
+                        Winner
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-ink-100">
+                    <tr>
+                      <td className="px-3 py-2">15% (lower than today)</td>
+                      <td className="px-3 py-2">$2,316,340</td>
+                      <td className="px-3 py-2">$2,253,996</td>
+                      <td className="px-3 py-2 font-medium text-brand-700">
+                        A by $62,344
+                      </td>
+                    </tr>
+                    <tr className="bg-ink-50/50">
+                      <td className="px-3 py-2">22% (same as today)</td>
+                      <td className="px-3 py-2">$2,131,225</td>
+                      <td className="px-3 py-2">$2,132,358</td>
+                      <td className="px-3 py-2 font-medium text-brand-700">
+                        Tie (B by $1,133)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-3 py-2">28% (higher than today)</td>
+                      <td className="px-3 py-2">$1,972,554</td>
+                      <td className="px-3 py-2">$2,028,097</td>
+                      <td className="px-3 py-2 font-medium text-brand-700">
+                        B by $55,543
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">What Priya Should Do</h4>
               <p className="mt-2 text-sm text-ink-700">
-                Strategy B leaves Priya with roughly <strong>$207,700 more in
-                after-tax retirement wealth</strong> over 30 years — not because
-                Roth magically earns more, but because she pays 22% tax on $7,000
-                now while she is in a moderate bracket, rather than paying a
-                potentially higher rate on a much larger withdrawal decades later.
-                The hybrid approach also gives her a $820,000 tax-free bucket for
-                flexible withdrawals, ACA subsidy management if she retires before
-                65, and no RMDs on the Roth portion. At her income level, Strategy
-                B is the clear winner — but the 401(k) match remains non-negotiable
-                in either scenario.
+                The table shows that Roth is not a free lunch: at the same 22%
+                rate, the two strategies finish within about $1,100 of each other
+                on $2.1 million. Roth wins only if her retirement tax rate ends up
+                above her current one, and the traditional 401(k) wins if it ends
+                up below. Either way the gap is about $55,000-$62,000, roughly 3% of
+                the final balance. Because no one can forecast rates 30 years out,
+                Priya picks Strategy B for tax diversification rather than a
+                guaranteed higher balance: it costs her nothing at a 22% rate and
+                gives her a $776,966 tax-free bucket for managing her tax bracket,
+                ACA subsidies if she retires before 65, and no RMDs on the Roth
+                portion. The 401(k) match remains non-negotiable in either
+                scenario.
               </p>
             </div>
           </div>
@@ -573,11 +680,11 @@ export default function FourOhOneKVsRothIraGuide() {
               </div>
               <div>
                 <h3 className="font-semibold text-ink-800">
-                  Max your Roth IRA ($7,000 in 2026)
+                  Max your Roth IRA ($7,500 in 2026)
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  If your income is below the Roth limits ($161,000 single /
-                  $240,000 married), fund the full $7,000 Roth IRA next. You gain
+                  If your income is below the Roth phase-out ($153,000 single /
+                  $242,000 married), fund the full $7,500 Roth IRA next. You gain
                   tax-free growth, flexible contribution access, and no RMDs. Open
                   the account at a low-cost brokerage with broad index fund options.
                 </p>
@@ -593,10 +700,10 @@ export default function FourOhOneKVsRothIraGuide() {
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
                   After the match and Roth IRA are funded, direct remaining
-                  retirement savings back to your 401(k) until you hit the $23,500
+                  retirement savings back to your 401(k) until you hit the $24,500
                   limit. If you already contributed $5,700 for the match, you have
-                  $17,800 of remaining 401(k) capacity. This maximizes your total
-                  tax-advantaged savings at $30,500 per year.
+                  $18,800 of remaining 401(k) capacity. This maximizes your total
+                  tax-advantaged savings at $32,000 per year.
                 </p>
               </div>
             </div>
@@ -611,7 +718,7 @@ export default function FourOhOneKVsRothIraGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   If you still have surplus savings after maxing both accounts,
                   fund an HSA if you have a qualifying high-deductible health plan
-                  ($4,300 individual / $8,550 family in 2026), then invest in a
+                  ($4,400 self-only / $8,750 family in 2026), then invest in a
                   taxable brokerage with low-cost index funds. Taxable accounts
                   provide the bridge for early retirement before age 59½.
                 </p>
@@ -623,9 +730,17 @@ export default function FourOhOneKVsRothIraGuide() {
             <p className="font-medium text-brand-800">Annual Savings Checklist</p>
             <p className="mt-1 text-sm text-brand-700">
               For a single filer earning $95,000 with a 50% match up to 6%:
-              $5,700 (401k match) + $7,000 (Roth IRA) + $17,800 (remaining 401k)
-              = $30,500 personal contributions + $2,850 employer match. At 7% over
-              30 years, that totals roughly $3.4 million before taxes.
+              $5,700 (401k match) + $7,500 (Roth IRA) + $18,800 (remaining 401k)
+              = $32,000 personal contributions + $2,850 employer match = $34,850
+              per year. At 7% over 30 years (year-end contributions), that totals
+              roughly $3.29 million before taxes, of which $708,500 sits in the
+              Roth IRA.
+            </p>
+            <p className="mt-2 text-sm text-brand-700">
+              Most people cannot fund the full $32,000. Scale the same order down:
+              a worker who can save $12,000 a year on a $95,000 salary still
+              captures the $5,700 match first, then puts the remaining $6,300
+              into the Roth IRA.
             </p>
           </div>
         </section>
@@ -659,17 +774,17 @@ export default function FourOhOneKVsRothIraGuide() {
               </thead>
               <tbody className="divide-y divide-ink-100">
                 <tr>
-                  <td className="px-4 py-3">10-12%</td>
+                  <td className="px-4 py-3">10-12% (single taxable income up to $50,400)</td>
                   <td className="px-4 py-3 font-medium text-brand-700">Roth IRA first</td>
                   <td className="px-4 py-3">Lock in the lowest rate you will ever pay</td>
                 </tr>
                 <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">22-24%</td>
+                  <td className="px-4 py-3">22-24% (single $50,400-$201,775)</td>
                   <td className="px-4 py-3 font-medium text-brand-700">Hybrid (both)</td>
                   <td className="px-4 py-3">Tax diversification; rates may rise by retirement</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">32%+</td>
+                  <td className="px-4 py-3">32%+ (single above $201,775)</td>
                   <td className="px-4 py-3 font-medium text-brand-700">401(k) first</td>
                   <td className="px-4 py-3">Large immediate deduction; likely lower rate in retirement</td>
                 </tr>

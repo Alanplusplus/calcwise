@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-14",
+  "lastRunDate": "2026-10-15",
   "cycle": 1,
   "queue": [
     {
@@ -162,7 +162,8 @@
       "slug": "401k-vs-roth-ira",
       "priority": "P2",
       "reason": "Published 2026-08-24 — verify 2026 contribution limits, refresh tax bracket data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-15T02:30:00.000Z"
     },
     {
       "id": "p2-guide-how-to-start-investing-1000",

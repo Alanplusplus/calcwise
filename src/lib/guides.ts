@@ -126,7 +126,7 @@ export const guides: Guide[] = [
     description: "Compare 401(k) vs Roth IRA: contribution limits, tax treatment, income limits, and when each wins. Includes a case study and the optimal hybrid strategy.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-15",
     relatedCalculators: ["retirement", "compound-interest", "income-tax"],
     relatedGuides: ["how-much-to-retire-at-55", "how-to-start-investing-1000"],
   },
