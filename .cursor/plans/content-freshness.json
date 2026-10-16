@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-15",
+  "lastRunDate": "2026-10-16",
   "cycle": 1,
   "queue": [
     {
@@ -171,7 +171,8 @@
       "slug": "how-to-start-investing-1000",
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh fund expense ratios, update brokerage comparison",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-16T04:00:00.000Z"
     },
     {
       "id": "p2-guide-net-worth-by-age",

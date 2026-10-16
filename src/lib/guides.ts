@@ -136,7 +136,7 @@ export const guides: Guide[] = [
     description: "Start investing with just $1,000. Learn which account to open, what to buy (VTI, VOO, VTSAX), and how $100/month grows to six figures over time.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-16",
     relatedCalculators: ["investment-return", "compound-interest", "savings-goal"],
     relatedGuides: ["compound-interest-real-examples", "401k-vs-roth-ira"],
   },
