@@ -143,10 +143,10 @@ export const guides: Guide[] = [
   {
     slug: "net-worth-by-age",
     title: "Average Net Worth by Age: Where Do You Stand?",
-    description: "See average and median net worth by age from Federal Reserve data. Find out where you stand and how to close the gap with actionable strategies.",
+    description: "See average and median net worth by age from the Federal Reserve's 2025 SCF data. Find out where you stand and how to close the gap with actionable strategies.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-17",
     relatedCalculators: ["net-worth", "retirement", "compound-interest"],
     relatedGuides: ["how-to-start-investing-1000", "save-50000-in-3-years"],
   },

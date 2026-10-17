@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-16",
+  "lastRunDate": "2026-10-17",
   "cycle": 1,
   "queue": [
     {
@@ -180,7 +180,8 @@
       "slug": "net-worth-by-age",
       "priority": "P2",
       "reason": "Published 2026-08-24 — check for newer Federal Reserve data, refresh benchmarks",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-17T00:45:00.000Z"
     },
     {
       "id": "p2-guide-high-yield-savings-vs-cd",
