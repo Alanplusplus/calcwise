@@ -153,10 +153,10 @@ export const guides: Guide[] = [
   {
     slug: "high-yield-savings-vs-cd",
     title: "High-Yield Savings Account vs CD: Which Is Better in 2026?",
-    description: "Compare high-yield savings accounts vs CDs with August 2026 rates. See when each wins, a $30,000 comparison, and the optimal split strategy.",
+    description: "Compare high-yield savings accounts vs CDs with October 2026 rates. See when each wins, a $30,000 comparison, and the optimal split strategy.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-08-24",
+    lastUpdated: "2026-10-18",
     relatedCalculators: ["savings-goal", "cd-calculator", "compound-interest"],
     relatedGuides: ["emergency-fund-where-to-keep", "save-50000-in-3-years"],
   },
