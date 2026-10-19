@@ -1,6 +1,6 @@
 {
   "description": "Content freshness rotation queue. Pick the first 'pending' item each run. When queue is exhausted, regenerate P2-P4 cycle items.",
-  "lastRunDate": "2026-10-18",
+  "lastRunDate": "2026-10-19",
   "cycle": 1,
   "queue": [
     {
@@ -198,7 +198,8 @@
       "slug": "how-much-car-can-i-afford",
       "priority": "P2",
       "reason": "Published 2026-08-26 — refresh auto loan rates, update affordability tables",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-19T14:20:00.000Z"
     },
     {
       "id": "p2-guide-student-loan-repayment-strategies",

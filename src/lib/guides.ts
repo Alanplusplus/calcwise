@@ -166,8 +166,8 @@ export const guides: Guide[] = [
     description: "Find out how much car you can afford based on your salary using the 20/4/10 rule. Includes affordability tables by income, a real case study, and total cost of ownership breakdown.",
     published: true,
     datePublished: "2026-08-26",
-    lastUpdated: "2026-08-26",
-    relatedCalculators: ["auto-loan", "budget-50-30-20", "savings-goal"],
+    lastUpdated: "2026-10-19",
+    relatedCalculators: ["auto-loan", "car-affordability", "budget-50-30-20", "savings-goal"],
     relatedGuides: ["50-30-20-budget-rule", "save-50000-in-3-years"],
   },
   {
