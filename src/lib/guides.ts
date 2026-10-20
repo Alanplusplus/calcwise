@@ -173,10 +173,10 @@ export const guides: Guide[] = [
   {
     slug: "student-loan-repayment-strategies",
     title: "Student Loan Repayment: 7 Strategies to Pay Off Debt Faster in 2026",
-    description: "Learn 7 proven student loan repayment strategies with real numbers on a $40,000 balance. Compare standard repayment, IDR, refinancing, PSLF, and accelerated payoff methods.",
+    description: "Compare 7 student loan repayment strategies on a $40,000 balance: standard, RAP, refinancing, PSLF, employer help and faster payoff. Updated Oct 2026.",
     published: true,
     datePublished: "2026-08-30",
-    lastUpdated: "2026-08-30",
+    lastUpdated: "2026-10-20",
     relatedCalculators: ["student-loan", "debt-payoff", "compound-interest"],
     relatedGuides: ["debt-avalanche-vs-snowball", "how-to-pay-off-credit-card-fast"],
   },
