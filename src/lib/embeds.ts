@@ -19,7 +19,7 @@ export const embeds: EmbedItem[] = [
   { slug: "retirement", blurb: "Projected nest egg and retirement income", height: 890 },
   { slug: "auto-loan", blurb: "Car payment, interest, and total cost", height: 1210 },
   { slug: "debt-payoff", blurb: "Payoff dates with avalanche and snowball methods", height: 660 },
-  { slug: "credit-card-payoff", blurb: "Months and interest to clear a card balance", height: 1280 },
+  { slug: "credit-card-payoff", blurb: "Months and interest to clear a card balance", height: 1300 },
   { slug: "student-loan", blurb: "Student loan payment and payoff timeline", height: 1240 },
   { slug: "salary-to-hourly", blurb: "Convert annual salary to an hourly rate", height: 1330 },
   { slug: "paycheck", blurb: "Take-home pay after federal tax, FICA, and state tax", height: 1380 },

@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
 import { Sources } from "@/components/Sources";
-import { G19_CREDIT_CARD_APR } from "@/lib/market-data";
+import { CREDIT_CARD_MINIMUM_PAYMENT, G19_CREDIT_CARD_APR } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -32,7 +32,7 @@ interface PayoffResult {
 function simulatePayoff(
   startingBalance: number,
   monthlyRate: number,
-  getPayment: (balance: number) => number,
+  getPayment: (balance: number, interest: number) => number,
   maxMonths = 600
 ): PayoffResult | { error: string } {
   let balance = startingBalance;
@@ -41,7 +41,7 @@ function simulatePayoff(
 
   while (balance > 0 && months < maxMonths) {
     const interest = balance * monthlyRate;
-    const payment = getPayment(balance);
+    const payment = Math.min(getPayment(balance, interest), balance + interest);
 
     if (payment <= interest) {
       return { error: "Payment is too low to cover monthly interest. Increase your payment amount." };
@@ -110,7 +110,7 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
   const [interestRate, setInterestRate] = useState(
     defaults?.interestRate || String(G19_CREDIT_CARD_APR.assessedInterest)
   );
-  const [minPercent, setMinPercent] = useState(defaults?.minPercent || "2");
+  const [minPercent, setMinPercent] = useState(defaults?.minPercent || String(CREDIT_CARD_MINIMUM_PAYMENT.principalPct));
   const [fixedPayment, setFixedPayment] = useState(defaults?.fixedPayment || "250");
 
   const results = useMemo(() => {
@@ -123,8 +123,16 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
 
     const monthlyRate = rate / 12;
 
-    const minimumResult = simulatePayoff(bal, monthlyRate, (currentBalance) =>
-      Math.max(currentBalance * (minPct / 100), 25)
+    if (minPct <= 0) {
+      return {
+        error:
+          "Enter a minimum-payment percentage above 0. Issuers typically add 1% of the balance to the month's interest.",
+      };
+    }
+
+    // Minimum due = greater of the floor or (this month's interest + minPct% of the balance)
+    const minimumResult = simulatePayoff(bal, monthlyRate, (currentBalance, interest) =>
+      Math.max(CREDIT_CARD_MINIMUM_PAYMENT.floor, interest + currentBalance * (minPct / 100))
     );
 
     if ("error" in minimumResult) {
@@ -176,7 +184,7 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
           step={0.1}
         />
         <InputField
-          label="Minimum Payment Percentage"
+          label="Minimum Payment: % of Balance Added to Interest"
           id="minPercent"
           value={minPercent}
           onChange={setMinPercent}
@@ -184,7 +192,7 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
           min={0}
           max={10}
           step={0.1}
-          helpText="Typical issuer formula: 2% of balance or $25 floor, whichever is greater (this calculator uses that model)"
+          helpText="Common issuer formula: the greater of $25 or the month's interest plus 1% of the balance (this calculator uses that model)"
         />
         <InputField
           label="Fixed Monthly Payment"
@@ -240,9 +248,9 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
               </div>
 
               <Sources
-                items={[...G19_CREDIT_CARD_APR.sources]}
+                items={[...G19_CREDIT_CARD_APR.sources, ...CREDIT_CARD_MINIMUM_PAYMENT.sources]}
                 checked={G19_CREDIT_CARD_APR.checkedLabel}
-                note={`Default APR is the G.19 “accounts assessed interest” series (${G19_CREDIT_CARD_APR.assessedInterest}%), not the ${G19_CREDIT_CARD_APR.allAccounts}% average across all accounts (${G19_CREDIT_CARD_APR.asOfLabel}). Minimum payments follow 2% of balance or $25, whichever is greater.`}
+                note={`Default APR is the G.19 “accounts assessed interest” series (${G19_CREDIT_CARD_APR.assessedInterest}%), not the ${G19_CREDIT_CARD_APR.allAccounts}% average across all accounts (${G19_CREDIT_CARD_APR.asOfLabel}). Minimum payments follow the greater of $25 or the month's interest plus ${CREDIT_CARD_MINIMUM_PAYMENT.principalPct}% of the balance; your issuer's formula may differ.`}
               />
 
               <div className="mt-4 rounded-lg bg-green-50 p-4">

@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "Does compound interest work against me with debt?",
-    answer: "Yes. Credit card debt compounds daily at 15–25%+. A $5,000 balance at 20% APR with minimum payments takes 30+ years and costs $9,000+ in interest.",
+    answer: "Yes. Credit card debt compounds daily at 15–25%+. A $5,000 balance at 20% APR with minimum payments (the greater of $25 or interest plus 1% of the balance) takes about 19 years and costs about $7,300 in interest.",
   },
 ];
 

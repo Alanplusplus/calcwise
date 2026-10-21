@@ -37,7 +37,8 @@ const faqs = [
   },
   {
     question: "How do biweekly payments affect the amortization schedule?",
-    answer: "Biweekly payments split your monthly payment in half and pay every two weeks. You make 26 half-payments (13 full payments) per year instead of 12, with the extra going entirely to principal — saving approximately $93,000 in interest and shortening payoff to about 23 years 8 months on a typical $250K loan at 7.40%.",
+    answer:
+      "Biweekly payments split your monthly payment in half and pay every two weeks. You make 26 half-payments (13 full payments) per year instead of 12, with the extra going entirely to principal — saving about $100,000 in interest and shortening payoff to about 23 years 3 months on a $250,000 loan at 7.40%.",
   },
 ];
 

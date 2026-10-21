@@ -71,7 +71,7 @@ export function DebtPayoffArticle() {
         ladder. That approach minimizes total interest versus snowball order on
         the same $958 monthly pool. Either structured method beats paying
         minimums only on revolving debt at {G19_CREDIT_CARD_APR.assessedInterest}%
-        APR, where 2% minimums can leave balances for decades. Run your own
+        APR, where interest-plus-1% minimums can keep balances for decades. Run your own
         balances in this
         calculator, or compare consolidation offers with our{" "}
         <Link href="/calculators/loan-comparison" className="text-brand-600 hover:text-brand-800 font-medium">Loan Comparison Calculator</Link>.
@@ -79,14 +79,15 @@ export function DebtPayoffArticle() {
 
       <h2>The True Cost of Minimum Payments</h2>
       <p>
-        Credit card companies set minimum payments intentionally low — often 1-2%
-        of the balance or $25, whichever is greater. This keeps you in debt
-        longer and maximizes their interest revenue.
+        Credit card minimums are set low relative to the debt. A common formula,
+        printed in cardmember agreements, is the larger of $25 or 1% of the balance
+        plus that month's interest, so little of each payment reduces principal and
+        the debt lasts longer.
       </p>
       <p>
         Example: A $10,000 credit card balance at {G19_CREDIT_CARD_APR.assessedInterest}%
-        APR with 2%/$25 minimums still owes thousands after 50 years in this
-        model and accrues well over $60,000 in interest in that period. Increasing
+        APR with interest-plus-1% minimums (a $286 first payment) takes about 300
+        months (25 years) to pay off and costs about $17,558 in interest. Increasing
         to a fixed $300/month payment clears the same balance in 53 months with
         about $5,771 in total interest.
       </p>

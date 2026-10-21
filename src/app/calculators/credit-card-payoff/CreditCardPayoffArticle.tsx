@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Sources } from "@/components/Sources";
-import { G19_CREDIT_CARD_APR } from "@/lib/market-data";
+import { CREDIT_CARD_MINIMUM_PAYMENT, G19_CREDIT_CARD_APR } from "@/lib/market-data";
 
 const APR = G19_CREDIT_CARD_APR.assessedInterest;
 
@@ -39,55 +39,65 @@ export function CreditCardPayoffArticle() {
 
       <h2>Minimum Payment Formula (What This Calculator Uses)</h2>
       <p>
-        Issuers use several minimum formulas; this calculator models the common{" "}
-        <strong>2% of balance or $25 floor, whichever is greater</strong> rule. Each
-        month:
+        Issuers use several minimum formulas; this calculator models a common one
+        printed in cardmember agreements: the{" "}
+        <strong>greater of $25 or the month's interest plus 1% of the balance</strong>.
+        You can change the 1% in the calculator. Each month:
       </p>
       <p>
         <strong>
-          Minimum payment = max(2% × balance, $25); interest = balance × (APR ÷ 12);
-          principal reduction = payment − interest
+          Interest = balance × (APR ÷ 12); minimum payment = max($25, interest + 1% ×
+          balance); principal reduction = payment − interest
         </strong>
-        . If your payment does not exceed monthly interest, the balance never falls.
+        . Because the minimum always exceeds the month's interest, the balance falls
+        every month, but slowly: the principal share is only 1% of the balance.
       </p>
       <p>
-        On the default $8,000 balance at {APR}% APR, the first minimum is $160 (2%
-        of $8,000). Monthly interest is about $149, so only $11 goes to principal —
-        roughly 7% of the payment. At that pace the balance still exceeds $3,500
-        after 50 years in this model, which is why paying a fixed amount above the
-        minimum matters.
+        On the default $8,000 balance at {APR}% APR, the first minimum is $229: about
+        $149 of interest plus $80 (1% of $8,000) toward principal, so roughly 35% of
+        the payment reduces the debt. As the balance shrinks the minimum shrinks
+        with it, and the $25 floor takes over once the balance is below about $870.
+        Paying only the minimum takes about 278 months (23 years) and about
+        $13,831 in interest, versus 50 months and $4,282 in interest at a fixed
+        $250 per month.
       </p>
+      <Sources
+        items={[...CREDIT_CARD_MINIMUM_PAYMENT.sources]}
+        checked={G19_CREDIT_CARD_APR.checkedLabel}
+        note="Your own formula is in your cardmember agreement and on each statement; flat-percentage and fee-inclusive formulas change the timeline."
+      />
 
       <h2>The Minimum Payment Trap</h2>
       <p>
-        Credit card issuers set minimum payments deliberately low — often 1% to 3% of
-        your balance or a flat dollar amount like $25, whichever is greater. Some
-        cards use 1% of balance plus all accrued interest and fees instead. Minimum
-        payments cover mostly interest with very little going toward principal,
-        especially in the early months.
+        A common minimum-payment formula is the larger of a flat $25 or 1% of the
+        balance plus that month's interest and any late fees. That keeps the payment
+        small relative to the debt: at {APR}% APR, interest alone takes about 65% of
+        the first payment on an $8,000 balance, and the minimum falls as the balance
+        falls, so the payoff drags on for decades.
       </p>
       <p>
         Use our calculator above to compare minimum-only payments against a fixed
-        monthly payment at the same APR. On $8,000 at {APR}% with a 2% minimum, the
-        fixed $250/month path in the default inputs pays off in 50 months with about
-        $4,282 in interest — versus more than $61,000 in interest over the first 50
-        years on the minimum path, with thousands still owed.
+        monthly payment at the same APR. On $8,000 at {APR}%, the fixed $250/month
+        path in the default inputs pays off in 50 months with about $4,282 in
+        interest. The minimum-only path takes about 278 months and about $13,831 in
+        interest, so the fixed payment saves about $9,549 and 228 months (19 years).
       </p>
 
       <h2>Case Study: Sarah's $12,000 Credit Card Debt</h2>
       <p>
         Sarah accumulated $12,000 in credit card debt across two cards near the G.19
-        assessed-interest average ({APR}% APR). Her combined 2% minimums started
-        around $240 per month. Running the numbers at {APR}% with the same 2%/$25
-        minimum model, paying only minimums would still leave over $5,200 owed after
-        50 years and charge more than $91,000 in interest over that period.
+        assessed-interest average ({APR}% APR). Her combined minimums started around
+        $344 per month: about $224 of interest plus $120 (1% of the balance) toward
+        principal. Running the numbers at {APR}% with the interest-plus-1% minimum
+        model, paying only minimums would take about 318 months (26.5 years) and
+        cost about $21,285 in interest.
       </p>
       <p>
         Sarah cut discretionary spending and committed to a fixed $400 monthly
-        payment instead. At {APR}% APR, that clears $12,000 in about 45 months with
-        roughly $5,739 in total interest — avoiding the minimum-payment spiral
-        entirely. Paying an extra $160 per month above her starting minimums saves
-        tens of thousands in interest and decades of repayment time.
+        payment instead, only about $56 above her starting minimum. At {APR}% APR,
+        that clears $12,000 in about 45 months with roughly $5,739 in total
+        interest, saving about $15,500 in interest and 273 months (22 years and 9
+        months) compared with paying only the minimum.
       </p>
 
       <h2>Strategies to Pay Off Credit Card Debt Faster</h2>
@@ -139,8 +149,9 @@ export function CreditCardPayoffArticle() {
 
       <h2>Payoff Timelines at Different Payment Levels</h2>
       <p>
-        Estimated timelines for a $12,000 balance at {APR}% APR (2%/$25 minimum
-        model for the minimum row; fixed payments otherwise). No new purchases.
+        Estimated timelines for a $12,000 balance at {APR}% APR (interest plus 1%
+        minimum model with a $25 floor for the minimum row; fixed payments
+        otherwise). No new purchases.
       </p>
       <table className="my-4 w-full text-left text-sm">
         <thead>
@@ -153,10 +164,10 @@ export function CreditCardPayoffArticle() {
         </thead>
         <tbody>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4 text-ink-800">$240 (2% minimum start)</td>
-            <td className="py-2 pr-4 text-ink-800">600+ (balance remains)</td>
-            <td className="py-2 pr-4 text-ink-800">~$91,591</td>
-            <td className="py-2 text-ink-800">Not fully repaid in 50 yr</td>
+            <td className="py-2 pr-4 text-ink-800">$344 (interest + 1% minimum start, falling)</td>
+            <td className="py-2 pr-4 text-ink-800">318</td>
+            <td className="py-2 pr-4 text-ink-800">~$21,285</td>
+            <td className="py-2 text-ink-800">~$33,285</td>
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 pr-4 text-ink-800">$250 fixed</td>

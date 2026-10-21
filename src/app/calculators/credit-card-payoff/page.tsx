@@ -26,6 +26,11 @@ const faqs = [
       "The default is 22.36% — the Federal Reserve G.19 average for credit card accounts assessed interest (August 2026 data). That series covers balances charged interest, not the 21.19% average across all accounts. You can change the rate to match your card.",
   },
   {
+    question: "How does this calculator model the minimum payment?",
+    answer:
+      "Each month the minimum is the greater of $25 or the month's interest plus 1% of the balance, a formula printed in published cardmember agreements. On the default $8,000 balance at 22.36% APR the first minimum is $229 and paying only minimums takes about 278 months (23 years) and about $13,831 in interest, versus 50 months and $4,282 at a fixed $250. Your issuer's formula may differ, so check your cardmember agreement; you can change the 1% in the calculator.",
+  },
+  {
     question: "Should I pay off credit cards or save first?",
     answer: "Build a small emergency fund of $1,000–$2,000 first, then focus on high-interest credit card debt. Cards near the G.19 assessed-interest average (22.36% as of August 2026) cost far more than typical savings yields. Once debt is gone, redirect those payments toward savings.",
   },

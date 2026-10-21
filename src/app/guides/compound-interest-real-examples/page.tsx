@@ -62,7 +62,7 @@ export default function CompoundInterestRealExamplesGuide() {
         description="Real-life compound interest examples with exact numbers: retirement investing, credit card debt, student loans, and high-yield savings."
         slug="compound-interest-real-examples"
         datePublished="2026-08-24"
-        dateModified="2026-10-20"
+        dateModified="2026-10-22"
         image="/images/guides/compound-interest-real-examples.webp"
       />
       <BreadcrumbJsonLd
@@ -425,8 +425,17 @@ export default function CompoundInterestRealExamplesGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             This example uses a 5.5% fixed APR — the federal Direct Loan rate for
-            undergraduate loans first disbursed in 2023–24 (new undergraduate loans
-            disbursed in 2025–26 carry 6.39% per Federal Student Aid). Student loans demonstrate how the same principal and interest rate
+            undergraduate loans first disbursed in 2023–24. New undergraduate loans
+            first disbursed between July 1, 2026 and June 30, 2027 carry 6.52%, which
+            on the same $35,000 and 10-year plan means $397.77 a month and $12,733 of
+            interest (about $2,152 more than at 5.5%); run your own balance in the{" "}
+            <Link
+              href="/calculators/student-loan"
+              className="text-brand-600 underline hover:text-brand-800"
+            >
+              student loan calculator
+            </Link>
+            . Student loans demonstrate how the same principal and interest rate
             can produce wildly different total costs depending on your repayment
             plan. Compound interest still applies — but the timeline and payment
             structure determine whether you pay about $10,600 or about $31,100
@@ -501,12 +510,12 @@ export default function CompoundInterestRealExamplesGuide() {
             items={[
               {
                 label:
-                  "Federal Student Aid (May 30, 2025), Direct Loan rates for 2025–26 (6.39% undergraduate)",
-                href: "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2025-05-30/interest-rates-direct-loans-first-disbursed-between-july-1-2025-and-june-30-2026",
+                  "Federal Student Aid (June 4, 2026), GENERAL-26-33: Direct Loan rates for 2026–27 (6.52% undergraduate)",
+                href: "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-06-04/interest-rates-federal-direct-loans-first-disbursed-between-july-1-2026-and-june-30-2027",
               },
             ]}
             checked="October 2026"
-            note="Table math uses 5.5% to illustrate a fixed-rate borrower cohort; 2023–24 undergraduate Direct Loans were 5.50%."
+            note="Table math uses 5.5% to illustrate a fixed-rate borrower cohort; 2023–24 undergraduate Direct Loans were 5.50%. The 6.52% comparison is a level 10-year payment on $35,000."
           />
         </section>
 

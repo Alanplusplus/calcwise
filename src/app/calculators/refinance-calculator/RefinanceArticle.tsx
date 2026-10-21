@@ -11,6 +11,28 @@ const REFINANCE_ORIGINAL_RATE_SOURCES = [
   },
 ];
 
+const CLOSING_COST_SOURCES = [
+  {
+    label: "CFPB — Loan Estimate explainer",
+    href: "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+  },
+  {
+    label: "Federal Reserve — A Consumer's Guide to Mortgage Refinancings",
+    href: "https://www.federalreserve.gov/pubs/refinancings",
+  },
+];
+
+const REFINANCE_SHOPPING_SOURCES = [
+  {
+    label: "Freddie Mac — When Rates Are Higher, Borrowers Who Shop Around Save More (Feb. 16, 2023)",
+    href: "https://www.freddiemac.com/research/insight/20230216-when-rates-are-higher-borrowers-who-shop-around-save",
+  },
+  {
+    label: "CFPB — What happens when a mortgage lender checks my credit? (reviewed Aug. 28, 2026)",
+    href: "https://www.consumerfinance.gov/ask-cfpb/what-exactly-happens-when-a-mortgage-lender-checks-my-credit-en-2005/",
+  },
+];
+
 export function RefinanceArticle() {
   return (
     <>
@@ -94,6 +116,11 @@ export function RefinanceArticle() {
       <p>
         Refinance closing costs typically range from 2% to 5% of the new loan amount and include application fees, appraisal fees ($400-$700), title insurance ($500-$1,500), origination fees (0.5-1% of the loan), recording fees, and prepaid escrow items. On a $300,000 refinance, expect closing costs between $6,000 and $15,000. You can choose to pay these upfront or roll them into the new loan balance, though rolling them in increases the amount you are borrowing and the total interest you pay over time.
       </p>
+      <Sources
+        items={CLOSING_COST_SOURCES}
+        checked="October 2026"
+        note="Use the Loan Estimate's Estimated Closing Costs and Cash to Close for your quote — ranges vary by state and lender."
+      />
       <h3>Rate Drop Threshold</h3>
       <p>
         The old rule of thumb was to refinance only if you can drop your rate by at least 1 percentage point. In practice, the right threshold depends on your loan balance, remaining term, and whether you reset the clock. On a $400,000 balance with 360 payments remaining, dropping from 7.40% to 6.90% saves about $135 per month (roughly $48,643 over 30 years of payments). On a $150,000 balance, the same 0.50% drop saves about $51 per month. The default 7.79% → 7.40% move on $340,099 saves only $162 per month — enough to eventually cover $6,000 in fees, but not enough to beat staying put on total cost unless you shorten the term or negotiate a larger discount.
@@ -244,8 +271,9 @@ export function RefinanceArticle() {
 
       <h2>Tips for Getting the Best Refinance Deal</h2>
       <p>
-        <strong>Shop at least three lenders.</strong> Mortgage rates can vary by 0.25-0.75% between lenders on the same day. Get quotes from your current servicer, a local credit union, and an online lender. Each quote should include the rate, APR (which factors in fees), and an itemized closing cost estimate. Comparing three offers typically saves $1,500-$3,000 in fees or gets you a 0.125-0.25% better rate.
+        <strong>Shop at least three lenders.</strong> Mortgage rates can vary by 0.25-0.75% between lenders on the same day. Get quotes from your current servicer, a local credit union, and an online lender. Each quote should include the rate, APR (which factors in fees), and an itemized closing cost estimate. Freddie Mac research found additional rate quotes can reduce the offered rate by 10-20 basis points in high-dispersion periods — worth thousands over the life of the loan if you keep the mortgage several years.
       </p>
+      <Sources items={REFINANCE_SHOPPING_SOURCES} checked="October 2026" />
       <p>
         <strong>Lock your rate at the right time.</strong> Rate locks typically last 30-60 days. If you believe rates will continue dropping, a float-down option (usually $200-$500 extra) lets you lock now but take advantage of a lower rate if one becomes available before closing. If you think rates have bottomed, lock immediately to protect against increases during the 30-45 day closing process.
       </p>
@@ -281,7 +309,7 @@ export function RefinanceArticle() {
 
       <h3>Does refinancing hurt your credit score?</h3>
       <p>
-        Refinancing causes a temporary credit score dip of 5-15 points due to the hard inquiry and the new account lowering your average account age. However, the impact is typically short-lived (3-6 months), and if refinancing results in lower monthly payments that help you avoid late payments, the net effect on your credit can actually be positive. If you are shopping rates, submit all mortgage applications within a 14-day window so the credit bureaus treat them as a single inquiry for scoring purposes (the window is 45 days under newer FICO models).
+        Refinancing causes a temporary credit score dip due to the hard inquiry and the new account lowering your average account age; the CFPB describes the impact as typically small. If you are shopping rates, the CFPB groups mortgage inquiries within 45 days as one inquiry, but many mortgage lenders still use older FICO models with a 14-day grouping window — cluster applications within about two weeks when possible.
       </p>
 
       <h3>Can I refinance if my home value has dropped?</h3>

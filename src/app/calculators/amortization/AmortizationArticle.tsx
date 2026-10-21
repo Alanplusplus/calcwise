@@ -3,6 +3,17 @@ import Image from "next/image";
 import { Sources } from "@/components/Sources";
 import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "@/lib/market-data";
 
+const PMI_SOURCES = [
+  {
+    label: "CFPB — When can I remove private mortgage insurance (PMI) from my loan?",
+    href: "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/",
+  },
+  {
+    label: "Fannie Mae — What to Know About PMI",
+    href: "https://yourhome.fanniemae.com/buy/private-mortgage-insurance",
+  },
+];
+
 export function AmortizationArticle() {
   return (
     <>
@@ -174,9 +185,10 @@ export function AmortizationArticle() {
       </table>
       <p>
         The 30-year loan costs $271,116 more in interest than the 15-year
-        option. However, the $571 monthly savings ($2,648 - $2,077) invested in
-        an S&P 500 index fund averaging 10% annually would grow to approximately
-        $480,000 over 30 years. This is why the{" "}
+        option. However, the $571 monthly savings ($2,648 - $2,077) invested at
+        a 7% annual return (a conservative long-run planning assumption, not a
+        guarantee) would grow to about $697,000 over 30 years; at 10% it would
+        reach about $1.29 million. This is why the{" "}
         <Link
           href="/guides/pay-off-mortgage-early-vs-invest"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -269,17 +281,25 @@ export function AmortizationArticle() {
         a $300,000 home with $15,000 down (5%), you need to reach $60,000 in
         equity. At {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% on a 30-year loan,
         this takes approximately 11 years 3 months with standard payments, but
-        about 5 years 11 months with $300/month extra. Use
-        our{" "}
+        about 5 years 11 months with $300/month extra. On conventional loans, PMI
+        must also terminate automatically once the balance reaches 78% of the
+        home's original value if you are current. See our{" "}
+        <Link
+          href="/guides/amortization-schedule-explained"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          amortization schedule guide
+        </Link>{" "}
+        for how to read each column, or use our{" "}
         <Link
           href="/calculators/auto-loan"
           className="text-brand-600 hover:text-brand-800 font-medium"
         >
           Auto Loan Calculator
         </Link>{" "}
-        to generate amortization schedules for car loans and compare the
-        interest impact of shorter terms.
+        for shorter-term car-loan schedules.
       </p>
+      <Sources items={PMI_SOURCES} checked="October 2026" />
 
       <h2>When to Refinance Based on Your Amortization Schedule</h2>
       <p>
@@ -311,8 +331,8 @@ export function AmortizationArticle() {
       <p>
         <strong>Make one extra payment per year.</strong> If your monthly
         payment is $1,731, putting an additional $1,731 toward principal once a
-        year (perhaps from a tax refund or bonus) can cut about 6 years off a
-        30-year mortgage and save roughly $93,000 in interest. Specify that the
+        year (perhaps from a tax refund or bonus) can shorten a 30-year mortgage
+        by about 6 years 4 months and save roughly $93,000 in interest. Specify that the
         extra payment applies to principal, not as a prepayment of the next
         month.
       </p>
@@ -395,10 +415,10 @@ export function AmortizationArticle() {
         (equivalent to 13 full monthly payments) instead of 12. That extra
         payment goes entirely to principal. On a $250,000 loan at{" "}
         {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% for 30 years, biweekly payments
-        reduce the payoff time to approximately 23 years 8 months and save
-        about $93,000 in interest. The effect is essentially
-        identical to making one extra monthly payment per year but is easier
-        to budget for most people.
+        reduce the payoff time to approximately 23 years 3 months and save
+        about $100,000 in interest (half your monthly payment every two weeks
+        equals 13 full payments per year with earlier paydown). The effect is
+        similar to, but slightly faster than, one lump-sum extra payment per year.
       </p>
     </>
   );

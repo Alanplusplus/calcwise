@@ -1,6 +1,6 @@
 {
   "description": "Content freshness queue. Cadence: event-triggered and batch, not daily (see refresh-content.mdc for the trigger calendar). Order of work: tax-data-refresh (P1T) > report-refresh (P1R) > rate check (P1M) > guide-refresh (P2) > variant-refresh (P2V) > calculator-refresh (P3) > evergreen yearly (P4) > new content (P5). On a trigger, select every pending item whose notBefore date (if any) has passed and clear them in one batch; regenerate the queue only for the items a trigger touches.",
-  "lastRunDate": "2026-10-21",
+  "lastRunDate": "2026-10-22",
   "cycle": 1,
   "queue": [
     {
@@ -145,7 +145,8 @@
       "priority": "P2",
       "reason": "Published 2026-08-24 — refresh rate assumptions, add new example if possible",
       "status": "done",
-      "completedAt": "2026-10-08T00:00:00.000Z"
+      "completedAt": "2026-10-08T00:00:00.000Z",
+      "note": "2026-10-22: Example 4 now cites the 2026-27 undergraduate Direct Loan rate (6.52%, FSA GENERAL-26-33) with a $397.77/month, $12,733 interest comparison"
     },
     {
       "id": "p2-guide-how-to-pay-off-credit-card-fast",
@@ -494,8 +495,8 @@
       "priority": "P2V",
       "reason": "1 variant page(s): Fed G.19 credit-card APR",
       "status": "done",
-      "completedAt": "2026-10-21T12:00:00.000Z",
-      "note": "2026-10-21: Fed G.19 card APR (22.36% assessed interest) applied; variant sources added via the sources field; lastUpdated bumped"
+      "completedAt": "2026-10-22T12:00:00.000Z",
+      "note": "2026-10-22: minimum-payment variant rewritten for the interest-plus-1% model; keyResults match the pre-filled calculator; sources include the CFPB-hosted issuer agreement"
     },
     {
       "id": "p2v-variants-debt-payoff",
@@ -573,8 +574,9 @@
       "slug": "loan-comparison",
       "priority": "P3",
       "reason": "Published 2026-08-10 — refresh sample loan rates in article",
-      "status": "pending",
-      "note": "2026-10-20: default rates read from market-data.ts and sources added; non-rate figures still need the calculator-refresh audit"
+      "status": "done",
+      "note": "2026-10-22: non-rate figures audited against the pre-filled calculator (A $1,730.95/mo, B $2,206.73/mo, B saves $225,930 in interest); article, FAQ, and Sources updated",
+      "completedAt": "2026-10-22T12:00:00.000Z"
     },
     {
       "id": "p3-calc-emergency-fund",
@@ -612,8 +614,8 @@
       "priority": "P3",
       "reason": "Published 2026-08-25 — refresh average credit card APR data",
       "status": "done",
-      "completedAt": "2026-10-21T12:00:00.000Z",
-      "note": "2026-10-21: G.19 APR from market-data.ts; calculator minimum-payment model stated on the page; Sources added"
+      "completedAt": "2026-10-22T12:00:00.000Z",
+      "note": "2026-10-22: minimum-payment model changed to max($25, interest + 1% of balance) via CREDIT_CARD_MINIMUM_PAYMENT in market-data.ts (CFPB-hosted issuer agreement); calculator, article, variant, FAQ, debt-payoff and compound-interest examples recomputed (default $8,000 at 22.36%: 278 months, $13,831 interest vs fixed $250: 50 months, $4,282); embed height 1300"
     },
     {
       "id": "p3-calc-home-affordability",
@@ -710,8 +712,9 @@
       "slug": "amortization",
       "priority": "P3",
       "reason": "Published 2026-08-31 — refresh amortization example rates",
-      "status": "pending",
-      "note": "2026-10-20: default rate from market-data.ts, sources added; non-rate figures still need the calculator-refresh audit"
+      "status": "done",
+      "note": "2026-10-22: article and FAQ recomputed from the pre-filled schedule (payment $1,730.95, total interest $373,141.82, first-month interest $1,541.67 / principal $189.28); Sources updated",
+      "completedAt": "2026-10-22T12:00:00.000Z"
     },
     {
       "id": "p3-calc-down-payment",
@@ -748,8 +751,9 @@
       "slug": "salary-to-hourly",
       "priority": "P3",
       "reason": "Published 2026-09-09 — refresh median salary data",
-      "status": "pending",
-      "note": "2026-10-20: tax figures read from tax-data.ts; median salary data still needs verification"
+      "status": "done",
+      "note": "2026-10-22: wage benchmarks (BLS Sep 2026, OEWS May 2025, CPS 2024, KFF 2025) moved into src/lib/wage-data.ts and verified; FaqJsonLd added; Sources added",
+      "completedAt": "2026-10-22T12:00:00.000Z"
     },
     {
       "id": "p3-calc-tip-calculator",
@@ -806,8 +810,9 @@
       "slug": "hourly-to-salary",
       "priority": "P3",
       "reason": "Published 2026-09-20 — refresh wage data and tax examples",
-      "status": "pending",
-      "note": "2026-10-20: tax example refreshed from tax-data.ts; wage data still needs verification"
+      "status": "done",
+      "note": "2026-10-22: reads src/lib/wage-data.ts; tax example from tax-data.ts; FaqJsonLd added; Sources added",
+      "completedAt": "2026-10-22T12:00:00.000Z"
     },
     {
       "id": "p3-calc-margin-calculator",
@@ -834,8 +839,9 @@
       "slug": "refinance-calculator",
       "priority": "P3",
       "reason": "Published 2026-09-23 — refresh refinance rate comparison data",
-      "status": "pending",
-      "note": "2026-10-20: new-rate default from market-data.ts, sources added; current-rate anchor (7.79%, Oct 2023 peak) is intentional; non-rate figures still need the audit"
+      "status": "done",
+      "note": "2026-10-22: break-even and lifetime figures audited against the calculator defaults (new payment $2,355, $162/mo saved, 37-month break-even, lifetime -$38,170); Sources updated",
+      "completedAt": "2026-10-22T12:00:00.000Z"
     },
     {
       "id": "p5-new-calc-rmd",

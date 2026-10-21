@@ -55,6 +55,23 @@ export const G19_CREDIT_CARD_APR = {
   ],
 } as const;
 
+/**
+ * Credit card minimum-payment model used by the credit-card-payoff calculator, its article, FAQ,
+ * variant, and the debt-payoff and compound-interest examples that quote minimum-only payoff.
+ * Minimum payment each month = max(floor, interest + principalPct% of the balance).
+ * The formula is the one printed in published issuer agreements; individual issuers differ.
+ */
+export const CREDIT_CARD_MINIMUM_PAYMENT = {
+  floor: 25,
+  principalPct: 1,
+  sources: [
+    {
+      label: "Chase cardmember agreement on file with the CFPB (minimum payment: larger of $25 or 1% of the new balance plus interest and late fees)",
+      href: "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/1_2018_Freedom%20Unlimited%20Visa%20Agreement.pdf",
+    },
+  ],
+} as const;
+
 /** Fed G.19 commercial-bank 60-month new-car APR, August 2026 data (released Oct. 7, 2026), as the string the input holds. */
 export const DEFAULT_NEW_CAR_APR = "7.54";
 

@@ -2,6 +2,31 @@ import Link from "next/link";
 import { Sources } from "@/components/Sources";
 import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "@/lib/market-data";
 
+const MORTGAGE_SHOPPING_SOURCES = [
+  {
+    label: "Freddie Mac — When Rates Are Higher, Borrowers Who Shop Around Save More (Feb. 16, 2023)",
+    href: "https://www.freddiemac.com/research/insight/20230216-when-rates-are-higher-borrowers-who-shop-around-save",
+  },
+  {
+    label: "Fannie Mae — Impact of Mortgage Shopping on Affordability",
+    href: "https://www.fanniemae.com/media/32901/display",
+  },
+];
+
+const CREDIT_INQUIRY_SOURCES = [
+  {
+    label: "CFPB — What happens when a mortgage lender checks my credit? (reviewed Aug. 28, 2026)",
+    href: "https://www.consumerfinance.gov/ask-cfpb/what-exactly-happens-when-a-mortgage-lender-checks-my-credit-en-2005/",
+  },
+];
+
+const DISCOUNT_POINTS_SOURCES = [
+  {
+    label: "CFPB — Data Spotlight: Trends in discount points amid rising interest rates (May 2023)",
+    href: "https://www.consumerfinance.gov/data-research/research-reports/data-spotlight-trends-in-discount-points-amid-rising-interest-rates/",
+  },
+];
+
 export function LoanComparisonArticle() {
   return (
     <>
@@ -169,7 +194,9 @@ export function LoanComparisonArticle() {
       <ul>
         <li><strong>15 vs. 30-year mortgage:</strong> lower rate and massive interest savings vs. lower monthly flexibility — see our guide on <Link href="/guides/15-year-vs-30-year-mortgage" className="text-brand-600 hover:text-brand-800 font-medium">15-Year vs 30-Year Mortgage</Link></li>
         <li><strong>Same term, different rates:</strong> compare interest rates from multiple lenders — even 0.25% matters over 30 years</li>
-        <li><strong>Points vs. no points:</strong> paying upfront points for a lower rate vs. keeping cash — break-even is typically 4-7 years</li>
+        <li>
+          <strong>Points vs. no points:</strong> paying upfront points for a lower rate vs. keeping cash — divide the points cost by your monthly P&I savings; CFPB guidance treats break-even as often roughly 4-8 years depending on loan size and rate buy-down
+        </li>
         <li><strong>Auto loan terms:</strong> 48 vs. 60 vs. 72 months — longer terms cost significantly more in interest. Use our <Link href="/calculators/auto-loan" className="text-brand-600 hover:text-brand-800 font-medium">Auto Loan Calculator</Link> to compare specific offers.</li>
         <li><strong>Student loan refinancing:</strong> compare your current federal loan rate against private refinancing offers — but be aware you lose federal protections like IDR and PSLF. See our <Link href="/guides/student-loan-repayment-strategies" className="text-brand-600 hover:text-brand-800 font-medium">Student Loan Repayment Strategies</Link> guide.</li>
         <li><strong>Comparing loan rates across lenders:</strong> use our loan rate comparison tool above to enter each lender's offer and see exactly how much each one costs over the full loan term</li>
@@ -190,17 +217,41 @@ export function LoanComparisonArticle() {
 
       <h3>How many lenders should I compare?</h3>
       <p>
-        Get quotes from at least 3-5 lenders. Studies show borrowers who compare
-        5+ offers save an average of $3,000-$5,000 over the life of a mortgage.
-        Include different lender types: banks, credit unions, and online lenders.
+        Get quotes from at least 3-5 lenders. Fannie Mae research finds borrowers who
+        obtain multiple quotes are more likely to receive better rates, fees, and closing-cost
+        terms than those who stop at one offer. Freddie Mac rate-shopping analysis in
+        high-dispersion periods found five quotes could save more than $6,000 in interest
+        over the first several years of a typical loan — actual savings depend on your balance,
+        rate spread, and how long you keep the mortgage. Include banks, credit unions, and
+        online lenders. For a payment-by-payment view of term trade-offs, see our{" "}
+        <Link
+          href="/guides/amortization-schedule-explained"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          amortization schedule guide
+        </Link>
+        .
       </p>
+      <Sources items={MORTGAGE_SHOPPING_SOURCES} checked="October 2026" />
 
       <h3>Does getting multiple quotes hurt my credit?</h3>
       <p>
-        No, if done within a short window. Credit bureaus treat multiple
-        mortgage or auto loan inquiries within 14-45 days (depending on the
-        scoring model) as a single inquiry. Rate-shop within 2 weeks to be safe.
+        Multiple mortgage inquiries within a short window usually count as one inquiry for
+        scoring. The CFPB describes a 45-day window for mortgage shopping; many mortgage
+        lenders still score with older FICO models that use a 14-day grouping period, so
+        completing applications within about two weeks is the safer target.
       </p>
+      <Sources items={CREDIT_INQUIRY_SOURCES} checked="October 2026" />
+
+      <h3>When do discount points break even?</h3>
+      <p>
+        One discount point typically costs 1% of the loan amount and may reduce the rate by
+        about 0.25%, though the buy-down varies by lender. Divide the upfront points cost by
+        your monthly principal-and-interest savings to estimate break-even months. On a
+        $300,000 loan, paying $3,000 for a $50-per-month reduction breaks even in about 60
+        months (five years). Points only pay off if you keep the loan past that point.
+      </p>
+      <Sources items={DISCOUNT_POINTS_SOURCES} checked="October 2026" />
 
       <h3>Should I always choose the lowest total cost?</h3>
       <p>
