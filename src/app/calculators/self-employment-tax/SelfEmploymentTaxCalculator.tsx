@@ -2,6 +2,17 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { Sources } from "@/components/Sources";
+import {
+  ADDITIONAL_MEDICARE_RATE as ADDITIONAL_MEDICARE_RATE_VALUE,
+  ADDITIONAL_MEDICARE_THRESHOLDS,
+  MEDICARE_SELF_EMPLOYED_RATE,
+  SE_EARNINGS_FACTOR,
+  SOCIAL_SECURITY_SELF_EMPLOYED_RATE,
+  SOCIAL_SECURITY_WAGE_BASE,
+  TAX_DATA,
+  TAX_SOURCES,
+} from "@/lib/tax-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -11,19 +22,12 @@ function formatPercent(n: number): string {
   return `${n.toFixed(1)}%`;
 }
 
-const SS_WAGE_BASE_2026 = 168600;
-const SS_RATE = 0.124;
-const MEDICARE_RATE = 0.029;
-const SE_TAX_RATE = SS_RATE + MEDICARE_RATE; // 15.3%
-const ADDITIONAL_MEDICARE_RATE = 0.009;
-const SE_EARNINGS_FACTOR = 0.9235;
+const SS_WAGE_BASE_2026 = SOCIAL_SECURITY_WAGE_BASE;
+const SS_RATE = SOCIAL_SECURITY_SELF_EMPLOYED_RATE;
+const MEDICARE_RATE = MEDICARE_SELF_EMPLOYED_RATE;
+const ADDITIONAL_MEDICARE_RATE = ADDITIONAL_MEDICARE_RATE_VALUE;
 
 type FilingStatus = "single" | "mfj";
-
-const ADDITIONAL_MEDICARE_THRESHOLDS: Record<FilingStatus, number> = {
-  single: 200000,
-  mfj: 250000,
-};
 
 interface Props {
   defaults?: Record<string, string>;
@@ -341,6 +345,13 @@ export function SelfEmploymentTaxCalculator({ defaults }: Props) {
           </table>
         </div>
       </div>
+
+      <Sources
+        className="mt-6"
+        items={[TAX_SOURCES.selfEmploymentTax, TAX_SOURCES.ssaWageBase, TAX_SOURCES.additionalMedicare]}
+        checked={TAX_DATA.checkedOnLabel}
+        note={`Social Security wage base for ${TAX_DATA.taxYear} is $${SS_WAGE_BASE_2026.toLocaleString("en-US")}; Additional Medicare Tax thresholds are set by statute and not indexed. Estimates only.`}
+      />
     </div>
   );
 }

@@ -152,7 +152,7 @@ export function CdArticle() {
         <li><strong>5-year CD at 5.10% APY:</strong> earns roughly $1,703 over the full term</li>
       </ul>
       <p>
-        Combined, David&apos;s ladder generates approximately $3,673 in total interest over
+        Combined, David's ladder generates approximately $3,673 in total interest over
         the weighted average term — significantly more than the $1,350 he would have earned
         leaving all $30,000 in his checking account at 0% or even in savings at 4.50%.
         When his first CD matures in six months, he plans to reinvest into a new 5-year

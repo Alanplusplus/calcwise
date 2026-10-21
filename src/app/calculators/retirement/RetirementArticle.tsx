@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { HSA_LIMITS, RETIREMENT_LIMITS, TAX_DATA, TAX_SOURCES, usd } from "@/lib/tax-data";
 
 export function RetirementArticle() {
   return (
@@ -17,7 +19,7 @@ export function RetirementArticle() {
       <h2>The 4% Rule Explained</h2>
       <p>
         The 4% rule is a widely-used retirement planning guideline developed
-        from the &quot;Trinity Study.&quot; It states that you can withdraw 4%
+        from the "Trinity Study." It states that you can withdraw 4%
         of your portfolio in your first year of retirement, then adjust for
         inflation each year after, with a high probability that your money lasts
         30+ years.
@@ -54,7 +56,7 @@ export function RetirementArticle() {
       <h2>Case Study: Linda, 42, Targeting Retirement at 62</h2>
       <p>
         Linda earns $95,000 per year and wants $70,000 of annual spending in
-        retirement (about 74% of today&apos;s pre-tax income). Using the 4%
+        retirement (about 74% of today's pre-tax income). Using the 4%
         rule, her portfolio target is $70,000 ÷ 0.04 = $1,750,000. She already
         has $142,000 in her 401(k) and Roth IRA combined and contributes $950
         per month ($11,400 per year), including a 4% employer match on the
@@ -127,15 +129,15 @@ export function RetirementArticle() {
 
       <h3>401(k) / 403(b)</h3>
       <p>
-        Employer-sponsored plans with tax-deferred growth. 2024 contribution
-        limit: $23,000 ($30,500 if age 50+). Many employers match a percentage
+        Employer-sponsored plans with tax-deferred growth. 2026 contribution
+        limit: {usd(RETIREMENT_LIMITS.employeeDeferral)} ({usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.catchUp50)} if age 50+). Many employers match a percentage
         of your contributions — this is essentially free money.
       </p>
 
       <h3>Traditional IRA</h3>
       <p>
         Contributions may be tax-deductible. Growth is tax-deferred until
-        withdrawal. 2024 limit: $7,000 ($8,000 if 50+). Best if you expect to
+        withdrawal. 2026 limit: {usd(RETIREMENT_LIMITS.ira)} ({usd(RETIREMENT_LIMITS.ira + RETIREMENT_LIMITS.iraCatchUp50)} if 50+). Best if you expect to
         be in a lower tax bracket in retirement.
       </p>
 
@@ -154,16 +156,20 @@ export function RetirementArticle() {
       <p>
         Triple tax advantage: tax-deductible contributions, tax-free growth,
         and tax-free withdrawals for medical expenses. After age 65, can be
-        used for any expense (taxed like a traditional IRA). 2024 limit:
-        $4,150 individual / $8,300 family.
+        used for any expense (taxed like a traditional IRA). 2026 limit:
+        {usd(HSA_LIMITS.selfOnly)} self-only / {usd(HSA_LIMITS.family)} family.
       </p>
+      <Sources
+        items={[TAX_SOURCES.retirementLimits, TAX_SOURCES.hsaLimits]}
+        checked={TAX_DATA.checkedOnLabel}
+      />
 
       <h2>Maximizing Your Retirement Savings</h2>
       <ul>
         <li><strong>Capture your full employer match</strong> — this is an immediate 50-100% return on your money.</li>
-        <li><strong>Increase contributions with every raise</strong> — if you get a 3% raise, put 2% more toward retirement. You&apos;ll never miss money you never had.</li>
+        <li><strong>Increase contributions with every raise</strong> — if you get a 3% raise, put 2% more toward retirement. You'll never miss money you never had.</li>
         <li><strong>Keep fees under 0.3%</strong> — choose low-cost index funds. A 1% fee vs 0.1% fee can cost you hundreds of thousands over a career.</li>
-        <li><strong>Don&apos;t touch it early</strong> — early withdrawals incur a 10% penalty plus income taxes. Leave it invested.</li>
+        <li><strong>Don't touch it early</strong> — early withdrawals incur a 10% penalty plus income taxes. Leave it invested.</li>
         <li><strong>Rebalance annually</strong> — maintain your target asset allocation to manage risk as you age.</li>
       </ul>
 
@@ -175,7 +181,7 @@ export function RetirementArticle() {
         increases them by ~24% versus full retirement age.
       </p>
       <p>
-        For planning purposes, it&apos;s prudent to estimate Social Security
+        For planning purposes, it's prudent to estimate Social Security
         will cover 25-40% of your retirement income needs and save enough to
         fund the rest independently.
       </p>

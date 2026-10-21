@@ -191,7 +191,7 @@ export function LeaseVsBuyCarCalculator({ defaults }: Props) {
       </div>
 
       {/* Shared Inputs */}
-      <p className="mt-6 text-sm font-semibold text-ink-700">Ownership Costs &amp; Comparison Period</p>
+      <p className="mt-6 text-sm font-semibold text-ink-700">Ownership Costs & Comparison Period</p>
       <div className="mt-2 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <InputField label="Annual Depreciation Rate" id="annualDepreciation" value={annualDepreciation} onChange={setAnnualDepreciation} suffix="%" min={0} max={40} step={1} helpText="Average ~15% per year" />
         <InputField label="Annual Insurance (Buy)" id="annualInsuranceBuy" value={annualInsuranceBuy} onChange={setAnnualInsuranceBuy} prefix="$" min={0} step={100} />

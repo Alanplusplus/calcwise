@@ -180,7 +180,7 @@ export function RetirementCalculator({ defaults }: Props) {
 
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <div className="rounded-lg border border-ink-200 p-3">
-              <p className="text-xs text-ink-500">Total You&apos;ll Contribute</p>
+              <p className="text-xs text-ink-500">Total You'll Contribute</p>
               <p className="font-semibold text-ink-800">{formatCurrency(results.totalContributions)}</p>
             </div>
             <div className="rounded-lg border border-ink-200 p-3">

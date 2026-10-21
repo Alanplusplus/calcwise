@@ -100,13 +100,13 @@ export function NetWorthArticle() {
         <li>Credit cards: $1,200 (paid in full monthly, but tracked for completeness)</li>
       </ul>
       <p>
-        Kevin&apos;s total assets: $142,000. Total liabilities: $23,200. Net worth: $118,800 —
+        Kevin's total assets: $142,000. Total liabilities: $23,200. Net worth: $118,800 —
         slightly below the $120,000 median for his age group, but up from $42,000 in just two years.
         His asset allocation is heavily weighted toward retirement (55%) with a growing brokerage
         position (23%).
       </p>
       <p>
-        Kevin&apos;s plan for the next three years: eliminate the remaining $22,000 in student
+        Kevin's plan for the next three years: eliminate the remaining $22,000 in student
         loans (freeing $350/month), increase brokerage contributions to $500/month using our{" "}
         <Link
           href="/calculators/savings-goal"

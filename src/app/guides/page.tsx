@@ -31,7 +31,7 @@ export default function GuidesIndexPage() {
             </h2>
             <p className="mt-2 text-ink-600">{guide.description}</p>
             <p className="mt-3 text-sm font-medium text-brand-600">
-              Read guide &rarr;
+              Read guide →
             </p>
           </Link>
         ))}

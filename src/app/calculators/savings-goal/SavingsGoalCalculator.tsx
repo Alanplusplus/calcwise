@@ -138,7 +138,7 @@ export function SavingsGoalCalculator({ defaults }: Props) {
               <div className="mt-6 rounded-lg bg-accent-50 p-4">
                 <p className="text-sm text-accent-800">
                   <strong>Interest will contribute {formatCurrency(results.totalInterest)}</strong>{" "}
-                  toward your goal — that&apos;s money earned without any extra
+                  toward your goal — that's money earned without any extra
                   effort on your part.
                 </p>
               </div>

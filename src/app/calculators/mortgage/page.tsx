@@ -6,8 +6,12 @@ import { MortgageCalculator } from "./MortgageCalculator";
 import { MortgageArticle } from "./MortgageArticle";
 import { mortgageVariants } from "@/lib/variants/mortgage";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { MORTGAGE_MARKET } from "@/lib/market-data";
 
 const calc = getCalculator("mortgage")!;
+
+const rate30 = MORTGAGE_MARKET.thirtyYear.toFixed(2);
+const rate15 = MORTGAGE_MARKET.fifteenYear.toFixed(2);
 
 const faqs = [
   {
@@ -16,11 +20,11 @@ const faqs = [
   },
   {
     question: "How much is the monthly payment on a $300,000 mortgage?",
-    answer: "With 20% down ($60,000) on a $300,000 home, your loan is $240,000. At 6.5% interest over 30 years, the monthly principal and interest payment is approximately $1,517. Add property taxes (~$250/mo) and insurance (~$100/mo) for a total housing payment around $1,867/month.",
+    answer: `With 20% down ($60,000) on a $300,000 home, your loan is $240,000. At ${rate30}% interest over 30 years, the monthly principal and interest payment is approximately $1,662. Add property taxes (~$275/mo at 1.1%) and insurance (~$150/mo) for a total housing payment around $2,087/month.`,
   },
   {
     question: "What is the monthly payment on a $200,000 mortgage?",
-    answer: "With 20% down ($40,000) on a $200,000 home, your loan is $160,000. At 6.5% interest over 30 years, the monthly principal and interest payment is approximately $1,011. A 15-year term raises the payment to about $1,394 but saves over $75,000 in total interest.",
+    answer: `With 20% down ($40,000) on a $200,000 home, your loan is $160,000. At ${rate30}% interest over 30 years, the monthly principal and interest payment is approximately $1,108. A 15-year term at the current ${rate15}% average raises the payment to about $1,412 but saves over $144,000 in total interest versus a 30-year loan.`,
   },
   {
     question: "Should I choose a 15-year or 30-year mortgage?",

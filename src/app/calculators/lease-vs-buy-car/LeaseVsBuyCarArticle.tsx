@@ -34,7 +34,7 @@ export function LeaseVsBuyCarArticle() {
         When you buy a car, you take out a loan for the full purchase price minus your down payment and trade-in. You make monthly payments that cover principal and interest over the loan term, and once the loan is paid off, you own the vehicle outright. The car depreciates over time, but you retain the remaining value as equity that you can use toward your next vehicle or sell at any point.
       </p>
       <p>
-        When you lease a car, you essentially pay for the vehicle&apos;s depreciation during the lease term plus a finance charge (called the money factor). Your monthly payment is based on the difference between the vehicle&apos;s selling price (capitalized cost) and its predicted value at lease end (residual value), divided by the lease term, plus interest. At the end of the lease, you return the car to the dealer and walk away with no equity, or you can exercise the purchase option and buy the car at the pre-agreed residual price.
+        When you lease a car, you essentially pay for the vehicle's depreciation during the lease term plus a finance charge (called the money factor). Your monthly payment is based on the difference between the vehicle's selling price (capitalized cost) and its predicted value at lease end (residual value), divided by the lease term, plus interest. At the end of the lease, you return the car to the dealer and walk away with no equity, or you can exercise the purchase option and buy the car at the pre-agreed residual price.
       </p>
       <p>
         The core trade-off is straightforward: leasing offers lower monthly payments and the ability to drive a new car every 2-3 years, while buying costs more per month but builds equity and eliminates payments once the loan is retired. To understand how much car fits your budget before choosing between lease and buy, check our{" "}
@@ -67,7 +67,7 @@ export function LeaseVsBuyCarArticle() {
         Marcus is a 34-year-old marketing manager in Atlanta earning $88,000 per year. He is deciding between leasing and buying a 2026 Honda CR-V EX-L with an MSRP of $38,400. He has $6,000 saved for a down payment and no trade-in vehicle. His credit score of 740 qualifies him for a 5.9% APR purchase loan from his credit union.
       </p>
       <p>
-        The dealer offers a 36-month lease at $389/month with $2,500 due at signing and a 58% residual value ($22,272). Georgia&apos;s sales tax rate is 6.6% (title ad valorem tax, applied at purchase for buyers). Marcus estimates $2,040/year for full-coverage insurance if he buys and $2,400/year if he leases (gap insurance included). He budgets $500/year for maintenance.
+        The dealer offers a 36-month lease at $389/month with $2,500 due at signing and a 58% residual value ($22,272). Georgia's sales tax rate is 6.6% (title ad valorem tax, applied at purchase for buyers). Marcus estimates $2,040/year for full-coverage insurance if he buys and $2,400/year if he leases (gap insurance included). He budgets $500/year for maintenance.
       </p>
 
       <table>
@@ -184,7 +184,7 @@ export function LeaseVsBuyCarArticle() {
         </tbody>
       </table>
       <p>
-        The pattern is clear: buying wins for vehicles under roughly $50,000, where the equity you retain outweighs the payment difference. For more expensive vehicles that depreciate quickly, leasing often wins because you avoid absorbing the steeper value drop. The crossover point varies based on the specific car&apos;s residual value, your interest rate, and how long you plan to keep the vehicle.
+        The pattern is clear: buying wins for vehicles under roughly $50,000, where the equity you retain outweighs the payment difference. For more expensive vehicles that depreciate quickly, leasing often wins because you avoid absorbing the steeper value drop. The crossover point varies based on the specific car's residual value, your interest rate, and how long you plan to keep the vehicle.
       </p>
 
       <h2>Tips for Making the Right Choice</h2>
@@ -195,7 +195,7 @@ export function LeaseVsBuyCarArticle() {
         <strong>Compare the effective interest rates.</strong> Ask the dealer for the lease money factor and multiply by 2,400 to get the equivalent APR. If the lease APR is 6% but your credit union offers a 4.9% auto loan, the financing advantage swings toward buying. Some manufacturers offer promotional lease money factors (0.00050 = 1.2% APR) that can make leasing dramatically cheaper during incentive periods.
       </p>
       <p>
-        <strong>Factor in gap insurance.</strong> When you lease, gap insurance is typically built into the lease agreement or costs $20-$40 per month. When you buy, you may need to purchase it separately ($200-$500 one time or $20-$30/month) if your loan balance exceeds the car&apos;s market value during the first few years. This is especially relevant with small down payments on rapidly-depreciating models.
+        <strong>Factor in gap insurance.</strong> When you lease, gap insurance is typically built into the lease agreement or costs $20-$40 per month. When you buy, you may need to purchase it separately ($200-$500 one time or $20-$30/month) if your loan balance exceeds the car's market value during the first few years. This is especially relevant with small down payments on rapidly-depreciating models.
       </p>
       <p>
         <strong>Consider your holding period.</strong> If you plan to drive the same car for 7-10 years, buying is nearly always cheaper because you will have years of payment-free ownership after the loan ends. If you prefer a new car every 3 years and value the latest safety and technology features, leasing eliminates the hassle of reselling and trade-in negotiations. Read our{" "}
@@ -221,22 +221,22 @@ export function LeaseVsBuyCarArticle() {
 
       <h3>What happens if I want to end a lease early?</h3>
       <p>
-        Early lease termination typically involves paying a penalty equal to the remaining lease payments minus the difference between the car&apos;s current market value and its residual value. On a $400/month lease with 12 months remaining, the penalty could be $2,000-$4,800 depending on the car&apos;s value. Some leases allow lease transfers (swapping to another driver through services like Swapalease or LeaseTrader) for a $200-$500 transfer fee. Before signing, confirm the early termination clause in writing.
+        Early lease termination typically involves paying a penalty equal to the remaining lease payments minus the difference between the car's current market value and its residual value. On a $400/month lease with 12 months remaining, the penalty could be $2,000-$4,800 depending on the car's value. Some leases allow lease transfers (swapping to another driver through services like Swapalease or LeaseTrader) for a $200-$500 transfer fee. Before signing, confirm the early termination clause in writing.
       </p>
 
       <h3>Can I negotiate a lease the same way I negotiate a purchase?</h3>
       <p>
-        Yes, and you should. The three negotiable components of a lease are the capitalized cost (the selling price, which works exactly like negotiating a purchase price), the money factor (the interest rate), and the mileage allowance. The residual value is set by the manufacturer&apos;s leasing arm and is generally not negotiable. Focus on lowering the cap cost first — every $1,000 reduction in the selling price saves roughly $28/month on a 36-month lease.
+        Yes, and you should. The three negotiable components of a lease are the capitalized cost (the selling price, which works exactly like negotiating a purchase price), the money factor (the interest rate), and the mileage allowance. The residual value is set by the manufacturer's leasing arm and is generally not negotiable. Focus on lowering the cap cost first — every $1,000 reduction in the selling price saves roughly $28/month on a 36-month lease.
       </p>
 
       <h3>Should I put a large down payment on a lease?</h3>
       <p>
-        Financial advisors generally recommend minimizing the down payment on a lease. If the car is totaled or stolen in month three, gap insurance covers the difference between the car&apos;s value and the lease balance, but you lose your down payment entirely. A $3,000 down payment on a 36-month lease reduces your payment by about $83/month, but putting $0 down and paying $83 more per month protects you from losing that lump sum in an accident. Keep your due-at-signing costs to first payment, acquisition fee, and registration.
+        Financial advisors generally recommend minimizing the down payment on a lease. If the car is totaled or stolen in month three, gap insurance covers the difference between the car's value and the lease balance, but you lose your down payment entirely. A $3,000 down payment on a 36-month lease reduces your payment by about $83/month, but putting $0 down and paying $83 more per month protects you from losing that lump sum in an accident. Keep your due-at-signing costs to first payment, acquisition fee, and registration.
       </p>
 
       <h3>How does sales tax work differently for leases and purchases?</h3>
       <p>
-        Tax treatment varies by state. In most states, when you buy a car, you pay sales tax on the full purchase price upfront. When you lease, you pay sales tax only on each monthly payment. On a $35,000 car at 7% tax, a buyer pays $2,450 in tax at signing, while a lessee pays $24.50/month in tax ($882 total over 36 months). In a handful of states (Texas, Illinois, and a few others), lessees pay tax on the full vehicle value upfront, eliminating this advantage. Check your state&apos;s specific rules before comparing.
+        Tax treatment varies by state. In most states, when you buy a car, you pay sales tax on the full purchase price upfront. When you lease, you pay sales tax only on each monthly payment. On a $35,000 car at 7% tax, a buyer pays $2,450 in tax at signing, while a lessee pays $24.50/month in tax ($882 total over 36 months). In a handful of states (Texas, Illinois, and a few others), lessees pay tax on the full vehicle value upfront, eliminating this advantage. Check your state's specific rules before comparing.
       </p>
     </>
   );

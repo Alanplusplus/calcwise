@@ -92,7 +92,7 @@ export function FireArticle() {
         </li>
       </ul>
 
-      <h2>Case Study: Michael&apos;s Path to FIRE at 42</h2>
+      <h2>Case Study: Michael's Path to FIRE at 42</h2>
       <p>
         Michael is a 32-year-old software engineer earning $90,000 after taxes in Denver,
         Colorado. He currently spends $45,000 per year — including $18,000 on housing, $6,000 on
@@ -100,7 +100,7 @@ export function FireArticle() {
         across his 401(k), Roth IRA, and taxable brokerage account.
       </p>
       <p>
-        Michael&apos;s savings rate is 50% — he saves $45,000 per year. His FIRE number at a 4%
+        Michael's savings rate is 50% — he saves $45,000 per year. His FIRE number at a 4%
         withdrawal rate is $1,125,000 ($45,000 divided by 0.04). Using our calculator with a 7%
         expected return and 3% expense inflation, Michael reaches FIRE in approximately 10 years
         at age 42.
@@ -113,7 +113,7 @@ export function FireArticle() {
         investment returns exceed the inflation rate.
       </p>
       <p>
-        Michael&apos;s key decisions: he maxes his 401(k) and Roth IRA ($30,500 combined in
+        Michael's key decisions: he maxes his 401(k) and Roth IRA ($30,500 combined in
         2024), lives in a modest apartment rather than buying, drives a used car, and cooks most
         meals at home. His high income in a moderate cost-of-living city makes a 50% savings rate
         achievable without extreme deprivation.
@@ -241,7 +241,7 @@ export function FireArticle() {
           actual spending power.
         </li>
         <li>
-          <strong>Forgetting about inflation:</strong> Your FIRE number in today&apos;s dollars
+          <strong>Forgetting about inflation:</strong> Your FIRE number in today's dollars
           will need to be higher in future dollars. This calculator accounts for expense inflation
           in the target projection.
         </li>
@@ -259,7 +259,7 @@ export function FireArticle() {
 
       <h3>Is 7% a realistic return assumption?</h3>
       <p>
-        The S&amp;P 500 has returned approximately 10% nominally over long periods, or roughly
+        The S&P 500 has returned approximately 10% nominally over long periods, or roughly
         7% after adjusting for inflation. A diversified portfolio of stocks and bonds might
         assume 6% to 7% nominal returns. Being conservative in your projections is prudent —
         reaching FIRE a year later than expected is far better than falling short.

@@ -13,6 +13,7 @@ alwaysApply: true
 3. **English only** — all content targets US/UK audience
 4. **Domain** — site URL is `https://www.calcwise.tools`
 5. **Privacy** — all calculations client-side, never collect user financial data
+6. **No HTML entities in JSX text** — in this toolchain a multi-line JSX text node that contains `&apos;`, `&quot;`, `&amp;` etc. loses the space after a preceding inline element (renders "Label:text"). Write literal characters (`'`, `"`, `&`, `’`, `→`, `÷`) in JSX text; use `{"<"}` for a literal less-than sign. Also put `{" "}` after an inline element that ends a line when text continues on the next line. After editing, check built HTML: `rg "</(strong|a|em|b)>[A-Za-z0-9]" .next/server/app` should return nothing.
 
 ## Content Quality Requirements
 

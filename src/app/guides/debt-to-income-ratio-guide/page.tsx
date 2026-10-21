@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "Debt-to-Income Ratio: What It Is and Why Lenders Care",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What is a good debt-to-income ratio for a mortgage?",
-    answer: "A back-end debt-to-income ratio of 36% or lower is considered good by most conventional mortgage lenders, meaning no more than 36% of your gross monthly income goes toward total debt payments. A front-end DTI of 28% or less for housing costs alone is the standard guideline. Below 20% back-end DTI is excellent and gives you the best rates and most loan options. FHA loans may accept up to 43% back-end DTI, and in some cases up to 50% with strong compensating factors like a high credit score or large cash reserves.",
+    answer: "A back-end debt-to-income ratio of 36% or lower is the standard benchmark for manually underwritten conventional loans (Fannie Mae). Desktop Underwriter (DU) conventional loans may go up to 50% when the automated risk assessment approves. A front-end DTI of 28% or less for housing costs alone is a common conventional guideline. Below 20% back-end DTI is excellent and gives you the most loan options. FHA manual underwriting allows 31%/43% by default, and up to 40%/50% with documented compensating factors per HUD Handbook 4000.1.",
   },
   {
     question: "What debts are included in the DTI calculation?",
@@ -31,11 +32,11 @@ const faqs = [
   },
   {
     question: "Can I get a mortgage with a 45% debt-to-income ratio?",
-    answer: "It is difficult with conventional loans, which typically cap back-end DTI at 36% to 45% depending on compensating factors. FHA loans allow up to 43% as a standard guideline and may stretch to 50% if you have significant cash reserves, a credit score above 680, or a substantial down payment. Some non-QM lenders offer products for higher DTI borrowers at higher interest rates. A 45% DTI leaves minimal financial cushion, so most financial advisors recommend reducing debt before applying.",
+    answer: "It depends on the program. Fannie Mae allows up to 45% back-end DTI on manually underwritten conventional loans when you meet Eligibility Matrix credit and reserve requirements, and up to 50% on DU-approved loans. FHA manual underwriting tops out at 43% back-end (50% with compensating factors). VA uses a 41% DTI guideline but weighs residual income heavily. A 45% DTI leaves minimal cushion, so reducing debt before applying is still wise.",
   },
   {
     question: "Does my DTI affect my interest rate?",
-    answer: "Yes, indirectly. While DTI is primarily a qualification metric rather than a direct pricing factor, a higher DTI signals greater risk to lenders. Borrowers with DTI ratios above 36% may face risk-based pricing adjustments that add 0.25% to 0.75% to their interest rate compared to borrowers with DTI below 30%. Additionally, a higher DTI limits your loan options to programs with less competitive rates. Reducing your DTI from 42% to 34% could save you $30,000 to $50,000 in interest over a 30-year mortgage.",
+    answer: "Yes, indirectly. DTI is primarily a qualification metric, but higher ratios limit you to programs with tighter automated approvals and can pair with other risk factors in loan-level price adjustments. A borrower who barely exceeds Fannie Mae's 36% manual threshold may still qualify at 45% but with less rate flexibility than someone at 30% back-end DTI. On a $337,500 loan at Freddie Mac's 7.40% PMMS average (Oct. 15, 2026), even a 0.25 percentage-point rate increase adds roughly $20,800 in interest over 30 years — one reason paying down small debts before applying can pay off.",
   },
 ];
 
@@ -48,7 +49,7 @@ export default function GuidePage() {
         description="Understand what debt-to-income ratio is, how lenders use front-end and back-end DTI to evaluate your mortgage application, and actionable strategies to lower your ratio before applying."
         slug="debt-to-income-ratio-guide"
         datePublished="2026-09-20"
-        dateModified="2026-09-20"
+        dateModified="2026-10-20"
         image="/images/guides/debt-to-income-ratio-guide.webp"
       />
       <BreadcrumbJsonLd
@@ -69,7 +70,7 @@ export default function GuidePage() {
       <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">
         Debt-to-Income Ratio: What It Is and Why Lenders Care
       </h1>
-      <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
+      <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
 
       <article className="prose mt-8">
         <p>
@@ -78,24 +79,39 @@ export default function GuidePage() {
           total monthly debt payments by your gross monthly income to determine whether you can
           realistically handle another obligation. A DTI of 35% means $35 of every $100 you earn
           is already committed to debt — and lenders have hard thresholds for how high that number
-          can go before they decline your application. In 2026, with the median home price at
-          $420,000 and average 30-year mortgage rates near 6.5%, understanding and optimizing your
-          DTI is more critical than ever.
+          can go before they decline your application.           In 2026, with the Census median sales price of new U.S. homes at $410,700
+          (Q2 2026) and Freddie Mac's average 30-year fixed rate at 7.40% as of
+          October 15, 2026, understanding and optimizing your DTI is more critical
+          than ever.
         </p>
 
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">
           <p className="font-semibold text-ink-800">Quick Answer</p>
           <p className="mt-1 text-ink-700">
             Your debt-to-income ratio equals total monthly debt payments divided by gross monthly
-            income. Most conventional lenders want a front-end DTI (housing only) at or below 28%
-            and a back-end DTI (all debt) at or below 36%. FHA loans allow up to 43%, sometimes
-            50% with compensating factors.
+            income. Conventional guidelines often target 28% front-end and 36% back-end DTI;
+            Fannie Mae allows up to 45% manual and 50% on DU-approved loans. FHA manual
+            underwriting uses 31%/43% by default, up to 40%/50% with compensating factors.
           </p>
         </div>
+        <Sources
+          items={[
+            {
+              label: "U.S. Census / HUD — median new home sales price Q2 2026 ($410,700)",
+              href: "https://fred.stlouisfed.org/series/MSPUS",
+            },
+            {
+              label: "Freddie Mac — PMMS 30-year fixed 7.40% (Oct. 15, 2026)",
+              href: "https://www.freddiemac.com/pmms",
+            },
+          ]}
+          checked="October 2026"
+          className="my-4"
+        />
 
         <Image
           src="/images/guides/debt-to-income-ratio-guide.webp"
-          alt="Infographic explaining front-end and back-end debt-to-income ratios with threshold scales from excellent to high risk, showing maximum housing and total debt amounts at different income levels"
+          alt="Infographic explaining front-end DTI (28% common benchmark) and back-end DTI (36% or lower preferred) with a scale from under 36% to over 50%, including a $6,000 monthly income example of $1,680 for housing and $2,160 in total debt payments"
           width={1200}
           height={800}
           className="rounded-lg border border-ink-200"
@@ -115,11 +131,12 @@ export default function GuidePage() {
           Lenders evaluate two distinct versions of DTI. The <strong>front-end ratio</strong> (also
           called the housing ratio) includes only housing-related costs: mortgage principal and
           interest, property taxes, homeowners insurance, and HOA dues. Conventional lenders
-          typically want this at or below 28%. The <strong>back-end ratio</strong> includes housing
+          often use a 28% housing benchmark (Fannie Mae's published limits focus on total
+          back-end DTI; see B3-6-02). The <strong>back-end ratio</strong> includes housing
           costs plus all other recurring obligations: car payments, student loans, credit card
           minimums, personal loans, child support, and alimony. The standard threshold for
-          conventional loans is 36%, though some lenders extend this to 43% or even 45% with
-          strong compensating factors.
+          manually underwritten conventional loans is 36%, though Fannie Mae permits up to 45%
+          with Eligibility Matrix credit and reserves, and up to 50% on DU-approved loans.
         </p>
 
         <p>
@@ -191,10 +208,24 @@ export default function GuidePage() {
           Two common traps: <strong>credit card minimums</strong> are counted at the minimum payment
           due on your statement, not the full balance or the amount you actually pay. If your minimum
           is $35 but you pay $500/month, lenders count $35. Second, <strong>deferred student
-          loans</strong> still count — most lenders impute 0.5% to 1% of the outstanding balance as
-          a monthly obligation, even during deferment or forbearance. A $45,000 student loan balance
-          in deferment adds $225 to $450/month to your DTI calculation.
+          loans</strong> still count — Fannie Mae requires 1% of the outstanding balance (or a fully
+          amortizing payment) when no payment appears on the credit report; Freddie Mac uses the
+          greater of the reported payment or 0.5% of the balance. A $45,000 deferred balance adds
+          $225 to $450/month depending on investor guidelines.
         </p>
+        <Sources
+          items={[
+            {
+              label: "Fannie Mae Selling Guide B3-6-05 — deferred/forbearance student loans",
+              href: "https://selling-guide.fanniemae.com/sel/b3-6-05/monthly-debt-obligations",
+            },
+            {
+              label: "Freddie Mac Bulletin 2017-23 — student loan payment in DTI",
+              href: "https://guide.freddiemac.com/ci/okcsFattach/get/1002058_7",
+            },
+          ]}
+          checked="October 2026"
+        />
 
         <h2>DTI Thresholds by Loan Program</h2>
 
@@ -218,13 +249,13 @@ export default function GuidePage() {
                 <td className="px-4 py-3 font-medium text-ink-800">Conventional</td>
                 <td className="px-4 py-3 text-ink-800">28%</td>
                 <td className="px-4 py-3 text-ink-800">36%</td>
-                <td className="px-4 py-3 text-ink-800">Up to 45% with 740+ credit, 20%+ down payment</td>
+                <td className="px-4 py-3 text-ink-800">Up to 45% manual; up to 50% DU (Fannie Mae B3-6-02)</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 font-medium text-ink-800">FHA</td>
                 <td className="px-4 py-3 text-ink-800">31%</td>
                 <td className="px-4 py-3 text-ink-800">43%</td>
-                <td className="px-4 py-3 text-ink-800">Up to 50% with 680+ credit, 3+ months reserves</td>
+                <td className="px-4 py-3 text-ink-800">Up to 40%/50% with compensating factors (HUD 4000.1 manual)</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 font-medium text-ink-800">VA</td>
@@ -239,14 +270,39 @@ export default function GuidePage() {
                 <td className="px-4 py-3 text-ink-800">Eligible rural properties; income limits apply</td>
               </tr>
               <tr className="border-b border-ink-100">
-                <td className="px-4 py-3 font-medium text-ink-800">Qualified Mortgage (QM)</td>
+                <td className="px-4 py-3 font-medium text-ink-800">General QM (ATR/QM)</td>
                 <td className="px-4 py-3 text-ink-800">N/A</td>
-                <td className="px-4 py-3 text-ink-800">43%</td>
-                <td className="px-4 py-3 text-ink-800">Federal Dodd-Frank limit; exceeding loses QM safe harbor</td>
+                <td className="px-4 py-3 text-ink-800">No fixed cap</td>
+                <td className="px-4 py-3 text-ink-800">Price-based APR test vs APOR; lender must still consider DTI (CFPB, effective 2021)</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <Sources
+          items={[
+            {
+              label: "Fannie Mae Selling Guide B3-6-02 — max DTI 36%/45%/50% (May 2026)",
+              href: "https://selling-guide.fanniemae.com/sel/b3-6-02/debt-income-ratios",
+            },
+            {
+              label: "HUD FHA Handbook 4000.1 — manual ratios 31%/43% and compensating factors",
+              href: "https://www.hud.gov/sites/default/files/Housing/documents/40001-hsgh-Update-18.pdf",
+            },
+            {
+              label: "38 CFR § 36.4340 — VA 41% DTI standard",
+              href: "https://www.law.cornell.edu/cfr/text/38/36.4340",
+            },
+            {
+              label: "USDA HB-1-3555 Ch. 11 — 29% PITI / 41% total debt",
+              href: "https://www.rd.usda.gov/files/3555-1chapter11.pdf",
+            },
+            {
+              label: "CFPB — General QM final rule (Dec. 29, 2020)",
+              href: "https://www.federalregister.gov/documents/2020/12/29/2020-27567/qualified-mortgage-definition-under-the-truth-in-lending-act-regulation-z-general-qm-loan-definition",
+            },
+          ]}
+          checked="October 2026"
+        />
 
         <p>
           These thresholds are guidelines, not absolute ceilings. Lenders can make exceptions when
@@ -266,13 +322,15 @@ export default function GuidePage() {
           Adriana, a 31-year-old registered nurse in Charlotte, NC, earns $5,500/month gross. Her
           fiance Kevin, a high school teacher, earns $4,000/month. Their combined gross monthly
           income is <strong>$9,500</strong>. They want to buy a home priced at $375,000 with 10%
-          down ($37,500), financing $337,500 at 6.5% interest over 30 years.
+          down ($37,500), financing $337,500 at 7.40% interest over 30 years (Freddie Mac PMMS average
+          as of October 15, 2026).
         </p>
 
         <p>
-          Their estimated monthly housing payment (PITI): $2,133 for principal and interest, $312 for
+          Their estimated monthly housing payment (PITI): $2,337 for principal and interest (7.40%
+          on $337,500 over 30 years per Freddie Mac PMMS as of Oct. 15, 2026), $312 for
           property taxes, $125 for homeowners insurance, and $95 for PMI (since they are putting less
-          than 20% down). Total housing cost: <strong>$2,665/month</strong>.
+          than 20% down). Total housing cost: <strong>$2,869/month</strong>.
         </p>
 
         <p>
@@ -290,12 +348,12 @@ export default function GuidePage() {
             </thead>
             <tbody>
               <tr className="border-b border-ink-100">
-                <td className="px-4 py-3 text-ink-800">Adriana&apos;s car payment</td>
+                <td className="px-4 py-3 text-ink-800">Adriana's car payment</td>
                 <td className="px-4 py-3 text-ink-800">$385</td>
                 <td className="px-4 py-3 text-ink-800">$14,200</td>
               </tr>
               <tr className="border-b border-ink-100">
-                <td className="px-4 py-3 text-ink-800">Kevin&apos;s student loans</td>
+                <td className="px-4 py-3 text-ink-800">Kevin's student loans</td>
                 <td className="px-4 py-3 text-ink-800">$290</td>
                 <td className="px-4 py-3 text-ink-800">$28,000</td>
               </tr>
@@ -314,31 +372,48 @@ export default function GuidePage() {
         </div>
 
         <p>
-          <strong>Front-end DTI:</strong> $2,665 / $9,500 = <strong>28.1%</strong> — barely above
-          the 28% conventional threshold but within FHA&apos;s 31% limit.
+          <strong>Front-end DTI:</strong> $2,869 / $9,500 = <strong>30.2%</strong> — above the
+          common 28% conventional housing guideline but within FHA's 31% manual limit.
         </p>
         <p>
-          <strong>Back-end DTI:</strong> ($2,665 + $850) / $9,500 = $3,515 / $9,500 ={" "}
-          <strong>37.0%</strong> — above the conventional 36% limit but under the FHA 43% ceiling.
+          <strong>Back-end DTI:</strong> ($2,869 + $850) / $9,500 = $3,719 / $9,500 ={" "}
+          <strong>39.1%</strong> — above the 36% manual conventional limit and closer to FHA's
+          43% ceiling.
         </p>
         <p>
-          With a conventional loan, Adriana and Kevin are over the standard 36% back-end threshold.
-          Their lender offers approval at 37% DTI because both have credit scores above 720 and
-          they have $18,000 in savings beyond the down payment (4.8 months of reserves). But their
-          rate includes a 0.25% risk-based pricing adjustment compared to a borrower at 32% DTI,
-          costing them an extra <strong>$17,100 over 30 years</strong>.
+          With a conventional loan, Adriana and Kevin exceed the 36% manual back-end threshold but
+          might still qualify up to 45% with strong credit and reserves under Fannie Mae's
+          Eligibility Matrix. Assume their file includes a 0.25 percentage-point loan-level pricing
+          adjustment versus a cleaner 32% DTI profile — on this loan size that adds about{" "}
+          <strong>$20,800 in interest over 30 years</strong> (CalcWise estimate at 7.40% vs 7.65%
+          note rate).
         </p>
         <p>
           If they pay off the $6,800 credit card balance before applying — eliminating $175/month —
-          their back-end DTI drops to <strong>35.2%</strong>, qualifying them for the standard rate
-          tier and saving that $17,100. The $6,800 payoff generates a <strong>2.5x return</strong>
-          in avoided interest. This is why reducing small debts before a mortgage application can
-          have an outsized financial impact. Use our{" "}
+          their back-end DTI drops to <strong>37.3%</strong>, moving them closer to the standard
+          manual tier and avoiding that pricing hit. The $6,800 payoff yields about a{" "}
+          <strong>3x return</strong> in avoided mortgage interest in this scenario. This is why
+          reducing small debts before a mortgage application can have an outsized financial impact.
+          Use our{" "}
           <Link href="/calculators/home-affordability" className="text-brand-600 hover:text-brand-800 font-medium">
             Home Affordability Calculator
           </Link>{" "}
           to see exactly how debt reduction changes your maximum qualifying home price.
         </p>
+        <Sources
+          items={[
+            {
+              label: "Freddie Mac — PMMS 30-year fixed 7.40% (Oct. 15, 2026)",
+              href: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-hold-steady-740/",
+            },
+            {
+              label: "Fannie Mae Selling Guide B3-6-02 — manual/DU DTI limits",
+              href: "https://selling-guide.fanniemae.com/sel/b3-6-02/debt-income-ratios",
+            },
+          ]}
+          checked="October 2026"
+          note="Case study PITI uses the PMMS note rate; your rate and LLPAs will differ."
+        />
 
         <h2>Maximum Debt Capacity by Income Level</h2>
 
@@ -456,10 +531,10 @@ export default function GuidePage() {
         </p>
 
         <p>
-          <strong>5. Add a co-borrower.</strong> A spouse or partner&apos;s income increases the
+          <strong>5. Add a co-borrower.</strong> A spouse or partner's income increases the
           denominator in the DTI formula. A couple earning $4,500 and $5,500 individually has DTI
           calculated on $10,000 combined, giving them substantially more borrowing power than either
-          person alone. However, the co-borrower&apos;s debts are also included, so this strategy
+          person alone. However, the co-borrower's debts are also included, so this strategy
           works best when the co-borrower has minimal existing obligations.
         </p>
 
@@ -511,15 +586,16 @@ export default function GuidePage() {
             taxes, 401(k), and insurance.
           </li>
           <li>
-            <strong>Forgetting co-signed loans</strong> — If you co-signed a family member&apos;s
+            <strong>Forgetting co-signed loans</strong> — If you co-signed a family member's
             car loan or student loan, that payment appears on your credit report and counts toward
             your DTI, even if the other person makes every payment. The only way to remove it is
-            to refinance the loan in the other person&apos;s name alone.
+            to refinance the loan in the other person's name alone.
           </li>
           <li>
             <strong>Ignoring deferred student loans</strong> — Many borrowers assume deferred
-            loans do not count. Most lenders impute 0.5% to 1% of the loan balance as a monthly
-            payment. A $50,000 deferred student loan adds $250 to $500/month to your DTI.
+            loans do not count. Fannie Mae generally imputes 1% of the outstanding balance (Freddie
+            Mac uses 0.5% or more depending on the credit report). A $50,000 deferred balance adds
+            $250 to $500/month to your DTI.
           </li>
           <li>
             <strong>Counting non-debt expenses</strong> — Utilities, groceries, subscriptions,
@@ -544,55 +620,19 @@ export default function GuidePage() {
         <h2>Frequently Asked Questions</h2>
 
         <h3>What is a good debt-to-income ratio for a mortgage?</h3>
-        <p>
-          A back-end debt-to-income ratio of 36% or lower is considered good by most conventional
-          mortgage lenders, meaning no more than 36% of your gross monthly income goes toward total
-          debt payments. A front-end DTI of 28% or less for housing costs alone is the standard
-          guideline. Below 20% back-end DTI is excellent and gives you the best rates and most loan
-          options. FHA loans may accept up to 43% back-end DTI, and in some cases up to 50% with
-          strong compensating factors like a high credit score or large cash reserves.
-        </p>
+        <p>{faqs[0].answer}</p>
 
         <h3>What debts are included in the DTI calculation?</h3>
-        <p>
-          Lenders include all recurring monthly obligations that appear on your credit report plus
-          housing costs. This covers mortgage or rent payments, property taxes, homeowners insurance,
-          car loan payments, student loan payments, credit card minimum payments, personal loans,
-          child support, alimony, and co-signed loan obligations. Utilities, groceries, streaming
-          subscriptions, gas, and insurance premiums other than homeowners are not included. For
-          credit cards, lenders use the minimum payment due, not your full balance or the amount
-          you actually pay each month.
-        </p>
+        <p>{faqs[1].answer}</p>
 
         <h3>How do I calculate my debt-to-income ratio?</h3>
-        <p>
-          Divide your total monthly debt payments by your gross monthly income (before taxes) and
-          multiply by 100 to get a percentage. For example, if you earn $7,000 per month gross and
-          pay $2,100 in total monthly debts including housing, your DTI is $2,100 divided by $7,000
-          times 100, which equals 30%. Lenders calculate two versions: front-end DTI uses only
-          housing costs, and back-end DTI uses all debt payments. Always use pre-tax income, not
-          take-home pay.
-        </p>
+        <p>{faqs[2].answer}</p>
 
         <h3>Can I get a mortgage with a 45% debt-to-income ratio?</h3>
-        <p>
-          It is difficult with conventional loans, which typically cap back-end DTI at 36% to 45%
-          depending on compensating factors. FHA loans allow up to 43% as a standard guideline and
-          may stretch to 50% if you have significant cash reserves, a credit score above 680, or a
-          substantial down payment. Some non-QM lenders offer products for higher DTI borrowers at
-          higher interest rates. A 45% DTI leaves minimal financial cushion, so most financial
-          advisors recommend reducing debt before applying.
-        </p>
+        <p>{faqs[3].answer}</p>
 
         <h3>Does my DTI affect my interest rate?</h3>
-        <p>
-          Yes, indirectly. While DTI is primarily a qualification metric rather than a direct pricing
-          factor, a higher DTI signals greater risk to lenders. Borrowers with DTI ratios above 36%
-          may face risk-based pricing adjustments that add 0.25% to 0.75% to their interest rate
-          compared to borrowers with DTI below 30%. Additionally, a higher DTI limits your loan
-          options to programs with less competitive rates. Reducing your DTI from 42% to 34% could
-          save you $30,000 to $50,000 in interest over a 30-year mortgage.
-        </p>
+        <p>{faqs[4].answer}</p>
       </article>
     </div>
   );

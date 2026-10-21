@@ -5,6 +5,7 @@ import { CalculatorShell } from "@/components/CalculatorShell";
 import { RentVsBuyCalculator } from "./RentVsBuyCalculator";
 import { RentVsBuyArticle } from "./RentVsBuyArticle";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { STANDARD_DEDUCTIONS, usd } from "@/lib/tax-data";
 
 const calc = getCalculator("rent-vs-buy")!;
 
@@ -29,7 +30,7 @@ const faqs = [
   },
   {
     question: "Should I include tax benefits in my calculation?",
-    answer: "If you itemize and mortgage interest plus property taxes exceed the standard deduction, ownership tax savings can reduce effective cost by $2,000–$5,000/year. With the $14,600 standard deduction, many homeowners don't itemize.",
+    answer: `If you itemize and mortgage interest plus property taxes exceed the standard deduction, ownership tax savings can reduce effective cost by $2,000–$5,000/year. With the 2026 standard deduction at ${usd(STANDARD_DEDUCTIONS.single)} (single) and ${usd(STANDARD_DEDUCTIONS.mfj)} (married filing jointly), you only benefit when your itemized total tops that amount.`,
   },
   {
     question: "How does home appreciation affect the decision?",

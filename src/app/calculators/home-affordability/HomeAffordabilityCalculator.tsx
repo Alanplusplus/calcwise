@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { RateDefaultNote } from "@/components/RateDefaultNote";
+import { DEFAULT_MORTGAGE_RATE } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -19,7 +21,7 @@ export function HomeAffordabilityCalculator({ defaults }: Props) {
   const [annualIncome, setAnnualIncome] = useState(defaults?.annualIncome || "75000");
   const [monthlyDebts, setMonthlyDebts] = useState(defaults?.monthlyDebts || "500");
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "40000");
-  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "6.75");
+  const [interestRate, setInterestRate] = useState(defaults?.interestRate || DEFAULT_MORTGAGE_RATE);
   const [loanTerm, setLoanTerm] = useState(defaults?.loanTerm || "30");
   const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "1.2");
   const [homeownersInsurance, setHomeownersInsurance] = useState(defaults?.homeownersInsurance || "1500");
@@ -161,6 +163,7 @@ export function HomeAffordabilityCalculator({ defaults }: Props) {
           helpText="Estimated annual premium"
         />
       </div>
+      <RateDefaultNote rate={interestRate} />
 
       {results ? (
         <div className="mt-8">
@@ -189,7 +192,7 @@ export function HomeAffordabilityCalculator({ defaults }: Props) {
             <p className="text-sm font-medium text-ink-700">Estimated Monthly Payment Breakdown</p>
             <div className="mt-4 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-ink-600">Principal &amp; Interest</span>
+                <span className="text-sm text-ink-600">Principal & Interest</span>
                 <span className="font-medium text-ink-900">{formatCurrencyExact(results.monthlyPI)}</span>
               </div>
               <div className="flex items-center justify-between">

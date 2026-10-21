@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "The 50/30/20 Budget Rule Explained with Real Examples",
@@ -38,17 +39,17 @@ const faqs = [
   {
     question: "Does the 50/30/20 rule work in expensive cities?",
     answer:
-      "Often not at standard ratios. In high cost-of-living cities like San Francisco (median 1-BR rent $3,300/month as of Q4 2026), New York ($3,600), or Denver ($1,900), housing alone can consume 40-55% of take-home pay. Many residents adapt to a 60/20/20 or 70/20/10 split temporarily, then adjust as income rises or housing costs stabilize. The rule is a starting framework, not a rigid law.",
+      "Often not at standard ratios. BLS Consumer Expenditure Survey data (2024) show U.S. households already spend about 33% on housing alone — before insurance, debt, and other needs — so high-rent metros can push housing well above half of take-home pay. Many residents adapt to a 60/20/20 or 70/20/10 split temporarily, then adjust as income rises or housing costs stabilize. The rule is a starting framework, not a rigid law.",
   },
   {
     question: "What if my needs already exceed 50% of my income?",
     answer:
-      "You are not alone — roughly 43% of Americans in Q4 2026 spend more than 50% on needs alone, driven largely by housing costs that rose 5.1% year-over-year nationally according to the latest BLS data. Focus on the biggest levers first: reduce housing (roommate, smaller place, refinancing if your current rate is above 6.25%), transportation (sell car, use transit), and food costs. Temporarily cut wants to 15-20% and savings to 10-15% while you close the gap. The goal is progress toward balance, not perfection on day one.",
+      "You are not alone — as of mid-October 2026, BLS data show the CPI shelter index rose 3.2% year-over-year through December 2025, and the average U.S. household already directs 33.4% of spending to housing (2024 Consumer Expenditure Survey), before counting other needs. Focus on the biggest levers first: reduce housing (roommate, smaller place, refinancing when rates make sense), transportation (sell car, use transit), and food costs. Temporarily cut wants to 15-20% and savings to 10-15% while you close the gap. The goal is progress toward balance, not perfection on day one.",
   },
   {
     question: "How much should I have in emergency savings before following the 50/30/20 rule?",
     answer:
-      "Financial planners recommend at least $1,000 as a starter emergency fund before optimizing your 50/30/20 split. Once you have that baseline, work toward 3-6 months of essential expenses (your needs bucket total). At $2,500/month in needs, that means $7,500-$15,000. Keep this in a high-yield savings account earning 4.35-4.65% APY (October 2026 rates, reflecting the Fed's latest 25-basis-point cut in September) so it grows while remaining accessible. Only after this buffer is built should you redirect savings toward investments or accelerated debt payoff.",
+      "The CFPB suggests building toward $500, then $1,000, as starter emergency savings before larger goals. The Federal Reserve's 2025 SHED survey found 55% of adults had at least three months of expenses saved. Once you have a baseline, work toward 3-6 months of essential expenses (your needs bucket total). At $2,500/month in needs, that means $7,500-$15,000. Keep this in a separate, accessible account (bank or credit union, per CFPB guidance). Only after this buffer is built should you redirect savings toward investments or accelerated debt payoff.",
   },
   {
     question: "What apps or tools can automate the 50/30/20 budget?",
@@ -66,7 +67,7 @@ export default function Budget503020Guide() {
         description="Learn the 50/30/20 budget rule with real income examples, a category breakdown, a Denver case study, and a step-by-step needs-wants-savings plan."
         slug="50-30-20-budget-rule"
         datePublished="2026-08-24"
-        dateModified="2026-10-06"
+        dateModified="2026-10-20"
         image="/images/guides/50-30-20-budget-rule.webp"
       />
       <BreadcrumbJsonLd
@@ -173,6 +174,17 @@ export default function Budget503020Guide() {
             it has since become one of the most widely recommended budgeting
             methods because of its simplicity.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "Elizabeth Warren & Amelia Warren Tyagi, All Your Worth (Free Press, 2005)",
+                href: "https://openlibrary.org/isbn/9780743269889",
+              },
+            ]}
+            checked="October 2026"
+            note="Tier-2 bibliographic record; the 50/30/20 split is defined in the book itself."
+          />
           <p className="mt-4 text-ink-700">
             Unlike line-item budgets that track dozens of categories, the
             50/30/20 rule gives you three numbers to remember. Every time
@@ -213,8 +225,8 @@ export default function Budget503020Guide() {
 
           <p className="mt-6 text-ink-700">
             The power of this framework is that it builds savings into every
-            paycheck by default. You are not saving &quot;whatever is left
-            over&quot; at the end of the month — which, for most people, is
+            paycheck by default. You are not saving "whatever is left
+            over" at the end of the month — which, for most people, is
             zero. Savings get funded first alongside your needs, not last.
           </p>
         </section>
@@ -349,6 +361,31 @@ export default function Budget503020Guide() {
             damages your credit and triggers penalties. Any amount above the
             minimum belongs in the 20% savings/debt bucket.
           </p>
+          <p className="mt-4 text-ink-700">
+            For context, the BLS Consumer Expenditure Survey (2024) shows the
+            average U.S. household spends about 33.4% on housing, 17.0% on
+            transportation, 12.9% on food, and 7.9% on healthcare — roughly 71%
+            combined before insurance, debt, and other needs. That is why the 50%
+            needs bucket is a target, not a description of how most households
+            already spend.
+          </p>
+          <Sources
+            items={[
+              {
+                label: "BLS Consumer Expenditures 2024 news release (Dec. 19, 2025)",
+                href: "https://www.bls.gov/news.release/cesan.htm",
+              },
+              {
+                label: "BLS Economics Daily (Feb. 2026) — housing & transportation shares",
+                href: "https://www.bls.gov/opub/ted/2026/housing-and-transportation-accounted-for-50-percent-of-household-spending-in-2024.htm",
+              },
+              {
+                label: "BLS CPI news release (Jan. 13, 2026) — shelter +3.2% YoY, Dec. 2025",
+                href: "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Section 3: Real Examples at 3 Income Levels */}
@@ -453,10 +490,10 @@ export default function Budget503020Guide() {
             Case Study: Tyler, 27, $61.5K Salary in Denver
           </h2>
           <p className="mt-4 text-ink-700">
-            Tyler earns $61,500 as a project coordinator in Denver (up from
-            $60,000 in 2025 after a 2.5% cost-of-living raise). After federal taxes,
-            Colorado&apos;s flat 4.4% state income tax, FICA (7.65%), and his
-            employer health plan contribution, he takes home $4,050 per month. He heard about the 50/30/20 budget
+            Tyler earns $61,500 as a project coordinator in Denver (illustrative).
+            After federal taxes, Colorado's flat 4.4% state income tax (2026
+            withholding tables), FICA (7.65%), and his employer health plan
+            contribution, he takes home $4,050 per month. He heard about the 50/30/20 budget
             rule on a podcast and decided to audit his spending. What he found
             was a common pattern: needs consuming 71% of his income, wants at
             24%, and savings at just 5%.
@@ -465,7 +502,7 @@ export default function Budget503020Guide() {
           <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <h4 className="font-semibold text-ink-800">Before: Tyler&apos;s Budget</h4>
+                <h4 className="font-semibold text-ink-800">Before: Tyler's Budget</h4>
                 <p className="mt-1 text-xs text-ink-500">
                   Split: 71% needs / 24% wants / 5% savings
                 </p>
@@ -495,7 +532,7 @@ export default function Budget503020Guide() {
               </div>
               <div>
                 <h4 className="font-semibold text-ink-800">
-                  After: Tyler&apos;s 50/30/20 Budget
+                  After: Tyler's 50/30/20 Budget
                 </h4>
                 <p className="mt-1 text-xs text-ink-500">
                   Target: $2,025 needs / $1,215 wants / $810 savings
@@ -519,7 +556,7 @@ export default function Budget503020Guide() {
                   <li className="font-medium text-brand-700 pt-1">
                     Wants subtotal: $795
                   </li>
-                  <li className="pt-2">Emergency fund (HYSA at 4.50% APY): $310</li>
+                  <li className="pt-2">Emergency fund (dedicated savings): $310</li>
                   <li>401(k) (4% + 3% employer match): $340</li>
                   <li>Extra student loan payment: $155</li>
                   <li className="font-medium text-brand-700 pt-1">
@@ -532,34 +569,31 @@ export default function Budget503020Guide() {
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">What Tyler Changed</h4>
               <p className="mt-2 text-sm text-ink-700">
-                Tyler&apos;s biggest move was finding a roommate, cutting rent
+                Tyler's biggest move was finding a roommate, cutting rent
                 from $1,620 to $950 — a $670/month savings that alone closed
                 most of his budget gap. He switched phone carriers ($30 saved),
                 meal-prepped Sundays ($125 saved on groceries), and capped
                 dining out at twice per week ($190 saved). He enrolled in his
-                employer&apos;s 401(k) to capture the full 3% match, which
+                employer's 401(k) to capture the full 3% match, which
                 effectively adds $153/month in free money. He also moved his
-                emergency fund to a high-yield savings account earning 4.50%
-                APY — as of October 2026 (down from 4.75% at the start of
-                the year after 75 basis points of cumulative Fed rate cuts) —
-                instead of leaving it in a traditional checking account earning
-                virtually nothing.
+                emergency fund to a dedicated savings account instead of leaving
+                it in checking. The BEA personal saving rate was 4.1% in August
+                2026 — well below the 20% savings bucket this rule targets.
               </p>
               <p className="mt-3 text-sm text-ink-700">
                 Tyler did not hit a perfect 50/30/20 split — his needs still
                 land at 61% because Denver rent is expensive even with a
                 roommate. But he moved from a $710/month credit card deficit
                 to a balanced budget with $805 in monthly savings. Over 12
-                months, that $805/month builds a $9,660 emergency fund (plus
-                roughly $215 in HYSA interest) while paying down $1,860 in
-                extra student loan principal.
+                months, that $805/month builds a $9,660 emergency fund while
+                paying down $1,860 in extra student loan principal.
               </p>
             </div>
 
             <div className="mt-4 rounded-lg border-l-4 border-brand-400 bg-brand-50 p-4">
               <p className="font-medium text-brand-800">Key Takeaway</p>
               <p className="mt-1 text-sm text-ink-700">
-                Tyler&apos;s story shows the 50/30/20 budget rule works best
+                Tyler's story shows the 50/30/20 budget rule works best
                 as a direction, not a destination. Getting from 71/24/5 to
                 61/20/20 was a massive improvement — saving $9,660 per year
                 versus going $710/month deeper into credit card debt. He plans
@@ -570,12 +604,26 @@ export default function Budget503020Guide() {
               </p>
             </div>
           </div>
+          <Sources
+            items={[
+              {
+                label: "Colorado DOR, 2026 estimated tax worksheet (4.4%)",
+                href: "https://tax.colorado.gov/sites/tax/files/documents/DR_0104EP_2026.pdf",
+              },
+              {
+                label: "BEA, Personal Income and Outlays (Aug. 2026) — 4.1% saving rate",
+                href: "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+              },
+            ]}
+            checked="October 2026"
+            note="Tyler is an illustrative single filer; take-home is rounded."
+          />
         </section>
 
         {/* Section 5: When the Rule Doesn't Work */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-ink-900">
-            When the 50/30/20 Rule Doesn&apos;t Work
+            When the 50/30/20 Rule Doesn't Work
           </h2>
           <p className="mt-4 text-ink-700">
             The 50/30/20 budget rule is an excellent starting point, but it
@@ -590,15 +638,14 @@ export default function Budget503020Guide() {
                 High Cost-of-Living Areas
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                In San Francisco, the median rent for a 1-bedroom reached
-                $3,300/month by Q4 2026 — up from $2,900 at the start of the
-                year, a 13.8% annual jump. On a $6,250 take-home paycheck, that
-                single expense consumes 53% of income before groceries,
-                insurance, or transportation. New York ($3,600 median 1-BR),
-                Boston ($3,050), Seattle ($2,500), and Denver ($1,900) face
-                similar pressure. Residents in these cities often use a modified
-                60/20/20 or 65/15/20 split until income rises or housing costs
-                stabilize.
+                In expensive metros, rent alone can exceed half of take-home pay.
+                Census median household income was $83,730 in 2024 (money income,
+                pretax), while BLS data show housing absorbs one-third of average
+                household spending nationwide — and more in coastal cities. On a
+                $6,250 take-home paycheck, even $2,000 rent is 32% before
+                groceries, insurance, or transportation. Residents in these cities
+                often use a modified 60/20/20 or 65/15/20 split until income rises
+                or housing costs stabilize.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
@@ -606,18 +653,14 @@ export default function Budget503020Guide() {
                 Heavy Debt Loads
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                If you carry $40,000 in credit card debt at the current
-                average APR of 22.3% (down from 22.8% in early 2026 as issuers
-                respond to back-to-back Fed rate cuts totaling 75 basis points
-                this year), minimum payments alone might be $850-$1,100/month
-                — potentially more than your entire 50% needs bucket. In this
-                case, prioritize debt payoff over the standard split. A temporary
+                If you carry $40,000 in credit card debt at the Federal Reserve
+                G.19 average APR of 22.36% for accounts assessed interest (August
+                2026), minimum payments alone might be $850-$1,100/month —
+                potentially more than your entire 50% needs bucket. In this case,
+                prioritize debt payoff over the standard split. A temporary
                 50/10/40 approach (50% needs, 10% wants, 40% debt payoff) may
-                be necessary until high-interest debt is eliminated. Consider
-                balance transfer cards offering 0% APR for 15-21 months to
-                accelerate payoff — Citi, Chase, and Wells Fargo all offer
-                18-21-month 0% intro periods on balances transferred by
-                year-end 2026, with transfer fees of 3-5%.
+                be necessary until high-interest debt is eliminated. Shop 0% APR
+                balance-transfer offers carefully; terms and fees change often.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
@@ -637,12 +680,11 @@ export default function Budget503020Guide() {
                 Single Income, Dependents
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                Childcare alone averages $1,580/month nationally as of Q4
-                2026 ($2,450+ in major metros) — up roughly 18% from 2023. A
-                parent earning $4,167 take-home with $1,580 childcare and
-                $1,400 rent has only $187 left for all other needs. The
-                50/30/20 budget rule was designed for dual-income households
-                without dependents — adjust expectations accordingly.
+                Childcare can rival rent in many metros. A parent earning $4,167
+                take-home with $1,400 rent and $1,200 childcare has only $567
+                left for all other needs before wants or savings. The 50/30/20
+                budget rule was popularized for dual-income households without
+                young dependents — adjust expectations accordingly.
               </p>
             </div>
           </div>
@@ -662,6 +704,19 @@ export default function Budget503020Guide() {
             can help you set realistic targets and identify when refinancing or
             downsizing would make the biggest impact.
           </p>
+          <Sources
+            items={[
+              {
+                label: "Census, Income in the United States: 2024 ($83,730 median)",
+                href: "https://www.census.gov/library/publications/2025/demo/p60-286.html",
+              },
+              {
+                label: "Federal Reserve G.19 (Aug. 2026) — credit card APR 22.36%",
+                href: "https://www.federalreserve.gov/releases/g19/current/",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Section 6: Step-by-Step Implementation */}
@@ -744,8 +799,8 @@ export default function Budget503020Guide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Open a dedicated savings account for your 20% bucket. Some
                   banks like Ally and Capital One 360 let you create sub-savings
-                  accounts labeled &quot;Emergency,&quot; &quot;Retirement,&quot;
-                  and &quot;Goals.&quot; For wants, consider a separate checking
+                  accounts labeled "Emergency," "Retirement,"
+                  and "Goals." For wants, consider a separate checking
                   account or a prepaid debit card loaded with your monthly
                   $1,215 (or whatever your wants target is). When the wants
                   account hits zero, you stop spending on discretionary items
@@ -884,12 +939,11 @@ export default function Budget503020Guide() {
             simplicity of the 50/30/20 approach more sustainable long-term.
           </p>
           <p className="mt-4 text-ink-700">
-            A 2026 NerdWallet survey found that 67% of Americans who tried
-            budgeting abandoned detailed line-item tracking within three months,
-            while percentage-based methods like the 50/30/20 rule had a 78%
-            six-month retention rate. The takeaway: the best budget is the one
-            you actually follow. Start simple, then add complexity only if you
-            need it. For more on building sustainable savings habits, read our{" "}
+            The BEA personal saving rate was 4.1% in August 2026 — far below the
+            20% savings bucket this rule targets — so most households need
+            deliberate automation to hit 20%. The takeaway: the best budget is
+            the one you actually follow. Start simple, then add complexity only if
+            you need it. For more on building sustainable savings habits, read our{" "}
             <Link
               href="/guides/save-50000-in-3-years"
               className="text-brand-600 underline"
@@ -897,6 +951,29 @@ export default function Budget503020Guide() {
               guide to saving $50,000 in 3 years
             </Link>.
           </p>
+          <Sources
+            items={[
+              {
+                label: "BEA, Personal Income and Outlays (Aug. 2026)",
+                href: "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+              },
+              {
+                label: "CFPB, An essential guide to building an emergency fund",
+                href: "https://www.consumerfinance.gov/an-essential-guide-to-building-an-emergency-fund/",
+              },
+              {
+                label:
+                  "Federal Reserve SHED (2025) — 55% with 3 months emergency savings",
+                href: "https://www.federalreserve.gov/publications/2026-economic-well-being-of-us-households-in-2025-savings-investments.htm",
+              },
+              {
+                label:
+                  "CFPB Your Money, Your Goals toolkit — $500 then $1,000 emergency fund goals",
+                href: "https://files.consumerfinance.gov/f/documents/cfpb_your-money-your-goals_financial-empowerment_toolkit.pdf",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* CTA Section */}

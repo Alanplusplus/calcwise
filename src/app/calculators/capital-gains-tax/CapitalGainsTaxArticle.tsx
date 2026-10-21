@@ -1,5 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import {
+  LONG_TERM_BRACKETS,
+  NIIT_THRESHOLDS,
+  TAX_DATA,
+  TAX_SOURCES,
+  usd,
+} from "@/lib/tax-data";
+
+const LT = LONG_TERM_BRACKETS;
 
 export function CapitalGainsTaxArticle() {
   return (
@@ -42,8 +52,8 @@ export function CapitalGainsTaxArticle() {
       <p>
         Long-term capital gains apply to assets held for more than one year. These gains
         receive preferential tax treatment with three rate tiers: 0%, 15%, or 20%. For 2026,
-        single filers with taxable income up to $48,350 pay 0% on long-term gains. Income
-        between $48,350 and $533,400 is taxed at 15%, and income above $533,400 is taxed at
+        single filers with taxable income up to {usd(LT.single[0].upTo)} pay 0% on long-term gains. Income
+        between {usd(LT.single[0].upTo)} and {usd(LT.single[1].upTo)} is taxed at 15%, and income above {usd(LT.single[1].upTo)} is taxed at
         20%. Married couples filing jointly get roughly double these thresholds. This
         preferential treatment creates a powerful incentive to hold investments for at least
         one year and one day before selling.
@@ -78,32 +88,38 @@ export function CapitalGainsTaxArticle() {
           <tbody>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800 font-medium">0%</td>
-              <td className="px-3 py-2 text-ink-800">Up to $48,350</td>
-              <td className="px-3 py-2 text-ink-800">Up to $96,700</td>
-              <td className="px-3 py-2 text-ink-800">Up to $64,750</td>
+              <td className="px-3 py-2 text-ink-800">Up to {usd(LT.single[0].upTo)}</td>
+              <td className="px-3 py-2 text-ink-800">Up to {usd(LT.mfj[0].upTo)}</td>
+              <td className="px-3 py-2 text-ink-800">Up to {usd(LT.hoh[0].upTo)}</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800 font-medium">15%</td>
-              <td className="px-3 py-2 text-ink-800">$48,351 - $533,400</td>
-              <td className="px-3 py-2 text-ink-800">$96,701 - $600,050</td>
-              <td className="px-3 py-2 text-ink-800">$64,751 - $566,700</td>
+              <td className="px-3 py-2 text-ink-800">{usd(LT.single[0].upTo + 1)} - {usd(LT.single[1].upTo)}</td>
+              <td className="px-3 py-2 text-ink-800">{usd(LT.mfj[0].upTo + 1)} - {usd(LT.mfj[1].upTo)}</td>
+              <td className="px-3 py-2 text-ink-800">{usd(LT.hoh[0].upTo + 1)} - {usd(LT.hoh[1].upTo)}</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800 font-medium">20%</td>
-              <td className="px-3 py-2 text-ink-800">Over $533,400</td>
-              <td className="px-3 py-2 text-ink-800">Over $600,050</td>
-              <td className="px-3 py-2 text-ink-800">Over $566,700</td>
+              <td className="px-3 py-2 text-ink-800">Over {usd(LT.single[1].upTo)}</td>
+              <td className="px-3 py-2 text-ink-800">Over {usd(LT.mfj[1].upTo)}</td>
+              <td className="px-3 py-2 text-ink-800">Over {usd(LT.hoh[1].upTo)}</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <Sources
+        items={[TAX_SOURCES.revProc, TAX_SOURCES.capitalGains]}
+        checked={TAX_DATA.checkedOnLabel}
+        note="Thresholds are for tax year 2026 and are measured against taxable income including the gain."
+      />
       <p>
         These thresholds are based on your total taxable income, not just the capital gain
         itself. Your wages, salary, business income, and other earnings stack underneath the
-        gain to determine which bracket applies. An investor earning $40,000 in salary who
-        realizes a $20,000 long-term gain has a total taxable income of $60,000. The first
-        $8,350 of the gain ($48,350 - $40,000) falls in the 0% bracket, and the remaining
-        $11,650 is taxed at 15%. This stacking effect is why the calculator asks for your
+        gain to determine which bracket applies. An investor with $40,000 of taxable income
+        (wages after the standard deduction and other deductions) who realizes a $20,000
+        long-term gain has a total taxable income of $60,000. The first $9,450 of the gain
+        ({usd(LT.single[0].upTo)} - $40,000) falls in the 0% bracket, and the remaining $10,550 is taxed at 15%,
+        a tax of $1,583. This stacking effect is why the calculator asks for your
         annual income -- it directly affects the rate you pay on the gain.
       </p>
 
@@ -111,8 +127,8 @@ export function CapitalGainsTaxArticle() {
       <p>
         High earners face an additional 3.8% Net Investment Income Tax on top of the regular
         capital gains rate. The NIIT applies to the lesser of your net investment income or the
-        amount by which your modified adjusted gross income (MAGI) exceeds $200,000 for single
-        filers or $250,000 for married filing jointly. This effectively raises the maximum
+        amount by which your modified adjusted gross income (MAGI) exceeds {usd(NIIT_THRESHOLDS.single)} for single
+        filers or {usd(NIIT_THRESHOLDS.mfj)} for married filing jointly. These thresholds are not adjusted for inflation. This effectively raises the maximum
         long-term capital gains rate from 20% to 23.8%.
       </p>
       <p>
@@ -139,18 +155,20 @@ export function CapitalGainsTaxArticle() {
       </p>
       <p>
         Since Marcus held the stocks for more than one year, the $33,000 gain qualifies for
-        long-term capital gains rates. His $120,000 salary places him well above the 0%
-        threshold of $48,350, so the entire gain is taxed at 15%. His capital gains tax is
+        long-term capital gains rates. His taxable income of $103,900 ($120,000 minus the $16,100 standard deduction) puts him well above the 0%
+        threshold of {usd(LT.single[0].upTo)}, so the entire gain is taxed at 15%. His capital gains tax is
         $33,000 x 15% = $4,950. His MAGI is $120,000 + $33,000 = $153,000, which is below
         the $200,000 NIIT threshold, so no NIIT applies. Marcus nets $58,000 - $4,950 =
         $53,050 after tax.
       </p>
       <p>
         If Marcus had sold after only 10 months, the same $33,000 gain would be taxed at his
-        ordinary income rate. With $120,000 in salary, his marginal bracket is 24%, making
-        the short-term tax $33,000 x 24% = $7,920. That is $2,970 more in taxes -- nearly
-        $3,000 lost simply because he did not wait two more months. The difference would have
-        been even larger if Marcus had been in the 32% bracket.
+        ordinary income rate. His $103,900 of taxable income sits just under the
+        $105,700 top of the 22% bracket, so the gain would fill the last $1,800 of that bracket
+        and push the other $31,200 into the 24% bracket: $1,800 x 22% + $31,200 x 24% =
+        $7,884. That is $2,934 more in taxes -- nearly $3,000 lost simply because he did not
+        wait two more months. The difference would have been even larger if Marcus had been in
+        the 32% bracket.
       </p>
       <p>
         Marcus decides to sell and uses the $53,050 proceeds as part of his home down payment.
@@ -171,7 +189,7 @@ export function CapitalGainsTaxArticle() {
         <table className="w-full text-sm border border-ink-200">
           <thead className="bg-ink-100">
             <tr>
-              <th className="px-3 py-2 text-left font-medium text-ink-600">Annual Income</th>
+              <th className="px-3 py-2 text-left font-medium text-ink-600">Taxable Income (before gain)</th>
               <th className="px-3 py-2 text-left font-medium text-ink-600">$20K Gain (Short-Term)</th>
               <th className="px-3 py-2 text-left font-medium text-ink-600">$20K Gain (Long-Term)</th>
               <th className="px-3 py-2 text-left font-medium text-ink-600">Tax Savings</th>
@@ -180,33 +198,33 @@ export function CapitalGainsTaxArticle() {
           <tbody>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800">$30,000</td>
-              <td className="px-3 py-2 text-red-600">$2,714</td>
-              <td className="px-3 py-2 text-green-700">$252</td>
-              <td className="px-3 py-2 text-green-700 font-medium">$2,462</td>
+              <td className="px-3 py-2 text-red-600">$2,400</td>
+              <td className="px-3 py-2 text-green-700">$83</td>
+              <td className="px-3 py-2 text-green-700 font-medium">$2,318</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800">$60,000</td>
-              <td className="px-3 py-2 text-red-600">$3,828</td>
+              <td className="px-3 py-2 text-red-600">$4,400</td>
               <td className="px-3 py-2 text-green-700">$3,000</td>
-              <td className="px-3 py-2 text-green-700 font-medium">$828</td>
+              <td className="px-3 py-2 text-green-700 font-medium">$1,400</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800">$100,000</td>
-              <td className="px-3 py-2 text-red-600">$4,800</td>
+              <td className="px-3 py-2 text-red-600">$4,686</td>
               <td className="px-3 py-2 text-green-700">$3,000</td>
-              <td className="px-3 py-2 text-green-700 font-medium">$1,800</td>
+              <td className="px-3 py-2 text-green-700 font-medium">$1,686</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800">$200,000</td>
-              <td className="px-3 py-2 text-red-600">$6,400</td>
+              <td className="px-3 py-2 text-red-600">$6,258</td>
               <td className="px-3 py-2 text-green-700">$3,000</td>
-              <td className="px-3 py-2 text-green-700 font-medium">$3,400</td>
+              <td className="px-3 py-2 text-green-700 font-medium">$3,258</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-800">$500,000</td>
-              <td className="px-3 py-2 text-red-600">$7,400</td>
+              <td className="px-3 py-2 text-red-600">$7,000</td>
               <td className="px-3 py-2 text-green-700">$3,000</td>
-              <td className="px-3 py-2 text-green-700 font-medium">$4,400</td>
+              <td className="px-3 py-2 text-green-700 font-medium">$4,000</td>
             </tr>
           </tbody>
         </table>
@@ -216,7 +234,8 @@ export function CapitalGainsTaxArticle() {
         on your income level and holding period. At every income level, long-term treatment
         produces a lower tax bill. The savings are most dramatic for lower-income investors
         who qualify for the 0% rate and for high earners where the spread between their
-        ordinary income bracket and the 15% or 20% long-term rate is widest. Filing status
+        ordinary income bracket and the 15% or 20% long-term rate is widest. The table is for a
+        single filer and shows income tax only, before the 3.8% Net Investment Income Tax. Filing status
         also matters: married couples filing jointly enjoy wider 0% and 15% brackets, often
         cutting the tax bill in half compared to a single filer at the same income.
       </p>
@@ -239,7 +258,7 @@ export function CapitalGainsTaxArticle() {
         </li>
         <li>
           <strong>Use the 0% bracket strategically.</strong> If your income falls near the 0%
-          threshold ($48,350 for single filers in 2026), you can sell appreciated assets
+          threshold ({usd(LT.single[0].upTo)} for single filers in 2026), you can sell appreciated assets
           tax-free up to that limit. Retirees and gap-year professionals often take advantage
           of low-income years to realize gains at 0%. This is called tax-gain harvesting --
           the opposite of tax-loss harvesting.
@@ -332,8 +351,8 @@ export function CapitalGainsTaxArticle() {
       </p>
       <p>
         <strong>Is there a 0% capital gains tax rate?</strong>{" "}
-        Yes. For 2026, single filers with taxable income up to $48,350 and married filing
-        jointly up to $96,700 pay 0% on long-term capital gains. This threshold applies to
+        Yes. For 2026, single filers with taxable income up to {usd(LT.single[0].upTo)} and married filing
+        jointly up to {usd(LT.mfj[0].upTo)} pay 0% on long-term capital gains. This threshold applies to
         your total taxable income including the gain, so partial gains may qualify for 0%
         even if your total income pushes some of the gain into the 15% bracket.
       </p>

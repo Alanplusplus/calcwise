@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "@/lib/market-data";
 
 export function MortgageArticle() {
   return (
@@ -7,13 +9,13 @@ export function MortgageArticle() {
       <figure className="my-8">
         <Image
           src="/images/mortgage-payment-breakdown.webp"
-          alt="Infographic showing how mortgage payments shift from mostly interest to mostly principal over 30 years"
+          alt="Stacked bar chart showing a $280,000 30-year mortgage at 7.40% shifting from 88% interest in year 1 to 99% principal in year 30"
           width={1200}
           height={800}
           className="rounded-lg border border-ink-200"
         />
         <figcaption className="mt-2 text-center text-sm text-ink-500">
-          Over time, more of each payment goes to principal as your balance decreases.
+          Share of each payment going to interest versus principal on the default $280,000, 30-year loan at 7.40%.
         </figcaption>
       </figure>
 
@@ -21,7 +23,7 @@ export function MortgageArticle() {
       <p>
         Enter your home price, down payment amount, loan term, and interest rate
         to instantly see your estimated monthly payment. The calculator also
-        shows you the total interest you&apos;ll pay over the life of the loan and
+        shows you the total interest you'll pay over the life of the loan and
         provides a year-by-year amortization schedule.
       </p>
 
@@ -30,7 +32,15 @@ export function MortgageArticle() {
         A mortgage payment consists of principal and interest (P&I). The
         principal is the amount that reduces your loan balance, while the
         interest is the cost charged by the lender for borrowing the money.
+        The calculator above pre-fills a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate — the
+        Freddie Mac PMMS 30-year fixed average for the week of {MORTGAGE_MARKET.asOfLabel}.
+        On the default $350,000 home with $70,000 down, that produces a $280,000 loan and
+        about $1,939/month in principal and interest over 30 years.
       </p>
+      <Sources
+        items={MORTGAGE_MARKET_SOURCES}
+        checked={MORTGAGE_MARKET.checkedLabel}
+      />
       <p>
         In the early years of a mortgage, most of your payment goes toward
         interest. As the balance decreases, more of each payment is applied to
@@ -38,7 +48,7 @@ export function MortgageArticle() {
         above.
       </p>
 
-      <h3>What&apos;s Not Included</h3>
+      <h3>What's Not Included</h3>
       <p>
         This calculator estimates principal and interest only. Your actual
         monthly housing cost will also include:
@@ -59,12 +69,12 @@ export function MortgageArticle() {
         >
           keeping your total housing costs below 28% of your gross monthly income
         </Link>{" "}
-        (the &quot;28% rule&quot;). For
+        (the "28% rule"). For
         example, if your household earns $8,000 per month before taxes, aim for
         a total housing payment of no more than $2,240.
       </p>
       <p>
-        Additionally, the &quot;36% rule&quot; suggests your total debt payments
+        Additionally, the "36% rule" suggests your total debt payments
         (housing + car loans + student loans + credit cards) should stay below
         36% of gross income.
       </p>
@@ -75,7 +85,7 @@ export function MortgageArticle() {
       <h2>Tips to Lower Your Monthly Payment</h2>
       <ul>
         <li><strong>Increase your down payment</strong> — a larger down payment reduces your loan amount and may eliminate PMI.</li>
-        <li><strong>Choose a longer loan term</strong> — a 30-year term has lower monthly payments than a 15-year, though you&apos;ll pay more interest overall.</li>
+        <li><strong>Choose a longer loan term</strong> — a 30-year term has lower monthly payments than a 15-year, though you'll pay more interest overall.</li>
         <li><strong>Shop for a lower rate</strong> — even a 0.25% rate difference can save thousands over the life of the loan. Get quotes from at least 3 lenders.</li>
         <li><strong>Consider points</strong> — paying discount points upfront can lower your interest rate if you plan to stay in the home long-term.</li>
         <li><strong>Improve your credit score</strong> — borrowers with scores above 740 typically qualify for the best rates.</li>
@@ -95,6 +105,95 @@ export function MortgageArticle() {
         the introductory period.
       </p>
 
+      <h2>How Rate Changes Move Your Payment</h2>
+      <p>
+        Mortgage rates shift with inflation, Fed policy, and bond markets. The same $280,000,
+        30-year loan illustrates how much a higher average rate changes the monthly bill:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>30-year fixed rate</th>
+            <th>Monthly P&I</th>
+            <th>Total interest (30 years)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}% (year-ago PMMS average)</td>
+            <td>$1,728</td>
+            <td>$341,955</td>
+          </tr>
+          <tr>
+            <td>{MORTGAGE_MARKET.thirtyYear.toFixed(2)}% (week of {MORTGAGE_MARKET.asOfLabel})</td>
+            <td>$1,939</td>
+            <td>$417,919</td>
+          </tr>
+          <tr>
+            <td><strong>Difference</strong></td>
+            <td><strong>+$211/month</strong></td>
+            <td><strong>+$75,964</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        That $211 monthly gap is why shopping multiple lenders and improving your credit score
+        before you apply still matters, even when national averages move slowly week to week.
+      </p>
+
+      <h2>Case Study: A $96,000 Household Meets the 28% Rule</h2>
+      <p>
+        Priya and Marcus earn $96,000 a year together ($8,000 a month), so the 28% rule caps
+        their housing payment at $2,240. They want the calculator's default home: $350,000 with
+        $70,000 down. At {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% the principal and interest is
+        $1,938.66. Property tax at 1.1% adds $320.83 a month and insurance adds $150, so the
+        total is $2,409.50, which is $169.50 over their limit. They test three ways to close the
+        gap in the <Link href="/calculators/house-payment" className="text-brand-600 hover:text-brand-800 font-medium">House Payment Calculator</Link>:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Home price</th>
+            <th>Down payment</th>
+            <th>Monthly total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Original plan</td>
+            <td>$350,000</td>
+            <td>$70,000 (20%)</td>
+            <td>$2,409.50</td>
+          </tr>
+          <tr>
+            <td>Put more down</td>
+            <td>$350,000</td>
+            <td>$94,480 (27%)</td>
+            <td>$2,240.00</td>
+          </tr>
+          <tr>
+            <td>Buy a cheaper home</td>
+            <td>$323,000</td>
+            <td>$64,600 (20%)</td>
+            <td>$2,235.19</td>
+          </tr>
+          <tr>
+            <td>Same home if the rate were {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}%</td>
+            <td>$350,000</td>
+            <td>$70,000 (20%)</td>
+            <td>$2,198.49</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Monthly totals include principal, interest, tax, and insurance; none needs PMI because
+        each plan puts at least 20% down. The first fix costs $24,480 of extra savings, the second
+        costs $27,000 of house, and the third only works if rates drift back toward last year's
+        {" "}{MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}%, which is a bet rather than a plan. Running these scenarios before you tour homes tells you which
+        lever you can actually pull.
+      </p>
+
       <h2>The Mortgage Formula</h2>
       <p>
         The standard formula for calculating a fixed-rate mortgage payment is:
@@ -109,8 +208,9 @@ export function MortgageArticle() {
         <li><strong>n</strong> = total number of monthly payments (years × 12)</li>
       </ul>
       <p>
-        For example, a $280,000 loan at 6.5% for 30 years: r = 0.065/12 =
-        0.005417, n = 360. The monthly payment would be approximately $1,770.
+        For example, a $280,000 loan at {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% for 30 years: r = 0.074/12 =
+        0.006167, n = 360. The monthly payment would be approximately $1,939 — the same figure
+        you see with the calculator defaults above.
       </p>
 
       <h2>Frequently Asked Questions</h2>
@@ -143,8 +243,8 @@ export function MortgageArticle() {
       <h3>Can I pay off my mortgage early?</h3>
       <p>
         Most mortgages allow extra payments without penalty. Even adding $100
-        per month to a 30-year, $280,000 loan at 6.5% would save you
-        approximately $48,000 in interest and shorten the loan by about 5
+        per month to a 30-year, $280,000 loan at {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% would save you
+        approximately $75,000 in interest and shorten the loan by about 4.5
         years.
       </p>
       <p>

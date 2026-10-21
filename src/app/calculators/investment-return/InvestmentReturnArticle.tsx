@@ -6,7 +6,7 @@ export function InvestmentReturnArticle() {
       <h2>Understanding Investment Returns</h2>
       <p>
         Your investment return includes two components: capital gains (the
-        increase in your investment&apos;s value) and income (dividends,
+        increase in your investment's value) and income (dividends,
         interest, or distributions received). This calculator combines both to
         give you a complete picture of your investment performance.
       </p>
@@ -14,7 +14,7 @@ export function InvestmentReturnArticle() {
       <h2>Total Return vs. Annualized Return (CAGR)</h2>
       <p>
         <strong>Total return</strong> shows your overall gain as a percentage of
-        your initial investment. If you invested $10,000 and it&apos;s now worth
+        your initial investment. If you invested $10,000 and it's now worth
         $15,000, your total return is 50%.
       </p>
       <p>
@@ -46,7 +46,7 @@ export function InvestmentReturnArticle() {
         Use these benchmarks to evaluate whether your investments are
         outperforming or underperforming the market. If your stock portfolio
         consistently trails the S&P 500, you might be better served by a simple
-        index fund. If you&apos;re just getting started, read{" "}
+        index fund. If you're just getting started, read{" "}
         <Link
           href="/guides/how-to-start-investing-1000"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -58,7 +58,7 @@ export function InvestmentReturnArticle() {
 
       <h2>Why Dividends Matter</h2>
       <p>
-        Dividends have contributed approximately 40% of the S&P 500&apos;s total
+        Dividends have contributed approximately 40% of the S&P 500's total
         return historically. An investment that grows from $10,000 to $12,000
         while also paying $800 in dividends has a true return of $2,800 (28%),
         not just $2,000 (20%).
@@ -82,7 +82,7 @@ export function InvestmentReturnArticle() {
         A 10% nominal return during a year with 3% inflation produces a real
         return of approximately 7%. When evaluating long-term investment
         performance, always consider whether your returns are beating inflation —
-        otherwise your purchasing power isn&apos;t actually growing.
+        otherwise your purchasing power isn't actually growing.
       </p>
 
       <h2>Case Study: Sarah Compares Three Strategies</h2>
@@ -122,7 +122,7 @@ export function InvestmentReturnArticle() {
         </li>
       </ul>
       <p>
-        Sarah&apos;s takeaway: headline percentages mislead when time and income
+        Sarah's takeaway: headline percentages mislead when time and income
         differ. She now benchmarks every holding against 7–10% long-run stock
         expectations and uses our{" "}
         <Link
@@ -181,7 +181,7 @@ export function InvestmentReturnArticle() {
 
       <h2>Frequently Asked Questions</h2>
 
-      <h3>What&apos;s a good annualized return?</h3>
+      <h3>What's a good annualized return?</h3>
       <p>
         For a diversified stock portfolio, matching or slightly trailing the
         market (8-10% nominal) is considered good. Consistently beating the
@@ -193,7 +193,7 @@ export function InvestmentReturnArticle() {
       <h3>How do I account for additional contributions?</h3>
       <p>
         If you made regular contributions over time, your true return is more
-        complex to calculate (you&apos;d need the internal rate of return or
+        complex to calculate (you'd need the internal rate of return or
         money-weighted return). This calculator is designed for lump-sum
         investments. For regular contributions, use our{" "}
         <Link
@@ -208,13 +208,13 @@ export function InvestmentReturnArticle() {
       <h3>Should I include fees in my calculation?</h3>
       <p>
         Yes. Use your actual account value (after fees have been deducted) as
-        the &quot;Current Value.&quot; This gives you your net return — what you
+        the "Current Value." This gives you your net return — what you
         actually earned after all costs.
       </p>
 
       <h3>What is the difference between CAGR and average annual return?</h3>
       <p>
-        Average annual return adds each year&apos;s percentage and divides by
+        Average annual return adds each year's percentage and divides by
         the number of years. If you earn +20%, −10%, and +15% over three years,
         the simple average is 8.3%. CAGR instead links those years geometrically
         and might show about 7.4% — the rate that actually turns your starting

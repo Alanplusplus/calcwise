@@ -5,6 +5,19 @@ import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { Sources } from "@/components/Sources";
+import {
+  GIFT_ANNUAL_EXCLUSION,
+  LONG_TERM_BRACKETS,
+  NIIT_THRESHOLDS,
+  ORDINARY_BRACKETS,
+  TAX_DATA,
+  TAX_SOURCES,
+  TOP_ORDINARY_RATE,
+  usd,
+} from "@/lib/tax-data";
+
+const LT = LONG_TERM_BRACKETS;
 
 export const metadata: Metadata = {
   title: "Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe",
@@ -19,7 +32,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What is the capital gains tax rate for 2026?",
-    answer: "For 2026, long-term capital gains (assets held more than one year) are taxed at 0%, 15%, or 20% depending on your taxable income and filing status. Single filers pay 0% on gains when total taxable income is up to $48,350, 15% from $48,351 to $533,400, and 20% above $533,400. Short-term gains on assets held one year or less are taxed as ordinary income at rates from 10% to 37%. High earners with modified adjusted gross income above $200,000 (single) or $250,000 (married filing jointly) may also owe an additional 3.8% Net Investment Income Tax.",
+    answer: `For 2026, long-term capital gains (assets held more than one year) are taxed at 0%, 15%, or 20% depending on your taxable income and filing status. Single filers pay 0% on gains when total taxable income is up to ${usd(LT.single[0].upTo)}, 15% from ${usd(LT.single[0].upTo + 1)} to ${usd(LT.single[1].upTo)}, and 20% above ${usd(LT.single[1].upTo)}. Short-term gains on assets held one year or less are taxed as ordinary income at rates from 10% to 37%. High earners with modified adjusted gross income above ${usd(NIIT_THRESHOLDS.single)} (single) or ${usd(NIIT_THRESHOLDS.mfj)} (married filing jointly) may also owe an additional 3.8% Net Investment Income Tax.`,
   },
   {
     question: "Do I pay capital gains tax on my primary home?",
@@ -27,7 +40,7 @@ const faqs = [
   },
   {
     question: "How do I calculate capital gains on stocks?",
-    answer: "Capital gain equals your sale proceeds minus your cost basis. If you bought 100 shares at $50 per share ($5,000 cost basis) and sold at $80 per share ($8,000 proceeds), your gain is $3,000. Subtract any commissions and add reinvested dividends to your cost basis if applicable. The holding period determines the rate: sell within 365 days and the gain is short-term; hold at least 366 days and it qualifies for long-term rates. Use our Income Tax Calculator to estimate federal tax on a specific gain amount at your income level.",
+    answer: "Capital gain equals your sale proceeds minus your cost basis. If you bought 100 shares at $50 per share ($5,000 cost basis) and sold at $80 per share ($8,000 proceeds), your gain is $3,000. Subtract any commissions and add reinvested dividends to your cost basis if applicable. The holding period determines the rate: sell within 365 days and the gain is short-term; hold at least 366 days and it qualifies for long-term rates. Use our Capital Gains Tax Calculator to estimate federal tax on a specific gain amount at your income level.",
   },
   {
     question: "Are there ways to avoid capital gains tax legally?",
@@ -48,7 +61,7 @@ export default function GuidePage() {
         description="Understand 2026 capital gains tax rates, brackets for every filing status, and proven strategies to minimize your tax bill on stocks, real estate, and crypto."
         slug="capital-gains-tax-guide"
         datePublished="2026-09-11"
-        dateModified="2026-09-11"
+        dateModified="2026-10-20"
         image="/images/guides/capital-gains-tax-guide.webp"
       />
       <BreadcrumbJsonLd
@@ -69,7 +82,7 @@ export default function GuidePage() {
       <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">
         Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe
       </h1>
-      <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
+      <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
 
       <article className="prose mt-8">
         <p>
@@ -78,8 +91,8 @@ export default function GuidePage() {
           the asset and your total taxable income. Short-term gains on assets held one year or less are
           taxed as ordinary income at rates up to 37%. Long-term gains on assets held more than one year
           qualify for preferential rates of 0%, 15%, or 20%. For most middle-income investors, the
-          difference between selling one month too early and holding for 13 months can mean paying $2,000
-          to $4,000 more in federal tax on the same $25,000 profit.
+          difference between selling one month too early and holding for 13 months can mean paying $1,750
+          to $4,800 more in federal tax on the same $25,000 profit, depending on your income.
         </p>
 
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">
@@ -141,11 +154,11 @@ export default function GuidePage() {
         </p>
 
         <p>
-          The one-day difference is not symbolic — it is financial. A single filer earning $120,000 who
-          realizes a $20,000 gain pays $4,800 in federal tax if the gain is short-term (24% marginal rate)
+          The one-day difference is not symbolic — it is financial. A single filer with $120,000 of taxable
+          income who realizes a $20,000 gain pays $4,800 in federal tax if the gain is short-term (24% marginal rate)
           but only $3,000 if it is long-term (15% rate). That $1,800 savings requires nothing more than
           waiting until day 366 to click sell. Mark your purchase dates in a spreadsheet or use your
-          brokerage&apos;s lot-tracking tools to avoid accidentally triggering short-term treatment.
+          brokerage's lot-tracking tools to avoid accidentally triggering short-term treatment.
         </p>
 
         <h2>2026 Long-Term Capital Gains Tax Rates and Brackets</h2>
@@ -157,9 +170,9 @@ export default function GuidePage() {
         </p>
 
         <ul>
-          <li><strong>0% rate:</strong> Taxable income up to $48,350</li>
-          <li><strong>15% rate:</strong> Taxable income from $48,351 to $533,400</li>
-          <li><strong>20% rate:</strong> Taxable income above $533,400</li>
+          <li><strong>0% rate:</strong> Taxable income up to {usd(LT.single[0].upTo)}</li>
+          <li><strong>15% rate:</strong> Taxable income from {usd(LT.single[0].upTo + 1)} to {usd(LT.single[1].upTo)}</li>
+          <li><strong>20% rate:</strong> Taxable income above {usd(LT.single[1].upTo)}</li>
         </ul>
 
         <p>
@@ -167,25 +180,31 @@ export default function GuidePage() {
         </p>
 
         <ul>
-          <li><strong>0% rate:</strong> Taxable income up to $96,700</li>
-          <li><strong>15% rate:</strong> Taxable income from $96,701 to $600,050</li>
-          <li><strong>20% rate:</strong> Taxable income above $600,050</li>
+          <li><strong>0% rate:</strong> Taxable income up to {usd(LT.mfj[0].upTo)}</li>
+          <li><strong>15% rate:</strong> Taxable income from {usd(LT.mfj[0].upTo + 1)} to {usd(LT.mfj[1].upTo)}</li>
+          <li><strong>20% rate:</strong> Taxable income above {usd(LT.mfj[1].upTo)}</li>
         </ul>
 
         <p>
           A retiree with $35,000 in Social Security and pension income who sells stock for a $10,000
           long-term gain would have total taxable income around $45,000 — entirely within the 0% bracket,
           meaning zero federal capital gains tax on that sale. The same retiree with $55,000 in ordinary
-          income would pay 15% on most of the gain because they exceed the $48,350 threshold.
+          income would pay 15% on the entire gain because they exceed the {usd(LT.single[0].upTo)} threshold.
         </p>
 
         <p>
           High earners face an additional layer. The 3.8% Net Investment Income Tax (NIIT) applies when
-          modified adjusted gross income exceeds $200,000 for single filers or $250,000 for married filing
+          modified adjusted gross income exceeds {usd(NIIT_THRESHOLDS.single)} for single filers or {usd(NIIT_THRESHOLDS.mfj)} for married filing
           jointly. This surtax stacks on top of the 15% or 20% long-term rate. A single filer with
           $300,000 in income who realizes a $50,000 long-term gain pays 15% ($7,500) plus 3.8% NIIT
           ($1,900) on the gain — $9,400 total, an effective rate of 18.8%.
         </p>
+
+        <Sources
+          items={[TAX_SOURCES.revProc, TAX_SOURCES.capitalGains, TAX_SOURCES.niit]}
+          checked={TAX_DATA.checkedOnLabel}
+          note="Long-term thresholds are for tax year 2026; the NIIT thresholds are set by statute and not indexed for inflation."
+        />
 
         <h2>2026 Short-Term Capital Gains Tax Rates</h2>
 
@@ -196,27 +215,29 @@ export default function GuidePage() {
         </p>
 
         <ul>
-          <li><strong>10%:</strong> $0 to $11,925</li>
-          <li><strong>12%:</strong> $11,926 to $48,475</li>
-          <li><strong>22%:</strong> $48,476 to $103,350</li>
-          <li><strong>24%:</strong> $103,351 to $197,300</li>
-          <li><strong>32%:</strong> $197,301 to $250,525</li>
-          <li><strong>35%:</strong> $250,526 to $626,350</li>
-          <li><strong>37%:</strong> Above $626,350</li>
+          {ORDINARY_BRACKETS.single.map((b, i, arr) => (
+            <li key={b.rate}>
+              <strong>{Math.round(b.rate * 100)}%:</strong> {usd(i === 0 ? 0 : arr[i - 1].upTo + 1)} to {usd(b.upTo)}
+            </li>
+          ))}
+          <li>
+            <strong>{Math.round(TOP_ORDINARY_RATE * 100)}%:</strong> Above{" "}
+            {usd(ORDINARY_BRACKETS.single[ORDINARY_BRACKETS.single.length - 1].upTo)}
+          </li>
         </ul>
 
         <p>
           Because short-term gains stack on top of your existing income, they are typically taxed at your
           highest marginal rate — not your average rate. An engineer earning $145,000 who flips a stock
           position within six months pays 24% on the entire short-term gain, even though their average
-          tax rate on salary alone is closer to 18%. Use the{" "}
+          tax rate on salary alone is closer to 16%. Use the{" "}
           <Link href="/calculators/income-tax" className="text-brand-600 hover:text-brand-800 font-medium">
             Income Tax Calculator
           </Link>{" "}
           to model how a short-term gain shifts your effective tax rate before you execute a trade.
         </p>
 
-        <h2>Case Study: David&apos;s Tech Stock Sale in Seattle</h2>
+        <h2>Case Study: David's Tech Stock Sale in Seattle</h2>
 
         <p>
           David is a 42-year-old software engineer in Seattle earning $145,000 per year in W-2 salary.
@@ -231,9 +252,9 @@ export default function GuidePage() {
         </p>
 
         <p>
-          David&apos;s adjusted gross income for 2026 is $156,400 ($145,000 salary + $11,400 gain). As a
+          David's adjusted gross income for 2026 is $156,400 ($145,000 salary + $11,400 gain). As a
           single filer, he falls squarely in the 15% long-term capital gains bracket (income between
-          $48,351 and $533,400). His federal capital gains tax: $11,400 × 15% = <strong>$1,710</strong>.
+          {usd(LT.single[0].upTo + 1)} and {usd(LT.single[1].upTo)}). His federal capital gains tax: $11,400 × 15% = <strong>$1,710</strong>.
         </p>
 
         <p>
@@ -256,7 +277,8 @@ export default function GuidePage() {
 
         <p>
           The table below shows federal tax on a $25,000 capital gain for single filers at five different
-          income levels. Short-term tax uses the marginal ordinary income rate at each income level.
+          income levels. Short-term tax stacks the gain on top of your income and applies the 2026 ordinary
+          brackets at each level. The figures are federal income tax only, before the 3.8% NIIT.
           Long-term tax uses the 2026 preferential brackets, including partial 0% treatment where applicable.
         </p>
 
@@ -273,9 +295,9 @@ export default function GuidePage() {
             <tbody>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 font-medium text-ink-800">$40,000</td>
-                <td className="px-4 py-3 text-ink-800">$4,785</td>
-                <td className="px-4 py-3 text-ink-800">$2,498</td>
-                <td className="px-4 py-3 text-ink-800">$2,287</td>
+                <td className="px-4 py-3 text-ink-800">$4,460</td>
+                <td className="px-4 py-3 text-ink-800">$2,333</td>
+                <td className="px-4 py-3 text-ink-800">$2,128</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 font-medium text-ink-800">$60,000</td>
@@ -285,9 +307,9 @@ export default function GuidePage() {
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 font-medium text-ink-800">$100,000</td>
-                <td className="px-4 py-3 text-ink-800">$6,000</td>
+                <td className="px-4 py-3 text-ink-800">$5,886</td>
                 <td className="px-4 py-3 text-ink-800">$3,750</td>
-                <td className="px-4 py-3 text-ink-800">$2,250</td>
+                <td className="px-4 py-3 text-ink-800">$2,136</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 font-medium text-ink-800">$150,000</td>
@@ -297,9 +319,9 @@ export default function GuidePage() {
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 font-medium text-ink-800">$250,000</td>
-                <td className="px-4 py-3 text-ink-800">$8,000</td>
+                <td className="px-4 py-3 text-ink-800">$8,563</td>
                 <td className="px-4 py-3 text-ink-800">$3,750</td>
-                <td className="px-4 py-3 text-ink-800">$4,250</td>
+                <td className="px-4 py-3 text-ink-800">$4,813</td>
               </tr>
             </tbody>
           </table>
@@ -307,8 +329,8 @@ export default function GuidePage() {
 
         <p>
           The pattern is clear: at every income level, holding for more than one year produces meaningful
-          savings. The benefit is largest for high earners — a single filer at $250,000 saves $4,250 on
-          the same $25,000 gain. Even at lower incomes, the $40,000 earner saves $2,287 by qualifying for
+          savings. The benefit is largest for high earners — a single filer at $250,000 saves $4,813 on
+          the same $25,000 gain. Even at lower incomes, the $40,000 earner saves $2,128 by qualifying for
           long-term treatment, partly because a portion of the gain falls in the 0% bracket.
         </p>
 
@@ -323,7 +345,7 @@ export default function GuidePage() {
         </p>
 
         <p>
-          <strong>2. Hold investments for at least one year.</strong> As David&apos;s case shows, crossing
+          <strong>2. Hold investments for at least one year.</strong> As David's case shows, crossing
           the 366-day mark can save 9 to 13 percentage points on your tax rate. Before selling any
           profitable position, check the purchase date. If you are within weeks of the one-year mark,
           waiting is almost always worth it unless the stock is in free fall.
@@ -346,8 +368,8 @@ export default function GuidePage() {
 
         <p>
           <strong>5. Gift appreciated assets to lower-income family members.</strong> If your adult child
-          is in the 0% long-term capital gains bracket (taxable income under $48,350), gifting appreciated
-          stock lets them sell at 0% federal tax. You can gift up to $19,000 per recipient per year (2026
+          is in the 0% long-term capital gains bracket (taxable income under {usd(LT.single[0].upTo)}), gifting appreciated
+          stock lets them sell at 0% federal tax. You can gift up to {usd(GIFT_ANNUAL_EXCLUSION)} per recipient per year (2026
           limit) without triggering gift tax. This works best when the recipient is genuinely in a lower
           bracket — not as a sham transaction.
         </p>
@@ -356,7 +378,7 @@ export default function GuidePage() {
           <strong>6. Donate appreciated stock to charity.</strong> Instead of selling stock and donating
           cash, transfer shares directly to a qualified charity. You avoid capital gains tax on the
           appreciation and deduct the full fair market value if you itemize. Donating $10,000 of stock
-          with a $4,000 cost basis saves you $1,500 in capital gains tax (at 15%) plus provides a
+          with a $4,000 cost basis saves you $900 in capital gains tax (15% of the $6,000 of appreciation) plus provides a
           $10,000 charitable deduction — a double benefit that cash donations cannot match.
         </p>
 
@@ -372,11 +394,17 @@ export default function GuidePage() {
           explains how qualified dividends receive the same preferential long-term rates as capital gains.
         </p>
 
+        <Sources
+          items={[TAX_SOURCES.revProc, TAX_SOURCES.capitalGains, TAX_SOURCES.federalRates]}
+          checked={TAX_DATA.checkedOnLabel}
+          note="Gift exclusion, ordinary brackets, and long-term thresholds are from Rev. Proc. 2025-32."
+        />
+
         <div className="rounded-lg border border-brand-200 bg-brand-50 p-6 my-8 text-center">
           <p className="font-semibold text-ink-800">Estimate Your Capital Gains Tax</p>
           <p className="mt-1 text-sm text-ink-600">Use our free calculator to see how much you owe on stock sales, real estate, and other investments.</p>
-          <Link href="/calculators/income-tax" className="mt-3 inline-block rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-700">
-            Open Income Tax Calculator
+          <Link href="/calculators/capital-gains-tax" className="mt-3 inline-block rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-700">
+            Open Capital Gains Tax Calculator
           </Link>
         </div>
 
@@ -385,9 +413,9 @@ export default function GuidePage() {
         <h3>What is the capital gains tax rate for 2026?</h3>
         <p>
           For 2026, long-term capital gains are taxed at 0%, 15%, or 20% based on taxable income and
-          filing status. Single filers pay 0% when income is up to $48,350, 15% from $48,351 to $533,400,
-          and 20% above $533,400. Short-term gains are taxed as ordinary income at rates from 10% to 37%.
-          High earners with modified adjusted gross income above $200,000 (single) or $250,000 (married
+          filing status. Single filers pay 0% when income is up to {usd(LT.single[0].upTo)}, 15% from {usd(LT.single[0].upTo + 1)} to {usd(LT.single[1].upTo)},
+          and 20% above {usd(LT.single[1].upTo)}. Short-term gains are taxed as ordinary income at rates from 10% to 37%.
+          High earners with modified adjusted gross income above {usd(NIIT_THRESHOLDS.single)} (single) or {usd(NIIT_THRESHOLDS.mfj)} (married
           filing jointly) may also owe an additional 3.8% Net Investment Income Tax on investment income.
         </p>
 

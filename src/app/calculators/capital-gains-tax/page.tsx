@@ -5,6 +5,7 @@ import { CalculatorShell } from "@/components/CalculatorShell";
 import { CapitalGainsTaxCalculator } from "./CapitalGainsTaxCalculator";
 import { CapitalGainsTaxArticle } from "./CapitalGainsTaxArticle";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { LONG_TERM_BRACKETS, NIIT_THRESHOLDS, usd } from "@/lib/tax-data";
 
 const calc = getCalculator("capital-gains-tax")!;
 
@@ -33,11 +34,11 @@ const faqs = [
   },
   {
     question: "Is there a 0% capital gains tax rate?",
-    answer: "Yes. For 2026, single filers with taxable income up to $48,350 and married filing jointly up to $96,700 pay 0% on long-term capital gains. This makes tax-gain harvesting possible: selling appreciated assets tax-free if your income falls within the 0% bracket.",
+    answer: `Yes. For 2026, single filers with taxable income up to ${usd(LONG_TERM_BRACKETS.single[0].upTo)} and married filing jointly up to ${usd(LONG_TERM_BRACKETS.mfj[0].upTo)} pay 0% on long-term capital gains. This makes tax-gain harvesting possible: selling appreciated assets tax-free if your income falls within the 0% bracket.`,
   },
   {
     question: "Does the Net Investment Income Tax apply to capital gains?",
-    answer: "The 3.8% Net Investment Income Tax (NIIT) applies to the lesser of your net investment income or the amount by which your modified adjusted gross income exceeds $200,000 for single filers or $250,000 for married filing jointly. This can effectively raise the top long-term capital gains rate to 23.8%.",
+    answer: `The 3.8% Net Investment Income Tax (NIIT) applies to the lesser of your net investment income or the amount by which your modified adjusted gross income exceeds ${usd(NIIT_THRESHOLDS.single)} for single filers or ${usd(NIIT_THRESHOLDS.mfj)} for married filing jointly. This can effectively raise the top long-term capital gains rate to 23.8%.`,
   },
 ];
 

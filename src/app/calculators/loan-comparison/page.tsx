@@ -25,6 +25,11 @@ const faqs = [
     question: "What is the difference between interest rate and APR?",
     answer: "The interest rate is the base cost of borrowing. The APR (Annual Percentage Rate) includes the interest rate plus fees like origination fees, closing costs, and points spread over the loan term. Always compare APR to APR for an accurate cost comparison.",
   },
+  {
+    question: "On a $250,000 loan, how much does a 15-year mortgage save versus 30 years at today's averages?",
+    answer:
+      "Using the Freddie Mac PMMS averages of 7.40% on a 30-year and 6.71% on a 15-year, Loan A runs $1,730.95 per month with $373,142 in total interest, while Loan B runs $2,206.73 per month with $147,212 in total interest. Loan B costs $476 more per month but saves $225,930 in interest over the full term.",
+  },
 ];
 
 export const metadata: Metadata = {

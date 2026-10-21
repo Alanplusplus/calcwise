@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "Where to Keep Your Emergency Fund for the Best Interest Rate",
@@ -23,7 +24,7 @@ const faqs = [
   {
     question: "Where is the best place to keep an emergency fund in 2026?",
     answer:
-      "A high-yield savings account (HYSA) remains the best default for most people. As of October 2026, top online banks offer 4.2-4.75% APY with FDIC insurance up to $250,000 per depositor, per bank. Rates have dipped slightly from the 5.0%+ peaks of late 2023 as the Federal Reserve has cut the federal funds rate, but HYSAs still pay 420-475x more than traditional checking accounts at 0.01% APY. You get same-day or next-day access to your money without market risk. Keep 3-6 months of expenses in a HYSA and avoid keeping more than $500-1,000 in a traditional checking account.",
+      "A high-yield savings account (HYSA) remains the best default for most people. As of mid-October 2026, many top online banks advertise about 4.2-4.75% APY with FDIC insurance up to $250,000 per depositor, per bank. That is far above the FDIC national average savings rate of 0.38% (October 19, 2026). You get same-day or next-day access to your money without market risk. Keep 3-6 months of essential expenses in a HYSA and avoid keeping more than $500-1,000 in a traditional checking account.",
   },
   {
     question: "Should I keep my emergency fund in a checking account?",
@@ -48,7 +49,7 @@ const faqs = [
   {
     question: "What happens to my emergency fund rates when the Fed cuts rates?",
     answer:
-      "When the Federal Reserve lowers the federal funds rate, HYSA and money market APYs follow within 1-3 weeks. In 2024-2026, top HYSAs dropped from 5.3% to around 4.2-4.75% as the Fed cut rates multiple times. CD rates also fell, but existing CDs keep their locked rate until maturity — one advantage of a CD ladder. Even at 4.25% APY, a HYSA still earns $1,062 per year on $25,000 versus $2.50 in a traditional checking account. The gap narrows but never closes.",
+      "When the Federal Reserve lowers the federal funds rate, HYSA and money market APYs usually follow within a few weeks. The FOMC target range stood at 3.75%-4.00% after the September 17, 2026 cut, down from the 5.25%-5.50% range that prevailed in much of 2023-2024. Existing CDs keep their locked rate until maturity — one advantage of a CD ladder. Even at 4.25% APY, a HYSA earns $1,062 per year on $25,000 versus $17.50 at the FDIC national average for interest checking (0.07%, October 19, 2026).",
   },
 ];
 
@@ -61,7 +62,7 @@ export default function EmergencyFundWhereToKeepGuide() {
         description="Where to keep your emergency fund for the best interest rate. Compare HYSAs, money market accounts, CDs, and more with real APY numbers and a case study."
         slug="emergency-fund-where-to-keep"
         datePublished="2026-08-24"
-        dateModified="2026-10-03"
+        dateModified="2026-10-20"
         image="/images/guides/emergency-fund-where-to-keep.webp"
       />
       <BreadcrumbJsonLd
@@ -86,16 +87,28 @@ export default function EmergencyFundWhereToKeepGuide() {
             Where to Keep Your Emergency Fund for the Best Interest Rate
           </h1>
           <p className="mt-4 text-lg text-ink-600">
-            You built a $24,000 emergency fund. Congratulations — 68% of Americans
-            cannot cover a $1,000 surprise expense. But where you keep that money
+            You built a $24,000 emergency fund. Congratulations — but many households
+            still lack a cash buffer: the Federal Reserve's 2024 SHED found 37% of
+            adults would not cover a $400 emergency expense entirely with cash or its
+            equivalent, and 13% could not pay by any means. But where you keep that money
             matters as much as how much you saved. The difference between a
             traditional checking account and a high-yield savings account on
             $25,000 is over $1,100 per year in free money — even after the Federal
-            Reserve&apos;s recent rate cuts. This guide breaks down every
+            Reserve's recent rate cuts. This guide breaks down every
             option, compares real October 2026 rates, and shows you exactly where to park
             your cash for maximum safety and interest.
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
+          <Sources
+            items={[
+              {
+                label: "Federal Reserve SHED 2024, $400 emergency expense (May 2025 report)",
+                href: "https://www.federalreserve.gov/publications/2025-economic-well-being-of-us-households-in-2024-savings-and-investments.htm",
+              },
+            ]}
+            checked="October 2026"
+            className="mt-2"
+          />
         </header>
 
         {/* TL;DR */}
@@ -113,8 +126,9 @@ export default function EmergencyFundWhereToKeepGuide() {
               ($12,600-$25,200 for most households spending $4,200/month)
             </li>
             <li>
-              <strong>Top accounts:</strong> Online HYSAs from Ally Bank (4.20% APY), Marcus
-              by Goldman Sachs (4.40% APY), and Capital One 360 (4.35% APY) as of October 2026
+              <strong>Top accounts:</strong> Example advertised APYs at major online banks
+              often fall in the roughly 4.2%-4.5% range as of mid-October 2026 (verify
+              current rates before opening)
             </li>
             <li>
               <strong>Avoid:</strong> Traditional checking (0.01% APY), stocks,
@@ -142,7 +156,7 @@ export default function EmergencyFundWhereToKeepGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/emergency-fund-where-to-keep.webp"
-              alt="Infographic comparing emergency fund account types by APY, liquidity, and FDIC insurance, with a high-yield savings account highlighted as the best option at 4.5-5.0% APY"
+              alt="Infographic comparing where to keep an emergency fund: high-yield savings at about 4.25% to 4.75% APY, 3-month Treasury bills at 4.27%, and big-bank savings at the 0.38% FDIC national average, with a goal of 3 to 6 months of expenses"
               width={1200}
               height={800}
               quality={80}
@@ -150,7 +164,7 @@ export default function EmergencyFundWhereToKeepGuide() {
               priority
             />
             <figcaption className="bg-ink-50 px-4 py-2 text-center text-sm text-ink-500">
-              Where to keep your emergency fund: comparing APY, liquidity, and safety across account types
+              Where to keep your emergency fund: typical yields as of October 2026 for high-yield savings, Treasury bills, and big-bank accounts
             </figcaption>
           </figure>
         </section>
@@ -162,17 +176,18 @@ export default function EmergencyFundWhereToKeepGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             Most people leave their emergency fund in the same checking account
-            where their paycheck lands. That account probably earns 0.01% APY — the
-            national average at the four largest U.S. banks in 2026. On a $25,000
-            balance, that generates $2.50 in annual interest. You essentially earn
-            nothing while inflation erodes your purchasing power at roughly 2.5%
-            per year ($625 in real value lost annually on $25,000).
+            where their paycheck lands. Many branch checking accounts still pay about
+            0.01% APY; the FDIC national average for interest checking was 0.07% as
+            of October 19, 2026 (savings averaged 0.38%). On a $25,000 balance at
+            0.01%, that is $2.50 in annual interest. Meanwhile, BLS data show
+            all-items CPI rose 3.7% over the 12 months ending September 2026 — about
+            $925 in purchasing power lost on $25,000 if cash earns nothing.
           </p>
           <p className="mt-4 text-ink-700">
             Move that same $25,000 to a high-yield savings account paying 4.50%
             APY and the math changes dramatically. You earn $1,125 per year in
             interest — a $1,122.50 annual difference compared to checking. Over
-            five years, that compounds to roughly $6,100 in extra interest, enough
+            five years, that compounds to roughly $6,300 in extra interest, enough
             to cover 1.5 months of expenses for someone spending $4,200 per month
             on essentials. Yes, HYSA rates have eased from the 5.0%+ peaks of
             late 2023 as the Fed has cut rates, but the gap between a HYSA and
@@ -220,16 +235,30 @@ export default function EmergencyFundWhereToKeepGuide() {
                   </td>
                   <td className="px-4 py-3 font-medium">4.50%</td>
                   <td className="px-4 py-3 font-medium text-brand-700">$1,125</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$6,188</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$6,295</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
             *5-year total assumes constant 4.50% APY with monthly compounding and no
-            withdrawals. Actual rates fluctuate with Federal Reserve policy. HYSA
-            rates have declined from 5.3% in late 2023 as the Fed has cut rates.
+            withdrawals. Example HYSA rate as of mid-October 2026; actual rates fluctuate
+            with Federal Reserve policy.
           </p>
+          <Sources
+            items={[
+              {
+                label: "FDIC national deposit rates (Oct. 19, 2026)",
+                href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+              },
+              {
+                label: "BLS CPI-U, 12-month change 3.7% (Sept. 2026)",
+                href: "https://www.bls.gov/news.release/cpi.nr0.htm",
+              },
+            ]}
+            checked="October 2026"
+            note="Checking row uses a 0.01% illustrative big-bank rate; FDIC national interest checking averaged 0.07%."
+          />
         </section>
 
         {/* Comparison Table */}
@@ -241,8 +270,8 @@ export default function EmergencyFundWhereToKeepGuide() {
             Here is how every common account type stacks up for emergency fund
             purposes. Rates reflect October 2026 market conditions from top
             providers across each category. Note that yields have shifted lower
-            since mid-2024 as the Federal Reserve cut the federal funds rate
-            from 5.25-5.50% to the current 4.00-4.25% range.
+            since 2024 as the Federal Reserve cut the federal funds target from the
+            5.25%-5.50% range toward 3.75%-4.00% as of mid-October 2026.
           </p>
 
           <div className="mt-6 overflow-x-auto">
@@ -278,7 +307,7 @@ export default function EmergencyFundWhereToKeepGuide() {
                   <td className="px-4 py-3 font-medium text-brand-700">
                     High-yield savings (HYSA)
                   </td>
-                  <td className="px-4 py-3 font-medium">4.2-4.75%</td>
+                  <td className="px-4 py-3 font-medium">~4.2-4.75% (top online; FDIC avg. savings 0.38%)</td>
                   <td className="px-4 py-3">Same/next day</td>
                   <td className="px-4 py-3">Yes</td>
                   <td className="px-4 py-3 font-medium">
@@ -287,29 +316,29 @@ export default function EmergencyFundWhereToKeepGuide() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Money market account</td>
-                  <td className="px-4 py-3">4.0-4.5%</td>
+                  <td className="px-4 py-3">~4.0-4.5% (top tier; FDIC avg. money market 0.63%)</td>
                   <td className="px-4 py-3">Same day (check/debit)</td>
                   <td className="px-4 py-3">Yes</td>
                   <td className="px-4 py-3">Those wanting check-writing access</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Certificates of deposit (CDs)</td>
-                  <td className="px-4 py-3">4.4-4.8%</td>
+                  <td className="px-4 py-3">~4.4-4.8% (top online; FDIC avg. 12-mo. CD 1.76%)</td>
                   <td className="px-4 py-3">Locked (penalty to withdraw)</td>
                   <td className="px-4 py-3">Yes</td>
                   <td className="px-4 py-3">CD ladder strategy only</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Treasury bills (T-bills)</td>
-                  <td className="px-4 py-3">4.1-4.5%</td>
+                  <td className="px-4 py-3">~4.1-4.3% (Treasury 3-mo. yield, Oct. 19, 2026)</td>
                   <td className="px-4 py-3">1-3 business days</td>
                   <td className="px-4 py-3">No (U.S. gov backed)</td>
                   <td className="px-4 py-3">Tax-advantaged savers in high brackets</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Series I savings bonds</td>
-                  <td className="px-4 py-3">3.1-3.8% (variable)</td>
-                  <td className="px-4 py-3">12-month lock, 3-mo penalty if &lt;5 yrs</td>
+                  <td className="px-4 py-3">4.26% composite (May-Oct. 2026 issues; variable)</td>
+                  <td className="px-4 py-3">12-month lock, 3-mo penalty if {"<"}5 yrs</td>
                   <td className="px-4 py-3">No (U.S. gov backed)</td>
                   <td className="px-4 py-3">Inflation hedge, not primary emergency fund</td>
                 </tr>
@@ -324,10 +353,32 @@ export default function EmergencyFundWhereToKeepGuide() {
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *APY ranges based on top-tier providers as of October 2026. I-bond rates
-            adjust every 6 months (next reset: November 2026). Brokerage returns are historical averages, not
-            guaranteed. Rates have generally declined 0.5-0.8 percentage points since late 2023.
+            *Top-tier HYSA/CD APYs are examples from online banks (Tier-2); FDIC national
+            averages shown inline where applicable. I-bond composite rate is from TreasuryDirect
+            for May 1-October 31, 2026 purchases (next fixed-rate announcement November 1, 2026).
+            Brokerage returns are historical averages, not guaranteed.
           </p>
+          <Sources
+            items={[
+              {
+                label: "Federal Reserve, FOMC target federal funds rate",
+                href: "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+              },
+              {
+                label: "Treasury daily par yield curve (3-month 4.27%, Oct. 19, 2026)",
+                href: "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve",
+              },
+              {
+                label: "TreasuryDirect, Series I composite 4.26% (May-Oct. 2026)",
+                href: "https://www.treasurydirect.gov/savings-bonds/i-bonds/i-bonds-interest-rates/",
+              },
+              {
+                label: "FDIC national deposit rates (Oct. 19, 2026)",
+                href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Top 3 Options Detailed */}
@@ -342,13 +393,12 @@ export default function EmergencyFundWhereToKeepGuide() {
                 1. High-Yield Savings Account (HYSA)
               </h3>
               <p className="mt-3 text-ink-700">
-                The HYSA remains the gold standard for emergency funds in late 2026. Online
-                banks like Ally (4.20% APY), Marcus by Goldman Sachs (4.40% APY),
-                and Capital One 360 (4.35% APY) offer rates 420-440x higher than
-                traditional checking accounts, with no minimum balance requirements
-                and no monthly fees on most accounts. Rates have come down from
-                early-2024 highs, but the HYSA is still the best risk-free place
-                for emergency cash.
+                The HYSA remains the gold standard for emergency funds in late 2026. Many
+                online banks advertise roughly 4.2%-4.5% APY as of mid-October 2026 (verify
+                before opening — Tier-2 bank rate pages, not FDIC national averages). That
+                compares with a 0.38% FDIC national average for savings and about 0.01% on
+                many branch checking accounts. Most top HYSAs have no minimum balance and
+                no monthly fees. The HYSA is still the best risk-free place for emergency cash.
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
@@ -365,7 +415,7 @@ export default function EmergencyFundWhereToKeepGuide() {
                 <div>
                   <h4 className="font-semibold text-ink-800">Cons</h4>
                   <ul className="mt-2 space-y-1 text-sm text-ink-700">
-                    <li>Rates have already dropped from 5.3% in 2023 to 4.2-4.75% as the Fed cut rates</li>
+                    <li>Rates move with Fed policy — the target range was 3.75%-4.00% as of September 2026</li>
                     <li>No check-writing on most HYSAs</li>
                     <li>Some accounts limit to 6 withdrawals/month (soft limit)</li>
                     <li>Separate from your primary bank — one extra login</li>
@@ -386,10 +436,12 @@ export default function EmergencyFundWhereToKeepGuide() {
               </h3>
               <p className="mt-3 text-ink-700">
                 Money market accounts (MMAs) function like savings accounts but
-                typically include check-writing and debit card access. Vanguard
-                Federal Money Market Fund (VMFXX) yields about 4.25% and Fidelity Government Money
-                Market (SPAXX) offers 4.15% as of October 2026. Bank MMAs from Discover and
-                Synchrony pay 4.0-4.5% with FDIC insurance.
+                typically include check-writing and debit card access. Brokerage money
+                market funds and bank MMAs often quote yields in the same ballpark as top
+                HYSAs as of mid-October 2026 (fund yields change daily — Tier-2). Bank
+                MMAs carry FDIC insurance; fund-based MMAs are not FDIC insured (though
+                they hold government securities). The FDIC national average for money
+                market deposit accounts was 0.63% as of October 19, 2026.
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
@@ -479,7 +531,7 @@ export default function EmergencyFundWhereToKeepGuide() {
                   <li>Monthly essentials: $4,200 (rent $1,750, car $420, food $580, insurance $400, utilities $190, minimum debt $860)</li>
                   <li>Target emergency fund: 6 months = $25,200</li>
                   <li>Current savings: $25,200 (goal reached after 18 months of saving $1,400/month)</li>
-                  <li>Previously kept entire fund in Wells Fargo checking at 0.01% APY</li>
+                  <li>Previously kept entire fund in branch checking at about 0.01% APY</li>
                 </ul>
               </div>
               <div>
@@ -490,7 +542,8 @@ export default function EmergencyFundWhereToKeepGuide() {
                     daily spending)
                   </li>
                   <li>
-                    <strong>$15,000</strong> in Ally Bank HYSA at 4.20% APY (3.6 months
+                    <strong>$15,000</strong> in an online HYSA at 4.20% APY (example rate;
+                    3.6 months
                     of expenses, instant transfer)
                   </li>
                   <li>
@@ -520,7 +573,7 @@ export default function EmergencyFundWhereToKeepGuide() {
                 </div>
               </div>
               <p className="mt-4 text-sm text-ink-700">
-                Amanda&apos;s restructure took 45 minutes total — 15 minutes to open
+                Amanda's restructure took 45 minutes total — 15 minutes to open
                 the Ally HYSA, 15 minutes to initiate the $21,000 transfer from
                 Wells Fargo, and 15 minutes to set up the 2-rung CD ladder. Her
                 $15,000 HYSA earns $630/year at 4.20% APY. Her $6,000 in CDs earns $275/year
@@ -548,7 +601,7 @@ export default function EmergencyFundWhereToKeepGuide() {
           <p className="mt-4 text-ink-700">
             A CD ladder works by dividing your emergency fund into equal portions
             across CDs with different maturity dates. Here is a 4-rung ladder for
-            $16,000 of Amanda&apos;s fund (keeping $9,200 in HYSA for instant access):
+            $16,000 of Amanda's fund (keeping $9,200 in HYSA for instant access):
           </p>
 
           <div className="mt-6 overflow-x-auto">
@@ -613,9 +666,9 @@ export default function EmergencyFundWhereToKeepGuide() {
           </div>
 
           <p className="mt-4 text-ink-700">
-            Total interest earned across all 4 rungs in the first year: $457 on
-            $16,000 — a blended rate of 4.51% APY. Compare that to leaving $16,000
-            in checking at 0.01% APY, which earns $1.60. The ladder generates $455.40
+            Total interest earned across all 4 rungs in the first year: $455 on
+            $16,000 (stated APYs on the rungs average about 4.51%). Compare that to leaving $16,000
+            in checking at 0.01% APY, which earns $1.60. The ladder generates about $453
             more per year while providing access to $4,000 every 3 months without
             early withdrawal penalties.
           </p>
@@ -657,8 +710,10 @@ export default function EmergencyFundWhereToKeepGuide() {
                 1. Keeping too much in checking
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                The average American keeps $5,300 in checking — often including
-                their entire emergency fund. At 0.01% APY, $25,200 in checking earns
+                The Federal Reserve's 2022 Survey of Consumer Finances put the
+                median transaction-account balance at $8,000 (checking, savings, and
+                similar accounts combined)—and many households still park most of that
+                in low-yield checking. At 0.01% APY, $25,200 in checking earns
                 $2.52 per year. That same $25,200 in a 4.20% HYSA earns $1,058 per
                 year. The $1,055.48 you leave on the table annually equals 26 days
                 of groceries for a household spending $580/month on food. Keep
@@ -674,8 +729,9 @@ export default function EmergencyFundWhereToKeepGuide() {
               <p className="mt-2 text-sm text-ink-700">
                 Stocks average 8-10% returns long-term, so investing a $25,200
                 emergency fund seems smart — until you need the money during a
-                downturn. In 2022, the S&amp;P 500 dropped 18.1%. A $25,200 portfolio
-                would have fallen to $20,639 — a $4,561 shortfall when covering
+                downturn.                 In 2022, the S&P 500 Total Return Index fell 18.1% for the calendar
+                year. A $25,200 portfolio
+                would have fallen to about $20,639 — a $4,561 shortfall when covering
                 6 months of $4,200/month expenses. Job losses and market crashes
                 correlate: companies lay off workers during recessions, exactly when
                 your portfolio is down 15-25%. Emergency funds must prioritize
@@ -688,13 +744,13 @@ export default function EmergencyFundWhereToKeepGuide() {
                 3. Not having an emergency fund at all
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                56% of Americans cannot cover a $1,000 emergency with savings, according
-                to recent Bankrate surveys. Without a fund, a $2,400 transmission
-                repair goes on a credit card at 22% APR — costing $528 in interest
-                over 12 months if you pay $220/month. A $4,800 medical bill becomes
-                a payment plan at 18% APR. The math is unforgiving: a single $3,000
-                surprise expense on credit at 22% APR costs $370 in interest over
-                one year. Building even a $1,000 starter fund in a HYSA (requiring
+                A Bankrate survey (January 2025, Tier-2) found 59% of U.S. adults would
+                not pay a $1,000 emergency expense from savings alone. Without a fund, a $2,400 transmission
+                repair goes on a credit card at the average assessed-interest APR
+                (22.36% in August 2026, Federal Reserve G.19) — costing hundreds in
+                finance charges if you carry the balance. The math is unforgiving: a
+                single $3,000 surprise expense on credit at about 22% APR costs roughly
+                $370 in interest over one year if unpaid. Building even a $1,000 starter fund in a HYSA (requiring
                 just $167/month for 6 months) breaks the cycle of debt for most
                 unexpected costs.
               </p>
@@ -733,6 +789,33 @@ export default function EmergencyFundWhereToKeepGuide() {
             </Link>
           </div>
         </section>
+
+        <Sources
+          items={[
+            {
+              label: "FDIC deposit insurance ($250,000 per depositor, per bank)",
+              href: "https://www.fdic.gov/resources/deposit-insurance/financial-products-insured/",
+            },
+            {
+              label: "NCUA share insurance ($250,000 standard maximum)",
+              href: "https://ncua.gov/consumers/share-insurance-coverage",
+            },
+            {
+              label: "Federal Reserve G.19, credit card APR (Aug. 2026 release)",
+              href: "https://www.federalreserve.gov/releases/g19/current/",
+            },
+            {
+              label: "Bankrate emergency savings survey (Jan. 23, 2025; Tier-2)",
+              href: "https://www.bankrate.com/press-releases/americans-backtrack-just-41-say-they-could-pay-a-1000-emergency-expense-from-their-savings/",
+            },
+            {
+              label: "Federal Reserve SCF 2022, median transaction account $8,000 (Oct. 2023)",
+              href: "https://www.federalreserve.gov/publications/october-2023-changes-in-us-family-finances-from-2019-to-2022.htm",
+            },
+          ]}
+          checked="October 2026"
+          className="mt-12"
+        />
 
         {/* FAQ Section */}
         <section className="mt-12">

@@ -1,4 +1,5 @@
 import type { CalculatorVariant } from "./types";
+import { HSA_LIMITS, usd } from "../tax-data";
 
 export const inflationVariants: CalculatorVariant[] = [
   {
@@ -136,7 +137,7 @@ export const inflationVariants: CalculatorVariant[] = [
     tips: [
       "At 5.5% medical inflation, your $5,000 annual healthcare cost grows to $14,636 per year in 20 years — nearly triple the current amount.",
       "Over 20 years you will pay a cumulative $183,280 in healthcare costs instead of the $100,000 you would spend at today's prices, an $83,280 inflation premium.",
-      "Maxing out an HSA at $4,150/year (2026 individual limit) and investing the balance at 7% returns builds approximately $170,000 in 20 years — enough to cover nearly a decade of inflated healthcare costs.",
+      `Maxing out an HSA at ${usd(HSA_LIMITS.selfOnly)}/year (2026 self-only limit) and investing the balance at 7% returns builds approximately $180,000 in 20 years — enough to cover nearly a decade of inflated healthcare costs.`,
       "Medicare does not cover everything: the average 65-year-old couple needs approximately $315,000 in savings to cover healthcare costs through retirement, and this figure inflates every year you are younger than 65.",
       "Using a 3% rate instead of 5.5% for healthcare planning would project only $9,031 per year in 20 years — underestimating actual costs by $5,605 annually, or $112,100 over 20 years.",
     ],

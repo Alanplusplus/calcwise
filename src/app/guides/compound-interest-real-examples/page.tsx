@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "Compound Interest: 5 Real-Life Examples That Show Its Power",
@@ -28,12 +29,12 @@ const faqs = [
   {
     question: "How does compound interest hurt you with credit card debt?",
     answer:
-      "Credit cards compound interest against you daily or monthly. A $5,000 balance at 24.5% APR (the current average in October 2026) with minimum payments of roughly $130/month means you pay about $14,100 total over 7-8 years — $9,100 of that is interest. The debt grows faster than minimum payments reduce the principal, which is why carrying a balance is one of the most expensive financial mistakes.",
+      "Credit cards compound interest against you daily or monthly. A $5,000 balance at 22.36% APR (the Federal Reserve’s August 2026 average for accounts assessed interest) with fixed payments of roughly $130/month takes about 5.7 years (68 months) to clear — about $8,840 total, including roughly $3,840 in interest with daily compounding. Minimum payments that shrink as the balance falls take far longer. The debt grows faster than those payments reduce principal, which is why carrying a balance is one of the most expensive financial mistakes.",
   },
   {
     question: "What is the Rule of 72 and how do you use it?",
     answer:
-      "Divide 72 by your annual interest rate to estimate how many years it takes for money to double. At 8%, money doubles in about 9 years (72 ÷ 8 = 9). At 24.5% (average credit card APR as of October 2026), debt doubles in roughly 2.9 years. It is a quick mental math shortcut — not exact, but accurate within 1-2 years for rates between 4% and 15%.",
+      "Divide 72 by your annual interest rate to estimate how many years it takes for money to double. At 8%, money doubles in about 9 years (72 ÷ 8 = 9). At 22.36% (Fed average credit card APR for accounts assessed interest, August 2026), debt doubles in roughly 3.2 years (72 ÷ 22.36). It is a quick mental math shortcut — not exact, but accurate within 1-2 years for rates between 4% and 15%.",
   },
   {
     question: "How much difference does starting 10 years earlier really make?",
@@ -43,7 +44,7 @@ const faqs = [
   {
     question: "Is compound interest the same for savings accounts and investments?",
     answer:
-      "The math is identical — interest earns interest in both cases — but the rates and risk differ dramatically. A high-yield savings account at 4.5% APY (October 2026 average for top HYSAs) with FDIC insurance is guaranteed but capped. Stock market investments historically return 8-10% long-term but fluctuate year to year. A $25,000 HYSA at 4.5% grows to $30,918 in 5 years with zero risk. The same $25,000 in an index fund at 8% could reach $36,734 — but might temporarily drop 20-30% along the way.",
+      "The math is identical — interest earns interest in both cases — but the rates and risk differ dramatically. Top FDIC-insured high-yield savings accounts paid about 4.0–4.3% APY in mid-October 2026 (Tier-2 market surveys), while the FDIC national average savings rate was 0.38%. Stock index funds have historically returned roughly 10% per year nominal with dividends reinvested over long periods (1928–2024, Tier-2 historical dataset) but fluctuate year to year. A $25,000 HYSA at 4.25% APY grows to about $30,908 in 5 years with bank insurance. The same $25,000 in an index fund at 8% could reach $36,734 — but might temporarily drop 20–30% along the way.",
   },
   {
     question: "Does it matter how often interest compounds — daily, monthly, or annually?",
@@ -61,7 +62,7 @@ export default function CompoundInterestRealExamplesGuide() {
         description="Real-life compound interest examples with exact numbers: retirement investing, credit card debt, student loans, and high-yield savings."
         slug="compound-interest-real-examples"
         datePublished="2026-08-24"
-        dateModified="2026-10-08"
+        dateModified="2026-10-20"
         image="/images/guides/compound-interest-real-examples.webp"
       />
       <BreadcrumbJsonLd
@@ -88,7 +89,8 @@ export default function CompoundInterestRealExamplesGuide() {
           <p className="mt-4 text-lg text-ink-600">
             Compound interest is the reason a modest monthly contribution can
             turn into a seven-figure retirement account — and the reason a
-            $5,000 credit card balance can cost you over $14,000. These five
+            $5,000 credit card balance can cost you nearly $9,000 to repay at
+            today's average APR. These five
             compound interest examples from real life show exactly how the math
             plays out with specific dollar amounts, so you can see where
             compounding helps you and where it works against you.
@@ -111,16 +113,17 @@ export default function CompoundInterestRealExamplesGuide() {
               years becomes $174,494
             </li>
             <li>
-              <strong>Credit card debt:</strong> $5,000 at 24.5% with minimum
-              payments costs $14,100 total — compound interest in reverse
+              <strong>Credit card debt:</strong> $5,000 at 22.36% with $130/month
+              payments costs about $8,840 total — compound interest in reverse
             </li>
             <li>
               <strong>Student loans:</strong> Repayment plan choice changes
-              total interest from $8,964 to $22,850 on the same $35,000 balance
+              total interest from about $10,600 to about $31,100 on the same
+              $35,000 balance
             </li>
             <li>
-              <strong>High-yield savings:</strong> $25,000 at 4.5% APY for 5
-              years grows to $30,918 with no market risk
+              <strong>High-yield savings:</strong> $25,000 at 4.25% APY for 5
+              years grows to about $30,908 with FDIC insurance
             </li>
           </ul>
           <p className="mt-4 text-sm text-ink-600">
@@ -205,7 +208,7 @@ export default function CompoundInterestRealExamplesGuide() {
           <p className="mt-4 text-ink-700">
             For recurring monthly contributions — like the retirement example
             below — the formula extends to include a payment stream. But the
-            core idea is identical: each period&apos;s growth becomes part of
+            core idea is identical: each period's growth becomes part of
             the base for the next period. Over decades, that snowball effect
             dominates the outcome far more than the original deposit amount.
           </p>
@@ -261,11 +264,12 @@ export default function CompoundInterestRealExamplesGuide() {
             over a long timeline.
           </p>
           <p className="mt-4 text-ink-700">
-            The 8% return assumption reflects the long-term historical average
-            of a diversified stock index fund (S&P 500). Actual returns vary
-            year to year — the market dropped 37% in 2008 and gained 32% in
-            2013 — but over 40-year periods, 7-10% annualized returns are
-            historically common. Use our{" "}
+            The 8% return assumption is a round planning figure — not a
+            forecast. Historically, the S&P 500 returned about 10% per year
+            (geometric mean, nominal, with dividends reinvested) from 1928 through
+            2024 in NYU Stern's Damodaran dataset (Tier-2 historical
+            data — about $100 grew to $982,818 over that span). Calendar years vary widely — for example −36.6% in 2008 and
+            +32.2% in 2013 in that series. Use our{" "}
             <Link
               href="/calculators/retirement"
               className="text-brand-600 underline"
@@ -275,6 +279,17 @@ export default function CompoundInterestRealExamplesGuide() {
             to adjust the contribution amount, return rate, and timeline for
             your situation.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "NYU Stern (Damodaran), S&P 500 historical returns incl. dividends, 1928–2024 (Jan. 2026 table)",
+                href: "https://pages.stern.nyu.edu/adamodar/New_Home_Page/datafile/histretSP.htm",
+              },
+            ]}
+            checked="October 2026"
+            note="Past performance is not a guarantee of future results."
+          />
         </section>
 
         {/* Example 2 */}
@@ -331,14 +346,15 @@ export default function CompoundInterestRealExamplesGuide() {
         {/* Example 3 */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-ink-900">
-            Example 3: Credit Card Debt — $5,000 at 24.5% APR Making Minimum Payments
+            Example 3: Credit Card Debt — $5,000 at 22.36% APR With $130/Month Payments
           </h2>
           <p className="mt-4 text-ink-700">
             Compound interest is not always your friend. When you carry credit
             card debt, the bank applies the same compounding math — but the
-            interest accrues against you. As of October 2026, the average
-            credit card APR has climbed to 24.5% according to Bankrate — up
-            from roughly 20% just three years ago. This is one of the most
+            interest accrues against you. As of mid-October 2026, the Federal
+            Reserve's latest G.19 release (August 2026 data) puts the
+            average APR at 22.36% for accounts assessed interest and 21.19% for
+            all accounts — up from about 21% in 2024. This is one of the most
             painful compound interest examples in real life because the rates
             are so high and minimum payments are designed to keep you in debt.
           </p>
@@ -348,8 +364,8 @@ export default function CompoundInterestRealExamplesGuide() {
                 <h3 className="font-semibold text-ink-800">The Inputs</h3>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Starting balance: $5,000</li>
-                  <li>APR: 24.5% (Oct 2026 average)</li>
-                  <li>Minimum payment: ~$130/month (typical 2-3% of balance)</li>
+                  <li>APR: 22.36% (Fed avg., accounts assessed interest, Aug. 2026)</li>
+                  <li>Payment: $130/month (fixed for this illustration)</li>
                   <li>Compounding: daily (standard for credit cards)</li>
                 </ul>
               </div>
@@ -357,28 +373,28 @@ export default function CompoundInterestRealExamplesGuide() {
                 <h3 className="font-semibold text-ink-800">The Outcome</h3>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Original balance: $5,000</li>
-                  <li>Total interest paid: $9,100</li>
+                  <li>Total interest paid: about $3,840</li>
                   <li>
-                    <strong>Total amount paid: $14,100</strong>
+                    <strong>Total amount paid: about $8,840</strong>
                   </li>
-                  <li>Time to pay off: approximately 7-8 years</li>
+                  <li>Time to pay off: approximately 5.7 years (68 months)</li>
                 </ul>
               </div>
             </div>
           </div>
           <p className="mt-4 text-ink-700">
-            At 24.5% APR, your debt doubles in roughly 2.9 years if you make no
-            payments (72 ÷ 24.5 = 2.9). Minimum payments barely outpace the
-            interest charge each month — in the first month alone, $5,000 at
-            24.5% generates about $102 in interest. Your $130 payment sends only
-            $28 toward the principal. The next month, interest calculates on
-            $4,972, and the cycle continues.
+            At 22.36% APR, your debt doubles in roughly 3.2 years if you make no
+            payments (72 ÷ 22.36 ≈ 3.2). In the first month alone, $5,000 with
+            daily compounding at 22.36% accrues about $93 in interest. A $130
+            payment sends roughly $37 toward principal that month; the cycle
+            continues until the balance is gone.
           </p>
           <p className="mt-4 text-ink-700">
-            The lesson is stark: paying off a $5,000 credit card balance saves
-            you $9,100 in compound interest — a guaranteed 24.5% return that no
-            investment can reliably match. If you have credit card debt and are
-            also investing, you are effectively borrowing at 24.5% to earn 8-10%.
+            The lesson is stark: every dollar you put toward this balance avoids
+            compounding at 22.36% — a guaranteed return that few investments
+            match after tax. If you have credit card debt and are also
+            investing, you are effectively borrowing at 22%+ to earn single-digit
+            stock returns.
             The math almost always favors paying the debt first. Use our{" "}
             <Link
               href="/calculators/credit-card-payoff"
@@ -389,6 +405,17 @@ export default function CompoundInterestRealExamplesGuide() {
             to see how much faster a fixed payment of $300 or $500 per month
             would eliminate this balance.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "Federal Reserve, Consumer Credit G.19 — credit card plan rates (Aug. 2026 data, release Oct. 7, 2026)",
+                href: "https://www.federalreserve.gov/releases/g19/current/",
+              },
+            ]}
+            checked="October 2026"
+            note="Payoff math assumes daily compounding and a fixed $130 monthly payment."
+          />
         </section>
 
         {/* Example 4 */}
@@ -397,11 +424,13 @@ export default function CompoundInterestRealExamplesGuide() {
             Example 4: Student Loans — $35,000 at 5.5% (Standard vs Income-Driven)
           </h2>
           <p className="mt-4 text-ink-700">
-            Student loans demonstrate how the same principal and interest rate
+            This example uses a 5.5% fixed APR — the federal Direct Loan rate for
+            undergraduate loans first disbursed in 2023–24 (new undergraduate loans
+            disbursed in 2025–26 carry 6.39% per Federal Student Aid). Student loans demonstrate how the same principal and interest rate
             can produce wildly different total costs depending on your repayment
             plan. Compound interest still applies — but the timeline and payment
-            structure determine whether you pay $8,964 or $22,850 in interest on
-            the same $35,000 borrowed.
+            structure determine whether you pay about $10,600 or about $31,100
+            in interest charges on the same $35,000 borrowed.
           </p>
           <div className="mt-6 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
@@ -428,9 +457,9 @@ export default function CompoundInterestRealExamplesGuide() {
                 <tr>
                   <td className="px-4 py-3 font-medium">Standard Repayment</td>
                   <td className="px-4 py-3">10 years</td>
-                  <td className="px-4 py-3">$379/month</td>
-                  <td className="px-4 py-3 text-brand-700">$8,964</td>
-                  <td className="px-4 py-3">$43,964</td>
+                  <td className="px-4 py-3">$380/month</td>
+                  <td className="px-4 py-3 text-brand-700">$10,581</td>
+                  <td className="px-4 py-3">$45,581</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3 font-medium">
@@ -438,48 +467,62 @@ export default function CompoundInterestRealExamplesGuide() {
                   </td>
                   <td className="px-4 py-3">20 years</td>
                   <td className="px-4 py-3">$198/month (avg.)</td>
-                  <td className="px-4 py-3 text-amber-700">$22,850</td>
-                  <td className="px-4 py-3">$57,850</td>
+                  <td className="px-4 py-3 text-amber-700">$31,147*</td>
+                  <td className="px-4 py-3">$47,520</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *Based on $35,000 at 5.5% fixed APR. Income-driven payment assumes
-            average monthly payment of $198 over 20 years with remaining
-            balance forgiven. Actual IDR payments vary by income and family
-            size.
+            *Based on $35,000 at 5.5% fixed APR with monthly compounding.
+            Standard plan uses the level payment that retires the loan in 10
+            years ($379.84/month, rounded to $380). Income-driven row assumes
+            $198/month for 20 years; about $31,147 of that total flows to
+            interest and roughly $18,600 in principal may remain for forgiveness
+            programs such as PSLF. Actual IDR payments vary by income and plan.
           </p>
           <p className="mt-4 text-ink-700">
             The standard 10-year plan attacks the principal aggressively. Each
-            month, a larger share of your $379 payment reduces the balance,
+            month, a larger share of your $380 payment reduces the balance,
             which means less interest accrues in the next period — compound
             interest working in your favor when you pay down fast.
           </p>
           <p className="mt-4 text-ink-700">
             The income-driven plan lowers monthly payments to $198 on average,
             but the balance shrinks slowly. Interest continues compounding on
-            a larger remaining balance for twice as long. You pay $13,886 more
-            in total interest — even though the monthly payment feels more
-            manageable. For borrowers who qualify for Public Service Loan
+            a larger remaining balance for twice as long. You pay about $20,500
+            more in interest within your payments — even though the monthly
+            payment feels more manageable. For borrowers who qualify for Public Service Loan
             Forgiveness (PSLF), the extended timeline may still make sense. For
-            everyone else, the standard plan&apos;s lower total cost is
+            everyone else, the standard plan's lower total cost is
             compelling if the monthly payment fits your budget.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "Federal Student Aid (May 30, 2025), Direct Loan rates for 2025–26 (6.39% undergraduate)",
+                href: "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2025-05-30/interest-rates-direct-loans-first-disbursed-between-july-1-2025-and-june-30-2026",
+              },
+            ]}
+            checked="October 2026"
+            note="Table math uses 5.5% to illustrate a fixed-rate borrower cohort; 2023–24 undergraduate Direct Loans were 5.50%."
+          />
         </section>
 
         {/* Example 5 */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-ink-900">
-            Example 5: High-Yield Savings — $25,000 at 4.5% APY for 5 Years
+            Example 5: High-Yield Savings — $25,000 at 4.25% APY for 5 Years
           </h2>
           <p className="mt-4 text-ink-700">
             Compound interest is not limited to the stock market. High-yield
-            savings accounts (HYSAs) compound daily or monthly, and in October
-            2026 the top online banks offer 4.2-4.8% APY with FDIC insurance —
-            down slightly from the 5%+ peaks seen in early 2025 as the Federal
-            Reserve has begun easing rates. This example shows what happens
-            when you park a lump sum and let it grow risk-free.
+            savings accounts (HYSAs) compound daily or monthly. As of
+            mid-October 2026, Bankrate's top listed FDIC-insured HYSAs
+            paid up to about 4.27% APY (Tier-2 survey), while the FDIC national
+            average savings rate was 0.38% — and brick-and-mortar accounts often
+            pay far less. This example uses 4.25% APY to show what a competitive
+            online rate does to a lump sum.
           </p>
           <div className="mt-6 rounded-xl border border-ink-200 bg-white p-6">
             <div className="grid gap-4 sm:grid-cols-2">
@@ -487,7 +530,7 @@ export default function CompoundInterestRealExamplesGuide() {
                 <h3 className="font-semibold text-ink-800">The Inputs</h3>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Initial deposit: $25,000</li>
-                  <li>APY: 4.5% (Oct 2026 top HYSA average)</li>
+                  <li>APY: 4.25% (illustrative top-tier online rate)</li>
                   <li>Time horizon: 5 years</li>
                   <li>Compounding: monthly</li>
                   <li>Additional contributions: $0</li>
@@ -497,19 +540,19 @@ export default function CompoundInterestRealExamplesGuide() {
                 <h3 className="font-semibold text-ink-800">The Outcome</h3>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Total deposited: $25,000</li>
-                  <li>Interest earned: $5,918</li>
+                  <li>Interest earned: $5,908</li>
                   <li>
-                    <strong>Final balance: $30,918</strong>
+                    <strong>Final balance: $30,908</strong>
                   </li>
-                  <li>Effective annual gain: $1,184/year</li>
+                  <li>Effective annual gain: about $1,182/year</li>
                 </ul>
               </div>
             </div>
           </div>
           <p className="mt-4 text-ink-700">
             Compare that to a traditional brick-and-mortar savings account
-            paying 0.01% APY: the same $25,000 earns $13 over five years. The
-            HYSA earns $5,918 — more than 450 times as much — because compound
+            paying 0.01% APY: the same $25,000 earns about $13 over five years. The
+            HYSA earns $5,908 — more than 450 times as much — because compound
             interest at a meaningful rate actually has room to work. This is
             why emergency funds and short-term savings goals belong in HYSAs,
             not checking accounts or under the mattress. See our{" "}
@@ -526,9 +569,24 @@ export default function CompoundInterestRealExamplesGuide() {
             The trade-off is lower returns than the stock market. That same
             $25,000 at 8% over 5 years would reach approximately $36,734 — but
             with volatility and no guarantee. For money you need within 3-5
-            years (emergency fund, down payment, vacation fund), the HYSA&apos;s
-            guaranteed $5,918 in interest is the right tool.
+            years (emergency fund, down payment, vacation fund), the HYSA's
+            guaranteed $5,908 in interest is the right tool.
           </p>
+          <Sources
+            items={[
+              {
+                label: "FDIC, National Rates and Rate Caps — October 2026 (0.38% savings)",
+                href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+              },
+              {
+                label:
+                  "Bankrate, Best high-yield savings accounts — October 2026 (Tier-2; up to 4.27% APY)",
+                href: "https://www.bankrate.com/banking/savings/best-high-yield-interests-savings-accounts/",
+              },
+            ]}
+            checked="October 2026"
+            note="Example growth assumes 4.25% APY with monthly compounding."
+          />
         </section>
 
         {/* Comparison Table */}
@@ -589,21 +647,21 @@ export default function CompoundInterestRealExamplesGuide() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Credit card debt</td>
-                  <td className="px-4 py-3">24.5%</td>
-                  <td className="px-4 py-3">~7-8 years</td>
+                  <td className="px-4 py-3">22.36%</td>
+                  <td className="px-4 py-3">~5.7 years</td>
                   <td className="px-4 py-3">$5,000 borrowed</td>
                   <td className="px-4 py-3 font-medium text-amber-700">
-                    $14,100 paid
+                    ~$8,840 paid
                   </td>
-                  <td className="px-4 py-3">+$9,100 interest cost</td>
+                  <td className="px-4 py-3">~+$3,840 interest cost</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Student loans (standard)</td>
                   <td className="px-4 py-3">5.5%</td>
                   <td className="px-4 py-3">10 years</td>
                   <td className="px-4 py-3">$35,000 borrowed</td>
-                  <td className="px-4 py-3 font-medium">$43,964 paid</td>
-                  <td className="px-4 py-3">+$8,964 interest cost</td>
+                  <td className="px-4 py-3 font-medium">$45,581 paid</td>
+                  <td className="px-4 py-3">+$10,581 interest cost</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Student loans (IDR)</td>
@@ -611,19 +669,19 @@ export default function CompoundInterestRealExamplesGuide() {
                   <td className="px-4 py-3">20 years</td>
                   <td className="px-4 py-3">$35,000 borrowed</td>
                   <td className="px-4 py-3 font-medium text-amber-700">
-                    $57,850 paid
+                    $47,520 paid
                   </td>
-                  <td className="px-4 py-3">+$22,850 interest cost</td>
+                  <td className="px-4 py-3">~+$31,147 interest cost</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">High-yield savings</td>
-                  <td className="px-4 py-3">4.5%</td>
+                  <td className="px-4 py-3">4.25%</td>
                   <td className="px-4 py-3">5 years</td>
                   <td className="px-4 py-3">$25,000</td>
                   <td className="px-4 py-3 font-medium text-brand-700">
-                    $30,918
+                    $30,908
                   </td>
-                  <td className="px-4 py-3">+$5,918 growth</td>
+                  <td className="px-4 py-3">+$5,908 growth</td>
                 </tr>
               </tbody>
             </table>
@@ -704,11 +762,11 @@ export default function CompoundInterestRealExamplesGuide() {
             <p className="font-medium text-brand-800">Key Insight</p>
             <p className="mt-1 text-sm text-brand-700">
               The first $120,000 the 25-year-old contributes (Years 1-20) grows
-              to approximately $592,000 by age 65 — nearly 5x. The last
-              $120,000 contributed (Years 21-40) only grows to about $353,000
-              — less than 3x. Early dollars have more time to compound, which
+              to approximately $1.45 million by age 65 — about 12x. The last
+              $120,000 contributed (Years 21-40) only reaches about $295,000
+              at 65 — about 2.5x. Early dollars have more time to compound, which
               is why starting now with any amount beats waiting for the
-              &quot;perfect&quot; time to invest a larger sum.
+              "perfect" time to invest a larger sum.
             </p>
           </div>
         </section>
@@ -767,8 +825,8 @@ export default function CompoundInterestRealExamplesGuide() {
                   <td className="px-4 py-3">$20,000</td>
                 </tr>
                 <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">24.5% (credit card)</td>
-                  <td className="px-4 py-3">2.9 years</td>
+                  <td className="px-4 py-3">22.36% (credit card)</td>
+                  <td className="px-4 py-3">3.2 years</td>
                   <td className="px-4 py-3">Debt doubling if unpaid</td>
                   <td className="px-4 py-3">$20,000 owed</td>
                 </tr>
@@ -974,31 +1032,32 @@ export default function CompoundInterestRealExamplesGuide() {
             <li>
               <strong>Automate a $100/month investment.</strong> Even if you
               cannot start at $500/month, $100/month at 8% for 30 years grows to
-              approximately $150,030. That is $114,030 in compound growth on
-              $36,000 contributed — a 4.2x multiplier. Open a brokerage account
+              approximately $149,036. That is about $113,036 in compound growth on
+              $36,000 contributed — a 4.1x multiplier. Open a brokerage account
               and set up auto-invest into a total market index fund. Read our{" "}
               <Link
                 href="/guides/how-to-start-investing-1000"
                 className="text-brand-600 underline"
               >
-                Beginner&apos;s Guide to Investing with $1,000
+                Beginner's Guide to Investing with $1,000
               </Link>{" "}
               for the exact steps.
             </li>
             <li>
               <strong>Move your emergency fund to a HYSA.</strong> If your
               $10,000 emergency fund is sitting in a checking account at 0.01%,
-              moving it to a 4.5% HYSA earns an extra $449 in the first year
-              alone. Over 5 years, the HYSA produces $2,462 in interest versus
-              $5 in the checking account — a 490x difference for 15 minutes of
-              setup.
+              moving it to a 4.25% HYSA (as of mid-October 2026 top-tier online
+              rates) earns about $425 in the first year alone. Over 5 years, the
+              HYSA produces about $2,363 in interest versus $5 in the checking
+              account — a 470x difference for 15 minutes of setup.
             </li>
             <li>
               <strong>Attack high-APR debt before investing.</strong> If you owe
-              $3,000 on a credit card at 24.5%, paying an extra $200/month
-              eliminates the balance in about 18 months and saves roughly $1,250
-              in interest. That $1,250 saved is a guaranteed 24.5% return — no
-              stock market investment offers that with zero risk.
+              $3,000 on a credit card at 22.36%, adding $200 above your minimum
+              payment clears the balance in about 15 months and avoids thousands
+              in interest versus paying minimums for years. That payoff is a
+              guaranteed return at the card's APR — no stock market
+              investment offers that with zero risk.
             </li>
           </ol>
           <p className="mt-4 text-ink-700">
@@ -1014,6 +1073,23 @@ export default function CompoundInterestRealExamplesGuide() {
             over 10 years at a 3% yield with 7% growth.
           </p>
         </section>
+
+        <Sources
+          items={[
+            {
+              label:
+                "BLS, Consumer Price Index Summary — September 2026 (3.7% over 12 months)",
+              href: "https://www.bls.gov/news.release/cpi.nr0.htm",
+            },
+            {
+              label:
+                "U.S. Treasury, Daily Treasury Par Yield Curve CSV (10-year 5.15% on Oct. 19, 2026)",
+              href: "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?field_tdr_date_value=2026&type=daily_treasury_yield_curve",
+            },
+          ]}
+          checked="October 2026"
+          note="Treasury yields move daily; CPI is the all-items CPI-U unless noted."
+        />
 
         {/* CTA Section */}
         <section className="mt-12 rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 text-center">

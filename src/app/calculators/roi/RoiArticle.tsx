@@ -107,7 +107,7 @@ export function RoiArticle() {
         and ending values.
       </p>
 
-      <h2>Case Study: Sarah&apos;s Small Business Equipment Purchase</h2>
+      <h2>Case Study: Sarah's Small Business Equipment Purchase</h2>
       <p>
         Sarah runs a bakery in Portland, OR, producing 200 custom cakes per
         month at an average price of $65. She is considering purchasing a
@@ -128,7 +128,7 @@ export function RoiArticle() {
         The payback period is even more telling: $18,000 / ($45,600 - $2,400) =
         0.42 years, or approximately 5 months. After the payback period, every
         dollar of incremental revenue flows directly to profit. Over a 5-year
-        equipment lifespan, Sarah&apos;s total ROI is ($45,600 x 5 - $18,000 -
+        equipment lifespan, Sarah's total ROI is ($45,600 x 5 - $18,000 -
         $2,400 x 5) / ($18,000 + $2,400 x 5) = 630%, with an annualized ROI of
         approximately 48.7%. This analysis gave Sarah the confidence to finance
         the equipment, knowing it would generate significant returns well above
@@ -275,7 +275,7 @@ export function RoiArticle() {
       <h2>Frequently Asked Questions</h2>
       <h3>What is a good ROI percentage?</h3>
       <p>
-        A &quot;good&quot; ROI depends entirely on the investment type and risk
+        A "good" ROI depends entirely on the investment type and risk
         level. For stock market investments, 7-10% annually (after inflation) is
         considered strong based on historical S&P 500 returns. For business
         investments, anything above 15-20% annually is generally worthwhile. For

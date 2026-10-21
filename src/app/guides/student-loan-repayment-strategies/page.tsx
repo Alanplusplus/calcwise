@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "Student Loan Repayment: 7 Strategies to Pay Off Debt Faster in 2026",
@@ -128,36 +129,23 @@ export default function StudentLoanRepaymentGuide() {
               off the standard plan when paired with $300/month of your own
             </li>
           </ul>
-          <p className="mt-3 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-06-04/interest-rates-federal-direct-loans-first-disbursed-between-july-1-2026-and-june-30-2027"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Federal Student Aid, 2026-27 Direct Loan rates (June 4, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://studentaid.gov/articles/faqs-idr-plan/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              StudentAid.gov IDR FAQ (Aug 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.irs.gov/newsroom/updates-to-frequently-asked-questions-about-educational-assistance-programs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              IRS Section 127 FAQ
-            </a>
-            .
-          </p>
+          <Sources
+            items={[
+              {
+                label: "Federal Student Aid, 2026-27 Direct Loan rates (June 4, 2026)",
+                href: "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-06-04/interest-rates-federal-direct-loans-first-disbursed-between-july-1-2026-and-june-30-2027",
+              },
+              {
+                label: "StudentAid.gov IDR FAQ (Aug 2026)",
+                href: "https://studentaid.gov/articles/faqs-idr-plan/",
+              },
+              {
+                label: "IRS Section 127 FAQ",
+                href: "https://www.irs.gov/newsroom/updates-to-frequently-asked-questions-about-educational-assistance-programs",
+              },
+            ]}
+            checked="October 2026"
+          />
           <p className="mt-4 text-sm text-ink-600">
             Use our{" "}
             <Link
@@ -236,36 +224,23 @@ export default function StudentLoanRepaymentGuide() {
             to get precise monthly payments and payoff timelines for your
             balance and rate.
           </p>
-          <p className="mt-3 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://studentaid.gov/data-center/student-loan-portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              FSA Portfolio Summary (Mar 31, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.newyorkfed.org/newsevents/news/research/2026/20260811"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              NY Fed Household Debt and Credit, Q2 2026 (Aug 11, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.federalregister.gov/documents/2026/09/10/2026-18493/annual-notice-of-interest-rates-for-fixed-rate-federal-student-loans-made-under-the-william-d-ford"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Federal Register rate notice (Sept 10, 2026)
-            </a>
-            .
-          </p>
+          <Sources
+            items={[
+              {
+                label: "FSA Portfolio Summary (Mar 31, 2026)",
+                href: "https://studentaid.gov/data-center/student-loan-portfolio",
+              },
+              {
+                label: "NY Fed Household Debt and Credit, Q2 2026 (Aug 11, 2026)",
+                href: "https://www.newyorkfed.org/newsevents/news/research/2026/20260811",
+              },
+              {
+                label: "Federal Register rate notice (Sept 10, 2026)",
+                href: "https://www.federalregister.gov/documents/2026/09/10/2026-18493/annual-notice-of-interest-rates-for-fixed-rate-federal-student-loans-made-under-the-william-d-ford",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         <section className="mt-12">
@@ -313,36 +288,23 @@ export default function StudentLoanRepaymentGuide() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://studentaid.gov/articles/save/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              StudentAid.gov SAVE FAQ (Oct 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.law.cornell.edu/cfr/text/34/685.208"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              34 CFR 685.208 (Tiered Standard)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              IRS IR-2026-55
-            </a>
-            .
-          </p>
+          <Sources
+            items={[
+              {
+                label: "StudentAid.gov SAVE FAQ (Oct 2026)",
+                href: "https://studentaid.gov/articles/save/",
+              },
+              {
+                label: "34 CFR 685.208 (Tiered Standard)",
+                href: "https://www.law.cornell.edu/cfr/text/34/685.208",
+              },
+              {
+                label: "IRS IR-2026-55",
+                href: "https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         <section className="mt-12">
@@ -467,28 +429,20 @@ export default function StudentLoanRepaymentGuide() {
             2014, otherwise 15% and 25 years). PAYE and ICR end no later than
             July 1, 2028.
           </p>
-          <p className="mt-3 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://studentaid.gov/articles/faqs-idr-plan/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              StudentAid.gov IDR FAQ
-            </a>
-            ,{" "}
-            <a
-              href="https://www.ed.gov/about/news/press-release/fact-sheet-trump-administration-simplifying-student-loan-repayment"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              U.S. Department of Education RAP fact sheet
-            </a>
-            . RAP model: single filer, no dependents, AGI of $45,000 growing
-            3% a year, interest waiver and $50 principal match applied monthly.
-          </p>
+          <Sources
+            items={[
+              {
+                label: "StudentAid.gov IDR FAQ",
+                href: "https://studentaid.gov/articles/faqs-idr-plan/",
+              },
+              {
+                label: "U.S. Department of Education RAP fact sheet",
+                href: "https://www.ed.gov/about/news/press-release/fact-sheet-trump-administration-simplifying-student-loan-repayment",
+              },
+            ]}
+            checked="October 2026"
+            note="RAP model: single filer, no dependents, AGI of $45,000 growing 3% a year, interest waiver and $50 principal match applied monthly."
+          />
 
           <h3 className="mt-10 text-xl font-semibold text-ink-800">
             Strategy 3: Refinancing to a Lower Rate
@@ -521,27 +475,20 @@ export default function StudentLoanRepaymentGuide() {
             loans. Compare offers from at least three lenders; rate quotes
             use soft credit pulls that do not affect your score.
           </p>
-          <p className="mt-3 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.bankrate.com/loans/student-loans/refinance-rates/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Bankrate (updated Oct 13, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://money.com/student-loan-interest-rates/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Money.com lender rate table (as of Oct 2, 2026)
-            </a>
-            . The 5.0% rate is an illustrative mid-range offer, not a quote.
-          </p>
+          <Sources
+            items={[
+              {
+                label: "Bankrate (updated Oct 13, 2026)",
+                href: "https://www.bankrate.com/loans/student-loans/refinance-rates/",
+              },
+              {
+                label: "Money.com lender rate table (as of Oct 2, 2026)",
+                href: "https://money.com/student-loan-interest-rates/",
+              },
+            ]}
+            checked="October 2026"
+            note="The 5.0% rate is an illustrative mid-range offer, not a quote."
+          />
 
           <h3 className="mt-10 text-xl font-semibold text-ink-800">
             Strategy 4: Employer Student Loan Repayment Assistance
@@ -698,33 +645,25 @@ export default function StudentLoanRepaymentGuide() {
             StudentAid.gov/pslf at least once a year so you know your count
             long before you apply. The Department of Education finalized a
             rule that would have let it disqualify employers for a
-            &quot;substantial illegal purpose,&quot; but a federal court
+            "substantial illegal purpose," but a federal court
             vacated the employer-eligibility part of that rule on June 30,
             2026, so the existing definition of a qualifying employer still
             applies. Check StudentAid.gov/pslf for updates if litigation
             continues.
           </p>
-          <p className="mt-3 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.ecfr.gov/current/title-34/subtitle-B/chapter-VI/part-685/subpart-B/section-685.219"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              34 CFR 685.219 (PSLF)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.nasfaa.org/news-item/39289/Federal_Court_Vacates_PSLF_Final_Rule_on_Employer_Eligibility_Hours_Before_July_1_Effective_Date"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              NASFAA report on the June 30, 2026 ruling
-            </a>
-            .
-          </p>
+          <Sources
+            items={[
+              {
+                label: "34 CFR 685.219 (PSLF)",
+                href: "https://www.ecfr.gov/current/title-34/subtitle-B/chapter-VI/part-685/subpart-B/section-685.219",
+              },
+              {
+                label: "NASFAA report on the June 30, 2026 ruling",
+                href: "https://www.nasfaa.org/news-item/39289/Federal_Court_Vacates_PSLF_Final_Rule_on_Employer_Eligibility_Hours_Before_July_1_Effective_Date",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         <section className="mt-12">
@@ -841,7 +780,7 @@ export default function StudentLoanRepaymentGuide() {
             </div>
 
             <div className="mt-6 border-t border-ink-100 pt-4">
-              <h4 className="font-semibold text-ink-800">Marcus&apos;s Analysis</h4>
+              <h4 className="font-semibold text-ink-800">Marcus's Analysis</h4>
               <p className="mt-2 text-sm text-ink-700">
                 Marcus ran his options through the Student Loan Calculator.
                 Standard repayment costs $10,936 in interest over 10 years and
@@ -868,7 +807,7 @@ export default function StudentLoanRepaymentGuide() {
             </div>
 
             <div className="mt-6 border-t border-ink-100 pt-4">
-              <h4 className="font-semibold text-ink-800">Marcus&apos;s Chosen Strategy: Employer Assistance + Avalanche</h4>
+              <h4 className="font-semibold text-ink-800">Marcus's Chosen Strategy: Employer Assistance + Avalanche</h4>
               <p className="mt-2 text-sm text-ink-700">
                 Marcus combined Strategy 4 and Strategy 5. He keeps paying his
                 $412 of combined minimums, his employer sends $437.50/month,
@@ -1011,7 +950,7 @@ export default function StudentLoanRepaymentGuide() {
             <div className="flex gap-4">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">5</div>
               <div>
-                <h4 className="font-semibold text-ink-800">Automate payments and specify &quot;apply to principal&quot;</h4>
+                <h4 className="font-semibold text-ink-800">Automate payments and specify "apply to principal"</h4>
                 <p className="mt-1 text-sm text-ink-700">
                   Enroll in autopay by December 31, 2026 to get the 1%
                   federal interest rate reduction through June 30, 2028. On
@@ -1031,7 +970,7 @@ export default function StudentLoanRepaymentGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   When your final loan hits $0, immediately redirect the full
                   former payment to an emergency fund (3-6 months of expenses),
-                  then to retirement accounts. Marcus&apos;s $812/month, invested
+                  then to retirement accounts. Marcus's $812/month, invested
                   at an assumed 7% for 30 years, grows to about $990,000. The
                   sooner you are debt-free, the longer your money compounds.
                 </p>

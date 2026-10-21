@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "@/lib/market-data";
 
 export function DownPaymentArticle() {
   return (
@@ -63,9 +65,13 @@ export function DownPaymentArticle() {
       </ul>
       <p>
         The 20% threshold remains significant because it eliminates PMI on conventional loans.
-        On a $350,000 home, PMI at 0.7% of the loan amount adds roughly $194/month when you put
-        only 5% down versus zero PMI at 20% down -- that is $2,333/year in additional cost until
-        you build sufficient equity. For a complete analysis of how much home you can afford at
+        On a $350,000 home at a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% mortgage rate, PMI at 0.7% of the loan amount adds roughly $194/month when you put
+        only 5% down versus zero PMI at 20% down — that is $2,333/year in additional cost until
+        you build sufficient equity.
+      </p>
+      <Sources items={MORTGAGE_MARKET_SOURCES} checked={MORTGAGE_MARKET.checkedLabel} />
+      <p>
+        For a complete analysis of how much home you can afford at
         different income levels, see our{" "}
         <Link href="/guides/how-much-house-can-i-afford" className="text-brand-600 hover:text-brand-800 font-medium">
           How Much House Can I Afford guide
@@ -83,20 +89,20 @@ export function DownPaymentArticle() {
         <strong>Scenario A: 20% down ($64,000).</strong> Rachel needs $46,000 more. At
         $1,200/month with 4.5% APY, the calculator shows she reaches her goal in approximately
         35 months (just under 3 years). Her loan would be $256,000, with a monthly P&I of
-        $1,661 at 6.75% and no PMI. Total interest over 30 years: $341,860.
+        $1,772 at {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% and no PMI. Total interest over 30 years: $382,100.
       </p>
       <p>
         <strong>Scenario B: 10% down ($32,000).</strong> Rachel needs only $14,000 more, which
         she accumulates in about 11 months. Her loan rises to $288,000, pushing the monthly P&I
-        to $1,869, plus roughly $168/month in PMI. That PMI adds $2,016/year until she reaches
+        to $1,994, plus roughly $168/month in PMI. That PMI adds $2,016/year until she reaches
         20% equity (approximately 7-8 years with normal appreciation and payment). Total interest
-        over 30 years: $384,840.
+        over 30 years: $429,860.
       </p>
       <p>
         <strong>Scenario C: 5% down ($16,000).</strong> Rachel already has enough saved today
         (plus a $2,000 buffer for closing costs). Her loan jumps to $304,000, monthly P&I hits
-        $1,972, and PMI adds approximately $177/month. While she enters the market immediately,
-        the larger loan means $47,000 more in total interest compared to the 20% down scenario.
+        $2,105, and PMI adds approximately $177/month. While she enters the market immediately,
+        the larger loan means $71,600 more in total interest compared to the 20% down scenario.
       </p>
       <p>
         Rachel decides on 10% down as a compromise: she enters the market within a year, avoids
@@ -105,8 +111,8 @@ export function DownPaymentArticle() {
         <Link href="/calculators/home-affordability" className="text-brand-600 hover:text-brand-800 font-medium">
           Home Affordability Calculator
         </Link>{" "}
-        to confirm that $2,037/month (P&I plus PMI) stays within the 28% housing ratio on her
-        income, and our{" "}
+        to stress-test whether a $320,000 purchase fits her $68,000 income at a{" "}
+        {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate (P&I plus PMI near $2,162/month before taxes), and our{" "}
         <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">
           Savings Goal Calculator
         </Link>{" "}
@@ -116,7 +122,7 @@ export function DownPaymentArticle() {
       <h2>Down Payment Comparison by Home Price</h2>
       <p>
         The table below shows the required down payment, loan amount, estimated monthly payment
-        (P&I only at 6.75%, 30-year term), and PMI cost at five common down payment levels for
+        (P&I only at {MORTGAGE_MARKET.thirtyYear.toFixed(2)}%, 30-year term), and PMI cost at five common down payment levels for
         three popular home prices.
       </p>
       <div className="my-6 overflow-x-auto">
@@ -136,67 +142,67 @@ export function DownPaymentArticle() {
               <td className="px-4 py-2 text-ink-700" rowSpan={3}>$250,000</td>
               <td className="px-4 py-2 text-ink-700">5%</td>
               <td className="px-4 py-2 text-right text-ink-700">$12,500</td>
-              <td className="px-4 py-2 text-right text-ink-700">$1,540</td>
+              <td className="px-4 py-2 text-right text-ink-700">$1,644</td>
               <td className="px-4 py-2 text-right text-ink-700">$139</td>
-              <td className="px-4 py-2 text-right text-ink-700">$316,900</td>
+              <td className="px-4 py-2 text-right text-ink-700">$354,500</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">10%</td>
               <td className="px-4 py-2 text-right text-ink-700">$25,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$1,459</td>
+              <td className="px-4 py-2 text-right text-ink-700">$1,558</td>
               <td className="px-4 py-2 text-right text-ink-700">$131</td>
-              <td className="px-4 py-2 text-right text-ink-700">$300,240</td>
+              <td className="px-4 py-2 text-right text-ink-700">$335,800</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">20%</td>
               <td className="px-4 py-2 text-right text-ink-700">$50,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$1,297</td>
+              <td className="px-4 py-2 text-right text-ink-700">$1,385</td>
               <td className="px-4 py-2 text-right text-ink-700">$0</td>
-              <td className="px-4 py-2 text-right text-ink-700">$266,920</td>
+              <td className="px-4 py-2 text-right text-ink-700">$298,500</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700" rowSpan={3}>$400,000</td>
               <td className="px-4 py-2 text-ink-700">5%</td>
               <td className="px-4 py-2 text-right text-ink-700">$20,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$2,464</td>
+              <td className="px-4 py-2 text-right text-ink-700">$2,631</td>
               <td className="px-4 py-2 text-right text-ink-700">$222</td>
-              <td className="px-4 py-2 text-right text-ink-700">$507,040</td>
+              <td className="px-4 py-2 text-right text-ink-700">$567,200</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">10%</td>
               <td className="px-4 py-2 text-right text-ink-700">$40,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$2,334</td>
+              <td className="px-4 py-2 text-right text-ink-700">$2,493</td>
               <td className="px-4 py-2 text-right text-ink-700">$210</td>
-              <td className="px-4 py-2 text-right text-ink-700">$480,240</td>
+              <td className="px-4 py-2 text-right text-ink-700">$537,300</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">20%</td>
               <td className="px-4 py-2 text-right text-ink-700">$80,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$2,075</td>
+              <td className="px-4 py-2 text-right text-ink-700">$2,216</td>
               <td className="px-4 py-2 text-right text-ink-700">$0</td>
-              <td className="px-4 py-2 text-right text-ink-700">$427,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">$477,600</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700" rowSpan={3}>$600,000</td>
               <td className="px-4 py-2 text-ink-700">5%</td>
               <td className="px-4 py-2 text-right text-ink-700">$30,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$3,696</td>
+              <td className="px-4 py-2 text-right text-ink-700">$3,947</td>
               <td className="px-4 py-2 text-right text-ink-700">$333</td>
-              <td className="px-4 py-2 text-right text-ink-700">$760,560</td>
+              <td className="px-4 py-2 text-right text-ink-700">$850,800</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">10%</td>
               <td className="px-4 py-2 text-right text-ink-700">$60,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$3,501</td>
+              <td className="px-4 py-2 text-right text-ink-700">$3,739</td>
               <td className="px-4 py-2 text-right text-ink-700">$315</td>
-              <td className="px-4 py-2 text-right text-ink-700">$720,360</td>
+              <td className="px-4 py-2 text-right text-ink-700">$806,000</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">20%</td>
               <td className="px-4 py-2 text-right text-ink-700">$120,000</td>
-              <td className="px-4 py-2 text-right text-ink-700">$3,113</td>
+              <td className="px-4 py-2 text-right text-ink-700">$3,323</td>
               <td className="px-4 py-2 text-right text-ink-700">$0</td>
-              <td className="px-4 py-2 text-right text-ink-700">$640,680</td>
+              <td className="px-4 py-2 text-right text-ink-700">$716,400</td>
             </tr>
           </tbody>
         </table>
@@ -205,7 +211,7 @@ export function DownPaymentArticle() {
         The pattern is clear: every 5% increase in down payment drops the monthly payment and
         eliminates years of PMI cost. However, the largest jump in savings comes at the 20%
         threshold where PMI disappears entirely. On a $400,000 home, the difference between
-        5% and 20% down is roughly $611/month ($389 less in P&I plus $222 saved on PMI).
+        5% and 20% down is roughly $637/month ($415 less in P&I plus $222 saved on PMI).
       </p>
 
       <h2>Strategies to Save for a Down Payment Faster</h2>

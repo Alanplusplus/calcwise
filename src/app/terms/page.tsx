@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,11 +11,11 @@ export default function TermsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <h1 className="text-3xl font-bold text-ink-900">Terms of Service</h1>
-      <p className="mt-2 text-sm text-ink-500">Last updated: August 2026</p>
+      <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
 
       <div className="prose mt-8">
         <p>
-          By accessing and using CalcWise (&quot;the Site&quot;), you agree to
+          By accessing and using CalcWise ("the Site"), you agree to
           these Terms of Service. If you do not agree with any part of these
           terms, please do not use the Site.
         </p>
@@ -77,13 +78,23 @@ export default function TermsPage() {
           You are welcome to link to any page on our site and to share
           calculator results for personal or educational purposes.
         </p>
-
-        <h2>Advertising</h2>
         <p>
-          This site displays third-party advertisements to support our free
-          service. We are not responsible for the content or accuracy of
-          third-party advertisements. The inclusion of any advertisement does
-          not constitute an endorsement of the advertised product or service.
+          Two exceptions apply. First, you may embed the calculators listed on
+          our <Link href="/embed">embed page</Link> on your own website, including a
+          commercial one, using the snippet provided there, provided the credit
+          line below the frame stays in place. Second, the figures we calculate
+          in our <Link href="/reports">data reports</Link> and the downloadable
+          datasets that accompany them are licensed under{" "}
+          <a
+            href="https://creativecommons.org/licenses/by/4.0/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CC BY 4.0
+          </a>
+          . You may copy and republish them, including commercially, with a link
+          to the report. Public data that we reuse, such as Census Bureau
+          figures, stays in the public domain.
         </p>
 
         <h2>Modifications</h2>

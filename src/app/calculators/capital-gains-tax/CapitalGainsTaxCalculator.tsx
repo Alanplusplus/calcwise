@@ -2,6 +2,18 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { Sources } from "@/components/Sources";
+import {
+  LONG_TERM_BRACKETS,
+  LONG_TERM_TOP_RATE,
+  NIIT_RATE,
+  NIIT_THRESHOLDS,
+  ORDINARY_BRACKETS,
+  TAX_DATA,
+  TAX_SOURCES,
+  TOP_ORDINARY_RATE,
+  type FilingStatus,
+} from "@/lib/tax-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -11,55 +23,7 @@ function formatPercent(n: number): string {
   return `${n.toFixed(1)}%`;
 }
 
-type FilingStatus = "single" | "mfj" | "hoh";
-
-const LONG_TERM_BRACKETS: Record<FilingStatus, { rate: number; upTo: number }[]> = {
-  single: [
-    { rate: 0.0, upTo: 48350 },
-    { rate: 0.15, upTo: 533400 },
-  ],
-  mfj: [
-    { rate: 0.0, upTo: 96700 },
-    { rate: 0.15, upTo: 600050 },
-  ],
-  hoh: [
-    { rate: 0.0, upTo: 64750 },
-    { rate: 0.15, upTo: 566700 },
-  ],
-};
-
-const NIIT_THRESHOLDS: Record<FilingStatus, number> = {
-  single: 200000,
-  mfj: 250000,
-  hoh: 200000,
-};
-
-const SHORT_TERM_BRACKETS: Record<FilingStatus, { rate: number; upTo: number }[]> = {
-  single: [
-    { rate: 0.10, upTo: 11600 },
-    { rate: 0.12, upTo: 47150 },
-    { rate: 0.22, upTo: 100525 },
-    { rate: 0.24, upTo: 191950 },
-    { rate: 0.32, upTo: 243725 },
-    { rate: 0.35, upTo: 609350 },
-  ],
-  mfj: [
-    { rate: 0.10, upTo: 23200 },
-    { rate: 0.12, upTo: 94300 },
-    { rate: 0.22, upTo: 201050 },
-    { rate: 0.24, upTo: 383900 },
-    { rate: 0.32, upTo: 487450 },
-    { rate: 0.35, upTo: 1218700 },
-  ],
-  hoh: [
-    { rate: 0.10, upTo: 17400 },
-    { rate: 0.12, upTo: 65700 },
-    { rate: 0.22, upTo: 150788 },
-    { rate: 0.24, upTo: 287925 },
-    { rate: 0.32, upTo: 365587 },
-    { rate: 0.35, upTo: 914025 },
-  ],
-};
+const SHORT_TERM_BRACKETS = ORDINARY_BRACKETS;
 
 function computeLongTermTax(
   gain: number,
@@ -92,10 +56,10 @@ function computeLongTermTax(
   }
 
   if (remaining > 0) {
-    const topRate = 0.20;
+    const topRate = LONG_TERM_TOP_RATE;
     const bracketTax = remaining * topRate;
     tax += bracketTax;
-    breakdown.push({ rate: "20%", amount: remaining, tax: bracketTax });
+    breakdown.push({ rate: `${Math.round(LONG_TERM_TOP_RATE * 100)}%`, amount: remaining, tax: bracketTax });
   }
 
   return { tax, effectiveRate: gain > 0 ? (tax / gain) * 100 : 0, breakdown };
@@ -133,9 +97,9 @@ function computeShortTermTax(
   if (totalIncome > brackets[brackets.length - 1].upTo) {
     const taxable = totalIncome - Math.max(brackets[brackets.length - 1].upTo, otherIncome);
     if (taxable > 0) {
-      const bracketTax = taxable * 0.37;
+      const bracketTax = taxable * TOP_ORDINARY_RATE;
       tax += bracketTax;
-      breakdown.push({ rate: "37%", amount: taxable, tax: bracketTax });
+      breakdown.push({ rate: `${Math.round(TOP_ORDINARY_RATE * 100)}%`, amount: taxable, tax: bracketTax });
     }
   }
 
@@ -192,7 +156,7 @@ export function CapitalGainsTaxCalculator({ defaults }: Props) {
     const niitThreshold = NIIT_THRESHOLDS[filingStatus];
     const magi = income + gain;
     const niitIncome = Math.max(0, magi - niitThreshold);
-    const niit = Math.min(gain, niitIncome) * 0.038;
+    const niit = Math.min(gain, niitIncome) * NIIT_RATE;
 
     const totalTax = taxResult.tax + niit;
 
@@ -221,7 +185,7 @@ export function CapitalGainsTaxCalculator({ defaults }: Props) {
     const niitThreshold = NIIT_THRESHOLDS[filingStatus];
     const magi = income + gain;
     const niitIncome = Math.max(0, magi - niitThreshold);
-    const niit = Math.min(gain, niitIncome) * 0.038;
+    const niit = Math.min(gain, niitIncome) * NIIT_RATE;
 
     const longResult = computeLongTermTax(gain, income, LONG_TERM_BRACKETS[filingStatus]);
     const shortResult = computeShortTermTax(gain, income, SHORT_TERM_BRACKETS[filingStatus]);
@@ -451,6 +415,13 @@ export function CapitalGainsTaxCalculator({ defaults }: Props) {
           </>
         )}
       </div>
+
+      <Sources
+        className="mt-6"
+        items={[TAX_SOURCES.revProc, TAX_SOURCES.capitalGains, TAX_SOURCES.niit]}
+        checked={TAX_DATA.checkedOnLabel}
+        note={`Long-term rate thresholds and ordinary brackets are for tax year ${TAX_DATA.taxYear}. Enter your taxable income (after deductions) excluding this gain. Estimates only; state tax, collectibles, and real estate depreciation recapture are not modeled.`}
+      />
     </div>
   );
 }

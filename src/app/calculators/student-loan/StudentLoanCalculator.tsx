@@ -240,7 +240,7 @@ export function StudentLoanCalculator({ defaults }: Props) {
               {results.extra > 0 && "accelerated" in results && results.accelerated && (
                 <div className="mt-4 rounded-lg border border-brand-200 bg-brand-50 p-4">
                   <p className="font-semibold text-brand-800">
-                    By adding {formatCurrencyExact(results.extra)} per month, you&apos;d pay off
+                    By adding {formatCurrencyExact(results.extra)} per month, you'd pay off
                     your loan {results.accelerated.monthsSaved} months sooner, save{" "}
                     {formatCurrencyExact(results.accelerated.interestSaved)} in interest, and
                     become debt-free by {results.accelerated.payoffDate}.

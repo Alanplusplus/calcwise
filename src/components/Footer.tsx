@@ -78,6 +78,21 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/methodology" className="text-sm text-ink-500 hover:text-brand-600">
+                  Methodology
+                </Link>
+              </li>
+              <li>
+                <Link href="/reports" className="text-sm text-ink-500 hover:text-brand-600">
+                  Data Reports
+                </Link>
+              </li>
+              <li>
+                <Link href="/embed" className="text-sm text-ink-500 hover:text-brand-600">
+                  Embed Calculators
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-sm text-ink-500 hover:text-brand-600">
                   Contact
                 </Link>
@@ -109,7 +124,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-ink-200 pt-6 text-center text-sm text-ink-400">
           <p>
-            &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p className="mt-1">
             Calculators are for educational purposes only. Consult a financial

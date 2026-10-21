@@ -56,7 +56,7 @@ export function TipArticle() {
         orders. Rideshare tipping runs 15% to 20% of the fare, though a flat $2 to $5 is common
         on short trips under $15. Hotel housekeeping typically receives $2 to $5 per night left
         on the pillow or desk, not as a lump sum at checkout. Understanding these service-specific
-        benchmarks prevents both under-tipping — which directly reduces a worker&apos;s income —
+        benchmarks prevents both under-tipping — which directly reduces a worker's income —
         and over-tipping out of uncertainty.
       </p>
       <p>
@@ -93,7 +93,7 @@ export function TipArticle() {
       <p>
         <strong>Group dining auto-gratuity.</strong> Restaurants commonly add an automatic
         gratuity of 18% to 20% for parties of six or more. This charge appears on your bill
-        as &quot;gratuity&quot; or &quot;service charge&quot; and is legally distinct from a
+        as "gratuity" or "service charge" and is legally distinct from a
         voluntary tip in some jurisdictions. Before adding an extra tip on top, read the check
         carefully. If 20% auto-gratuity is already included on a $500 group bill, you have
         already paid $100 in gratuity — adding another 20% would double-pay. You may still

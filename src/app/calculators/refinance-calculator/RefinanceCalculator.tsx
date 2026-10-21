@@ -2,6 +2,9 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { RateDefaultNote } from "@/components/RateDefaultNote";
+import { Sources } from "@/components/Sources";
+import { DEFAULT_MORTGAGE_RATE } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -28,10 +31,10 @@ interface Props {
 
 export function RefinanceCalculator({ defaults }: Props) {
   const [originalLoan, setOriginalLoan] = useState(defaults?.originalLoan || "350000");
-  const [originalRate, setOriginalRate] = useState(defaults?.originalRate || "7.0");
+  const [originalRate, setOriginalRate] = useState(defaults?.originalRate || "7.79");
   const [originalTerm, setOriginalTerm] = useState(defaults?.originalTerm || "360");
-  const [paymentsMade, setPaymentsMade] = useState(defaults?.paymentsMade || "60");
-  const [newRate, setNewRate] = useState(defaults?.newRate || "5.75");
+  const [paymentsMade, setPaymentsMade] = useState(defaults?.paymentsMade || "36");
+  const [newRate, setNewRate] = useState(defaults?.newRate || DEFAULT_MORTGAGE_RATE);
   const [newTerm, setNewTerm] = useState(defaults?.newTerm || "360");
   const [closingCosts, setClosingCosts] = useState(defaults?.closingCosts || "6000");
   const [rollInCosts, setRollInCosts] = useState(defaults?.rollInCosts || "no");
@@ -174,6 +177,20 @@ export function RefinanceCalculator({ defaults }: Props) {
         </div>
       </div>
 
+      <RateDefaultNote rate={newRate} field="new rate" />
+      {originalRate === "7.79" && (
+        <Sources
+          items={[
+            {
+              label: "Freddie Mac PMMS (Oct. 26, 2023)",
+              href: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-continue-climb-toward-eight-percent",
+            },
+          ]}
+          className="mt-1"
+          note="The starting current rate, 7.79%, was the 30-year national average that week, so the example is a loan about three years old. Enter your own rate."
+        />
+      )}
+
       {results ? (
         <div className="mt-8">
           {/* Verdict */}
@@ -236,7 +253,7 @@ export function RefinanceCalculator({ defaults }: Props) {
 
           {/* Year-by-Year Comparison */}
           <div className="mt-6">
-            <p className="text-sm font-medium text-ink-700">Year-by-Year Balance &amp; Interest Comparison</p>
+            <p className="text-sm font-medium text-ink-700">Year-by-Year Balance & Interest Comparison</p>
             <div className="mt-2 overflow-auto rounded-lg border border-ink-200">
               <table className="w-full text-sm">
                 <thead className="bg-ink-100">

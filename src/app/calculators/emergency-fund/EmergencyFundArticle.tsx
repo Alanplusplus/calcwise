@@ -26,7 +26,7 @@ export function EmergencyFundArticle() {
       <p>
         Calculate based on your <em>essential</em> expenses only — housing,
         food, utilities, insurance, transportation, and minimum debt payments.
-        Don&apos;t include discretionary spending like dining out or entertainment.
+        Don't include discretionary spending like dining out or entertainment.
       </p>
 
       <h2>Case Study: Building a 6-Month Fund on $65,000</h2>
@@ -144,10 +144,10 @@ export function EmergencyFundArticle() {
 
       <h2>Building Your Fund: A Step-by-Step Approach</h2>
       <ul>
-        <li><strong>Step 1:</strong> Start with a $1,000 &quot;starter&quot; emergency fund as fast as possible. This covers most minor emergencies.</li>
+        <li><strong>Step 1:</strong> Start with a $1,000 "starter" emergency fund as fast as possible. This covers most minor emergencies.</li>
         <li><strong>Step 2:</strong> Build to 1 month of expenses while also paying off high-interest debt.</li>
         <li><strong>Step 3:</strong> Once high-interest debt is eliminated, aggressively build to 3-6 months.</li>
-        <li><strong>Step 4:</strong> If you&apos;re self-employed or in a volatile field, continue to 9-12 months.</li>
+        <li><strong>Step 4:</strong> If you're self-employed or in a volatile field, continue to 9-12 months.</li>
       </ul>
       <p>
         Use our{" "}
@@ -172,8 +172,8 @@ export function EmergencyFundArticle() {
       </ul>
       <p>
         <strong>Not emergencies:</strong> vacations, holiday gifts, sales,
-        planned purchases, routine maintenance, or &quot;I forgot to budget for
-        it.&quot; Create separate sinking funds for predictable expenses, and
+        planned purchases, routine maintenance, or "I forgot to budget for
+        it." Create separate sinking funds for predictable expenses, and
         follow{" "}
         <Link
           href="/guides/50-30-20-budget-rule"
@@ -206,7 +206,7 @@ export function EmergencyFundArticle() {
       <p>
         Keep it in a separate bank from your checking account — the slight
         friction of transferring between banks reduces impulse use. Give it a
-        name (e.g., &quot;Job Loss Fund&quot; or &quot;Peace of Mind&quot;) to
+        name (e.g., "Job Loss Fund" or "Peace of Mind") to
         make it psychologically harder to raid. Set clear rules for what
         constitutes an emergency.
       </p>

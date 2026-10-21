@@ -5,6 +5,8 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
+import { TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
   title: "401(k) vs Roth IRA: Which Retirement Account Is Better for You?",
@@ -307,7 +309,7 @@ export default function FourOhOneKVsRothIraGuide() {
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3 font-medium">Required minimum distributions</td>
                   <td className="px-4 py-3">Yes — starting at age 73 (25% excise tax if missed)</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">No RMDs during owner&apos;s lifetime</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">No RMDs during owner's lifetime</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium">Investment options</td>
@@ -322,37 +324,19 @@ export default function FourOhOneKVsRothIraGuide() {
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              IRS IR-2025-111 (Nov. 13, 2025)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-required-minimum-distributions-rmds"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              IRS RMD rules
-            </a>
-            ,{" "}
-            <a
-              href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              IRS 2026 tax brackets (IR-2025-103)
-            </a>
-            . Employer match average from Vanguard&apos;s How America Saves 2026
-            (2025 plan data). Figures as of October 2026.
-          </p>
+          <Sources
+            className="mt-4"
+            items={[
+              TAX_SOURCES.retirementLimits,
+              {
+                label: "IRS RMD rules",
+                href: "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-required-minimum-distributions-rmds",
+              },
+              TAX_SOURCES.irsRelease,
+            ]}
+            checked="October 2026"
+            note="Employer match average from Vanguard&apos;s How America Saves 2026 (2025 plan data). Figures as of October 2026."
+          />
         </section>
 
         {/* When 401k Wins */}
@@ -386,7 +370,7 @@ export default function FourOhOneKVsRothIraGuide() {
           </h3>
           <p className="mt-2 text-ink-700">
             Employer matching is the single highest-return investment available
-            to most workers. Vanguard&apos;s How America Saves 2026 report found
+            to most workers. Vanguard's How America Saves 2026 report found
             the average promised match was 4.7% of pay (median 4.0%) across its
             plans, and the single most common formula was 50 cents per dollar on
             the first 6% of pay. On a $95,000 income that formula adds $2,850 per
@@ -461,7 +445,7 @@ export default function FourOhOneKVsRothIraGuide() {
           </h3>
           <p className="mt-2 text-ink-700">
             If you believe tax rates will rise — due to national debt, policy
-            changes, or your own income growth — paying taxes now at today&apos;s
+            changes, or your own income growth — paying taxes now at today's
             rates is a hedge. A single $7,500 Roth contribution today that grows
             to $57,100 over 30 years at 7% comes out entirely tax-free. Withdrawing
             that same $57,100 from a traditional account would trigger roughly
@@ -753,8 +737,8 @@ export default function FourOhOneKVsRothIraGuide() {
           <p className="mt-4 text-ink-700">
             The entire 401(k) vs Roth IRA calculation hinges on one comparison:
             your marginal tax rate today versus your expected marginal rate in
-            retirement. When today&apos;s rate is higher, choose traditional. When
-            tomorrow&apos;s rate is expected to be higher, choose Roth.
+            retirement. When today's rate is higher, choose traditional. When
+            tomorrow's rate is expected to be higher, choose Roth.
           </p>
 
           <div className="mt-6 overflow-x-auto">

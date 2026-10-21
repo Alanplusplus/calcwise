@@ -11,7 +11,7 @@ When the user says "刷新内容", "更新内容", "每日更新", "refresh cont
 ## Step 0: Read Plan & Pick Next Item
 
 1. Read `.cursor/plans/content-freshness.json`
-2. Find the first item with `"status": "pending"`
+2. Find the first item with `"status": "pending"` whose `notBefore` date (if present) is today or earlier; skip items that are not due yet
 3. Set `lastRunDate` to today's ISO date
 4. Announce: "Working on: [type] — [slug] (priority: [priority])"
 
@@ -35,14 +35,57 @@ Before editing any rate, fee, limit, bracket, benchmark, or "current" statistic,
 - Every changed data point must be traceable to a source and a date (e.g. "Fed G.19, released Oct 7, 2026, August data").
 - If only tier 3 sources exist, or sources disagree, use a hedged range or leave the existing figure and note it. Do not invent precision.
 - Time-sensitive facts (rates, limits, brackets, promo terms) must state the as-of date in the page text (e.g. "as of August 2026").
-- Add a short "Sources:" line near the refreshed section with 1-3 links to tier 1 sources (`target="_blank" rel="noopener noreferrer"`).
+- Cite sources with the shared `<Sources>` component (`import { Sources } from "@/components/Sources"`), placed right after the section that uses the figures. Props: `items` (1-4 `{ label, href }` links to tier 1 sources; put the publisher and document date in the label), `checked` (e.g. `"October 2026"`, the month you verified the figures), optional `note` (caveats). Do NOT hand-write `<a>` source lists, and do not rewrite existing ones in a different style.
+- Figures that live in code (calculator constants, FAQ answers in `page.tsx`, variant data) follow the same rule as article text: verified online, dated, and cited. See "Code-resident data" below.
 - After pulling new numbers, recompute all dependent math (monthly payments, interest totals, differences) and update every place on the page that uses the old figure so the page stays internally consistent. Illustrative scenario rates (e.g. "$10,000 at 22%") may stay rounded but should be within ~1 point of the verified average.
 - Compute payoff months, interest, and payments with exact month-by-month amortization (run a throwaway `node -e` calculation; do not save script files). State the minimum-payment model used (e.g. 1% of balance + interest) and apply it everywhere on the page.
 - Do not state percentages like "X% of people do Y" or "lenders usually do Z" unless a tier 1-2 source was found; otherwise remove or rephrase as a neutral statement.
 - If an infographic image contains numbers that no longer match the page, regenerate it (kie-image pipeline in content-standards) so text and image agree.
 - Keep a one-line note in the commit message of the primary source used.
 
+### Code-resident data (calculators, FAQs, variants)
+
+Refreshing only the prose is NOT enough. These places hold figures too and have gone stale before:
+
+1. **Calculator constants** in `src/app/calculators/[slug]/[Name]Calculator.tsx` (brackets, deductions, wage bases, rate defaults, deadlines in UI text, "2026" labels).
+2. **FAQ answers** in `src/app/calculators/[slug]/page.tsx` (the `faq` array feeds FAQ JSON-LD, so a wrong number is also wrong in search results).
+3. **Variant pages** in `src/lib/variants/[slug].ts` (`intro`, `tips`, `keyResults`, `faq`, `comparisonNote`).
+4. **Default input values** (`defaults`) that embed a market rate.
+
+Tax figures have ONE source of truth: `src/lib/tax-data.ts`. It exports `TAX_DATA` metadata (`taxYear`, `checkedOn`, `sources`) plus the brackets, standard deductions, long-term capital gains thresholds, NIIT and Medicare thresholds, and the Social Security wage base. Calculators import from it; never paste a bracket, deduction, or wage-base number into a calculator, an Article, or a FAQ as a new literal. Where an Article or FAQ quotes a headline threshold, build the string from the exported constant (e.g. `${SOCIAL_SECURITY_WAGE_BASE.toLocaleString("en-US")}`) so one edit updates every page.
+
+When the IRS publishes next year's inflation adjustments (Rev. Proc. in Oct-Nov) or SSA announces the next wage base (Oct), run the `tax-data-refresh` task immediately; it outranks everything else in the queue.
+
+Mortgage market rates have ONE source of truth too: `src/lib/market-data.ts` (`MORTGAGE_MARKET`: Freddie Mac PMMS 30-year and 15-year averages, the year-ago value, `asOf`, `checkedOn`). The default interest-rate input of the mortgage, house-payment, home-affordability, down-payment, rent-vs-buy, amortization, loan-comparison (30-year rate A and 15-year rate B via `MORTGAGE_MARKET.fifteenYear`), and refinance (new rate) calculators reads from it, and each shows a `<RateDefaultNote />` while a field still holds a benchmark value. The refinance calculator's current-rate default (7.79%, the Oct 26, 2023 PMMS peak, 36 payments made) is a historical anchor, not a market rate: leave it unless the scenario itself is redesigned. Anything computed from those defaults (FAQ answers, Article worked examples, variants that do not set their own `interestRate`) moves when the default moves. The state report keeps its own pinned rate in `REPORT` on purpose, because a dated report must not change when the weekly average does.
+
 ## Step 1: Route by Task Type
+
+### Type: `tax-data-refresh`
+
+1. Look up (tier 1 only): the IRS Rev. Proc. for the tax year (brackets, standard deduction, section 1(h) capital gains thresholds), the SSA contribution and benefit base page, IRS 401(k)/IRA limit release.
+2. Update `src/lib/tax-data.ts`: values, `taxYear`, `checkedOn` (today), `sources` (exact document name + URL).
+3. Grep the whole `src/` tree for the old tax year and for each old number (old standard deduction, old wage base, old bracket edges). Fix every hit: articles, FAQs, guides (`401k-vs-roth-ira`, `self-employment-tax-guide`, `capital-gains-tax-guide`, `salary-to-hourly`, ...), variants, UI text such as quarterly deadlines.
+4. Recompute every worked example (use a throwaway `node -e` that imports nothing from the repo and re-implements the bracket math), then make the page text match the calculator's output for the same inputs.
+5. Set `lastUpdated` for all four tax calculators and every guide touched.
+
+### Type: `rate-refresh`
+
+Run when the Freddie Mac PMMS 30-year average has moved 0.25 points or more from `MORTGAGE_MARKET.thirtyYear`, and as part of every `calculator-refresh` of a mortgage-family calculator.
+
+1. Read the latest PMMS release (tier 1: freddiemac.com/pmms or its news release). Record the 30-year, 15-year, and year-ago 30-year values and the week they describe.
+2. Update `src/lib/market-data.ts`: the three rates, `asOf`, `asOfLabel`, `checkedOn`, `checkedLabel`, and the source link.
+3. Recompute every default-coupled number with a throwaway `node -e` using the standard amortization formula, then fix the text that quotes them: the `faq` arrays in `src/app/calculators/{mortgage,house-payment,home-affordability,down-payment,rent-vs-buy}/page.tsx`, the matching `*Article.tsx` worked examples, and the worked example in `src/app/methodology/page.tsx` (it uses the mortgage calculator's default inputs), the amortization, loan-comparison, and refinance articles and FAQs (`src/app/calculators/{amortization,loan-comparison,refinance-calculator}/`), their infographics in `public/images/` (`amortization-infographic`, `refinance-calculator-infographic`, `mortgage-payment-breakdown`: regenerate with the kie-image pipeline when the numbers drift), every variant in `src/lib/variants/{mortgage,home-affordability}.ts` whose `defaults` omit `interestRate` (their `keyResults`, `intro`, `tips`, `faq`, `comparisonNote`). Variants that set their own rate are untouched unless they are being refreshed separately.
+4. Check the infographics for baked-in rates (`public/images/*payment*`, `*amortization*`); regenerate any whose numbers no longer match.
+5. Do not edit `REPORT` in the state report; its rate refreshes only under `report-refresh`.
+
+### Type: `report-refresh`
+
+Refresh a data report under `src/app/reports/` when its publisher releases new data or the rate input moves materially (for `mortgage-affordability-by-state`: the Census Bureau ACS 1-year release for tables B25077, B25103, B19013, and the latest Freddie Mac PMMS 30-year rate with its year-ago value).
+
+1. Look up the new inputs from tier 1 sources only (Step 0.5). The Census API needs a key and may be unreachable; if only a mirror such as Census Reporter works, say so on the page and still cross-check against Census-published tables (GCT tables, ACS briefs, data.census.gov).
+2. Edit only `src/lib/reports/<slug>.ts`: the `REPORT` constants (`acsYear`, `mortgageRate`, `mortgageRateDate`, `mortgageRateYearAgo`, dates), `US_ROW`, and `STATE_ROWS`. The page text, table, CSV, and JSON-LD are all derived from that file.
+3. Re-read the hand-written copy on the page ("What this report does not capture", FAQ answers, the note about the next ACS release) and fix anything that is no longer true, such as a release that was "scheduled" and has now happened.
+4. Bump `dateModified` in the data module, `lastModified` for the report in `src/app/sitemap.ts`, and the entry in `src/lib/reports/index.ts`. Rename the CSV file name in the route if the year in it changes.
 
 ### Type: `calculator-article-expand`
 
@@ -75,16 +118,30 @@ Update an existing guide with fresh data:
 
 ### Type: `calculator-refresh`
 
-Update an existing calculator's article content:
+Update an existing calculator end to end. The scope is the article AND the code that holds figures:
 
-1. Read `src/app/calculators/[slug]/[Name]Article.tsx`
-2. Make at least 2 of these substantive changes:
+1. Read `src/app/calculators/[slug]/[Name]Article.tsx`, `[Name]Calculator.tsx`, and `page.tsx` (the `faq` array and metadata).
+2. Audit every number in all three files against tier 1 sources (Step 0.5). Constants in `Calculator.tsx` and numbers in `page.tsx` FAQs are in scope; a calculator whose constants are stale is a failed refresh even if the article reads well.
+3. Make at least 2 of these substantive changes in the article:
    - Update rate/amount examples to current market data
    - Add a new comparison row or scenario
    - Update or add a FAQ question with fresh data
    - Refresh case study with current numbers
    - Add a new actionable tip
-3. Check and update internal links
+4. Add or update the `<Sources>` line in the article (and in the calculator UI when it uses reference constants, e.g. the tax calculators).
+5. If the calculator has variants, note that in the queue but refresh them under `variant-refresh`.
+6. Check and update internal links.
+7. If the slug is listed in `src/lib/embeds.ts` (embeddable through `/embed/[slug]`), and the layout or result sections changed, re-measure the frame height at 720px width and update `height` there.
+
+### Type: `variant-refresh`
+
+Refresh one calculator's programmatic variant set (`src/lib/variants/[slug].ts`):
+
+1. Read the variants file and the calculator logic it feeds (`[Name]Calculator.tsx`).
+2. Verify every market figure the variants quote (rates, limits, benchmarks) per Step 0.5.
+3. For each variant: update `intro`, `tips`, `faq`, `comparisonNote`, and the `defaults` if they embed a market rate; recompute `keyResults` by re-running the calculator's formula (throwaway `node -e`) so the table matches what the pre-filled calculator shows.
+4. Do not touch variants whose figures are still correct, but do bump `lastUpdated` on every variant you re-verified. Keep the Information Gain Gate from `content-standards.mdc`: no pure-number variants.
+5. Cite sources with `<Sources>` where the variant page template renders them (add a `sources` field to the variant data if it does not exist yet and render it in the variant page).
 
 ### Type: `new-calculator`
 
@@ -102,6 +159,10 @@ After making content changes, update **all** date signals:
 1. In `src/lib/calculators.ts`, set the calculator's `lastUpdated` to today's ISO date (e.g., `"2026-09-26"`)
 2. The sitemap automatically reads `lastUpdated` — no separate sitemap edit needed
 3. `CalculatorShell` automatically passes dates to `ArticleJsonLd` — no separate edit needed
+4. Tax calculators: also update `checkedOn` in `src/lib/tax-data.ts`
+
+### For variant refreshes:
+1. Set each re-verified variant's `lastUpdated` to today's ISO date (the sitemap reads it)
 
 ### For guide refreshes:
 1. In `src/lib/guides.ts`, set the guide's `lastUpdated` to today's ISO date
@@ -133,7 +194,9 @@ In `.cursor/plans/content-freshness.json`:
 
 ## Quality Checklist
 
-- [ ] All rates/fees/limits verified online from tier 1-2 sources (Step 0.5), with as-of dates and a "Sources:" line
+- [ ] All rates/fees/limits verified online from tier 1-2 sources (Step 0.5), with as-of dates and a `<Sources>` line (component, not hand-written anchors)
+- [ ] Figures in `Calculator.tsx`, `page.tsx` FAQs, and variant data were audited too, not only the article text
+- [ ] Tax figures read from `src/lib/tax-data.ts`; no new tax literals pasted elsewhere
 - [ ] Dependent calculations recomputed and consistent across the whole page
 - [ ] Content changes are substantive (not just date bumps)
 - [ ] Every new paragraph has specific numbers or actionable advice
@@ -149,6 +212,12 @@ In `.cursor/plans/content-freshness.json`:
 
 When all items in the queue are `"done"`:
 1. Increment `cycle` counter
-2. Regenerate P2 (guide-refresh) and P3 (calculator-refresh) items with `"pending"` status
+2. Regenerate in this order: `tax-data-refresh` (P1T) first, then `report-refresh` (P1R, one item per report, with a `notBefore` date when the next data release date is known), then P2 (guide-refresh), then `variant-refresh` (P2V), then P3 (calculator-refresh), all with `"pending"` status
 3. Skip P0 (one-time expansions) and P1 (one-time fixes) — they don't recur
 4. P5 (new content) items remain if still pending in their source plans
+
+Priority rationale: figures that readers act on and that change on a known calendar (tax limits) come first; pages with the most programmatic URLs (variants) come before low-traffic calculator articles.
+
+## Coverage Claim
+
+The Methodology page promises that figures are checked against primary sources and dated. Keep that promise true: when a pending item that adds sources/as-of dates finishes, nothing else is needed; but if an audit finds a guide, calculator, or variant set that quotes reference data without a `<Sources>` line, add it to the queue at the top as a `guide-refresh` / `calculator-refresh` / `variant-refresh` item rather than leaving it unsourced.

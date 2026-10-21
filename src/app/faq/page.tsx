@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "Are CalcWise calculators free to use?",
-    answer: "Yes, all calculators on CalcWise are completely free. There are no hidden fees, no premium tiers, and no signup required. We support the site through advertising.",
+    answer: "Yes, all calculators on CalcWise are completely free. There are no hidden fees, no premium tiers, and no signup required.",
   },
   {
     question: "How accurate are the calculator results?",

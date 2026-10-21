@@ -221,7 +221,7 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
               <div className="mt-4 rounded-lg bg-green-50 p-4">
                 <p className="font-semibold text-green-800">
                   By paying {formatCurrencyExact(parseFloat(fixedPayment) || 0)} instead of
-                  minimum payments, you&apos;d save {formatCurrencyExact(results.interestSavings)}{" "}
+                  minimum payments, you'd save {formatCurrencyExact(results.interestSavings)}{" "}
                   in interest and be debt-free {results.monthsSaved} months sooner.
                 </p>
               </div>

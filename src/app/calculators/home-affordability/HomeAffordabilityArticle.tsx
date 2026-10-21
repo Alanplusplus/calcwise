@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "@/lib/market-data";
 
 export function HomeAffordabilityArticle() {
   return (
@@ -19,7 +21,7 @@ export function HomeAffordabilityArticle() {
         can see exactly where you stand relative to lender standards.
       </p>
       <p>
-        Unlike a simple income multiplier (such as &quot;buy a home worth three times your salary&quot;),
+        Unlike a simple income multiplier (such as "buy a home worth three times your salary"),
         this calculator accounts for your specific debts, down payment, local tax rates, and
         current mortgage rates. For a detailed payment on a specific home price, pair these
         results with our{" "}
@@ -47,23 +49,30 @@ export function HomeAffordabilityArticle() {
       <ul>
         <li>
           <strong>$60,000/year ($5,000/month):</strong> Maximum housing payment of $1,400/month.
-          At a 6.75% rate on a 30-year loan with $30,000 down, 1.2% property taxes, and $1,200/year
-          insurance, that supports a home price of roughly $210,000 to $225,000.
+          At a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate on a 30-year loan with $30,000 down, 1.2% property taxes, and $1,200/year
+          insurance, that supports a home price of roughly $185,000 to $195,000.
         </li>
         <li>
           <strong>$80,000/year ($6,667/month):</strong> Maximum housing payment of $1,867/month.
-          With $40,000 down and the same assumptions, you could afford approximately $290,000 to
-          $310,000.
+          With $40,000 down and the same assumptions, you could afford approximately $250,000 to
+          $260,000.
         </li>
         <li>
           <strong>$100,000/year ($8,333/month):</strong> Maximum housing payment of $2,333/month.
-          With $50,000 down, that translates to a home price around $370,000 to $395,000 depending
+          With $50,000 down, that translates to a home price around $315,000 to $325,000 depending
           on your local tax rate.
         </li>
       </ul>
       <p>
         These figures shift with every input change. A higher interest rate reduces buying power
-        significantly — a one-percentage-point increase can cut affordability by 10% or more.
+        significantly — a one-percentage-point increase can cut affordability by 10% or more. The
+        calculator defaults to the Freddie Mac PMMS 30-year average ({MORTGAGE_MARKET.thirtyYear.toFixed(2)}%
+        as of {MORTGAGE_MARKET.asOfLabel}); at that rate a $75,000 income with $40,000 down and $500/month
+        in other debt caps buying power near $240,000, versus about $261,000 at the year-ago average of{" "}
+        {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}%.
+      </p>
+      <Sources items={MORTGAGE_MARKET_SOURCES} checked={MORTGAGE_MARKET.checkedLabel} />
+      <p>
         For a deeper dive into income-based limits, see our{" "}
         <Link
           href="/guides/how-much-house-can-i-afford"
@@ -87,11 +96,11 @@ export function HomeAffordabilityArticle() {
         for housing. The 28% rule is more restrictive, so $1,983 is his cap.
       </p>
       <p>
-        At a 6.75% interest rate on a 30-year loan, with 0.6% property taxes and $1,800/year
-        insurance, the calculator estimates Marcus can afford a home priced around $335,000, requiring
-        a loan of approximately $290,000. His estimated monthly breakdown would be roughly $1,880
-        in principal and interest, $168 in property taxes, and $150 in insurance — totaling
-        $2,198, which rounds to the 28% ceiling once adjusted for his exact tax jurisdiction.
+        At a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% interest rate on a 30-year loan, with 0.6% property taxes and $1,800/year
+        insurance, the calculator estimates Marcus can afford a home priced around $289,000, requiring
+        a loan of approximately $244,000. His estimated monthly breakdown would be roughly $1,689
+        in principal and interest, $144 in property taxes, and $150 in insurance — totaling
+        $1,983, which matches his 28% housing ceiling of $1,983/month.
       </p>
       <p>
         Marcus notices that Denver median home prices in his target neighborhoods run closer to
@@ -116,7 +125,7 @@ export function HomeAffordabilityArticle() {
       <p>
         <strong>Credit score</strong> is among the most impactful. Borrowers with scores above
         740 typically qualify for the lowest rates, which directly increases affordability. A
-        borrower at 7.5% versus 6.5% on a $300,000 loan pays roughly $190 more per month — money
+        borrower at {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% versus {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}% (the PMMS average from one year earlier) on a $300,000 loan pays roughly $226 more per month — money
         that could otherwise go toward a higher purchase price.
       </p>
       <p>
@@ -140,8 +149,8 @@ export function HomeAffordabilityArticle() {
 
       <h2>Affordability at Different Income Levels</h2>
       <p>
-        The table below shows estimated maximum home prices using the calculator&apos;s default
-        assumptions: 6.75% interest rate, 30-year term, 1.2% property tax rate, $1,500/year
+        The table below shows estimated maximum home prices using the calculator's default
+        assumptions: {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% interest rate, 30-year term, 1.2% property tax rate, $1,500/year
         insurance, and no existing monthly debt. Down payment is set at 10% of the estimated
         home price.
       </p>
@@ -159,32 +168,32 @@ export function HomeAffordabilityArticle() {
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">$50,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$1,167</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$175,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$144,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">$75,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$1,750</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$275,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$225,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">$100,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$2,333</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$375,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$305,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
             <tr>
               <td className="px-4 py-2 text-ink-700">$150,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$3,500</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$575,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$467,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p>
-        Add $500/month in existing debt and a $75,000 earner&apos;s maximum home price drops by
+        Add $500/month in existing debt and a $75,000 earner's maximum home price drops by
         roughly $70,000 to $80,000 because the 36% back-end rule becomes the limiting factor
         instead of the 28% front-end rule.
       </p>
@@ -260,7 +269,7 @@ export function HomeAffordabilityArticle() {
       <h3>How accurate are the property tax and insurance estimates?</h3>
       <p>
         Property tax rates vary by county and municipality, and insurance depends on home age,
-        construction type, and local risk factors. Use your county assessor&apos;s effective rate and
+        construction type, and local risk factors. Use your county assessor's effective rate and
         get an insurance quote for a home in your target price range for the most accurate results.
         The calculator defaults (1.2% tax, $1,500/year insurance) represent a rough national average.
       </p>

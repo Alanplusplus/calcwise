@@ -5,6 +5,7 @@ import { CalculatorShell } from "@/components/CalculatorShell";
 import { SelfEmploymentTaxCalculator } from "./SelfEmploymentTaxCalculator";
 import { SelfEmploymentTaxArticle } from "./SelfEmploymentTaxArticle";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ADDITIONAL_MEDICARE_THRESHOLDS, SOCIAL_SECURITY_WAGE_BASE, usd } from "@/lib/tax-data";
 
 const calc = getCalculator("self-employment-tax")!;
 
@@ -21,11 +22,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What is self-employment tax?",
-    answer: "Self-employment tax is the Social Security and Medicare tax that self-employed individuals pay on their net earnings. It is the equivalent of the FICA taxes that employers and employees share. The 2026 rate is 15.3%: 12.4% for Social Security (on earnings up to $168,600) and 2.9% for Medicare (on all earnings). An additional 0.9% Medicare surtax applies to earnings above $200,000 for single filers.",
+    answer: `Self-employment tax is the Social Security and Medicare tax that self-employed individuals pay on their net earnings. It is the equivalent of the FICA taxes that employers and employees share. The 2026 rate is 15.3%: 12.4% for Social Security (on earnings up to ${usd(SOCIAL_SECURITY_WAGE_BASE)}) and 2.9% for Medicare (on all earnings). An additional 0.9% Medicare surtax applies to earnings above ${usd(ADDITIONAL_MEDICARE_THRESHOLDS.single)} for single filers.`,
   },
   {
     question: "How is self-employment tax calculated?",
-    answer: "First, multiply your net self-employment income by 92.35% (0.9235) to get your taxable SE earnings. This adjustment accounts for the employer-equivalent portion. Then apply the 15.3% SE tax rate: 12.4% for Social Security (capped at $168,600) and 2.9% for Medicare. If earnings exceed $200,000 (single), add the 0.9% Additional Medicare Tax on the excess.",
+    answer: `First, multiply your net self-employment income by 92.35% (0.9235) to get your taxable SE earnings. This adjustment accounts for the employer-equivalent portion. Then apply the 15.3% SE tax rate: 12.4% for Social Security (capped at ${usd(SOCIAL_SECURITY_WAGE_BASE)}) and 2.9% for Medicare. If earnings exceed ${usd(ADDITIONAL_MEDICARE_THRESHOLDS.single)} (single), add the 0.9% Additional Medicare Tax on the excess.`,
   },
   {
     question: "Can I deduct self-employment tax?",

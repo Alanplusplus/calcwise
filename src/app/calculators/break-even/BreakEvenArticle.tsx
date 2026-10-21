@@ -95,7 +95,7 @@ export function BreakEvenArticle() {
         identify where each advertising dollar generates the most profit.
       </p>
 
-      <h2>Case Study: Sarah&apos;s Online Candle Business</h2>
+      <h2>Case Study: Sarah's Online Candle Business</h2>
       <p>
         Sarah, a 29-year-old marketing professional in Austin, Texas, launches a handmade
         soy candle business on the side. She invests in the following monthly fixed costs:
@@ -185,7 +185,7 @@ export function BreakEvenArticle() {
         </table>
       </div>
       <p>
-        The table above uses Sarah&apos;s candle business numbers ($1,000 fixed costs, $8.50
+        The table above uses Sarah's candle business numbers ($1,000 fixed costs, $8.50
         variable cost) to show how sensitive the break-even point is to pricing decisions. A
         modest $4 price increase from $28 to $32 reduces the break-even volume by 9 units,
         or 17%. Conversely, a $6 price cut to $22 requires selling 23 more candles each month
@@ -283,7 +283,7 @@ export function BreakEvenArticle() {
       </p>
       <p>
         <strong>Can I use break-even analysis for a service business?</strong> Yes. For service
-        businesses, treat your hourly or project rate as the &quot;price per unit&quot; and any
+        businesses, treat your hourly or project rate as the "price per unit" and any
         per-project costs (subcontractors, materials, travel) as variable costs. Fixed costs
         include rent, software, insurance, and your own salary draw. The formula works
         identically, with each billable hour or project replacing a physical unit.

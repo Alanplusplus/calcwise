@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { RateDefaultNote } from "@/components/RateDefaultNote";
+import { DEFAULT_MORTGAGE_RATE } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -19,7 +21,7 @@ export function HousePaymentCalculator({ defaults }: Props) {
   const [homePrice, setHomePrice] = useState(defaults?.homePrice || "350000");
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "70000");
   const [loanTerm, setLoanTerm] = useState(defaults?.loanTerm || "30");
-  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "6.5");
+  const [interestRate, setInterestRate] = useState(defaults?.interestRate || DEFAULT_MORTGAGE_RATE);
   const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "1.1");
   const [homeInsurance, setHomeInsurance] = useState(defaults?.homeInsurance || "1800");
   const [pmiRate, setPmiRate] = useState(defaults?.pmiRate || "0.5");
@@ -135,6 +137,7 @@ export function HousePaymentCalculator({ defaults }: Props) {
           step={0.1}
         />
       </div>
+      <RateDefaultNote rate={interestRate} />
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <InputField

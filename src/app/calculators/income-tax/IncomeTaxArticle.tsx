@@ -1,4 +1,45 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import {
+  HSA_LIMITS,
+  ORDINARY_BRACKETS,
+  RETIREMENT_LIMITS,
+  SALT_CAP,
+  STANDARD_DEDUCTIONS,
+  TAX_DATA,
+  TAX_SOURCES,
+  TOP_ORDINARY_RATE,
+  usd,
+  type FilingStatus,
+} from "@/lib/tax-data";
+
+function BracketTable({ status }: { status: FilingStatus }) {
+  const rows = ORDINARY_BRACKETS[status];
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Tax Rate</th>
+          <th>Taxable Income Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((b, i) => (
+          <tr key={b.rate}>
+            <td>{Math.round(b.rate * 100)}%</td>
+            <td>
+              {usd(i === 0 ? 0 : rows[i - 1].upTo + 1)} – {usd(b.upTo)}
+            </td>
+          </tr>
+        ))}
+        <tr>
+          <td>{Math.round(TOP_ORDINARY_RATE * 100)}%</td>
+          <td>{usd(rows[rows.length - 1].upTo + 1)} and above</td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
 
 export function IncomeTaxArticle() {
   return (
@@ -40,73 +81,30 @@ export function IncomeTaxArticle() {
 
       <h2>2026 Tax Brackets</h2>
       <p>
-        The brackets below are 2026 estimates based on recent IRS inflation adjustments. Final
-        numbers are typically announced in late fall each year. These apply to taxable income
-        after deductions.
+        The brackets below are the official figures for tax year {TAX_DATA.taxYear}, published by
+        the IRS in Revenue Procedure 2025-32. They apply to taxable income after deductions, and
+        you file the return that uses them in early 2027.
       </p>
 
       <h3>Single Filers</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Tax Rate</th>
-            <th>Taxable Income Range</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>10%</td><td>$0 – $11,600</td></tr>
-          <tr><td>12%</td><td>$11,601 – $47,150</td></tr>
-          <tr><td>22%</td><td>$47,151 – $100,525</td></tr>
-          <tr><td>24%</td><td>$100,526 – $191,950</td></tr>
-          <tr><td>32%</td><td>$191,951 – $243,725</td></tr>
-          <tr><td>35%</td><td>$243,726 – $609,350</td></tr>
-          <tr><td>37%</td><td>$609,351 and above</td></tr>
-        </tbody>
-      </table>
+      <BracketTable status="single" />
 
       <h3>Married Filing Jointly</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Tax Rate</th>
-            <th>Taxable Income Range</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>10%</td><td>$0 – $23,200</td></tr>
-          <tr><td>12%</td><td>$23,201 – $94,300</td></tr>
-          <tr><td>22%</td><td>$94,301 – $201,050</td></tr>
-          <tr><td>24%</td><td>$201,051 – $383,900</td></tr>
-          <tr><td>32%</td><td>$383,901 – $487,450</td></tr>
-          <tr><td>35%</td><td>$487,451 – $1,218,700</td></tr>
-          <tr><td>37%</td><td>$1,218,701 and above</td></tr>
-        </tbody>
-      </table>
+      <BracketTable status="mfj" />
 
       <h3>Head of Household</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Tax Rate</th>
-            <th>Taxable Income Range</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>10%</td><td>$0 – $17,400</td></tr>
-          <tr><td>12%</td><td>$17,401 – $65,700</td></tr>
-          <tr><td>22%</td><td>$65,701 – $150,788</td></tr>
-          <tr><td>24%</td><td>$150,789 – $287,925</td></tr>
-          <tr><td>32%</td><td>$287,926 – $365,587</td></tr>
-          <tr><td>35%</td><td>$365,588 – $914,025</td></tr>
-          <tr><td>37%</td><td>$914,026 and above</td></tr>
-        </tbody>
-      </table>
+      <BracketTable status="hoh" />
 
       <p>
-        Standard deductions for 2026 are estimated at $15,000 for single filers, $30,000 for
-        married filing jointly, and $22,500 for head of household. These amounts reduce your
-        taxable income before brackets are applied.
+        The 2026 standard deduction is {usd(STANDARD_DEDUCTIONS.single)} for single filers,{" "}
+        {usd(STANDARD_DEDUCTIONS.mfj)} for married filing jointly, and{" "}
+        {usd(STANDARD_DEDUCTIONS.hoh)} for head of household. These amounts reduce your taxable
+        income before the brackets are applied.
       </p>
+      <Sources
+        items={[TAX_SOURCES.revProc, TAX_SOURCES.irsRelease]}
+        checked={TAX_DATA.checkedOnLabel}
+      />
 
       <h2>Standard vs Itemized Deductions</h2>
       <p>
@@ -117,14 +115,15 @@ export function IncomeTaxArticle() {
       </p>
       <p>
         Itemized deductions include mortgage interest, state and local taxes (SALT, capped at
-        $10,000), charitable contributions, and certain medical expenses exceeding 7.5% of
+        {usd(SALT_CAP.limit)} for 2026 and reduced for modified adjusted gross income above{" "}
+        {usd(SALT_CAP.phaseOutMagi)}, never below {usd(SALT_CAP.floor)}), charitable contributions, and certain medical expenses exceeding 7.5% of
         adjusted gross income. Itemizing makes sense when your total exceeds the standard
         deduction. For most taxpayers, especially those without a mortgage or large charitable
         gifts, the standard deduction is the better choice.
       </p>
       <p>
         Pre-tax retirement contributions like traditional 401(k) deferrals reduce your taxable
-        income regardless of whether you itemize. A $23,000 401(k) contribution directly lowers
+        income regardless of whether you itemize. A {usd(RETIREMENT_LIMITS.employeeDeferral)} 401(k) contribution directly lowers
         the income subject to brackets. For a detailed comparison of account types, see our{" "}
         <Link
           href="/guides/401k-vs-roth-ira"
@@ -142,21 +141,22 @@ export function IncomeTaxArticle() {
         Her gross income is $95,000, but her taxable income calculation starts with deductions.
       </p>
       <p>
-        <strong>Standard deduction scenario:</strong> Rachel takes the $15,000 standard deduction
-        plus $6,000 in 401(k) contributions, reducing taxable income to $74,000. Her federal tax
-        breaks down as follows: $1,160 at 10% (on the first $11,600), $4,246 at 12% (on
-        $11,601–$47,150), and $5,907 at 22% (on $47,151–$74,000). Total federal tax: $11,313.
-        Her effective rate is 11.9% and her marginal rate is 22%.
+        <strong>Standard deduction scenario:</strong> Rachel takes the {usd(STANDARD_DEDUCTIONS.single)} standard deduction
+        plus $6,000 in 401(k) contributions, reducing taxable income to $72,900. Her federal tax
+        breaks down as follows: $1,240 at 10% (on the first $12,400), $4,560 at 12% (on
+        $12,401–$50,400), and $4,950 at 22% (on $50,401–$72,900). Total federal tax: $10,750.
+        Her effective rate is 11.3% and her marginal rate is 22%.
       </p>
       <p>
         <strong>Itemized deduction scenario:</strong> Rachel pays $8,400 in mortgage interest,
         $4,200 in state income tax, and donates $2,000 to charity — totaling $14,600 in itemized
         deductions. Combined with her $6,000 401(k) contribution, taxable income is $74,400.
-        Because $14,600 is less than the $15,000 standard deduction, itemizing actually costs her
-        money. She would owe roughly $130 more in tax by itemizing.
+        Because $14,600 is less than the {usd(STANDARD_DEDUCTIONS.single)} standard deduction, itemizing
+        actually costs her money. Her taxable income would be $1,500 higher and she would owe
+        $330 more in tax ($11,080 instead of $10,750).
       </p>
       <p>
-        Rachel&apos;s takeaway: the standard deduction wins, and increasing her 401(k) contribution
+        Rachel's takeaway: the standard deduction wins, and increasing her 401(k) contribution
         to $10,000 would save an additional $880 in taxes (22% of $4,000). She also uses the{" "}
         <Link
           href="/calculators/fire-calculator"
@@ -174,18 +174,21 @@ export function IncomeTaxArticle() {
       </p>
       <ul>
         <li>
-          <strong>401(k) and 403(b) contributions:</strong> Up to $23,500 in 2026 (plus $7,500
-          catch-up if age 50+). Every dollar deferred avoids taxation at your marginal rate.
+          <strong>401(k) and 403(b) contributions:</strong> Up to {usd(RETIREMENT_LIMITS.employeeDeferral)} in 2026 (plus{" "}
+          {usd(RETIREMENT_LIMITS.catchUp50)} catch-up if age 50+, or {usd(RETIREMENT_LIMITS.catchUp60to63)}{" "}
+          at ages 60 to 63). Every dollar deferred avoids taxation at your marginal rate.
         </li>
         <li>
-          <strong>Traditional IRA:</strong> Contribute up to $7,000 ($8,000 if 50+) and deduct if
+          <strong>Traditional IRA:</strong> Contribute up to {usd(RETIREMENT_LIMITS.ira)} (
+          {usd(RETIREMENT_LIMITS.ira + RETIREMENT_LIMITS.iraCatchUp50)} if 50+) and deduct if
           income limits allow. Ideal for those without employer plans or seeking additional
           deferrals.
         </li>
         <li>
           <strong>Health Savings Account (HSA):</strong> Triple tax advantage — deductible
           contributions, tax-free growth, and tax-free withdrawals for qualified medical expenses.
-          2026 limits are approximately $4,300 individual / $8,550 family.
+          2026 limits are {usd(HSA_LIMITS.selfOnly)} for self-only coverage and{" "}
+          {usd(HSA_LIMITS.family)} for family coverage, plus {usd(HSA_LIMITS.catchUp55)} if you are 55 or older.
         </li>
         <li>
           <strong>Charitable giving:</strong> Donations to qualified 501(c)(3) organizations are
@@ -198,6 +201,10 @@ export function IncomeTaxArticle() {
           credits like the American Opportunity Credit.
         </li>
       </ul>
+      <Sources
+        items={[TAX_SOURCES.retirementLimits, TAX_SOURCES.hsaLimits, TAX_SOURCES.saltCap]}
+        checked={TAX_DATA.checkedOnLabel}
+      />
       <p>
         Pair tax planning with budgeting using our{" "}
         <Link
@@ -232,7 +239,7 @@ export function IncomeTaxArticle() {
       <p>
         <strong>Should I contribute to a Roth or traditional 401(k)?</strong> If you expect to be
         in a higher tax bracket in retirement, Roth contributions (taxed now, tax-free later) may
-        be better. If you are in a high bracket now, traditional deferrals reduce today&apos;s tax
+        be better. If you are in a high bracket now, traditional deferrals reduce today's tax
         bill. Our{" "}
         <Link
           href="/guides/401k-vs-roth-ira"
@@ -243,9 +250,11 @@ export function IncomeTaxArticle() {
         walks through the decision in detail.
       </p>
       <p>
-        <strong>When are final 2026 tax brackets announced?</strong> The IRS typically publishes
-        inflation-adjusted brackets and standard deduction amounts in October or November of the
-        prior year. Update your planning once official numbers are released.
+        <strong>Where do the 2026 brackets and standard deduction come from?</strong> They are
+        the final inflation-adjusted figures in IRS Revenue Procedure 2025-32, which the IRS
+        released in October 2025. The IRS normally publishes the next year's adjustments in
+        October or November, and this page is updated when they are released (figures last
+        checked {TAX_DATA.checkedOnLabel}).
       </p>
     </>
   );

@@ -140,7 +140,7 @@ export function ProfitMarginArticle() {
         in any pricing conversation -- the numbers can differ by more than double.
       </p>
 
-      <h2>Case Study: Marcus&apos;s E-Commerce Fitness Brand</h2>
+      <h2>Case Study: Marcus's E-Commerce Fitness Brand</h2>
       <p>
         Marcus, a 34-year-old entrepreneur in Denver, Colorado, runs an online fitness
         equipment brand selling resistance bands, yoga mats, and foam rollers. In his most
@@ -150,7 +150,7 @@ export function ProfitMarginArticle() {
         margin of 60%.
       </p>
       <p>
-        Marcus&apos;s operating expenses break down as follows: warehouse and fulfillment
+        Marcus's operating expenses break down as follows: warehouse and fulfillment
         staff wages at $72,000, digital advertising (Google Ads and Meta Ads) at $58,000,
         software subscriptions (Shopify, email marketing, analytics) at $9,600, office rent
         at $14,400, and general administrative costs at $12,000 -- totaling $166,000 in

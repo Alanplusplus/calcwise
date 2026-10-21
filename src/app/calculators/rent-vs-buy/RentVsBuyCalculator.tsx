@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { RateDefaultNote } from "@/components/RateDefaultNote";
+import { DEFAULT_MORTGAGE_RATE } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -24,7 +26,7 @@ interface Props {
 export function RentVsBuyCalculator({ defaults }: Props) {
   const [homePrice, setHomePrice] = useState(defaults?.homePrice || "350000");
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "70000");
-  const [mortgageRate, setMortgageRate] = useState(defaults?.mortgageRate || "6.75");
+  const [mortgageRate, setMortgageRate] = useState(defaults?.mortgageRate || DEFAULT_MORTGAGE_RATE);
   const [loanTerm, setLoanTerm] = useState(defaults?.loanTerm || "30");
   const [monthlyRent, setMonthlyRent] = useState(defaults?.monthlyRent || "2000");
   const [rentIncrease, setRentIncrease] = useState(defaults?.rentIncrease || "3");
@@ -266,6 +268,7 @@ export function RentVsBuyCalculator({ defaults }: Props) {
           max={30}
         />
       </div>
+      <RateDefaultNote rate={mortgageRate} />
 
       {results && (
         <div className="mt-8">

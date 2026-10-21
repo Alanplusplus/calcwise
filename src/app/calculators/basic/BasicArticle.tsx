@@ -7,7 +7,7 @@ export function BasicArticle() {
       <p>
         While every phone and computer has a built-in calculator, an online
         calculator offers a distraction-free interface right in your browser.
-        There&apos;s no app to open, no notifications to pull your attention away
+        There's no app to open, no notifications to pull your attention away
         — just a clean tool ready for quick math whenever you need it.
       </p>
 
@@ -46,7 +46,7 @@ export function BasicArticle() {
         </li>
         <li>
           <strong>Splitting costs:</strong> Divide a total by the number of
-          people to find each person&apos;s share.
+          people to find each person's share.
         </li>
         <li>
           <strong>Quick conversions:</strong> Multiply by conversion factors —
@@ -136,7 +136,7 @@ export function BasicArticle() {
         Stacking coupons is not always valid: if a store allows 20% off then an
         extra 10% off the reduced price, multiply 0.80 × 0.90 = 0.72, not 0.70.
         On $89.99 that is $64.79, which is $3.30 less than a single 30% markdown.
-        Black Friday ads often mix &quot;up to 40% off select styles&quot; with
+        Black Friday ads often mix "up to 40% off select styles" with
         doorbuster SKUs — run each line item separately instead of averaging
         discounts in your head.
       </p>
@@ -166,7 +166,7 @@ export function BasicArticle() {
       <ul>
         <li>
           <strong>Double-check your input:</strong> Glance at the display before
-          hitting = to make sure you haven&apos;t mistyped a digit.
+          hitting = to make sure you haven't mistyped a digit.
         </li>
         <li>
           <strong>Use the history:</strong> If you need to reference a previous
@@ -192,16 +192,16 @@ export function BasicArticle() {
 
       <h2>Frequently Asked Questions</h2>
 
-      <h3>Why does the calculator show &quot;Error&quot;?</h3>
+      <h3>Why does the calculator show "Error"?</h3>
       <p>
-        The calculator displays &quot;Error&quot; when you attempt an impossible
+        The calculator displays "Error" when you attempt an impossible
         operation, such as dividing by zero or taking the square root of a
         negative number. Press C to clear and start over.
       </p>
 
       <h3>How precise is this calculator?</h3>
       <p>
-        This calculator uses JavaScript&apos;s native floating-point arithmetic
+        This calculator uses JavaScript's native floating-point arithmetic
         (IEEE 754 double-precision), which provides approximately 15-17
         significant decimal digits of precision. For everyday math, this is
         more than sufficient. For scientific or financial calculations requiring
@@ -239,8 +239,8 @@ export function BasicArticle() {
         specialized tools when the problem has a time dimension: saving $500 per
         month for 18 years at 5.5%, or measuring CAGR on a brokerage account.
         Those scenarios need compounding formulas, not chained +/−/×/÷ steps.
-        If your question includes words like &quot;annualized,&quot;
-        &quot;monthly contribution,&quot; or &quot;payoff date,&quot; open the
+        If your question includes words like "annualized,"
+        "monthly contribution," or "payoff date," open the
         matching CalcWise tool from the related links on this page first.
       </p>
     </>

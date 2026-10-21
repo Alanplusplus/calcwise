@@ -5,7 +5,7 @@ export function SavingsGoalArticle() {
     <>
       <h2>How This Savings Goal Calculator Works</h2>
       <p>
-        Enter your target amount, what you&apos;ve already saved, your
+        Enter your target amount, what you've already saved, your
         timeframe, and the expected interest rate. The calculator determines
         exactly how much you need to save each month, week, or day to reach your
         goal on time — accounting for compound interest earned along the way.
@@ -20,8 +20,8 @@ export function SavingsGoalArticle() {
       <h2>Setting Realistic Savings Goals</h2>
       <p>
         The most effective savings goals are specific, measurable, and
-        time-bound. Instead of &quot;save more money,&quot; define exactly what
-        you&apos;re saving for. Run the calculator once per goal — a $6,000
+        time-bound. Instead of "save more money," define exactly what
+        you're saving for. Run the calculator once per goal — a $6,000
         vacation in 18 months might need $320/month at 4% APY, while a parallel
         $15,000 car fund over 30 months might need $470/month — so you know
         whether $790/month total fits your paycheck or whether one deadline
@@ -53,7 +53,7 @@ export function SavingsGoalArticle() {
       </p>
       <p>
         Marcus automates $235 from each biweekly paycheck into a separate
-        &quot;Down Payment&quot; sub-account and sends his $1,800 annual tax
+        "Down Payment" sub-account and sends his $1,800 annual tax
         refund straight to the same bucket each February. That refund alone
         covers nearly four months of contributions. He keeps the fund in cash
         (not stocks) because a 20% market drop six months before closing could
@@ -71,7 +71,7 @@ export function SavingsGoalArticle() {
       </p>
       <ul>
         <li><strong>High-yield savings account (4-5% APY):</strong> best for goals under 2 years. FDIC-insured, instant access, no risk of loss.</li>
-        <li><strong>Certificates of deposit (4-5%):</strong> slightly higher rates for locking money away 6-24 months. Good if you won&apos;t need early access.</li>
+        <li><strong>Certificates of deposit (4-5%):</strong> slightly higher rates for locking money away 6-24 months. Good if you won't need early access.</li>
         <li><strong>Money market funds (4-5%):</strong> similar to savings accounts but through a brokerage. May offer slightly better rates.</li>
         <li><strong>Index funds (7-10% historical):</strong> best for goals 5+ years away. Higher returns but short-term volatility means you could lose money if you need to withdraw during a downturn.</li>
         <li><strong>I Bonds (inflation-linked):</strong> government bonds that protect against inflation. Must hold at least 1 year, penalty-free after 5 years.</li>
@@ -133,7 +133,7 @@ export function SavingsGoalArticle() {
       </ul>
       <p>
         If you earn $5,000/month after taxes, the 20% rule allocates $1,000 to
-        savings. That&apos;s enough to save $50,000 in just over 4 years with a
+        savings. That's enough to save $50,000 in just over 4 years with a
         5% return — even starting from zero. Split that $1,000 across priorities:
         $400 to retirement, $300 to a 6-month emergency buffer, and $300 to a
         named goal keeps all three timelines visible in one budget.
@@ -146,7 +146,7 @@ export function SavingsGoalArticle() {
         <li><strong>Savings challenges:</strong> the 52-week challenge (save $1 in week 1, $2 in week 2, etc.) accumulates $1,378 per year.</li>
         <li><strong>Cut one expense:</strong> redirecting a $150/month subscription or habit to savings adds $1,800/year.</li>
         <li><strong>Windfall rule:</strong> commit to saving at least 50% of any unexpected money (tax refunds, bonuses, gifts).</li>
-        <li><strong>Name your sub-accounts:</strong> label savings &quot;2027 Down Payment&quot; or &quot;Japan Trip $6,500&quot; in your bank app — people who name goals save 15–25% more consistently than those using a generic savings balance.</li>
+        <li><strong>Name your sub-accounts:</strong> label savings "2027 Down Payment" or "Japan Trip $6,500" in your bank app — people who name goals save 15–25% more consistently than those using a generic savings balance.</li>
         <li><strong>Increase contributions with raises:</strong> when you get a 3% raise ($150/month on a $5,000 salary), send at least half ($75) to the goal account before lifestyle creep absorbs it; over 12 months that is $900 extra with no new budget cuts.</li>
       </ul>
       <p>
@@ -159,11 +159,11 @@ export function SavingsGoalArticle() {
       <p>
         For a high-yield savings account, use 4-5%. For a diversified investment
         portfolio over 5+ years, 6-8% is reasonable. Use 0% if you plan to keep
-        the money in a checking account (though we don&apos;t recommend this for
+        the money in a checking account (though we don't recommend this for
         any savings goal beyond a month).
       </p>
 
-      <h3>What if I can&apos;t save the required monthly amount?</h3>
+      <h3>What if I can't save the required monthly amount?</h3>
       <p>
         You have three options: extend your timeframe, reduce your goal amount,
         or find ways to increase income or reduce expenses. Even saving a

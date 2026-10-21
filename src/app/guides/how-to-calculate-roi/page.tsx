@@ -5,6 +5,8 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
+import { LONG_TERM_TOP_RATE, TAX_DATA, TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
   title: "How to Calculate ROI: Formula, Examples, and Common Mistakes",
@@ -24,7 +26,7 @@ const faqs = [
   {
     question: "What is a good ROI percentage?",
     answer:
-      "There is no universal 'good' ROI because it depends on the asset class, time horizon, and risk. The S&P 500 has averaged roughly 10% annualized return before inflation (7% after inflation) over the past 50 years. For business investments, most companies target at least 15-25% ROI to justify the capital and risk. Real estate rental properties commonly target 8-12% cash-on-cash return. Marketing campaigns often aim for 300-500% ROI. Always compare ROI against the risk-free rate (currently ~5% from Treasury bonds) as your baseline.",
+      "There is no universal 'good' ROI because it depends on the asset class, time horizon, and risk. Historically, the S&P 500 returned about 10% per year (geometric mean, nominal, with dividends reinvested) from 1928 through 2024 in NYU Stern's Damodaran dataset (Tier-2 historical data — not a forecast). Real returns depend on inflation; CPI-U rose 3.7% over the 12 months ending September 2026 (BLS). For business investments, many companies target at least 15-25% ROI to justify capital and risk (Tier-2 rule of thumb). Rental investors often cite 8-12% cash-on-cash targets (Tier-2). Compare ROI against a risk-free baseline such as the 10-year Treasury yield — about 5.15% on October 19, 2026 (Treasury.gov).",
   },
   {
     question: "What is the difference between ROI and annualized ROI?",
@@ -34,12 +36,12 @@ const faqs = [
   {
     question: "Does ROI account for inflation?",
     answer:
-      "The standard ROI formula does not adjust for inflation. To calculate real (inflation-adjusted) ROI, use: Real ROI = ((1 + Nominal ROI) / (1 + Inflation Rate)) - 1. For example, a nominal 10% ROI with 3% inflation yields a real ROI of approximately 6.8%. Over long holding periods, ignoring inflation can make investments look significantly more profitable than they actually are in purchasing power terms.",
+      "The standard ROI formula does not adjust for inflation. To calculate real (inflation-adjusted) ROI, use: Real ROI = ((1 + Nominal ROI) / (1 + Inflation Rate)) - 1. For example, a nominal 10% ROI with 3.7% inflation (BLS CPI-U, 12 months ending September 2026) yields a real ROI of approximately 6.1%. Over long holding periods, ignoring inflation can make investments look significantly more profitable than they actually are in purchasing power terms.",
   },
   {
     question: "How do I calculate ROI on rental property?",
     answer:
-      "For rental property, use cash-on-cash ROI: (Annual Net Cash Flow / Total Cash Invested) x 100. Total cash invested includes down payment, closing costs, and initial repairs. Annual net cash flow is rental income minus mortgage payments, property taxes, insurance, maintenance, and vacancy costs. On a $300,000 property with $60,000 down and $4,000 in closing costs, earning $24,000/year in rent with $16,000 in total expenses (including mortgage), your cash-on-cash ROI is ($8,000 / $64,000) x 100 = 12.5%.",
+      "For rental property, use cash-on-cash ROI: (Annual Net Cash Flow / Total Cash Invested) x 100. Total cash invested includes down payment, closing costs, and initial repairs. Annual net cash flow is rental income minus mortgage payments, property taxes, insurance, maintenance, and vacancy costs. On a $300,000 property with $60,000 down and $4,000 in closing costs, $24,000/year in rent, and $18,672 in annual mortgage plus $8,700 in other costs, year-one cash-on-cash ROI is (-$3,372 / $64,000) x 100 = -5.3% on cash flow alone — equity buildup and appreciation can improve total return.",
   },
   {
     question: "Can ROI be negative?",
@@ -57,6 +59,7 @@ export default function HowToCalculateRoiGuide() {
         description="Learn how to calculate return on investment (ROI) with the simple formula, five real-world examples across marketing, real estate, and stocks, plus common mistakes that inflate your numbers."
         slug="how-to-calculate-roi"
         datePublished="2026-09-01"
+        dateModified="2026-10-20"
         image="/images/guides/how-to-calculate-roi.webp"
       />
       <BreadcrumbJsonLd
@@ -88,7 +91,7 @@ export default function HowToCalculateRoiGuide() {
             periods, and the most common mistakes that lead to inflated or
             misleading ROI figures.
           </p>
-          <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
+          <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
         </header>
 
         <section className="mt-10 rounded-xl border border-brand-200 bg-brand-50 p-6">
@@ -110,7 +113,7 @@ export default function HowToCalculateRoiGuide() {
             </li>
             <li>
               <strong>Common mistake:</strong> Ignoring ongoing costs (taxes,
-              maintenance, fees) inflates ROI by 20-40% on average
+              maintenance, fees) can inflate ROI by a wide margin
             </li>
           </ul>
           <p className="mt-4 text-sm text-ink-600">
@@ -129,7 +132,7 @@ export default function HowToCalculateRoiGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/how-to-calculate-roi.webp"
-              alt="Infographic showing the ROI formula, three example calculations for marketing, rental property, and stocks, and a compound ROI growth curve over 5 years"
+              alt="Infographic showing the ROI formula, three worked examples (marketing campaign 116%, rental property -5.3% cash-on-cash, stock portfolio 24.9%), and a 20% annual compound ROI growth curve from $10,000 to $24,883 over 5 years"
               width={1200}
               height={800}
               quality={80}
@@ -137,7 +140,7 @@ export default function HowToCalculateRoiGuide() {
               priority
             />
             <figcaption className="bg-ink-50 px-4 py-2 text-center text-sm text-ink-500">
-              ROI formula and three real-world examples: marketing campaign (160%), rental property (26.7%), and stock portfolio (50%)
+              ROI formula and three real-world examples: marketing campaign (116%), rental property (-5.3% cash-on-cash), and stock portfolio (24.9%)
             </figcaption>
           </figure>
         </section>
@@ -162,7 +165,7 @@ export default function HowToCalculateRoiGuide() {
             The result is expressed as a percentage. A positive ROI means the
             investment earned more than it cost; a negative ROI means it lost
             money. Simple as the formula appears, the challenge lies in correctly
-            defining &quot;net profit&quot; and &quot;investment cost.&quot; Most
+            defining "net profit" and "investment cost." Most
             ROI errors come from incomplete accounting of costs -- forgetting
             taxes, fees, maintenance, opportunity cost, or the time value of
             money.
@@ -200,6 +203,17 @@ export default function HowToCalculateRoiGuide() {
             </Link>{" "}
             to model how reinvested returns accelerate wealth building.
           </p>
+          <Sources
+            items={[
+            {
+              label:
+                "U.S. Treasury, Daily Treasury Par Yield Curve CSV (10-year 5.15% on Oct. 19, 2026)",
+              href: "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?field_tdr_date_value=2026&type=daily_treasury_yield_curve",
+            },
+            ]}
+            checked="October 2026"
+            note="10-year par yield was 5.15% on October 19, 2026 (Treasury daily CSV)."
+          />
         </section>
 
         <section className="mt-12">
@@ -267,7 +281,7 @@ export default function HowToCalculateRoiGuide() {
             An investor buys $50,000 worth of an S&P 500 index fund (VOO) and
             holds it for 3 years. The portfolio grows to $62,500 after
             dividends are reinvested. Trading commissions are $0 (most brokers
-            charge no commission). The fund&apos;s expense ratio of 0.03% costs
+            charge no commission). The fund's expense ratio of 0.03% costs
             roughly $50 over the period.
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
@@ -277,10 +291,12 @@ export default function HowToCalculateRoiGuide() {
             <li><strong>Annualized ROI:</strong> ((1 + 0.249)^(1/3)) - 1 = <strong>7.7%</strong></li>
           </ul>
           <p className="mt-4 text-ink-700">
-            The 7.7% annualized return is slightly below the S&P 500 long-term
-            average of ~10%, reflecting a moderate growth period. Note that this
-            is pre-tax: long-term capital gains tax (0%, 15%, or 20% depending
-            on income) would reduce the effective return. For detailed investment
+            The 7.7% annualized return is below the long-run historical S&P 500
+            average of roughly 10% nominal (1928–2024, Damodaran Tier-2 data),
+            reflecting a moderate growth period in this illustration. Note that
+            this is pre-tax: 2026 federal long-term capital gains rates are 0%,
+            15%, or {Math.round(LONG_TERM_TOP_RATE * 100)}% depending on taxable
+            income (IRS). For detailed investment
             growth projections, use our{" "}
             <Link
               href="/calculators/investment-return"
@@ -289,6 +305,19 @@ export default function HowToCalculateRoiGuide() {
               Investment Return Calculator
             </Link>.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "NYU Stern (Damodaran), S&P 500 historical returns incl. dividends, 1928–2024 (Jan. 2026 table)",
+                href: "https://pages.stern.nyu.edu/adamodar/New_Home_Page/datafile/histretSP.htm",
+              },
+              TAX_SOURCES.capitalGains,
+              TAX_SOURCES.revProc,
+            ]}
+            checked={TAX_DATA.checkedOnLabel}
+            note="Historical stock returns are not a promise of future performance."
+          />
 
           <h3 className="mt-10 text-xl font-semibold text-ink-800">
             4. Business Equipment ROI
@@ -364,7 +393,7 @@ export default function HowToCalculateRoiGuide() {
                   <td className="px-4 py-2 text-right text-ink-700">3 months</td>
                   <td className="px-4 py-2 text-right text-ink-700">$5,800</td>
                   <td className="px-4 py-2 text-right text-ink-700">116%</td>
-                  <td className="px-4 py-2 text-right text-ink-700">~560%*</td>
+                  <td className="px-4 py-2 text-right text-ink-700">~2,080%*</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">Rental Property (cash flow)</td>
@@ -426,7 +455,7 @@ export default function HowToCalculateRoiGuide() {
           </p>
           <p className="mt-4 text-ink-700">
             <strong>Option A: Business expansion.</strong> A $50,000 commercial
-            pizza oven increases his restaurant&apos;s capacity by 35%. He
+            pizza oven increases his restaurant's capacity by 35%. He
             estimates $28,000/year in additional revenue with $10,000 in
             additional costs (ingredients, labor, utilities), yielding
             $18,000/year net. Over 5 years: ROI = ($90,000 / $50,000) x 100 =
@@ -440,8 +469,9 @@ export default function HowToCalculateRoiGuide() {
             equity buildup, total annualized ROI is approximately 11%.
           </p>
           <p className="mt-4 text-ink-700">
-            <strong>Option C: Index fund.</strong> Historical average return of
-            10% annually. After 5 years, $50,000 grows to approximately
+            <strong>Option C: Index fund.</strong> Illustrative 10% annual
+            return (near the 1928–2024 S&P 500 historical average in Damodaran
+            data, Tier-2). After 5 years, $50,000 grows to approximately
             $80,525. Annualized ROI: 10%. Fully passive with no management
             effort.
           </p>
@@ -477,8 +507,8 @@ export default function HowToCalculateRoiGuide() {
               unrealistic 25-40%.
             </li>
             <li>
-              <strong>2. Ignoring the time dimension.</strong> Reporting &quot;200%
-              ROI&quot; without specifying whether it took 1 year or 10 years
+              <strong>2. Ignoring the time dimension.</strong> Reporting "200%
+              ROI" without specifying whether it took 1 year or 10 years
               makes the number meaningless. Always calculate and report
               annualized ROI alongside simple ROI.
             </li>
@@ -492,18 +522,25 @@ export default function HowToCalculateRoiGuide() {
             <li>
               <strong>4. Excluding opportunity cost.</strong> Money invested in
               one asset cannot simultaneously earn returns elsewhere. If your
-              business investment returns 8% but a risk-free Treasury bond pays
-              5%, your excess return is only 3%. Compare every ROI against what
+              business investment returns 8% but the 10-year Treasury yielded
+              about 5.15% in mid-October 2026, your excess return is only about
+              2.9%. Compare every ROI against what
               the money would have earned in the next-best alternative.
             </li>
             <li>
               <strong>5. Ignoring taxes.</strong> A stock sold for 25% profit
-              owes 15% long-term capital gains tax in most brackets, reducing
-              the after-tax ROI to 21.25%. Real estate investors face
-              depreciation recapture at 25%. Always factor in tax impact for
-              accurate after-tax ROI.
+              often owes 15% federal long-term capital gains tax in middle
+              brackets (0%, 15%, or {Math.round(LONG_TERM_TOP_RATE * 100)}%
+              for tax year {TAX_DATA.taxYear} per IRS brackets), reducing
+              simple ROI on the gain portion. High earners may also owe the 3.8%
+              net investment income tax. Always factor in tax impact for accurate
+              after-tax ROI.
             </li>
           </ul>
+          <Sources
+            items={[TAX_SOURCES.capitalGains, TAX_SOURCES.revProc, TAX_SOURCES.niit]}
+            checked={TAX_DATA.checkedOnLabel}
+          />
         </section>
 
         <section className="mt-12">
@@ -565,6 +602,22 @@ export default function HowToCalculateRoiGuide() {
             </Link>.
           </p>
         </section>
+
+        <Sources
+          items={[
+            {
+              label:
+                "BLS, Consumer Price Index Summary — September 2026 (3.7% over 12 months)",
+              href: "https://www.bls.gov/news.release/cpi.nr0.htm",
+            },
+            {
+              label:
+                "Federal Reserve, Consumer Credit G.19 — personal loan rate 11.90% (Aug. 2026)",
+              href: "https://www.federalreserve.gov/releases/g19/current/",
+            },
+          ]}
+          checked="October 2026"
+        />
 
         <div className="rounded-lg border border-brand-200 bg-brand-50 p-6 my-8 text-center">
           <p className="font-semibold text-ink-800">Run Your Own Numbers</p>

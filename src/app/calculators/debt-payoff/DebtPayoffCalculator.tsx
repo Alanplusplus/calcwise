@@ -158,7 +158,7 @@ export function DebtPayoffCalculator({ defaults }: Props) {
 
               <div className="mt-4 rounded-lg bg-accent-50 p-4">
                 <p className="font-semibold text-accent-800">
-                  You&apos;d save {formatCurrencyExact(results.savedInterest)} in
+                  You'd save {formatCurrencyExact(results.savedInterest)} in
                   interest and be debt-free {results.savedMonths} months sooner!
                 </p>
               </div>

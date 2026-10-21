@@ -53,18 +53,18 @@ export function AutoLoanArticle() {
         </li>
         <li>
           <strong>Down payment:</strong> A larger down payment reduces the
-          lender&apos;s risk and can qualify you for a lower rate.
+          lender's risk and can qualify you for a lower rate.
         </li>
         <li>
           <strong>Market conditions:</strong> Auto loan rates are influenced by
-          the Federal Reserve&apos;s benchmark rate and overall economic
+          the Federal Reserve's benchmark rate and overall economic
           conditions.
         </li>
       </ul>
 
       <h2>Choosing the Right Loan Term</h2>
       <p>
-        Loan terms typically range from 24 to 84 months. Here&apos;s how a
+        Loan terms typically range from 24 to 84 months. Here's how a
         $30,000 loan at 6.5% APR compares across terms:
       </p>
       <ul>
@@ -77,7 +77,7 @@ export function AutoLoanArticle() {
       <p>
         Shorter terms mean higher monthly payments but far less interest paid
         overall. Longer terms lower your monthly bill but significantly increase
-        the total cost — and you risk being &quot;upside down&quot; on the loan
+        the total cost — and you risk being "upside down" on the loan
         (owing more than the car is worth).
       </p>
 
@@ -120,7 +120,7 @@ export function AutoLoanArticle() {
         <li>
           <strong>Aim for 20% down</strong> to avoid negative equity and reduce
           your loan amount. At minimum, cover the taxes, fees, and first
-          year&apos;s depreciation.
+          year's depreciation.
         </li>
         <li>
           <strong>Keep total payments under 10% of gross income</strong> — this
@@ -182,13 +182,13 @@ export function AutoLoanArticle() {
         .
       </p>
 
-      <h3>What&apos;s GAP insurance and do I need it?</h3>
+      <h3>What's GAP insurance and do I need it?</h3>
       <p>
         Guaranteed Asset Protection (GAP) insurance covers the difference
         between what you owe on the loan and what insurance pays if your car is
-        totaled or stolen. It&apos;s worth considering if your down payment is
+        totaled or stolen. It's worth considering if your down payment is
         less than 20% or your loan term is longer than 60 months, since
-        you&apos;re more likely to be upside down on the loan.
+        you're more likely to be upside down on the loan.
       </p>
     </>
   );

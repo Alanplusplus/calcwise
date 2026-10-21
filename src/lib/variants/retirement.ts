@@ -1,4 +1,5 @@
 import type { CalculatorVariant } from "./types";
+import { RETIREMENT_LIMITS, usd } from "../tax-data";
 
 export const retirementVariants: CalculatorVariant[] = [
   {
@@ -58,7 +59,7 @@ export const retirementVariants: CalculatorVariant[] = [
     tips: [
       "To generate $60,000 per year at a 4% withdrawal rate, you need $1,500,000 by age 50 -- starting at 30 with $50,000 saved and earning 7% annually, that means contributing about $2,950 per month.",
       "You will face a 15-year gap before Medicare at 65 and potentially 12-17 years before Social Security -- model your plan with zero government benefits until those ages to stress-test it.",
-      "Maxing out both a 401(k) ($23,500) and a backdoor Roth IRA ($7,000) each year channels $30,500 into tax-advantaged accounts, but you will also need taxable brokerage savings to bridge the gap to 59.5.",
+      `Maxing out both a 401(k) (${usd(RETIREMENT_LIMITS.employeeDeferral)}) and a backdoor Roth IRA (${usd(RETIREMENT_LIMITS.ira)}) each year channels ${usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.ira)} into tax-advantaged accounts, but you will also need taxable brokerage savings to bridge the gap to 59.5.`,
       "At 50 you may qualify for early pension benefits if you spent 20+ years with a government or union employer -- even a partial pension of $1,500 per month dramatically reduces the portfolio you need.",
       "Sequence-of-returns risk is elevated with a 35+ year retirement: holding 3 years of expenses in bonds or cash ($180,000) protects against being forced to sell equities at a loss.",
     ],
@@ -169,7 +170,7 @@ export const retirementVariants: CalculatorVariant[] = [
       },
       {
         q: "How much do catch-up contributions help in my final decade of work?",
-        a: "Starting at 50, you can contribute an extra $7,500 per year to your 401(k) beyond the standard $23,500 limit. Over 10 years, that adds $75,000 in contributions plus compounded growth, potentially increasing your portfolio by $100,000-$120,000 depending on returns.",
+        a: `Starting at 50, you can contribute an extra ${usd(RETIREMENT_LIMITS.catchUp50)} per year to your 401(k) beyond the standard ${usd(RETIREMENT_LIMITS.employeeDeferral)} limit. Over 10 years, that adds ${usd(RETIREMENT_LIMITS.catchUp50 * 10)} in contributions plus compounded growth, potentially increasing your portfolio by roughly $105,000-$116,000 at 6% to 8% annual returns.`,
       },
       {
         q: "What is the best strategy for bridging the five-year Medicare gap?",

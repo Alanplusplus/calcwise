@@ -2,6 +2,20 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { Sources } from "@/components/Sources";
+import {
+  ADDITIONAL_MEDICARE_RATE,
+  ADDITIONAL_MEDICARE_THRESHOLDS,
+  MEDICARE_EMPLOYEE_RATE,
+  ORDINARY_BRACKETS,
+  SOCIAL_SECURITY_EMPLOYEE_RATE,
+  SOCIAL_SECURITY_WAGE_BASE,
+  STANDARD_DEDUCTIONS,
+  TAX_DATA,
+  TAX_SOURCES,
+  TOP_ORDINARY_RATE,
+  type FilingStatus,
+} from "@/lib/tax-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -12,7 +26,6 @@ function formatCurrencyExact(n: number): string {
 }
 
 type PayFrequency = "weekly" | "biweekly" | "semimonthly" | "monthly";
-type FilingStatus = "single" | "mfj" | "hoh";
 
 const PAY_PERIODS: Record<PayFrequency, number> = {
   weekly: 52,
@@ -21,45 +34,12 @@ const PAY_PERIODS: Record<PayFrequency, number> = {
   monthly: 12,
 };
 
-const STANDARD_DEDUCTIONS: Record<FilingStatus, number> = {
-  single: 15000,
-  mfj: 30000,
-  hoh: 22500,
-};
-
-const FEDERAL_BRACKETS: Record<FilingStatus, { rate: number; upTo: number }[]> = {
-  single: [
-    { rate: 0.10, upTo: 11600 },
-    { rate: 0.12, upTo: 47150 },
-    { rate: 0.22, upTo: 100525 },
-    { rate: 0.24, upTo: 191950 },
-    { rate: 0.32, upTo: 243725 },
-    { rate: 0.35, upTo: 609350 },
-  ],
-  mfj: [
-    { rate: 0.10, upTo: 23200 },
-    { rate: 0.12, upTo: 94300 },
-    { rate: 0.22, upTo: 201050 },
-    { rate: 0.24, upTo: 383900 },
-    { rate: 0.32, upTo: 487450 },
-    { rate: 0.35, upTo: 1218700 },
-  ],
-  hoh: [
-    { rate: 0.10, upTo: 17400 },
-    { rate: 0.12, upTo: 65700 },
-    { rate: 0.22, upTo: 150788 },
-    { rate: 0.24, upTo: 287925 },
-    { rate: 0.32, upTo: 365587 },
-    { rate: 0.35, upTo: 914025 },
-  ],
-};
-
-const SOCIAL_SECURITY_RATE = 0.062;
-const SOCIAL_SECURITY_WAGE_BASE = 168600;
-const MEDICARE_RATE = 0.0145;
-const MEDICARE_SURTAX_RATE = 0.009;
-const MEDICARE_SURTAX_THRESHOLD_SINGLE = 200000;
-const MEDICARE_SURTAX_THRESHOLD_MFJ = 250000;
+const FEDERAL_BRACKETS = ORDINARY_BRACKETS;
+const SOCIAL_SECURITY_RATE = SOCIAL_SECURITY_EMPLOYEE_RATE;
+const MEDICARE_RATE = MEDICARE_EMPLOYEE_RATE;
+const MEDICARE_SURTAX_RATE = ADDITIONAL_MEDICARE_RATE;
+const MEDICARE_SURTAX_THRESHOLD_SINGLE = ADDITIONAL_MEDICARE_THRESHOLDS.single;
+const MEDICARE_SURTAX_THRESHOLD_MFJ = ADDITIONAL_MEDICARE_THRESHOLDS.mfj;
 
 function calculateFederalTax(taxableIncome: number, status: FilingStatus): number {
   if (taxableIncome <= 0) return 0;
@@ -73,7 +53,7 @@ function calculateFederalTax(taxableIncome: number, status: FilingStatus): numbe
     prev = bracket.upTo;
   }
   if (taxableIncome > brackets[brackets.length - 1].upTo) {
-    tax += (taxableIncome - brackets[brackets.length - 1].upTo) * 0.37;
+    tax += (taxableIncome - brackets[brackets.length - 1].upTo) * TOP_ORDINARY_RATE;
   }
   return tax;
 }
@@ -304,6 +284,13 @@ export function PaycheckCalculator({ defaults }: Props) {
           </div>
         </div>
       )}
+
+      <Sources
+        className="mt-6"
+        items={[TAX_SOURCES.revProc, TAX_SOURCES.ssaWageBase, TAX_SOURCES.federalRates]}
+        checked={TAX_DATA.checkedOnLabel}
+        note={`Federal brackets and standard deduction are for tax year ${TAX_DATA.taxYear}; Social Security tax stops at the $${SOCIAL_SECURITY_WAGE_BASE.toLocaleString("en-US")} wage base. State tax uses the flat rate you enter. Estimates only.`}
+      />
     </div>
   );
 }

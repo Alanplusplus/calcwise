@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "How Much Should You Tip? The Complete 2026 Tipping Guide by Service",
@@ -30,7 +31,7 @@ const faqs = [
   {
     question: "Do I need to tip at coffee shops?",
     answer:
-      "Coffee shop tips are appreciated but not universally expected the way restaurant tips are. Baristas typically earn at or above minimum wage rather than the $2.13 federal tipped minimum, and the interaction lasts under two minutes. A flat $1-$2 tip on a $5-$8 order is perfectly reasonable for counter service. Digital tip screens often present 15%, 20%, and 25% options, but there is no social obligation to select the highest amount. For complex custom drinks or large catering orders ($50+), a 15-20% tip is more appropriate.",
+      "Coffee shop tips are appreciated but not universally expected the way restaurant tips are. Baristas typically earn at or above the federal $7.25 minimum wage rather than the $2.13 tipped-employee cash wage, and the interaction lasts under two minutes. Bankrate's 2025 survey found only 18% of coffee shop visitors always tip baristas (Tier-2 survey). A flat $1-$2 tip on a $5-$8 order is perfectly reasonable for counter service. Digital tip screens often present 15%, 20%, and 25% options, but there is no social obligation to select the highest amount. For complex custom drinks or large catering orders ($50+), a 15-20% tip is more appropriate.",
   },
   {
     question: "How much should I tip a food delivery driver?",
@@ -58,6 +59,7 @@ export default function TippingGuideHowMuch() {
         description="Learn exactly how much to tip at restaurants, coffee shops, for delivery, at salons, and for group dinners. Specific dollar amounts, percentage ranges, and etiquette rules for every situation."
         slug="tipping-guide-how-much"
         datePublished="2026-09-13"
+        dateModified="2026-10-20"
         image="/images/tip-calculator-infographic.webp"
       />
       <BreadcrumbJsonLd
@@ -83,15 +85,17 @@ export default function TippingGuideHowMuch() {
           </h1>
           <p className="mt-4 text-lg text-ink-600">
             Tipping in the United States is not optional generosity — it is how
-            millions of service workers earn a livable wage. A server earning
-            $2.13 per hour in a tipped-minimum state depends on your 18-20%
-            gratuity to make rent. Yet the rules differ dramatically by service
+            millions of service workers earn a livable wage.             A server in a tipped-minimum state may earn as little as $2.13 per
+            hour in direct wages before tips, with employers required to make up
+            the difference if tips plus wages fall below the $7.25 federal
+            minimum. Your 18-20% gratuity often makes up much of their take-home
+            pay. Yet the rules differ dramatically by service
             type: what is standard at a steakhouse is excessive at a coffee
-            counter, and what works for a couple&apos;s dinner breaks down at a
+            counter, and what works for a couple's dinner breaks down at a
             six-person group table. This guide gives you specific dollar amounts
             and percentage ranges for every common tipping scenario.
           </p>
-          <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
+          <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
         </header>
 
         {/* TL;DR */}
@@ -181,12 +185,33 @@ export default function TippingGuideHowMuch() {
           </h2>
           <p className="mt-4 text-ink-700">
             Full-service restaurant dining is the highest-standard tipping
-            category in the United States. Servers in tipped-minimum states earn
-            as little as $2.13 per hour before gratuities, making your tip the
-            majority of their take-home pay for that shift. The widely accepted
-            baseline is 18% for satisfactory service and 20% for good service,
-            calculated on the pre-tax subtotal.
+            category in the United States. Under federal law, employers may pay
+            tipped employees as little as $2.13 per hour in direct wages when
+            tips bring total hourly pay up to the $7.25 federal minimum wage;
+            many states require higher cash wages. Your gratuity often makes up
+            much of a server's take-home pay. Etiquette guides commonly cite
+            18% for satisfactory service and 20% for good service on the pre-tax
+            subtotal; Bankrate's 2025 survey found 35% of Americans typically
+            tip at least 20% at sit-down restaurants (Tier-2 survey).
           </p>
+          <Sources
+            items={[
+              {
+                label: "U.S. Department of Labor, Tips (federal $2.13 tipped wage / $7.25 minimum)",
+                href: "https://www.dol.gov/general/topic/wages/wagestips",
+              },
+              {
+                label: "U.S. Department of Labor, Minimum Wage ($7.25/hour)",
+                href: "https://www.dol.gov/general/topic/wages/minimumwage",
+              },
+              {
+                label: "Bankrate Tipping Survey press release (June 4, 2025)",
+                href: "https://www.bankrate.com/press-releases/63-of-americans-have-a-negative-view-about-tipping-with-41-saying-tipping-culture-has-gotten-out-of-control/",
+              },
+            ]}
+            checked="October 2026"
+            note="Percentages for 18-20% service norms are etiquette guidance; Bankrate figures are self-reported survey results (Tier-2)."
+          />
           <p className="mt-4 text-ink-700">
             On a typical $120 dinner bill, the math breaks down cleanly:
           </p>
@@ -211,7 +236,7 @@ export default function TippingGuideHowMuch() {
           <p className="mt-4 text-ink-700">
             The difference between acceptable and generous is only $12 — roughly
             the price of a single appetizer — yet it meaningfully affects a
-            server&apos;s earnings across a full shift.
+            server's earnings across a full shift.
           </p>
 
           <h3 className="mt-8 text-xl font-semibold text-ink-800">
@@ -279,7 +304,7 @@ export default function TippingGuideHowMuch() {
             A server managing a six-person table handles roughly three times the
             order complexity of a couple — coordinating timing, refills, dietary
             requests, and separate drink orders — yet receives the same percentage
-            tip. The absolute dollar amount ($70 vs $24 for a couple&apos;s
+            tip. The absolute dollar amount ($70 vs $24 for a couple's
             dinner) partially compensates for the extra workload.
           </p>
 
@@ -290,8 +315,9 @@ export default function TippingGuideHowMuch() {
             Most restaurants automatically add 18-20% gratuity for parties of six
             or more, though some set the threshold at eight guests. On a $350
             bill, auto-gratuity at 18% equals $63 and appears as a line item on
-            your receipt. This charge is legally distinct from a voluntary tip
-            in many jurisdictions. Always review your bill before adding an
+            your receipt.             Mandatory service charges that customers cannot change are not
+            voluntary tips under IRS rules, even when distributed to staff.
+            Always review your bill before adding an
             additional tip to avoid double-tipping — adding another 20% on top of
             an included 18% gratuity would overpay by $70.
           </p>
@@ -315,7 +341,7 @@ export default function TippingGuideHowMuch() {
           <p className="mt-4 text-ink-700">
             When guests ordered unevenly — some had appetizers, premium entrees,
             or multiple drinks — itemized splitting is fairer. Calculate each
-            person&apos;s food and drink subtotal, add their proportional share of
+            person's food and drink subtotal, add their proportional share of
             tax, then apply the tip percentage to their individual amount. Venmo
             and payment apps simplify collection, but designate one person to
             calculate the total including tip and tax, then request a fixed
@@ -345,9 +371,10 @@ export default function TippingGuideHowMuch() {
             questions since digital payment terminals started presenting tip
             prompts for counter service. Unlike sit-down restaurants where tipping
             is essential, coffee shop tips are appreciated but not universally
-            expected. Baristas typically earn at or above minimum wage, and the
-            interaction lasts under two minutes instead of an hour-long dining
-            experience.
+            expected. Baristas typically earn at or above the $7.25 federal minimum
+            wage, and the interaction lasts under two minutes instead of an
+            hour-long dining experience. Bankrate's 2025 survey found 18% of
+            coffee shop customers always tip baristas (Tier-2 survey).
           </p>
           <p className="mt-4 text-ink-700">
             For a $7.50 latte order, common approaches include:
@@ -387,10 +414,10 @@ export default function TippingGuideHowMuch() {
             Frequency Impact: The $260/Year Question
           </h3>
           <p className="mt-2 text-ink-700">
-            Regular customers who tip $1 per visit at their daily coffee shop
-            spend roughly $260 per year (5 visits per week, 52 weeks). At $1.50
-            per visit, that rises to $390 per year. At daily visits with a $1.50
-            tip, the annual cost reaches $547.50. These amounts are worth
+            Regular customers who visit a coffee shop five times per week and tip
+            $1 per visit spend roughly $260 per year (5 × 52 weeks). At $1.50 per
+            visit on the same schedule, that rises to $390 per year. Daily visits
+            with a $1.50 tip (365 days) reach about $548 per year. These amounts are worth
             budgeting for if you visit frequently — they belong in your
             discretionary spending category alongside dining and entertainment.
           </p>
@@ -418,9 +445,10 @@ export default function TippingGuideHowMuch() {
             Food delivery tipping has shifted significantly with app-based
             services like DoorDash, Uber Eats, and Grubhub. Delivery drivers use
             personal vehicles, pay for their own gas and insurance, and often
-            earn minimal base pay per delivery — typically $2-$4 before tips.
-            For a $45 food delivery order, a 20% tip of $9.00 is the current
-            standard.
+            earn low per-delivery base pay before tips. For a $45 food
+            delivery order, a 20% tip of $9.00 matches common etiquette guidance;
+            Bankrate's 2025 survey found 52% of delivery customers always tip
+            (Tier-2 survey).
           </p>
 
           <h3 className="mt-8 text-xl font-semibold text-ink-800">
@@ -428,7 +456,7 @@ export default function TippingGuideHowMuch() {
           </h3>
           <p className="mt-2 text-ink-700">
             Many delivery experts recommend a $5 minimum tip regardless of order
-            size. A $3 tip on a $15 order may not justify the driver&apos;s time
+            size. A $3 tip on a $15 order may not justify the driver's time
             and fuel costs. The percentage-based norm of 20% works for larger
             orders, but the absolute dollar amount matters more for small orders
             because drivers bear vehicle wear, gas, and unpaid time between
@@ -456,7 +484,7 @@ export default function TippingGuideHowMuch() {
             Rain, snow, and extreme heat significantly increase delivery
             difficulty and risk, warranting a 25-30% tip rather than the standard
             20%. On a $45 order, that means $11.25-$13.50 instead of $9.00 — an
-            extra $2.25-$4.50 that meaningfully acknowledges the driver&apos;s
+            extra $2.25-$4.50 that meaningfully acknowledges the driver's
             effort in hazardous conditions. Drivers who accept orders during
             storms often face reduced order volume and higher expenses, making
             generous tipping especially important.
@@ -478,7 +506,7 @@ export default function TippingGuideHowMuch() {
             not the driver. Your tip is separate compensation for the person who
             physically delivers your food. A typical $45 order with $5 delivery
             fee, $3 service charge, and $9 tip totals $62 — the tip is the only
-            portion that directly rewards the driver&apos;s effort.
+            portion that directly rewards the driver's effort.
           </p>
           <p className="mt-4 text-ink-700">
             Pickup orders placed through delivery apps do not require a tip
@@ -508,17 +536,17 @@ export default function TippingGuideHowMuch() {
             If your salon charges $65 for a cut and $40 for color (total $105),
             tip 20% on the full $105 ($21.00) rather than calculating separate
             percentages for each service. The total amount reflects the
-            stylist&apos;s full effort across a 2-3 hour appointment. For color
+            stylist's full effort across a 2-3 hour appointment. For color
             treatments, highlights, or complex styling, many clients tip 25%
             ($16.25 on a $65 service) to reflect the extended time and skill.
           </p>
           <p className="mt-4 text-ink-700">
             When a salon assistant washes and conditions your hair separately
             from the stylist who cuts it, a $3-$5 cash tip directly to the
-            assistant is customary in addition to the main stylist&apos;s 20% tip.
+            assistant is customary in addition to the main stylist's 20% tip.
             Hand the assistant tip in cash at the shampoo bowl rather than adding
             it to the credit card transaction, as assistants may not receive a
-            share of card-based tips processed through the salon&apos;s payment
+            share of card-based tips processed through the salon's payment
             system.
           </p>
 
@@ -545,6 +573,65 @@ export default function TippingGuideHowMuch() {
             you would tip an employee stylist for the same work, extending the
             same gratuity is appropriate and appreciated.
           </p>
+        </section>
+
+        {/* Tips, taxes, and reporting */}
+        <section className="mt-12">
+          <h2 id="tips-taxes" className="text-2xl font-bold text-ink-900">
+            Tips, Taxes, and the Law
+          </h2>
+          <p className="mt-4 text-ink-700">
+            If you work for tips, IRS Publication 531 requires you to report cash
+            and card tips to your employer when total tips from one job exceed{" "}
+            <strong>$20 in a calendar month</strong>. Report by the 10th of the
+            following month (or when employment ends). Tips you keep after tip
+            pooling count; amounts you pass to coworkers do not. On your tax
+            return, tips already on Form W-2 are included in wages; unreported
+            tips may trigger penalties.
+          </p>
+          <p className="mt-4 text-ink-700">
+            For customers, a <strong>service charge</strong> added automatically
+            to a bill (with no option to change it) is not a qualified tip under
+            IRS rules, even if the restaurant shares it with staff. Voluntary
+            amounts you add on top are tips.
+          </p>
+          <p className="mt-4 text-ink-700">
+            Under the One Big Beautiful Bill Act, eligible tipped workers may
+            deduct up to <strong>$25,000</strong> of qualified tips on federal
+            returns for tax years <strong>2025 through 2028</strong>, including
+            the return you file in 2027 for 2026 calendar-year income. The
+            deduction phases out when modified adjusted gross income exceeds
+            $150,000 ($300,000 married filing jointly), requires a valid Social
+            Security number, and (if married) a joint return. Tips must be in an
+            occupation on the IRS tipped-occupation list and appear on Form W-2,
+            Form 1099-NEC, Form 1099-MISC, Form 1099-K, or Form 4137.
+          </p>
+          <Sources
+            items={[
+              {
+                label: "IRS Publication 531 (Dec. 2024), Reporting Tip Income",
+                href: "https://www.irs.gov/publications/p531",
+              },
+              {
+                label: "IRS IR-2026-49, final tipped-occupation list (Apr. 10, 2026)",
+                href: "https://www.irs.gov/newsroom/treasury-irs-issue-final-regulations-listing-occupations-where-workers-customarily-and-regularly-receive-tips-under-the-one-big-beautiful-bill",
+              },
+              {
+                label: "IRS Working Families Tax Cuts — No tax on tips overview",
+                href: "https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers",
+              },
+              {
+                label: "IRS Publication 6133 (Mar. 2026), No tax on tips overview",
+                href: "https://www.irs.gov/pub/irs-pdf/p6133.pdf",
+              },
+              {
+                label: "IRS, What the No Tax on Tips deduction means (Mar. 5, 2026)",
+                href: "https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you",
+              },
+            ]}
+            checked="October 2026"
+            note="The $25,000 cap and phase-out thresholds are statutory; there is no shared constant in tax-data.ts yet."
+          />
         </section>
 
         {/* Annual Budget Impact */}
@@ -661,6 +748,24 @@ export default function TippingGuideHowMuch() {
 
         {/* FAQ Section */}
         <section className="mt-12">
+          <Sources
+            items={[
+              {
+                label: "U.S. Department of Labor, Tips",
+                href: "https://www.dol.gov/general/topic/wages/wagestips",
+              },
+              {
+                label: "IRS Publication 531 (Dec. 2024)",
+                href: "https://www.irs.gov/publications/p531",
+              },
+              {
+                label: "Bankrate Tipping Survey (2025)",
+                href: "https://www.bankrate.com/press-releases/63-of-americans-have-a-negative-view-about-tipping-with-41-saying-tipping-culture-has-gotten-out-of-control/",
+              },
+            ]}
+            checked="October 2026"
+            note="Federal wage figures are Tier-1; tipping percentages cited from etiquette guides and Bankrate surveys are Tier-2."
+          />
           <h2 className="text-2xl font-bold text-ink-900">
             Frequently Asked Questions
           </h2>

@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { RateDefaultNote } from "@/components/RateDefaultNote";
+import { DEFAULT_MORTGAGE_RATE } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -27,7 +29,7 @@ export function MortgageCalculator({ defaults }: Props) {
   const [homePrice, setHomePrice] = useState(defaults?.homePrice || "350000");
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "70000");
   const [loanTerm, setLoanTerm] = useState(defaults?.loanTerm || "30");
-  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "6.5");
+  const [interestRate, setInterestRate] = useState(defaults?.interestRate || DEFAULT_MORTGAGE_RATE);
   const [showAmortization, setShowAmortization] = useState(false);
 
   const results = useMemo(() => {
@@ -108,6 +110,7 @@ export function MortgageCalculator({ defaults }: Props) {
           step={0.1}
         />
       </div>
+      <RateDefaultNote rate={interestRate} />
 
       {results && (
         <div className="mt-8">

@@ -84,7 +84,7 @@ export function CarAffordabilityArticle() {
         </tbody>
       </table>
       <p>
-        Using the 10% rule, Sophia&apos;s total car budget is $600 per month ($6,000 x 0.10). After subtracting $340 for insurance and fuel, her maximum loan payment is $260 per month. At 6.5% over 48 months, that supports a loan of $10,970, plus her $8,000 down payment, for a maximum car price of $18,970. Her $8,000 down payment represents 42% of that price — well above the 20% threshold. Her 48-month term passes the 4-year rule. Total monthly car costs of $600 equal exactly 10% of gross income, earning an &quot;Excellent&quot; affordability rating.
+        Using the 10% rule, Sophia's total car budget is $600 per month ($6,000 x 0.10). After subtracting $340 for insurance and fuel, her maximum loan payment is $260 per month. At 6.5% over 48 months, that supports a loan of $10,970, plus her $8,000 down payment, for a maximum car price of $18,970. Her $8,000 down payment represents 42% of that price — well above the 20% threshold. Her 48-month term passes the 4-year rule. Total monthly car costs of $600 equal exactly 10% of gross income, earning an "Excellent" affordability rating.
       </p>
       <p>
         After car costs and existing debts, Sophia retains $3,660 per month from take-home pay ($4,600 - $600 - $380). She decides to target a $17,500 used Toyota Corolla, which produces a $227 monthly payment, $567 total monthly car costs (9.5% of gross income), and leaves her $3,693 per month for rent, groceries, and savings. For a broader view of her overall spending, she checks her numbers against the{" "}
@@ -193,7 +193,7 @@ export function CarAffordabilityArticle() {
 
       <h3>Does the 10% rule include maintenance and repairs?</h3>
       <p>
-        The traditional 20/4/10 rule covers loan payment, insurance, and fuel only. Maintenance is not included in the 10% calculation, which is why financial planners recommend treating the 10% figure as a ceiling rather than a target. Budget an additional 1-2% of the car&apos;s value per year for maintenance — roughly $25-$50 per month on a $20,000 vehicle. Older cars with 75,000+ miles may need $100-$150 per month for repairs and scheduled service.
+        The traditional 20/4/10 rule covers loan payment, insurance, and fuel only. Maintenance is not included in the 10% calculation, which is why financial planners recommend treating the 10% figure as a ceiling rather than a target. Budget an additional 1-2% of the car's value per year for maintenance — roughly $25-$50 per month on a $20,000 vehicle. Older cars with 75,000+ miles may need $100-$150 per month for repairs and scheduled service.
       </p>
 
       <h3>How does my credit score affect affordability?</h3>

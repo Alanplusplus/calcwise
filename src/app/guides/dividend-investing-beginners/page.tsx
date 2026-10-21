@@ -5,6 +5,24 @@ import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { Sources } from "@/components/Sources";
+import {
+  LONG_TERM_BRACKETS,
+  LONG_TERM_TOP_RATE,
+  NIIT_RATE,
+  NIIT_THRESHOLDS,
+  RETIREMENT_LIMITS,
+  TAX_DATA,
+  TAX_SOURCES,
+  usd,
+} from "@/lib/tax-data";
+
+const QD_ZERO_MAX_SINGLE = LONG_TERM_BRACKETS.single[0].upTo;
+const QD_FIFTEEN_MAX_SINGLE = LONG_TERM_BRACKETS.single[1].upTo;
+
+function qualifiedDividendTaxSummary(): string {
+  return `Qualified dividends (from U.S. stocks held more than 60 days in the required window) are taxed at long-term capital gains rates for tax year ${TAX_DATA.taxYear}: 0% when taxable income is up to ${usd(QD_ZERO_MAX_SINGLE)}, 15% up to ${usd(QD_FIFTEEN_MAX_SINGLE)}, and ${LONG_TERM_TOP_RATE * 100}% above that (single filer). Non-qualified dividends, including most REIT distributions, are taxed as ordinary income. High earners may also owe the ${NIIT_RATE * 100}% net investment income tax when modified adjusted gross income exceeds ${usd(NIIT_THRESHOLDS.single)} (${usd(NIIT_THRESHOLDS.mfj)} married filing jointly). Holding dividend stocks in a Roth IRA eliminates annual dividend taxation on qualified growth and withdrawals in retirement.`;
+}
 
 export const metadata: Metadata = {
   title: "Dividend Investing for Beginners: How to Build Passive Income",
@@ -31,11 +49,11 @@ const faqs = [
   },
   {
     question: "Should I invest in individual dividend stocks or dividend ETFs?",
-    answer: "For beginners, dividend ETFs like VYM (Vanguard High Dividend Yield), SCHD (Schwab U.S. Dividend Equity), or NOBL (ProShares S&P 500 Dividend Aristocrats) provide instant diversification with expense ratios under 0.10%. Individual stocks offer higher yields and more control but require more research and monitoring. A balanced approach uses ETFs as a core (60-70%) with select individual Aristocrats (30-40%).",
+    answer: "For beginners, broad dividend ETFs like SCHD (Schwab U.S. Dividend Equity) and VYM (Vanguard High Dividend Yield) provide instant diversification with expense ratios around 0.06%. Specialized funds such as NOBL (ProShares S&P 500 Dividend Aristocrats) cost more but track the Aristocrats list directly. Individual stocks offer more control but require more research. A balanced approach uses ETFs as a core (60-70%) with select Aristocrats (30-40%).",
   },
   {
     question: "How are dividends taxed?",
-    answer: "Qualified dividends (from U.S. stocks held 60+ days) are taxed at long-term capital gains rates: 0% for income under $47,025, 15% for income up to $518,900, and 20% above that. Non-qualified dividends (including most REIT distributions) are taxed as ordinary income. Holding dividend stocks in a Roth IRA eliminates all dividend taxation, making it the ideal account for high-yield investments.",
+    answer: qualifiedDividendTaxSummary(),
   },
 ];
 
@@ -48,7 +66,7 @@ export default function GuidePage() {
         description="Learn how to start dividend investing from scratch. Covers dividend yield, DRIP reinvestment, Dividend Aristocrats, and a step-by-step portfolio plan with real numbers."
         slug="dividend-investing-beginners"
         datePublished="2026-09-09"
-        dateModified="2026-09-09"
+        dateModified="2026-10-20"
         image="/images/guides/dividend-investing-beginners.webp"
       />
       <BreadcrumbJsonLd
@@ -67,21 +85,22 @@ export default function GuidePage() {
       </nav>
 
       <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">Dividend Investing for Beginners: How to Build Passive Income</h1>
-      <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
+      <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
 
       <article className="prose mt-8">
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">
           <p className="font-semibold text-ink-800">Quick Answer</p>
           <p className="mt-1 text-ink-700">
             Dividend investing means buying stocks that pay you regular cash distributions from company profits. Starting with $5,000
-            in dividend growth stocks yielding 3%, reinvesting all dividends, and adding $200/month, you could build a portfolio generating
-            over $8,000 per year in passive dividend income within 20 years.
+            in dividend growth stocks yielding 3%, reinvesting all dividends (DRIP), assuming 8% annual dividend growth and 5% share price
+            appreciation, and adding $200/month, you could build a portfolio generating about $8,300 per year in passive dividend income
+            within 20 years (illustrative; actual returns vary).
           </p>
         </div>
 
         <Image
           src="/images/guides/dividend-investing-beginners.webp"
-          alt="Dividend investing infographic showing how an initial investment grows through dividend reinvestment over 20 years with DRIP compounding"
+          alt="Dividend investing infographic: $5,000 starting investment at a 3% yield with 8% annual dividend growth, 5% share price growth, DRIP and $200 monthly contributions producing about $8,300 per year in dividend income after 20 years"
           width={1200}
           height={800}
           className="rounded-lg border border-ink-200"
@@ -106,10 +125,22 @@ export default function GuidePage() {
         </p>
 
         <p>
-          Historically, dividends have accounted for roughly 40% of the S&P 500's total return since 1930. During the decade from 2000
-          to 2009, when the S&P 500 delivered a total price return near zero, dividend-paying stocks provided positive returns through
-          their cash distributions alone. This resilience during flat or declining markets is a core advantage of the dividend investing approach.
+          Historically, dividends have accounted for about 31% of the S&P 500's total return from December 1926 through early 2025,
+          with the rest coming from price appreciation (S&P Dow Jones Indices research). Dividend income was an especially large share of
+          returns in flat or weak price-return decades such as the 2000s. This resilience during choppy markets is a core advantage of the
+          dividend investing approach.
         </p>
+
+        <Sources
+          items={[
+            {
+              label: "S&P Dow Jones Indices, S&P 500 Dividend Aristocrats research (Feb. 2025)",
+              href: "https://www.spglobal.com/spdji/en/documents/research/research-sp500-dividend-aristocrats.pdf",
+            },
+          ]}
+          checked="October 2026"
+          note="Tier-2 market data; pre-1957 S&P 500 figures are back-tested."
+        />
 
         <h2>Key Concepts Every Dividend Investor Must Know</h2>
 
@@ -118,7 +149,8 @@ export default function GuidePage() {
         <p>
           Dividend yield is the annual dividend payment divided by the current share price. A stock trading at $100 that pays $3.50 per
           year has a 3.5% yield. This metric lets you compare the income potential of different stocks and decide where to allocate capital.
-          The average S&P 500 dividend yield in 2026 is approximately 1.4%, while dedicated dividend stocks typically yield 2.5% to 5.0%.
+          The S&P 500 dividend yield was about 1.1% as of September 2026 (S&P Dow Jones Indices data), while dedicated dividend stocks
+          typically yield 2.5% to 5.0%.
           Yields above 6% often indicate elevated risk — the company may be paying out more than it can sustain, or the stock price has
           dropped sharply (inflating the yield mathematically).
         </p>
@@ -146,11 +178,34 @@ export default function GuidePage() {
         <h3>Dividend Aristocrats and Kings</h3>
 
         <p>
-          Dividend Aristocrats are S&P 500 companies that have increased their dividends for at least 25 consecutive years. Dividend Kings
-          have 50+ years of consecutive increases. These are the gold standard for dividend reliability. Names like Johnson &amp; Johnson
-          (62 years), Coca-Cola (62 years), Procter &amp; Gamble (68 years), and 3M (66 years) have raised dividends through recessions,
-          pandemics, and financial crises. Owning a diversified basket of Aristocrats is one of the simplest and most effective dividend strategies.
+          Dividend Aristocrats are S&P 500 members that have increased their total dividend per share for at least 25 consecutive years
+          (S&P Dow Jones Indices methodology). Dividend Kings is an informal label for companies with 50+ years of consecutive increases.
+          Examples with verified streaks as of mid-October 2026 include Johnson & Johnson (64 consecutive annual increases, April 2026),
+          Coca-Cola (64, February 2026), and Procter & Gamble (70, April 2026). Owning a diversified basket of Aristocrats — often through
+          an ETF — is one of the simplest dividend strategies.
         </p>
+
+        <Sources
+          items={[
+            {
+              label: "S&P Dow Jones Indices, S&P Dividend Aristocrats methodology",
+              href: "https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-dividend-aristocrats-indices.pdf",
+            },
+            {
+              label: "Johnson & Johnson dividend increase press release (Apr. 14, 2026)",
+              href: "https://www.jnj.com/media-center/press-releases/johnson-johnson-announces-64th-consecutive-year-of-dividend-increase-raises-quarterly-dividend-by-3-1",
+            },
+            {
+              label: "The Coca-Cola Company, 64th consecutive dividend increase (Feb. 19, 2026)",
+              href: "https://www.coca-colacompany.com/media-center/board-elects-new-officer-and-approves-annual-dividend-increase",
+            },
+            {
+              label: "Procter & Gamble dividend increase (Apr. 14, 2026)",
+              href: "https://www.pginvestor.com/news/news-details/2026/PG-Declares-Dividend-Increase-for-April-2026/default.aspx",
+            },
+          ]}
+          checked="October 2026"
+        />
 
         <h2>Case Study: Priya Builds a Dividend Portfolio from Scratch</h2>
 
@@ -165,16 +220,18 @@ export default function GuidePage() {
         </p>
 
         <ul>
-          <li><strong>SCHD (Schwab U.S. Dividend Equity ETF):</strong> $3,200 (40%) — Yield: 3.5%, 5-year dividend growth: 12%</li>
-          <li><strong>Johnson &amp; Johnson (JNJ):</strong> $1,600 (20%) — Yield: 3.0%, 10-year dividend growth: 6%</li>
-          <li><strong>Realty Income (O):</strong> $1,200 (15%) — Yield: 5.2%, monthly dividend payer</li>
-          <li><strong>Texas Instruments (TXN):</strong> $1,200 (15%) — Yield: 2.8%, 5-year dividend growth: 13%</li>
-          <li><strong>Vanguard High Dividend Yield ETF (VYM):</strong> $800 (10%) — Yield: 3.1%, broad diversification</li>
+          <li><strong>SCHD (Schwab U.S. Dividend Equity ETF):</strong> $3,200 (40%)</li>
+          <li><strong>Johnson & Johnson (JNJ):</strong> $1,600 (20%) — Dividend Aristocrat; 64th consecutive annual increase in 2026</li>
+          <li><strong>Vanguard High Dividend Yield ETF (VYM):</strong> $1,600 (20%)</li>
+          <li><strong>iShares Core Dividend Growth ETF (DGRO):</strong> $1,200 (15%)</li>
+          <li><strong>ProShares S&P 500 Dividend Aristocrats ETF (NOBL):</strong> $400 (5%)</li>
         </ul>
 
         <p>
-          With a blended portfolio yield of 3.5% and weighted average dividend growth of 8%, Priya enabled DRIP on all positions and
-          set up automatic $400/month contributions. Here is what her portfolio trajectory looks like:
+          Priya targets a blended starting yield of about 3.5%, 8% annual dividend growth, 5% share price appreciation, and full DRIP —
+          the same mechanics as our{" "}
+          <Link href="/calculators/dividend" className="text-brand-600 hover:text-brand-800 font-medium">Dividend Calculator</Link>.
+          She enabled DRIP on all positions and set up automatic $400/month contributions. Here is her illustrative trajectory:
         </p>
 
         <div className="overflow-x-auto my-6">
@@ -191,56 +248,67 @@ export default function GuidePage() {
             <tbody>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 text-ink-800">Year 1</td>
-                <td className="px-4 py-3 text-ink-800">$13,400</td>
-                <td className="px-4 py-3 text-green-700">$420</td>
-                <td className="px-4 py-3 text-ink-800">$35</td>
-                <td className="px-4 py-3 text-ink-800">3.5%</td>
+                <td className="px-4 py-3 text-ink-800">$13,700</td>
+                <td className="px-4 py-3 text-green-700">$475</td>
+                <td className="px-4 py-3 text-ink-800">$40</td>
+                <td className="px-4 py-3 text-ink-800">3.8%</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 text-ink-800">Year 5</td>
-                <td className="px-4 py-3 text-ink-800">$42,800</td>
-                <td className="px-4 py-3 text-green-700">$1,820</td>
-                <td className="px-4 py-3 text-ink-800">$152</td>
-                <td className="px-4 py-3 text-ink-800">5.1%</td>
+                <td className="px-4 py-3 text-ink-800">$42,200</td>
+                <td className="px-4 py-3 text-green-700">$1,634</td>
+                <td className="px-4 py-3 text-ink-800">$136</td>
+                <td className="px-4 py-3 text-ink-800">5.3%</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 text-ink-800">Year 10</td>
-                <td className="px-4 py-3 text-ink-800">$108,500</td>
-                <td className="px-4 py-3 text-green-700">$5,420</td>
-                <td className="px-4 py-3 text-ink-800">$452</td>
-                <td className="px-4 py-3 text-ink-800">8.1%</td>
+                <td className="px-4 py-3 text-ink-800">$97,200</td>
+                <td className="px-4 py-3 text-green-700">$4,308</td>
+                <td className="px-4 py-3 text-ink-800">$359</td>
+                <td className="px-4 py-3 text-ink-800">8.0%</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 text-ink-800">Year 15</td>
-                <td className="px-4 py-3 text-ink-800">$224,000</td>
-                <td className="px-4 py-3 text-green-700">$12,900</td>
-                <td className="px-4 py-3 text-ink-800">$1,075</td>
-                <td className="px-4 py-3 text-ink-800">13.6%</td>
+                <td className="px-4 py-3 text-ink-800">$190,000</td>
+                <td className="px-4 py-3 text-green-700">$9,618</td>
+                <td className="px-4 py-3 text-ink-800">$802</td>
+                <td className="px-4 py-3 text-ink-800">12.7%</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 text-ink-800">Year 20</td>
-                <td className="px-4 py-3 text-ink-800">$428,000</td>
-                <td className="px-4 py-3 text-green-700">$26,500</td>
-                <td className="px-4 py-3 text-ink-800">$2,208</td>
-                <td className="px-4 py-3 text-ink-800">22.4%</td>
+                <td className="px-4 py-3 text-ink-800">$353,000</td>
+                <td className="px-4 py-3 text-green-700">$20,447</td>
+                <td className="px-4 py-3 text-ink-800">$1,704</td>
+                <td className="px-4 py-3 text-ink-800">20.9%</td>
               </tr>
               <tr className="border-b border-ink-100">
                 <td className="px-4 py-3 text-ink-800">Year 26 (age 55)</td>
-                <td className="px-4 py-3 text-ink-800">$782,000</td>
-                <td className="px-4 py-3 text-green-700">$51,200</td>
-                <td className="px-4 py-3 text-ink-800">$4,267</td>
-                <td className="px-4 py-3 text-ink-800">37.8%</td>
+                <td className="px-4 py-3 text-ink-800">$744,000</td>
+                <td className="px-4 py-3 text-green-700">$50,470</td>
+                <td className="px-4 py-3 text-ink-800">$4,206</td>
+                <td className="px-4 py-3 text-ink-800">40.8%</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <p>
-          By age 55, Priya&apos;s portfolio projects to generate over $51,000 in annual dividends — more than double her original $24,000 goal.
-          The key drivers: consistent $400/month contributions, DRIP reinvestment, and selecting stocks with strong dividend growth rates.
-          Her total out-of-pocket investment over 26 years would be approximately $132,800 ($8,000 + $400 x 312 months), yet the portfolio
-          could be worth over $780,000 producing $4,267 per month in passive income.
+          By age 55, Priya's illustrative portfolio generates about $50,500 in annual dividends — more than double her original $24,000 goal.
+          The key drivers: consistent $400/month contributions, DRIP reinvestment, and dividend growth. Her total out-of-pocket investment over
+          26 years is $132,800 ($8,000 + $400 × 312 months); the portfolio could be worth about $744,000 producing roughly $4,200 per month in
+          passive income under these assumptions (not guaranteed).
         </p>
+
+        <Sources
+          items={[
+            {
+              label: "Moody's Analytics / S&P Dow Jones Indices, S&P 500 dividend yield (Sep. 2026)",
+              href: "https://www.economy.com/united-states/s-and-p-500-dividend-yield",
+            },
+          ]}
+          checked="October 2026"
+          note="Tier-2 index data. Priya's table uses 3.5% starting yield, 8% dividend growth, 5% price growth, and monthly DRIP."
+        />
 
         <h2>Dividend Investing Strategies Compared</h2>
 
@@ -294,6 +362,34 @@ export default function GuidePage() {
             </tbody>
           </table>
         </div>
+
+        <h2>How Dividends Are Taxed (2026)</h2>
+
+        <p>
+          {qualifiedDividendTaxSummary()} To qualify for the lower rates, you generally must hold the stock for at least 61 days during the
+          121-day period that begins 60 days before the ex-dividend date (IRS Form 1099-DIV instructions). REIT and many partnership
+          distributions are usually non-qualified. In a taxable account, you may owe estimated tax if dividend income is large; in a Roth IRA,
+          qualified withdrawals avoid federal tax on growth, and you can contribute up to {usd(RETIREMENT_LIMITS.ira)} in 2026 if eligible
+          (plus catch-up if age 50+).
+        </p>
+
+        <Sources
+          items={[
+            TAX_SOURCES.capitalGains,
+            TAX_SOURCES.revProc,
+            TAX_SOURCES.niit,
+            {
+              label: "IRS Topic 404, Dividends (Oct. 8, 2026)",
+              href: "https://www.irs.gov/taxtopics/tc404",
+            },
+            {
+              label: "IRS Form 1099-DIV instructions, qualified dividends",
+              href: "https://www.irs.gov/instructions/i1099div",
+            },
+            TAX_SOURCES.retirementLimits,
+          ]}
+          checked={TAX_DATA.checkedOnLabel}
+        />
 
         <h2>Step-by-Step Guide: Start Dividend Investing Today</h2>
 
@@ -363,17 +459,18 @@ export default function GuidePage() {
 
         <h3>Should I invest in individual dividend stocks or dividend ETFs?</h3>
         <p>
-          For beginners, dividend ETFs like VYM, SCHD, or NOBL provide instant diversification with expense ratios under 0.10%.
-          Individual stocks offer higher control and potentially higher yields but require more research. A balanced approach uses ETFs as
-          a 60-70% core with select Aristocrats for the remaining 30-40%.
+          For beginners, broad ETFs such as SCHD and VYM provide instant diversification with expense ratios around 0.06%. NOBL tracks
+          Dividend Aristocrats directly but charges a higher fee. Individual stocks offer more control but require more research. A balanced
+          approach uses ETFs as a 60-70% core with select Aristocrats for the remaining 30-40%.
         </p>
 
         <h3>How are dividends taxed?</h3>
-        <p>
-          Qualified dividends (from U.S. stocks held 60+ days) are taxed at long-term capital gains rates: 0% for taxable income under
-          $47,025, 15% for income up to $518,900, and 20% above that. Non-qualified dividends (including most REIT distributions) are
-          taxed at your ordinary income rate. Holding dividend stocks in a Roth IRA eliminates all dividend taxation entirely.
-        </p>
+        <p>{qualifiedDividendTaxSummary()}</p>
+
+        <Sources
+          items={[TAX_SOURCES.capitalGains, TAX_SOURCES.revProc, TAX_SOURCES.niit, TAX_SOURCES.retirementLimits]}
+          checked={TAX_DATA.checkedOnLabel}
+        />
       </article>
     </div>
   );

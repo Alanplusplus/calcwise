@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "How Much Car Can I Afford? The Complete 2026 Guide by Salary",
@@ -135,36 +136,23 @@ export default function HowMuchCarCanIAffordGuide() {
               (about $117) sit on top of the loan payment
             </li>
           </ul>
-          <p className="mt-3 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.edmunds.com/press/new-car-financing-records-pile-up-in-q3-as-buyers-borrow-more-and-stretch-loans-longer-according-to-edmunds.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Edmunds Q3 2026 finance report (Oct 1, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.eia.gov/petroleum/gasdiesel/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              EIA gasoline prices (week of Oct 12, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://newsroom.aaa.com/wp-content/uploads/2026/09/AAA_YDC-Fact-Sheet_2026.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              AAA Your Driving Costs 2026
-            </a>
-            .
-          </p>
+          <Sources
+            items={[
+              {
+                label: "Edmunds Q3 2026 finance report (Oct 1, 2026)",
+                href: "https://www.edmunds.com/press/new-car-financing-records-pile-up-in-q3-as-buyers-borrow-more-and-stretch-loans-longer-according-to-edmunds.html",
+              },
+              {
+                label: "EIA gasoline prices (week of Oct 12, 2026)",
+                href: "https://www.eia.gov/petroleum/gasdiesel/",
+              },
+              {
+                label: "AAA Your Driving Costs 2026",
+                href: "https://newsroom.aaa.com/wp-content/uploads/2026/09/AAA_YDC-Fact-Sheet_2026.pdf",
+              },
+            ]}
+            checked="October 2026"
+          />
           <p className="mt-4 text-sm text-ink-600">
             Use our{" "}
             <Link
@@ -209,7 +197,7 @@ export default function HowMuchCarCanIAffordGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             Financial advisors developed the 20/4/10 rule as a guardrail against
-            the auto industry&apos;s push toward longer loan terms and lower down
+            the auto industry's push toward longer loan terms and lower down
             payments. Dealerships and lenders will often approve you for far
             more than you should spend. The 20/4/10 rule draws the line at a
             sustainable level, and the October 2026 numbers show why it
@@ -225,10 +213,10 @@ export default function HowMuchCarCanIAffordGuide() {
               <p className="mt-3 text-ink-700">
                 A 20% down payment immediately solves two problems: it reduces
                 your loan balance (and therefore monthly payment and total
-                interest), and it protects you from being &quot;underwater&quot; —
+                interest), and it protects you from being "underwater" —
                 owing more than the car is worth. NerdWallet notes that in a
                 normal market cars lose around 20% to 30% of their value in the
-                first year, and AAA&apos;s 2026 study puts average depreciation
+                first year, and AAA's 2026 study puts average depreciation
                 at $4,422 a year. On a $30,000 car, 20% down ($6,000) means you
                 borrow $24,000. If the car is worth $25,500 after you leave the
                 dealership (an illustrative 15% immediate drop), your loan
@@ -272,7 +260,7 @@ export default function HowMuchCarCanIAffordGuide() {
                 afford that payment, because full-coverage insurance averages
                 $187/month (Insurify, Sept 2026) to $225/month (Bankrate) and
                 fuel for 12,000 miles at 32 mpg costs about $135/month at
-                today&apos;s $4.33 gallon. The 10% rule forces you to account for
+                today's $4.33 gallon. The 10% rule forces you to account for
                 the real cost of ownership, not just the loan payment.
               </p>
             </div>
@@ -289,7 +277,7 @@ export default function HowMuchCarCanIAffordGuide() {
             to show maximum car price by annual salary. For context, Edmunds
             reports a 7.0% average APR on new-car loans in Q3 2026 (10.6% for
             used), Experian reports 6.35% new and 11.19% used for Q2 2026, and
-            the Federal Reserve&apos;s G.19 release shows commercial banks
+            the Federal Reserve's G.19 release shows commercial banks
             charging 7.54% on 60-month new-car loans in August 2026. All
             numbers below assume a 20% down payment, a 48-month loan at 7.0%
             APR, and $335 a month for insurance ($200) and fuel ($135).
@@ -385,43 +373,31 @@ export default function HowMuchCarCanIAffordGuide() {
           </div>
           <p className="mt-3 text-xs text-ink-500">
             *Max loan payment = 10% monthly budget minus $335 for insurance
-            ($200, between Insurify&apos;s $187 and Bankrate&apos;s $225 national
+            ($200, between Insurify's $187 and Bankrate's $225 national
             full-coverage averages) and fuel ($135 = 12,000 miles at 32 mpg and
-            EIA&apos;s $4.33/gallon for Oct 12, 2026). Max car price = max loan
+            EIA's $4.33/gallon for Oct 12, 2026). Max car price = max loan
             (48-month payment at 7.0% APR, the Edmunds Q3 2026 new-car average)
             / 0.80 to account for 20% down. Actual numbers vary by credit
             score, location, and vehicle type.
           </p>
-          <p className="mt-2 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.edmunds.com/press/new-car-financing-records-pile-up-in-q3-as-buyers-borrow-more-and-stretch-loans-longer-according-to-edmunds.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Edmunds
-            </a>
-            ,{" "}
-            <a
-              href="https://fred.stlouisfed.org/series/RIFLPBCIANM60NM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Federal Reserve G.19 via FRED (60-month new-car rate, Aug 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://www.experian.com/blogs/ask-experian/average-car-payment/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Experian Q2 2026
-            </a>
-            .
-          </p>
+          <Sources
+            className="mt-2"
+            items={[
+              {
+                label: "Edmunds",
+                href: "https://www.edmunds.com/press/new-car-financing-records-pile-up-in-q3-as-buyers-borrow-more-and-stretch-loans-longer-according-to-edmunds.html",
+              },
+              {
+                label: "Federal Reserve G.19 via FRED (60-month new-car rate, Aug 2026)",
+                href: "https://fred.stlouisfed.org/series/RIFLPBCIANM60NM",
+              },
+              {
+                label: "Experian Q2 2026",
+                href: "https://www.experian.com/blogs/ask-experian/average-car-payment/",
+              },
+            ]}
+            checked="October 2026"
+          />
 
           <div className="mt-6 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4">
             <p className="font-medium text-amber-800">Important Caveat</p>
@@ -498,7 +474,7 @@ export default function HowMuchCarCanIAffordGuide() {
                   <td className="px-4 py-3">$228 (19 mpg)</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">Maintenance &amp; repairs</td>
+                  <td className="px-4 py-3">Maintenance & repairs</td>
                   <td className="px-4 py-3">$117</td>
                   <td className="px-4 py-3">$117</td>
                   <td className="px-4 py-3">$117</td>
@@ -535,60 +511,43 @@ export default function HowMuchCarCanIAffordGuide() {
           <p className="mt-3 text-xs text-ink-500">
             *Vehicle prices are the September 2026 Kelley Blue Book average
             transaction prices for the compact car, compact SUV, and full-size
-            pickup segments. Fuel uses EIA&apos;s $4.331/gallon (week of Oct 12,
+            pickup segments. Fuel uses EIA's $4.331/gallon (week of Oct 12,
             2026) with assumed fuel economy shown. Insurance is $200, between
             the $187 Insurify and $225 Bankrate national full-coverage
-            averages; trucks and SUVs often cost more. Maintenance uses AAA&apos;s
+            averages; trucks and SUVs often cost more. Maintenance uses AAA's
             11.7 cents per mile (about $117 at 12,000 miles). Depreciation
-            applies AAA&apos;s 2026 average ($4,422 a year on a $39,376 average
+            applies AAA's 2026 average ($4,422 a year on a $39,376 average
             MSRP, or 11.2%) to each price.
           </p>
-          <p className="mt-2 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.coxautoinc.com/insights/sept-2026-atp-report/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Kelley Blue Book / Cox Automotive (Oct 13, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://newsroom.aaa.com/wp-content/uploads/2026/09/AAA_YDC-Fact-Sheet_2026.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              AAA Your Driving Costs 2026
-            </a>
-            ,{" "}
-            <a
-              href="https://www.eia.gov/petroleum/gasdiesel/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              EIA
-            </a>
-            ,{" "}
-            <a
-              href="https://insurify.com/car-insurance/average-car-insurance-cost/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Insurify
-            </a>
-            .
-          </p>
+          <Sources
+            className="mt-2"
+            items={[
+              {
+                label: "Kelley Blue Book / Cox Automotive (Oct 13, 2026)",
+                href: "https://www.coxautoinc.com/insights/sept-2026-atp-report/",
+              },
+              {
+                label: "AAA Your Driving Costs 2026",
+                href: "https://newsroom.aaa.com/wp-content/uploads/2026/09/AAA_YDC-Fact-Sheet_2026.pdf",
+              },
+              {
+                label: "EIA",
+                href: "https://www.eia.gov/petroleum/gasdiesel/",
+              },
+              {
+                label: "Insurify",
+                href: "https://insurify.com/car-insurance/average-car-insurance-cost/",
+              },
+            ]}
+            checked="October 2026"
+          />
 
           <div className="mt-6 rounded-lg border-l-4 border-brand-400 bg-brand-50 p-4">
             <p className="font-medium text-brand-800">The Depreciation Tax</p>
             <p className="mt-1 text-sm text-ink-700">
               Depreciation is the largest cost of car ownership and the one most
               buyers ignore because it is invisible — there is no monthly bill.
-              AAA&apos;s 2026 study found new vehicles lose a weighted average of
+              AAA's 2026 study found new vehicles lose a weighted average of
               $4,422 a year, about $22,100 over five years and 75,000 miles,
               or roughly 56% of the $39,376 average MSRP. A buyer paying the
               $50,562 September 2026 average transaction price would lose about
@@ -684,7 +643,7 @@ export default function HowMuchCarCanIAffordGuide() {
 
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">
-                Rachel&apos;s Monthly Breakdown
+                Rachel's Monthly Breakdown
               </h4>
               <div className="mt-3 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
                 <div className="rounded-lg bg-ink-50 p-3">
@@ -705,7 +664,7 @@ export default function HowMuchCarCanIAffordGuide() {
                 </div>
               </div>
               <p className="mt-4 text-sm text-ink-700">
-                Rachel&apos;s total monthly car costs came to $661 — 11.7%
+                Rachel's total monthly car costs came to $661 — 11.7%
                 of her gross monthly income, above the 10% guideline by $94 a
                 month. She accepted this because: (1) her student loan
                 payments end in 14 months, freeing $280/month; (2) the
@@ -730,7 +689,7 @@ export default function HowMuchCarCanIAffordGuide() {
                 payments she would still owe about $30,550. If the SUV lost
                 20% of its value in year one it would be worth $30,091, putting
                 her about $460 underwater; at a 30% loss (the top of
-                NerdWallet&apos;s normal-market range) she would be about
+                NerdWallet's normal-market range) she would be about
                 $4,220 underwater. The CPO Civic costs her $184/month less,
                 builds equity faster, and she will own it free and clear in
                 4 years with roughly 48,000 miles on the odometer (22,000 today
@@ -751,7 +710,7 @@ export default function HowMuchCarCanIAffordGuide() {
             depreciation. The financing gap is real, though: Edmunds reports
             Q3 2026 averages of 7.0% APR and a $787 payment for new cars
             versus 10.6% APR and a $582 payment for used cars. Here is the math
-            on the same model bought new versus 2 years old, using Experian&apos;s
+            on the same model bought new versus 2 years old, using Experian's
             Q2 2026 prime-tier averages (661-780 credit scores) of 6.15% for
             new and 8.81% for used.
           </p>
@@ -827,34 +786,27 @@ export default function HowMuchCarCanIAffordGuide() {
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *APRs are Experian&apos;s Q2 2026 averages for prime (661-780) borrowers.
+            *APRs are Experian's Q2 2026 averages for prime (661-780) borrowers.
             The $22,500 used price is an illustrative 25% discount to the new
             price; check Kelley Blue Book or Edmunds for the model you want.
             Total out-of-pocket = down payment + 48 monthly payments, before
             resale value. The $7,211 gap equals the $7,500 price difference
             minus the $289 of extra interest paid on the used-car loan.
           </p>
-          <p className="mt-2 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.experian.com/blogs/ask-experian/average-car-payment/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Experian Q2 2026
-            </a>
-            ,{" "}
-            <a
-              href="https://www.edmunds.com/press/new-car-financing-records-pile-up-in-q3-as-buyers-borrow-more-and-stretch-loans-longer-according-to-edmunds.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Edmunds Q3 2026
-            </a>
-            .
-          </p>
+          <Sources
+            className="mt-2"
+            items={[
+              {
+                label: "Experian Q2 2026",
+                href: "https://www.experian.com/blogs/ask-experian/average-car-payment/",
+              },
+              {
+                label: "Edmunds Q3 2026",
+                href: "https://www.edmunds.com/press/new-car-financing-records-pile-up-in-q3-as-buyers-borrow-more-and-stretch-loans-longer-according-to-edmunds.html",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Step-by-Step Guide */}
@@ -893,7 +845,7 @@ export default function HowMuchCarCanIAffordGuide() {
                   $4.33/gallon is about $135 a month ($108 at 40 mpg, $217 at
                   20 mpg). $600 - $200 insurance - $135 fuel = $265 available
                   for the loan payment. Set aside about $117 a month for
-                  maintenance separately (AAA&apos;s 11.7 cents per mile).
+                  maintenance separately (AAA's 11.7 cents per mile).
                 </p>
               </div>
             </div>
@@ -940,14 +892,14 @@ export default function HowMuchCarCanIAffordGuide() {
               </div>
               <div>
                 <h3 className="font-semibold text-ink-800">
-                  Shop within your budget (not the dealer&apos;s approval)
+                  Shop within your budget (not the dealer's approval)
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
                   Get pre-approved through your bank or credit union before
                   visiting dealerships. Pre-approval locks your rate, prevents
                   dealer markup on financing, and gives you a non-negotiable
-                  price ceiling. When a salesperson says &quot;we can get you
-                  approved for $45,000,&quot; you already know your real number
+                  price ceiling. When a salesperson says "we can get you
+                  approved for $45,000," you already know your real number
                   is $13,840.
                 </p>
               </div>
@@ -1045,9 +997,9 @@ export default function HowMuchCarCanIAffordGuide() {
             *Loan amount: $24,000 at 7.0% APR (the Edmunds Q3 2026 new-car
             average) on a $30,000 purchase with 20% down. Car values are an
             illustrative model: 15% depreciation in year 1, then 12% per year
-            thereafter. &quot;Months underwater&quot; applies the same model to a
+            thereafter. "Months underwater" applies the same model to a
             $30,000 loan ($0 down) at each term; underwater means the loan
-            balance exceeds the car&apos;s value.
+            balance exceeds the car's value.
           </p>
         </section>
 

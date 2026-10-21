@@ -5,6 +5,8 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
+import { TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
   title: "Average Net Worth by Age in 2026 — Where Do You Stand?",
@@ -95,7 +97,7 @@ export default function NetWorthByAgeGuide() {
             Net worth is the single best snapshot of your financial health — but
             comparing yourself to national averages can be misleading if you do
             not know which number to trust. This guide breaks down median and
-            average net worth by age using the Federal Reserve&apos;s newly
+            average net worth by age using the Federal Reserve's newly
             released 2025 Survey of Consumer Finances, explains what counts in
             the calculation, and shows you how to close the gaps.
           </p>
@@ -181,13 +183,13 @@ export default function NetWorthByAgeGuide() {
             Net Worth by Age Group: Federal Reserve 2025 Data
           </h2>
           <p className="mt-4 text-ink-700">
-            The Federal Reserve&apos;s Survey of Consumer Finances (SCF) is the
+            The Federal Reserve's Survey of Consumer Finances (SCF) is the
             most comprehensive source of household wealth data in the United
             States. Conducted every three years, it surveys thousands of American
             families on assets, liabilities, and income. The 2025 survey was
             released on October 9, 2026 and replaces the 2022 survey as the
             current benchmark. All dollar figures below are in 2025 dollars,
-            grouped by the age of the family&apos;s reference person.
+            grouped by the age of the family's reference person.
           </p>
 
           <div className="mt-6 overflow-x-auto">
@@ -248,22 +250,17 @@ export default function NetWorthByAgeGuide() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-ink-500">
-            Source:{" "}
-            <a
-              href="https://www.federalreserve.gov/publications/files/scf26.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Federal Reserve, Changes in U.S. Family Finances from 2022 to 2025
-              (Table 2, October 2026)
-            </a>
-            . Median represents the middle family — half above, half below.
-            Average (mean) is pulled upward by high-net-worth outliers. Changes
-            are inflation-adjusted. All US families: median $215,900 (+2%),
-            average $1,241,500 (+7%).
-          </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "Federal Reserve, Changes in U.S. Family Finances from 2022 to 2025 (Table 2, October 2026)",
+                href: "https://www.federalreserve.gov/publications/files/scf26.pdf",
+              },
+            ]}
+            checked="October 2026"
+            note="Median represents the middle family — half above, half below. Average (mean) is pulled upward by high-net-worth outliers. Changes are inflation-adjusted. All US families: median $215,900 (+2%), average $1,241,500 (+7%)."
+          />
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
             What These Numbers Tell You
@@ -330,18 +327,16 @@ export default function NetWorthByAgeGuide() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-ink-500">
-            Source:{" "}
-            <a
-              href="https://www.federalreserve.gov/publications/files/scf26.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Federal Reserve 2025 SCF report, Table A.2
-            </a>
-            . Figures as of the October 9, 2026 release.
-          </p>
+          <Sources
+            items={[
+              {
+                label: "Federal Reserve 2025 SCF report, Table A.2",
+                href: "https://www.federalreserve.gov/publications/files/scf26.pdf",
+              },
+            ]}
+            checked="October 2026"
+            note="Figures as of the October 9, 2026 release."
+          />
         </section>
 
         {/* Median vs Average */}
@@ -350,7 +345,7 @@ export default function NetWorthByAgeGuide() {
             Why Median vs Average Matters
           </h2>
           <p className="mt-4 text-ink-700">
-            If you are 40 years old and read that the &quot;average&quot; net
+            If you are 40 years old and read that the "average" net
             worth for your age group is $681,900, you might feel behind — even
             if you are doing fine. That is because the average is a poor measure
             of what typical Americans have. A single extremely wealthy family in
@@ -386,7 +381,7 @@ export default function NetWorthByAgeGuide() {
             wealth, analyzing tax policy, or comparing aggregate savings across
             decades. For personal benchmarking, always use the median. A
             second option is to compare your retirement savings to
-            salary-multiple milestones such as Fidelity&apos;s 1x by 30, 3x by
+            salary-multiple milestones such as Fidelity's 1x by 30, 3x by
             40, and 6x by 50 (covered below), which adjust for your income
             instead of the national average.
           </p>
@@ -547,7 +542,7 @@ export default function NetWorthByAgeGuide() {
               <p className="mt-3 text-sm text-ink-700">
                 Their biggest vulnerability is <strong>retirement savings</strong>:
                 $133,000 in 401(k)s and Roth IRAs is 0.86x their $155,000
-                income. Fidelity&apos;s milestone is 3x income by age 40, or
+                income. Fidelity's milestone is 3x income by age 40, or
                 $465,000, so a gap of $332,000 remains. That gap cannot be closed
                 in two years, which makes the savings rate the priority. The
                 mortgage is also large at $300,000 (1.9x income), and taxable
@@ -566,7 +561,7 @@ export default function NetWorthByAgeGuide() {
                   adds $12,000/year in tax-advantaged savings.
                 </li>
                 <li>
-                  <strong>2. Pay off Jen&apos;s remaining $3,000 student loan</strong> —
+                  <strong>2. Pay off Jen's remaining $3,000 student loan</strong> —
                   small balance, but eliminating it frees cash flow and removes a
                   liability line item.
                 </li>
@@ -589,7 +584,7 @@ export default function NetWorthByAgeGuide() {
                     Net Worth Calculator
                   </Link>{" "}
                   to monitor progress; the goal is to close the $332,000 retirement gap
-                  toward Fidelity&apos;s $465,000 milestone.
+                  toward Fidelity's $465,000 milestone.
                 </li>
               </ul>
             </div>
@@ -649,27 +644,11 @@ export default function NetWorthByAgeGuide() {
                   </Link>{" "}
                   to model your timeline.
                 </p>
-                <p className="mt-2 text-xs text-ink-500">
-                  Sources:{" "}
-                  <a
-                    href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
-                    IRS IR-2025-111
-                  </a>
-                  ,{" "}
-                  <a
-                    href="https://www.irs.gov/pub/irs-drop/rp-25-19.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
-                    IRS Rev. Proc. 2025-19 (HSA)
-                  </a>
-                  .
-                </p>
+                <Sources
+                  className="mt-2"
+                  items={[TAX_SOURCES.retirementLimits, TAX_SOURCES.hsaLimits]}
+                  checked="October 2026"
+                />
               </div>
             </div>
             <div className="flex gap-4">
@@ -767,19 +746,16 @@ export default function NetWorthByAgeGuide() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-ink-500">
-            Source:{" "}
-            <a
-              href="https://www.fidelity.com/viewpoints/retirement/retirement-guidelines"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Fidelity retirement guidelines
-            </a>
-            . These are guidelines, not guarantees; your target changes with
-            your retirement age and lifestyle.
-          </p>
+          <Sources
+            items={[
+              {
+                label: "Fidelity retirement guidelines",
+                href: "https://www.fidelity.com/viewpoints/retirement/retirement-guidelines",
+              },
+            ]}
+            checked="October 2026"
+            note="These are guidelines, not guarantees; your target changes with your retirement age and lifestyle."
+          />
         </section>
 
         {/* CTA Section */}

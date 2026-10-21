@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "@/lib/market-data";
 
 export function HousePaymentArticle() {
   return (
@@ -52,7 +54,7 @@ export function HousePaymentArticle() {
         to see the maximum home price your income supports after all PITI costs.
       </p>
 
-      <h2>Case Study: The Martinez Family&apos;s First Home</h2>
+      <h2>Case Study: The Martinez Family's First Home</h2>
       <p>
         Carlos and Elena Martinez earn a combined $96,000 per year ($8,000/month) and have saved $45,000 for a down payment. They are looking at a $320,000 home in a suburb of Austin, Texas. Here is how their monthly house payment breaks down:
       </p>
@@ -66,9 +68,9 @@ export function HousePaymentArticle() {
         </thead>
         <tbody>
           <tr>
-            <td>Principal & Interest (6.75%, 30 yr)</td>
-            <td>$1,784</td>
-            <td>$21,408</td>
+            <td>Principal & Interest ({MORTGAGE_MARKET.thirtyYear.toFixed(2)}%, 30 yr)</td>
+            <td>$1,904</td>
+            <td>$22,848</td>
           </tr>
           <tr>
             <td>Property Tax (1.8%)</td>
@@ -81,25 +83,32 @@ export function HousePaymentArticle() {
             <td>$2,100</td>
           </tr>
           <tr>
-            <td>PMI (0.7%, down &lt; 20%)</td>
+            <td>PMI (0.7%, down {"<"} 20%)</td>
             <td>$160</td>
-            <td>$1,925</td>
+            <td>$1,920</td>
           </tr>
           <tr>
             <td><strong>Total House Payment</strong></td>
-            <td><strong>$2,599</strong></td>
-            <td><strong>$31,193</strong></td>
+            <td><strong>$2,719</strong></td>
+            <td><strong>$32,628</strong></td>
           </tr>
         </tbody>
       </table>
       <p>
-        The Martinez family&apos;s PITI is 32.5% of gross income — above the recommended 28% threshold. By increasing their down payment to $64,000 (20%), they eliminate PMI and reduce the loan amount, dropping the total payment to $2,215/month (27.7% of income). That $19,000 extra savings would take about 8 months of aggressive saving but would save $160/month in PMI alone.
+        The Martinez family's PITI is 34.0% of gross income — above the recommended 28% threshold. By increasing their down payment to $64,000 (20%), they eliminate PMI and reduce the loan amount, dropping the total payment to $2,427/month (30.3% of income). That $19,000 extra savings would take about 8 months of aggressive saving but would save $160/month in PMI alone.
       </p>
 
       <h2>Comparing House Payment Scenarios</h2>
       <p>
-        The table below shows how house payments change across different price points, assuming a 6.5% rate, 30-year term, 1.1% property tax rate, and $1,800/year insurance:
+        The table below shows how house payments change across different price points, assuming a{" "}
+        {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate (Freddie Mac PMMS 30-year average, week of{" "}
+        {MORTGAGE_MARKET.asOfLabel}), 30-year term, 1.1% property tax rate, $1,800/year insurance, and
+        0.5% PMI when down payment is below 20%:
       </p>
+      <Sources
+        items={MORTGAGE_MARKET_SOURCES}
+        checked={MORTGAGE_MARKET.checkedLabel}
+      />
       <table>
         <thead>
           <tr>
@@ -112,32 +121,32 @@ export function HousePaymentArticle() {
         <tbody>
           <tr>
             <td>$250,000</td>
-            <td>$1,838/mo</td>
-            <td>$1,564/mo</td>
-            <td>$274/mo</td>
+            <td>$2,031/mo</td>
+            <td>$1,764/mo</td>
+            <td>$267/mo</td>
           </tr>
           <tr>
             <td>$350,000</td>
-            <td>$2,509/mo</td>
-            <td>$2,137/mo</td>
-            <td>$372/mo</td>
+            <td>$2,783/mo</td>
+            <td>$2,409/mo</td>
+            <td>$374/mo</td>
           </tr>
           <tr>
             <td>$450,000</td>
-            <td>$3,181/mo</td>
-            <td>$2,710/mo</td>
-            <td>$471/mo</td>
+            <td>$3,535/mo</td>
+            <td>$3,055/mo</td>
+            <td>$480/mo</td>
           </tr>
           <tr>
             <td>$550,000</td>
-            <td>$3,852/mo</td>
-            <td>$3,282/mo</td>
-            <td>$570/mo</td>
+            <td>$4,288/mo</td>
+            <td>$3,701/mo</td>
+            <td>$587/mo</td>
           </tr>
         </tbody>
       </table>
       <p>
-        Putting down 20% not only lowers the loan amount but eliminates PMI entirely, creating a double savings effect. For a $350,000 home, the difference is $372 per month — that is $4,464 per year or $133,920 over the life of the loan.
+        Putting down 20% not only lowers the loan amount but eliminates PMI entirely, creating a double savings effect. For a $350,000 home, the difference is $374 per month — that is $4,488 per year or $134,640 over the life of the loan. At {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}% (the year-ago PMMS average), the same $350,000 home with 20% down would run about $2,198/month — roughly $211 less than at today's {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% default.
       </p>
 
       <h2>Property Tax Rates by State</h2>
@@ -150,13 +159,13 @@ export function HousePaymentArticle() {
         <li><strong>National average:</strong> approximately 1.1%</li>
       </ul>
       <p>
-        On a $350,000 home, the difference between Hawaii&apos;s 0.28% and New Jersey&apos;s 2.47% property tax rate translates to $639 per month — a significant factor when comparing homes in different states.
+        On a $350,000 home, the difference between Hawaii's 0.28% and New Jersey's 2.47% property tax rate translates to $639 per month — a significant factor when comparing homes in different states.
       </p>
 
       <h2>How to Lower Your Monthly House Payment</h2>
       <ul>
         <li><strong>Increase your down payment to 20%</strong> — Eliminates PMI and reduces the loan balance, cutting both principal and interest.</li>
-        <li><strong>Shop for a lower interest rate</strong> — Even 0.25% lower on a $280,000 loan saves roughly $50/month and over $18,000 over 30 years. Compare rates from at least 3 lenders.</li>
+        <li><strong>Shop for a lower interest rate</strong> — Even 0.25% lower on a $280,000 loan saves roughly $48/month and about $17,100 over 30 years. Compare rates from at least 3 lenders.</li>
         <li><strong>Choose a longer loan term</strong> — A 30-year term has lower monthly payments than 15 years, though total interest increases. See our{" "}
           <Link href="/calculators/mortgage" className="text-brand-600 hover:text-brand-800 font-medium">
             Mortgage Calculator
@@ -182,7 +191,7 @@ export function HousePaymentArticle() {
 
       <h2>House Payment vs. Renting</h2>
       <p>
-        A common question is whether the total house payment is competitive with renting. Remember that part of your payment — the principal portion — builds equity. In the first year of a $280,000 loan at 6.5%, approximately $3,600 of your payments go toward principal. By year 10, that number grows to about $6,900 per year.
+        A common question is whether the total house payment is competitive with renting. Remember that part of your payment — the principal portion — builds equity. In the first year of a $280,000 loan at {MORTGAGE_MARKET.thirtyYear.toFixed(2)}%, approximately $2,632 of your payments go toward principal. By year 10, that number grows to about $5,113 per year.
       </p>
       <p>
         However, renters avoid property taxes, insurance, PMI, maintenance (typically 1-2% of home value per year), and potential HOA fees. Use our{" "}
@@ -200,7 +209,7 @@ export function HousePaymentArticle() {
 
       <h3>How much is the house payment on a $300,000 home?</h3>
       <p>
-        With 20% down ($60,000), a 6.5% rate, and a 30-year term, the P&I payment is approximately $1,517/month. Add property taxes (~$275/mo at 1.1%), insurance (~$150/mo), and you get a total house payment around $1,942/month. With less than 20% down, add PMI of roughly $100-$150/month.
+        With 20% down ($60,000), a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate, and a 30-year term, the P&I payment is approximately $1,662/month. Add property taxes (~$275/mo at 1.1%), insurance (~$150/mo), and you get a total house payment around $2,087/month. With less than 20% down, add PMI of roughly $100-$150/month.
       </p>
 
       <h3>What percentage of income should go to a house payment?</h3>
@@ -224,7 +233,7 @@ export function HousePaymentArticle() {
 
       <h3>How can I estimate my property tax rate?</h3>
       <p>
-        Check your county assessor&apos;s website for the current millage rate, or look at comparable recently sold homes on sites like Zillow, which display annual property tax amounts. Divide the annual tax by the home price to get the effective rate. For a quick estimate, the national average of 1.1% is a reasonable starting point.
+        Check your county assessor's website for the current millage rate, or look at comparable recently sold homes on sites like Zillow, which display annual property tax amounts. Divide the annual tax by the home price to get the effective rate. For a quick estimate, the national average of 1.1% is a reasonable starting point.
       </p>
     </>
   );

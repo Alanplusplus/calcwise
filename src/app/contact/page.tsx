@@ -15,7 +15,7 @@ export default function ContactPage() {
         <p>
           We value your feedback and are happy to hear from you. Whether you
           have a suggestion for a new calculator, found an error, or have a
-          question about how to use our tools, please don&apos;t hesitate to
+          question about how to use our tools, please don't hesitate to
           reach out.
         </p>
 

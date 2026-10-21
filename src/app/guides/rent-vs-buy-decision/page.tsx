@@ -5,11 +5,18 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
+import {
+  STANDARD_DEDUCTIONS,
+  TAX_DATA,
+  TAX_SOURCES,
+  usd,
+} from "@/lib/tax-data";
 
 export const metadata: Metadata = {
   title: "Rent vs Buy in 2026: How to Make the Right Decision",
   description:
-    "Should you rent or buy in 2026? Compare real monthly costs, break-even timelines at 6.65% rates, and a step-by-step framework for your housing decision.",
+    "Should you rent or buy in 2026? Compare real monthly costs, break-even timelines at 7.40% PMMS rates, and a step-by-step framework for your housing decision.",
   keywords: [
     "should I rent or buy a house",
     "rent vs buy calculator",
@@ -24,32 +31,32 @@ const faqs = [
   {
     question: "Should I rent or buy a house in 2026?",
     answer:
-      "As of October 2026 with 30-year fixed rates averaging 6.65%, renting typically wins financially if you plan to move within 4 to 5 years. Buying makes sense when you will stay 6+ years, have stable income, and can cover a 20% down payment plus $8,000–$15,000 in closing costs without draining your emergency fund. The rate drop from 7% earlier this year has shortened break-even timelines by about 6–9 months in most markets. Run your exact numbers with a rent-vs-buy calculator before deciding.",
+      "As of mid-October 2026, Freddie Mac’s PMMS 30-year fixed rate averaged 7.40% (week of October 15). Renting often wins financially if you plan to move within 4 to 5 years. Buying makes sense when you will stay 6+ years, have stable income, and can cover a 20% down payment plus closing costs (typically 2–5% of the purchase price per the CFPB) without draining your emergency fund. Rates rose from 6.65% in August to 7.40% by mid-October, which widens the monthly cost gap versus renting. Run your exact numbers with a rent-vs-buy calculator before deciding.",
   },
   {
     question: "How long do you need to stay to break even on buying vs renting?",
     answer:
-      "At October 2026 rates (roughly 6.65% on a 30-year fixed), the typical break-even point is 4.5 to 6 years in most US markets — about 6 months shorter than when rates were near 7% in early 2026. Closing costs of $8,000–$15,000, 1–2% annual maintenance, and the opportunity cost of your down payment all delay the point where buying costs less than renting. In high-cost cities like San Francisco or New York, break-even can still stretch to 7–9 years.",
+      "At the October 15, 2026 PMMS average of 7.40% on a 30-year fixed, many scenarios break even in roughly 4.5 to 6 years — longer than when rates were near 6.5% in mid-2026. Closing costs of $8,000–$15,000, 1–2% annual maintenance, and the opportunity cost of your down payment all delay the point where buying costs less than renting. In high-cost cities like San Francisco or New York, break-even can still stretch to 7–9 years.",
   },
   {
     question: "Is renting throwing money away?",
     answer:
-      "No. Rent buys you housing and flexibility. On a $2,250/month lease, you pay $27,000 per year for shelter with zero maintenance bills, no property tax, and no $12,000 roof replacement risk. The money you save on down payment ($78,000 on a $390,000 home) can earn 4.3–4.8% in a high-yield savings account or 7–10% invested — returns you forfeit when you buy.",
+      "No. Rent buys you housing and flexibility. On a $2,250/month lease, you pay $27,000 per year for shelter with zero maintenance bills, no property tax, and no $12,000 roof replacement risk. The money you keep out of a down payment ($78,000 on a $390,000 home) could stay in FDIC-insured savings (the FDIC national average savings rate was 0.38% as of October 2026) or, if invested for the long term, participate in historical stock-market returns that have varied widely year to year.",
   },
   {
     question: "What hidden costs make buying more expensive than the mortgage payment?",
     answer:
-      "Beyond principal and interest, homeowners pay property tax (typically 0.8–1.5% of home value per year), insurance ($1,500–$2,600/year), maintenance and repairs (1–2% of home value annually), closing costs ($8,000–$15,000 upfront), and selling costs (5–6% agent commission when you move). On a $390,000 home, the true monthly cost is often $750–$1,100 higher than the mortgage payment alone.",
+      "Beyond principal and interest, homeowners pay property tax (2024 Census ACS data imply a national effective rate of about 0.89% of home value; local rates vary), insurance ($1,500–$2,600/year), maintenance and repairs (1–2% of home value annually), closing costs ($8,000–$15,000 upfront), and selling costs (5–6% agent commission when you move). On a $390,000 home at 7.40%, the true monthly cost is often $900–$1,100 higher than the mortgage payment alone.",
   },
   {
     question: "Does buying always build more wealth than renting?",
     answer:
-      "Not automatically. A renter who invests the down payment ($78,000) and monthly cost difference ($780/month on a $390,000 home scenario) at a 7% average return accumulates roughly $205,000 over 10 years. A buyer builds equity through mortgage paydown and appreciation, but pays roughly $270,000 in interest over 30 years at 6.65%. Wealth building depends on how long you stay, local appreciation rates, and whether you actually invest the savings from renting.",
+      "Not automatically. A renter who invests the down payment ($78,000) and monthly cost difference ($966/month in the $390,000 scenario below) at a hypothetical 7% long-term return — not a guarantee — could accumulate roughly $314,000 over 10 years. A buyer builds equity through paydown and appreciation, but pays about $466,000 in interest over 30 years at 7.40% on a $312,000 loan. Wealth building depends on how long you stay, local appreciation, and whether you actually invest the savings from renting.",
   },
   {
     question: "Should I wait for mortgage rates to drop further before buying?",
     answer:
-      "Timing the market is rarely wise. Rates fell from 7.0% in early 2026 to 6.65% by October 2026, saving about $72/month on a $312,000 loan. But waiting for rates to drop further risks higher home prices: median US home values rose 3.8% year-over-year through September 2026. A $390,000 home appreciating at 3.8% adds $14,820 per year in purchase price. If rates drop 0.25% while prices rise 3.8%, your monthly payment barely changes but you need a larger down payment. Buy when you meet the 5-step framework criteria, not based on rate forecasts.",
+      "Timing the market is rarely wise. PMMS 30-year rates rose from 6.65% (August 20, 2026) to 7.40% (October 15, 2026), adding about $157/month in principal and interest on a $312,000 loan. Waiting for lower rates can coincide with higher prices: FHFA’s national house price index rose 2.6% year-over-year through July 2026 (release dated September 29, 2026). A $390,000 home appreciating at 2.6% adds about $10,140 in value in year one. Buy when you meet the 5-step framework criteria, not based on rate forecasts alone.",
   },
 ];
 
@@ -59,10 +66,10 @@ export default function RentVsBuyDecisionGuide() {
       <FaqJsonLd faqs={faqs} />
       <ArticleJsonLd
         title="Rent vs Buy in 2026: How to Make the Right Decision"
-        description="Should you rent or buy in 2026? Compare real monthly costs, break-even timelines at 6.65% rates, and a step-by-step framework for your housing decision."
+        description="Should you rent or buy in 2026? Compare real monthly costs, break-even timelines at 7.40% PMMS rates, and a step-by-step framework for your housing decision."
         slug="rent-vs-buy-decision"
         datePublished="2026-08-24"
-        dateModified="2026-10-07"
+        dateModified="2026-10-20"
         image="/images/guides/rent-vs-buy-decision.webp"
       />
       <BreadcrumbJsonLd
@@ -84,11 +91,11 @@ export default function RentVsBuyDecisionGuide() {
             Rent vs Buy in 2026: How to Make the Right Decision
           </h1>
           <p className="mt-4 text-lg text-ink-600">
-            &quot;Should I rent or buy a house?&quot; is the question behind
+            "Should I rent or buy a house?" is the question behind
             every housing search — and the honest answer is not always
-            &quot;buy.&quot; With 30-year fixed mortgage rates averaging 6.65%
-            in October 2026 — down from near 7% earlier this year — the math
-            has shifted again in buyers&apos; favor, though not dramatically.
+            "buy."             With 30-year fixed mortgage rates averaging 7.40% in the Freddie
+            Mac PMMS for the week of October 15, 2026 — up from 6.65% in
+            August — the monthly cost of buying has moved further from renting.
             This guide compares real monthly costs, break-even timelines, and
             a decision framework built on specific numbers, not real estate
             slogans.
@@ -103,14 +110,14 @@ export default function RentVsBuyDecisionGuide() {
           </h2>
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
-              <strong>Break-even timeline (Oct 2026):</strong> Typically 4.5–6
-              years at 6.65% mortgage rates before buying costs less than
-              renting — about 6 months shorter than at 7% rates earlier this
-              year
+              <strong>Break-even timeline (Oct 2026):</strong> Often 4.5–6
+              years at 7.40% PMMS mortgage rates before buying costs less than
+              renting in many scenarios — longer than when rates were near 6.5%
+              mid-year
             </li>
             <li>
               <strong>Monthly cost gap:</strong> Owning a $390,000 home costs
-              ~$2,994/month vs. $2,250/month rent — a $744/month premium
+              ~$3,216/month vs. $2,250/month rent — a $966/month premium
             </li>
             <li>
               <strong>Hidden buy costs:</strong> $8,000–$15,000 closing fees,
@@ -142,7 +149,7 @@ export default function RentVsBuyDecisionGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/rent-vs-buy-decision.webp"
-              alt="Infographic comparing rent vs buy in 2026: $2,250 monthly rent versus $3,051 true monthly cost of owning a $390,000 home, with a 4.5 to 6 year break-even timeline at 6.65% mortgage rates"
+              alt="Infographic comparing rent vs buy in 2026: $2,250 monthly rent versus about $3,216 true monthly cost of owning a $390,000 home, with a 4.5 to 6 year break-even timeline at 7.40% mortgage rates"
               width={1200}
               height={675}
               quality={80}
@@ -161,47 +168,83 @@ export default function RentVsBuyDecisionGuide() {
             The Real Cost of Buying vs Renting
           </h2>
           <p className="mt-4 text-ink-700">
-            Most rent-vs-buy debates compare a $2,250 rent check to a $1,994
+            Most rent-vs-buy debates compare a $2,250 rent check to a $2,160
             mortgage payment and declare buying the winner. That comparison
-            ignores $750–$1,100 in monthly costs that homeowners pay and
-            renters never see. At 6.65% interest on a 30-year fixed loan, the
-            sticker price is only the starting point.
+            ignores $900–$1,100 in monthly costs that homeowners pay and
+            renters never see. At 7.40% interest on a 30-year fixed loan (Freddie
+            Mac PMMS, week of October 15, 2026), the sticker price is only the
+            starting point.
           </p>
           <p className="mt-4 text-ink-700">
             Consider a $390,000 home with 20% down ($78,000). Your loan is
-            $312,000. Principal and interest run $1,994 per month at the
-            October 2026 average of 6.65%. Property tax at 1.2% adds $390 per
-            month. Homeowner&apos;s insurance at 0.55% of value — slightly
-            higher than last year due to rising premiums nationwide — costs $179
-            per month. Maintenance and repairs at 1.5% of home value — the
-            midpoint of the 1–2% rule — add $488 per month. Your true monthly
-            ownership cost is $3,051, not $1,994. That is $801 more than the
-            $2,250 rent payment next door.
+            $312,000. Principal and interest run $2,160 per month at the
+            October 15, 2026 PMMS average of 7.40%. Property tax at 1.2% adds
+            $390 per month (above the roughly 0.89% U.S. effective rate implied
+            by 2024 Census ACS aggregates, but typical in many counties).
+            Homeowner's
+            insurance at 0.55% of value costs $179 per month. Maintenance and
+            repairs at 1.5% of home value — the midpoint of the 1–2% rule — add
+            $488 per month. Your true monthly ownership cost is $3,216, not
+            $2,160. That is $966 more than the $2,250 rent payment next door (a
+            worked example; the Census ACS 2024 U.S. median gross rent was
+            $1,487).
           </p>
           <p className="mt-4 text-ink-700">
-            The rate decline from 7.0% in early 2026 to 6.65% by October saves
-            about $72 per month in P&amp;I on a $312,000 loan compared to the
-            same purchase at 7%. Over 30 years, that is $25,920 less interest —
-            meaningful, but not a game-changer for the rent-vs-buy equation.
+            Rates climbed from 6.65% (August 20, 2026 PMMS) to 7.40% (October
+            15, 2026), adding about $157 per month in P&I on a $312,000
+            loan — roughly $56,600 more interest over 30 years than financing
+            at 6.65% (PMMS week of August 20, 2026).
           </p>
           <p className="mt-4 text-ink-700">
             Upfront costs widen the gap further. Closing costs on a $390,000
-            purchase typically run $8,600 to $15,600 (2–4% of the purchase
-            price). Title insurance, appraisal fees, lender origination charges,
-            and prepaid property taxes all hit at closing. A $78,000 down
-            payment plus $11,700 in closing costs means $89,700 leaves your
-            bank account before you hang a single picture.
+            purchase typically run $7,800 to $19,500 (2–5% of the purchase
+            price per the CFPB, excluding the down payment). Title insurance,
+            appraisal fees, lender origination charges, and prepaid property
+            taxes all hit at closing. A $78,000 down payment plus $11,700 in
+            closing costs (3% midpoint) means $89,700 leaves your bank account
+            before you hang a single picture.
           </p>
           <p className="mt-4 text-ink-700">
             Then there is opportunity cost — the investment return you give up
             by tying cash in a house. If you invested that $78,000 down payment
-            in a diversified index fund earning 7% annually, it would grow to
-            roughly $153,400 over 10 years. Even parked in a 4.5% high-yield
-            savings account (October 2026 top rates have edged down from 5.0%
-            peaks), it earns $3,510 per year risk-free. Renters keep that
-            capital liquid and invested; buyers convert it to illiquid home
-            equity.
+            in a diversified stock portfolio at a hypothetical 7% long-term
+            annual return (historical U.S. stock returns have averaged near 10%
+            over very long periods but vary sharply year to year), it could grow
+            to roughly $153,400 over 10 years — not a guarantee. Parked in an
+            FDIC-insured savings account at the October 2026 national average
+            rate of 0.38%, it earns about $296 per year. Renters keep capital
+            liquid; buyers convert it to illiquid home equity.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "Freddie Mac PMMS (30-year FRM 7.40%, Oct. 15, 2026)",
+                href: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-hold-steady-740/",
+              },
+              {
+                label:
+                  "CFPB, closing costs typically 2–5% of purchase price",
+                href: "https://www.consumerfinance.gov/owning-a-home/prepare/determine-your-down-payment/",
+              },
+              {
+                label:
+                  "U.S. Census Bureau, ACS 2024 tables B25090 & B25082 (national effective property tax rate ~0.89%)",
+                href: "https://data.census.gov/table/ACSDT1Y2024.B25090",
+              },
+              {
+                label: "Census ACS 2024, U.S. median gross rent $1,487",
+                href: "https://data.census.gov/table/ACSDT1Y2024.B25064",
+              },
+              {
+                label:
+                  "FDIC national deposit rates (savings 0.38%, October 2026 release)",
+                href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+              },
+            ]}
+            checked="October 2026"
+            note="National effective property tax rate (~0.89%) = aggregate real estate taxes on owner-occupied homes (ACS table B25090) divided by aggregate home value (B25082). Insurance and maintenance percentages are planning assumptions."
+          />
 
           <h3 className="mt-8 text-xl font-semibold text-ink-800">
             Hidden Costs Most Renters Never Pay
@@ -225,7 +268,7 @@ export default function RentVsBuyDecisionGuide() {
                 <tr>
                   <td className="px-4 py-3">Monthly housing payment</td>
                   <td className="px-4 py-3 text-right">$2,250</td>
-                  <td className="px-4 py-3 text-right">$1,994 (P&amp;I)</td>
+                  <td className="px-4 py-3 text-right">$2,160 (P&I)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Property tax</td>
@@ -233,12 +276,12 @@ export default function RentVsBuyDecisionGuide() {
                   <td className="px-4 py-3 text-right">$390</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">Homeowner&apos;s insurance</td>
-                  <td className="px-4 py-3 text-right">$0 (renter&apos;s ~$18)</td>
+                  <td className="px-4 py-3">Homeowner's insurance</td>
+                  <td className="px-4 py-3 text-right">$0 (renter's ~$18)</td>
                   <td className="px-4 py-3 text-right">$179</td>
                 </tr>
                 <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">Maintenance &amp; repairs (1.5%/yr)</td>
+                  <td className="px-4 py-3">Maintenance & repairs (1.5%/yr)</td>
                   <td className="px-4 py-3 text-right">$0</td>
                   <td className="px-4 py-3 text-right">$488</td>
                 </tr>
@@ -250,25 +293,26 @@ export default function RentVsBuyDecisionGuide() {
                 <tr className="border-t-2 border-ink-200 font-semibold">
                   <td className="px-4 py-3">True monthly cost</td>
                   <td className="px-4 py-3 text-right text-brand-700">$2,250</td>
-                  <td className="px-4 py-3 text-right">$3,051</td>
+                  <td className="px-4 py-3 text-right">$3,216</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *Assumes $390,000 purchase, 20% down, $312,000 loan at 6.65% for 30
+            *Assumes $390,000 purchase, 20% down, $312,000 loan at 7.40% for 30
             years, 1.2% property tax, 0.55% insurance. Maintenance at 1.5% of home
-            value per year. Rates as of October 2026.
+            value per year. PMMS rate as of October 15, 2026.
           </p>
 
           <div className="mt-6 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4">
             <p className="font-medium text-amber-800">Important Caveat</p>
             <p className="mt-1 text-sm text-amber-700">
-              Renters who invest the $801 monthly difference ($9,612/year) at a
-              7% average return build a $139,200 portfolio over 10 years — on
-              top of keeping their $78,000 down payment invested. Buying only
-              wins if home appreciation and equity paydown exceed that combined
-              $217,000+ in renter wealth.
+              Renters who invest the $966 monthly difference ($11,592/year) at a
+              hypothetical 7% long-term return build about $167,200 from those
+              contributions alone over 10 years — on top of keeping their
+              $78,000 down payment invested (roughly $314,000 combined at 7%,
+              not guaranteed). Buying only wins if home appreciation and equity
+              paydown exceed that renter wealth.
             </p>
           </div>
         </section>
@@ -281,50 +325,62 @@ export default function RentVsBuyDecisionGuide() {
           <p className="mt-4 text-ink-700">
             The break-even point is when the total cost of buying equals the
             total cost of renting, accounting for equity gained through mortgage
-            paydown and home appreciation. By October 2026, 30-year fixed rates
-            have settled around 6.65% — down from the 7.0%+ highs of early 2026
-            but still far above the 3% era when break-even often hit in 3 to 4
-            years.
+            paydown and home appreciation. By mid-October 2026, PMMS 30-year
+            fixed rates averaged 7.40% — up from 6.65% in August and well above
+            the 3% era when break-even often hit in 3 to 4 years.
           </p>
           <p className="mt-4 text-ink-700">
-            On the $390,000 home scenario above, buying starts $801 per month
+            On the $390,000 home scenario above, buying starts $966 per month
             more expensive than renting from day one. Over the first year, that
-            gap totals $9,612 in extra out-of-pocket costs, plus $11,700 in
-            closing fees — $21,312 before a single dollar of equity from
-            appreciation. At 3.8% annual home appreciation (the latest
-            year-over-year national figure through September 2026), the property
-            gains $14,820 in value in year one. Mortgage principal paydown adds
-            roughly $4,400 at 6.65%. Combined, you recover about $19,220
-            against $21,312 in excess costs — still underwater by $2,092 after
-            year one, but much closer than the $6,448 gap at 7% rates.
+            gap totals $11,592 in extra out-of-pocket costs, plus $11,700 in
+            closing fees — $23,292 before counting equity from appreciation.
+            At 2.6% annual home appreciation (FHFA national HPI, July 2025 to
+            July 2026, released September 29, 2026), the property gains about
+            $10,140 in value in year one. Mortgage principal paydown adds
+            roughly $2,933 at 7.40%. Combined, you recover about $13,073
+            against $23,292 in excess cash costs — still underwater after year
+            one in this simplified cash-flow view.
           </p>
           <p className="mt-4 text-ink-700">
             By year 5, cumulative extra ownership costs reach approximately
-            $59,760 ($801/month x 60 months + $11,700 closing). Equity from
-            appreciation ($80,300 at 3.8%/year) plus principal paydown ($23,600)
-            totals $103,900 — putting the buyer ahead by roughly $44,140. The
-            break-even point lands between years 3.5 and 4.5 in this scenario
-            at current appreciation rates. If appreciation slows to 2%, break-even
-            pushes to year 6.
+            $69,660 ($966/month × 60 months + $11,700 closing). Equity from
+            appreciation (about $51,500 cumulative at 2.6%/year compounded)
+            plus principal paydown (about $16,800) totals roughly $68,300 on top
+            of the original $78,000 down payment — putting net housing cost near
+            break-even with renting around years 4–5 in this scenario. If
+            appreciation slows to 1%, break-even pushes toward year 6 or later.
           </p>
           <p className="mt-4 text-ink-700">
-            At 6.65% mortgage rates, most financial planners cite 4.5 to 6 years
-            as the typical break-even range nationally — roughly 6 months shorter
-            than at 7%. High-appreciation markets like Charlotte or Tampa may
-            break even in 3.5 to 4.5 years. Slow-growth or declining markets —
-            parts of the Midwest and Northeast with flat prices — can take 7 to
-            9 years. If you sell before break-even, you also pay 5–6% in agent
-            commissions ($19,500–$23,400 on a $390,000 home), which can erase
-            another year of equity gains.
+            At 7.40% mortgage rates, many planners cite 4.5 to 6 years as a
+            typical break-even range nationally — longer than when rates were
+            near 6.5% mid-year. Faster-appreciation metros can break even
+            sooner; slow-growth markets can take 7 to 9 years. If you sell before
+            break-even, you also pay 5–6% in agent commissions
+            ($19,500–$23,400 on a $390,000 home), which can erase another year
+            of equity gains.
           </p>
           <p className="mt-4 text-ink-700">
-            The 6.65% rate environment still skews early payments heavily toward
-            interest. On a $312,000 loan at 6.65%, you pay $20,640 in interest
-            in year one versus only $3,288 toward principal. At 3%, that ratio
-            was roughly $9,000 interest and $6,800 principal. Even the modest
-            rate improvement from 7% to 6.65% adds about $600 more to annual
-            principal paydown, which compounds over time.
+            The 7.40% rate environment skews early payments heavily toward
+            interest. On a $312,000 loan at 7.40%, you pay about $22,990 in
+            interest in year one versus roughly $2,933 toward principal. At 3%,
+            that ratio was roughly $9,000 interest and $6,800 principal.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "FHFA, U.S. house prices up 2.6% year-over-year (July 2025–July 2026; release Sept. 29, 2026)",
+                href: "https://www.fhfa.gov/reports/house-price-index/2026/9",
+              },
+              {
+                label:
+                  "Freddie Mac PMMS archive (30-year rates Aug.–Oct. 2026)",
+                href: "https://www.freddiemac.com/pmms/archive",
+              },
+            ]}
+            checked="October 2026"
+            note="Break-even timing depends on rent growth, taxes, maintenance, and whether you invest the monthly gap."
+          />
         </section>
 
         {/* Section 3: Comparison Table */}
@@ -334,9 +390,10 @@ export default function RentVsBuyDecisionGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             The table below compares renting at $2,250/month against buying a
-            $390,000 home with 20% down ($78,000), a $312,000 mortgage at 6.65%,
+            $390,000 home with 20% down ($78,000), a $312,000 mortgage at 7.40%,
             and $11,700 in closing costs. Rent assumes 3% annual increases.
-            Home assumes 3.8% annual appreciation (current national rate).
+            Home assumes 2.6% annual appreciation (FHFA national year-over-year
+            rate through July 2026).
           </p>
           <div className="mt-6 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
@@ -357,7 +414,7 @@ export default function RentVsBuyDecisionGuide() {
                 <tr>
                   <td className="px-4 py-3">Monthly cost (year 1)</td>
                   <td className="px-4 py-3">$2,250</td>
-                  <td className="px-4 py-3">$3,051</td>
+                  <td className="px-4 py-3">$3,216</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Upfront cash required</td>
@@ -366,38 +423,38 @@ export default function RentVsBuyDecisionGuide() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3">5-year total housing spend</td>
-                  <td className="px-4 py-3">$143,560</td>
-                  <td className="px-4 py-3">$272,760</td>
+                  <td className="px-4 py-3">$143,347</td>
+                  <td className="px-4 py-3">$204,660</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">5-year equity / net position</td>
                   <td className="px-4 py-3">$0 equity</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">~$179,300 equity</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">~$148,500 equity</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">5-year net cost (spend minus equity)</td>
-                  <td className="px-4 py-3">$143,560</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">~$93,460</td>
+                  <td className="px-4 py-3">$143,347</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">~$56,170</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">10-year total housing spend</td>
-                  <td className="px-4 py-3">$310,400</td>
-                  <td className="px-4 py-3">$455,820</td>
+                  <td className="px-4 py-3">$309,525</td>
+                  <td className="px-4 py-3">$397,676</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">10-year equity / net position</td>
                   <td className="px-4 py-3">$0 equity</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">~$284,600 equity</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">~$234,000 equity</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">10-year net cost (spend minus equity)</td>
-                  <td className="px-4 py-3">$310,400</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">~$171,220</td>
+                  <td className="px-4 py-3">$309,525</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">~$163,700</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Break-even timeline</td>
                   <td className="px-4 py-3">N/A</td>
-                  <td className="px-4 py-3">~4 years</td>
+                  <td className="px-4 py-3">~4–5 years</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Flexibility to relocate</td>
@@ -409,9 +466,9 @@ export default function RentVsBuyDecisionGuide() {
           </div>
           <p className="mt-3 text-xs text-ink-500">
             *Net cost = total cash spent minus home equity (down payment + principal
-            paydown + appreciation at 3.8%/year). Does not include opportunity cost
+            paydown + appreciation at 2.6%/year). Does not include opportunity cost
             of invested down payment or selling costs. Rent total includes 3%
-            annual increases. Rate: 6.65% 30-year fixed as of October 2026.
+            annual increases. Rate: 7.40% 30-year fixed (PMMS, Oct. 15, 2026).
           </p>
         </section>
 
@@ -438,14 +495,13 @@ export default function RentVsBuyDecisionGuide() {
                 <h4 className="font-semibold text-ink-800">The Numbers</h4>
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Down payment (20%): $73,000 on $365,000 purchase</li>
-                  <li>Loan amount: $292,000 at 6.65%, 30-year fixed</li>
-                  <li>P&amp;I payment: $1,866/month</li>
-                  <li>Property tax: $292/month (0.96% Mecklenburg rate)</li>
-                  <li>Insurance: $167/month (0.55% — up from 0.5% due to
-                    rising premiums)</li>
+                  <li>Loan amount: $292,000 at 7.40%, 30-year fixed (PMMS Oct. 15, 2026)</li>
+                  <li>P&I payment: $2,022/month</li>
+                  <li>Property tax: $292/month (0.96% planning rate; Mecklenburg County levy 48.31¢ per $100 for FY2025 plus city taxes)</li>
+                  <li>Insurance: $167/month (0.55% planning assumption)</li>
                   <li>Maintenance (1.5%): $456/month</li>
-                  <li>True monthly ownership cost: $2,781/month</li>
-                  <li>Closing costs: ~$10,950</li>
+                  <li>True monthly ownership cost: $2,937/month</li>
+                  <li>Closing costs: ~$10,950 (3% of purchase price)</li>
                 </ul>
               </div>
             </div>
@@ -453,32 +509,53 @@ export default function RentVsBuyDecisionGuide() {
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">The Decision</h4>
               <p className="mt-2 text-sm text-ink-700">
-                Kevin and Lisa face a $581/month premium to own ($2,781 vs.
-                $2,200 rent). Their total housing cost would be 25.7% of gross
-                income — comfortably within the 28% guideline. Total debt ratio
-                with their $340/month obligations hits 28.8%, well under the 36%
-                lender limit. Charlotte&apos;s market has appreciated 4.4%
-                annually over the past five years, which shortens their break-even
-                to roughly 3.5 years at current 6.65% rates.
+                Kevin and Lisa face a $737/month premium to own ($2,937 vs.
+                $2,200 rent). Their total housing cost would be 27.1% of gross
+                income — within the 28% guideline. Total debt ratio
+                with their $340/month obligations hits 30.2%, still under the 36%
+                lender limit. FHFA data show Charlotte metro house prices up
+                about 1.4% year-over-year through Q2 2026, which modestly
+                shortens break-even versus the national 2.6% pace.
               </p>
               <p className="mt-2 text-sm text-ink-700">
                 They chose to buy — but with conditions. They kept $23,000 of
                 their $78,000 savings as an emergency fund (2.8 months of
                 expenses) rather than pushing to a 25% down payment. They budget
-                $456/month for maintenance from day one. Lisa&apos;s employer
-                requires in-office presence, and Kevin&apos;s remote role is
+                $456/month for maintenance from day one. Lisa's employer
+                requires in-office presence, and Kevin's remote role is
                 stable for at least 3 years with a contract extension likely.
-                Their 8–10 year horizon exceeds the 3.5-year break-even, and
-                Charlotte&apos;s below-national-average prices ($365,000 vs.
-                $420,800 national median) make the equity math favorable. The
-                rate drop from 7.0% to 6.65% saved them $72/month compared to
-                buying in early 2026 — $25,920 over the life of the loan. If
-                either had expected a move within 4 years, renting at $2,200 and
-                investing the $581 difference would have been the smarter
-                financial move.
+                Their 8–10 year horizon exceeds a roughly 4-year break-even in
+                this scenario, and Charlotte's purchase price ($365,000) sits
+                below the Census median new-home sale price of $410,700 (Q2
+                2026). Financing at 7.40% instead of 6.65% (August 2026 PMMS)
+                costs them about $147/month more in P&I on their $292,000
+                loan — roughly $53,000 more interest over 30 years than at
+                6.65%. If either had expected a move within
+                4 years, renting at $2,200 and investing the $737 difference
+                would have been the smarter financial move.
               </p>
             </div>
           </div>
+          <Sources
+            items={[
+              {
+                label:
+                  "FHFA / FRED, Charlotte-Concord-Gastonia HPI (Q2 2026)",
+                href: "https://fred.stlouisfed.org/series/ATNHPIUS16740Q",
+              },
+              {
+                label:
+                  "Census / HUD, median new home sale price $410,700 (Q2 2026)",
+                href: "https://fred.stlouisfed.org/series/MSPUS",
+              },
+              {
+                label:
+                  "Mecklenburg County, FY2025 property tax rate 48.31¢ per $100",
+                href: "https://news.mecknc.gov/bocc-adopts-25-billion-operating-budget-fy2025",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Section 5: When to Rent */}
@@ -495,7 +572,7 @@ export default function RentVsBuyDecisionGuide() {
             <li>
               <strong>You plan to move within 4 to 5 years.</strong> Selling
               costs (5–6% commission), closing costs, and the front-loaded
-              interest on a 6.65% mortgage mean short-term owners rarely come out
+              interest on a 7.40% mortgage mean short-term owners rarely come out
               ahead. A 3-year stay on a $390,000 home typically costs $30,000–$40,000
               more than renting after selling fees.
             </li>
@@ -503,11 +580,11 @@ export default function RentVsBuyDecisionGuide() {
               <strong>Your income is unstable or variable.</strong> Commission
               sales, freelance work, startup equity, or a single-income household
               with one partner considering a career change all increase risk. A
-              $3,051 monthly ownership cost is fixed; a $2,250 lease gives you
+              $3,216 monthly ownership cost is fixed; a $2,250 lease gives you
               flexibility to downsize if income drops 30%.
             </li>
             <li>
-              <strong>Local home prices are elevated relative to rents.</strong>
+              <strong>Local home prices are elevated relative to rents.</strong>{" "}
               When the price-to-rent ratio exceeds 20 (home price divided by
               annual rent), buying rarely makes financial sense. A $390,000 home
               renting for $2,250/month has a ratio of 14.4 — borderline. In San
@@ -518,11 +595,11 @@ export default function RentVsBuyDecisionGuide() {
               <strong>You need career flexibility.</strong> Relocating for a
               $25,000 raise, accepting a 2-year assignment in another city, or
               pursuing an advanced degree all favor renting. Breaking a lease
-              costs 1–2 months&apos; rent ($2,250–$4,500). Selling a home costs
+              costs 1–2 months' rent ($2,250–$4,500). Selling a home costs
               $19,500–$23,400 plus 60–120 days on market.
             </li>
             <li>
-              <strong>Buying would drain your emergency fund below 3 months.</strong>
+              <strong>Buying would drain your emergency fund below 3 months.</strong>{" "}
               If a $78,000 down payment plus $11,700 closing costs leaves you
               with less than $15,000 in liquid savings on a $5,000/month
               budget, one HVAC failure ($8,500) or job loss creates a crisis.
@@ -543,43 +620,63 @@ export default function RentVsBuyDecisionGuide() {
           </p>
           <ul className="mt-4 space-y-3 text-ink-700">
             <li>
-              <strong>You will stay 6 or more years.</strong> At 6.65% rates,
-              year 5 to 6 is where cumulative equity ($140,000+ on a $390,000
-              home at 3.8% appreciation) typically exceeds the total premium paid
+              <strong>You will stay 6 or more years.</strong> At 7.40% rates,
+              years 5 to 6 is often where cumulative equity on a $390,000 home
+              at roughly 2.6% FHFA-style appreciation exceeds the total premium paid
               over renting plus all transaction costs. Every year beyond 6 widens
-              the gap in the buyer&apos;s favor.
+              the gap in the buyer's favor.
             </li>
             <li>
               <strong>You have stable, predictable income.</strong> Dual-income
               households with 5+ years at current employers, W-2 salaried roles,
               and total housing under 28% of gross income ($3,033/month on
-              $130,000/year) can absorb the $801/month ownership premium without
+              $130,000/year) can absorb the $966/month ownership premium without
               sacrificing retirement savings or emergency fund contributions.
             </li>
             <li>
-              <strong>You can put 20% down without touching your emergency fund.</strong>
+              <strong>You can put 20% down without touching your emergency fund.</strong>{" "}
               A $78,000 down payment on a $390,000 home plus $11,700 closing
               costs requires $89,700 upfront — and you should still have
               $20,000–$30,000 in liquid savings afterward. Kevin and Lisa kept
               $23,000 in reserve; that discipline is what makes buying safe.
             </li>
             <li>
-              <strong>You want to build equity and control your housing costs.</strong>
-              A fixed 6.65% mortgage payment stays $1,994 for 30 years while
+              <strong>You want to build equity and control your housing costs.</strong>{" "}
+              A fixed 7.40% mortgage payment stays $2,160 for 30 years while
               rent rises 3% annually ($2,250 today becomes $3,024 in 10 years).
-              After year 10, the buyer&apos;s monthly cost advantage grows every
+              After year 10, the buyer's monthly cost advantage grows every
               year as rent climbs and the mortgage stays flat.
             </li>
             <li>
               <strong>Tax benefits apply to your situation.</strong> If you
-              itemize deductions and your combined mortgage interest ($20,640 in
-              year one on a $312,000 loan) plus property taxes exceed the
-              $30,000 standard deduction (2026 married filing jointly), the
-              mortgage interest deduction lowers your effective rate. In the 22%
-              bracket, a 6.65% mortgage effectively costs 5.19% after deduction.
-              Only about 10% of filers itemize, so verify this applies to you.
+              itemize deductions and your combined mortgage interest (about
+              $22,990 in year one on a $312,000 loan at 7.40%) plus property
+              taxes exceed the {usd(STANDARD_DEDUCTIONS.mfj)} standard deduction
+              for {TAX_DATA.taxYear} married filing jointly, the mortgage
+              interest deduction could lower your effective borrowing cost. On
+              this scenario, year-one interest plus $4,680 property tax totals
+              about $27,670 — below the standard deduction, so many couples still
+              take the standard amount.               IRS Statistics of Income (Publication 4801, tax year 2023) show
+              about 9.5% of returns filed Schedule A; verify your situation.
             </li>
           </ul>
+          <Sources
+            items={[
+              TAX_SOURCES.revProc,
+              {
+                label:
+                  "IRS SOI Publication 4801 (Rev. 6-2026), Schedule A filings tax year 2023",
+                href: "https://www.irs.gov/pub/irs-access/p4801_accessible.pdf",
+              },
+              {
+                label:
+                  "SEC, Beginners' Guide to Asset Allocation (stocks and long-term risk)",
+                href: "https://www.sec.gov/about/reports-publications/investorpubsassetallocationhtm",
+              },
+            ]}
+            checked={TAX_DATA.checkedOnLabel}
+            note={`Standard deduction shown is ${usd(STANDARD_DEDUCTIONS.mfj)} MFJ for tax year ${TAX_DATA.taxYear}.`}
+          />
         </section>
 
         {/* Section 7: Step-by-Step Framework */}
@@ -603,10 +700,10 @@ export default function RentVsBuyDecisionGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   If the answer is under 4 to 5 years, rent unless you have a
                   strong reason unrelated to money (aging parents nearby, kids in
-                  a specific school district with no rental options). At 6.65%
-                  rates, break-even requires at least 4.5 years in most markets.
-                  Write down a realistic year count — not &quot;forever,&quot;
-                  but &quot;until 2034 when our youngest starts college.&quot;
+                  a specific school district with no rental options). At 7.40%
+                  PMMS rates, break-even often requires at least 4.5 years in most markets.
+                  Write down a realistic year count — not "forever,"
+                  but "until 2034 when our youngest starts college."
                 </p>
               </div>
             </div>
@@ -619,11 +716,11 @@ export default function RentVsBuyDecisionGuide() {
                   Calculate true monthly cost for both options
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  For buying, add P&amp;I + property tax + insurance + maintenance
-                  (1–2% of home value/year). For renting, include renter&apos;s
+                  For buying, add P&I + property tax + insurance + maintenance
+                  (1–2% of home value/year). For renting, include renter's
                   insurance (~$18/month). Compare the gap — if it exceeds 25% of
                   your take-home pay, buying may strain your budget. On $8,100
-                  take-home, a $581/month gap (Kevin and Lisa) is 7.2% —
+                  take-home, a $737/month gap (Kevin and Lisa) is 9.1% —
                   manageable. A $1,200 gap would be 14.8% — risky.
                 </p>
               </div>
@@ -665,8 +762,8 @@ export default function RentVsBuyDecisionGuide() {
                     Rent vs Buy Calculator
                   </Link>
                   . If break-even exceeds your planned stay by 2+ years, renting
-                  wins on math alone. Charlotte at 4.4% appreciation broke even
-                  in 3.5 years for Kevin and Lisa; a flat market at 1% would
+                  wins on math alone.                   Charlotte at roughly 2–3% annual appreciation broke even
+                  in about 4 years for Kevin and Lisa; a flat market at 1% would
                   push that to 6+ years.
                 </p>
               </div>
@@ -682,9 +779,9 @@ export default function RentVsBuyDecisionGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Stability for children, freedom from landlord rules, ability to
                   renovate, and pride of ownership have real value — but assign
-                  them a dollar figure. If owning costs $581/month more and
-                  break-even is 3.5 years, you are paying $24,400 in premium over
-                  3.5 years for intangibles. If that trade-off feels worth it and
+                  them a dollar figure. If owning costs $737/month more and
+                  break-even is 4 years, you are paying $35,400 in premium over
+                  4 years for intangibles. If that trade-off feels worth it and
                   steps 1–4 check out, buy. If the math fails step 4, rent and
                   revisit when rates drop further or your timeline lengthens.
                 </p>

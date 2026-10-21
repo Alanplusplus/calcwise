@@ -10,11 +10,11 @@ export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <h1 className="text-3xl font-bold text-ink-900">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-ink-500">Last updated: August 2026</p>
+      <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
 
       <div className="prose mt-8">
         <p>
-          At CalcWise (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), we
+          At CalcWise ("we," "us," or "our"), we
           are committed to protecting your privacy. This policy explains what
           information we collect, how we use it, and your rights regarding your
           data.
@@ -62,27 +62,11 @@ export default function PrivacyPage() {
           and which content to improve.
         </p>
 
-        <h3>Advertising</h3>
-        <p>
-          This site displays advertisements through Google AdSense to support
-          our free tools. Google and its advertising partners may use cookies to
-          serve ads based on your prior visits to this or other websites. You
-          can opt out of personalized advertising by visiting{" "}
-          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">
-            Google&apos;s Ad Settings
-          </a>{" "}
-          or the{" "}
-          <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer">
-            Network Advertising Initiative opt-out page
-          </a>.
-        </p>
-
         <h2>How We Use Information</h2>
         <p>We use collected information to:</p>
         <ul>
           <li>Maintain and improve website performance</li>
           <li>Understand which calculators and content are most useful</li>
-          <li>Display relevant advertisements to support our free service</li>
           <li>Respond to inquiries sent via our contact page</li>
           <li>Comply with legal obligations</li>
         </ul>
@@ -90,7 +74,6 @@ export default function PrivacyPage() {
         <h2>Third-Party Services</h2>
         <p>We may use the following third-party services:</p>
         <ul>
-          <li><strong>Google AdSense:</strong> advertising display and revenue</li>
           <li><strong>Vercel:</strong> website hosting and content delivery</li>
         </ul>
         <p>
@@ -110,11 +93,10 @@ export default function PrivacyPage() {
         <ul>
           <li>Access any personal data we hold about you</li>
           <li>Request deletion of your data</li>
-          <li>Opt out of personalized advertising</li>
           <li>Use our calculators without providing any personal information</li>
         </ul>
 
-        <h2>Children&apos;s Privacy</h2>
+        <h2>Children's Privacy</h2>
         <p>
           Our website is not directed at children under 13. We do not knowingly
           collect personal information from children.

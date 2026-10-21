@@ -5,6 +5,37 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
+import {
+  MEDICARE_EMPLOYEE_RATE,
+  ORDINARY_BRACKETS,
+  SOCIAL_SECURITY_EMPLOYEE_RATE,
+  SOCIAL_SECURITY_WAGE_BASE,
+  STANDARD_DEDUCTIONS,
+  TAX_DATA,
+  TAX_SOURCES,
+  TOP_ORDINARY_RATE,
+  usd,
+} from "@/lib/tax-data";
+
+/** Single filer, no state income tax: federal income tax plus employee FICA on wages (2026 constants from tax-data.ts). */
+function estimateMonthlyTakeHomeSingle(grossAnnual: number): number {
+  const taxable = Math.max(0, grossAnnual - STANDARD_DEDUCTIONS.single);
+  let federal = 0;
+  let prev = 0;
+  for (const bracket of ORDINARY_BRACKETS.single) {
+    if (taxable <= prev) break;
+    federal += (Math.min(taxable, bracket.upTo) - prev) * bracket.rate;
+    prev = bracket.upTo;
+  }
+  if (taxable > prev) {
+    federal += (taxable - prev) * TOP_ORDINARY_RATE;
+  }
+  const ssWages = Math.min(grossAnnual, SOCIAL_SECURITY_WAGE_BASE);
+  const fica =
+    ssWages * SOCIAL_SECURITY_EMPLOYEE_RATE + grossAnnual * MEDICARE_EMPLOYEE_RATE;
+  return (grossAnnual - federal - fica) / 12;
+}
 
 export const metadata: Metadata = {
   title: "How to Save $50,000 in 3 Years: A Realistic Plan",
@@ -23,17 +54,17 @@ const faqs = [
   {
     question: "How much do I need to save per month to reach $50,000 in 3 years?",
     answer:
-      "Without any interest, you need to save $1,389 per month ($50,000 / 36 months). With a high-yield savings account earning 4.25-4.75% APY (typical rates as of September 2026), the required monthly contribution drops to approximately $1,300-$1,315 because compound interest does some of the work for you.",
+      "Without any interest, you need to save $1,389 per month ($50,000 / 36 months). With a high-yield savings account earning about 4.25-4.75% APY (example top-tier online rates as of mid-October 2026), the required monthly contribution drops to roughly $1,290-$1,300 because compound interest does some of the work for you.",
   },
   {
     question: "Can I save $50,000 in 3 years on a $60,000 salary?",
     answer:
-      "It's extremely difficult but possible with aggressive lifestyle changes. On a $60,000 gross salary (approximately $3,750/month after taxes), saving $1,389 leaves only $2,361 for all expenses. You'd likely need to supplement with side income of $500-800/month and keep housing costs under $1,200/month. A more comfortable path requires either a higher salary or a longer timeline.",
+      "It's extremely difficult but possible with aggressive lifestyle changes. On a $60,000 gross salary (about $4,200/month take-home for a single filer with no state income tax in 2026, before benefits), saving $1,389 leaves limited room for housing and essentials. You'd likely need side income of $500-800/month and tight housing costs. A more comfortable path requires either a higher salary or a longer timeline.",
   },
   {
     question: "Where should I keep my $50,000 savings goal money?",
     answer:
-      "A high-yield savings account (HYSA) is the best option for a 3-year goal. As of fall 2026, the best HYSAs offer 4.25-4.75% APY with FDIC insurance. Avoid investing this money in stocks — a 3-year timeline is too short to recover from a potential market downturn. CDs can work if you use a CD ladder strategy, but they sacrifice flexibility.",
+      "A high-yield savings account (HYSA) is the best option for a 3-year goal. As of mid-October 2026, many top online HYSAs advertise about 4.25-4.75% APY with FDIC insurance up to $250,000 per depositor, per bank. Avoid investing this money in stocks — a 3-year timeline is too short to recover from a potential market downturn. CDs can work if you use a CD ladder strategy, but they sacrifice flexibility.",
   },
   {
     question: "What if I fall behind on my savings goal?",
@@ -43,13 +74,23 @@ const faqs = [
   {
     question: "Should I pay off debt before saving $50,000?",
     answer:
-      "It depends on the interest rate. Pay off credit card debt (18-25% APR) first — no savings account can match that guaranteed return. For student loans under 5-6%, you can save and pay simultaneously. For a car loan at 4-7%, consider the minimum payments while saving. The math is simple: if your debt interest rate exceeds your savings rate (currently 4.25-4.75%), pay the debt first.",
+      "It depends on the interest rate. Pay off credit card balances first when you are paying assessed interest — the Federal Reserve's G.19 release put the average APR on credit card accounts assessed interest at 22.36% in August 2026. No savings account matches that guaranteed cost. For student loans under 5-6%, you can save and pay simultaneously. For a car loan at 4-7%, consider minimum payments while saving. If your debt rate exceeds your HYSA rate (often about 4.25-4.75% at top online banks as of mid-October 2026), prioritize the debt.",
   },
   {
     question: "What happens to my savings plan if HYSA rates drop?",
     answer:
-      "HYSA rates can fluctuate with Federal Reserve policy. If your rate drops from 4.5% to 3.5%, the total interest earned over 3 years decreases by roughly $800-$1,000, meaning you'd need to increase your monthly deposit by about $25-$30. Run the updated numbers in a savings goal calculator each quarter and adjust your automatic transfer accordingly. The good news: even at 3.5% APY, a HYSA still beats a traditional savings account (0.5% national average) by over $2,700 on a $50,000 goal.",
+      "HYSA rates can fluctuate with Federal Reserve policy. If your rate drops from 4.5% to 3.5% while you still target $50,000 in 36 months, plan on adding about $20-$25 per month to your transfer. Run the updated numbers in a savings goal calculator each quarter and adjust your automatic transfer accordingly. Even at 3.5% APY, a HYSA still beats leaving deposits in an account earning the FDIC national average savings rate (0.38% as of October 19, 2026) by roughly $3,100 in extra interest over 36 months of $1,300/month deposits.",
   },
+];
+
+const MONTHLY_SAVINGS_TARGET = 1300;
+
+const SALARY_FEASIBILITY: { gross: number; label: string; className: string }[] = [
+  { gross: 50000, label: "Very difficult", className: "text-amber-700" },
+  { gross: 65000, label: "Challenging but doable", className: "text-amber-700" },
+  { gross: 75000, label: "Realistic", className: "text-brand-700" },
+  { gross: 90000, label: "Comfortable", className: "text-brand-700" },
+  { gross: 120000, label: "Highly achievable", className: "text-brand-700" },
 ];
 
 export default function Save50000In3YearsGuide() {
@@ -61,7 +102,7 @@ export default function Save50000In3YearsGuide() {
         description="A step-by-step plan to save $50,000 in 3 years on an average salary. Includes monthly targets, budget breakdowns, a real case study, and strategies that actually work."
         slug="save-50000-in-3-years"
         datePublished="2026-08-24"
-        dateModified="2026-09-29"
+        dateModified="2026-10-20"
         image="/images/guides/save-50000-in-3-years.webp"
       />
       <BreadcrumbJsonLd
@@ -89,7 +130,7 @@ export default function Save50000In3YearsGuide() {
             into a system anyone earning $75,000+ can follow. This guide maps out
             exactly how to get there.
           </p>
-          <p className="mt-2 text-sm text-ink-500">Last updated: September 2026</p>
+          <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
         </header>
 
         {/* TL;DR */}
@@ -100,11 +141,12 @@ export default function Save50000In3YearsGuide() {
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
               <strong>Monthly target:</strong> $1,389/month without interest, or
-              ~$1,305/month with a 4.50% APY savings account
+              ~$1,300/month with a 4.50% APY savings account
             </li>
             <li>
-              <strong>Best vehicle:</strong> High-yield savings account (4.25-4.75%
-              APY as of fall 2026) — not stocks, not CDs
+              <strong>Best vehicle:</strong> High-yield savings account (example top
+              online rates about 4.25-4.75% APY as of mid-October 2026) — not stocks,
+              not CDs
             </li>
             <li>
               <strong>The formula:</strong> 60% budget cuts + 30% income boost +
@@ -139,7 +181,7 @@ export default function Save50000In3YearsGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/save-50000-in-3-years.webp"
-              alt="Infographic showing a 3-year savings timeline from $0 to $50,000, with monthly target of $1,389 broken into budget cuts, side income, and interest earnings"
+              alt="Infographic showing a 3-year savings timeline from $0 to $50,193 by saving $1,300 per month at 4.50% APY: $15,986 at month 12, $32,705 at month 24, and $50,193 at month 36, made of $46,800 in deposits and $3,393 in interest"
               width={1200}
               height={800}
               quality={80}
@@ -147,7 +189,7 @@ export default function Save50000In3YearsGuide() {
               priority
             />
             <figcaption className="bg-ink-50 px-4 py-2 text-center text-sm text-ink-500">
-              The 3-year path to $50,000: consistent monthly contributions plus compound interest
+              The 3-year path to $50,000: $1,300 a month at an example 4.50% APY reaches $50,193, of which $3,393 is interest
             </figcaption>
           </figure>
         </section>
@@ -164,10 +206,10 @@ export default function Save50000In3YearsGuide() {
           </p>
           <p className="mt-4 text-ink-700">
             But you are not going to use a mattress. A high-yield savings account
-            paying 4.50% APY (available from top online banks as of September 2026) means
-            compound interest contributes roughly $3,440 of that $50,000 over
+            paying 4.50% APY (example rates at top online banks as of mid-October 2026)
+            means compound interest contributes roughly $3,400 of that $50,000 over
             three years. Your actual monthly contribution drops to approximately
-            $1,293 — saving you $96/month compared to the zero-interest baseline.
+            $1,295 ($1,300 rounded) — saving you about $89/month compared to the zero-interest baseline.
           </p>
           <p className="mt-4 text-ink-700">
             Here is how the money grows month by month at 4.50% APY:
@@ -188,54 +230,68 @@ export default function Save50000In3YearsGuide() {
                 <tr>
                   <td className="px-4 py-3">Month 6</td>
                   <td className="px-4 py-3">6</td>
-                  <td className="px-4 py-3">$7,758</td>
-                  <td className="px-4 py-3">$87</td>
-                  <td className="px-4 py-3">$7,845</td>
+                  <td className="px-4 py-3">$7,800</td>
+                  <td className="px-4 py-3">$103</td>
+                  <td className="px-4 py-3">$7,903</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Year 1</td>
                   <td className="px-4 py-3">12</td>
-                  <td className="px-4 py-3">$15,516</td>
-                  <td className="px-4 py-3">$354</td>
-                  <td className="px-4 py-3">$15,870</td>
+                  <td className="px-4 py-3">$15,600</td>
+                  <td className="px-4 py-3">$386</td>
+                  <td className="px-4 py-3">$15,986</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Month 18</td>
                   <td className="px-4 py-3">18</td>
-                  <td className="px-4 py-3">$23,274</td>
-                  <td className="px-4 py-3">$805</td>
-                  <td className="px-4 py-3">$24,079</td>
+                  <td className="px-4 py-3">$23,400</td>
+                  <td className="px-4 py-3">$852</td>
+                  <td className="px-4 py-3">$24,252</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Year 2</td>
                   <td className="px-4 py-3">24</td>
-                  <td className="px-4 py-3">$31,032</td>
-                  <td className="px-4 py-3">$1,446</td>
-                  <td className="px-4 py-3">$32,478</td>
+                  <td className="px-4 py-3">$31,200</td>
+                  <td className="px-4 py-3">$1,505</td>
+                  <td className="px-4 py-3">$32,705</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Month 30</td>
                   <td className="px-4 py-3">30</td>
-                  <td className="px-4 py-3">$38,790</td>
-                  <td className="px-4 py-3">$2,285</td>
-                  <td className="px-4 py-3">$41,075</td>
+                  <td className="px-4 py-3">$39,000</td>
+                  <td className="px-4 py-3">$2,351</td>
+                  <td className="px-4 py-3">$41,351</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3 font-medium">Year 3 (Goal)</td>
                   <td className="px-4 py-3 font-medium">36</td>
-                  <td className="px-4 py-3 font-medium">$46,548</td>
-                  <td className="px-4 py-3 font-medium">$3,452</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$50,000</td>
+                  <td className="px-4 py-3 font-medium">$46,800</td>
+                  <td className="px-4 py-3 font-medium">$3,393</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$50,193</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *Based on $1,293/month deposits into a 4.50% APY high-yield savings account with monthly compounding. Rates as of September 2026; actual interest may vary with rate changes.
+            *Based on $1,300/month deposits into a 4.50% APY high-yield savings account with monthly compounding (exact $50,000 in 36 months requires about $1,295/month). Example HYSA rate as of mid-October 2026; actual interest may vary with rate changes.
           </p>
+          <Sources
+            items={[
+              {
+                label: "FDIC national deposit rates (Oct. 19, 2026)",
+                href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+              },
+              {
+                label: "Federal Reserve, FOMC target range 3.75%-4.00% (Sept. 17, 2026)",
+                href: "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+              },
+            ]}
+            checked="October 2026"
+            note="Milestone table uses a 4.50% example HYSA APY; FDIC national average savings was 0.38%."
+          />
 
           <p className="mt-6 text-ink-700">
-            The key insight: interest contributes $3,452 — nearly 2.5 full months of
+            The key insight: interest contributes $3,393 — nearly 2.6 full months of
             deposits you do not have to make. Every dollar saved earlier in the
             timeline earns more interest, which is why front-loading contributions
             (saving more in Year 1) accelerates the goal significantly.
@@ -248,7 +304,7 @@ export default function Save50000In3YearsGuide() {
             What Income Do You Actually Need?
           </h2>
           <p className="mt-4 text-ink-700">
-            Saving $1,293/month requires a certain minimum take-home pay to
+            Saving ${MONTHLY_SAVINGS_TARGET.toLocaleString()}/month requires a certain minimum take-home pay to
             remain realistic. Financial experts generally agree that saving more
             than 30-35% of take-home pay is unsustainable long-term without
             extreme lifestyle sacrifices. Here is the salary math:
@@ -260,47 +316,38 @@ export default function Save50000In3YearsGuide() {
                 <tr className="border-b-2 border-ink-200 bg-ink-50">
                   <th className="px-4 py-3 text-left font-semibold text-ink-800">Gross Annual Salary</th>
                   <th className="px-4 py-3 text-left font-semibold text-ink-800">Monthly Take-Home (est.)</th>
-                  <th className="px-4 py-3 text-left font-semibold text-ink-800">$1,293 as % of Take-Home</th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    ${MONTHLY_SAVINGS_TARGET.toLocaleString()} as % of Take-Home
+                  </th>
                   <th className="px-4 py-3 text-left font-semibold text-ink-800">Feasibility</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-ink-100">
-                <tr>
-                  <td className="px-4 py-3">$50,000</td>
-                  <td className="px-4 py-3">$3,333</td>
-                  <td className="px-4 py-3">38.8%</td>
-                  <td className="px-4 py-3 text-amber-700">Very difficult</td>
-                </tr>
-                <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">$65,000</td>
-                  <td className="px-4 py-3">$4,167</td>
-                  <td className="px-4 py-3">31.0%</td>
-                  <td className="px-4 py-3 text-amber-700">Challenging but doable</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3">$75,000</td>
-                  <td className="px-4 py-3">$4,688</td>
-                  <td className="px-4 py-3">27.6%</td>
-                  <td className="px-4 py-3 text-brand-700">Realistic</td>
-                </tr>
-                <tr className="bg-ink-50/50">
-                  <td className="px-4 py-3">$90,000</td>
-                  <td className="px-4 py-3">$5,500</td>
-                  <td className="px-4 py-3">23.5%</td>
-                  <td className="px-4 py-3 text-brand-700">Comfortable</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3">$120,000</td>
-                  <td className="px-4 py-3">$7,000</td>
-                  <td className="px-4 py-3">18.5%</td>
-                  <td className="px-4 py-3 text-brand-700">Highly achievable</td>
-                </tr>
+                {SALARY_FEASIBILITY.map((row, i) => {
+                  const takeHome = estimateMonthlyTakeHomeSingle(row.gross);
+                  const pct = ((MONTHLY_SAVINGS_TARGET / takeHome) * 100).toFixed(1);
+                  return (
+                    <tr key={row.gross} className={i % 2 === 1 ? "bg-ink-50/50" : undefined}>
+                      <td className="px-4 py-3">${row.gross.toLocaleString()}</td>
+                      <td className="px-4 py-3">${Math.round(takeHome).toLocaleString()}</td>
+                      <td className="px-4 py-3">{pct}%</td>
+                      <td className={`px-4 py-3 ${row.className}`}>{row.label}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
-            *Take-home estimates assume single filer, standard deduction, no state income tax. Your actual take-home varies by state, filing status, and pre-tax deductions.
+            *Take-home uses {TAX_DATA.taxYear} federal brackets, the{" "}
+            {usd(STANDARD_DEDUCTIONS.single)} standard deduction (single), employee
+            Social Security and Medicare, and no state income tax. Your actual
+            take-home varies by state, filing status, and pre-tax deductions.
           </p>
+          <Sources
+            items={[TAX_SOURCES.revProc, TAX_SOURCES.ssaWageBase]}
+            checked={TAX_DATA.checkedOnLabel}
+          />
 
           <p className="mt-6 text-ink-700">
             If your income puts you in the "very difficult" range, you have two
@@ -337,9 +384,9 @@ export default function Save50000In3YearsGuide() {
                   <li>Cut subscriptions from $187 to $45 (saved $142)</li>
                   <li>Meal prepped lunches — food from $680 to $420 (saved $260)</li>
                   <li>Started freelance copywriting: $600-900/month</li>
-                  <li>Opened a 4.50% APY HYSA (Marcus by Goldman Sachs)</li>
+                  <li>Opened a 4.50% APY HYSA (example top online rate as of mid-October 2026)</li>
                   <li>Automated $1,350 transfer every payday</li>
-                  <li>Kept student loan at minimum (4.2% &lt; 4.50% savings rate)</li>
+                  <li>Kept student loan at minimum (4.2% {"<"} 4.50% savings rate)</li>
                 </ul>
               </div>
             </div>
@@ -377,12 +424,11 @@ export default function Save50000In3YearsGuide() {
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">Results After 18 Months</h4>
               <p className="mt-2 text-sm text-ink-700">
-                Jessica&apos;s HYSA balance hit $25,400 — slightly ahead of
-                schedule because her freelance income averaged $750/month (she
-                deposited this as a bonus on top of her $1,350 base). She also
-                received a $3,200 tax refund in Year 1 that went straight into
-                savings. At month 18, she was tracking to reach $50,000 by month
-                32 — four months early. She adjusted her freelance hours down
+                Jessica's HYSA balance reached about $27,750 from her $1,350
+                automated transfers alone by month 18 (starting from $2,400 at
+                4.50% APY). Freelance income averaging $750/month and a $3,200 tax
+                refund in Year 1 pushed her further ahead of the milestone table.
+                She adjusted her freelance hours down
                 slightly and added back a $50/month gym membership she had
                 canceled without feeling guilty.
               </p>
@@ -393,11 +439,11 @@ export default function Save50000In3YearsGuide() {
         {/* Section 4: Budget Breakdown Strategies */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-ink-900">
-            Where to Find $1,293/Month: Budget Cuts That Actually Work
+            Where to Find $1,300/Month: Budget Cuts That Actually Work
           </h2>
           <p className="mt-4 text-ink-700">
             Most savings advice tells you to "cut lattes." That saves $150/month
-            at best. To find $1,293+, you need to attack the three biggest expense
+            at best. To find $1,300+, you need to attack the three biggest expense
             categories — housing, transportation, and food — which typically
             consume 65-75% of take-home pay.
           </p>
@@ -537,9 +583,8 @@ export default function Save50000In3YearsGuide() {
                   Open a high-yield savings account (Day 1)
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  Choose a bank offering 4.25%+ APY with no minimum balance and no
-                  monthly fees. As of September 2026, top options include Marcus (Goldman
-                  Sachs) at 4.50% APY, Ally Bank at 4.25% APY, and Capital One 360 at 4.30% APY. Separate this from your
+                  Choose a bank offering about 4.25%+ APY with no minimum balance and no
+                  monthly fees. As of mid-October 2026, example advertised rates at major online banks include roughly 4.20%-4.50% APY (shop current yields before opening). Separate this from your
                   checking account — out of sight, out of mind. Do not get a
                   linked debit card.
                 </p>
@@ -578,10 +623,10 @@ export default function Save50000In3YearsGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Set up an automatic recurring transfer from checking to your
                   HYSA for the morning after each payday. If paid biweekly,
-                  split it: $647/paycheck. The transfer must happen before you
+                  split it: about $650/paycheck. The transfer must happen before you
                   see the money in your checking account. This is non-negotiable
-                  — willpower-based savings fail 73% of the time according to
-                  behavioral finance research.
+                  — manual savings plans fail when life gets busy; automation removes
+                  the decision each month.
                 </p>
               </div>
             </div>
@@ -665,9 +710,9 @@ export default function Save50000In3YearsGuide() {
                 Manual savings requires 36 consecutive decisions to transfer
                 money. Each one is an opportunity to rationalize skipping "just
                 this month." Automatic transfers remove decision fatigue entirely.
-                Research from the National Bureau of Economic Research shows
-                automatic enrollment increases savings rates by 55% compared to
-                opt-in systems.
+                NBER research on 401(k) automatic enrollment found participation
+                in tenure months 3–15 rose from 37% to 86% when the default switched
+                from opt-in to auto-enroll (Madrian and Shea).
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
@@ -741,6 +786,25 @@ export default function Save50000In3YearsGuide() {
             </Link>
           </div>
         </section>
+
+        <Sources
+          items={[
+            {
+              label: "Federal Reserve G.19, credit card APR (Aug. 2026 release)",
+              href: "https://www.federalreserve.gov/releases/g19/current/",
+            },
+            {
+              label: "FDIC deposit insurance ($250,000 per depositor, per bank)",
+              href: "https://www.fdic.gov/resources/deposit-insurance/financial-products-insured/",
+            },
+            {
+              label: "NBER Working Paper 7682, Madrian & Shea (401(k) automatic enrollment)",
+              href: "https://www.nber.org/papers/w7682",
+            },
+          ]}
+          checked="October 2026"
+          className="mt-12"
+        />
 
         {/* FAQ Section */}
         <section className="mt-12">

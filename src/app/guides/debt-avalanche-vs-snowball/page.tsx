@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "Debt Avalanche vs Snowball Method: Which Gets You Debt-Free Faster?",
@@ -24,7 +25,7 @@ const faqs = [
   {
     question: "Which saves more money: debt avalanche or debt snowball?",
     answer:
-      "The debt avalanche saves more money in virtually every scenario because you eliminate high-interest debt first. In a typical $38,000 portfolio with $400/month in extra payments, avalanche saves approximately $347 in total interest and finishes 2 months sooner than snowball. The gap widens as interest rate spreads increase — a portfolio with a 24% credit card and a 4% student loan can see avalanche save $900-$1,400 over snowball.",
+      "The debt avalanche saves more money in virtually every scenario because you eliminate high-interest debt first. In a typical $38,000 portfolio with $400/month in extra payments, avalanche saves about $108 in total interest versus snowball (both methods share the same 44-month debt-free timeline when the highest-rate debt is also the smallest balance). The gap widens as interest rate spreads increase — a portfolio with a 24% credit card and a 4% student loan can see avalanche save hundreds of dollars over snowball.",
   },
   {
     question: "Is the debt snowball method ever better than avalanche?",
@@ -49,7 +50,7 @@ const faqs = [
   {
     question: "Should I use a debt consolidation loan instead of avalanche or snowball?",
     answer:
-      "It depends on the rate you qualify for. If you can consolidate $38,000 in mixed-rate debt into a single personal loan at 9-11% APR, you simplify payments and potentially lower your blended rate. However, as of Q4 2026 the average personal loan rate sits near 12.4%, which only helps if your current blended rate exceeds that. Also beware of origination fees (typically 1-8% of the loan amount) — a 5% fee on $38,000 adds $1,900 in costs upfront. Run both scenarios in our Debt Payoff Calculator before committing.",
+      "It depends on the rate you qualify for. If you can consolidate $38,000 in mixed-rate debt into a single personal loan at 9-11% APR, you simplify payments and potentially lower your blended rate. However, as of mid-October 2026 the latest Federal Reserve G.19 release (August 2026 data) shows the average bank rate on 24-month personal loans at 11.90%, which only helps if your current blended rate exceeds that. Also budget for origination fees (often 1-8% of the loan amount on marketplace personal loans) — a 5% fee on $38,000 adds $1,900 in costs upfront. Run both scenarios in our Debt Payoff Calculator before committing.",
   },
 ];
 
@@ -62,7 +63,7 @@ export default function DebtAvalancheVsSnowballGuide() {
         description="Debt avalanche vs snowball compared with real numbers. See which payoff method saves more interest, gets you debt-free faster, and fits your personality."
         slug="debt-avalanche-vs-snowball"
         datePublished="2026-08-24"
-        dateModified="2026-10-01"
+        dateModified="2026-10-20"
         image="/images/guides/debt-avalanche-vs-snowball.webp"
       />
       <BreadcrumbJsonLd
@@ -105,8 +106,8 @@ export default function DebtAvalancheVsSnowballGuide() {
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
               <strong>Debt avalanche (highest rate first):</strong> Saves
-              $347 in interest and finishes 2 months sooner on a typical $38,000
-              portfolio — always the math winner
+              about $108 in interest on a typical $38,000 portfolio — the math
+              winner whenever high-rate debts dominate
             </li>
             <li>
               <strong>Debt snowball (smallest balance first):</strong> Costs
@@ -115,8 +116,8 @@ export default function DebtAvalancheVsSnowballGuide() {
             </li>
             <li>
               <strong>The real gap:</strong> On $38,000 with $400/month extra,
-              avalanche takes 37 months and costs $5,041 in interest; snowball
-              takes 39 months and costs $5,388
+              avalanche takes 44 months and costs $6,267 in interest; snowball
+              takes 44 months and costs $6,375
             </li>
             <li>
               <strong>Best hybrid:</strong> Avalanche for anything above 15% APR,
@@ -147,7 +148,7 @@ export default function DebtAvalancheVsSnowballGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/debt-avalanche-vs-snowball.webp"
-              alt="Infographic comparing debt avalanche and debt snowball methods: avalanche targets highest interest rate first saving $291 on $38,000 debt, snowball targets smallest balance first for faster psychological wins"
+              alt="Infographic comparing debt avalanche and debt snowball methods: avalanche targets highest interest rate first to save interest on $38,000 debt, snowball targets smallest balance first for faster psychological wins"
               width={1200}
               height={800}
               quality={80}
@@ -180,20 +181,22 @@ export default function DebtAvalancheVsSnowballGuide() {
           <p className="mt-2 text-ink-700">
             Avalanche prioritizes the debt with the highest interest rate,
             regardless of balance size. The logic is straightforward: every
-            dollar applied to a 23.5% credit card saves you $0.235 per year in
-            future interest, while a dollar on a 5.0% student loan saves only
-            $0.05. You always attack the most expensive debt first.
+            dollar applied to a 22.36% credit card (the Federal Reserve G.19
+            average for accounts assessed interest as of August 2026) saves you $0.224 per
+            year in future interest, while a dollar on a 6.52% undergraduate
+            federal student loan saves only $0.065. You always attack the most
+            expensive debt first.
           </p>
           <p className="mt-4 text-ink-700">
             The formula for monthly interest on any debt is:
           </p>
           <div className="mt-3 rounded-lg border border-ink-200 bg-ink-50 px-4 py-3 font-mono text-sm text-ink-800">
-            Monthly Interest = Balance &times; (APR &divide; 12)
+            Monthly Interest = Balance × (APR ÷ 12)
           </div>
           <p className="mt-4 text-ink-700">
-            On an $8,500 credit card at 23.5% APR, monthly interest is $166.46.
-            On a $14,500 student loan at 5.0%, it is $60.42. Avalanche sends
-            your extra $400/month to the credit card first, eliminating $166.46
+            On an $8,500 credit card at 22.36% APR, monthly interest is $158.38.
+            On a $14,500 student loan at 6.52%, it is $78.78. Avalanche sends
+            your extra $400/month to the credit card first, eliminating $158.38
             in monthly interest charges as fast as possible.
           </p>
 
@@ -257,19 +260,19 @@ export default function DebtAvalancheVsSnowballGuide() {
                 <tr>
                   <td className="px-4 py-3">Credit card</td>
                   <td className="px-4 py-3">$8,500</td>
-                  <td className="px-4 py-3">23.5%</td>
+                  <td className="px-4 py-3">22.36%</td>
                   <td className="px-4 py-3">$170</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Car loan</td>
                   <td className="px-4 py-3">$15,000</td>
-                  <td className="px-4 py-3">7.1%</td>
+                  <td className="px-4 py-3">7.54%</td>
                   <td className="px-4 py-3">$294</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Student loan</td>
                   <td className="px-4 py-3">$14,500</td>
-                  <td className="px-4 py-3">5.0%</td>
+                  <td className="px-4 py-3">6.52%</td>
                   <td className="px-4 py-3">$150</td>
                 </tr>
                 <tr className="bg-brand-50/50 font-medium">
@@ -301,68 +304,86 @@ export default function DebtAvalancheVsSnowballGuide() {
                 <tr>
                   <td className="px-4 py-3">Payoff order</td>
                   <td className="px-4 py-3">
-                    Credit card (23.5%) &rarr; Car (7.1%) &rarr; Student (5.0%)
+                    Credit card (22.36%) → Car (7.54%) → Student (6.52%)
                   </td>
                   <td className="px-4 py-3">
-                    Credit card ($8,500) &rarr; Student ($14,500) &rarr; Car
+                    Credit card ($8,500) → Student ($14,500) → Car
                     ($15,000)
                   </td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">First debt eliminated</td>
-                  <td className="px-4 py-3">Month 17 (credit card)</td>
-                  <td className="px-4 py-3">Month 17 (credit card)</td>
+                  <td className="px-4 py-3">Month 18 (credit card)</td>
+                  <td className="px-4 py-3">Month 18 (credit card)</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Second debt eliminated</td>
-                  <td className="px-4 py-3">Month 34 (car loan)</td>
-                  <td className="px-4 py-3">Month 36 (student loan)</td>
+                  <td className="px-4 py-3">Month 32 (car loan)</td>
+                  <td className="px-4 py-3">Month 37 (student loan)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Debt-free date</td>
                   <td className="px-4 py-3 font-medium text-brand-700">
-                    Month 37
+                    Month 44
                   </td>
-                  <td className="px-4 py-3">Month 39</td>
+                  <td className="px-4 py-3">Month 44</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Total interest paid</td>
                   <td className="px-4 py-3 font-medium text-brand-700">
-                    $5,041
+                    $6,267
                   </td>
-                  <td className="px-4 py-3">$5,388</td>
+                  <td className="px-4 py-3">$6,375</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">Interest difference</td>
                   <td className="px-4 py-3 font-medium text-brand-700">
-                    Saves $347
+                    Saves $108
                   </td>
-                  <td className="px-4 py-3">Costs $347 more</td>
+                  <td className="px-4 py-3">Costs $108 more</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">Total amount paid</td>
-                  <td className="px-4 py-3">$43,041</td>
-                  <td className="px-4 py-3">$43,388</td>
+                  <td className="px-4 py-3">$44,267</td>
+                  <td className="px-4 py-3">$44,375</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-ink-500">
             *Assumes $400/month extra on top of $614 in minimum payments ($1,014
-            total). Credit card rate reflects the Q4 2026 average of 23.5% APR.
-            Calculations use standard monthly compounding. Figures are
-            approximate — use our calculators for your exact debts.
+            total). Credit card APR reflects the 22.36% G.19 average for accounts
+            assessed interest (August 2026, release Oct. 7, 2026); car and student
+            rates reflect G.19 and 2026-27 federal undergraduate loan rates.
+            Calculations use standard monthly compounding with rolled minimum
+            payments. Payoff table figures recomputed October 2026 — use our
+            calculators for your exact debts.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "Federal Reserve — G.19 Consumer Credit terms of credit (Aug. 2026, Oct. 7, 2026 release)",
+                href: "https://www.federalreserve.gov/releases/g19/current/default.htm",
+              },
+              {
+                label:
+                  "Federal Student Aid — Direct Loan rates 2026-27 (June 4, 2026)",
+                href: "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-06-04/interest-rates-federal-direct-loans-first-disbursed-between-july-1-2026-and-june-30-2027",
+              },
+            ]}
+            checked="October 2026"
+          />
 
           <div className="mt-6 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4">
             <p className="font-medium text-amber-800">Key Insight</p>
             <p className="mt-1 text-sm text-amber-700">
-              Both methods eliminate the $8,500 credit card in month 17 because
+              Both methods eliminate the $8,500 credit card in month 18 because
               it is both the highest-rate and smallest-balance debt. The
-              divergence happens next: avalanche targets the 7.1% car loan while
-              snowball targets the 5.0% student loan. That 2.1-percentage-point
-              difference on $14,500-$15,000 over 18 months accounts for the
-              entire $347 gap.
+              divergence happens next: avalanche targets the 7.54% car loan while
+              snowball targets the 6.52% student loan. That rate-order difference
+              on similar $14,500-$15,000 balances accounts for the $108 interest
+              gap even though both portfolios become debt-free in month 44.
             </p>
           </div>
         </section>
@@ -390,7 +411,7 @@ export default function DebtAvalancheVsSnowballGuide() {
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Store credit card: $3,200 at 26.49% ($64 min)</li>
                   <li>Visa card: $1,800 at 21.99% ($36 min)</li>
-                  <li>Personal loan: $6,600 at 12.4% ($145 min)</li>
+                  <li>Personal loan: $6,600 at 11.9% ($145 min)</li>
                   <li>Car loan: $12,400 at 7.8% ($245 min)</li>
                 </ul>
               </div>
@@ -441,57 +462,57 @@ export default function DebtAvalancheVsSnowballGuide() {
                       <td className="px-3 py-2">1</td>
                       <td className="px-3 py-2">$2,857</td>
                       <td className="px-3 py-2">$1,797</td>
-                      <td className="px-3 py-2">$6,523</td>
+                      <td className="px-3 py-2">$6,520</td>
                       <td className="px-3 py-2">$12,236</td>
-                      <td className="px-3 py-2">$23,413</td>
+                      <td className="px-3 py-2">$23,410</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">2</td>
                       <td className="px-3 py-2">$2,506</td>
                       <td className="px-3 py-2">$1,794</td>
-                      <td className="px-3 py-2">$6,446</td>
-                      <td className="px-3 py-2">$12,071</td>
-                      <td className="px-3 py-2">$22,817</td>
+                      <td className="px-3 py-2">$6,440</td>
+                      <td className="px-3 py-2">$12,070</td>
+                      <td className="px-3 py-2">$22,810</td>
                     </tr>
                     <tr className="bg-ink-50/50">
                       <td className="px-3 py-2">3</td>
                       <td className="px-3 py-2">$2,147</td>
                       <td className="px-3 py-2">$1,791</td>
-                      <td className="px-3 py-2">$6,369</td>
+                      <td className="px-3 py-2">$6,359</td>
                       <td className="px-3 py-2">$11,904</td>
-                      <td className="px-3 py-2">$22,211</td>
+                      <td className="px-3 py-2">$22,201</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">4</td>
                       <td className="px-3 py-2">$1,780</td>
                       <td className="px-3 py-2">$1,788</td>
-                      <td className="px-3 py-2">$6,291</td>
-                      <td className="px-3 py-2">$11,737</td>
-                      <td className="px-3 py-2">$21,596</td>
+                      <td className="px-3 py-2">$6,277</td>
+                      <td className="px-3 py-2">$11,736</td>
+                      <td className="px-3 py-2">$21,581</td>
                     </tr>
                     <tr className="bg-ink-50/50">
                       <td className="px-3 py-2">5</td>
-                      <td className="px-3 py-2">$1,405</td>
-                      <td className="px-3 py-2">$1,785</td>
-                      <td className="px-3 py-2">$6,213</td>
-                      <td className="px-3 py-2">$11,568</td>
-                      <td className="px-3 py-2">$20,971</td>
+                      <td className="px-3 py-2">$1,406</td>
+                      <td className="px-3 py-2">$1,784</td>
+                      <td className="px-3 py-2">$6,194</td>
+                      <td className="px-3 py-2">$11,567</td>
+                      <td className="px-3 py-2">$20,951</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">6</td>
-                      <td className="px-3 py-2">$1,022</td>
-                      <td className="px-3 py-2">$1,782</td>
-                      <td className="px-3 py-2">$6,134</td>
-                      <td className="px-3 py-2">$11,399</td>
-                      <td className="px-3 py-2">$20,337</td>
+                      <td className="px-3 py-2">$1,023</td>
+                      <td className="px-3 py-2">$1,781</td>
+                      <td className="px-3 py-2">$6,111</td>
+                      <td className="px-3 py-2">$11,397</td>
+                      <td className="px-3 py-2">$20,312</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="mt-2 text-xs text-ink-500">
-                After 6 months: $3,663 paid down (15.3% of total debt). Store
+                After 6 months: $3,688 paid down (15.4% of total debt). Store
                 card on track to clear by month 9. Total interest paid so far:
-                approximately $1,137.
+                approximately $1,350.
               </p>
             </div>
 
@@ -540,73 +561,73 @@ export default function DebtAvalancheVsSnowballGuide() {
                       <td className="px-3 py-2">1</td>
                       <td className="px-3 py-2">$1,447</td>
                       <td className="px-3 py-2">$3,207</td>
-                      <td className="px-3 py-2">$6,523</td>
+                      <td className="px-3 py-2">$6,520</td>
                       <td className="px-3 py-2">$12,236</td>
-                      <td className="px-3 py-2">$23,413</td>
+                      <td className="px-3 py-2">$23,410</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">2</td>
                       <td className="px-3 py-2">$1,088</td>
-                      <td className="px-3 py-2">$3,214</td>
-                      <td className="px-3 py-2">$6,446</td>
-                      <td className="px-3 py-2">$12,071</td>
-                      <td className="px-3 py-2">$22,819</td>
+                      <td className="px-3 py-2">$3,213</td>
+                      <td className="px-3 py-2">$6,440</td>
+                      <td className="px-3 py-2">$12,070</td>
+                      <td className="px-3 py-2">$22,811</td>
                     </tr>
                     <tr className="bg-ink-50/50">
                       <td className="px-3 py-2">3</td>
-                      <td className="px-3 py-2">$722</td>
-                      <td className="px-3 py-2">$3,221</td>
-                      <td className="px-3 py-2">$6,369</td>
+                      <td className="px-3 py-2">$721</td>
+                      <td className="px-3 py-2">$3,220</td>
+                      <td className="px-3 py-2">$6,359</td>
                       <td className="px-3 py-2">$11,904</td>
-                      <td className="px-3 py-2">$22,216</td>
+                      <td className="px-3 py-2">$22,204</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">4</td>
-                      <td className="px-3 py-2">$350</td>
-                      <td className="px-3 py-2">$3,228</td>
-                      <td className="px-3 py-2">$6,291</td>
-                      <td className="px-3 py-2">$11,737</td>
-                      <td className="px-3 py-2">$21,606</td>
+                      <td className="px-3 py-2">$349</td>
+                      <td className="px-3 py-2">$3,227</td>
+                      <td className="px-3 py-2">$6,277</td>
+                      <td className="px-3 py-2">$11,736</td>
+                      <td className="px-3 py-2">$21,589</td>
                     </tr>
                     <tr className="bg-brand-50/50">
                       <td className="px-3 py-2">5</td>
                       <td className="px-3 py-2 text-brand-700 font-medium">
                         $0
                       </td>
-                      <td className="px-3 py-2">$3,235</td>
-                      <td className="px-3 py-2">$6,213</td>
-                      <td className="px-3 py-2">$11,568</td>
-                      <td className="px-3 py-2">$21,016</td>
+                      <td className="px-3 py-2">$3,204</td>
+                      <td className="px-3 py-2">$6,194</td>
+                      <td className="px-3 py-2">$11,567</td>
+                      <td className="px-3 py-2">$20,965</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2">6</td>
                       <td className="px-3 py-2">—</td>
-                      <td className="px-3 py-2">$2,907</td>
-                      <td className="px-3 py-2">$6,134</td>
-                      <td className="px-3 py-2">$11,399</td>
-                      <td className="px-3 py-2">$20,440</td>
+                      <td className="px-3 py-2">$2,824</td>
+                      <td className="px-3 py-2">$6,111</td>
+                      <td className="px-3 py-2">$11,397</td>
+                      <td className="px-3 py-2">$20,332</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="mt-2 text-xs text-ink-500">
-                After 6 months: $3,560 paid down (14.8% of total debt). Visa
+                After 6 months: $3,668 paid down (15.3% of total debt). Visa
                 eliminated in month 5 — Maria gets her first zero-balance win.
                 Payment snowball increases to $450/month on store card (month
-                6). Total interest paid so far: approximately $1,220 ($83 more
+                6). Total interest paid so far: approximately $1,370 ($20 more
                 than avalanche).
               </p>
             </div>
 
             <div className="mt-6 border-t border-ink-100 pt-4">
-              <h4 className="font-semibold text-ink-800">Maria&apos;s Outcome</h4>
+              <h4 className="font-semibold text-ink-800">Maria's Outcome</h4>
               <p className="mt-2 text-sm text-ink-700">
-                Avalanche clears all $24,000 in 31 months with $3,648 in total
-                interest. Snowball takes 32 months and costs $3,789 — $141 more.
-                Maria chose snowball because she had abandoned two previous
-                debt plans. Eliminating the $1,800 Visa in month 5 gave her the
-                momentum to stay on track through month 32. The $141 premium
-                was worth it to actually finish.
+                Avalanche clears all $24,000 in 33 months with $3,642 in total
+                interest. Snowball also takes 33 months but costs $3,715 — about
+                $73 more. Maria still chose snowball because she had abandoned
+                two previous debt plans. Eliminating the $1,800 Visa in month 5
+                gave her the momentum to stay on track even though avalanche
+                would have saved $73 in interest over the same timeline.
               </p>
             </div>
           </div>
@@ -635,17 +656,19 @@ export default function DebtAvalancheVsSnowballGuide() {
             <li>
               <strong>Carrying high-rate credit card debt.</strong> If any debt
               exceeds 18% APR, avalanche savings become significant. On $15,000
-              at 23.5%, avalanche vs snowball can differ by $700-$1,100.
+              at 22% or higher, avalanche vs snowball can differ by hundreds of
+              dollars depending on your other balances.
             </li>
             <li>
               <strong>Already tried and stuck with a debt plan.</strong> If you
-              have successfully paid off debt before, you do not need snowball&apos;s
+              have successfully paid off debt before, you do not need snowball's
               psychological crutch — take the mathematically optimal path.
             </li>
             <li>
               <strong>Facing a large rate spread.</strong> When your highest and
-              lowest rates differ by 10+ points (23.5% card vs 5.0% student loan),
-              avalanche&apos;s advantage is largest.
+              lowest rates differ by 10+ points (for example, a store card above
+              24% APR versus a federal student loan near 6.5%), avalanche's
+              advantage is largest.
             </li>
           </ul>
 
@@ -666,7 +689,7 @@ export default function DebtAvalancheVsSnowballGuide() {
             </li>
             <li>
               <strong>Needing visible progress fast.</strong> Closing an account
-              in month 5 (like Maria&apos;s Visa) feels dramatically different from
+              in month 5 (like Maria's Visa) feels dramatically different from
               watching a $3,200 balance slowly shrink on a single card.
             </li>
             <li>
@@ -680,8 +703,8 @@ export default function DebtAvalancheVsSnowballGuide() {
           <div className="mt-6 rounded-lg border-l-4 border-brand-400 bg-brand-50 p-4">
             <p className="font-medium text-brand-800">The Math vs Motivation Test</p>
             <p className="mt-1 text-sm text-brand-700">
-              Ask yourself one question: &quot;Have I started and abandoned a debt
-              payoff plan in the last 3 years?&quot; If yes, use snowball — the
+              Ask yourself one question: "Have I started and abandoned a debt
+              payoff plan in the last 3 years?" If yes, use snowball — the
               $100-$300 in extra interest is cheaper than another failed attempt
               that leaves you $24,000 in debt. If no, use avalanche and keep
               every dollar working for you.
@@ -710,8 +733,8 @@ export default function DebtAvalancheVsSnowballGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Include credit cards, car loans, personal loans, medical bills,
                   and student loans. For $38,000 across 3 debts, your list
-                  might show $8,500 at 23.5%, $15,000 at 7.1%, and $14,500 at
-                  5.0%.
+                  might show $8,500 at 22.36%, $15,000 at 7.54%, and $14,500 at
+                  6.52%.
                 </p>
               </div>
             </div>
@@ -724,8 +747,8 @@ export default function DebtAvalancheVsSnowballGuide() {
                   Sort by interest rate, highest to lowest
                 </h4>
                 <p className="mt-1 text-sm text-ink-700">
-                  Your avalanche order: 23.5% credit card first, 7.1% car loan
-                  second, 5.0% student loan last. Rate beats balance every
+                  Your avalanche order: 22.36% credit card first, 7.54% car loan
+                  second, 6.52% student loan last. Rate beats balance every
                   time.
                 </p>
               </div>
@@ -754,7 +777,7 @@ export default function DebtAvalancheVsSnowballGuide() {
                   Roll payments forward when a debt is eliminated
                 </h4>
                 <p className="mt-1 text-sm text-ink-700">
-                  When the credit card clears in month 17, redirect the full
+                  When the credit card clears in month 18, redirect the full
                   $570 to the car loan ($570 + $294 = $864/month). When the car
                   clears, send $864 + $150 = $1,014 to the student loan until
                   everything is zero.
@@ -822,9 +845,9 @@ export default function DebtAvalancheVsSnowballGuide() {
                   Celebrate each elimination and roll the snowball forward
                 </h4>
                 <p className="mt-1 text-sm text-ink-700">
-                  When the credit card clears in month 17, roll $570 to the
+                  When the credit card clears in month 18, roll $570 to the
                   student loan ($570 + $150 = $720/month). When the student
-                  loan clears in month 36, roll $720 to the car ($720 + $294 =
+                  loan clears in month 37, roll $720 to the car ($720 + $294 =
                   $1,014/month) until the final balance hits $0.
                 </p>
               </div>
@@ -855,7 +878,7 @@ export default function DebtAvalancheVsSnowballGuide() {
               </h3>
               <p className="mt-2 text-sm text-ink-700">
                 Sending 100% of savings to debt with $0 in the bank means one
-                $800 car repair goes right back on a credit card at 23.5%. Save
+                $800 car repair goes right back on a credit card at 22%+. Save
                 $1,500-$2,500 first, then redirect the full $400/month to debt.
                 The 2-month delay costs roughly $35 in extra interest — far less
                 than an $800 relapse.
@@ -867,10 +890,10 @@ export default function DebtAvalancheVsSnowballGuide() {
               </h3>
               <p className="mt-2 text-sm text-ink-700">
                 The method only works if you add extra beyond the minimum. On
-                an $8,500 credit card at 23.5%, paying just the $170 minimum takes
-                31 years and costs $16,200 in interest. Adding $400/month cuts
-                that to 17 months and $1,480 in interest. The extra payment is
-                the entire strategy.
+                an $8,500 credit card at 22.36%, paying just the $170 minimum takes
+                about 12 years and costs roughly $16,200 in interest. Adding
+                $570/month on that card ($170 minimum plus $400 extra) cuts that to 18 months and about $1,550 in interest.
+                The extra payment is the entire strategy.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
@@ -886,6 +909,19 @@ export default function DebtAvalancheVsSnowballGuide() {
             </div>
           </div>
         </section>
+
+        <Sources
+          items={[
+            {
+              label:
+                "Gal & McShane (Kellogg) — debt snowball account-closure study (JMR, 2012)",
+              href: "https://doi.org/10.1509/jmr.11.0272",
+            },
+          ]}
+          checked="October 2026"
+          note="Cited for snowball motivation research in the FAQ; payoff timelines above are CalcWise illustrations."
+          className="mt-8"
+        />
 
         {/* CTA Section */}
         <section className="mt-12 rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 text-center">

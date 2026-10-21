@@ -5,6 +5,8 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
+import { TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
   title: "How to Start Investing with $1,000: A Beginner's Step-by-Step Guide",
@@ -89,7 +91,7 @@ export default function HowToStartInvesting1000Guide() {
             / Investing Basics
           </p>
           <h1 className="mt-3 text-3xl font-bold leading-tight text-ink-900 sm:text-4xl">
-            How to Start Investing with $1,000: A Beginner&apos;s Step-by-Step
+            How to Start Investing with $1,000: A Beginner's Step-by-Step
             Guide
           </h1>
           <p className="mt-4 text-lg text-ink-600">
@@ -232,36 +234,26 @@ export default function HowToStartInvesting1000Guide() {
           <p className="mt-3 text-xs text-ink-500">
             Schwab raised its fractional-share coverage in 2026: the old Stock
             Slices program (S&P 500 stocks only, $5 minimum) is now simply
-            &quot;fractional shares&quot; on most U.S. stocks and ETFs with a $1
-            minimum. Sources:{" "}
-            <a
-              href="https://www.fidelity.com/trading/fractional-shares"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Fidelity
-            </a>
-            ,{" "}
-            <a
-              href="https://www.schwab.com/fractional-shares-stock-slices"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Schwab
-            </a>
-            ,{" "}
-            <a
-              href="https://investor.vanguard.com/investment-products/etfs/etf-fees"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Vanguard
-            </a>
-            .
+            "fractional shares" on most U.S. stocks and ETFs with a $1
+            minimum.
           </p>
+          <Sources
+            items={[
+              {
+                label: "Fidelity",
+                href: "https://www.fidelity.com/trading/fractional-shares",
+              },
+              {
+                label: "Schwab",
+                href: "https://www.schwab.com/fractional-shares-stock-slices",
+              },
+              {
+                label: "Vanguard",
+                href: "https://investor.vanguard.com/investment-products/etfs/etf-fees",
+              },
+            ]}
+            checked="October 2026"
+          />
 
           <p className="mt-6 text-ink-700">
             The math favors starting now over waiting to save more. $1,000
@@ -354,7 +346,7 @@ export default function HowToStartInvesting1000Guide() {
               IRA gives you decades of tax-free compounding on a $1,000 start.
               Skip robo-advisors until your balance exceeds $10,000 — the 0.25%
               fee costs you $25/year on $10,000 versus $3/year with VTI alone.
-              Betterment&apos;s Digital plan is worse at this size: a flat $5 per
+              Betterment's Digital plan is worse at this size: a flat $5 per
               month is $60 per year, or 6% of a $1,000 balance, unless you
               automate $200/month or reach $24,000.
             </p>
@@ -420,35 +412,25 @@ export default function HowToStartInvesting1000Guide() {
             value at (8% minus the fee), for a single $1,000 deposit with no
             additions: $10,063 versus $9,979 for VTI, $10,021 for FXAIX,
             $9,309 for Wealthfront, and $7,612 for a 1.0% fund. Fee data as of
-            October 2026. Sources:{" "}
-            <a
-              href="https://www.wealthfront.com/pricing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Wealthfront pricing
-            </a>
-            ,{" "}
-            <a
-              href="https://www.betterment.com/pricing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Betterment pricing
-            </a>
-            ,{" "}
-            <a
-              href="https://fundresearch.fidelity.com/mutual-funds/fees-and-prices/315911750"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Fidelity FXAIX
-            </a>
-            .
+            October 2026.
           </p>
+          <Sources
+            items={[
+              {
+                label: "Wealthfront pricing",
+                href: "https://www.wealthfront.com/pricing",
+              },
+              {
+                label: "Betterment pricing",
+                href: "https://www.betterment.com/pricing",
+              },
+              {
+                label: "Fidelity FXAIX",
+                href: "https://fundresearch.fidelity.com/mutual-funds/fees-and-prices/315911750",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Section 3: What to Buy */}
@@ -525,32 +507,20 @@ export default function HowToStartInvesting1000Guide() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-ink-500">
-            *Annualized total returns through September 30, 2026. VLXVX launched
-            in July 2017, so it has no 10-year record; its 5-year return was
-            10.22%. Vanguard renamed its CRSP-benchmarked funds in 2026 (for
-            example, &quot;Vanguard Morningstar Total Stock Market Index
-            Fund&quot;), but the tickers VTI and VTSAX did not change. Past
-            performance does not guarantee future results. Sources:{" "}
-            <a
-              href="https://workplace.vanguard.com/content/dam/inst/iig-transformation/pdf/total_return_chart.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Vanguard Total Return Chart (Sept. 30, 2026)
-            </a>
-            ,{" "}
-            <a
-              href="https://fundresearch.fidelity.com/mutual-funds/view-all/315911750"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Fidelity FXAIX
-            </a>
-            .
-          </p>
+          <Sources
+            items={[
+              {
+                label: "Vanguard Total Return Chart (Sept. 30, 2026)",
+                href: "https://workplace.vanguard.com/content/dam/inst/iig-transformation/pdf/total_return_chart.pdf",
+              },
+              {
+                label: "Fidelity FXAIX",
+                href: "https://fundresearch.fidelity.com/mutual-funds/view-all/315911750",
+              },
+            ]}
+            checked="October 2026"
+            note="*Annualized total returns through September 30, 2026. VLXVX launched in July 2017, so it has no 10-year record; its 5-year return was 10.22%. Vanguard renamed its CRSP-benchmarked funds in 2026 (for example, &quot;Vanguard Morningstar Total Stock Market Index Fund&quot;), but the tickers VTI and VTSAX did not change. Past performance does not guarantee future results."
+          />
           <div className="mt-4 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4">
             <p className="font-medium text-amber-900">
               Why the projections below use 8%, not 15%
@@ -558,7 +528,7 @@ export default function HowToStartInvesting1000Guide() {
             <p className="mt-1 text-sm text-amber-800">
               The 10-year window ending September 2026 was unusually strong: $1,000
               in VOO at 15.29% would have become about $4,149. Over the longer 20
-              years ending December 2025, J.P. Morgan Asset Management&apos;s data
+              years ending December 2025, J.P. Morgan Asset Management's data
               imply about 11.0% a year for the S&P 500 ($10,000 became $80,619).
               This guide plans with 8% so the numbers still work if the next
               decade is weaker; see the 6%, 8%, and 10% results in the case study.
@@ -602,10 +572,10 @@ export default function HowToStartInvesting1000Guide() {
                 Pick the fund closest to the year you turn 65. A 23-year-old in
                 2026 turns 65 in 2068, so Vanguard Target Retirement 2065
                 (VLXVX) or 2070 (VSVNX) both fit. It starts nearly 100% in
-                stocks (check the fund&apos;s current allocation) and automatically shifts toward bonds as you age. The
+                stocks (check the fund's current allocation) and automatically shifts toward bonds as you age. The
                 0.08% fee is slightly higher than VTI (about $0.80 per year on
                 $1,000), but you never need to rebalance or pick a bond fund.
-                Vanguard&apos;s Target Retirement Investor shares have a $1,000
+                Vanguard's Target Retirement Investor shares have a $1,000
                 minimum, so your starting amount qualifies exactly.
               </p>
             </div>
@@ -743,7 +713,7 @@ export default function HowToStartInvesting1000Guide() {
                 would be subject to a 15% long-term capital gains rate
                 (a common rate for middle incomes) — about $18,446 owed to the
                 IRS. The Roth IRA saved Jordan over $18,000 in taxes on the same
-                investment strategy. Jordan&apos;s $100/month is also well under the
+                investment strategy. Jordan's $100/month is also well under the
                 2026 Roth IRA limit of $7,500 per year ($625/month), so there is
                 room to raise contributions with each raise.
               </p>
@@ -764,7 +734,7 @@ export default function HowToStartInvesting1000Guide() {
               <p className="mt-2 text-sm text-ink-700">
                 Putting $1,000 into 3-5 individual stocks feels exciting but
                 concentrates your risk. Enron, Lehman Brothers, and Blockbuster
-                were all &quot;sure things&quot; until they were not. A single
+                were all "sure things" until they were not. A single
                 company can drop 50-100% — VTI dropped 34% in 2020 and recovered
                 within months because it held hundreds of companies. With $1,000,
                 diversification is not optional.
@@ -775,7 +745,7 @@ export default function HowToStartInvesting1000Guide() {
                 2. Trying to time the market
               </h3>
               <p className="mt-2 text-sm text-ink-700">
-                Waiting for a &quot;correction&quot; before investing $1,000
+                Waiting for a "correction" before investing $1,000
                 sounds prudent but costs you money. J.P. Morgan Asset Management
                 found that $10,000 left fully invested in the S&P 500 from
                 January 2006 through December 2025 grew to $80,619 (about 11.0%
@@ -783,17 +753,18 @@ export default function HowToStartInvesting1000Guide() {
                 (about 6.6% a year). Six of the 10 best days came within two weeks
                 of the 10 worst days, so you cannot dodge the bad ones without
                 missing the good ones. Invest on a schedule regardless of
-                headlines. Source:{" "}
-                <a
-                  href="https://am.jpmorgan.com/sg/en/asset-management/per/insights/retirement-insights/retirement-resources/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  J.P. Morgan Asset Management
-                </a>
-                .
+                headlines.
               </p>
+              <Sources
+                className="mt-2"
+                items={[
+                  {
+                    label: "J.P. Morgan Asset Management",
+                    href: "https://am.jpmorgan.com/sg/en/asset-management/per/insights/retirement-insights/retirement-resources/",
+                  },
+                ]}
+                checked="October 2026"
+              />
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
               <h3 className="font-semibold text-ink-800">
@@ -801,33 +772,29 @@ export default function HowToStartInvesting1000Guide() {
               </h3>
               <p className="mt-2 text-sm text-ink-700">
                 The most expensive mistake is leaving $1,000 in a checking account.
-                The FDIC&apos;s September 2026 national average is 0.07% for
+                The FDIC's September 2026 national average is 0.07% for
                 interest checking and 0.37% for savings, while BLS reported
                 consumer prices up 3.7% over the 12 months ending September 2026.
                 After 10 years at 0.07%, $1,000 becomes $1,007 — but if inflation
                 averaged 3.7%, its purchasing power drops to roughly $695 in
-                today&apos;s dollars (about $744 at 3%). The same $1,000 in VTI
+                today's dollars (about $744 at 3%). The same $1,000 in VTI
                 at 8% becomes $2,159. Analysis paralysis costs real money every
-                month you wait. Sources:{" "}
-                <a
-                  href="https://www.fdic.gov/national-rates-and-rate-caps"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  FDIC national rates
-                </a>
-                ,{" "}
-                <a
-                  href="https://www.bls.gov/news.release/cpi.nr0.htm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  BLS CPI release
-                </a>
-                .
+                month you wait.
               </p>
+              <Sources
+                className="mt-2"
+                items={[
+                  {
+                    label: "FDIC national rates",
+                    href: "https://www.fdic.gov/national-rates-and-rate-caps",
+                  },
+                  {
+                    label: "BLS CPI release",
+                    href: "https://www.bls.gov/news.release/cpi.nr0.htm",
+                  },
+                ]}
+                checked="October 2026"
+              />
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">
               <h3 className="font-semibold text-ink-800">
@@ -864,7 +831,7 @@ export default function HowToStartInvesting1000Guide() {
                   Go to fidelity.com, schwab.com, or vanguard.com and open a
                   Roth IRA. You need your Social Security number, bank account
                   info for linking, and employment details. Select
-                  &quot;Individual Roth IRA&quot; — not a managed account or
+                  "Individual Roth IRA" — not a managed account or
                   robo-advisor unless you specifically want one. There is no
                   minimum deposit to open.
                 </p>
@@ -899,7 +866,7 @@ export default function HowToStartInvesting1000Guide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Once cash settles, search for your fund ticker (e.g., FXAIX or
                   VTI) and click Buy. Enter $1,000 (or the full available
-                  balance). Select &quot;Market order&quot; for immediate
+                  balance). Select "Market order" for immediate
                   execution. You now own a slice of the U.S. stock market. The
                   entire purchase takes under 2 minutes.
                 </p>
@@ -971,36 +938,22 @@ export default function HowToStartInvesting1000Guide() {
             ))}
           </div>
         </section>
-        <p className="mt-8 text-xs text-ink-500">
-          Sources:{" "}
-          <a
-            href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            IRS 2026 retirement limits (IR-2025-111)
-          </a>
-          ,{" "}
-          <a
-            href="https://workplace.vanguard.com/content/dam/inst/iig-transformation/pdf/total_return_chart.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            Vanguard fund returns as of Sept. 30, 2026
-          </a>
-          ,{" "}
-          <a
-            href="https://investor.vanguard.com/investment-products/mutual-funds/fees"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            Vanguard fund minimums
-          </a>
-          . Educational content, not personalized investment advice.
-        </p>
+        <Sources
+          className="mt-8"
+          items={[
+            TAX_SOURCES.retirementLimits,
+            {
+              label: "Vanguard fund returns as of Sept. 30, 2026",
+              href: "https://workplace.vanguard.com/content/dam/inst/iig-transformation/pdf/total_return_chart.pdf",
+            },
+            {
+              label: "Vanguard fund minimums",
+              href: "https://investor.vanguard.com/investment-products/mutual-funds/fees",
+            },
+          ]}
+          checked="October 2026"
+          note="Educational content, not personalized investment advice."
+        />
         <RelatedGuides currentSlug="how-to-start-investing-1000" relatedSlugs={["compound-interest-real-examples", "401k-vs-roth-ira"]} />
       </article>
     </>

@@ -33,11 +33,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: base, lastModified: new Date(), changeFrequency: "daily" as const, priority: 1.0 },
     { url: `${base}/guides`, lastModified: new Date(), changeFrequency: "daily" as const, priority: 0.8 },
-    { url: `${base}/faq`, lastModified: new Date("2026-08-24"), changeFrequency: "weekly" as const, priority: 0.7 },
-    { url: `${base}/about`, lastModified: new Date("2026-08-10"), changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${base}/faq`, lastModified: new Date("2026-10-20"), changeFrequency: "weekly" as const, priority: 0.7 },
+    { url: `${base}/methodology`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${base}/reports`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${base}/reports/mortgage-affordability-by-state`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/embed`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${base}/about`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${base}/contact`, lastModified: new Date("2026-08-10"), changeFrequency: "monthly" as const, priority: 0.4 },
-    { url: `${base}/privacy`, lastModified: new Date("2026-08-10"), changeFrequency: "yearly" as const, priority: 0.3 },
-    { url: `${base}/terms`, lastModified: new Date("2026-08-10"), changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: new Date("2026-10-20"), changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${base}/terms`, lastModified: new Date("2026-10-20"), changeFrequency: "yearly" as const, priority: 0.3 },
   ];
 
   const categoryPages = categories.map((cat) => ({

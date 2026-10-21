@@ -174,4 +174,5 @@ Update `.cursor/plans/guides.json`: change the item's status from `"pending"` to
 - Target keyword should appear naturally in H1, first paragraph, and 2-3 subheadings
 - All dollar amounts use US formatting
 - Internal links to CalcWise calculators use relative paths
-- External claims should cite specific sources where possible
+- Every rate, limit, bracket, or benchmark must be verified online against a tier 1 source (see Step 0.5 in `refresh-content.mdc`) and cited with the shared `<Sources>` component (`@/components/Sources`: `items`, `checked`, `note`), with the as-of date in the text
+- Tax figures come from `src/lib/tax-data.ts`; never paste bracket, deduction, or wage-base numbers as new literals

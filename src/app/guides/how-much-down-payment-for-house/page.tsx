@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "How Much Down Payment Do You Need for a House in 2026?",
@@ -29,7 +30,7 @@ const faqs = [
   {
     question: "Is 20% down still necessary in 2026?",
     answer:
-      "No. The 20% down payment is not a requirement -- it is a threshold that eliminates private mortgage insurance (PMI). In 2026, the median first-time buyer puts down approximately 8%, and many programs allow 3-5%. Putting down 20% saves you $100-$300 per month in PMI on a typical mortgage, but waiting years to save the full 20% means missing out on home price appreciation and paying rent instead of building equity. Run the numbers for your specific situation before assuming 20% is the right target.",
+      "No. The 20% down payment is not a requirement -- it is a threshold that eliminates private mortgage insurance (PMI). NAR's 2025 Profile of Home Buyers and Sellers (Tier-2 survey) found a median 10% down payment among first-time buyers (July 2024–June 2025 transactions), and many programs allow 3-5%. Putting down 20% saves you $100-$300 per month in PMI on a typical mortgage, but waiting years to save the full 20% means missing out on home price appreciation and paying rent instead of building equity. Run the numbers for your specific situation before assuming 20% is the right target.",
   },
   {
     question: "How much is PMI if I put down less than 20%?",
@@ -57,6 +58,7 @@ export default function HowMuchDownPaymentForHouse() {
         description="Find out how much down payment you need for a house in 2026. Compare conventional, FHA, VA, and USDA loan minimums with real dollar amounts, PMI costs, and savings strategies."
         slug="how-much-down-payment-for-house"
         datePublished="2026-09-08"
+        dateModified="2026-10-20"
         image="/images/guides/how-much-down-payment-for-house.webp"
       />
       <BreadcrumbJsonLd
@@ -74,22 +76,23 @@ export default function HowMuchDownPaymentForHouse() {
             <Link href="/guides" className="hover:underline">
               Guides
             </Link>{" "}
-            / Loans &amp; Mortgages
+            / Loans & Mortgages
           </p>
           <h1 className="mt-3 text-3xl font-bold leading-tight text-ink-900 sm:text-4xl">
             How Much Down Payment Do You Need for a House in 2026?
           </h1>
           <p className="mt-4 text-lg text-ink-600">
             The 20% down payment is one of the most persistent myths in home
-            buying. In reality, the average first-time buyer puts down roughly
-            8%, and multiple loan programs allow as little as 0-3.5%. The right
+            buying. In reality, NAR reported a median 10% down payment among
+            first-time buyers in its 2025 profile (survey period July 2024–June
+            2025), and multiple loan programs allow as little as 0-3.5%. The right
             down payment amount depends on your loan type, credit score,
             monthly budget, and how much you want to pay in mortgage insurance.
             This guide breaks down every option with real dollar amounts on a
             $400,000 home so you can decide exactly how much to save.
           </p>
           <p className="mt-2 text-sm text-ink-500">
-            Last updated: September 2026
+            Last updated: October 2026
           </p>
         </header>
 
@@ -234,6 +237,31 @@ export default function HowMuchDownPaymentForHouse() {
             </Link>{" "}
             to see what you can afford in USDA-eligible areas.
           </p>
+          <Sources
+            items={[
+              {
+                label: "Fannie Mae HomeReady Mortgage (3% minimum down)",
+                href: "https://singlefamily.fanniemae.com/originating-underwriting/mortgage-products/homeready-mortgage",
+              },
+              {
+                label: "HUD Mortgagee Letter 2023-05 (FHA UFMIP and annual MIP)",
+                href: "https://www.hud.gov/sites/dfiles/OCHCO/documents/2023-05hsgml.pdf",
+              },
+              {
+                label: "FDIC 203(b) Mortgage Insurance Program summary (FHA 3.5% down, 580+ score)",
+                href: "https://www.fdic.gov/resources/bankers/affordable-mortgage-lending-center/guide/part-1-docs/203b-mortgage-insurance-program.pdf",
+              },
+              {
+                label: "VA.gov funding fee rate charts (effective April 7, 2023)",
+                href: "https://www.va.gov/housing-assistance/home-loans/funding-fee-and-closing-costs/",
+              },
+              {
+                label: "USDA RD FY 2026 conditional commitment notice (1% upfront, 0.35% annual fee)",
+                href: "https://content.govdelivery.com/accounts/USDARD/bulletins/3f192a6",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Comparison Table */}
@@ -260,7 +288,7 @@ export default function HowMuchDownPaymentForHouse() {
                     Loan Amount
                   </th>
                   <th className="px-4 py-3 text-right font-semibold text-ink-700">
-                    Monthly P&amp;I
+                    Monthly P&I
                   </th>
                   <th className="px-4 py-3 text-right font-semibold text-ink-700">
                     Est. PMI/Month
@@ -275,49 +303,50 @@ export default function HowMuchDownPaymentForHouse() {
                   <td className="px-4 py-2 text-ink-700">3% (Conventional)</td>
                   <td className="px-4 py-2 text-right text-ink-700">$12,000</td>
                   <td className="px-4 py-2 text-right text-ink-700">$388,000</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,452</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$258</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,710</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,686</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$178</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,864</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">3.5% (FHA)</td>
                   <td className="px-4 py-2 text-right text-ink-700">$14,000</td>
                   <td className="px-4 py-2 text-right text-ink-700">$386,000</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,440</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,719</td>
                   <td className="px-4 py-2 text-right text-ink-700">$177</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,617</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,896</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">5%</td>
                   <td className="px-4 py-2 text-right text-ink-700">$20,000</td>
                   <td className="px-4 py-2 text-right text-ink-700">$380,000</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,402</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$222</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,624</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,631</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$174</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,805</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">10%</td>
                   <td className="px-4 py-2 text-right text-ink-700">$40,000</td>
                   <td className="px-4 py-2 text-right text-ink-700">$360,000</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,275</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,493</td>
                   <td className="px-4 py-2 text-right text-ink-700">$150</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,425</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,643</td>
                 </tr>
                 <tr className="border-b border-ink-100 bg-brand-50">
                   <td className="px-4 py-2 font-medium text-ink-700">20%</td>
                   <td className="px-4 py-2 text-right font-medium text-ink-700">$80,000</td>
                   <td className="px-4 py-2 text-right font-medium text-ink-700">$320,000</td>
-                  <td className="px-4 py-2 text-right font-medium text-ink-700">$2,023</td>
+                  <td className="px-4 py-2 text-right font-medium text-ink-700">$2,216</td>
                   <td className="px-4 py-2 text-right font-medium text-ink-700">$0</td>
-                  <td className="px-4 py-2 text-right font-medium text-ink-700">$2,023</td>
+                  <td className="px-4 py-2 text-right font-medium text-ink-700">$2,216</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-2 text-sm text-ink-500">
-            Assumes 6.5% interest rate, 30-year fixed mortgage. PMI estimates
-            based on 700+ credit score. FHA MIP of 0.55% annual. Does not
-            include property taxes or homeowners insurance. Use our{" "}
+            Assumes 7.40% interest rate (Freddie Mac PMMS average as of Oct. 15,
+            2026), 30-year fixed mortgage. Conventional PMI estimates use ~0.55%
+            of loan balance annually; FHA annual MIP is 0.55% on this 96.5% LTV
+            example. Does not include property taxes or homeowners insurance. Use our{" "}
             <Link
               href="/calculators/mortgage"
               className="font-medium text-brand-600 hover:text-brand-800"
@@ -327,12 +356,25 @@ export default function HowMuchDownPaymentForHouse() {
             for a complete monthly payment estimate.
           </p>
           <p className="mt-4 text-ink-700">
-            The difference between 3% and 20% down is $687 per month in total
-            housing cost -- but also $68,000 in upfront cash. For many buyers,
+            The difference between 3% and 20% down is $648 per month in total
+            P&I plus mortgage insurance — but also $68,000 in upfront cash. For many buyers,
             that $68,000 difference represents years of additional saving
             during which home prices may rise 3-5% annually, rent continues to
             increase, and the opportunity to build equity is deferred.
           </p>
+          <Sources
+            items={[
+              {
+                label: "Freddie Mac Primary Mortgage Market Survey (week of Oct. 15, 2026)",
+                href: "https://www.freddiemac.com/pmms",
+              },
+              {
+                label: "HUD Mortgagee Letter 2023-05 (FHA annual MIP tables)",
+                href: "https://www.hud.gov/sites/dfiles/OCHCO/documents/2023-05hsgml.pdf",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* Case Study */}
@@ -392,9 +434,9 @@ export default function HowMuchDownPaymentForHouse() {
                   <td className="px-4 py-2 text-right text-ink-700">$334,400</td>
                 </tr>
                 <tr className="border-b border-ink-100">
-                  <td className="px-4 py-2 text-ink-700">Monthly P&amp;I</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,275</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,114</td>
+                  <td className="px-4 py-2 text-ink-700">Monthly P&I</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,493</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,315</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">PMI/Month</td>
@@ -403,8 +445,8 @@ export default function HowMuchDownPaymentForHouse() {
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">Total Monthly</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,425</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,114</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,643</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$2,315</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">Rent Paid While Waiting</td>
@@ -450,10 +492,12 @@ export default function HowMuchDownPaymentForHouse() {
               the loan amount).
             </li>
             <li>
-              <strong>Open a dedicated high-yield savings account.</strong> In
-              September 2026, top HYSAs pay 4.25-4.75% APY. A separate account
-              prevents you from dipping into down payment funds. On $20,000,
-              a 4.5% HYSA earns $900 per year in interest alone.
+              <strong>Open a dedicated high-yield savings account.</strong> The
+              FDIC national average savings rate was 0.38% in October 2026, but
+              competitive online accounts often pay closer to the FDIC national
+              rate cap (4.63% for non-maturity deposits as of Oct. 19, 2026). A
+              separate account prevents you from dipping into down payment funds.
+              On $20,000, a 4.5% APY account earns about $900 per year in interest.
             </li>
             <li>
               <strong>Automate monthly transfers.</strong> Calculate your
@@ -490,6 +534,28 @@ export default function HowMuchDownPaymentForHouse() {
               sooner.
             </li>
           </ol>
+          <Sources
+            items={[
+              {
+                label: "NAR 2025 Profile of Home Buyers and Sellers highlights (Nov. 4, 2025)",
+                href: "https://www.nar.realtor/press-releases/first-time-home-buyer-share-falls-to-historic-low-of-21-median-age-rises-to-40",
+              },
+              {
+                label: "FDIC National Rates and Rate Caps — October 2026",
+                href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+              },
+              {
+                label: "Freddie Mac Primary Mortgage Market Survey (week of Oct. 15, 2026)",
+                href: "https://www.freddiemac.com/pmms",
+              },
+              {
+                label: "Consumer Financial Protection Bureau — PMI cancellation at 78% LTV",
+                href: "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/",
+              },
+            ]}
+            checked="October 2026"
+            note="NAR down-payment share is a Tier-2 industry survey; loan minimums are from agency sources above."
+          />
         </section>
 
         {/* Calculator CTA */}

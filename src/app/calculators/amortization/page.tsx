@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Why do I pay more interest than principal in the first years?",
-    answer: "Interest is calculated on the outstanding balance each month. At the start of a $250,000 loan at 6.5%, you owe $1,354/month in interest on the full balance, leaving only $226 of a $1,580 payment for principal.",
+    answer: "Interest is calculated on the outstanding balance each month. At the start of a $250,000 loan at 7.40%, you owe about $1,542/month in interest on the full balance, leaving only $189 of a $1,731 payment for principal.",
   },
   {
     question: "Can I use an amortization schedule for student loans or car loans?",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     question: "How do biweekly payments affect the amortization schedule?",
-    answer: "Biweekly payments split your monthly payment in half and pay every two weeks. You make 26 half-payments (13 full payments) per year instead of 12, with the extra going entirely to principal — saving approximately $62,000 in interest on a typical $250K loan.",
+    answer: "Biweekly payments split your monthly payment in half and pay every two weeks. You make 26 half-payments (13 full payments) per year instead of 12, with the extra going entirely to principal — saving approximately $93,000 in interest and shortening payoff to about 23 years 8 months on a typical $250K loan at 7.40%.",
   },
 ];
 

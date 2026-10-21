@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export default function AboutPage() {
         <p>
           CalcWise was founded with a simple mission: make financial planning
           accessible to everyone. We believe that understanding your finances
-          shouldn&apos;t require expensive software, a finance degree, or a paid
+          shouldn't require expensive software, a finance degree, or a paid
           consultation. A well-designed calculator and clear explanation can
           answer most financial questions people face daily.
         </p>
@@ -31,7 +32,7 @@ export default function AboutPage() {
 
         <h2>Why We Built This</h2>
         <p>
-          Financial literacy is one of the most impactful life skills, yet it&apos;s
+          Financial literacy is one of the most impactful life skills, yet it's
           rarely taught in schools. Millions of people make major financial
           decisions — buying a home, choosing a loan, planning retirement —
           without fully understanding the numbers. CalcWise exists to close that
@@ -44,7 +45,9 @@ export default function AboutPage() {
           <li>
             <strong>Accuracy first:</strong> Our calculators use
             industry-standard financial formulas. We test edge cases and verify
-            results against established financial tools.
+            results against established financial tools. The formulas,
+            assumptions, and data sources behind each tool are documented on
+            our <Link href="/methodology">methodology page</Link>.
           </li>
           <li>
             <strong>Education alongside tools:</strong> Every calculator comes
@@ -54,12 +57,11 @@ export default function AboutPage() {
           <li>
             <strong>No data collection:</strong> All calculations happen
             client-side in your browser. We use no cookies for tracking and
-            don&apos;t require any personal information.
+            don't require any personal information.
           </li>
           <li>
-            <strong>Always free:</strong> We sustain the site through
-            advertising. We will never charge for calculator access or gate
-            features behind a paywall.
+            <strong>Always free:</strong> We will never charge for calculator
+            access or gate features behind a paywall.
           </li>
         </ul>
 
@@ -67,9 +69,9 @@ export default function AboutPage() {
         <p>
           Content on CalcWise is researched and written by our editorial team
           with input from finance professionals. We update articles regularly to
-          reflect current rates, tax rules, and financial best practices. Each
-          page includes a &quot;last updated&quot; date so you know the
-          information is current.
+          reflect current rates, tax rules, and financial best practices. Guides
+          show a "last updated" date so you know how current the
+          information is.
         </p>
         <p>
           While we strive for accuracy, our tools and content are for
@@ -80,7 +82,7 @@ export default function AboutPage() {
 
         <h2>Contact Us</h2>
         <p>
-          Have a question, suggestion, or found an error? We&apos;d love to hear
+          Have a question, suggestion, or found an error? We'd love to hear
           from you. Visit our{" "}
           <a href="/contact">contact page</a> to get in touch.
         </p>

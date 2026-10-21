@@ -145,7 +145,7 @@ export function SimpleInterestArticle() {
 
       <p>
         Other common applications include short-term personal loans, some student loan structures during grace periods, Treasury bills (T-bills),
-        and certain installment agreements. Retailers who offer &ldquo;no interest for 12 months&rdquo; promotions are effectively using a simple
+        and certain installment agreements. Retailers who offer “no interest for 12 months” promotions are effectively using a simple
         interest model — though deferred interest kicks in if you do not pay in full by the deadline.
       </p>
 

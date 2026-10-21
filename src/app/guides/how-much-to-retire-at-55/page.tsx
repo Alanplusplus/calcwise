@@ -5,11 +5,19 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
+import {
+  HSA_LIMITS,
+  RETIREMENT_LIMITS,
+  TAX_DATA,
+  TAX_SOURCES,
+  usd,
+} from "@/lib/tax-data";
 
 export const metadata: Metadata = {
   title: "How Much Do I Need to Retire at 55? Complete 2026 Guide",
   description:
-    "Most people need $1.5M-$2.5M to retire at 55. This guide covers the 4% rule, healthcare costs before Medicare, portfolio targets by lifestyle, and a step-by-step action plan with real numbers.",
+    "Most people need about $1.9M-$3.1M to retire at 55 including a healthcare reserve. Covers the 4% rule of thumb, 2026 ACA and Medicare costs, portfolio targets, and a step-by-step plan.",
   keywords: [
     "how much do I need to retire at 55",
     "how much to retire at 55",
@@ -30,27 +38,27 @@ const faqs = [
   {
     question: "How much money do I need to retire at 55?",
     answer:
-      "Most people need a portfolio of $1.5 million to $2.5 million to retire at 55, depending on annual spending. Using the 4% rule, $50,000/year requires $1.25 million, $80,000/year requires $2 million, and $120,000/year requires $3 million — but early retirees should add $350,000-$550,000 for the 10-year healthcare gap before Medicare at 65. Following the expiration of ACA enhanced premium tax credits at the end of 2025, unsubsidized marketplace premiums for 55-64 year-olds rose roughly 26% in 2026, making healthcare budgeting even more critical.",
+      "Most people need a portfolio of roughly $1.9 million to $3.1 million to retire at 55, depending on annual spending and unsubsidized ACA costs. Using a historical 4% rule of thumb, $50,000/year implies $1.25 million, $80,000/year implies $2 million, and $120,000/year implies $3 million — but early retirees should add about $500,000-$650,000 for the 10-year healthcare gap before Medicare at 65. KFF (Tier-2) estimates gross ACA benchmark premiums rose about 26% on average for 2026, and enhanced premium tax credits expired after 2025, so unsubsidized Silver-plan costs for ages 55-64 often exceed $1,000/month nationally as of mid-October 2026.",
   },
   {
     question: "Can I retire at 55 and still access my 401(k)?",
     answer:
-      "Not without penalties before age 59½, unless you use Rule of 55 (if you leave your employer at 55+) or SEPP/72(t) distributions. Most early retirees fund ages 55-59½ from taxable brokerage accounts and Roth conversion ladders, keeping 401(k) and traditional IRA assets for later years when penalty-free withdrawals are available.",
+      "Generally, IRA withdrawals before 59½ face a 10% additional tax unless an exception applies. For 401(k) plans, the IRS Rule of 55 lets you avoid that 10% tax on distributions from the plan you left if you separate from service in or after the calendar year you turn 55 (not available for IRAs). SEPP/72(t) substantially equal payments also avoid the penalty when rules are followed. Most early retirees still fund ages 55-59½ from taxable accounts and Roth conversion ladders.",
   },
   {
     question: "Is the 4% rule safe for a 40-year retirement?",
     answer:
-      "The classic 4% rule was designed for a 30-year retirement and Morningstar's 2026 research now pegs even the 30-year safe rate at 3.9%. Retiring at 55 with a 35-40 year horizon calls for a more conservative 3.25-3.5% withdrawal rate — historical simulations show a 4% rate fails roughly 15-25% of the time over 40 years. A $2 million portfolio at 3.5% yields $70,000/year — safer than $80,000 at 4%. Using Guyton-Klinger guardrails (adjusting spending based on portfolio performance) can raise the safe initial rate by 0.5-1.0%, giving early retirees more spending flexibility without increasing failure risk.",
+      "The classic 4% rule of thumb was designed for a 30-year retirement; many planners use 3.25-3.5% for 35-40 year horizons. Morningstar's 2026 withdrawal-rate research (Tier-2) suggests even a 30-year starting rate near 3.9% for diversified portfolios — below the original 4% headline. A $2 million portfolio at 3.5% yields $70,000/year — more conservative than $80,000 at 4%. Dynamic spending rules (for example Guyton-Klinger guardrails) can adjust withdrawals when markets fall, but they add complexity beyond a fixed percentage.",
   },
   {
     question: "How much does health insurance cost if I retire before 65?",
     answer:
-      "Following the expiration of enhanced ACA premium tax credits in 2026, unsubsidized marketplace premiums for early retirees rose sharply. A 55-year-old now pays roughly $681/month for a Silver plan, rising to $939/month at age 64 — and a 60-year-old averages $822/month before subsidies (InsuranceCostGuide, 2026 data). A couple in their late 50s often pays $1,400-$2,200/month unsubsidized. Budget $160,000-$250,000 total for the 10-year gap until Medicare at 65, depending on subsidy eligibility.",
+      "After enhanced ACA premium tax credits expired at the end of 2025, unsubsidized benchmark Silver premiums for 2026 coverage jumped sharply — KFF (Tier-2) estimates about a 26% average increase in what insurers charge. Nationally, the weighted average benchmark premium is about $625/month for a 40-year-old and roughly $1,327/month at age 60 before subsidies (KFF benchmark data plus the federal age curve). A couple in their late 50s often pays $2,000-$2,600/month unsubsidized. Budget roughly $180,000-$240,000 in premiums plus out-of-pocket costs over the 10-year gap until Medicare at 65 if you are not subsidy-eligible.",
   },
   {
     question: "What is the fastest way to reach a $2 million retirement portfolio?",
     answer:
-      "Maximize tax-advantaged accounts first: 401(k) ($24,500/year in 2026, or $32,500 with age-50+ catch-up), IRA ($7,500/year, or $8,600 with catch-up), and HSA ($4,400 individual / $8,750 family, plus $1,000 catch-up at 55+). These three accounts alone allow up to $46,500/year in tax-advantaged savings for someone over 50. Then pour surplus into taxable index funds. At a 7% average return, saving $3,500/month from a $400,000 starting balance reaches $2 million in roughly 12-13 years. Use our Compound Interest Calculator to model your exact timeline.",
+      `Maximize tax-advantaged accounts first: 401(k) (${usd(RETIREMENT_LIMITS.employeeDeferral)}/year in 2026, or ${usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.catchUp50)} with the age-50+ catch-up), IRA (${usd(RETIREMENT_LIMITS.ira)}/year, or ${usd(RETIREMENT_LIMITS.ira + RETIREMENT_LIMITS.iraCatchUp50)} with catch-up), and HSA (${usd(HSA_LIMITS.selfOnly)} individual / ${usd(HSA_LIMITS.family)} family, plus ${usd(HSA_LIMITS.catchUp55)} catch-up at 55+). These three accounts alone allow up to ${usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.catchUp50 + RETIREMENT_LIMITS.ira + RETIREMENT_LIMITS.iraCatchUp50 + HSA_LIMITS.selfOnly + HSA_LIMITS.catchUp55)}/year for someone over 50 with self-only HDHP coverage. Then pour surplus into taxable index funds. Illustrative math only: at a 7% average return, saving $3,500/month from a $400,000 starting balance reaches $2 million in about 13 years. Use our Compound Interest Calculator to model your exact timeline.`,
   },
 ];
 
@@ -63,7 +71,7 @@ export default function HowMuchToRetireAt55Guide() {
         description="Find out how much you need to retire at 55. Covers the 4% rule, healthcare costs, portfolio targets by lifestyle, and a step-by-step action plan."
         slug="how-much-to-retire-at-55"
         datePublished="2026-08-24"
-        dateModified="2026-10-02"
+        dateModified="2026-10-20"
         image="/images/guides/how-much-to-retire-at-55.webp"
       />
       <BreadcrumbJsonLd
@@ -104,16 +112,18 @@ export default function HowMuchToRetireAt55Guide() {
           </h2>
           <ul className="mt-3 space-y-2 text-ink-700">
             <li>
-              <strong>Most people need:</strong> $1.5 million - $2.5 million to
-              retire at 55 comfortably
+              <strong>Most people need:</strong> About $1.9 million - $3.1 million
+              to retire at 55 comfortably (spending plus a healthcare reserve)
             </li>
             <li>
-              <strong>The 4% rule:</strong> Withdraw 4% of your portfolio annually
-              ($80,000/year from a $2 million portfolio)
+              <strong>The 4% rule of thumb:</strong> Withdraw 4% of your portfolio
+              in year one ($80,000/year from a $2 million portfolio) — often trimmed
+              to 3.25-3.5% for longer retirements
             </li>
             <li>
-              <strong>Healthcare gap:</strong> Budget an extra $350,000-$550,000
-              for the 10 years before Medicare at 65 (costs rose after enhanced ACA credits expired)
+              <strong>Healthcare gap:</strong> Budget an extra $500,000-$650,000
+              for the 10 years before Medicare at 65 (2026 unsubsidized ACA premiums
+              rose sharply after enhanced credits expired)
             </li>
             <li>
               <strong>Conservative target:</strong> Use 3.5% withdrawal rate for a
@@ -189,11 +199,24 @@ export default function HowMuchToRetireAt55Guide() {
             Example: $80,000/year spending → $80,000 / 0.04 = $2,000,000
           </div>
           <p className="mt-4 text-ink-700">
-            This rule comes from the Trinity Study, which tested withdrawal rates
-            against historical US stock and bond returns. A 4% withdrawal rate
-            succeeded 95%+ of the time over 30-year periods. The key word is{" "}
+            William Bengen's 1994 research and the later Trinity Study
+            (Tier-2 summaries) tested withdrawal rates against historical U.S.
+            stock and bond returns. A 4% initial withdrawal, adjusted for inflation,
+            held up in many — but not all — 30-year U.S. historical windows. Treat
+            it as a starting point, not a guarantee. The key word is{" "}
             <em>30 years</em>.
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "William Bengen, Journal of Financial Planning (Oct. 1994 reprint PDF) — Tier-2",
+                href: "https://www.financialplanningassociation.org/sites/default/files/2021-04/MAR04%20Determining%20Withdrawal%20Rates%20Using%20Historical%20Data.pdf",
+              },
+            ]}
+            checked="October 2026"
+            note="Historical simulation; not an IRS or SSA rule."
+          />
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
             Why 55 Means a 30-40 Year Horizon
@@ -248,29 +271,54 @@ export default function HowMuchToRetireAt55Guide() {
             The Healthcare Gap Before Medicare
           </h3>
           <p className="mt-2 text-ink-700">
-            Medicare eligibility begins at 65. Retire at 55 and you are on your
-            own for a full decade of health insurance — the single biggest
-            financial wildcard for early retirees. Employer-sponsored coverage
-            disappears, and with the expiration of enhanced ACA premium tax
-            credits, unsubsidized marketplace premiums for someone in their
-            late 50s now run $681-$1,325 per month depending on age and state,
-            with the national average for a 60-year-old at $822/month for a
-            standard Silver plan (2026 InsuranceCostGuide data).
+            Medicare eligibility generally begins at 65 (CMS). Retire at 55 and
+            you are on your own for a full decade of health insurance — the
+            single biggest financial wildcard for early retirees. Employer-sponsored
+            coverage disappears, and with the expiration of enhanced ACA premium
+            tax credits after 2025, unsubsidized benchmark Silver premiums for
+            2026 often exceed $1,000/month nationally for people in their late
+            50s (about $625/month at age 40 and roughly $1,327/month at age 60
+            on the national weighted average before subsidies, per KFF benchmark
+            data as of mid-October 2026).
           </p>
           <div className="mt-4 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4">
             <p className="font-medium text-amber-800">The 10-Year Penalty (2026 Update)</p>
             <p className="mt-1 text-sm text-amber-700">
-              At an average of $850/month for a single early retiree (ages 55-64
-              blended average), the 10-year gap before Medicare costs roughly
-              $102,000 in premiums alone for an unsubsidized Silver plan — and
-              significantly more for couples or in high-cost states. Add
-              deductibles, copays, dental, and vision and the total easily
-              reaches $150,000-$200,000. Capitalize that at 3.5% and you need
-              an additional $430,000-$570,000 in your portfolio just for
-              healthcare. After the enhanced ACA credits expired, this figure
-              jumped roughly 26% compared to 2025 estimates.
+              At roughly $1,250-$1,400/month in combined premiums and routine
+              out-of-pocket costs for a single early retiree (ages 55-64, national
+              averages), the decade before Medicare can cost $150,000-$170,000 in
+              today's dollars — more for couples or high-premium states like
+              Wyoming or West Virginia. Capitalizing about $18,000-$22,000 per
+              year of healthcare spending at a 3.5% withdrawal rate implies an
+              extra $500,000-$630,000 in portfolio reserve. KFF (Tier-2) pegs
+              gross 2026 benchmark premium increases at about 26% on average after
+              enhanced credits expired.
             </p>
           </div>
+          <Sources
+            items={[
+              {
+                label: "CMS, Medicare eligibility overview",
+                href: "https://www.medicare.gov/basics/get-started-with-medicare",
+              },
+              {
+                label:
+                  "KFF Quick Take (Oct. 28, 2025) — ~26% average 2026 ACA gross premium increase",
+                href: "https://www.kff.org/quick-insights/aca-insurers-are-raising-premiums-by-an-estimated-26-but-most-enrollees-could-see-sharper-increases-in-what-they-pay/",
+              },
+              {
+                label: "KFF State Health Facts — 2026 U.S. benchmark premium ($625/mo, age 40)",
+                href: "https://www.kff.org/affordable-care-act/state-indicator/marketplace-average-benchmark-premiums/",
+              },
+              {
+                label:
+                  "CMS — federal default ACA age rating factors (May 2017)",
+                href: "https://www.cms.gov/cciio/programs-and-initiatives/health-insurance-market-reforms/downloads/statespecagecrv053117.pdf",
+              },
+            ]}
+            checked="October 2026"
+            note="Age-60 premium applies CMS default age factors (2.714 ÷ 1.278) to KFF’s national age-40 benchmark; state curves vary."
+          />
         </section>
 
         {/* Spending Breakdown Table */}
@@ -310,22 +358,22 @@ export default function HowMuchToRetireAt55Guide() {
                   <td className="px-4 py-3 font-medium">Modest</td>
                   <td className="px-4 py-3">$50,000/yr</td>
                   <td className="px-4 py-3">$1,428,571</td>
-                  <td className="px-4 py-3">$430,000</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$1,858,571</td>
+                  <td className="px-4 py-3">$500,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$1,928,571</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3 font-medium">Comfortable</td>
                   <td className="px-4 py-3">$80,000/yr</td>
                   <td className="px-4 py-3">$2,285,714</td>
-                  <td className="px-4 py-3">$500,000</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$2,785,714</td>
+                  <td className="px-4 py-3">$575,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$2,860,714</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium">Affluent</td>
                   <td className="px-4 py-3">$120,000/yr</td>
                   <td className="px-4 py-3">$3,428,571</td>
-                  <td className="px-4 py-3">$570,000</td>
-                  <td className="px-4 py-3 font-medium text-brand-700">$3,998,571</td>
+                  <td className="px-4 py-3">$650,000</td>
+                  <td className="px-4 py-3 font-medium text-brand-700">$4,078,571</td>
                 </tr>
               </tbody>
             </table>
@@ -334,9 +382,9 @@ export default function HowMuchToRetireAt55Guide() {
             *Modest lifestyle assumes paid-off housing in a lower cost-of-living
             area. Comfortable includes travel and dining out. Affluent assumes
             maintaining a higher standard of living, potentially in a major metro.
-            Healthcare reserve reflects 2026 post-enhanced-credit ACA premiums
-            ($681-$1,325/month depending on age) plus out-of-pocket costs for 10
-            years, capitalized at 3.5%.
+            Healthcare reserve reflects 2026 unsubsidized ACA benchmark premiums
+            (often $1,000-$1,400/month for ages 55-64 nationally) plus
+            out-of-pocket costs, expressed as a 3.5% withdrawal-funded reserve.
           </p>
 
           <h3 className="mt-6 text-xl font-semibold text-ink-800">
@@ -389,8 +437,8 @@ export default function HowMuchToRetireAt55Guide() {
                 <ul className="mt-2 space-y-1 text-sm text-ink-700">
                   <li>Desired spending: $85,000/year (comfortable, mortgage-free)</li>
                   <li>Portfolio needed (3.5% rule): $2,428,571</li>
-                  <li>Healthcare reserve (10 years): $500,000</li>
-                  <li>Total target: $2,928,571</li>
+                  <li>Healthcare reserve (10 years): $575,000</li>
+                  <li>Total target: $3,003,571</li>
                   <li>Years until 55: 13</li>
                   <li>Assumed return: 7% average annual</li>
                 </ul>
@@ -401,14 +449,14 @@ export default function HowMuchToRetireAt55Guide() {
               <h4 className="font-semibold text-ink-800">Projection at Current Pace</h4>
               <ul className="mt-2 space-y-1 text-sm text-ink-700">
                 <li>
-                  $295,000 growing at 7% for 13 years: $295,000 x 1.07^13 = $708,847
+                  $295,000 growing at 7% for 13 years: $295,000 × 1.07^13 ≈ $710,904
                 </li>
                 <li>
                   $3,500/month ($42,000/year) invested for 13 years at 7%:
-                  ~$884,000 in contributions + growth
+                  ≈ $845,907 in future value
                 </li>
                 <li>
-                  <strong>Projected portfolio at 55: ~$1,592,847</strong>
+                  <strong>Projected portfolio at 55: ~$1,556,811</strong>
                 </li>
                 <li>
                   Mortgage paid off by 54, freeing $2,800/month ($33,600/year)
@@ -419,27 +467,27 @@ export default function HowMuchToRetireAt55Guide() {
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">Gap Analysis</h4>
               <p className="mt-2 text-sm text-ink-700">
-                Robert&apos;s projected $1,592,847 falls short of his $2,928,571
-                target by <strong>$1,335,724</strong>. At 3.5% withdrawal, his
-                projected portfolio would generate $55,750/year — enough for a
-                modest lifestyle but $29,250 short of his $85,000 comfort target.
-                The gap is wider than in prior years primarily because the
-                healthcare reserve increased to $500,000 following the 2026
-                expiration of enhanced ACA premium tax credits. Even accounting
-                for the mortgage payoff reducing his spending need to roughly
-                $51,400/year ($85,000 - $33,600), he would still need
-                ~$1,468,571 — leaving a gap of roughly $1,335,724 when
-                healthcare is included.
+                Robert's projected $1,556,811 falls short of his $3,003,571
+                target by <strong>$1,446,760</strong>. At a 3.5% withdrawal, his
+                projected portfolio would generate about $54,488/year — enough for a
+                modest lifestyle but roughly $30,500 short of his $85,000 comfort target.
+                The gap widened after the healthcare reserve moved to $575,000
+                following 2026 unsubsidized ACA premium increases (KFF Tier-2
+                estimates). Even accounting for the mortgage payoff reducing his
+                spending need to roughly $51,400/year ($85,000 − $33,600), he would
+                still need about $1,468,571 for spending alone — far less than the
+                all-in target once healthcare is included.
               </p>
             </div>
 
             <div className="mt-6 border-t border-ink-100 pt-4">
-              <h4 className="font-semibold text-ink-800">Robert&apos;s Action Plan</h4>
+              <h4 className="font-semibold text-ink-800">Robert's Action Plan</h4>
               <ul className="mt-2 space-y-2 text-sm text-ink-700">
                 <li>
                   <strong>1. Increase savings to $5,200/month</strong> — redirect
                   the $2,800 mortgage payment after payoff plus boost contributions
-                  now. This closes the gap to within $400,000.
+                  now. That narrows the shortfall by about $410,000 versus $3,500/month
+                  (to roughly $1.04 million below target at 7% returns).
                 </li>
                 <li>
                   <strong>2. Build a taxable bridge account</strong> — target
@@ -499,23 +547,23 @@ export default function HowMuchToRetireAt55Guide() {
               <tbody className="divide-y divide-ink-100">
                 <tr>
                   <td className="px-4 py-3">55-59</td>
-                  <td className="px-4 py-3">$681 - $939 (unsubsidized Silver)</td>
-                  <td className="px-4 py-3">$10,200 - $16,000</td>
+                  <td className="px-4 py-3">~$1,090-$1,260 (unsubsidized benchmark Silver)</td>
+                  <td className="px-4 py-3">$13,000 - $18,000</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">60-64</td>
-                  <td className="px-4 py-3">$822 - $1,325 (unsubsidized Silver)</td>
-                  <td className="px-4 py-3">$13,000 - $20,000</td>
+                  <td className="px-4 py-3">~$1,300-$1,470 (unsubsidized benchmark Silver)</td>
+                  <td className="px-4 py-3">$16,000 - $22,000</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3">60 (KFF benchmark)</td>
-                  <td className="px-4 py-3">$1,326 (benchmark Silver, national avg.)</td>
-                  <td className="px-4 py-3">$15,914 (premiums only)</td>
+                  <td className="px-4 py-3">60 (KFF benchmark, national)</td>
+                  <td className="px-4 py-3">~$1,327 (benchmark Silver, age-adjusted)</td>
+                  <td className="px-4 py-3">~$15,924 (premiums only)</td>
                 </tr>
                 <tr className="bg-ink-50/50">
                   <td className="px-4 py-3">65+ (Medicare)</td>
-                  <td className="px-4 py-3">$185 - $560 (Part B + D + Medigap)</td>
-                  <td className="px-4 py-3">$4,500 - $8,000</td>
+                  <td className="px-4 py-3">$202.90 Part B standard (2026) + Part D/Medigap varies</td>
+                  <td className="px-4 py-3">$4,500 - $8,000+</td>
                 </tr>
               </tbody>
             </table>
@@ -526,24 +574,44 @@ export default function HowMuchToRetireAt55Guide() {
             57-year-old couple on a Silver-tier ACA plan in 2026 typically pays
             $2,400-$3,200/month ($28,800-$38,400/year) without subsidies — a
             significant jump from prior years after the enhanced premium tax
-            credits expired at the end of 2025 (KFF reports unsubsidized
-            premiums rose roughly 26% in 2026). ACA premium tax credits phase
-            out entirely at 400% of the federal poverty level — $62,600 for a
-            single filer and $128,600 for a family of four in 2026. Exceed that
-            threshold by even $1 and subsidies vanish completely (it is a cliff,
+            credits expired after 2025 (KFF Tier-2: gross premiums up about 26%
+            on average for 2026). For 2026 Marketplace coverage, premium tax
+            credits generally apply up to 400% of the prior-year federal poverty
+            level — about $62,600 for a single filer and $128,600 for a family of
+            four (HealthCare.gov, based on 2025 poverty guidelines). Without
+            enhanced credits, income above that cap receives no subsidy (a cliff,
             not a gradual phase-out).
           </p>
+          <Sources
+            items={[
+              {
+                label: "HealthCare.gov — federal poverty level (2025/2026 tables)",
+                href: "https://www.healthcare.gov/glossary/federal-poverty-level-fpl/",
+              },
+              {
+                label:
+                  "KFF (Nov. 24, 2025) — subsidy cliff returns if enhanced credits expire",
+                href: "https://www.kff.org/affordable-care-act/mapping-the-uneven-burden-of-rising-aca-marketplace-premium-payments-due-to-enhanced-tax-credit-expiration/",
+              },
+              {
+                label: "CMS fact sheet (Nov. 2025) — 2026 Part B premium $202.90",
+                href: "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles",
+              },
+            ]}
+            checked="October 2026"
+          />
 
           <div className="mt-6 rounded-lg border-l-4 border-brand-400 bg-brand-50 p-4">
             <p className="font-medium text-brand-800">Strategy: Manage Your MAGI</p>
             <p className="mt-1 text-sm text-brand-700">
               Early retirees often live off taxable brokerage accounts and Roth
               contributions (which do not count as income) to keep Modified
-              Adjusted Gross Income below the 400% FPL cliff ($62,600 single /
-              $128,600 family in 2026). Staying below this threshold can save
-              $12,000-$20,000 per year in healthcare costs — which, capitalized
-              at 3.5%, represents $343,000-$571,000 in portfolio value. HSA
-              contributions ($5,400 for singles 55+ in 2026) also reduce MAGI,
+              Adjusted Gross Income below the 400% FPL cliff (about $62,600 single /
+              $128,600 family of four for 2026 Marketplace coverage). Staying below
+              this threshold can save $12,000-$20,000 per year in healthcare costs —
+              which, capitalized at 3.5%, represents $343,000-$571,000 in portfolio
+              value. HSA contributions (up to {usd(HSA_LIMITS.selfOnly + HSA_LIMITS.catchUp55)}{" "}
+              for self-only HDHP coverage at age 55+ in 2026) also reduce MAGI,
               potentially pushing you back under the cliff.
             </p>
           </div>
@@ -566,8 +634,8 @@ export default function HowMuchToRetireAt55Guide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Track every dollar you spend for 3 months. Multiply by 12, add
                   10-15% buffer, then divide by 0.035 (conservative withdrawal
-                  rate). Add $360,000-$450,000 for healthcare. That is your target.
-                  A $75,000/year spender needs roughly $2,500,000 total.
+                  rate). Add about $500,000-$650,000 for healthcare. That is your target.
+                  A $75,000/year spender needs roughly $2.7-$2.9 million total.
                 </p>
               </div>
             </div>
@@ -580,18 +648,36 @@ export default function HowMuchToRetireAt55Guide() {
                   Maximize tax-advantaged accounts
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  In 2026, contribute the maximum to your 401(k) ($24,500, or
-                  $32,500 with the $8,000 age-50+ catch-up — and $35,750 if you
-                  are ages 60-63 under the new SECURE 2.0 super catch-up), Roth
-                  or traditional IRA ($7,500, or $8,600 with catch-up), and HSA
-                  if eligible ($4,400 individual / $8,750 family, plus $1,000
-                  catch-up at 55+). Capture every dollar of employer match — it
-                  is an instant 50-100% return. For someone over 50 with family
-                  HSA coverage, these three accounts alone allow up to $50,850/year
-                  in tax-advantaged savings.
+                  In {TAX_DATA.taxYear}, contribute the maximum to your 401(k) (
+                  {usd(RETIREMENT_LIMITS.employeeDeferral)}, or{" "}
+                  {usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.catchUp50)} with
+                  the age-50+ catch-up — and{" "}
+                  {usd(
+                    RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.catchUp60to63,
+                  )}{" "}
+                  if you are ages 60-63 under SECURE 2.0), Roth or traditional IRA (
+                  {usd(RETIREMENT_LIMITS.ira)}, or{" "}
+                  {usd(RETIREMENT_LIMITS.ira + RETIREMENT_LIMITS.iraCatchUp50)} with
+                  catch-up), and HSA if eligible ({usd(HSA_LIMITS.selfOnly)} individual /{" "}
+                  {usd(HSA_LIMITS.family)} family, plus {usd(HSA_LIMITS.catchUp55)} catch-up
+                  at 55+). Capture every dollar of employer match. For someone over 50
+                  with family HSA coverage, these three accounts alone allow up to{" "}
+                  {usd(
+                    RETIREMENT_LIMITS.employeeDeferral +
+                      RETIREMENT_LIMITS.catchUp50 +
+                      RETIREMENT_LIMITS.ira +
+                      RETIREMENT_LIMITS.iraCatchUp50 +
+                      HSA_LIMITS.family +
+                      HSA_LIMITS.catchUp55,
+                  )}
+                  /year in tax-advantaged savings.
                 </p>
               </div>
             </div>
+            <Sources
+              items={[TAX_SOURCES.retirementLimits, TAX_SOURCES.hsaLimits]}
+              checked={TAX_DATA.checkedOnLabel}
+            />
             <div className="flex gap-4">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">
                 3
@@ -601,8 +687,10 @@ export default function HowMuchToRetireAt55Guide() {
                   Build a taxable bridge account
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  You cannot access 401(k) or IRA funds without penalty until
-                  59½ (with limited exceptions). Fund a taxable brokerage with
+                  You cannot access 401(k) or IRA funds without the 10% early
+                  withdrawal tax until 59½ (IRS exceptions include Rule of 55
+                  after leaving your employer in or after the year you turn 55,
+                  and 72(t) SEPP). Fund a taxable brokerage with
                   low-cost index funds — this is your spending money for ages
                   55-59½. Target 4-5 years of expenses: $80,000/year x 5 =
                   $400,000 in taxable accounts.
@@ -620,7 +708,7 @@ export default function HowMuchToRetireAt55Guide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Starting 5 years before retirement, convert $40,000-$50,000/year
                   from traditional IRA/401(k) to Roth IRA. Pay taxes at your current
-                  (lower) rate. After 5 years, each conversion&apos;s principal becomes
+                  (lower) rate. After 5 years, each conversion's principal becomes
                   available for penalty-free withdrawal. This bridges the gap between
                   your taxable account depletion and age 59½.
                 </p>
@@ -639,14 +727,27 @@ export default function HowMuchToRetireAt55Guide() {
                   sharply after the enhanced premium tax credits expired. If
                   retiring before 55, consider COBRA (18 months of employer
                   coverage, typically $600-$700/month for individuals). Structure
-                  withdrawals to keep MAGI below $62,600 (single) or $128,600
-                  (family of four) — the 2026 400% FPL subsidy cliff. Budget
-                  $700-$1,400/month for ages 55-64 depending on age and state.
-                  An HSA-eligible HDHP can also reduce MAGI via deductible HSA
-                  contributions ($5,400 for singles 55+ in 2026).
+                  withdrawals to keep MAGI below about $62,600 (single)
+                  or $128,600 (family of four) — the 400% FPL subsidy cliff for
+                  2026 Marketplace coverage. Budget about $1,100-$1,500/month
+                  for ages 55-64 depending on age and state (unsubsidized). An
+                  HSA-eligible HDHP can also reduce MAGI via deductible HSA
+                  contributions (up to {usd(HSA_LIMITS.selfOnly + HSA_LIMITS.catchUp55)} for
+                  self-only coverage at 55+ in {TAX_DATA.taxYear}).
                 </p>
               </div>
             </div>
+            <Sources
+              items={[
+                {
+                  label:
+                    "IRS Retirement Topics — exceptions to tax on early distributions",
+                  href: "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-exceptions-to-tax-on-early-distributions",
+                },
+                TAX_SOURCES.hsaLimits,
+              ]}
+              checked={TAX_DATA.checkedOnLabel}
+            />
             <div className="flex gap-4">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">
                 6
@@ -672,6 +773,24 @@ export default function HowMuchToRetireAt55Guide() {
             </div>
           </div>
         </section>
+
+        <Sources
+          items={[
+            {
+              label:
+                "IRS Retirement Topics — required minimum distributions (RMDs)",
+              href: "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-required-minimum-distributions-rmds",
+            },
+            {
+              label:
+                "IRS IRB 2024-33 (July 2024) — applicable RMD ages 73 vs 75 by birth year",
+              href: "https://www.irs.gov/irb/2024-33_IRB",
+            },
+          ]}
+          checked="October 2026"
+          note="Early retirees still face RMDs later; Roth IRAs have no lifetime RMDs for the original owner."
+          className="mt-12"
+        />
 
         {/* CTA Section */}
         <section className="mt-12 rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 text-center">

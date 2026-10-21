@@ -55,7 +55,7 @@ export function InflationArticle() {
         >
           retirement savings target
         </Link>{" "}
-        must account for this future cost increase, not just today&apos;s expenses.
+        must account for this future cost increase, not just today's expenses.
       </p>
       <p>
         The Rule of 72 also works in reverse for investments. If your savings
@@ -143,10 +143,10 @@ export function InflationArticle() {
       <p>
         David currently has $95,000 in his 401(k) and contributes $800 per month.
         Assuming 7% nominal returns and 3% inflation, his portfolio grows to
-        approximately $1,020,000 in nominal terms by age 65. In today&apos;s
+        approximately $1,020,000 in nominal terms by age 65. In today's
         dollars, that is about $420,000 of real purchasing power. Using the 4%
         safe withdrawal rate, he could draw roughly $16,800 per year in real
-        terms — far short of the $54,000 per year (in today&apos;s dollars) he
+        terms — far short of the $54,000 per year (in today's dollars) he
         needs.
       </p>
       <p>

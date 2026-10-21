@@ -131,7 +131,7 @@ export function HourlyToSalaryArticle() {
       </table>
       <p>
         The new position pays $13,140 more gross and $10,229 more net annually — a 31.6% increase
-        in gross pay. Even accounting for 5 extra hours per week during peak season, Dana&apos;s
+        in gross pay. Even accounting for 5 extra hours per week during peak season, Dana's
         effective hourly rate on the new job is $24.33 when overtime weeks are included. The $852/month
         increase in take-home pay would allow her to accelerate savings toward a down payment, which
         she can model with a{" "}

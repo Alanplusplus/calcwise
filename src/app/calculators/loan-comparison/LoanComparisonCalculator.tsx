@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { RateDefaultNote } from "@/components/RateDefaultNote";
+import { DEFAULT_MORTGAGE_RATE, MORTGAGE_MARKET } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -26,9 +28,9 @@ function calcLoan(amount: number, rate: number, years: number) {
 
 export function LoanComparisonCalculator() {
   const [amount, setAmount] = useState("250000");
-  const [rateA, setRateA] = useState("6.5");
+  const [rateA, setRateA] = useState(DEFAULT_MORTGAGE_RATE);
   const [termA, setTermA] = useState("30");
-  const [rateB, setRateB] = useState("5.9");
+  const [rateB, setRateB] = useState(String(MORTGAGE_MARKET.fifteenYear));
   const [termB, setTermB] = useState("15");
 
   const results = useMemo(() => {
@@ -114,6 +116,8 @@ export function LoanComparisonCalculator() {
           </div>
         </div>
       </div>
+
+      <RateDefaultNote rate={[rateA, rateB]} />
 
       {results && (
         <div className="mt-8">

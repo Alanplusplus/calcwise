@@ -26,8 +26,8 @@ export function CompoundInterestArticle() {
         leading to exponential growth over time.
       </p>
       <p>
-        Albert Einstein reportedly called compound interest the &quot;eighth
-        wonder of the world.&quot; Whether or not the attribution is accurate,
+        Albert Einstein reportedly called compound interest the "eighth
+        wonder of the world." Whether or not the attribution is accurate,
         the math is undeniable: given enough time, even modest savings can grow
         into substantial wealth.
       </p>
@@ -38,7 +38,7 @@ export function CompoundInterestArticle() {
         <strong>A = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) - 1) / (r/n)]</strong>
       </p>
       <ul>
-        <li><strong>A</strong> = future value (what you&apos;ll have)</li>
+        <li><strong>A</strong> = future value (what you'll have)</li>
         <li><strong>P</strong> = initial principal (starting amount)</li>
         <li><strong>r</strong> = annual interest rate (as a decimal)</li>
         <li><strong>n</strong> = number of times interest compounds per year</li>
@@ -49,7 +49,7 @@ export function CompoundInterestArticle() {
       <h2>Why Compounding Frequency Matters</h2>
       <p>
         The more frequently interest compounds, the faster your money grows.
-        Here&apos;s how $10,000 at 7% annual interest looks after 20 years with
+        Here's how $10,000 at 7% annual interest looks after 20 years with
         different compounding frequencies:
       </p>
       <ul>
@@ -118,7 +118,7 @@ export function CompoundInterestArticle() {
       </p>
       <p>
         With <strong>compound interest</strong> (monthly), the same $10,000
-        grows to $40,387 — earning $30,387 in interest. That&apos;s 27% more
+        grows to $40,387 — earning $30,387 in interest. That's 27% more
         growth from compounding alone, with no additional contributions.
       </p>
 
@@ -133,7 +133,7 @@ export function CompoundInterestArticle() {
 
       <h2>Frequently Asked Questions</h2>
 
-      <h3>What&apos;s a good rate of return to assume?</h3>
+      <h3>What's a good rate of return to assume?</h3>
       <p>
         For stock market investments over 20+ years, 7% (inflation-adjusted) is
         a commonly used conservative estimate. For a savings account or CDs, use
@@ -144,7 +144,7 @@ export function CompoundInterestArticle() {
       <h3>How often should I contribute?</h3>
       <p>
         Monthly contributions are the most common approach and align with most
-        people&apos;s pay schedules. The key is consistency — whether weekly,
+        people's pay schedules. The key is consistency — whether weekly,
         biweekly, or monthly, regular contributions matter more than the exact
         frequency.
       </p>

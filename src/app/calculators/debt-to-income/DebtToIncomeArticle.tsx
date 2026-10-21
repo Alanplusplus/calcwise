@@ -22,7 +22,7 @@ export function DebtToIncomeArticle() {
         Enter your gross monthly income (before taxes) and all recurring monthly debt payments. The calculator instantly computes two critical ratios: your <strong>front-end DTI</strong> (housing costs divided by income) and your <strong>back-end DTI</strong> (total monthly debt divided by income). You will also see exactly where you stand against lender qualification thresholds for conventional, FHA, VA, and qualified mortgage programs.
       </p>
       <p>
-        Every field updates in real time. Adjust any payment to see how paying off a credit card or reducing your housing costs changes your DTI. The lender threshold table shows whether you pass or exceed each program&apos;s limit, giving you a clear picture of which loans you currently qualify for.
+        Every field updates in real time. Adjust any payment to see how paying off a credit card or reducing your housing costs changes your DTI. The lender threshold table shows whether you pass or exceed each program's limit, giving you a clear picture of which loans you currently qualify for.
       </p>
 
       <h2>What Is Debt-to-Income Ratio?</h2>
@@ -202,8 +202,8 @@ export function DebtToIncomeArticle() {
         <li><strong>Pay off high-minimum debts first</strong> — Target debts with the largest monthly payments to free up DTI capacity quickly. A $200/month credit card minimum eliminated has the same DTI impact as earning $556 more per month (at 36% threshold).</li>
         <li><strong>Consolidate debts at lower payments</strong> — Refinancing a 5-year auto loan to a 6-year term reduces the monthly payment, lowering your DTI. Be aware this increases total interest paid.</li>
         <li><strong>Avoid new debt before applying</strong> — Every new loan or credit card balance adds to your monthly obligations. Freeze all new borrowing 6-12 months before a mortgage application.</li>
-        <li><strong>Increase provable income</strong> — Overtime, bonuses, and a second job count if you can document 2 years of consistent earnings. A side income of $500/month reduces a $6,000 earner&apos;s DTI from 40% to 36.9%.</li>
-        <li><strong>Add a co-borrower</strong> — A spouse&apos;s income is combined with yours, increasing the denominator and lowering the ratio. However, their debts are also included.</li>
+        <li><strong>Increase provable income</strong> — Overtime, bonuses, and a second job count if you can document 2 years of consistent earnings. A side income of $500/month reduces a $6,000 earner's DTI from 40% to 36.9%.</li>
+        <li><strong>Add a co-borrower</strong> — A spouse's income is combined with yours, increasing the denominator and lowering the ratio. However, their debts are also included.</li>
       </ul>
       <p>
         For a structured debt reduction plan, try our{" "}

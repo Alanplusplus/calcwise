@@ -2,6 +2,15 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { InputField } from "@/components/InputField";
+import { Sources } from "@/components/Sources";
+import {
+  ORDINARY_BRACKETS,
+  STANDARD_DEDUCTIONS,
+  TAX_DATA,
+  TAX_SOURCES,
+  TOP_ORDINARY_RATE,
+  type FilingStatus,
+} from "@/lib/tax-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -11,46 +20,18 @@ function formatPercent(n: number): string {
   return `${n.toFixed(1)}%`;
 }
 
-type FilingStatus = "single" | "mfj" | "hoh";
-
 interface TaxBracket {
   rate: number;
   label: string;
   upTo: number;
 }
 
-const STANDARD_DEDUCTIONS: Record<FilingStatus, number> = {
-  single: 15000,
-  mfj: 30000,
-  hoh: 22500,
-};
-
-const TAX_BRACKETS: Record<FilingStatus, TaxBracket[]> = {
-  single: [
-    { rate: 0.1, label: "10%", upTo: 11600 },
-    { rate: 0.12, label: "12%", upTo: 47150 },
-    { rate: 0.22, label: "22%", upTo: 100525 },
-    { rate: 0.24, label: "24%", upTo: 191950 },
-    { rate: 0.32, label: "32%", upTo: 243725 },
-    { rate: 0.35, label: "35%", upTo: 609350 },
-  ],
-  mfj: [
-    { rate: 0.1, label: "10%", upTo: 23200 },
-    { rate: 0.12, label: "12%", upTo: 94300 },
-    { rate: 0.22, label: "22%", upTo: 201050 },
-    { rate: 0.24, label: "24%", upTo: 383900 },
-    { rate: 0.32, label: "32%", upTo: 487450 },
-    { rate: 0.35, label: "35%", upTo: 1218700 },
-  ],
-  hoh: [
-    { rate: 0.1, label: "10%", upTo: 17400 },
-    { rate: 0.12, label: "12%", upTo: 65700 },
-    { rate: 0.22, label: "22%", upTo: 150788 },
-    { rate: 0.24, label: "24%", upTo: 287925 },
-    { rate: 0.32, label: "32%", upTo: 365587 },
-    { rate: 0.35, label: "35%", upTo: 914025 },
-  ],
-};
+const TAX_BRACKETS = Object.fromEntries(
+  (Object.keys(ORDINARY_BRACKETS) as FilingStatus[]).map((status) => [
+    status,
+    ORDINARY_BRACKETS[status].map((b) => ({ ...b, label: `${Math.round(b.rate * 100)}%` })),
+  ])
+) as Record<FilingStatus, TaxBracket[]>;
 
 function calculateProgressiveTax(
   taxableIncome: number,
@@ -84,11 +65,11 @@ function calculateProgressiveTax(
 
   if (taxableIncome > brackets[brackets.length - 1].upTo) {
     const amountInBracket = taxableIncome - brackets[brackets.length - 1].upTo;
-    const bracketTax = amountInBracket * 0.37;
+    const bracketTax = amountInBracket * TOP_ORDINARY_RATE;
     tax += bracketTax;
-    marginalRate = 0.37;
+    marginalRate = TOP_ORDINARY_RATE;
     breakdown.push({
-      rate: "37%",
+      rate: `${Math.round(TOP_ORDINARY_RATE * 100)}%`,
       amount: amountInBracket,
       tax: bracketTax,
     });
@@ -177,7 +158,7 @@ export function IncomeTaxCalculator({ defaults }: Props) {
           onChange={setStandardDeduction}
           prefix="$"
           min={0}
-          helpText="2026 estimated standard deduction for your filing status"
+          helpText="2026 standard deduction for your filing status (IRS Rev. Proc. 2025-32); replace it if you itemize"
         />
         <InputField
           label="Additional Deductions / 401(k) Contributions"
@@ -260,6 +241,13 @@ export function IncomeTaxCalculator({ defaults }: Props) {
           )}
         </div>
       )}
+
+      <Sources
+        className="mt-6"
+        items={[TAX_SOURCES.revProc, TAX_SOURCES.federalRates]}
+        checked={TAX_DATA.checkedOnLabel}
+        note={`Brackets and standard deduction are for tax year ${TAX_DATA.taxYear}. Estimates only; credits, state tax, and itemized deductions are not modeled.`}
+      />
     </div>
   );
 }

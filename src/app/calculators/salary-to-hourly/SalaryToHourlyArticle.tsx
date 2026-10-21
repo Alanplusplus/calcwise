@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SOCIAL_SECURITY_WAGE_BASE, usd } from "@/lib/tax-data";
 
 export function SalaryToHourlyArticle() {
   return (
@@ -57,7 +58,7 @@ export function SalaryToHourlyArticle() {
 
       <p>
         Tax treatment also differs. Salaried employees have taxes withheld automatically, while freelancers and contractors must pay self-employment
-        tax (an additional 15.3% on earnings up to $168,600 in 2026). This means a freelancer needs to charge roughly $38 to $42 per hour to match
+        tax (15.3% on net earnings, with the Social Security part capped at {usd(SOCIAL_SECURITY_WAGE_BASE)} in 2026). This means a freelancer needs to charge roughly $38 to $42 per hour to match
         the take-home pay of a $31.25/hour salaried position. Budget your take-home pay effectively using our{" "}
         <Link href="/calculators/budget-50-30-20" className="text-brand-600 hover:text-brand-800 font-medium">50/30/20 Budget Calculator</Link>{" "}
         to allocate your after-tax income across needs, wants, and savings.

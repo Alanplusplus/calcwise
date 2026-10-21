@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SiteJsonLd } from "@/components/SiteJsonLd";
+import { SiteChrome } from "@/components/SiteChrome";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -56,10 +57,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="flex min-h-screen flex-col">
-        <SiteJsonLd />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome
+          jsonLd={<SiteJsonLd />}
+          header={<Header />}
+          footer={<Footer />}
+        >
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ export function BudgetArticle() {
         The 50/30/20 budget rule is a simple framework for dividing your after-tax income
         into three categories: 50% for needs, 30% for wants, and 20% for savings and debt
         repayment beyond minimums. Popularized by Senator Elizabeth Warren in her book
-        &quot;All Your Worth,&quot; the rule gives you a clear starting point without
+        "All Your Worth," the rule gives you a clear starting point without
         tracking every coffee purchase or categorizing dozens of line items.
       </p>
       <p>

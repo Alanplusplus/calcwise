@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { calculators } from "@/lib/calculators";
 import { guides, getGuidesBySlug } from "@/lib/guides";
+import { isEmbeddable } from "@/lib/embeds";
 import { CategoryIcon } from "./Icons";
 import { BreadcrumbJsonLd } from "./BreadcrumbJsonLd";
 import { WebApplicationJsonLd } from "./WebApplicationJsonLd";
@@ -77,6 +78,19 @@ export function CalculatorShell({ calculator, children, article, variants }: Pro
       <div className="rounded-xl border border-ink-200 bg-white p-6 shadow-card sm:p-8">
         {children}
       </div>
+
+      {isEmbeddable(calculator.slug) && (
+        <p className="mt-3 text-sm text-ink-500">
+          Want this calculator on your own site?{" "}
+          <Link
+            href={`/embed#${calculator.slug}`}
+            className="font-medium text-brand-600 underline hover:text-brand-800"
+          >
+            Embed it for free
+          </Link>
+          .
+        </p>
+      )}
 
       {/* Popular Scenarios (variant links) */}
       {variants && variants.length > 0 && (

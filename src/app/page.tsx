@@ -40,7 +40,7 @@ export default function HomePage() {
                   href={`/calculators/category/${category.slug}`}
                   className="text-sm font-medium text-brand-600 hover:text-brand-800"
                 >
-                  View all &rarr;
+                  View all →
                 </Link>
               </div>
               <p className="mt-1 text-ink-500">{category.description}</p>
@@ -81,7 +81,7 @@ export default function HomePage() {
             href="/guides"
             className="text-sm font-medium text-brand-600 hover:text-brand-800"
           >
-            View all &rarr;
+            View all →
           </Link>
         </div>
         <p className="mt-1 text-ink-500">

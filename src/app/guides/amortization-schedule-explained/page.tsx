@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title:
@@ -30,7 +31,7 @@ const faqs = [
   {
     question: "Why do I pay more interest at the beginning of a loan?",
     answer:
-      "Interest is calculated as a percentage of your outstanding balance. At the start of a 30-year mortgage, your balance is at its highest -- for example, $350,000. At 6.5% annual interest (0.5417% monthly), the first month's interest charge is $1,896. As you make payments and the balance drops, the interest portion shrinks and more of each payment goes to principal. By month 300, the balance might be $120,000, so the interest charge drops to $650.",
+      "Interest is calculated as a percentage of your outstanding balance. At the start of a 30-year mortgage, your balance is at its highest -- for example, $350,000. At 6.5% annual interest (0.5417% monthly), the first month's interest charge is $1,896. As you make payments and the balance drops, the interest portion shrinks and more of each payment goes to principal. By month 300, the balance might be $113,000, so the interest charge drops to about $620.",
   },
   {
     question: "How is each monthly payment calculated in an amortization schedule?",
@@ -40,7 +41,7 @@ const faqs = [
   {
     question: "Does making extra payments change my amortization schedule?",
     answer:
-      "Yes. Extra payments go entirely toward reducing the principal balance. This has two effects: it shortens the total loan term and reduces the total interest paid. For example, adding $200/month to a $350,000 mortgage at 6.5% over 30 years saves approximately $92,000 in interest and pays off the loan 5.5 years early. Even a single extra payment per year (13 payments instead of 12) can shave 4-5 years off a 30-year mortgage.",
+      "Yes. Extra payments go entirely toward reducing the principal balance. This has two effects: it shortens the total loan term and reduces the total interest paid. For example, adding $200/month to a $350,000 mortgage at 6.5% over 30 years saves about $108,100 in interest and pays off the loan in roughly 24 years instead of 30. Even a single extra payment per year (13 payments instead of 12) can shave 4-5 years off a 30-year mortgage.",
   },
   {
     question:
@@ -59,6 +60,7 @@ export default function AmortizationScheduleGuide() {
         description="Understand how an amortization schedule splits every loan payment into principal and interest. See a real 30-year mortgage example, learn the formula, and download a free schedule."
         slug="amortization-schedule-explained"
         datePublished="2026-09-04"
+        dateModified="2026-10-20"
         image="/images/guides/amortization-schedule-explained.webp"
       />
       <BreadcrumbJsonLd
@@ -76,7 +78,7 @@ export default function AmortizationScheduleGuide() {
             <Link href="/guides" className="hover:underline">
               Guides
             </Link>{" "}
-            / Loans &amp; Mortgages
+            / Loans & Mortgages
           </p>
           <h1 className="mt-3 text-3xl font-bold leading-tight text-ink-900 sm:text-4xl">
             Amortization Schedule Explained: How Your Loan Payments Actually
@@ -86,13 +88,13 @@ export default function AmortizationScheduleGuide() {
             Every month you make a mortgage or car payment, a hidden tug-of-war
             plays out between principal and interest. An amortization schedule
             reveals exactly where each dollar goes -- and why a $350,000
-            mortgage at 6.5% costs you $446,247 in interest alone over 30 years.
+            mortgage at 6.5% costs you $446,406 in interest alone over 30 years.
             This guide breaks down the amortization formula, walks through a
             real payment schedule month by month, and shows you concrete
             strategies to tilt the balance in your favor.
           </p>
           <p className="mt-2 text-sm text-ink-500">
-            Last updated: September 2026
+            Last updated: October 2026
           </p>
         </header>
 
@@ -105,7 +107,7 @@ export default function AmortizationScheduleGuide() {
             <li>
               <strong>What it is:</strong> A table showing exactly how much of
               each loan payment goes to principal (reducing your balance) vs.
-              interest (the lender&apos;s profit)
+              interest (the lender's profit)
             </li>
             <li>
               <strong>Key insight:</strong> On a $350,000 mortgage at 6.5%, your
@@ -113,12 +115,12 @@ export default function AmortizationScheduleGuide() {
               The other $1,896 (85.7%) is pure interest
             </li>
             <li>
-              <strong>The shift:</strong> By payment 216 (year 18), the split
+              <strong>The shift:</strong> By payment 233 (year 19), the split
               flips -- more than half of each payment finally goes to principal
             </li>
             <li>
-              <strong>Total cost:</strong> 360 payments of $2,212 = $796,247
-              total. You pay $446,247 in interest on a $350,000 loan
+              <strong>Total cost:</strong> 360 payments of $2,212 = $796,406
+              total. You pay $446,406 in interest on a $350,000 loan
             </li>
           </ul>
           <p className="mt-4 text-sm text-ink-600">
@@ -138,7 +140,7 @@ export default function AmortizationScheduleGuide() {
           <figure className="overflow-hidden rounded-xl border border-ink-200">
             <Image
               src="/images/guides/amortization-schedule-explained.webp"
-              alt="Infographic showing how amortization works: a $350,000 loan at 6.5% over 30 years with monthly payment of $2,212 and total interest of $446,247, with bars showing the interest-to-principal shift over time"
+              alt="Infographic showing how amortization works: a $350,000 loan at 6.5% over 30 years with monthly payment of $2,212 and total interest of $446,406, with bars showing the interest-to-principal shift over time"
               width={1200}
               height={800}
               quality={80}
@@ -168,7 +170,7 @@ export default function AmortizationScheduleGuide() {
             The core mechanic is simple: interest is always calculated on the
             current outstanding balance. On day one of a $350,000 mortgage at
             6.5% APR, the monthly interest rate is 0.5417% (6.5% / 12). The
-            first month&apos;s interest charge is $350,000 x 0.005417 =
+            first month's interest charge is $350,000 x 0.005417 =
             $1,895.83. Your fixed payment is $2,212.24, so only $316.41 goes
             toward reducing the principal. Your new balance drops to
             $349,683.59.
@@ -177,9 +179,9 @@ export default function AmortizationScheduleGuide() {
             The next month, interest is calculated on $349,683.59 instead of
             $350,000. That saves you $1.71 in interest, meaning $318.12 goes to
             principal -- $1.71 more than last month. This snowball effect
-            accelerates: by month 12, the principal portion has grown to $337.76
-            ($21 more than month 1). By month 120 (year 10), it reaches
-            $610.65. By month 300 (year 25), it hits $1,543.29 -- nearly five
+            accelerates: by month 12, the principal portion has grown to $336
+            ($20 more than month 1). By month 120 (year 10), it reaches
+            $602. By month 300 (year 25), it hits $1,591 -- about five
             times the initial principal payment.
           </p>
           <p className="mt-4 text-ink-700">
@@ -270,37 +272,37 @@ export default function AmortizationScheduleGuide() {
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">12 (Year 1)</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$338</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$1,874</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$336</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$1,876</td>
                   <td className="px-4 py-2 text-right text-ink-700">$2,212</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $346,097
+                    $346,088
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">15.3%</td>
+                  <td className="px-4 py-2 text-right text-ink-700">15.2%</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">60 (Year 5)</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$431</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$1,781</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$435</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$1,777</td>
                   <td className="px-4 py-2 text-right text-ink-700">$2,212</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $328,414
+                    $327,638
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">19.5%</td>
+                  <td className="px-4 py-2 text-right text-ink-700">19.7%</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">120 (Year 10)</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$611</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$1,601</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$602</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$1,610</td>
                   <td className="px-4 py-2 text-right text-ink-700">$2,212</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $295,194
+                    $296,716
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">27.6%</td>
+                  <td className="px-4 py-2 text-right text-ink-700">27.2%</td>
                 </tr>
                 <tr className="border-b border-ink-100 bg-brand-50">
                   <td className="px-4 py-2 font-medium text-ink-700">
-                    216 (Year 18)
+                    233 (Year 19)
                   </td>
                   <td className="px-4 py-2 text-right font-medium text-ink-700">
                     $1,108
@@ -312,7 +314,7 @@ export default function AmortizationScheduleGuide() {
                     $2,212
                   </td>
                   <td className="px-4 py-2 text-right font-medium text-ink-700">
-                    $203,542
+                    $202,754
                   </td>
                   <td className="px-4 py-2 text-right font-medium text-ink-700">
                     50.1%
@@ -330,13 +332,13 @@ export default function AmortizationScheduleGuide() {
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">300 (Year 25)</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$1,543</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$669</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$1,591</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$621</td>
                   <td className="px-4 py-2 text-right text-ink-700">$2,212</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $121,948
+                    $113,065
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">69.8%</td>
+                  <td className="px-4 py-2 text-right text-ink-700">71.9%</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">360 (Year 30)</td>
@@ -350,8 +352,12 @@ export default function AmortizationScheduleGuide() {
             </table>
           </div>
           <p className="mt-2 text-sm text-ink-500">
-            Highlighted row: payment 216 (year 18) is the crossover point where
+            Highlighted row: payment 233 (year 19) is the crossover point where
             principal exceeds interest for the first time on this loan.
+          </p>
+          <p className="mt-2 text-xs text-ink-500">
+            Table values recomputed from the standard fixed-rate amortization
+            formula (October 2026 check); amounts rounded to the nearest dollar.
           </p>
         </section>
 
@@ -397,31 +403,31 @@ export default function AmortizationScheduleGuide() {
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">$2,212</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $446,247
+                    $446,406
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $796,247
+                    $796,406
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    Month 216
+                    Month 233
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">85.7%</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">
-                    $350K / 15-yr / 6.0%
+                    $350K / 15-yr / 6.71%
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">$2,953</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$3,089</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $181,617
-                  </td>
-                  <td className="px-4 py-2 text-right text-ink-700">
-                    $531,617
+                    $206,097
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    Month 75
+                    $556,097
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">59.1%</td>
+                  <td className="px-4 py-2 text-right text-ink-700">
+                    Month 57
+                  </td>
+                  <td className="px-4 py-2 text-right text-ink-700">63.3%</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">
@@ -429,40 +435,41 @@ export default function AmortizationScheduleGuide() {
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">$1,671</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $251,444
+                    $251,543
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $601,444
+                    $601,543
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    Month 177
+                    Month 153
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">70.0%</td>
+                  <td className="px-4 py-2 text-right text-ink-700">69.8%</td>
                 </tr>
                 <tr className="border-b border-ink-100">
                   <td className="px-4 py-2 text-ink-700">
                     $30K / 5-yr / 7.5% (auto)
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">$601</td>
-                  <td className="px-4 py-2 text-right text-ink-700">$6,089</td>
+                  <td className="px-4 py-2 text-right text-ink-700">$6,068</td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    $36,089
+                    $36,068
                   </td>
                   <td className="px-4 py-2 text-right text-ink-700">
-                    Month 23
+                    Month 1
                   </td>
-                  <td className="px-4 py-2 text-right text-ink-700">37.4%</td>
+                  <td className="px-4 py-2 text-right text-ink-700">31.2%</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-4 text-ink-700">
-            The difference is stark: a 15-year mortgage at 6.0% saves $264,630
-            in interest compared to the 30-year at 6.5% -- and the crossover
-            point arrives in year 6 instead of year 18. The 5-year auto loan
-            reaches crossover in less than 2 years because the shorter term
-            means each payment carries a much larger principal component from
-            the start.
+            The difference is stark: a 15-year mortgage at 6.71% (the Freddie
+            Mac PMMS 15-year average as of October 15, 2026) saves $240,309 in
+            interest compared to the 30-year at 6.5% -- and the crossover
+            point arrives in year 5 instead of year 19. The 5-year auto loan
+            sends more to principal than interest from the first payment because
+            the shorter term keeps each installment principal-heavy from the
+            start.
           </p>
           <p className="mt-4 text-ink-700">
             Compare these scenarios yourself with our{" "}
@@ -481,6 +488,22 @@ export default function AmortizationScheduleGuide() {
             </Link>
             .
           </p>
+          <Sources
+            items={[
+              {
+                label:
+                  "Freddie Mac PMMS (15-year FRM 6.71%, week of Oct. 15, 2026)",
+                href: "https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-hold-steady-740/",
+              },
+              {
+                label:
+                  "Freddie Mac PMMS archive (weekly 30- and 15-year averages, 2026)",
+                href: "https://www.freddiemac.com/pmms/archive",
+              },
+            ]}
+            checked="October 2026"
+            note="The 6.5% and 4.0% 30-year rows are illustrative fixed-rate examples; the 15-year row uses the published PMMS average for that week."
+          />
         </section>
 
         {/* Case Study */}
@@ -496,11 +519,11 @@ export default function AmortizationScheduleGuide() {
           </p>
           <p className="mt-4 text-ink-700">
             When Rachel looked at her first mortgage statement, she was
-            surprised: of the $1,868 payment, only $247 went to principal. The
-            remaining $1,621 -- 86.8% -- went straight to interest. After 12
+            surprised: of the $1,868 payment, only $248 went to principal. The
+            remaining $1,620 -- 86.7% -- went straight to interest. After 12
             months of payments totaling $22,416, she had only reduced her
-            balance from $288,000 to $284,987. She paid $19,403 in interest and
-            just $3,013 in principal during her entire first year.
+            balance from $288,000 to $284,931. She paid $19,346 in interest and
+            just $3,069 in principal during her entire first year.
           </p>
           <p className="mt-4 text-ink-700">
             Rachel decided to use two strategies to accelerate her amortization.
@@ -515,7 +538,7 @@ export default function AmortizationScheduleGuide() {
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
             <li>
-              <strong>Standard schedule:</strong> 360 payments, $384,480 total
+              <strong>Standard schedule:</strong> 360 payments, $384,467 total
               interest, payoff in 2056
             </li>
             <li>
@@ -534,8 +557,8 @@ export default function AmortizationScheduleGuide() {
             </li>
           </ul>
           <p className="mt-4 text-ink-700">
-            Rachel&apos;s crossover point -- where principal exceeds interest in
-            each payment -- moves from month 219 (year 18) on the standard
+            Rachel's crossover point -- where principal exceeds interest in
+            each payment -- moves from about month 238 (year 20) on the standard
             schedule to approximately month 144 (year 12) with her accelerated
             strategy. That means she starts building equity faster during the
             years when her home is most likely to appreciate.
@@ -570,8 +593,8 @@ export default function AmortizationScheduleGuide() {
             <li>
               <strong>Calculate total interest cost.</strong> Add up the interest
               column for the full schedule. This is the true cost of borrowing.
-              On a $350,000 loan at 6.5% for 30 years, you pay $446,247 in
-              interest -- 127% of the original loan amount.
+              On a $350,000 loan at 6.5% for 30 years, you pay $446,406 in
+              interest -- about 128% of the original loan amount.
             </li>
             <li>
               <strong>Model extra payments.</strong> Use the calculator to add a
@@ -583,8 +606,8 @@ export default function AmortizationScheduleGuide() {
               <strong>Compare refinancing scenarios.</strong> If rates drop,
               generate a new amortization schedule at the lower rate. Compare
               total interest remaining on your current schedule vs. the new
-              schedule, accounting for refinancing costs (typically 2-5% of the
-              loan balance).
+              schedule, accounting for refinancing costs (typically 2–5% of the
+              purchase price per the CFPB, excluding the down payment).
             </li>
             <li>
               <strong>Review annually.</strong> Pull your current amortization
@@ -595,6 +618,17 @@ export default function AmortizationScheduleGuide() {
             </li>
           </ol>
         </section>
+
+        <Sources
+          items={[
+            {
+              label:
+                "CFPB, closing costs typically 2–5% of purchase price (excluding down payment)",
+              href: "https://www.consumerfinance.gov/owning-a-home/prepare/determine-your-down-payment/",
+            },
+          ]}
+          checked="October 2026"
+        />
 
         {/* Calculator CTA */}
         <div className="rounded-lg border border-brand-200 bg-brand-50 p-6 my-8 text-center">

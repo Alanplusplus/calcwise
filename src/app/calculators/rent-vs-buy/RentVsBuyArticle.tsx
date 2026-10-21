@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "@/lib/market-data";
+import { SALT_CAP, STANDARD_DEDUCTIONS, usd } from "@/lib/tax-data";
 
 export function RentVsBuyArticle() {
   return (
@@ -64,7 +67,7 @@ export function RentVsBuyArticle() {
 
       <h2>The Opportunity Cost of Renting</h2>
       <p>
-        Renting is often dismissed as &quot;throwing money away,&quot; but this ignores a critical
+        Renting is often dismissed as "throwing money away," but this ignores a critical
         advantage: liquidity. When you rent, your down payment remains invested and can compound
         at market rates. A $70,000 down payment invested at 7% annual return grows to roughly
         $112,000 in seven years — wealth you would not have if that money were tied up in home
@@ -92,23 +95,26 @@ export function RentVsBuyArticle() {
         per month.
       </p>
       <p>
-        Using a 6.75% mortgage rate on a 30-year loan, their monthly mortgage payment would be
-        approximately $1,810. Adding property taxes ($350/month), insurance ($100/month), and
-        maintenance ($290/month), their total monthly ownership cost reaches roughly $2,550 — $450
-        more than their rent.
+        Using a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% mortgage rate on a 30-year loan, their monthly mortgage payment would be
+        approximately $1,939. Adding property taxes ($350/month), insurance (about $102/month at
+        0.35% of value), and maintenance ($292/month at 1% annually), their total monthly ownership
+        cost reaches roughly $2,683 — about $583 more than their $2,100 rent in year one.
+      </p>
+      <Sources items={MORTGAGE_MARKET_SOURCES} checked={MORTGAGE_MARKET.checkedLabel} />
+      <p>
+        Over seven years with 3% home appreciation and 3% annual rent increases (and 7% investment
+        returns on the renter's portfolio), buying builds approximately $174,000 in home equity.
+        Alex and Jamie's net cost of buying after that equity is about $138,000. As renters investing
+        their $70,000 down payment plus monthly savings when owning costs more, their portfolio grows
+        to approximately $164,000 while their net cost of renting is about $29,000. Buying ends with
+        roughly $9,200 more net wealth than renting over this seven-year horizon.
       </p>
       <p>
-        Over seven years with 3% home appreciation and 3% annual rent increases, buying builds
-        approximately $195,000 in home equity (including appreciation). However, Alex and Jamie
-        would have paid roughly $214,000 in total housing costs net of that equity. As renters
-        investing their $70,000 down payment plus $450 monthly savings at 7% returns, their
-        investment portfolio would grow to approximately $178,000 while paying $183,000 in rent.
-        Their net cost of renting would be just $5,000 — far less than the net cost of buying.
-      </p>
-      <p>
-        In this scenario, renting wins over a seven-year horizon. However, if Alex and Jamie plan
-        to stay 12 or more years, buying begins to pull ahead as rent increases compound and
-        mortgage principal builds equity faster. Their break-even point falls around year 9.
+        In this scenario, buying wins over seven years because appreciation and principal paydown
+        outpace the renter's invested savings when rent is only modestly below ownership cost. With
+        the same inputs but $2,000/month rent (the calculator default), renting leads by about
+        $2,500 in net wealth — a reminder that a slightly lower rent check can flip the outcome at
+        today's {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate.
       </p>
 
       <h2>Break-Even Analysis at Different Time Horizons</h2>
@@ -125,18 +131,20 @@ export function RentVsBuyArticle() {
         </li>
         <li>
           <strong>5 years:</strong> Renting still leads in most moderate-appreciation markets.
-          The renter&apos;s invested down payment has compounded significantly while the buyer
+          The renter's invested down payment has compounded significantly while the buyer
           has paid mostly interest.
         </li>
         <li>
-          <strong>7 years:</strong> The gap narrows. In high-appreciation markets like Austin,
-          Denver, or Nashville, buying may begin to match renting. In slower markets, renting
-          still leads.
+          <strong>7 years:</strong> At a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% mortgage rate, outcomes split on rent level.
+          Alex and Jamie's $2,100 rent favors buying; at $2,000 rent on the same $350,000 home,
+          renting leads slightly. Higher-rate environments reward locking in housing cost when
+          rent is rising fast relative to price.
         </li>
         <li>
           <strong>10 years:</strong> Buying typically wins in most markets with average
-          appreciation. Equity accumulation and appreciation outpace the renter&apos;s investment
-          portfolio, especially as rent increases erode the renter&apos;s monthly savings advantage.
+          appreciation once you stay past transaction costs. Equity accumulation and appreciation
+          outpace the renter's investment portfolio, especially as rent increases erode the
+          renter's monthly savings advantage.
         </li>
       </ul>
       <p>
@@ -147,7 +155,7 @@ export function RentVsBuyArticle() {
       <h2>Comparison Table: Rent vs Buy at Different Price Points</h2>
       <p>
         The table below shows seven-year outcomes at different home prices and rent levels,
-        assuming a 20% down payment, 6.75% mortgage rate, 3% appreciation, 3% rent increases, and
+        assuming a 20% down payment, {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% mortgage rate, 3% appreciation, 3% rent increases, and
         7% investment returns:
       </p>
       <table className="w-full text-sm border-collapse">
@@ -164,44 +172,45 @@ export function RentVsBuyArticle() {
           <tr className="border-b border-ink-100">
             <td className="py-2 text-ink-600">$250,000</td>
             <td className="py-2 text-ink-600">$1,500</td>
-            <td className="py-2 text-ink-600">$138,000</td>
-            <td className="py-2 text-ink-600">$142,000</td>
-            <td className="py-2 text-ink-600">Rent</td>
-          </tr>
-          <tr className="border-b border-ink-100">
-            <td className="py-2 text-ink-600">$350,000</td>
-            <td className="py-2 text-ink-600">$2,000</td>
-            <td className="py-2 text-ink-600">$195,000</td>
-            <td className="py-2 text-ink-600">$178,000</td>
+            <td className="py-2 text-ink-600">$124,000</td>
+            <td className="py-2 text-ink-600">$117,000</td>
             <td className="py-2 text-ink-600">Buy</td>
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 text-ink-600">$350,000</td>
+            <td className="py-2 text-ink-600">$2,000</td>
+            <td className="py-2 text-ink-600">$174,000</td>
+            <td className="py-2 text-ink-600">$176,000</td>
+            <td className="py-2 text-ink-600">Rent</td>
+          </tr>
+          <tr className="border-b border-ink-100">
+            <td className="py-2 text-ink-600">$350,000</td>
             <td className="py-2 text-ink-600">$2,500</td>
-            <td className="py-2 text-ink-600">$195,000</td>
-            <td className="py-2 text-ink-600">$155,000</td>
+            <td className="py-2 text-ink-600">$174,000</td>
+            <td className="py-2 text-ink-600">$121,000</td>
             <td className="py-2 text-ink-600">Buy</td>
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 text-ink-600">$500,000</td>
             <td className="py-2 text-ink-600">$2,800</td>
-            <td className="py-2 text-ink-600">$278,000</td>
             <td className="py-2 text-ink-600">$248,000</td>
-            <td className="py-2 text-ink-600">Buy</td>
+            <td className="py-2 text-ink-600">$258,000</td>
+            <td className="py-2 text-ink-600">Rent</td>
           </tr>
           <tr>
             <td className="py-2 text-ink-600">$500,000</td>
             <td className="py-2 text-ink-600">$3,500</td>
-            <td className="py-2 text-ink-600">$278,000</td>
-            <td className="py-2 text-ink-600">$210,000</td>
+            <td className="py-2 text-ink-600">$248,000</td>
+            <td className="py-2 text-ink-600">$179,000</td>
             <td className="py-2 text-ink-600">Buy</td>
           </tr>
         </tbody>
       </table>
       <p>
         Notice how the rent-to-price ratio shifts the outcome. When rent is low relative to home
-        price (as with the $250,000 home at $1,500 rent), renting and investing wins. When rent is
-        high relative to price, buying captures more value. For guidance on setting your budget,
+        price, the renter's portfolio can still win — but at {MORTGAGE_MARKET.thirtyYear.toFixed(2)}%, a $250,000 home at
+        $1,500 rent still favors buying over seven years in this model. When rent is high relative
+        to price (or only slightly below ownership cost), buying captures more value. For guidance on setting your budget,
         see{" "}
         <Link
           href="/guides/how-much-house-can-i-afford"
@@ -256,8 +265,10 @@ export function RentVsBuyArticle() {
       <p>
         If you itemize deductions and your mortgage interest plus property taxes exceed the
         standard deduction, ownership tax savings can reduce your effective cost by $2,000 to
-        $5,000 per year. However, with the current standard deduction at $14,600 for single
-        filers, many homeowners do not itemize.
+        $5,000 per year. However, the 2026 standard deduction is {usd(STANDARD_DEDUCTIONS.single)} for single
+        filers and {usd(STANDARD_DEDUCTIONS.mfj)} for married couples filing jointly, so you only benefit
+        when your itemized total (mortgage interest, state and local taxes up to the{" "}
+        {usd(SALT_CAP.limit)} cap, and charitable gifts) tops that amount.
       </p>
 
       <h3>How does home appreciation affect the decision?</h3>

@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "High-Yield Savings Account vs CD: Which Is Better in 2026?",
@@ -179,7 +180,7 @@ export default function HighYieldSavingsVsCdGuide() {
             on its savings account — a 0.90-point premium. Across the whole
             market, the best listed 12-month CD (4.83%, Forbes Advisor,
             October 14, 2026) beats the best listed HYSA (4.27%, Bankrate,
-            October 17, 2026) by 0.56 points. Ally&apos;s savings account pays
+            October 17, 2026) by 0.56 points. Ally's savings account pays
             3.10% APY, so shopping rates matters more than choosing between
             the two account types.
           </p>
@@ -248,40 +249,28 @@ export default function HighYieldSavingsVsCdGuide() {
             at opening.
           </p>
           <p className="mt-2 text-xs text-ink-500">
-            For context, the FDIC&apos;s national average rates as of September
+            For context, the FDIC's national average rates as of September
             21, 2026 were 0.37% for savings, 1.41% for a 6-month CD, 1.73% for
             a 12-month CD, and 1.61% for a 24-month CD.
           </p>
-          <p className="mt-2 text-xs text-ink-500">
-            Sources:{" "}
-            <a
-              href="https://www.fdic.gov/national-rates-and-rate-caps"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 underline"
-            >
-              FDIC National Rates and Rate Caps
-            </a>
-            ;{" "}
-            <a
-              href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 underline"
-            >
-              FOMC statement, September 16, 2026
-            </a>
-            ;{" "}
-            <a
-              href="https://www.marcus.com/us/en/savings/high-yield-cds/cd-rates"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 underline"
-            >
-              Marcus CD rates
-            </a>
-            .
-          </p>
+          <Sources
+            className="mt-2"
+            items={[
+              {
+                label: "FDIC National Rates and Rate Caps",
+                href: "https://www.fdic.gov/national-rates-and-rate-caps",
+              },
+              {
+                label: "FOMC statement, September 16, 2026",
+                href: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+              },
+              {
+                label: "Marcus CD rates",
+                href: "https://www.marcus.com/us/en/savings/high-yield-cds/cd-rates",
+              },
+            ]}
+            checked="October 2026"
+          />
         </section>
 
         {/* How Each Works */}
@@ -378,7 +367,7 @@ export default function HighYieldSavingsVsCdGuide() {
               for making a commitment. In October 2026 that commitment is
               worth 0.23 points at the very top of the market (4.50% CD vs
               4.27% HYSA) and 0.90 points at Marcus (4.40% vs 3.50%) — the
-              bank&apos;s compensation for knowing exactly how long it holds
+              bank's compensation for knowing exactly how long it holds
               your money, and your compensation for giving up access.
             </p>
           </div>
@@ -479,11 +468,11 @@ export default function HighYieldSavingsVsCdGuide() {
               </h3>
               <p className="mt-2 text-sm text-ink-700">
                 Wedding in exactly 14 months? Property tax due in 12 months?
-                A CD matched to your withdrawal date locks in today&apos;s rate
+                A CD matched to your withdrawal date locks in today's rate
                 with zero ongoing management. A $15,000 12-month CD at 4.50%
                 APY matures to $15,675 — you know the exact amount on day
                 one. A HYSA that starts at 4.27% and slips to 3.50% after six
-                months earns about $583 instead of the CD&apos;s guaranteed
+                months earns about $583 instead of the CD's guaranteed
                 $675. The CD eliminates that $92 uncertainty.
               </p>
             </div>
@@ -497,7 +486,7 @@ export default function HighYieldSavingsVsCdGuide() {
                 locking a 4.50% 12-month CD today protects your yield. On
                 $30,000, a HYSA that starts at 4.27% and falls to 3.50% by
                 month 6 earns approximately $1,165 over the year — $185 less
-                than the CD&apos;s guaranteed $1,350. This is a forecast, not
+                than the CD's guaranteed $1,350. This is a forecast, not
                 a prediction: the same HYSA that falls to 3.50% could just as
                 easily rise to 4.90%.
               </p>
@@ -509,10 +498,10 @@ export default function HighYieldSavingsVsCdGuide() {
               <p className="mt-2 text-sm text-ink-700">
                 Inherited $50,000? Sold a car for $18,000? Received a bonus?
                 A CD maximizes yield on money you will not add to later. There
-                is no advantage to a HYSA&apos;s unlimited deposit feature if
+                is no advantage to a HYSA's unlimited deposit feature if
                 the full amount is already saved. A $50,000 18-month CD at
-                Marcus&apos;s 4.40% APY earns $3,336 over the term — $688 more
-                than the same amount in Marcus&apos;s 3.50% savings account
+                Marcus's 4.40% APY earns $3,336 over the term — $688 more
+                than the same amount in Marcus's 3.50% savings account
                 ($2,648) and about $100 more than a 4.27% HYSA ($3,236). If
                 your current bank pays a mainstream rate, the CD premium is
                 no longer small.
@@ -527,7 +516,7 @@ export default function HighYieldSavingsVsCdGuide() {
                 a psychological and financial barrier: the early withdrawal
                 penalty makes impulsive spending costly. If you saved $20,000
                 for a house down payment but dipped into your HYSA twice for
-                vacations ($3,200 total), the CD&apos;s lock-in would have
+                vacations ($3,200 total), the CD's lock-in would have
                 preserved the full balance. The $69/year rate premium on
                 $30,000 is a small price for forced discipline on goal-oriented
                 savings.
@@ -620,11 +609,11 @@ export default function HighYieldSavingsVsCdGuide() {
               locking $30,000 with no access for 12 months. If you need even
               $5,000 before maturity, the 3-month early withdrawal penalty
               ($338) wipes out 4.9 years of that $69 premium. The gap widens
-              if your HYSA pays less: against Marcus&apos;s 3.50% savings rate
+              if your HYSA pays less: against Marcus's 3.50% savings rate
               the same CD earns $270 more, and against the best listed
               12-month CD (4.83%) the premium over a 4.27% HYSA is $168. The CD only
               makes financial sense if you are confident you will not touch
-              the money early. For most savers, the HYSA&apos;s flexibility
+              the money early. For most savers, the HYSA's flexibility
               is worth far more than $5.75/month.
             </p>
           </div>
@@ -713,7 +702,7 @@ export default function HighYieldSavingsVsCdGuide() {
                 </div>
               </div>
               <p className="mt-4 text-sm text-ink-700">
-                Tom&apos;s split earns about $159 more over 18 months than a
+                Tom's split earns about $159 more over 18 months than a
                 rate-shopped 4.00% HYSA, and $467 more than keeping everything
                 in a 3.50% savings account. The takeaway: when your HYSA is
                 already near the top of the market, a CD is mostly insurance
@@ -833,7 +822,7 @@ export default function HighYieldSavingsVsCdGuide() {
           <p className="mt-2 text-ink-700">
             For savers with $40,000 and a 6-18 month horizon who want fixed
             rates and a maturing rung every few months, here is a ladder built
-            entirely from Marcus&apos;s published high-yield CD rates:
+            entirely from Marcus's published high-yield CD rates:
           </p>
 
           <div className="mt-4 overflow-x-auto">
@@ -901,7 +890,7 @@ export default function HighYieldSavingsVsCdGuide() {
             On an annualized basis the four rungs earn $395 + $430 + $440 +
             $440 = $1,705 on $40,000, a blended 4.26% APY. That compares with
             $1,708 in a 4.27% HYSA, $1,600 in a 4.00% HYSA, and $1,400 in
-            Marcus&apos;s 3.50% savings account. In other words, the ladder
+            Marcus's 3.50% savings account. In other words, the ladder
             beats a mainstream or mid-tier savings rate by $105-$305 per year
             but does not beat the single best HYSA; its real value is locking
             those rates and giving you access to $10,000 at months 6, 9, 12,

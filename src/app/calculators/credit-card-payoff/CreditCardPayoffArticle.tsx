@@ -50,7 +50,7 @@ export function CreditCardPayoffArticle() {
         often shocking enough to motivate real change in your payment habits.
       </p>
 
-      <h2>Case Study: Sarah&apos;s $12,000 Credit Card Debt</h2>
+      <h2>Case Study: Sarah's $12,000 Credit Card Debt</h2>
       <p>
         Sarah accumulated $12,000 in credit card debt across two cards, both
         charging around 22% APR. Her combined minimum payments totaled roughly
@@ -67,7 +67,7 @@ export function CreditCardPayoffArticle() {
         she saved nearly $15,000 and became debt-free more than 22 years sooner.
       </p>
       <p>
-        Sarah&apos;s story illustrates a key principle: the gap between minimum
+        Sarah's story illustrates a key principle: the gap between minimum
         and intentional payments is where real financial progress happens. Even
         modest increases above the minimum can cut years off your timeline.
       </p>

@@ -20,9 +20,9 @@ export function DebtPayoffArticle() {
       <h2>How This Debt Payoff Calculator Works</h2>
       <p>
         Enter your current debt balance, interest rate, and monthly payment to
-        see when you&apos;ll be debt-free. Then add an extra payment amount to
+        see when you'll be debt-free. Then add an extra payment amount to
         see how much faster you could eliminate your debt and how much interest
-        you&apos;d save.
+        you'd save.
       </p>
 
       <h2>Debt Payoff Strategies</h2>
@@ -31,7 +31,7 @@ export function DebtPayoffArticle() {
       <h3>The Avalanche Method (Saves the Most Money)</h3>
       <p>
         Pay minimums on all debts, then put every extra dollar toward the debt
-        with the highest interest rate. Once that&apos;s paid off, move to the
+        with the highest interest rate. Once that's paid off, move to the
         next highest rate. This method minimizes total interest paid and is
         mathematically optimal.
       </p>
@@ -97,7 +97,7 @@ export function DebtPayoffArticle() {
       <h2>How Extra Payments Reduce Interest</h2>
       <p>
         Every extra dollar goes directly to reducing your principal balance.
-        With less principal, the next month&apos;s interest charge is lower,
+        With less principal, the next month's interest charge is lower,
         which means more of your regular payment goes to principal too. This
         creates an accelerating payoff effect:
       </p>
@@ -128,16 +128,16 @@ export function DebtPayoffArticle() {
         always does for credit cards), prioritize debt payoff. Every dollar of
         debt at 20% costs you more than a dollar saved at 5% earns. The
         exception: maintain a small emergency fund ($1,000-$2,000) so
-        unexpected expenses don&apos;t force you back into debt.
+        unexpected expenses don't force you back into debt.
       </p>
       <p>
-        Once you&apos;re debt-free, start building wealth with our <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">Savings Goal Calculator</Link>.
+        Once you're debt-free, start building wealth with our <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">Savings Goal Calculator</Link>.
       </p>
 
       <h3>Does paying off debt improve my credit score?</h3>
       <p>
         Yes, significantly. Reducing your credit utilization ratio (how much of
-        your available credit you&apos;re using) is one of the fastest ways to
+        your available credit you're using) is one of the fastest ways to
         boost your score. Going from 80% utilization to 30% can improve your
         score by 50-100 points within a billing cycle.
       </p>
@@ -145,9 +145,9 @@ export function DebtPayoffArticle() {
       <h3>What about debt consolidation?</h3>
       <p>
         Consolidation loans make sense if you can get a significantly lower
-        interest rate and you&apos;re committed to not accumulating new debt.
+        interest rate and you're committed to not accumulating new debt.
         They simplify multiple payments into one and can reduce total interest.
-        However, they don&apos;t solve the spending habits that created the debt.
+        However, they don't solve the spending habits that created the debt.
       </p>
 
       <h3>Which debts should I pay off first if rates are similar?</h3>
@@ -163,7 +163,7 @@ export function DebtPayoffArticle() {
       <h3>How do I stay motivated during a long payoff?</h3>
       <p>
         Set milestone targets every $2,500-$5,000 of progress and track your
-        &quot;interest saved to date&quot; in this calculator each month. James
+        "interest saved to date" in this calculator each month. James
         in our case study above celebrated each paid-off statement with a
         $20 coffee, not a $200 dinner — small rewards that do not add new
         balances. Pair that habit with automating the extra $400 on payday so

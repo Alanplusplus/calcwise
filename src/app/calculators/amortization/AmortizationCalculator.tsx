@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { RateDefaultNote } from "@/components/RateDefaultNote";
+import { DEFAULT_MORTGAGE_RATE } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -29,7 +31,7 @@ interface Props {
 
 export function AmortizationCalculator({ defaults }: Props) {
   const [loanAmount, setLoanAmount] = useState(defaults?.loanAmount || "250000");
-  const [annualRate, setAnnualRate] = useState(defaults?.annualRate || "6.5");
+  const [annualRate, setAnnualRate] = useState(defaults?.annualRate || DEFAULT_MORTGAGE_RATE);
   const [loanTermYears, setLoanTermYears] = useState(defaults?.loanTermYears || "30");
   const [extraPayment, setExtraPayment] = useState(defaults?.extraPayment || "0");
   const [viewMode, setViewMode] = useState<"yearly" | "monthly">("yearly");
@@ -157,6 +159,7 @@ export function AmortizationCalculator({ defaults }: Props) {
           helpText="Optional: pay off faster"
         />
       </div>
+      <RateDefaultNote rate={annualRate} />
 
       {results && (
         <div className="mt-8">

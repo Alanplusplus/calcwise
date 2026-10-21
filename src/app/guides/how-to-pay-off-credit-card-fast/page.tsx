@@ -5,6 +5,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
+import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
   title: "How to Pay Off $10,000 in Credit Card Debt: 5 Proven Strategies",
@@ -170,8 +171,8 @@ export default function HowToPayOffCreditCardFastGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             A common minimum-payment formula is 1% of your balance plus that
-            month&apos;s interest (with a floor of about $25), and this guide
-            uses it for every &ldquo;minimum only&rdquo; figure. On a $10,000
+            month's interest (with a floor of about $25), and this guide
+            uses it for every “minimum only” figure. On a $10,000
             balance at 22% APR, your minimum payment starts at $283.33/month —
             and nearly two-thirds of it goes to interest, not principal.
           </p>
@@ -179,7 +180,7 @@ export default function HowToPayOffCreditCardFastGuide() {
             Here is how the math works against you:
           </p>
           <div className="mt-3 rounded-lg border border-ink-200 bg-ink-50 px-4 py-3 font-mono text-sm text-ink-800">
-            Monthly Interest = $10,000 &times; (22% &divide; 12) = $183.33
+            Monthly Interest = $10,000 × (22% ÷ 12) = $183.33
           </div>
           <p className="mt-4 text-ink-700">
             Of the $283.33 minimum in month one, only $100 (1% of the balance)
@@ -271,7 +272,7 @@ export default function HowToPayOffCreditCardFastGuide() {
             for 12-21 months, letting every dollar go toward principal. Transfer
             the full $10,000 to a card offering 0% for 21 months, pay a 3%
             transfer fee ($300) that is added to the balance ($10,300), and
-            commit to $491/month ($10,300 &divide; 21).
+            commit to $491/month ($10,300 ÷ 21).
           </p>
           <ul className="mt-4 space-y-2 text-ink-700">
             <li>
@@ -572,7 +573,7 @@ export default function HowToPayOffCreditCardFastGuide() {
           </h2>
           <p className="mt-4 text-ink-700">
             The strategies above only work if the rates you can actually get
-            resemble the assumptions. The Federal Reserve&apos;s G.19 Consumer
+            resemble the assumptions. The Federal Reserve's G.19 Consumer
             Credit release (published October 7, 2026) reports an average
             credit card APR of 21.19% across all accounts and 22.36% on
             accounts that are charged interest, as of August 2026 — which is
@@ -672,37 +673,25 @@ export default function HowToPayOffCreditCardFastGuide() {
             </Link>
             .
           </p>
-          <p className="mt-4 text-xs text-ink-500">
-            Sources: Federal Reserve Board,{" "}
-            <a
-              href="https://www.federalreserve.gov/releases/g19/current/default.htm"
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              G.19 Consumer Credit (October 7, 2026)
-            </a>
-            ; National Foundation for Credit Counseling,{" "}
-            <a
-              href="https://www.nfcc.org/blog/which-debt-repayment-method-is-right-for-you/"
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              debt repayment methods
-            </a>
-            ; myFICO on{" "}
-            <a
-              href="https://www.myfico.com/credit-education/credit-reports/does-checking-credit-score-lower-it"
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              credit inquiries
-            </a>
-            ; issuer terms as listed by Bankrate and NerdWallet in October 2026.
-            Offers change frequently — confirm current terms with the issuer.
-          </p>
+          <Sources
+            className="mt-4"
+            items={[
+              {
+                label: "Federal Reserve Board, G.19 Consumer Credit (October 7, 2026)",
+                href: "https://www.federalreserve.gov/releases/g19/current/default.htm",
+              },
+              {
+                label: "National Foundation for Credit Counseling, debt repayment methods",
+                href: "https://www.nfcc.org/blog/which-debt-repayment-method-is-right-for-you/",
+              },
+              {
+                label: "myFICO on credit inquiries",
+                href: "https://www.myfico.com/credit-education/credit-reports/does-checking-credit-score-lower-it",
+              },
+            ]}
+            checked="October 2026"
+            note="Issuer terms as listed by Bankrate and NerdWallet in October 2026. Offers change frequently — confirm current terms with the issuer."
+          />
         </section>
 
         {/* Section 4: Case Study */}
@@ -735,7 +724,7 @@ export default function HowToPayOffCreditCardFastGuide() {
 
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">
-                Rachel&apos;s Analysis
+                Rachel's Analysis
               </h4>
               <p className="mt-2 text-sm text-ink-700">
                 Rachel ran all five strategies through the Credit Card Payoff
@@ -758,7 +747,7 @@ export default function HowToPayOffCreditCardFastGuide() {
 
             <div className="mt-6 border-t border-ink-100 pt-4">
               <h4 className="font-semibold text-ink-800">
-                Rachel&apos;s Chosen Strategy: 0% Balance Transfer
+                Rachel's Chosen Strategy: 0% Balance Transfer
               </h4>
               <p className="mt-2 text-sm text-ink-700">
                 Rachel applied for a Citi Simplicity card offering 0% APR for 21
@@ -864,7 +853,7 @@ export default function HowToPayOffCreditCardFastGuide() {
                 <p className="mt-1 text-sm text-ink-700">
                   Log into each account and write down the exact numbers. Include
                   store cards, gas cards, and any card you have not used in
-                  months. Rachel&apos;s list totaled $10,200 across three cards
+                  months. Rachel's list totaled $10,200 across three cards
                   with $300/month in minimums.
                 </p>
               </div>
@@ -1056,7 +1045,7 @@ export default function HowToPayOffCreditCardFastGuide() {
               This balance is small enough to brute-force with disciplined
               fixed payments. Consolidation loans and transfer fees often cost
               more than they save at this level. A 0% balance transfer with a 3%
-              fee ($60) and a $172 monthly payment ($2,060 &divide; 12) clears in
+              fee ($60) and a $172 monthly payment ($2,060 ÷ 12) clears in
               12 months for $60 total, versus 14 months and about $284 in
               interest if you paid the same $172 on the card — a saving of about
               $224, but only if you actually follow through. For
@@ -1198,7 +1187,7 @@ export default function HowToPayOffCreditCardFastGuide() {
               A personal loan at 10% APR over 24 months on $10,000 costs roughly
               $1,075 in interest ($11,075 total). The same balance on a credit
               card at 19.9% APR paid off at $500/month takes 25 months and costs
-              about $2,251 in interest — a difference of $1,176 (the loan&apos;s
+              about $2,251 in interest — a difference of $1,176 (the loan's
               payment is $461/month versus $500). Consolidation
               makes the most sense when you need a lower fixed payment and cannot
               qualify for a 0% balance transfer.

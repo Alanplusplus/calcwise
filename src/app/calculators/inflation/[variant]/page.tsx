@@ -137,7 +137,7 @@ export default async function VariantPage({ params }: Props) {
 
       <div className="mt-6">
         <Link href={`/calculators/${calc.slug}`} className="text-sm font-medium text-brand-600 hover:text-brand-800">
-          &larr; Back to {calc.title}
+          ← Back to {calc.title}
         </Link>
       </div>
     </div>
