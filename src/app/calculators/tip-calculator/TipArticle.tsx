@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
 
 export function TipArticle() {
   return (
@@ -17,12 +18,27 @@ export function TipArticle() {
         Tipping is woven into the fabric of American service culture in a way that surprises
         many visitors from abroad. In the United States, tipped workers in restaurants, bars,
         salons, and delivery services often earn a base wage well below the federal minimum wage,
-        with tips making up the majority of their take-home pay. A server earning $2.13 per hour
-        in a state that follows the federal tipped minimum may depend on an 18% to 20% gratuity
-        on a $75 dinner check just to reach a livable hourly rate for that shift. When you leave
-        an appropriate tip, you are not simply rewarding good service — you are completing the
-        compensation model that the industry was built on.
+        with tips making up the majority of their take-home pay. Under the Fair Labor Standards
+        Act, employers may pay a direct cash wage of at least $2.13 per hour when tips bring
+        the worker to the $7.25 federal minimum each workweek. Toast card data averaged 19.1%
+        tips at full-service restaurants in Q2 2026 — near the 18–20% range etiquette guides
+        recommend. When you leave an appropriate tip, you are completing the compensation model
+        many states still use for waitstaff.
       </p>
+      <Sources
+        items={[
+          {
+            label: "U.S. DOL Fact Sheet #15 — tipped employees (2026)",
+            href: "https://www.dol.gov/agencies/whd/fact-sheets/15-tipped-employees-flsa",
+          },
+          {
+            label: "Toast — U.S. restaurant tipping averages, Q2 2026",
+            href: "https://pos.toasttab.com/blog/data/restaurant-tipping-trends",
+          },
+        ]}
+        checked="October 2026"
+        note="Many states require higher cash wages than the $2.13 federal tipped minimum."
+      />
       <p>
         For diners and consumers, tipping also affects your monthly budget in ways that are easy
         to overlook. A couple who dines out twice per week at $60 per meal and tips 20% spends
@@ -40,11 +56,37 @@ export function TipArticle() {
         frequency or tip percentage if gratuities are pushing you over budget.
       </p>
 
+      <h2>Qualified Tips Tax Deduction (2025–2028)</h2>
+      <p>
+        The One Big Beautiful Bill Act allows eligible workers in listed tipped occupations to
+        deduct up to $25,000 of qualified tips per year on federal returns for tax years 2025
+        through 2028, whether they itemize or take the standard deduction. Tips must be voluntary,
+        reported on Form W-2, Form 1099-NEC/MISC/K, or Form 4137, and earned in an occupation
+        that customarily received tips on or before December 31, 2024. The deduction phases out
+        above $150,000 modified adjusted gross income ($300,000 joint). Mandatory service charges
+        that customers cannot change generally do not count as qualified tips.
+      </p>
+      <Sources
+        items={[
+          {
+            label: "IRS — What the no tax on tips deduction means (March 5, 2026)",
+            href: "https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you",
+          },
+          {
+            label: "IRS Publication 6133 (Rev. 3-2026)",
+            href: "https://www.irs.gov/pub/irs-pdf/p6133.pdf",
+          },
+        ]}
+        checked="October 2026"
+      />
+
       <h2>How Tipping Works in the United States</h2>
       <p>
-        Standard restaurant tipping in the U.S. falls between 15% and 20% of the bill, with 18%
-        widely considered the baseline for satisfactory service and 20% or more reserved for
-        exceptional experiences. These percentages apply to sit-down dining where a server takes
+        Standard restaurant tipping in the U.S. falls between 15% and 20% of the pre-tax bill,
+        with 20% common for good service and 25% for exceptional care. Toast reported 19.1%
+        average tips at full-service restaurants in Q2 2026. Bankrate's June 2025 survey found
+        35% of Americans typically tip at least 20% at sit-down restaurants. These percentages
+        apply to sit-down dining where a server takes
         your order, refills drinks, and handles the check. Fast-casual counter service — where
         you order at a register and pick up your food — typically does not require a tip,
         though many payment screens now prompt for one anyway.
@@ -177,8 +219,8 @@ export function TipArticle() {
       <h2>Practical Tipping Tips</h2>
       <ul>
         <li>
-          <strong>Calculate before you sit down.</strong> On a $85 bill with 18% tip, you
-          owe $15.30 in gratuity for a $100.30 total. Knowing this upfront prevents the awkward
+          <strong>Calculate before you sit down.</strong> On an $85 bill with 20% tip, you
+          owe $17.00 in gratuity for a $102.00 total. Knowing this upfront prevents awkward
           mental math at the table and helps you decide whether to order that extra appetizer.
         </li>
         <li>
@@ -187,9 +229,9 @@ export function TipArticle() {
           row closest to your preferred percentage rather than doing multiplication on your phone.
         </li>
         <li>
-          <strong>Split fairly when dining in groups.</strong> Divide the total (bill plus tip)
-          by the number of people, not just the food subtotal. On a $100.30 total split two
-          ways, each person pays $50.15 — including their share of the tip. One person covering
+          <strong>Split fairly when dining in groups.</strong>           Divide the total (bill plus tip)
+          by the number of people, not just the food subtotal. On a $102.00 total split two
+          ways, each person pays $51.00 — including their share of the tip. One person covering
           the full tip and splitting only the food creates confusion and often shortchanges the
           server.
         </li>
@@ -229,10 +271,10 @@ export function TipArticle() {
       <h2>FAQ</h2>
       <p>
         <strong>How much should you tip at a restaurant?</strong> Standard restaurant tipping
-        in the United States is 18% to 20% of the pre-tax bill for good service. Fifteen percent
-        is acceptable for adequate service, while 25% or more signals exceptional care. On an
-        $85 dinner, that range translates to $12.75 at 15%, $15.30 at 18%, $17.00 at 20%, and
-        $21.25 at 25%.
+        in the United States is 18% to 20% of the pre-tax bill for good service, with Toast
+        card data averaging 19.1% at full-service restaurants in Q2 2026. Fifteen percent is
+        acceptable for adequate service, while 25% signals exceptional care. On an $85 dinner,
+        that range is $12.75 at 15%, $15.30 at 18%, $17.00 at 20%, and $21.25 at 25%.
       </p>
       <p>
         <strong>Do you tip on pre-tax or post-tax amount?</strong> Most etiquette experts and
@@ -243,9 +285,9 @@ export function TipArticle() {
       </p>
       <p>
         <strong>How do you calculate tip when splitting a bill?</strong> First add the tip to
-        the full bill amount, then divide the total by the number of people. For a $85 bill
-        with 18% tip ($15.30), the total is $100.30. Split between two people, each pays
-        $50.15. Split four ways, each pays $25.08. The calculator above handles this
+        the full bill amount, then divide the total by the number of people. For an $85 bill
+        with 20% tip ($17.00), the total is $102.00. Split between two people, each pays
+        $51.00. Split four ways, each pays $25.50. The calculator above handles this
         automatically when you enter the number of diners.
       </p>
       <p>

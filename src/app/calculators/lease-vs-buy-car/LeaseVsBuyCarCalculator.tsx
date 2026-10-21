@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { DEFAULT_NEW_CAR_APR } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -23,12 +24,12 @@ export function LeaseVsBuyCarCalculator({ defaults }: Props) {
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "5000");
   const [tradeIn, setTradeIn] = useState(defaults?.tradeIn || "0");
   const [salesTaxRate, setSalesTaxRate] = useState(defaults?.salesTaxRate || "7");
-  const [buyRate, setBuyRate] = useState(defaults?.buyRate || "6.5");
+  const [buyRate, setBuyRate] = useState(defaults?.buyRate || DEFAULT_NEW_CAR_APR);
   const [buyTerm, setBuyTerm] = useState(defaults?.buyTerm || "60");
-  const [leaseMonthlyPayment, setLeaseMonthlyPayment] = useState(defaults?.leaseMonthlyPayment || "350");
+  const [leaseMonthlyPayment, setLeaseMonthlyPayment] = useState(defaults?.leaseMonthlyPayment || "385");
   const [leaseDownPayment, setLeaseDownPayment] = useState(defaults?.leaseDownPayment || "2000");
   const [leaseTerm, setLeaseTerm] = useState(defaults?.leaseTerm || "36");
-  const [residualPct, setResidualPct] = useState(defaults?.residualPct || "55");
+  const [residualPct, setResidualPct] = useState(defaults?.residualPct || "53");
   const [annualDepreciation, setAnnualDepreciation] = useState(defaults?.annualDepreciation || "15");
   const [annualInsuranceBuy, setAnnualInsuranceBuy] = useState(defaults?.annualInsuranceBuy || "1800");
   const [annualInsuranceLease, setAnnualInsuranceLease] = useState(defaults?.annualInsuranceLease || "2100");

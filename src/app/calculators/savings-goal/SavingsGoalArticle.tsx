@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
 
 export function SavingsGoalArticle() {
   return (
@@ -9,9 +10,9 @@ export function SavingsGoalArticle() {
         timeframe, and the expected interest rate. The calculator determines
         exactly how much you need to save each month, week, or day to reach your
         goal on time — accounting for compound interest earned along the way.
-        Example: $10,000 in 24 months with $1,000 already saved at 5% APY
-        requires about $365 per month; at 0% interest the same plan needs
-        $375 — a $10 difference that adds up across multiple goals.
+        Example: $10,000 in 24 months with $1,000 already saved at 4.25% APY
+        requires about $353 per month; at 0% interest the same plan needs
+        $375 — interest covers the gap so your paycheck carries less of the load.
       </p>
       <p>
         See exactly how your savings grow with interest using our <Link href="/calculators/compound-interest" className="text-brand-600 hover:text-brand-800 font-medium">Compound Interest Calculator</Link>.
@@ -46,10 +47,10 @@ export function SavingsGoalArticle() {
         Marcus is a 28-year-old teacher in Ohio earning $52,000 per year (about
         $3,400/month after taxes and retirement contributions). He wants $20,000
         for a house down payment in 36 months and already has $2,500 in a
-        high-yield savings account. At 4.5% APY with monthly compounding, he
-        needs roughly $470 per month — not the full $486.11 you would get with
+        high-yield savings account. At 4.25% APY with monthly compounding, he
+        needs roughly $446 per month — not the full $486.11 you would get with
         zero interest — because interest on his growing balance covers about
-        $580 over three years.
+        $1,460 over three years.
       </p>
       <p>
         Marcus automates $235 from each biweekly paycheck into a separate
@@ -70,9 +71,9 @@ export function SavingsGoalArticle() {
         <Link href="/guides/high-yield-savings-vs-cd" className="text-brand-600 hover:text-brand-800 font-medium">High-Yield Savings vs CD</Link>:
       </p>
       <ul>
-        <li><strong>High-yield savings account (4-5% APY):</strong> best for goals under 2 years. FDIC-insured, instant access, no risk of loss.</li>
-        <li><strong>Certificates of deposit (4-5%):</strong> slightly higher rates for locking money away 6-24 months. Good if you won't need early access.</li>
-        <li><strong>Money market funds (4-5%):</strong> similar to savings accounts but through a brokerage. May offer slightly better rates.</li>
+        <li><strong>High-yield savings account (4.2-4.35% APY):</strong> best for goals under 2 years. FDIC-insured, instant access; top October 2026 rates sit far above the 0.38% FDIC national average.</li>
+        <li><strong>Certificates of deposit (4.35-5.00% top online):</strong> lock money 6-60 months when you have a fixed date. FDIC 12-month national average was 1.76% in October 2026 — shop online before you auto-renew at a branch.</li>
+        <li><strong>Money market accounts (near HYSA yields):</strong> FDIC national money market average was 0.63% in October 2026; top online accounts track HYSA leaders.</li>
         <li><strong>Index funds (7-10% historical):</strong> best for goals 5+ years away. Higher returns but short-term volatility means you could lose money if you need to withdraw during a downturn.</li>
         <li><strong>I Bonds (inflation-linked):</strong> government bonds that protect against inflation. Must hold at least 1 year, penalty-free after 5 years.</li>
       </ul>
@@ -101,26 +102,40 @@ export function SavingsGoalArticle() {
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-700">High-yield savings account</td>
-              <td className="px-3 py-2 text-right text-ink-800">4.5%</td>
-              <td className="px-3 py-2 text-right text-ink-800">~$19,420</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.25%</td>
+              <td className="px-3 py-2 text-right text-ink-800">~$19,233</td>
               <td className="px-3 py-2 text-ink-700">Goals under 2–3 years; withdraw anytime within 1–2 days</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-700">CD ladder (12 / 24 / 36 mo)</td>
-              <td className="px-3 py-2 text-right text-ink-800">4.7–5.0%</td>
-              <td className="px-3 py-2 text-right text-ink-800">~$19,550–$19,650</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.55–5.00%</td>
+              <td className="px-3 py-2 text-right text-ink-800">~$19,305–$19,650</td>
               <td className="px-3 py-2 text-ink-700">Fixed deadline; each rung matures before you need the cash</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p>
-        On this example, moving from 0.01% to 4.5% APY adds about $1,400 without
-        raising your monthly contribution. A CD ladder may add another $130–$230
+        On this example, moving from 0.01% to 4.25% APY adds about $1,233 without
+        raising your monthly contribution. A CD ladder may add another $70–$420
         but early withdrawal penalties (often 3–6 months of interest) make it
         a poor fit if your closing date could slip. Recheck rates every 6 months
         because a 0.5% APY change on a $15,000 balance shifts annual interest by $75.
       </p>
+      <Sources
+        items={[
+          {
+            label: "FDIC National Rates and Rate Caps (Oct. 19, 2026)",
+            href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+          },
+          {
+            label: "Bankrate best high-yield savings (Oct. 21, 2026)",
+            href: "https://www.bankrate.com/banking/savings/best-high-yield-interests-savings-accounts/",
+          },
+        ]}
+        checked="October 2026"
+        note="Table balances assume $500/month for 36 months with monthly compounding at the stated APY."
+      />
 
       <h2>The 50/30/20 Budget Rule for Savings</h2>
       <p>
@@ -134,7 +149,7 @@ export function SavingsGoalArticle() {
       <p>
         If you earn $5,000/month after taxes, the 20% rule allocates $1,000 to
         savings. That's enough to save $50,000 in just over 4 years with a
-        5% return — even starting from zero. Split that $1,000 across priorities:
+        4.25% APY in a HYSA builds about $52,200 in four years — even starting from zero. Split that $1,000 across priorities:
         $400 to retirement, $300 to a 6-month emergency buffer, and $300 to a
         named goal keeps all three timelines visible in one budget.
       </p>
@@ -146,7 +161,7 @@ export function SavingsGoalArticle() {
         <li><strong>Savings challenges:</strong> the 52-week challenge (save $1 in week 1, $2 in week 2, etc.) accumulates $1,378 per year.</li>
         <li><strong>Cut one expense:</strong> redirecting a $150/month subscription or habit to savings adds $1,800/year.</li>
         <li><strong>Windfall rule:</strong> commit to saving at least 50% of any unexpected money (tax refunds, bonuses, gifts).</li>
-        <li><strong>Name your sub-accounts:</strong> label savings "2027 Down Payment" or "Japan Trip $6,500" in your bank app — people who name goals save 15–25% more consistently than those using a generic savings balance.</li>
+        <li><strong>Name your sub-accounts:</strong> label savings "2027 Down Payment" or "Japan Trip $6,500" in your bank app so transfers feel tied to a concrete purchase rather than a generic balance.</li>
         <li><strong>Increase contributions with raises:</strong> when you get a 3% raise ($150/month on a $5,000 salary), send at least half ($75) to the goal account before lifestyle creep absorbs it; over 12 months that is $900 extra with no new budget cuts.</li>
       </ul>
       <p>
@@ -157,8 +172,9 @@ export function SavingsGoalArticle() {
 
       <h3>What return rate should I use?</h3>
       <p>
-        For a high-yield savings account, use 4-5%. For a diversified investment
-        portfolio over 5+ years, 6-8% is reasonable. Use 0% if you plan to keep
+        For a high-yield savings account in October 2026, use 4.2% to 4.35% APY
+        (top online offers on Bankrate). For a diversified portfolio over 5+ years,
+        6% to 7% is a common conservative planning band. Use 0% if you plan to keep
         the money in a checking account (though we don't recommend this for
         any savings goal beyond a month).
       </p>

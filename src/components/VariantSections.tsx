@@ -1,13 +1,14 @@
 import type { CalculatorVariant } from "@/lib/variants/types";
 import { FaqJsonLd } from "./FaqJsonLd";
+import { Sources } from "./Sources";
 
 interface Props {
   variant: CalculatorVariant;
 }
 
 export function VariantSections({ variant }: Props) {
-  const { keyResults, comparisonNote, faq } = variant;
-  const hasContent = keyResults?.length || comparisonNote || faq?.length;
+  const { keyResults, comparisonNote, faq, sources, sourcesChecked, sourcesNote } = variant;
+  const hasContent = keyResults?.length || comparisonNote || faq?.length || sources?.length;
   if (!hasContent) return null;
 
   return (
@@ -63,6 +64,15 @@ export function VariantSections({ variant }: Props) {
             ))}
           </dl>
         </div>
+      )}
+
+      {sources && sources.length > 0 && (
+        <Sources
+          items={sources}
+          checked={sourcesChecked}
+          note={sourcesNote}
+          className="mt-8 border-t border-ink-200 pt-4"
+        />
       )}
     </>
   );

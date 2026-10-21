@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
 
 export function CompoundInterestArticle() {
   return (
@@ -54,14 +55,15 @@ export function CompoundInterestArticle() {
       </p>
       <ul>
         <li><strong>Annually:</strong> $38,697</li>
-        <li><strong>Quarterly:</strong> $39,412</li>
+        <li><strong>Quarterly:</strong> $40,064</li>
         <li><strong>Monthly:</strong> $40,387</li>
-        <li><strong>Daily:</strong> $40,552</li>
+        <li><strong>Daily:</strong> $40,547</li>
       </ul>
       <p>
-        The difference between annual and daily compounding is about $1,855 —
-        meaningful, but not dramatic. The real power comes from consistent
-        contributions and time in the market, not the compounding frequency.
+        The difference between annual and daily compounding is about $1,850 on
+        principal alone — meaningful, but smaller than adding $500 per month for
+        the same period. Consistent contributions and years in the market dominate
+        compounding frequency.
       </p>
       <p>
         Want to see how compound interest helps you reach a specific goal? Try our <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">Savings Goal Calculator</Link> to find the monthly contribution needed for your target.
@@ -76,16 +78,16 @@ export function CompoundInterestArticle() {
         <li>
           <strong>Investor A</strong> starts at 25, invests $300/month for 40
           years. Total contributions: $144,000. Final balance: approximately
-          $718,000.
+          $787,000 at 7% with monthly compounding.
         </li>
         <li>
           <strong>Investor B</strong> starts at 35, invests $600/month for 30
           years. Total contributions: $216,000. Final balance: approximately
-          $680,000.
+          $732,000 at the same 7% return.
         </li>
       </ul>
       <p>
-        Investor A contributes $72,000 less but ends up with $38,000 more —
+        Investor A contributes $72,000 less but ends up with about $55,000 more —
         purely because of the extra 10 years of compounding. This illustrates
         why financial advisors stress starting as early as possible, even with
         small amounts.
@@ -95,17 +97,76 @@ export function CompoundInterestArticle() {
       </p>
 
       <h2>Realistic Return Rate Assumptions</h2>
-      <p>When planning your investments, consider these historical benchmarks:</p>
+      <p>When planning your investments, anchor assumptions to published benchmarks:</p>
       <ul>
-        <li><strong>S&P 500 (stocks):</strong> ~10% average annual return (before inflation), ~7% after inflation.</li>
-        <li><strong>Bonds:</strong> ~4-5% average annual return.</li>
-        <li><strong>High-yield savings:</strong> ~4-5% in 2024-2026, historically closer to 1-2%.</li>
-        <li><strong>Real estate:</strong> ~8-12% including rental income and appreciation.</li>
+        <li><strong>S&P 500 (stocks):</strong> 13.44% 10-year annualized price return and about 15.5% 10-year total return as of September 30, 2026 (S&P Dow Jones Indices) — past performance is not a forecast.</li>
+        <li><strong>Planning rate:</strong> many models use 7% nominal for diversified equity portfolios to leave room for fees, taxes, and weak decades.</li>
+        <li><strong>High-yield savings:</strong> top online APYs near 4.2% to 4.35% in October 2026; FDIC national average savings was 0.38% the same month.</li>
+        <li><strong>Certificates of deposit:</strong> FDIC 12-month national average 1.76% in October 2026; top online 1-year CDs near 4.55% to 4.60% APY.</li>
       </ul>
       <p>
-        For long-term planning (20+ years), using 7% accounts for inflation and
-        gives a more conservative, realistic projection of your purchasing
-        power.
+        For long-term planning (20+ years), using 7% in this calculator while
+        studying 10% scenarios shows how sensitive outcomes are to return
+        assumptions — a 3-point spread can add more wealth than your initial
+        principal over two decades.
+      </p>
+      <Sources
+        items={[
+          {
+            label: "S&P 500 index facts (Sep. 30, 2026)",
+            href: "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+          },
+          {
+            label: "FDIC National Rates and Rate Caps (Oct. 19, 2026)",
+            href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+          },
+        ]}
+        checked="October 2026"
+      />
+
+      <h2>Comparison: Same Contributions at 7%, 10%, and 12%</h2>
+      <p>
+        Starting from $0 and investing $500 per month for 30 years with monthly
+        compounding illustrates how return assumptions reshape retirement-scale
+        balances:
+      </p>
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full text-sm border border-ink-200">
+          <thead className="bg-ink-100">
+            <tr>
+              <th className="px-3 py-2 text-left font-medium text-ink-600">Annual return</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Total contributions</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Final balance</th>
+              <th className="px-3 py-2 text-right font-medium text-ink-600">Interest earned</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">7% (conservative plan)</td>
+              <td className="px-3 py-2 text-right text-ink-800">$180,000</td>
+              <td className="px-3 py-2 text-right text-ink-800">$610,000</td>
+              <td className="px-3 py-2 text-right text-ink-800">$430,000</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">10% (historical equity shorthand)</td>
+              <td className="px-3 py-2 text-right text-ink-800">$180,000</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,130,000</td>
+              <td className="px-3 py-2 text-right text-ink-800">$950,000</td>
+            </tr>
+            <tr className="border-t border-ink-100">
+              <td className="px-3 py-2 text-ink-700">12% (stress-test upside)</td>
+              <td className="px-3 py-2 text-right text-ink-800">$180,000</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,747,000</td>
+              <td className="px-3 py-2 text-right text-ink-800">$1,567,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The 7% row matches what this calculator outputs for $500/month over 30
+        years with no starting principal. The gap between 7% and 10% — about
+        $520,000 on the same contributions — is why planners stress-test lower
+        returns even when recent S&P 500 decade returns were higher.
       </p>
       <p>
         Already have investments? Use our <Link href="/calculators/investment-return" className="text-brand-600 hover:text-brand-800 font-medium">Investment Return Calculator</Link> to measure your actual annualized performance.

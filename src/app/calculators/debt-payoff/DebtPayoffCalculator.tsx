@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { Sources } from "@/components/Sources";
+import { G19_CREDIT_CARD_APR } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -17,7 +19,9 @@ interface Props {
 
 export function DebtPayoffCalculator({ defaults }: Props) {
   const [balance, setBalance] = useState(defaults?.balance || "15000");
-  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "18.9");
+  const [interestRate, setInterestRate] = useState(
+    defaults?.interestRate || String(G19_CREDIT_CARD_APR.assessedInterest)
+  );
   const [monthlyPayment, setMonthlyPayment] = useState(defaults?.monthlyPayment || "400");
   const [extraPayment, setExtraPayment] = useState(defaults?.extraPayment || "100");
 
@@ -162,6 +166,12 @@ export function DebtPayoffCalculator({ defaults }: Props) {
                   interest and be debt-free {results.savedMonths} months sooner!
                 </p>
               </div>
+
+              <Sources
+                items={[...G19_CREDIT_CARD_APR.sources]}
+                checked={G19_CREDIT_CARD_APR.checkedLabel}
+                note={`Default APR matches the G.19 assessed-interest credit card average (${G19_CREDIT_CARD_APR.assessedInterest}%, ${G19_CREDIT_CARD_APR.asOfLabel}). Change the rate for student loans, auto loans, or other debt.`}
+              />
             </>
           )}
         </div>

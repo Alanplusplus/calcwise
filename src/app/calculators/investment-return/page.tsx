@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What is a good annualized return?",
-    answer: "For a diversified stock portfolio, matching the market (8–10% nominal) is considered good. Be wary of any investment promising consistent returns above 12%.",
+    answer: "For a diversified U.S. stock portfolio, matching the long-run S&P 500 total return near 10% nominal (about 6.8% after inflation, 1928–2025) is a solid outcome. Short-term results will vary widely.",
   },
   {
     question: "How do I account for additional contributions?",

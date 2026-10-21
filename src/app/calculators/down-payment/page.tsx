@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "How much should I budget for closing costs on top of the down payment?",
-    answer: "Closing costs typically run 2% to 5% of the purchase price. On a $350,000 home, budget $7,000 to $17,500 for origination fees, appraisal, title insurance, escrow deposits, and prepaid property taxes.",
+    answer: "Closing costs typically run 2% to 5% of the purchase price (this calculator estimates 3%). On a $350,000 home, budget $7,000 to $17,500 for origination fees, appraisal, title insurance, escrow deposits, and prepaid property taxes.",
   },
 ];
 

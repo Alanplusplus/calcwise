@@ -54,11 +54,28 @@ export function MortgageArticle() {
         monthly housing cost will also include:
       </p>
       <ul>
-        <li><strong>Property taxes</strong> — typically 0.5% to 2.5% of home value annually, depending on your state and county.</li>
-        <li><strong>Homeowners insurance</strong> — usually $1,000 to $3,000 per year for a standard policy.</li>
+        <li><strong>Property taxes</strong> — the national effective rate on owner-occupied homes averaged 0.89% of value in 2024 (about $8.88 per $1,000), but state rates span roughly 0.26% in Hawaii to 2.08% in New Jersey.</li>
+        <li><strong>Homeowners insurance</strong> — national averages near $2,400 per year on a $350,000 dwelling are common in 2026 quotes, with wide swings in coastal and wildfire-prone states.</li>
         <li><strong>PMI (Private Mortgage Insurance)</strong> — required if your down payment is less than 20%, typically 0.5% to 1.5% of the loan amount per year.</li>
         <li><strong>HOA fees</strong> — if applicable, can range from $100 to $1,000+ per month.</li>
       </ul>
+      <Sources
+        items={[
+          {
+            label: "NAHB analysis of Census ACS 2024 (effective property tax rate, Dec. 2025)",
+            href: "https://www.nahb.org/blog/2025/12/property-taxes-2024-residential",
+          },
+          {
+            label: "Tax Foundation effective property tax rates by state (2022 housing data, 2024)",
+            href: "https://taxfoundation.org/data/all/state/property-taxes-by-state-county-2024/",
+          },
+          {
+            label: "LendingTree State of Home Insurance 2026 ($350k dwelling, Feb. 2026)",
+            href: "https://www.lendingtree.com/insurance/state-of-home-insurance/",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>How Much House Can You Afford?</h2>
       <p>
@@ -146,8 +163,9 @@ export function MortgageArticle() {
         Priya and Marcus earn $96,000 a year together ($8,000 a month), so the 28% rule caps
         their housing payment at $2,240. They want the calculator's default home: $350,000 with
         $70,000 down. At {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% the principal and interest is
-        $1,938.66. Property tax at 1.1% adds $320.83 a month and insurance adds $150, so the
-        total is $2,409.50, which is $169.50 over their limit. They test three ways to close the
+        $1,938.66. Property tax at 0.9% (near the 2024 national effective average) adds $262.50 a month
+        and insurance at $2,400/year adds $200, so the total is $2,401.16, which is $161.16 over their
+        limit. They test three ways to close the
         gap in the <Link href="/calculators/house-payment" className="text-brand-600 hover:text-brand-800 font-medium">House Payment Calculator</Link>:
       </p>
       <table>
@@ -164,32 +182,32 @@ export function MortgageArticle() {
             <td>Original plan</td>
             <td>$350,000</td>
             <td>$70,000 (20%)</td>
-            <td>$2,409.50</td>
+            <td>$2,401.16</td>
           </tr>
           <tr>
             <td>Put more down</td>
             <td>$350,000</td>
-            <td>$94,480 (27%)</td>
-            <td>$2,240.00</td>
+            <td>$93,300 (27%)</td>
+            <td>$2,239.84</td>
           </tr>
           <tr>
             <td>Buy a cheaper home</td>
-            <td>$323,000</td>
-            <td>$64,600 (20%)</td>
-            <td>$2,235.19</td>
+            <td>$320,000</td>
+            <td>$64,000 (20%)</td>
+            <td>$2,212.49</td>
           </tr>
           <tr>
             <td>Same home if the rate were {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}%</td>
             <td>$350,000</td>
             <td>$70,000 (20%)</td>
-            <td>$2,198.49</td>
+            <td>$2,190.15</td>
           </tr>
         </tbody>
       </table>
       <p>
         Monthly totals include principal, interest, tax, and insurance; none needs PMI because
-        each plan puts at least 20% down. The first fix costs $24,480 of extra savings, the second
-        costs $27,000 of house, and the third only works if rates drift back toward last year's
+        each plan puts at least 20% down. The first fix costs $23,300 of extra savings, the second
+        costs $30,000 of house, and the third only works if rates drift back toward last year's
         {" "}{MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}%, which is a bet rather than a plan. Running these scenarios before you tour homes tells you which
         lever you can actually pull.
       </p>

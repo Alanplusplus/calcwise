@@ -1,10 +1,26 @@
 import type { CalculatorVariant } from "./types";
+import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "../market-data";
 export type { CalculatorVariant };
+
+const NAR_EXISTING_HOME_SALES = {
+  label: "NAR Existing-Home Sales, September 2026 (Oct. 13, 2026)",
+  href: "https://www.nar.realtor/newsroom/existing-home-sales-increased-1-5-in-september-according-to-nar-report",
+};
+const FHFA_CONFORMING_LIMIT_2026 = {
+  label: "FHFA, 2026 conforming loan limits (Nov. 25, 2025)",
+  href: "https://www.fhfa.gov/news/news-release/fhfa-announces-conforming-loan-limit-values-for-2026",
+};
+const HUD_FHA_LIMITS_2026 = {
+  label: "HUD Mortgagee Letter 2025-23, 2026 FHA forward mortgage limits (Dec. 11, 2025)",
+  href: "https://www.hud.gov/sites/dfiles/hudclips/documents/2025-23hsgml.pdf",
+};
 
 export const mortgageVariants: CalculatorVariant[] = [
   {
     slug: "200000",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
     title: "$200,000 Mortgage Calculator — Monthly Payment & Total Interest",
     description:
       "Calculate monthly P&I on a $200,000 home with 20% down at the 7.40% Freddie Mac 30-year average. See total interest, 28% income rule, and amortization.",
@@ -48,7 +64,9 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "300000",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES, NAR_EXISTING_HOME_SALES],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
     title: "$300,000 Mortgage Calculator — Monthly Payment & Amortization",
     description:
       "Run a $300,000 mortgage at the 7.40% PMMS 30-year average with 20% down. Compare terms, total interest, required income, and amortization schedule.",
@@ -92,7 +110,9 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "400000",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES, FHFA_CONFORMING_LIMIT_2026],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
     title: "Mortgage Calculator for a $400,000 Home",
     description:
       "Model a $400,000 purchase with 20% down at the 7.40% Freddie Mac 30-year average. Compare P&I, lifetime interest, and 15-year term savings.",
@@ -136,7 +156,9 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "500000",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES, FHFA_CONFORMING_LIMIT_2026],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
     title: "Mortgage Calculator for a $500,000 Home",
     description:
       "Plan a $500,000 home with 20% down at the 7.40% PMMS benchmark. See monthly P&I, total interest, biweekly savings, and 2026 conforming headroom.",
@@ -180,7 +202,9 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "750000",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES, FHFA_CONFORMING_LIMIT_2026],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
     title: "Mortgage Calculator for a $750,000 Home",
     description:
       "Crunch a $750,000 purchase with $150,000 down at 7.40%. See monthly P&I, 2026 conforming limits, jumbo thresholds, and lifetime interest totals.",
@@ -224,7 +248,9 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "15-year",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
     title: "15-Year Mortgage Calculator",
     description:
       "Compare 15-year vs 30-year payments on a $350,000 home. Uses PMMS averages 6.71% (15-yr) and 7.40% (30-yr) on a $280,000 loan balance.",
@@ -274,7 +300,10 @@ export const mortgageVariants: CalculatorVariant[] = [
   },
   {
     slug: "fha-loan",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES, HUD_FHA_LIMITS_2026],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
+    sourcesNote: "FHA mortgage insurance follows HUD Handbook 4000.1: 1.75% upfront and 0.55% annual on 30-year loans with less than 5% down. P&I uses the Freddie Mac 30-year average.",
     title: "FHA Loan Calculator (3.5% Down Payment)",
     description:
       "FHA math on a $300,000 home with 3.5% down. P&I at 7.40% on the base loan, plus 1.75% upfront MIP and annual MIP per HUD premium tables.",

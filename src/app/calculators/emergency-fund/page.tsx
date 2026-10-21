@@ -11,7 +11,7 @@ const calc = getCalculator("emergency-fund")!;
 const faqs = [
   {
     question: "How much should I have in my emergency fund?",
-    answer: "Most financial experts recommend 3-6 months of essential living expenses. If you have variable income, are self-employed, or have dependents, aim for 6-8 months. Use this calculator to find your exact number based on your monthly expenses and risk factors.",
+    answer: "Multiply essential monthly expenses (housing, food, utilities, insurance, transport, minimum debt payments) by 3 months for dual-income stable households, 6 months for most families, or 9-12 months if self-employed or in a volatile industry. Default calculator expenses ($3,400/month) yield a $20,400 target at six months with $5,000 saved ($15,400 gap).",
   },
   {
     question: "How do I calculate my emergency fund?",
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     question: "Where should I keep my emergency fund?",
-    answer: "Keep your emergency fund in a high-yield savings account (HYSA) where it earns interest while remaining fully accessible. Avoid investing it in stocks or locking it in CDs — emergency funds need to be liquid for unexpected expenses like job loss, medical bills, or urgent home repairs.",
+    answer: "Keep your emergency fund in an FDIC-insured high-yield savings account near 4.2-4.35% APY (top online offers, October 2026). Avoid stocks and avoid locking more than one month of expenses in CDs — you need same-day or next-day access for job loss, medical bills, or urgent repairs.",
   },
 ];
 

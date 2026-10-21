@@ -29,11 +29,15 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What savings rate do I need for FIRE?",
-    answer: "A 50% savings rate leads to FIRE in 15–17 years; 65% achieves it in 10–12 years. The average American saves 5–7%, which is why traditional retirement at 65 remains the norm.",
+    answer: "With 7% returns, 3% expense inflation, and a 4% withdrawal rate, a 50% savings rate ($50,000 saved on $100,000 income) from a $100,000 balance takes about 18 years in this calculator. The BEA personal saving rate was 4.1% in August 2026.",
   },
   {
     question: "Is 7% a realistic return assumption?",
     answer: "The S&P 500 has returned roughly 10% nominally (about 7% after inflation) over long periods. A diversified stocks-and-bonds portfolio might assume 6–7% nominal returns.",
+  },
+  {
+    question: "How long to FIRE with the default inputs?",
+    answer: "At $50,000 expenses, $80,000 after-tax income, $100,000 saved, 7% returns, 4% withdrawal, and 3% expense inflation, the FIRE number is $1.25 million and the timeline is about 26 years.",
   },
   {
     question: "Can I FIRE with debt?",

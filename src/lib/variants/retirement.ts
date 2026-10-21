@@ -1,230 +1,264 @@
 import type { CalculatorVariant } from "./types";
 import { RETIREMENT_LIMITS, usd } from "../tax-data";
 
+const SSA_COLA_2027 = {
+  label: "SSA, 2027 COLA fact sheet (Oct. 2026)",
+  href: "https://www.ssa.gov/news/en/cola/factsheets/2027.html",
+};
+const SSA_SNAPSHOT = {
+  label: "SSA Monthly Statistical Snapshot, September 2026",
+  href: "https://www.ssa.gov/policy/docs/quickfacts/stat_snapshot/",
+};
+const MORNINGSTAR_SWR = {
+  label: "Morningstar, safe withdrawal rate research (Feb. 18, 2026)",
+  href: "https://www.morningstar.com/retirement/morningstars-retirement-income-research-finding-your-safe-withdrawal-rate",
+};
+const FIDELITY_BENCHMARKS = {
+  label: "Fidelity Viewpoints, How much do I need to retire? (Sept. 25, 2026)",
+  href: "https://www.fidelity.com/viewpoints/retirement/how-much-do-i-need-to-retire",
+};
+const IRS_RETIREMENT_LIMITS = {
+  label: "IRS IR-2025-111, 2026 retirement plan limits (Nov. 13, 2025)",
+  href: "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500",
+};
+
 export const retirementVariants: CalculatorVariant[] = [
   {
     slug: "retire-at-40",
-    lastUpdated: "2026-08-22",
-    title: "Retire at 40 (FIRE) Calculator",
+    lastUpdated: "2026-10-21",
+    title: "Retire at 40 (FIRE) Calculator — Savings & FIRE Number",
     description:
-      "Plan your path to financial independence and early retirement at 40. Calculate how much you need to save and invest to leave the workforce 25 years early.",
-    defaults: { currentAge: "25", retirementAge: "40", desiredIncome: "50000" },
+      "Plan financial independence at 40. See portfolio size, monthly savings at 7% returns, and how a 4% withdrawal rate maps to $50,000 annual spending.",
+    defaults: { currentAge: "25", retirementAge: "40", desiredIncome: "50000", currentSavings: "0", monthlyContribution: "0" },
     intro:
-      "Retiring at 40 is the hallmark goal of the FIRE (Financial Independence, Retire Early) movement. With only 15 working years to build a nest egg that must last 45+ years, this path demands an aggressive savings rate -- typically 50% to 70% of take-home pay. Most FIRE adherents target a portfolio of 25 to 30 times their annual spending, lean heavily into low-cost index funds, and often supplement early retirement with part-time passion projects or rental income.",
+      "Retiring at 40 is a core FIRE (Financial Independence, Retire Early) goal: you need a portfolio that can fund 45+ years of spending, often with little or no Social Security for the first two decades. Most planners use 25 to 30 times annual spending (a 3.3% to 4% withdrawal rate). Morningstar's 2026 research puts a 30-year, inflation-adjusted starting rate near 3.9% for new retirees with a balanced portfolio — many early retirees use 3.5% or lower to stretch a 40-year horizon.",
     tips: [
-      "At a 4% withdrawal rate, a $50,000 annual income requires a portfolio of $1,250,000 at retirement -- but many early retirees use a 3.5% rate ($1,428,571) to add a safety margin over a 45+ year horizon.",
-      "Starting at 25 with $0 saved, you would need to invest roughly $4,800 per month at a 7% return to reach $1,250,000 by age 40 -- that is feasible on a six-figure income but requires extreme frugality.",
-      "Healthcare is the biggest wildcard: without employer coverage, budget $400-$800 per month for marketplace insurance until you reach Medicare eligibility at 65, adding $4,800-$9,600 per year to your expenses.",
-      "Consider building a 2-year cash buffer ($100,000) outside your investment portfolio to avoid selling equities during a market downturn in the first years of retirement.",
-      "Roth conversion ladders let you access retirement account funds before age 59.5 without penalties -- start planning these 5 years before your target retirement date.",
+      "At a 4% withdrawal rate, $50,000 per year implies a $1,250,000 portfolio ($50,000 ÷ 0.04). At 3.5%, the target rises to about $1,429,000.",
+      "Starting at 25 with $0 saved, 7% average returns, and no extra monthly contributions, you would need about $3,944 per month for 15 years to reach $1,250,000 by 40 — the figure the pre-filled calculator shows for this variant.",
+      "Healthcare before Medicare at 65 is often the largest non-investment cost; budget marketplace premiums and out-of-pocket costs explicitly (exact amounts vary widely by state and age).",
+      "A cash buffer of one to two years of spending ($50,000 to $100,000 on a $50,000 budget) outside equities can reduce sequence-of-returns risk in the first years after you stop working.",
+      "Roth conversion ladders can unlock traditional IRA/401(k) dollars before 59½ without the 10% penalty, but each conversion needs a five-year seasoning period — start years before your target exit date.",
     ],
     keyResults: [
       { label: "Portfolio needed (4% SWR)", value: "$1,250,000" },
-      { label: "Monthly savings required", value: "$4,800 at 7% return" },
+      { label: "Monthly savings required", value: "$3,944 at 7% return" },
       { label: "Years to retirement", value: "15 years (age 25 to 40)" },
       { label: "Years of retirement", value: "45+ years (age 40 to 85+)" },
       { label: "Healthcare gap before Medicare", value: "25 years (age 40 to 65)" },
-      { label: "Estimated healthcare cost", value: "$120,000-$240,000 over 25 years" },
+      { label: "Portfolio at 3.5% SWR", value: "$1,429,000 target" },
     ],
     comparisonNote:
-      "Retiring at 40 requires roughly $4,800 per month in savings versus about $1,800 per month to retire at 55 on the same $60,000 income goal -- a 10-year delay cuts the required savings rate by more than 60%. The trade-off is 10 fewer years of freedom, but the lower savings burden makes the plan achievable for a much wider range of earners.",
+      "Compared with retiring at 55 on the same $60,000 income goal (age 30 to 55, $50,000 already saved), the monthly savings required drops from about $3,944 at 40 to about $1,498 at 55 — roughly $2,450 less per month because of 10 extra years of compounding and a shorter retirement to fund. You trade those years of freedom for a savings rate that fits more households.",
     faq: [
       {
         q: "How does a Roth conversion ladder work for retiring at 40?",
-        a: "You convert a portion of your traditional IRA to Roth each year while still working, then wait five years before withdrawing those converted amounts penalty-free. Stagger conversions over your final working years to stay in lower tax brackets and build a pipeline of accessible funds that covers the gap until age 59.5.",
+        a: "You convert a slice of traditional IRA or 401(k) money to Roth while you still have wage income, pay tax in that year, then wait five tax years before withdrawing the converted principal penalty-free. Stagger conversions to stay in lower brackets and build a pipeline of accessible cash until age 59½.",
       },
       {
         q: "How do I pay for healthcare before Medicare at 65?",
-        a: "Most early retirees purchase ACA marketplace plans, which cost roughly $400-$800 per month depending on age and location. You may qualify for premium tax credits if your retirement income is low enough, but budget at least $6,000-$10,000 per year for premiums and out-of-pocket costs until Medicare begins.",
+        a: "Most early retirees buy ACA marketplace coverage or extend employer COBRA briefly. Premiums depend on age, state, and household size; subsidies depend on modified adjusted gross income. Model at least $6,000 to $12,000 per year for premiums alone until you have a quote for your county.",
       },
       {
         q: "How serious is sequence-of-returns risk over a 45-year retirement?",
-        a: "A market crash in your first five years of retirement can permanently reduce portfolio longevity because you are selling shares at depressed prices to fund living expenses. Holding two to three years of expenses in cash or bonds and using a 3.5% withdrawal rate instead of 4% significantly reduces the probability of running out of money over a 45+ year horizon.",
+        a: "Selling stocks in a bear market during the first five to ten years of retirement can permanently lower how long money lasts. Holding one to three years of expenses in cash or short-term bonds and using a sub-4% withdrawal rate (Morningstar's 2026 base case is 3.9% for a 30-year horizon) reduces that risk for long retirements.",
       },
       {
         q: "What happens if I earn part-time income after retiring at 40?",
-        a: "Even $15,000-$20,000 per year in part-time or freelance income reduces the amount you must withdraw from your portfolio by 30-40%, dramatically extending its lifespan. Many FIRE retirees treat part-time work as optional insurance rather than a requirement, but the income buffer provides meaningful protection against inflation and market downturns.",
+        a: "Every $10,000 of part-time income is $10,000 less pulled from the portfolio that year. At a 4% rule, $20,000 of side income is roughly equivalent to having an extra $500,000 invested — useful insurance, not a requirement, for many FIRE households.",
       },
     ],
+    sources: [MORNINGSTAR_SWR, SSA_COLA_2027],
+    sourcesChecked: "October 2026",
+    sourcesNote: "Monthly savings figures match this site's retirement calculator at 7% returns and 4% withdrawal rate.",
   },
   {
     slug: "retire-at-50",
-    lastUpdated: "2026-08-22",
-    title: "Retire at 50 Calculator",
+    lastUpdated: "2026-10-21",
+    title: "Retire at 50 Calculator — Savings Target & Timeline",
     description:
-      "See what it takes to retire at 50. Calculate your savings target, monthly contributions needed, and whether your current plan gets you to early retirement.",
-    defaults: { currentAge: "30", retirementAge: "50", desiredIncome: "60000" },
+      "Model retirement at 50 with $60,000 desired income, 7% returns, and 4% withdrawals. See monthly savings needed from age 30 with $50,000 already saved.",
+    defaults: { currentAge: "30", retirementAge: "50", desiredIncome: "60000", currentSavings: "50000", monthlyContribution: "0" },
     intro:
-      "Retiring at 50 gives you two full decades of earning power while still leaving 15+ years of freedom before traditional retirement age. This timeline appeals to high-earning professionals in demanding fields like tech, finance, and medicine who want to step away from the grind while they are still healthy and energetic. With 20 years of compounding, the math is more forgiving than extreme early retirement, but it still requires disciplined saving and a clear drawdown strategy for the gap years before Social Security kicks in.",
+      "Retiring at 50 leaves two decades to compound while still requiring a long bridge before Medicare at 65 and full Social Security at 67 (for workers born in 1960 or later). The pre-filled scenario targets $60,000 per year from investments using a 4% withdrawal rate ($1,500,000), starting at 30 with $50,000 saved and 7% expected returns — a demanding but reachable plan for high savers.",
     tips: [
-      "To generate $60,000 per year at a 4% withdrawal rate, you need $1,500,000 by age 50 -- starting at 30 with $50,000 saved and earning 7% annually, that means contributing about $2,950 per month.",
-      "You will face a 15-year gap before Medicare at 65 and potentially 12-17 years before Social Security -- model your plan with zero government benefits until those ages to stress-test it.",
-      `Maxing out both a 401(k) (${usd(RETIREMENT_LIMITS.employeeDeferral)}) and a backdoor Roth IRA (${usd(RETIREMENT_LIMITS.ira)}) each year channels ${usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.ira)} into tax-advantaged accounts, but you will also need taxable brokerage savings to bridge the gap to 59.5.`,
-      "At 50 you may qualify for early pension benefits if you spent 20+ years with a government or union employer -- even a partial pension of $1,500 per month dramatically reduces the portfolio you need.",
-      "Sequence-of-returns risk is elevated with a 35+ year retirement: holding 3 years of expenses in bonds or cash ($180,000) protects against being forced to sell equities at a loss.",
+      "A $60,000 annual budget at 4% implies $1,500,000 at age 50. With $50,000 today and 7% returns over 20 years, the calculator shows about $2,492 per month of new savings to close the gap.",
+      "Plan at least 15 years without Medicare and up to 17 years before full Social Security if you were born in 1960 or later — stress-test with zero benefit until 67.",
+      `Tax-advantaged limits for 2026: up to ${usd(RETIREMENT_LIMITS.employeeDeferral)} in a 401(k) and ${usd(RETIREMENT_LIMITS.ira)} in an IRA (${usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.ira)} combined), plus catch-up deferrals after 50 — but taxable brokerage assets still fund the gap before 59½.`,
+      "The Rule of 55 does not help at 50 — it applies only when you separate from service in or after the calendar year you turn 55.",
+      "Three years of spending in bonds or cash ($180,000 on a $60,000 budget) is a common buffer against early-retirement sequence risk.",
     ],
     keyResults: [
       { label: "Portfolio needed (4% SWR)", value: "$1,500,000" },
-      { label: "Monthly savings required", value: "$2,950 at 7% return" },
+      { label: "Monthly savings required", value: "$2,492 at 7% return" },
       { label: "Years to retirement", value: "20 years (age 30 to 50)" },
       { label: "Medicare gap", value: "15 years (age 50 to 65)" },
-      { label: "Social Security gap", value: "12-17 years (age 50 to 62-67)" },
-      { label: "Estimated healthcare cost", value: "$72,000-$126,000 over 15 years" },
+      { label: "Full Social Security gap", value: "Up to 17 years (to age 67)" },
+      { label: "Estimated SS at FRA (individual)", value: "~$2,170/mo (Jan. 2027 est.)" },
     ],
     comparisonNote:
-      "Retiring at 50 sits between the aggressive FIRE-at-40 path and the more conventional retire-at-55 timeline. You save roughly $1,850 per month less than a 40-year-old FIRE target while still gaining five extra years of compounding compared to retiring at 55, making it a practical middle ground for high earners who want early freedom without extreme savings rates.",
+      "Versus retiring at 55 on the same $60,000 goal from age 30 with $50,000 saved, required monthly savings fall from about $2,492 to about $1,498 — roughly $994 less per month for five additional working years. Versus FIRE at 40 on $50,000 spending from age 25, the 50-year-old path needs far less monthly savings but five fewer years of freedom.",
     faq: [
       {
         q: "Does the Rule of 55 apply if I retire at 50?",
-        a: "No. The Rule of 55 only allows penalty-free 401(k) withdrawals when you leave your employer in or after the calendar year you turn 55. Retiring at 50 means you still face the 10% early withdrawal penalty on tax-deferred accounts until age 59.5, unless you use SEPP (72(t)) distributions or Roth conversion ladders.",
+        a: "No. Penalty-free 401(k) withdrawals under the Rule of 55 require separation from the employer in or after the year you turn 55. At 50 you generally need taxable assets, Roth conversion ladders, or SEPP (72(t)) plans to access tax-deferred money before 59½.",
       },
       {
         q: "Why do I need a taxable brokerage account to retire at 50?",
-        a: "Tax-advantaged accounts like 401(k)s and IRAs carry early withdrawal penalties before age 59.5, and the Rule of 55 does not help at 50. A taxable brokerage account provides penalty-free access to funds for living expenses during the 10-15 year bridge before you can tap retirement accounts without penalties.",
+        a: "401(k) and IRA withdrawals before 59½ usually trigger a 10% penalty on top of income tax unless an exception applies. A taxable brokerage account provides penalty-free liquidity for living expenses during the bridge years.",
       },
       {
         q: "How should I bridge the gap before Social Security and Medicare?",
-        a: "Plan for zero Social Security income until at least age 62 and no Medicare until 65, using your portfolio and taxable savings to cover all expenses during the gap. Budget $400-$700 per month for marketplace health insurance and consider COBRA for the first 18 months if your employer plan is more affordable.",
+        a: "Use portfolio withdrawals and taxable savings for all costs until 65 for Medicare and until at least 62 for early Social Security (with a permanent benefit reduction). SSA's estimate for the average retired worker benefit in January 2027 is $2,170 per month after the 3.6% COLA — verify your own estimate at ssa.gov.",
       },
       {
         q: "Can an early pension reduce how much I need to save?",
-        a: "Yes. A partial pension of $1,500 per month ($18,000 per year) effectively replaces $450,000 of portfolio value at a 4% withdrawal rate. Government and union employees with 20+ years of service are the most likely to qualify for meaningful early pension benefits at age 50.",
+        a: "Yes. Pension income of $1,500 per month ($18,000 per year) replaces about $450,000 of portfolio at a 4% withdrawal rate. Public-sector and union careers with 20+ years of service are the most common source of meaningful pensions before 62.",
       },
     ],
+    sources: [SSA_COLA_2027, MORNINGSTAR_SWR, FIDELITY_BENCHMARKS],
+    sourcesChecked: "October 2026",
+    sourcesNote: "Monthly savings match the retirement calculator with this variant's defaults merged over site defaults (7% return, 4% withdrawal).",
   },
   {
     slug: "retire-at-55",
-    lastUpdated: "2026-08-22",
-    title: "Retire at 55 Calculator",
+    lastUpdated: "2026-10-21",
+    title: "Retire at 55 Calculator — Rule of 55 & Savings Plan",
     description:
-      "Calculate your retirement readiness for age 55. Find out how much to save monthly and what portfolio size you need to retire comfortably a decade early.",
-    defaults: { currentAge: "30", retirementAge: "55", desiredIncome: "60000" },
+      "Calculate savings to retire at 55 with $60,000 annual income, Rule of 55 401(k) access, and 25 years of compounding from age 30.",
+    defaults: { currentAge: "30", retirementAge: "55", desiredIncome: "60000", currentSavings: "50000", monthlyContribution: "0" },
     intro:
-      "Age 55 is a strategic retirement target because it unlocks the Rule of 55, which lets you withdraw from your current employer's 401(k) without the 10% early withdrawal penalty. This five-year head start over the standard 59.5 threshold gives you penalty-free access to a significant portion of your retirement savings. With 25 years to save starting at 30, you have meaningful time for compound growth while still escaping the workforce well before the traditional retirement age.",
+      "Age 55 matters for retirement planning because the Rule of 55 can allow penalty-free withdrawals from your current employer's 401(k) if you leave in or after the year you turn 55 — five years before the usual 59½ threshold. With 25 years to save from age 30, the math is more forgiving than FIRE at 40 while still leaving a decade before Medicare at 65.",
     tips: [
-      "A $60,000 annual income at a 4% withdrawal rate requires $1,500,000 -- with 25 years and a 7% return, starting from $50,000 and contributing roughly $1,800 per month gets you there.",
-      "The Rule of 55 only applies to the 401(k) at the employer you leave at age 55 or later -- roll old 401(k) balances into your current plan before separating to maximize penalty-free access.",
-      "You will need to cover healthcare for 10 years before Medicare: COBRA lasts only 18 months, so plan for marketplace insurance at $400-$700 per month ($48,000-$84,000 over the decade).",
-      "If your employer offers a deferred compensation plan or stock options that vest at separation, factor in the tax impact -- a lump-sum payout at 55 could push you into the 32% or 35% bracket.",
-      "Social Security benefits increase roughly 7% for each year you delay claiming beyond 62, up to age 70 -- retiring at 55 but waiting until 67-70 to claim can boost your monthly benefit by 24% to 77%.",
+      "$60,000 per year at a 4% withdrawal rate requires $1,500,000. From $50,000 at age 30 with 7% returns over 25 years, the calculator shows about $1,498 per month of savings to hit the target.",
+      "Roll old 401(k) balances into your current employer's plan before you separate if you want those dollars eligible for the Rule of 55 — IRAs and former employers' plans do not qualify.",
+      "Budget roughly 10 years of health coverage before Medicare at 65; COBRA typically lasts 18 months, then marketplace plans take over.",
+      "Deferred compensation or stock paid at separation is ordinary income in the payout year — spreading distributions over two to three years can avoid jumping into the 35% bracket on a single large lump sum.",
+      "Delaying Social Security from 62 to 67 increases the monthly benefit by roughly 24% for workers with full retirement age 67; your portfolio must cover the gap until you claim.",
     ],
     keyResults: [
       { label: "Portfolio needed (4% SWR)", value: "$1,500,000" },
-      { label: "Monthly savings required", value: "$1,800 at 7% return" },
+      { label: "Monthly savings required", value: "$1,498 at 7% return" },
       { label: "Years to retirement", value: "25 years (age 30 to 55)" },
-      { label: "Rule of 55 access", value: "Penalty-free 401(k) withdrawals at separation" },
+      { label: "Rule of 55 access", value: "Penalty-free 401(k) at separation" },
       { label: "Healthcare gap before Medicare", value: "10 years (age 55 to 65)" },
-      { label: "Estimated healthcare cost", value: "$48,000-$84,000 over 10 years" },
+      { label: "SSA avg. benefit (Jan. 2027 est.)", value: "$2,170/mo retired worker" },
     ],
     comparisonNote:
-      "Retiring at 55 instead of 50 saves you roughly $1,150 per month in required contributions while unlocking the Rule of 55 for penalty-free 401(k) access. Compared to retiring at 60, you gain five extra years of freedom but must cover a longer healthcare gap and forgo five years of peak-earning catch-up contributions.",
+      "Retiring at 55 instead of 50 on the same $60,000 goal saves about $994 per month in required savings ($1,498 vs $2,492) while unlocking Rule of 55 access to the active 401(k). Compared with retiring at 60 on $70,000 spending from age 35, you gain five years of freedom but give up five years of peak earnings and catch-up contributions.",
     faq: [
       {
         q: "How does the Rule of 55 work in practice?",
-        a: "If you leave your employer in or after the year you turn 55, you can withdraw from that employer's 401(k) without the 10% early withdrawal penalty. The rule applies only to the plan of the employer you separate from -- not to IRAs or old 401(k) balances held at previous employers.",
+        a: "If you leave the employer sponsoring your 401(k) in or after the calendar year you turn 55, you can withdraw from that plan without the 10% early withdrawal penalty. The rule does not apply to IRAs or 401(k)s still held at prior employers unless you rolled them into the plan you are leaving.",
       },
       {
         q: "Should I roll old 401(k) balances into my current plan before retiring at 55?",
-        a: "Yes, if you want penalty-free access to those funds under the Rule of 55. Balances left in former employers' 401(k) plans remain subject to the 10% penalty until age 59.5. Consolidating into your current employer's plan before separation is a common strategy to maximize accessible retirement assets.",
+        a: "If penalty-free access at 55 is a priority, consolidating into the current employer's plan before separation is a common strategy. Leaving money in an old plan keeps it subject to the 10% penalty until 59½ unless another exception applies.",
       },
       {
         q: "How do I handle deferred compensation when I leave at 55?",
-        a: "Deferred compensation and stock option payouts are typically taxed as ordinary income in the year they are distributed. A large lump-sum payout at separation can push you into the 32% or 35% tax bracket, so negotiate installment distributions over two to three years if your employer allows it.",
+        a: "Nonqualified deferred compensation is typically taxed when paid. A $200,000 lump sum in one year can push a former executive from the 24% bracket into 35%. Installment payouts over two or three years, when permitted, spread the tax hit.",
       },
       {
         q: "When should I claim Social Security if I retire at 55?",
-        a: "Waiting until full retirement age (67 for those born in 1960 or later) increases your benefit by roughly 24% compared to claiming at 62. With a 12-year gap between retirement and eligibility, your portfolio must cover all expenses until then -- but delaying Social Security can add $400-$600 per month to your lifetime benefit.",
+        a: "Earliest eligibility is 62 with a permanent reduction versus waiting until 67 for full benefits (for birth year 1960+). SSA estimates the average retired-worker benefit at $2,170 per month in January 2027 after the 3.6% COLA — the estimate in your my Social Security account is the authoritative number for you.",
       },
     ],
+    sources: [SSA_COLA_2027, MORNINGSTAR_SWR],
+    sourcesChecked: "October 2026",
   },
   {
     slug: "retire-at-60",
-    lastUpdated: "2026-08-22",
-    title: "Retire at 60 Calculator",
+    lastUpdated: "2026-10-21",
+    title: "Retire at 60 Calculator — Nest Egg & Catch-Up Savings",
     description:
-      "Plan for retirement at 60 with this calculator. Estimate your savings needs, projected portfolio growth, and monthly income in retirement five years early.",
-    defaults: { currentAge: "35", retirementAge: "60", desiredIncome: "70000" },
+      "Plan retirement at 60 with $70,000 desired income, 7% returns, and 401(k) catch-up limits. Five-year Medicare bridge and Social Security at 62.",
+    defaults: { currentAge: "35", retirementAge: "60", desiredIncome: "70000", currentSavings: "50000", monthlyContribution: "0" },
     intro:
-      "Retiring at 60 is one of the most achievable early retirement targets, offering a balance between accumulating a solid nest egg and gaining meaningful extra years of freedom. At this age you are only 2 years from early Social Security eligibility and 5 years from Medicare, which dramatically reduces the bridging costs that younger retirees face. Many workers at 60 have reached peak earning years, paid off their mortgages, and finished funding their children's education -- freeing up significant cash flow for last-mile saving.",
+      "Retiring at 60 shortens the pre-Medicare gap to five years and puts early Social Security at 62 within reach — though claiming at 62 permanently reduces benefits versus waiting until 67. With 25 years from age 35 and $50,000 already invested, a $70,000 spending target at 4% ($1,750,000) requires about $1,807 per month at 7% returns in the pre-filled calculator.",
     tips: [
-      "To support $70,000 per year at a 4% withdrawal rate, you need $1,750,000 -- starting at 35 with $50,000 and a 7% return, contributing about $1,850 per month reaches this target over 25 years.",
-      "If you claim Social Security at 62 (the earliest age), your benefit will be permanently reduced by about 30% compared to your full retirement age benefit -- for a $2,500 full benefit, that is only $1,750 per month.",
-      "Bridge the 5-year Medicare gap with a combination of COBRA (18 months), marketplace insurance, and health-share plans -- budget $500-$900 per month ($30,000-$54,000 total).",
-      "Catch-up contributions kick in at 50: you can add an extra $7,500 per year to your 401(k) beyond the standard limit, funneling an additional $75,000 into your portfolio over the final decade.",
-      "At 60 you are close enough to required minimum distribution age (73) that tax-efficient withdrawal sequencing matters -- draw from taxable accounts first, then tax-deferred, to let Roth assets grow longest.",
+      "$70,000 per year at 4% equals a $1,750,000 portfolio. The variant defaults show about $1,807 per month of savings from age 35 with $50,000 starting balance and 7% returns.",
+      "Claiming Social Security at 62 cuts the monthly check by about 30% versus full retirement age 67 for workers born in 1960 or later — on a $2,500 primary insurance amount, that is roughly $1,750 versus $2,500 per month.",
+      "Bridge health coverage: COBRA for up to 18 months, then ACA marketplace plans until Medicare at 65 — build a line item in the budget, not a rough guess.",
+      `From age 50, 401(k) catch-up deferrals add ${usd(RETIREMENT_LIMITS.catchUp50)} per year on top of the ${usd(RETIREMENT_LIMITS.employeeDeferral)} employee limit (${usd(RETIREMENT_LIMITS.catchUp50 * 10)} over 10 years before growth).`,
+      "Required minimum distributions from traditional accounts begin at age 73 (age 75 for those born in 1960 or later, effective 2033). Draw taxable accounts first in your 50s and 60s when possible.",
     ],
     keyResults: [
       { label: "Portfolio needed (4% SWR)", value: "$1,750,000" },
-      { label: "Monthly savings required", value: "$1,850 at 7% return" },
+      { label: "Monthly savings required", value: "$1,807 at 7% return" },
       { label: "Years to retirement", value: "25 years (age 35 to 60)" },
-      { label: "Years to Social Security", value: "2 years to early eligibility at 62" },
+      { label: "Years to early Social Security", value: "2 years (age 62)" },
       { label: "Medicare gap", value: "5 years (age 60 to 65)" },
-      { label: "Catch-up contribution boost", value: "+$7,500/year to 401(k) from age 50" },
+      { label: "401(k) catch-up (age 50+, 2026)", value: `+${usd(RETIREMENT_LIMITS.catchUp50)}/year` },
     ],
     comparisonNote:
-      "Retiring at 60 requires only five years of healthcare bridging compared to 10 years at 55 and 15 years at 50, significantly reducing one of the biggest early-retirement costs. You give up five years of freedom versus retiring at 55, but the shorter gap to Social Security and Medicare makes the drawdown plan far less stressful.",
+      "Retiring at 60 leaves a five-year Medicare gap versus ten years at 55 and fifteen at 50, which lowers modeled healthcare spending by a wide margin. On this calculator's defaults, the $70,000 goal from age 35 requires about $1,807 per month — about $309 more than the $60,000-at-55 scenario ($1,498) because of the higher spending target, not because of the later date alone.",
     faq: [
       {
         q: "Should I claim Social Security at 62 or wait until full retirement age?",
-        a: "Claiming at 62 permanently reduces your benefit by about 30% compared to your full retirement age amount. If your full benefit is $2,500 per month, early claiming yields roughly $1,750 -- a $750 monthly reduction that compounds over a 25+ year retirement. Waiting until 67 is generally better if your portfolio can cover the two-year gap.",
+        a: "Claiming at 62 with full retirement age 67 reduces benefits by about 30%. If your portfolio can fund two extra years of full expenses, waiting until 67 adds roughly $750 per month on a $2,500 full benefit — a meaningful increase over a 25-year retirement.",
       },
       {
         q: "How much do catch-up contributions help in my final decade of work?",
-        a: `Starting at 50, you can contribute an extra ${usd(RETIREMENT_LIMITS.catchUp50)} per year to your 401(k) beyond the standard ${usd(RETIREMENT_LIMITS.employeeDeferral)} limit. Over 10 years, that adds ${usd(RETIREMENT_LIMITS.catchUp50 * 10)} in contributions plus compounded growth, potentially increasing your portfolio by roughly $105,000-$116,000 at 6% to 8% annual returns.`,
+        a: `An extra ${usd(RETIREMENT_LIMITS.catchUp50)} per year from 50 to 59, invested at 7%, grows to about $118,000 before counting employer match — on top of standard deferrals.`,
       },
       {
         q: "What is the best strategy for bridging the five-year Medicare gap?",
-        a: "Use COBRA from your employer plan for the first 18 months, then transition to an ACA marketplace plan for the remaining 3.5 years. Budget $500-$900 per month ($30,000-$54,000 total) and explore health-share ministries or spousal employer coverage as lower-cost alternatives.",
+        a: "Sequence COBRA while it is subsidized relative to alternatives, then shop ACA plans for the remaining years until 65. Include dental and vision separately — Original Medicare does not cover them.",
       },
       {
         q: "How should I sequence withdrawals between 60 and 73?",
-        a: "Draw from taxable brokerage accounts first to let tax-deferred assets continue compounding, then tap traditional IRA and 401(k) funds after age 59.5 without penalty. Use the years between 60 and 73 for Roth conversions in low-income years to reduce future required minimum distributions.",
+        a: "Spend taxable brokerage dollars first, then tax-deferred after 59½, and let Roth assets compound longest. Low-income years before RMDs at 73 are prime years for partial Roth conversions.",
       },
     ],
+    sources: [SSA_COLA_2027, IRS_RETIREMENT_LIMITS],
+    sourcesChecked: "October 2026",
+    sourcesNote: "Catch-up and deferral limits from IRS 2026 retirement plan limits.",
   },
   {
     slug: "retire-at-67",
-    lastUpdated: "2026-08-22",
-    title: "Retire at 67 (Full SS Age) Calculator",
+    lastUpdated: "2026-10-21",
+    title: "Retire at 67 Calculator — Full Social Security & Medicare",
     description:
-      "Calculate retirement savings for the standard retirement age of 67. See how Social Security, savings, and investment returns combine to fund your retirement.",
-    defaults: { currentAge: "35", retirementAge: "67", desiredIncome: "75000" },
+      "Model retirement at full Social Security age 67 with $75,000 income goal, Medicare already active, and 32 years to save from age 35.",
+    defaults: { currentAge: "35", retirementAge: "67", desiredIncome: "75000", currentSavings: "50000", monthlyContribution: "0" },
     intro:
-      "Age 67 is the full retirement age for Social Security for anyone born in 1960 or later, making it the default planning target for most American workers. Retiring at this age means you receive your full unreduced Social Security benefit, qualify for Medicare at 65, and have over three decades of potential compounding on early career savings. This timeline is the most forgiving for late starters and provides a strong foundation for a comfortable 20 to 25 year retirement.",
+      "Age 67 is full retirement age for Social Security for anyone born in 1960 or later — the baseline for many employer plans and Fidelity's 10x-salary savings benchmarks. Medicare begins at 65, so at 67 you have been on Medicare for two years; the main portfolio question is how much spending Social Security does not cover. SSA estimates the average retired-worker benefit at $2,170 per month in January 2027 after the 3.6% COLA.",
     tips: [
-      "At a 4% withdrawal rate, $75,000 per year requires $1,875,000 in savings -- but Social Security replaces roughly 35-40% of pre-retirement income for median earners, potentially reducing your needed portfolio to around $1,200,000.",
-      "Starting at 35 with $50,000 saved, reaching $1,875,000 by 67 at a 7% return requires approximately $1,250 per month -- a manageable goal for dual-income households earning the median wage.",
-      "The average Social Security benefit at full retirement age is approximately $1,900 per month ($22,800 per year) -- a married couple both claiming at 67 might receive $3,400-$4,000 per month combined.",
-      "At 67 you have been Medicare-eligible for 2 years already, but you still need a Medigap or Medicare Advantage plan plus Part D drug coverage -- budget $200-$400 per month per person for supplemental premiums.",
-      "Required minimum distributions from traditional IRAs and 401(k)s start at age 73 -- use the 6 years between 67 and 73 for strategic Roth conversions that can reduce your future tax burden significantly.",
+      "At 4%, $75,000 per year from investments alone requires $1,875,000. With $50,000 at 35 and 7% returns over 32 years, the calculator shows about $986 per month of savings to reach that target.",
+      "If Social Security covers about $26,000 per year ($2,170 × 12), you might need roughly $49,000 from the portfolio — a $1,225,000 nest egg at 4%, not the full $1,875,000.",
+      "Fidelity's age-based milestones (1× salary by 30, 3× by 40, 6× by 50, 8× by 60, 10× by 67) assume 15% annual savings from 25, retirement at 67, and no pension — use them as checkpoints, not law.",
+      "Budget Medigap or Medicare Advantage plus Part D — supplemental premiums often run $200 to $400 per person per month on top of Part B.",
+      "RMDs start at 73 (75 for birth year 1960+ beginning 2033). The six-plus years after 67 are useful for Roth conversions before forced taxable distributions.",
     ],
     keyResults: [
-      { label: "Portfolio needed (4% SWR)", value: "$1,875,000 (or ~$1,200,000 with SS)" },
-      { label: "Monthly savings required", value: "$1,250 at 7% return" },
+      { label: "Portfolio needed (4% SWR, no SS)", value: "$1,875,000" },
+      { label: "Monthly savings required", value: "$986 at 7% return" },
       { label: "Years to retirement", value: "32 years (age 35 to 67)" },
-      { label: "Estimated Social Security benefit", value: "~$1,900/month at full retirement age" },
-      { label: "Medicare status at retirement", value: "Already eligible (since age 65)" },
-      { label: "Roth conversion window", value: "6 years before RMDs at age 73" },
+      { label: "SSA avg. benefit (Jan. 2027 est.)", value: "$2,170/mo retired worker" },
+      { label: "Medicare status at 67", value: "Eligible since age 65" },
+      { label: "Portfolio if SS covers ~$26k/yr", value: "~$1,225,000 at 4%" },
     ],
     comparisonNote:
-      "Retiring at 67 is the most forgiving timeline: Social Security replaces 35-40% of income, Medicare is already active, and the required monthly savings of $1,250 is less than half what FIRE-at-40 demands. You trade 27 years of potential early freedom for a plan that works on median household incomes without extreme frugality.",
+      "Retiring at 67 is the most forgiving timeline in this set: required monthly savings of about $986 on this variant's defaults is less than half the $3,944 needed for FIRE at 40. Social Security and Medicare shrink the income gap relative to early retirement, at the cost of decades more in the workforce.",
     faq: [
       {
         q: "How do I maximize my Social Security benefit at 67?",
-        a: "Your benefit is based on your highest 35 years of earnings, so working until 67 ensures you replace any zero or low-earning years in that calculation. Delaying beyond 67 increases your benefit by roughly 8% per year until age 70, adding up to 24% to your monthly check.",
+        a: "Benefits are based on your highest 35 years of earnings indexed to national averages. Working through 67 replaces zero or low-earning years. Delaying past 67 adds about 8% per year until 70 — up to 24% above the full retirement age amount.",
       },
       {
         q: "When do required minimum distributions start and how should I prepare?",
-        a: "RMDs from traditional IRAs and 401(k)s begin at age 73, forcing you to withdraw a percentage of your balance each year regardless of need. Use the six-year window between 67 and 73 to execute Roth conversions in lower-income years, reducing the balance subject to future RMDs and lowering your overall tax burden.",
+        a: "SECURE 2.0 set RMDs at 73 for those who reach 72 after 2022, rising to 75 for those born in 1960 or later starting in 2033. Roth conversions in the years before RMDs reduce future forced withdrawals.",
       },
       {
         q: "What is the optimal Roth conversion strategy after retiring at 67?",
-        a: "Convert enough each year to fill lower tax brackets (typically the 12% or 22% bracket) without pushing yourself into a higher one. With Social Security and portfolio withdrawals as your primary income, you can often convert $30,000-$50,000 per year at favorable rates during the gap before RMDs force larger taxable distributions.",
+        a: "Convert enough each year to fill the 12% or 22% federal bracket without triggering IRMAA Medicare surcharges. With Social Security and portfolio income, many retirees convert $30,000 to $50,000 annually in the RMD window.",
       },
       {
         q: "How do spousal Social Security benefits work at full retirement age?",
-        a: "A lower-earning spouse can claim up to 50% of the higher earner's full retirement age benefit, whichever is greater between that spousal amount and their own earned benefit. For a couple where one spouse receives $2,500 and the other $900, the spousal benefit could increase the lower earner's check to $1,250 per month.",
+        a: "A lower-earning spouse can receive up to 50% of the higher earner's full retirement age benefit if that exceeds their own earned benefit. SSA's January 2027 estimate for an aged couple both receiving benefits is $3,355 per month combined after the 3.6% COLA.",
       },
     ],
+    sources: [SSA_COLA_2027, SSA_SNAPSHOT, FIDELITY_BENCHMARKS, MORNINGSTAR_SWR],
+    sourcesChecked: "October 2026",
   },
 ];

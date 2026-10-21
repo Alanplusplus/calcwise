@@ -31,7 +31,7 @@ export function RentVsBuyCalculator({ defaults }: Props) {
   const [monthlyRent, setMonthlyRent] = useState(defaults?.monthlyRent || "2000");
   const [rentIncrease, setRentIncrease] = useState(defaults?.rentIncrease || "3");
   const [homeAppreciation, setHomeAppreciation] = useState(defaults?.homeAppreciation || "3");
-  const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "1.2");
+  const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "0.9");
   const [maintenanceRate, setMaintenanceRate] = useState(defaults?.maintenanceRate || "1");
   const [investmentReturn, setInvestmentReturn] = useState(defaults?.investmentReturn || "7");
   const [timeHorizon, setTimeHorizon] = useState(defaults?.timeHorizon || "7");
@@ -53,7 +53,8 @@ export function RentVsBuyCalculator({ defaults }: Props) {
     if (price <= 0 || principal <= 0 || rate <= 0 || horizon <= 0) return null;
 
     const closingCosts = price * 0.03;
-    const insuranceRate = 0.0035;
+    /** ~$2,395/yr on a $350,000 home (LendingTree/NAIC filings, Feb. 2026 national average). */
+    const insuranceRate = 0.00685;
 
     const monthlyRate = rate / 100 / 12;
     const totalPayments = years * 12;
@@ -375,7 +376,7 @@ export function RentVsBuyCalculator({ defaults }: Props) {
           </div>
 
           <p className="mt-4 text-xs text-ink-400">
-            Includes estimated closing costs (3% of home price), property taxes, insurance (0.35%
+            Includes estimated closing costs (3% of home price), property taxes, insurance (0.685%
             of value), and maintenance. Assumes the renter invests the down payment and any monthly
             savings when renting is cheaper than owning.
           </p>

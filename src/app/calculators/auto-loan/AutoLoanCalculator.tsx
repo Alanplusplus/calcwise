@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { DEFAULT_NEW_CAR_APR } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -23,7 +24,7 @@ export function AutoLoanCalculator({ defaults }: Props) {
   const [vehiclePrice, setVehiclePrice] = useState(defaults?.vehiclePrice || "35000");
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "5000");
   const [tradeIn, setTradeIn] = useState(defaults?.tradeIn || "0");
-  const [annualRate, setAnnualRate] = useState(defaults?.annualRate || "6.5");
+  const [annualRate, setAnnualRate] = useState(defaults?.annualRate || DEFAULT_NEW_CAR_APR);
   const [termMonths, setTermMonths] = useState(defaults?.termMonths || "60");
   const [salesTax, setSalesTax] = useState(defaults?.salesTax || "7");
 
@@ -152,6 +153,12 @@ export function AutoLoanCalculator({ defaults }: Props) {
           step={0.1}
         />
       </div>
+      <p className="mt-3 text-xs text-ink-500">
+        Pre-filled APR matches the Federal Reserve G.19 average for 60-month new-car loans at commercial
+        banks (7.54% for August 2026). Edmunds reported a 7.0% average APR on financed new purchases in
+        Q3 2026; Experian's Q2 2026 market average was 6.35% for new cars and 11.19% for used.
+        Your quote depends on credit score, term, and lender.
+      </p>
 
       {results.loanAmount > 0 && (
         <div className="mt-8">

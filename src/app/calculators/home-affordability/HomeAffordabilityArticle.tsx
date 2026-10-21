@@ -49,8 +49,8 @@ export function HomeAffordabilityArticle() {
       <ul>
         <li>
           <strong>$60,000/year ($5,000/month):</strong> Maximum housing payment of $1,400/month.
-          At a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate on a 30-year loan with $30,000 down, 1.2% property taxes, and $1,200/year
-          insurance, that supports a home price of roughly $185,000 to $195,000.
+          At a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate on a 30-year loan with $30,000 down, 0.9% property taxes, and $2,400/year
+          insurance, that supports a home price of roughly $175,000 to $185,000.
         </li>
         <li>
           <strong>$80,000/year ($6,667/month):</strong> Maximum housing payment of $1,867/month.
@@ -68,10 +68,32 @@ export function HomeAffordabilityArticle() {
         significantly — a one-percentage-point increase can cut affordability by 10% or more. The
         calculator defaults to the Freddie Mac PMMS 30-year average ({MORTGAGE_MARKET.thirtyYear.toFixed(2)}%
         as of {MORTGAGE_MARKET.asOfLabel}); at that rate a $75,000 income with $40,000 down and $500/month
-        in other debt caps buying power near $240,000, versus about $261,000 at the year-ago average of{" "}
+        in other debt caps buying power near $238,000, versus about $260,000 at the year-ago average of{" "}
         {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}%.
       </p>
       <Sources items={MORTGAGE_MARKET_SOURCES} checked={MORTGAGE_MARKET.checkedLabel} />
+      <p>
+        NAR reported a median existing-home price of $417,500 in September 2026 — above what many
+        households can carry under the 28/36 rule at today's rate, which is why the calculator
+        defaults use a $75,000 income scenario rather than the national median price.
+      </p>
+      <Sources
+        items={[
+          {
+            label: "NAR Existing-Home Sales (Sept. 2026 median price $417,500)",
+            href: "https://www.nar.realtor/newsroom/existing-home-sales-increased-1-5-in-september-according-to-nar-report",
+          },
+          {
+            label: "NAHB analysis of Census ACS 2024 (0.89% effective property tax rate)",
+            href: "https://www.nahb.org/blog/2025/12/property-taxes-2024-residential",
+          },
+          {
+            label: "LendingTree State of Home Insurance 2026 ($2,395 avg. on $350k dwelling)",
+            href: "https://www.lendingtree.com/insurance/state-of-home-insurance/",
+          },
+        ]}
+        checked="October 2026"
+      />
       <p>
         For a deeper dive into income-based limits, see our{" "}
         <Link
@@ -150,7 +172,7 @@ export function HomeAffordabilityArticle() {
       <h2>Affordability at Different Income Levels</h2>
       <p>
         The table below shows estimated maximum home prices using the calculator's default
-        assumptions: {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% interest rate, 30-year term, 1.2% property tax rate, $1,500/year
+        assumptions: {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% interest rate, 30-year term, 0.9% property tax rate, $2,400/year
         insurance, and no existing monthly debt. Down payment is set at 10% of the estimated
         home price.
       </p>
@@ -168,25 +190,25 @@ export function HomeAffordabilityArticle() {
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">$50,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$1,167</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$144,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$138,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">$75,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$1,750</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$225,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$222,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
             <tr className="border-b border-ink-100">
               <td className="px-4 py-2 text-ink-700">$100,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$2,333</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$305,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$306,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
             <tr>
               <td className="px-4 py-2 text-ink-700">$150,000</td>
               <td className="px-4 py-2 text-right text-ink-700">$3,500</td>
-              <td className="px-4 py-2 text-right text-ink-700">~$467,000</td>
+              <td className="px-4 py-2 text-right text-ink-700">~$473,000</td>
               <td className="px-4 py-2 text-right text-ink-700">28%</td>
             </tr>
           </tbody>
@@ -271,7 +293,9 @@ export function HomeAffordabilityArticle() {
         Property tax rates vary by county and municipality, and insurance depends on home age,
         construction type, and local risk factors. Use your county assessor's effective rate and
         get an insurance quote for a home in your target price range for the most accurate results.
-        The calculator defaults (1.2% tax, $1,500/year insurance) represent a rough national average.
+        The calculator defaults (0.9% tax, $2,400/year insurance on a typical mid-priced home) track
+        the 2024 national effective property-tax rate and 2026 homeowners premium averages — localize
+        both before you offer on a specific address.
       </p>
     </>
   );

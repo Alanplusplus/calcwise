@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Sources } from "@/components/Sources";
+import { FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27 } from "@/lib/market-data";
 
 export function StudentLoanArticle() {
   return (
     <>
       <Image
         src="/images/student-loan-infographic.webp"
-        alt="Student loan repayment strategy comparison showing monthly payments, total interest, and payoff timelines for standard, extended, and accelerated plans"
+        alt="Comparison of 5-, 10-, and 15-year payoff timelines for a $35,000 student loan at 6.52% showing monthly payment, total interest, and total paid"
         width={1200}
         height={800}
         className="rounded-lg border border-ink-200"
@@ -26,8 +28,8 @@ export function StudentLoanArticle() {
         Unlike credit cards, student loans use simple interest on a declining
         balance through amortization. Each monthly payment is split between
         interest and principal. Early payments are heavily weighted toward
-        interest — on a $35,000 loan at 5.5% over 10 years, your first payment
-        of roughly $380 includes about $160 in interest and only $220 toward
+        interest — on a $35,000 loan at {FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27}% over 10 years,
+        your first payment of about $398 includes roughly $190 in interest and $208 toward
         principal. As the balance drops, the interest portion shrinks and more
         of each payment attacks the principal directly.
       </p>
@@ -41,16 +43,43 @@ export function StudentLoanArticle() {
         your specific situation.
       </p>
 
+      <h2>2026–27 Federal Direct Loan Rates</h2>
+      <p>
+        For loans first disbursed July 1, 2026 through June 30, 2027, the U.S.
+        Department of Education set fixed rates at {FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27}% for
+        undergraduate Direct Subsidized and Unsubsidized Loans, 8.07% for graduate
+        Direct Unsubsidized Loans, and 9.07% for Direct PLUS Loans (based on the
+        May 12, 2026 10-year Treasury auction plus statutory add-ons). Each loan
+        keeps its rate for life. The calculator defaults to the undergraduate rate;
+        enter your servicer's weighted average if you hold multiple disbursement
+        years.
+      </p>
+      <Sources
+        items={[
+          {
+            label:
+              "FSA Partner Announcement GENERAL-26-33 (June 4, 2026) — 2026–27 Direct Loan rates",
+            href: "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-06-04/interest-rates-federal-direct-loans-first-disbursed-between-july-1-2026-and-june-30-2027",
+          },
+          {
+            label:
+              "Federal Register annual rate notice (Sept. 10, 2026)",
+            href: "https://www.federalregister.gov/documents/2026/09/10/2026-18493/annual-notice-of-interest-rates-for-fixed-rate-federal-student-loans-made-under-the-william-d-ford",
+          },
+        ]}
+        checked="October 2026"
+      />
+
       <h2>Federal vs Private Student Loans</h2>
       <p>
         Federal student loans are issued by the U.S. Department of Education and
         come with borrower protections that private loans rarely match. They
-        include fixed interest rates set by Congress, income-driven repayment
-        plans, Public Service Loan Forgiveness (PSLF), deferment and forbearance
-        options, and no credit check for most undergraduate borrowers. Direct
-        Subsidized Loans do not accrue interest while you are enrolled at least
-        half-time, which can save thousands compared to unsubsidized loans that
-        capitalize interest at graduation.
+        include fixed interest rates set by formula each award year, income-driven
+        and Repayment Assistance Plan (RAP) options, Public Service Loan Forgiveness
+        (PSLF), deferment and forbearance options, and no credit check for most
+        undergraduate borrowers. Direct Subsidized Loans do not accrue interest while
+        you are enrolled at least half-time, which can save thousands compared to
+        unsubsidized loans that capitalize interest at graduation.
       </p>
       <p>
         Private student loans are issued by banks, credit unions, and online
@@ -81,13 +110,29 @@ export function StudentLoanArticle() {
       </p>
       <p>
         Extended Repayment stretches payments over 25 years, cutting monthly
-        bills but adding substantial interest. Income-Driven Repayment (IDR) plans
-        — including SAVE, PAYE, IBR, and ICR — cap payments at a percentage of
-        discretionary income and forgive remaining balances after 20 or 25 years
-        of qualifying payments. These plans can reduce monthly payments to zero
-        for low earners but may result in a larger forgiven balance that is
-        treated as taxable income.
+        bills but adding substantial interest.         Income-driven repayment (IDR) plans — including the new Repayment Assistance
+        Plan (RAP) available from July 1, 2026, plus PAYE, IBR, and ICR where you
+        still qualify — tie payments to income and family size. The Saving on a
+        Valuable Education (SAVE) Plan ended in March 2026 after a court order;
+        borrowers formerly on SAVE must choose another plan. RAP uses 1–10% of
+        adjusted gross income (with a $10 monthly floor and interest subsidies while
+        payments stay current) and can run up to 30 years. New loans disbursed on
+        or after July 1, 2026 generally must use RAP or the Tiered Standard plan.
       </p>
+      <Sources
+        items={[
+          {
+            label: "Federal Student Aid — SAVE Plan ended; choose a new plan",
+            href: "https://studentaid.gov/articles/save/",
+          },
+          {
+            label:
+              "U.S. Department of Education — RAP and Tiered Standard (July 1, 2026)",
+            href: "https://www.ed.gov/about/news/press-release/fact-sheet-trump-administration-making-higher-education-more-affordable-expanding-opportunity-and-simplifying-student-loan-repayment",
+          },
+        ]}
+        checked="October 2026"
+      />
       <p>
         Private loan borrowers have fewer options. Most lenders offer standard
         fixed repayment over 5 to 15 years. Some allow interest-only payments
@@ -98,23 +143,24 @@ export function StudentLoanArticle() {
 
       <h2>Case Study: Sarah, a 25-Year-Old Software Engineer</h2>
       <p>
-        Sarah graduated with $42,000 in federal student loans at a weighted
-        average rate of 5.8%. Her first job pays $78,000 per year, and after
-        taxes and rent she has about $900 per month available for loan payments.
-        On the Standard 10-year plan, her monthly payment would be approximately
-        $462, leaving room in her budget for savings and discretionary spending.
+        Sarah graduated with $42,000 in federal Direct Loans at a weighted
+        average rate of 6.52% (2026–27 undergraduate disbursements). Her first
+        job pays $78,000 per year, and after taxes and rent she has about $900
+        per month available for loan payments. On the Standard 10-year plan, her
+        monthly payment is about $477, leaving room for savings and discretionary
+        spending.
       </p>
       <p>
-        Sarah considered switching to an Extended 25-year plan to free up $200
-        per month. That would drop her payment to roughly $265, but her total
-        interest would jump from about $13,400 to over $37,500 — an extra
-        $24,000 in cost for modest monthly relief. She decided to stay on the
-        Standard plan and add a $100 extra payment each month toward principal.
+        Sarah considered switching to a 25-year Tiered Standard schedule to free
+        up cash flow. That would drop her payment to roughly $284, but total
+        interest would jump from about $15,300 to over $43,200 — an extra
+        $28,000 in cost for modest monthly relief. She stayed on the 10-year
+        standard plan and added $100 per month toward principal.
       </p>
       <p>
-        With the extra $100, Sarah pays off her loans in roughly 7 years and 8
-        months instead of 10 years, saving approximately $3,800 in interest. She
-        also redirects the freed-up $562 monthly payment toward her{" "}
+        With the extra $100, Sarah pays off her loans in about seven years and
+        nine months instead of 10 years, saving approximately $3,700 in interest.
+        She also redirects the freed-up $577 monthly payment toward her{" "}
         <Link
           href="/calculators/compound-interest"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -129,8 +175,8 @@ export function StudentLoanArticle() {
       <h2>Comparison: Standard vs Extended vs Income-Driven</h2>
       <p>
         The table below compares three common approaches for a $35,000 loan at
-        5.5% interest. Income-driven figures assume a borrower earning $45,000
-        with a monthly payment of approximately $150 under SAVE.
+        {FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27}% interest. RAP payments vary with AGI and
+        dependents; illustrative low-income payments often fall below standard.
       </p>
       <table className="w-full text-sm">
         <thead>
@@ -144,21 +190,21 @@ export function StudentLoanArticle() {
         <tbody>
           <tr className="border-b border-ink-100">
             <td className="py-2 pr-4">Standard (10-year)</td>
-            <td className="py-2 pr-4">$380</td>
+            <td className="py-2 pr-4">$398</td>
             <td className="py-2 pr-4">10 years</td>
-            <td className="py-2">$10,600</td>
+            <td className="py-2">$12,733</td>
           </tr>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4">Extended (25-year)</td>
-            <td className="py-2 pr-4">$215</td>
+            <td className="py-2 pr-4">Tiered Standard (25-year)</td>
+            <td className="py-2 pr-4">$237</td>
             <td className="py-2 pr-4">25 years</td>
-            <td className="py-2">$29,500</td>
+            <td className="py-2">$36,028</td>
           </tr>
           <tr>
-            <td className="py-2 pr-4">Income-Driven (SAVE)</td>
-            <td className="py-2 pr-4">$150</td>
-            <td className="py-2 pr-4">20-25 years</td>
-            <td className="py-2">Varies; balance may be forgiven</td>
+            <td className="py-2 pr-4">RAP (income-based)</td>
+            <td className="py-2 pr-4">Varies by AGI</td>
+            <td className="py-2 pr-4">Up to 30 years</td>
+            <td className="py-2">Lower near-term; may qualify for PSLF</td>
           </tr>
         </tbody>
       </table>
@@ -194,9 +240,9 @@ export function StudentLoanArticle() {
       <p>
         Make extra payments toward principal, not future bills. Contact your
         servicer to confirm extra amounts apply to principal immediately rather
-        than advancing your due date. Even $50 per month on a $35,000 loan at
-        5.5% saves over $2,000 in interest and cuts roughly 18 months off a
-        10-year term. Apply windfalls — tax refunds, bonuses, side income —
+        than advancing your due date.         Even $50 per month on a $35,000 loan at {FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27}%
+        saves about $2,000 in interest and cuts roughly 17 months off a 10-year
+        term. Apply windfalls — tax refunds, bonuses, side income —
         directly to your highest-rate loan.
       </p>
       <p>
@@ -249,13 +295,27 @@ export function StudentLoanArticle() {
       </p>
       <h3>Can I deduct student loan interest on my taxes?</h3>
       <p>
-        You may deduct up to $2,500 in student loan interest per year if your
-        modified adjusted gross income is below the phase-out threshold
-        ($165,000 for married filing jointly in 2026). The deduction is
-        above-the-line, meaning you do not need to itemize. It reduces your
-        taxable income, not your tax dollar-for-dollar — a $2,500 deduction
-        saves roughly $550-$925 depending on your tax bracket.
+        You may deduct up to $2,500 in qualified student loan interest per year
+        (2026 limit unchanged). The deduction phases out for single filers with
+        modified adjusted gross income between $85,000 and $100,000, and for
+        joint filers between $175,000 and $205,000 (IRS Rev. Proc. 2025-32). It
+        is above-the-line — no itemizing required — and reduces taxable income,
+        not tax dollar-for-dollar. A full $2,500 deduction saves roughly
+        $275–$925 depending on your marginal bracket.
       </p>
+      <Sources
+        items={[
+          {
+            label: "IRS Topic 456 — Student loan interest deduction",
+            href: "https://www.irs.gov/taxtopics/tc456",
+          },
+          {
+            label: "IRS Rev. Proc. 2025-32 (2026 inflation adjustments)",
+            href: "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+          },
+        ]}
+        checked="October 2026"
+      />
       <h3>Is Public Service Loan Forgiveness worth pursuing?</h3>
       <p>
         PSLF forgives remaining federal Direct Loan balances after 120 qualifying

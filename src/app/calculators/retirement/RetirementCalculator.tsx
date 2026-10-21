@@ -190,9 +190,9 @@ export function RetirementCalculator({ defaults }: Props) {
           </div>
 
           <p className="mt-4 text-xs text-ink-400">
-            Based on {results.yearsToRetirement} years to retirement, {withdrawalRate}% safe
-            withdrawal rate. This is a simplified estimate — consult a financial advisor for
-            personalized retirement planning.
+            Based on {results.yearsToRetirement} years to retirement and a {withdrawalRate}%
+            withdrawal rate (Morningstar's 2026 base case for new retirees is 3.9% over 30 years).
+            Simplified projection — not personalized advice.
           </p>
         </div>
       )}

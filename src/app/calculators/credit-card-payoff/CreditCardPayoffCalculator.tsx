@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { Sources } from "@/components/Sources";
+import { G19_CREDIT_CARD_APR } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -23,6 +25,8 @@ interface PayoffResult {
   months: number;
   totalInterest: number;
   totalCost: number;
+  capped?: boolean;
+  remainingBalance?: number;
 }
 
 function simulatePayoff(
@@ -52,7 +56,13 @@ function simulatePayoff(
   }
 
   if (balance > 0) {
-    return { error: "Balance would not be paid off within 50 years at this payment level." };
+    return {
+      months,
+      totalInterest,
+      totalCost: startingBalance + totalInterest,
+      capped: true,
+      remainingBalance: balance,
+    };
   }
 
   return {
@@ -97,7 +107,9 @@ interface Props {
 
 export function CreditCardPayoffCalculator({ defaults }: Props) {
   const [balance, setBalance] = useState(defaults?.balance || "8000");
-  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "22.9");
+  const [interestRate, setInterestRate] = useState(
+    defaults?.interestRate || String(G19_CREDIT_CARD_APR.assessedInterest)
+  );
   const [minPercent, setMinPercent] = useState(defaults?.minPercent || "2");
   const [fixedPayment, setFixedPayment] = useState(defaults?.fixedPayment || "250");
 
@@ -172,7 +184,7 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
           min={0}
           max={10}
           step={0.1}
-          helpText="Many cards charge 2% of balance or $25, whichever is greater"
+          helpText="Typical issuer formula: 2% of balance or $25 floor, whichever is greater (this calculator uses that model)"
         />
         <InputField
           label="Fixed Monthly Payment"
@@ -207,16 +219,31 @@ export function CreditCardPayoffCalculator({ defaults }: Props) {
                 <div className="rounded-lg border border-red-200 bg-red-50 p-4">
                   <p className="text-sm font-medium text-red-700">Minimum Payment Payoff</p>
                   <p className="mt-2 text-xl font-bold text-red-800">
-                    {results.minimum.months} months
+                    {results.minimum.capped
+                      ? `${results.minimum.months}+ months`
+                      : `${results.minimum.months} months`}
                   </p>
+                  {results.minimum.capped && results.minimum.remainingBalance != null && (
+                    <p className="mt-1 text-sm text-red-700">
+                      Still owes {formatCurrency(results.minimum.remainingBalance)} after 50 years at this
+                      payment level
+                    </p>
+                  )}
                   <p className="mt-1 text-sm text-red-700">
-                    Total interest: {formatCurrency(results.minimum.totalInterest)}
+                    Interest in that period: {formatCurrency(results.minimum.totalInterest)}
                   </p>
                   <p className="text-sm text-red-700">
-                    Total cost: {formatCurrency(results.minimum.totalCost)}
+                    Payments + remaining balance: {formatCurrency(results.minimum.totalCost +
+                      (results.minimum.remainingBalance ?? 0))}
                   </p>
                 </div>
               </div>
+
+              <Sources
+                items={[...G19_CREDIT_CARD_APR.sources]}
+                checked={G19_CREDIT_CARD_APR.checkedLabel}
+                note={`Default APR is the G.19 “accounts assessed interest” series (${G19_CREDIT_CARD_APR.assessedInterest}%), not the ${G19_CREDIT_CARD_APR.allAccounts}% average across all accounts (${G19_CREDIT_CARD_APR.asOfLabel}). Minimum payments follow 2% of balance or $25, whichever is greater.`}
+              />
 
               <div className="mt-4 rounded-lg bg-green-50 p-4">
                 <p className="font-semibold text-green-800">

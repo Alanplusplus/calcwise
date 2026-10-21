@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "How much is the monthly payment on a $300,000 mortgage?",
-    answer: `With 20% down ($60,000) on a $300,000 home, your loan is $240,000. At ${rate30}% interest over 30 years, the monthly principal and interest payment is approximately $1,662. Add property taxes (~$275/mo at 1.1%) and insurance (~$150/mo) for a total housing payment around $2,087/month.`,
+    answer: `With 20% down ($60,000) on a $300,000 home, your loan is $240,000. At ${rate30}% interest over 30 years, the monthly principal and interest payment is approximately $1,662. Add property taxes (~$225/mo at 0.9%) and insurance (~$200/mo at $2,400/year) for a total housing payment around $2,087/month.`,
   },
   {
     question: "What is the monthly payment on a $200,000 mortgage?",

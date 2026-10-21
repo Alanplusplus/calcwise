@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { G19_CREDIT_CARD_APR } from "@/lib/market-data";
+
+const APR = G19_CREDIT_CARD_APR.assessedInterest;
 
 export function CreditCardPayoffArticle() {
   return (
@@ -21,63 +25,76 @@ export function CreditCardPayoffArticle() {
       </p>
       <p>
         When you only make partial payments, the remaining balance continues
-        accruing interest every single day. A 22.9% APR sounds manageable until
-        you realize it translates to roughly 0.063% interest per day on every
-        dollar you owe. Over a year, that adds up quickly, which is why credit
-        card debt is among the most expensive consumer debt you can carry.
+        accruing interest every single day. At the Federal Reserve G.19 average of{" "}
+        {APR}% APR for accounts assessed interest ({G19_CREDIT_CARD_APR.asOfLabel}
+        ), every $1,000 carried for a month costs about ${((1000 * APR) / 100 / 12).toFixed(0)}{" "}
+        in simple monthly interest before compounding — which is why revolving
+        balances are among the most expensive consumer debt you can carry.
+      </p>
+      <Sources
+        items={[...G19_CREDIT_CARD_APR.sources]}
+        checked={G19_CREDIT_CARD_APR.checkedLabel}
+        note={`We quote the G.19 “accounts assessed interest” rate (${APR}%), not the ${G19_CREDIT_CARD_APR.allAccounts}% average across all accounts (including paid-in-full balances).`}
+      />
+
+      <h2>Minimum Payment Formula (What This Calculator Uses)</h2>
+      <p>
+        Issuers use several minimum formulas; this calculator models the common{" "}
+        <strong>2% of balance or $25 floor, whichever is greater</strong> rule. Each
+        month:
+      </p>
+      <p>
+        <strong>
+          Minimum payment = max(2% × balance, $25); interest = balance × (APR ÷ 12);
+          principal reduction = payment − interest
+        </strong>
+        . If your payment does not exceed monthly interest, the balance never falls.
+      </p>
+      <p>
+        On the default $8,000 balance at {APR}% APR, the first minimum is $160 (2%
+        of $8,000). Monthly interest is about $149, so only $11 goes to principal —
+        roughly 7% of the payment. At that pace the balance still exceeds $3,500
+        after 50 years in this model, which is why paying a fixed amount above the
+        minimum matters.
       </p>
 
       <h2>The Minimum Payment Trap</h2>
       <p>
-        Credit card issuers set minimum payments deliberately low — typically 1%
-        to 3% of your balance or a flat dollar amount like $25, whichever is
-        greater. This keeps your account in good standing while maximizing the
-        total interest you pay over time. Minimum payments cover mostly interest
-        with very little going toward principal, especially in the early months.
+        Credit card issuers set minimum payments deliberately low — often 1% to 3% of
+        your balance or a flat dollar amount like $25, whichever is greater. Some
+        cards use 1% of balance plus all accrued interest and fees instead. Minimum
+        payments cover mostly interest with very little going toward principal,
+        especially in the early months.
       </p>
       <p>
-        Consider a concrete example: an $8,000 balance at 22.9% APR with a 2%
-        minimum payment. Your first minimum payment would be $160 (2% of $8,000),
-        but roughly $153 of that goes to interest and only $7 reduces your
-        principal. The next month, your balance is still $7,993, and the cycle
-        repeats. At this pace, paying only the minimum would take decades to
-        eliminate the debt and cost tens of thousands of dollars in interest —
-        often more than the original balance itself.
-      </p>
-      <p>
-        Use our calculator above to see exactly how long minimum payments would
-        keep you in debt compared to a fixed monthly payment. The difference is
-        often shocking enough to motivate real change in your payment habits.
+        Use our calculator above to compare minimum-only payments against a fixed
+        monthly payment at the same APR. On $8,000 at {APR}% with a 2% minimum, the
+        fixed $250/month path in the default inputs pays off in 50 months with about
+        $4,282 in interest — versus more than $61,000 in interest over the first 50
+        years on the minimum path, with thousands still owed.
       </p>
 
       <h2>Case Study: Sarah's $12,000 Credit Card Debt</h2>
       <p>
-        Sarah accumulated $12,000 in credit card debt across two cards, both
-        charging around 22% APR. Her combined minimum payments totaled roughly
-        $240 per month. She assumed that paying the minimum meant she was handling
-        her debt responsibly. After running the numbers, she discovered that at
-        minimum payments, she would remain in debt for over 25 years and pay
-        approximately $18,000 in interest alone.
+        Sarah accumulated $12,000 in credit card debt across two cards near the G.19
+        assessed-interest average ({APR}% APR). Her combined 2% minimums started
+        around $240 per month. Running the numbers at {APR}% with the same 2%/$25
+        minimum model, paying only minimums would still leave over $5,200 owed after
+        50 years and charge more than $91,000 in interest over that period.
       </p>
       <p>
-        Sarah decided to cut discretionary spending and commit to a fixed $400
-        monthly payment instead. The results were dramatic: her payoff timeline
-        dropped from over 300 months to about 38 months, and her total interest
-        fell from $18,000 to roughly $3,200. By paying an extra $160 per month,
-        she saved nearly $15,000 and became debt-free more than 22 years sooner.
-      </p>
-      <p>
-        Sarah's story illustrates a key principle: the gap between minimum
-        and intentional payments is where real financial progress happens. Even
-        modest increases above the minimum can cut years off your timeline.
+        Sarah cut discretionary spending and committed to a fixed $400 monthly
+        payment instead. At {APR}% APR, that clears $12,000 in about 45 months with
+        roughly $5,739 in total interest — avoiding the minimum-payment spiral
+        entirely. Paying an extra $160 per month above her starting minimums saves
+        tens of thousands in interest and decades of repayment time.
       </p>
 
       <h2>Strategies to Pay Off Credit Card Debt Faster</h2>
       <p>
-        Once you understand the cost of minimum payments, the next step is
-        building a payoff strategy. Start by listing every card, its balance,
-        APR, and minimum payment. Then choose an approach that fits your
-        personality and financial situation.
+        Once you understand the cost of minimum payments, list every card, its
+        balance, APR, and minimum payment. Then choose an approach that fits your
+        situation.
       </p>
       <ul>
         <li>
@@ -86,8 +103,7 @@ export function CreditCardPayoffArticle() {
         </li>
         <li>
           <strong>Use the avalanche method:</strong> Pay minimums on all cards,
-          then direct extra money to the highest APR card first. This saves the
-          most money mathematically. Read our guide on{" "}
+          then direct extra money to the highest APR card first. Read our guide on{" "}
           <Link
             href="/guides/debt-avalanche-vs-snowball"
             className="text-brand-600 hover:text-brand-800 font-medium"
@@ -98,8 +114,7 @@ export function CreditCardPayoffArticle() {
         </li>
         <li>
           <strong>Stop adding new charges:</strong> Put the cards away and use
-          cash or debit until the balance is gone. Continuing to spend on credit
-          while paying down debt is like filling a bucket with a hole in the bottom.
+          cash or debit until the balance is gone.
         </li>
         <li>
           <strong>Automate your payments:</strong> Set up automatic transfers
@@ -108,8 +123,7 @@ export function CreditCardPayoffArticle() {
         </li>
         <li>
           <strong>Apply windfalls to debt:</strong> Tax refunds, bonuses, and
-          side income can make large dents in your balance when applied directly
-          to principal.
+          side income applied to principal can shave months off high-APR balances.
         </li>
       </ul>
       <p>
@@ -120,14 +134,13 @@ export function CreditCardPayoffArticle() {
         >
           Debt Payoff Calculator
         </Link>{" "}
-        to model avalanche and snowball strategies across several accounts.
+        to model extra payments across several accounts.
       </p>
 
       <h2>Payoff Timelines at Different Payment Levels</h2>
       <p>
-        The table below shows estimated payoff timelines for a $12,000 balance at
-        22.9% APR at four common payment levels. These figures assume you make no
-        additional purchases and pay the same amount every month.
+        Estimated timelines for a $12,000 balance at {APR}% APR (2%/$25 minimum
+        model for the minimum row; fixed payments otherwise). No new purchases.
       </p>
       <table className="my-4 w-full text-left text-sm">
         <thead>
@@ -140,73 +153,60 @@ export function CreditCardPayoffArticle() {
         </thead>
         <tbody>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4 text-ink-800">$150 (near minimum)</td>
-            <td className="py-2 pr-4 text-ink-800">Never (payment too low)</td>
-            <td className="py-2 pr-4 text-ink-800">—</td>
-            <td className="py-2 text-ink-800">—</td>
+            <td className="py-2 pr-4 text-ink-800">$240 (2% minimum start)</td>
+            <td className="py-2 pr-4 text-ink-800">600+ (balance remains)</td>
+            <td className="py-2 pr-4 text-ink-800">~$91,591</td>
+            <td className="py-2 text-ink-800">Not fully repaid in 50 yr</td>
           </tr>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4 text-ink-800">$250</td>
-            <td className="py-2 pr-4 text-ink-800">~72 months</td>
-            <td className="py-2 pr-4 text-ink-800">~$6,000</td>
-            <td className="py-2 text-ink-800">~$18,000</td>
+            <td className="py-2 pr-4 text-ink-800">$250 fixed</td>
+            <td className="py-2 pr-4 text-ink-800">122</td>
+            <td className="py-2 pr-4 text-ink-800">~$18,443</td>
+            <td className="py-2 text-ink-800">~$30,443</td>
           </tr>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4 text-ink-800">$400</td>
-            <td className="py-2 pr-4 text-ink-800">~38 months</td>
-            <td className="py-2 pr-4 text-ink-800">~$3,200</td>
-            <td className="py-2 text-ink-800">~$15,200</td>
+            <td className="py-2 pr-4 text-ink-800">$400 fixed</td>
+            <td className="py-2 pr-4 text-ink-800">45</td>
+            <td className="py-2 pr-4 text-ink-800">~$5,739</td>
+            <td className="py-2 text-ink-800">~$17,739</td>
           </tr>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4 text-ink-800">$600</td>
-            <td className="py-2 pr-4 text-ink-800">~23 months</td>
-            <td className="py-2 pr-4 text-ink-800">~$1,700</td>
-            <td className="py-2 text-ink-800">~$13,700</td>
+            <td className="py-2 pr-4 text-ink-800">$600 fixed</td>
+            <td className="py-2 pr-4 text-ink-800">26</td>
+            <td className="py-2 pr-4 text-ink-800">~$3,155</td>
+            <td className="py-2 text-ink-800">~$15,155</td>
           </tr>
         </tbody>
       </table>
       <p>
-        Notice how each increase in payment has an outsized effect on interest
-        savings. Going from $250 to $400 per month cuts the timeline nearly in
-        half. Going from $400 to $600 saves another 15 months and over $1,500 in
-        interest. Every dollar above the minimum attacks principal directly.
+        Going from $250 to $400 per month cuts the timeline from 122 months to 45
+        months and saves about $12,700 in interest on this balance.
       </p>
 
       <h2>Balance Transfer vs Payoff Strategies</h2>
       <p>
-        A balance transfer moves your debt to a new card offering a 0% introductory
-        APR for 12 to 21 months. This can save significant interest if you pay off
-        the balance before the promotional period ends. However, balance transfers
-        come with caveats: transfer fees (typically 3% to 5%), the risk of running
-        up your old card again, and a higher APR that kicks in if you miss a
-        payment or fail to pay off the balance in time.
+        A balance transfer moves debt to a card with a 0% introductory APR for 12
+        to 21 months. Transfer $8,000 into an 18-month 0% offer and you need about
+        $445 per month to clear the balance before the promo APR ends. Watch transfer
+        fees (often 3% to 5%) and avoid running up the old card again.
       </p>
       <p>
-        Balance transfers work best when you have a clear payoff plan and
-        disciplined spending habits. If you transfer $8,000 to a 0% card for 18
-        months, you need to pay roughly $445 per month to clear the debt before
-        interest resumes. Without that commitment, you may end up in worse shape
-        than before.
-      </p>
-      <p>
-        For most people, increasing fixed monthly payments on existing cards is
-        the simplest and most reliable path. Combine aggressive payments with a
-        structured budget — and use our{" "}
+        For most people, increasing fixed payments on existing cards is the simplest
+        path. After payoff, use our{" "}
         <Link
           href="/calculators/savings-goal"
           className="text-brand-600 hover:text-brand-800 font-medium"
         >
           Savings Goal Calculator
         </Link>{" "}
-        to build an emergency fund afterward so you do not rely on credit for
-        unexpected expenses. For step-by-step guidance, read{" "}
+        to build an emergency fund so you do not rely on credit for surprises. See{" "}
         <Link
           href="/guides/how-to-pay-off-credit-card-fast"
           className="text-brand-600 hover:text-brand-800 font-medium"
         >
           How to Pay Off Credit Card Debt Fast
-        </Link>
-        .
+        </Link>{" "}
+        for a month-by-month plan.
       </p>
 
       <h2>FAQ</h2>
@@ -214,10 +214,9 @@ export function CreditCardPayoffArticle() {
       <h3>Should I pay off credit cards or save first?</h3>
       <p>
         Build a small emergency fund of $1,000 to $2,000 first, then focus on
-        high-interest credit card debt. Credit cards charging 20%+ APR cost far
-        more than you would earn in a savings account. Once high-interest debt is
-        gone, redirect those payments toward a full emergency fund and long-term
-        savings goals.
+        high-interest credit card debt. Cards near the {APR}% assessed-interest
+        average cost far more than typical savings yields. Once high-interest debt
+        is gone, redirect those payments toward a full emergency fund.
       </p>
 
       <h3>Does paying the minimum hurt my credit score?</h3>
@@ -231,8 +230,7 @@ export function CreditCardPayoffArticle() {
       <h3>What if I can only afford the minimum right now?</h3>
       <p>
         Pay the minimum on every card to avoid fees and penalties, then look for
-        ways to increase income or reduce expenses — even temporarily. Consider
-        a side gig, selling unused items, or negotiating lower bills. Every extra
+        ways to increase income or reduce expenses — even temporarily. Every extra
         dollar above the minimum accelerates your payoff and reduces total interest.
       </p>
 
@@ -242,7 +240,7 @@ export function CreditCardPayoffArticle() {
         that, concentrate extra payments on one card using either the avalanche
         method (highest APR first) or snowball method (smallest balance first).
         Spreading small extra amounts across multiple cards slows progress on all
-        of them. Focus creates momentum and measurable wins.
+        of them.
       </p>
     </>
   );

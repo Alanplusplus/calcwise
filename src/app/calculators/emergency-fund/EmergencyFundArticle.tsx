@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
 
 export function EmergencyFundArticle() {
   return (
@@ -11,17 +12,28 @@ export function EmergencyFundArticle() {
         financial progress entirely.
       </p>
       <p>
-        According to the Federal Reserve, 37% of Americans cannot cover a $400
-        emergency without borrowing or selling something. An emergency fund is
-        the foundation of financial stability.
+        The Federal Reserve's 2025 Survey of Household Economics and Decisionmaking
+        (published May 2026) found 63% of adults could cover a hypothetical $400
+        emergency using cash, savings, or a credit card paid off at the next
+        statement — unchanged from 2024. The other 37% would borrow, sell assets,
+        or be unable to pay. An emergency fund is the foundation of financial stability.
       </p>
+      <Sources
+        items={[
+          {
+            label: "Fed SHED — Economic Well-Being of U.S. Households in 2025 (May 2026)",
+            href: "https://www.federalreserve.gov/publications/2026-economic-well-being-of-us-households-in-2025-savings-investments.htm",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>How Much Should You Save?</h2>
       <p>The standard recommendation varies based on your situation:</p>
       <ul>
-        <li><strong>3 months:</strong> minimum for dual-income households with stable employment and no dependents.</li>
-        <li><strong>6 months:</strong> recommended for most people — single-income households, those with children, or moderate job stability.</li>
-        <li><strong>9-12 months:</strong> ideal for self-employed individuals, freelancers, single parents, people in volatile industries, or those with irregular income.</li>
+        <li><strong>3 months:</strong> minimum for dual-income W-2 households with stable jobs, low fixed costs, and no dependents — multiply essential expenses by three.</li>
+        <li><strong>6 months:</strong> default for most households, including single earners, parents, or anyone with a car payment that must continue during job loss.</li>
+        <li><strong>9-12 months:</strong> for self-employed workers, commission-heavy roles, or single parents in high-cost metros where re-employment may take longer than six months.</li>
       </ul>
       <p>
         Calculate based on your <em>essential</em> expenses only — housing,
@@ -52,8 +64,8 @@ export function EmergencyFundArticle() {
         paying down a $2,800 credit card at 22% APR. At that pace she reaches
         $21,000 in about 4 years and 8 months; bumping contributions to $550
         after the card is paid off cuts the timeline to under 3 years. She keeps
-        the fund in a high-yield account earning 4.4% APY — roughly $75/month in
-        interest once the balance passes $20,000, which covers one week of
+        the fund in a high-yield account earning 4.25% APY — roughly $74/month in
+        interest once the balance passes $21,000, which covers one week of
         groceries without touching principal.
       </p>
 
@@ -67,13 +79,26 @@ export function EmergencyFundArticle() {
         >
           Where to Keep Your Emergency Fund
         </Link>
-        . The best options in 2024-2026:
+        . Top options in October 2026:
       </p>
       <ul>
-        <li><strong>High-yield savings account (4-5% APY):</strong> the gold standard. FDIC-insured, accessible within 1-2 days, no risk of loss. Look for online banks like Marcus, Ally, or Discover.</li>
-        <li><strong>Money market account:</strong> similar rates to HYSA, sometimes with check-writing or debit card access for even faster access.</li>
-        <li><strong>Treasury bills (T-Bills):</strong> slightly better rates, backed by the US government, but less liquid (you may wait until maturity).</li>
+        <li><strong>High-yield savings account (4.2-4.35% APY):</strong> the default. FDIC-insured, accessible within 1-2 days. Bankrate listed Openbank at 4.35% APY on October 21, 2026 — far above the 0.38% FDIC national savings average.</li>
+        <li><strong>Money market account:</strong> top online yields track HYSA leaders; the FDIC national money market average was 0.63% in October 2026.</li>
+        <li><strong>Treasury bills:</strong> competitive with top CDs near 4.5% on 1-year maturities; state-tax-free interest but less flexible than a HYSA transfer.</li>
       </ul>
+      <Sources
+        items={[
+          {
+            label: "FDIC National Rates and Rate Caps (Oct. 19, 2026)",
+            href: "https://www.fdic.gov/national-rates-and-rate-caps/national-rates-and-rate-caps-october-2026",
+          },
+          {
+            label: "Bankrate best high-yield savings (Oct. 21, 2026)",
+            href: "https://www.bankrate.com/banking/savings/best-high-yield-interests-savings-accounts/",
+          },
+        ]}
+        checked="October 2026"
+      />
       <p>
         <strong>Do NOT</strong> keep your emergency fund in stocks, crypto, or
         any volatile investment. You may need this money at the worst possible
@@ -99,22 +124,22 @@ export function EmergencyFundArticle() {
           <tbody>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-700">High-yield savings (HYSA)</td>
-              <td className="px-3 py-2 text-right text-ink-800">4.3–4.8%</td>
-              <td className="px-3 py-2 text-right text-ink-800">$770–$860</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.25–4.35%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$765–$783</td>
               <td className="px-3 py-2 text-ink-700">Transfer to checking in 1–2 business days</td>
               <td className="px-3 py-2 text-ink-700">Some banks cap 6 withdrawals/month on legacy rules</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-700">Money market account</td>
-              <td className="px-3 py-2 text-right text-ink-800">4.2–4.7%</td>
-              <td className="px-3 py-2 text-right text-ink-800">$750–$850</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.2–4.3%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$756–$774</td>
               <td className="px-3 py-2 text-ink-700">Often same-day via debit or check writing</td>
               <td className="px-3 py-2 text-ink-700">$500–$2,500 minimum balance at many credit unions</td>
             </tr>
             <tr className="border-t border-ink-100">
               <td className="px-3 py-2 text-ink-700">12-month CD</td>
-              <td className="px-3 py-2 text-right text-ink-800">4.8–5.2%</td>
-              <td className="px-3 py-2 text-right text-ink-800">$860–$940</td>
+              <td className="px-3 py-2 text-right text-ink-800">4.55–5.00%</td>
+              <td className="px-3 py-2 text-right text-ink-800">$819–$900</td>
               <td className="px-3 py-2 text-ink-700">Locked until maturity unless you pay a penalty</td>
               <td className="px-3 py-2 text-ink-700">Early exit may forfeit 3–6 months of interest — poor for job-loss cash</td>
             </tr>
@@ -189,7 +214,8 @@ export function EmergencyFundArticle() {
       <h3>Should I invest my emergency fund?</h3>
       <p>
         No. The purpose of an emergency fund is safety and accessibility, not
-        growth. A 4-5% HYSA gives a reasonable return without any risk of loss
+        growth. A HYSA near 4.25% APY (October 2026 top offers) earns meaningful
+        yield without any risk of loss
         or liquidity issues. Any amount beyond your target (e.g., 12+ months)
         could be considered for conservative investments.
       </p>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
 
 export function NetWorthArticle() {
   return (
@@ -54,28 +55,63 @@ export function NetWorthArticle() {
       </p>
       <p>
         Enter all values into the calculator above to see your total assets, total liabilities,
-        net worth, and a breakdown of how your wealth is allocated across asset categories. Update
-        the numbers every few months to track progress.
+        net worth, and a breakdown of how your wealth is allocated across asset categories. With
+        the default demo inputs ($160,000 in assets and $36,000 in liabilities), net worth is
+        $124,000.
       </p>
 
-      <h2>Average Net Worth by Age</h2>
+      <h2>Median Net Worth by Age (2025 SCF)</h2>
       <p>
-        Comparing your net worth to age-group benchmarks provides useful context, though individual
-        circumstances vary widely based on location, career path, and family situation. According
-        to Federal Reserve Survey of Consumer Finances data, median net worth by age group is
-        approximately:
+        The Federal Reserve's 2025 Survey of Consumer Finances (released October 9, 2026) reports
+        median and mean family net worth by age of the reference person. Median is the better
+        benchmark for a typical household because means are pulled up by wealthy outliers.
       </p>
-      <ul>
-        <li><strong>Ages 25–34:</strong> $120,000 median net worth</li>
-        <li><strong>Ages 35–44:</strong> $280,000 median net worth</li>
-        <li><strong>Ages 45–54:</strong> $550,000 median net worth</li>
-        <li><strong>Ages 55–64:</strong> $1.2 million median net worth</li>
-      </ul>
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full min-w-[320px] border-collapse text-left text-sm">
+          <thead>
+            <tr className="border-b border-ink-200 bg-ink-50">
+              <th className="px-3 py-2 font-semibold text-ink-900">Age of reference person</th>
+              <th className="px-3 py-2 font-semibold text-ink-900">Median (2025 SCF)</th>
+              <th className="px-3 py-2 font-semibold text-ink-900">Mean (2025 SCF)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">Under 35</td>
+              <td className="px-3 py-2">$33,000</td>
+              <td className="px-3 py-2">$135,400</td>
+            </tr>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">35–44</td>
+              <td className="px-3 py-2">$155,600</td>
+              <td className="px-3 py-2">$681,900</td>
+            </tr>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">45–54</td>
+              <td className="px-3 py-2">$253,700</td>
+              <td className="px-3 py-2">$1,244,500</td>
+            </tr>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">55–64</td>
+              <td className="px-3 py-2">$411,900</td>
+              <td className="px-3 py-2">$1,878,000</td>
+            </tr>
+            <tr className="border-b border-ink-100">
+              <td className="px-3 py-2">65–74</td>
+              <td className="px-3 py-2">$431,300</td>
+              <td className="px-3 py-2">$1,897,600</td>
+            </tr>
+            <tr>
+              <td className="px-3 py-2">75 or older</td>
+              <td className="px-3 py-2">$504,900</td>
+              <td className="px-3 py-2">$1,962,200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p>
-        These figures include home equity, retirement accounts, and all other assets minus debt.
-        Younger adults often have lower net worth due to student loans and early-career salaries,
-        while net worth typically accelerates in the 40s and 50s as investments compound and mortgages
-        are paid down. For a deeper analysis of age-based benchmarks, read our{" "}
+        All US families: median $215,900 (+2% versus the 2022 survey, in 2025 dollars) and mean
+        $1,241,500 (+7%). For a deeper breakdown, read our{" "}
         <Link
           href="/guides/net-worth-by-age"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -84,6 +120,16 @@ export function NetWorthArticle() {
         </Link>
         .
       </p>
+      <Sources
+        items={[
+          {
+            label: "Federal Reserve, Changes in U.S. Family Finances 2022–2025 (Table 2, Oct. 2026)",
+            href: "https://www.federalreserve.gov/publications/files/scf26.pdf",
+          },
+        ]}
+        checked="October 2026"
+        note="Dollar amounts are in 2025 dollars as published in the October 2026 release."
+      />
 
       <h2>Case Study: Kevin, 32 Years Old, $95K Salary</h2>
       <p>
@@ -101,9 +147,9 @@ export function NetWorthArticle() {
       </ul>
       <p>
         Kevin's total assets: $142,000. Total liabilities: $23,200. Net worth: $118,800 —
-        slightly below the $120,000 median for his age group, but up from $42,000 in just two years.
-        His asset allocation is heavily weighted toward retirement (55%) with a growing brokerage
-        position (23%).
+        well above the $33,000 median for families under 35 in the 2025 SCF, though below the
+        $155,600 median for ages 35–44 he will enter soon. Retirement accounts are 55% of assets;
+        brokerage is 23%.
       </p>
       <p>
         Kevin's plan for the next three years: eliminate the remaining $22,000 in student
@@ -158,58 +204,41 @@ export function NetWorthArticle() {
         </li>
       </ul>
 
-      <h2>Net Worth Percentiles by Age</h2>
+      <h2>Net Worth Percentiles (All US Families, 2025 SCF)</h2>
       <p>
-        Median net worth tells you where the middle falls, but percentiles show how you compare
-        across the distribution. The table below uses Federal Reserve survey data as a reference
-        for approximate net worth percentiles by age group.
+        The Fed publishes net worth cutoffs for the full sample — not every age band — in the 2025
+        survey. Use these to see where you stand nationally; compare medians by age in the table
+        above for peer context.
       </p>
-      <table>
+      <table className="w-full text-sm border-collapse">
         <thead>
-          <tr>
-            <th>Age Group</th>
-            <th>25th Percentile</th>
-            <th>Median (50th)</th>
-            <th>75th Percentile</th>
-            <th>90th Percentile</th>
+          <tr className="border-b border-ink-200">
+            <th className="py-2 text-left font-medium text-ink-700">Percentile</th>
+            <th className="py-2 text-left font-medium text-ink-700">Net worth cutoff (2025 SCF)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>25–34</td>
-            <td>$15,000</td>
-            <td>$120,000</td>
-            <td>$280,000</td>
-            <td>$550,000</td>
+          <tr className="border-b border-ink-100">
+            <td className="py-2 text-ink-600">25th</td>
+            <td className="py-2 text-ink-600">$27,900</td>
+          </tr>
+          <tr className="border-b border-ink-100">
+            <td className="py-2 text-ink-600">50th (median)</td>
+            <td className="py-2 text-ink-600">$215,900</td>
+          </tr>
+          <tr className="border-b border-ink-100">
+            <td className="py-2 text-ink-600">75th</td>
+            <td className="py-2 text-ink-600">$812,800</td>
           </tr>
           <tr>
-            <td>35–44</td>
-            <td>$40,000</td>
-            <td>$280,000</td>
-            <td>$650,000</td>
-            <td>$1.1M</td>
-          </tr>
-          <tr>
-            <td>45–54</td>
-            <td>$80,000</td>
-            <td>$550,000</td>
-            <td>$1.2M</td>
-            <td>$2.3M</td>
-          </tr>
-          <tr>
-            <td>55–64</td>
-            <td>$120,000</td>
-            <td>$1.2M</td>
-            <td>$2.5M</td>
-            <td>$4.5M</td>
+            <td className="py-2 text-ink-600">90th</td>
+            <td className="py-2 text-ink-600">$2,539,200</td>
           </tr>
         </tbody>
       </table>
       <p>
         If you are below the median for your age, focus on debt elimination and consistent
-        investing rather than comparing yourself to top percentiles. Net worth is a marathon — the
-        gap between the 25th and 75th percentile at every age shows how much time and discipline
-        matter. Use our{" "}
+        investing rather than comparing yourself to top percentiles. Use our{" "}
         <Link
           href="/calculators/home-affordability"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -245,10 +274,10 @@ export function NetWorthArticle() {
         a declining net worth at 45.
       </p>
       <p>
-        <strong>What is a good net worth target?</strong> A common rule of thumb is to have saved
-        at least one times your annual salary by 30, three times by 40, six times by 50, and eight
-        times by 60. These are guidelines, not requirements — adjust based on your retirement
-        goals and expected expenses.
+        <strong>What is a good net worth target?</strong> Fidelity suggests retirement savings
+        equal to 1× salary by 30, 3× by 40, 6× by 50, and 10× by 67 (retirement accounts, not
+        total net worth). The 2025 SCF median for ages 35–44 is $155,600 for all assets minus
+        debts — use the measure that matches your question.
       </p>
     </>
   );

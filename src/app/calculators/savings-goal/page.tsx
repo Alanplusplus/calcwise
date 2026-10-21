@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What return rate should I use?",
-    answer: "High-yield savings: 4–5%. Diversified investment portfolio over 5+ years: 6–8%. Use 0% for checking accounts (not recommended beyond short-term goals).",
+    answer: "High-yield savings: 4.2–4.35% APY (top online offers, October 2026). FDIC national average savings was 0.38% the same month. Long-term investment goals: 6–7% planning rate. Use 0% only for checking (not recommended beyond short-term goals).",
   },
   {
     question: "What if I can't save the required monthly amount?",

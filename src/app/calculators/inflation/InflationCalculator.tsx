@@ -20,7 +20,8 @@ interface Props {
 
 export function InflationCalculator({ defaults }: Props) {
   const [currentAmount, setCurrentAmount] = useState(defaults?.currentAmount || "100");
-  const [inflationRate, setInflationRate] = useState(defaults?.inflationRate || "3");
+  /** BLS CPI-U 12-month change, September 2026 (released Oct. 14, 2026). */
+  const [inflationRate, setInflationRate] = useState(defaults?.inflationRate || "3.7");
   const [years, setYears] = useState(defaults?.years || "10");
 
   const results = useMemo(() => {
@@ -105,6 +106,11 @@ export function InflationCalculator({ defaults }: Props) {
           step={1}
         />
       </div>
+      <p className="mt-3 text-sm text-ink-500">
+        Default 3.7% matches the U.S. CPI-U 12-month change for September 2026 (BLS release
+        October 14, 2026). The Federal Reserve targets 2% PCE inflation over the longer run —
+        use a lower rate for conservative planning scenarios.
+      </p>
 
       {results && (
         <div className="mt-8">

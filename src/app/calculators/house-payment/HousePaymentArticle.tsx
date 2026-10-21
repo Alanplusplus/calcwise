@@ -9,7 +9,7 @@ export function HousePaymentArticle() {
       <figure className="my-8">
         <Image
           src="/images/house-payment-infographic.webp"
-          alt="Infographic showing the five components of a monthly house payment: principal, interest, property taxes, insurance, and PMI"
+          alt="Donut chart of a $2,401 monthly house payment on a $350,000 home with 20% down at 7.40%, split into principal and interest, property tax, and insurance, plus how the first payment divides between interest and principal"
           width={1200}
           height={800}
           className="rounded-lg border border-ink-200"
@@ -34,10 +34,27 @@ export function HousePaymentArticle() {
       <ul>
         <li><strong>Principal</strong> — The portion of your payment that reduces the loan balance. In early years, this is the smallest slice. Over time, as your balance shrinks, more of each payment goes toward principal.</li>
         <li><strong>Interest</strong> — The cost of borrowing money from the lender. With a fixed-rate loan, the interest rate stays the same, but the dollar amount of interest decreases each month as your balance drops.</li>
-        <li><strong>Property Taxes</strong> — Local governments levy property taxes based on assessed value. The national average is approximately 1.1% of home value per year, but rates vary dramatically from 0.28% in Hawaii to 2.47% in New Jersey.</li>
-        <li><strong>Homeowners Insurance</strong> — Protects against damage from fire, storms, theft, and liability. The average annual premium for a $350,000 home is roughly $1,800, though costs depend on location, coverage level, and claims history.</li>
-        <li><strong>PMI (Private Mortgage Insurance)</strong> — Required when your down payment is less than 20%. PMI typically costs 0.5% to 1.5% of the loan amount per year and can be removed once you reach 20% equity.</li>
+        <li><strong>Property Taxes</strong> — Local governments levy property taxes based on assessed value. The national effective rate on owner-occupied homes averaged 0.89% in 2024, but effective rates vary from about 0.26% in Hawaii to 2.08% in New Jersey.</li>
+        <li><strong>Homeowners Insurance</strong> — Protects against damage from fire, storms, theft, and liability. National averages near $2,395 per year on a $350,000 dwelling were typical in early 2026 insurer filings, though coastal and wildfire zones run much higher.</li>
+        <li><strong>PMI (Private Mortgage Insurance)</strong> — Required when your down payment is less than 20%. PMI typically costs 0.5% to 1.5% of the loan amount per year (the calculator defaults to 0.5%) and can be removed once you reach 20% equity.</li>
       </ul>
+      <Sources
+        items={[
+          {
+            label: "NAHB analysis of Census ACS 2024 (national effective property tax rate)",
+            href: "https://www.nahb.org/blog/2025/12/property-taxes-2024-residential",
+          },
+          {
+            label: "Tax Foundation effective property tax rates by state (2024)",
+            href: "https://taxfoundation.org/data/all/state/property-taxes-by-state-county-2024/",
+          },
+          {
+            label: "LendingTree State of Home Insurance 2026 ($350k dwelling)",
+            href: "https://www.lendingtree.com/insurance/state-of-home-insurance/",
+          },
+        ]}
+        checked="October 2026"
+      />
       <p>
         If your home is in a planned community, you may also pay <strong>HOA fees</strong> that cover landscaping, amenities, and exterior maintenance. These can range from $100 to over $1,000 per month depending on the community.
       </p>
@@ -102,7 +119,7 @@ export function HousePaymentArticle() {
       <p>
         The table below shows how house payments change across different price points, assuming a{" "}
         {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate (Freddie Mac PMMS 30-year average, week of{" "}
-        {MORTGAGE_MARKET.asOfLabel}), 30-year term, 1.1% property tax rate, $1,800/year insurance, and
+        {MORTGAGE_MARKET.asOfLabel}), 30-year term, 0.9% property tax rate, $2,400/year insurance, and
         0.5% PMI when down payment is below 20%:
       </p>
       <Sources
@@ -121,14 +138,14 @@ export function HousePaymentArticle() {
         <tbody>
           <tr>
             <td>$250,000</td>
-            <td>$2,031/mo</td>
-            <td>$1,764/mo</td>
+            <td>$2,039/mo</td>
+            <td>$1,772/mo</td>
             <td>$267/mo</td>
           </tr>
           <tr>
             <td>$350,000</td>
-            <td>$2,783/mo</td>
-            <td>$2,409/mo</td>
+            <td>$2,775/mo</td>
+            <td>$2,401/mo</td>
             <td>$374/mo</td>
           </tr>
           <tr>
@@ -146,7 +163,7 @@ export function HousePaymentArticle() {
         </tbody>
       </table>
       <p>
-        Putting down 20% not only lowers the loan amount but eliminates PMI entirely, creating a double savings effect. For a $350,000 home, the difference is $374 per month — that is $4,488 per year or $134,640 over the life of the loan. At {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}% (the year-ago PMMS average), the same $350,000 home with 20% down would run about $2,198/month — roughly $211 less than at today's {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% default.
+        Putting down 20% not only lowers the loan amount but eliminates PMI entirely, creating a double savings effect. For a $350,000 home, the difference is $374 per month — that is $4,488 per year or $134,640 over the life of the loan. At {MORTGAGE_MARKET.thirtyYearYearAgo.toFixed(2)}% (the year-ago PMMS average), the same $350,000 home with 20% down would run about $2,190/month — roughly $211 less than at today's {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% default.
       </p>
 
       <h2>Property Tax Rates by State</h2>
@@ -154,12 +171,12 @@ export function HousePaymentArticle() {
         Property taxes are one of the most variable components of a house payment. Here are some notable extremes:
       </p>
       <ul>
-        <li><strong>Lowest rates:</strong> Hawaii (0.28%), Alabama (0.41%), Colorado (0.51%)</li>
-        <li><strong>Highest rates:</strong> New Jersey (2.47%), Illinois (2.27%), Connecticut (2.14%)</li>
-        <li><strong>National average:</strong> approximately 1.1%</li>
+        <li><strong>Lowest effective rates:</strong> Hawaii (0.26%), Alabama (0.36%), Colorado (0.45%)</li>
+        <li><strong>Highest effective rates:</strong> New Jersey (2.08%), Illinois (1.95%), Connecticut (1.78%)</li>
+        <li><strong>National average:</strong> approximately 0.89% (2024 owner-occupied housing)</li>
       </ul>
       <p>
-        On a $350,000 home, the difference between Hawaii's 0.28% and New Jersey's 2.47% property tax rate translates to $639 per month — a significant factor when comparing homes in different states.
+        On a $350,000 home, the difference between Hawaii's 0.26% and New Jersey's 2.08% effective property tax rate translates to about $531 per month — a significant factor when comparing homes in different states.
       </p>
 
       <h2>How to Lower Your Monthly House Payment</h2>
@@ -209,7 +226,7 @@ export function HousePaymentArticle() {
 
       <h3>How much is the house payment on a $300,000 home?</h3>
       <p>
-        With 20% down ($60,000), a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate, and a 30-year term, the P&I payment is approximately $1,662/month. Add property taxes (~$275/mo at 1.1%), insurance (~$150/mo), and you get a total house payment around $2,087/month. With less than 20% down, add PMI of roughly $100-$150/month.
+        With 20% down ($60,000), a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate, and a 30-year term, the P&I payment is approximately $1,662/month. Add property taxes (~$225/mo at 0.9%), insurance (~$200/mo at $2,400/year), and you get a total house payment around $2,087/month. With less than 20% down, add PMI of roughly $100-$150/month.
       </p>
 
       <h3>What percentage of income should go to a house payment?</h3>
@@ -233,7 +250,7 @@ export function HousePaymentArticle() {
 
       <h3>How can I estimate my property tax rate?</h3>
       <p>
-        Check your county assessor's website for the current millage rate, or look at comparable recently sold homes on sites like Zillow, which display annual property tax amounts. Divide the annual tax by the home price to get the effective rate. For a quick estimate, the national average of 1.1% is a reasonable starting point.
+        Check your county assessor's website for the current millage rate, or look at comparable recently sold homes on sites like Zillow, which display annual property tax amounts. Divide the annual tax by the home price to get the effective rate. For a quick estimate, the 2024 national effective average of about 0.89% is a reasonable starting point before you localize the number.
       </p>
     </>
   );

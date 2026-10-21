@@ -13,9 +13,9 @@ function formatPercent(n: number): string {
 
 export function InvestmentReturnCalculator() {
   const [initialInvestment, setInitialInvestment] = useState("10000");
-  const [finalValue, setFinalValue] = useState("25000");
+  const [finalValue, setFinalValue] = useState("16105");
   const [years, setYears] = useState("5");
-  const [dividends, setDividends] = useState("500");
+  const [dividends, setDividends] = useState("250");
 
   const results = useMemo(() => {
     const initial = parseFloat(initialInvestment) || 0;

@@ -1,11 +1,15 @@
 import type { CalculatorVariant } from "./types";
+import { MORTGAGE_MARKET, MORTGAGE_MARKET_SOURCES } from "../market-data";
 
 // $75K/$100K/$150K income variants removed — content consolidated into /guides/how-much-house-can-i-afford
 
 export const homeAffordabilityVariants: CalculatorVariant[] = [
   {
     slug: "50000-income",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
+    sourcesNote: "Maximum prices use this calculator's default inputs and the Freddie Mac 30-year average as the starting rate.",
     title: "How Much House Can I Afford on $50,000 Salary",
     description:
       "Affordability on a $50,000 salary at the 7.40% Freddie Mac 30-year average: max home price, loan, monthly P&I, taxes, and DTI with $15,000 down.",
@@ -50,7 +54,10 @@ export const homeAffordabilityVariants: CalculatorVariant[] = [
   },
   {
     slug: "200000-income",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-10-21",
+    sources: [...MORTGAGE_MARKET_SOURCES],
+    sourcesChecked: MORTGAGE_MARKET.checkedLabel,
+    sourcesNote: "Maximum prices use this calculator's default inputs and the Freddie Mac 30-year average as the starting rate.",
     title: "How Much House Can I Afford on $200,000 Salary",
     description:
       "Buying power on $200,000 income at 7.40% PMMS: max home near $678,000, $558,000 conforming loan, monthly payment breakdown, and jumbo thresholds for 2026.",

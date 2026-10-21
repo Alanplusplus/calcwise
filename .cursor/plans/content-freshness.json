@@ -1,6 +1,6 @@
 {
-  "description": "Content freshness rotation queue. Order of work: tax-data-refresh (P1T) > report-refresh (P1R) > guide-refresh (P2) > variant-refresh (P2V) > calculator-refresh (P3) > new content (P5). Pick the first 'pending' item each run whose notBefore date (if any) has passed. When the queue is exhausted, regenerate in that order.",
-  "lastRunDate": "2026-10-20",
+  "description": "Content freshness queue. Cadence: event-triggered and batch, not daily (see refresh-content.mdc for the trigger calendar). Order of work: tax-data-refresh (P1T) > report-refresh (P1R) > rate check (P1M) > guide-refresh (P2) > variant-refresh (P2V) > calculator-refresh (P3) > evergreen yearly (P4) > new content (P5). On a trigger, select every pending item whose notBefore date (if any) has passed and clear them in one batch; regenerate the queue only for the items a trigger touches.",
+  "lastRunDate": "2026-10-21",
   "cycle": 1,
   "queue": [
     {
@@ -340,12 +340,31 @@
       "completedAt": "2026-10-20T12:00:00.000Z"
     },
     {
+      "id": "p1t-tax-data-refresh-2027",
+      "type": "tax-data-refresh",
+      "slug": "tax-data",
+      "priority": "P1T",
+      "trigger": "IRS Rev. Proc. with 2027 inflation adjustments",
+      "reason": "Not published as of 2026-10-21 (prior releases: 2025-10-09, 2024-10-22, 2023-11-09; statutory deadline Dec 15). Check weekly; when it appears update src/lib/tax-data.ts (2027 brackets, standard deduction, LTCG thresholds, 401(k)/IRA limits) and grep for 2026 tax figures in articles, FAQs, guides, variants. SSA 2027 wage base ($192,300) and COLA (3.6%) are already applied elsewhere; HSA 2027 limits are $4,500 / $9,000 (Rev. Proc. 2026-24).",
+      "status": "pending"
+    },
+    {
       "id": "p1r-report-mortgage-affordability-by-state",
       "type": "report-refresh",
       "slug": "mortgage-affordability-by-state",
       "priority": "P1R",
       "reason": "Census Bureau releases the 2025 ACS 1-year estimates on 2026-10-29; the report uses ACS 2024 and Freddie Mac PMMS 7.40% (2026-10-15). Refresh inputs, copy, CSV, and sitemap date after release.",
       "notBefore": "2026-10-29",
+      "status": "pending"
+    },
+    {
+      "id": "p1m-rate-check-2026-11",
+      "type": "rate-refresh",
+      "slug": "market-data",
+      "priority": "P1M",
+      "trigger": "Monthly Freddie Mac PMMS check",
+      "reason": "Refresh only if the PMMS 30-year average moved 0.25 point or more from MORTGAGE_MARKET.thirtyYear (7.40%, Oct 15, 2026). Also check Fed G.19 card and auto rates in the same pass (quarterly: next release in the first week of Jan 2027).",
+      "notBefore": "2026-11-16",
       "status": "pending"
     },
     {
@@ -364,7 +383,9 @@
       "slug": "retirement",
       "priority": "P2V",
       "reason": "5 variant page(s): tax-data limits already applied; verify the non-tax benchmarks",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: SSA 2027 COLA (3.6%, $2,170 average retired worker) applied; sources added; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-inflation",
@@ -372,7 +393,9 @@
       "slug": "inflation",
       "priority": "P2V",
       "reason": "5 variant page(s): tax-data constants already applied; verify the CPI figures quoted",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: CPI figures re-verified (Sep 2026 CPI-U 3.7%); category rates recomputed from BLS series; 5% college and 5.5% healthcare labeled as stress tests next to the measured 3.4% and 2.9%; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-auto-loan",
@@ -380,7 +403,9 @@
       "slug": "auto-loan",
       "priority": "P2V",
       "reason": "5 variant page(s): verify Fed G.19 auto-loan rates and vehicle price data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: Fed G.19 default APR 7.54% applied; keyResults recomputed; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-student-loan",
@@ -388,7 +413,9 @@
       "slug": "student-loan",
       "priority": "P2V",
       "reason": "5 variant page(s): 2026-27 Direct Loan rates and repayment-plan rules",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: 2026-27 Direct Loan rate 6.52%, RAP/Tiered Standard rules; keyResults recomputed; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-cd-calculator",
@@ -396,7 +423,9 @@
       "slug": "cd-calculator",
       "priority": "P2V",
       "reason": "5 variant page(s): verify FDIC national CD rates and top-rate claims",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: default 4.55% APY verified; keyResults recomputed; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-savings-goal",
@@ -404,7 +433,9 @@
       "slug": "savings-goal",
       "priority": "P2V",
       "reason": "5 variant page(s): verify HYSA/APY assumptions",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: default 4.25% APY verified; keyResults recomputed; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-roi",
@@ -412,7 +443,9 @@
       "slug": "roi",
       "priority": "P2V",
       "reason": "5 variant page(s): verify S&P 500 and benchmark claims",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: benchmark claims re-verified; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-dividend",
@@ -420,7 +453,9 @@
       "slug": "dividend",
       "priority": "P2V",
       "reason": "5 variant page(s): verify yield and streak claims",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: yield and streak claims re-verified; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-tip-calculator",
@@ -428,7 +463,9 @@
       "slug": "tip-calculator",
       "priority": "P2V",
       "reason": "5 variant page(s): verify tipping norms and the IRS qualified-tips deduction",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: tipping norms and qualified-tips deduction re-verified; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-home-affordability",
@@ -446,7 +483,9 @@
       "slug": "compound-interest",
       "priority": "P2V",
       "reason": "1 variant page(s): verify rate assumptions",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: rate assumptions re-verified; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-credit-card-payoff",
@@ -454,7 +493,9 @@
       "slug": "credit-card-payoff",
       "priority": "P2V",
       "reason": "1 variant page(s): Fed G.19 credit-card APR",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: Fed G.19 card APR (22.36% assessed interest) applied; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p2v-variants-debt-payoff",
@@ -462,7 +503,9 @@
       "slug": "debt-payoff",
       "priority": "P2V",
       "reason": "1 variant page(s): Fed G.19 / FSA rates",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: student variant rewritten at 6.52% (FSA), keyResults match the pre-filled calculator; variant sources added via the sources field; lastUpdated bumped"
     },
     {
       "id": "p3-calc-mortgage",
@@ -470,8 +513,9 @@
       "slug": "mortgage",
       "priority": "P3",
       "reason": "Published 2026-08-10 — refresh rate assumptions, update case study numbers",
-      "status": "pending",
-      "note": "2026-10-20: default rate moved to 7.40% via src/lib/market-data.ts; rate-coupled FAQ/article numbers recomputed and <Sources> added. Non-rate figures (tax, insurance, benchmarks, case-study assumptions) still need the full calculator-refresh audit"
+      "status": "done",
+      "note": "2026-10-21: non-rate figures audited (tax, insurance, benchmarks); Sources added",
+      "completedAt": "2026-10-21T12:00:00.000Z"
     },
     {
       "id": "p3-calc-compound-interest",
@@ -479,7 +523,9 @@
       "slug": "compound-interest",
       "priority": "P3",
       "reason": "Published 2026-08-10 — refresh examples, add new comparison scenario",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: examples and rates re-verified; Sources added"
     },
     {
       "id": "p3-calc-savings-goal",
@@ -487,7 +533,9 @@
       "slug": "savings-goal",
       "priority": "P3",
       "reason": "Published 2026-08-10 — refresh savings rate data, update tips",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: default 4.25% APY, sources added; Sources added"
     },
     {
       "id": "p3-calc-investment-return",
@@ -495,7 +543,9 @@
       "slug": "investment-return",
       "priority": "P3",
       "reason": "Published 2026-08-10 — refresh market return assumptions",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: market-return assumptions re-verified; Sources added"
     },
     {
       "id": "p3-calc-debt-payoff",
@@ -503,7 +553,9 @@
       "slug": "debt-payoff",
       "priority": "P3",
       "reason": "Published 2026-08-10 — update APR data, refresh payoff strategies",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: APR data re-verified, student scenario at 6.52%; Sources added"
     },
     {
       "id": "p3-calc-retirement",
@@ -511,8 +563,9 @@
       "slug": "retirement",
       "priority": "P3",
       "reason": "Published 2026-08-10 — refresh retirement savings benchmarks",
-      "status": "pending",
-      "note": "2026-10-20: tax figures in the article/FAQ now read from tax-data.ts; full non-tax refresh (rates, benchmarks, case study) still pending"
+      "status": "done",
+      "note": "2026-10-21: SSA 2027 COLA and non-tax benchmarks verified; Sources added",
+      "completedAt": "2026-10-21T12:00:00.000Z"
     },
     {
       "id": "p3-calc-loan-comparison",
@@ -520,7 +573,8 @@
       "slug": "loan-comparison",
       "priority": "P3",
       "reason": "Published 2026-08-10 — refresh sample loan rates in article",
-      "status": "pending"
+      "status": "pending",
+      "note": "2026-10-20: default rates read from market-data.ts and sources added; non-rate figures still need the calculator-refresh audit"
     },
     {
       "id": "p3-calc-emergency-fund",
@@ -528,7 +582,9 @@
       "slug": "emergency-fund",
       "priority": "P3",
       "reason": "Published 2026-08-10 — update emergency fund sizing recommendations",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: Fed SHED stat and sizing guidance re-verified; Sources added"
     },
     {
       "id": "p3-calc-auto-loan",
@@ -536,15 +592,18 @@
       "slug": "auto-loan",
       "priority": "P3",
       "reason": "Published 2026-08-19 — refresh auto loan rate data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: G.19 7.54% default (market-data.ts); Sources added"
     },
     {
       "id": "p3-calc-basic",
       "type": "calculator-refresh",
       "slug": "basic",
-      "priority": "P3",
-      "reason": "Published 2026-08-10 — refresh article with practical examples",
-      "status": "pending"
+      "priority": "P4",
+      "reason": "Evergreen math/method page with no market figures: refresh yearly, only with substantive content changes (no date-only bumps). Originally: Published 2026-08-10 — refresh article with practical examples",
+      "status": "pending",
+      "notBefore": "2027-01-05"
     },
     {
       "id": "p3-calc-credit-card-payoff",
@@ -552,7 +611,9 @@
       "slug": "credit-card-payoff",
       "priority": "P3",
       "reason": "Published 2026-08-25 — refresh average credit card APR data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: G.19 APR from market-data.ts; calculator minimum-payment model stated on the page; Sources added"
     },
     {
       "id": "p3-calc-home-affordability",
@@ -560,8 +621,9 @@
       "slug": "home-affordability",
       "priority": "P3",
       "reason": "Published 2026-08-25 — refresh median home price and rate data",
-      "status": "pending",
-      "note": "2026-10-20: default rate moved to 7.40% via src/lib/market-data.ts; rate-coupled FAQ/article numbers recomputed and <Sources> added. Non-rate figures (tax, insurance, benchmarks, case-study assumptions) still need the full calculator-refresh audit"
+      "status": "done",
+      "note": "2026-10-21: non-rate figures audited, FHFA/FHA limits applied; Sources added",
+      "completedAt": "2026-10-21T12:00:00.000Z"
     },
     {
       "id": "p3-calc-cd-calculator",
@@ -569,15 +631,18 @@
       "slug": "cd-calculator",
       "priority": "P3",
       "reason": "Published 2026-08-25 — refresh current CD APY rates",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: default 4.55% APY; Sources added"
     },
     {
       "id": "p3-calc-budget-50-30-20",
       "type": "calculator-refresh",
       "slug": "budget-50-30-20",
-      "priority": "P3",
-      "reason": "Published 2026-08-25 — refresh income examples and cost data",
-      "status": "pending"
+      "priority": "P4",
+      "reason": "Evergreen math/method page with no market figures: refresh yearly, only with substantive content changes (no date-only bumps). Originally: Published 2026-08-25 — refresh income examples and cost data",
+      "status": "pending",
+      "notBefore": "2027-01-05"
     },
     {
       "id": "p3-calc-rent-vs-buy",
@@ -585,8 +650,9 @@
       "slug": "rent-vs-buy",
       "priority": "P3",
       "reason": "Published 2026-08-25 — refresh rent and mortgage rate data",
-      "status": "pending",
-      "note": "2026-10-20: tax figures in the article/FAQ now read from tax-data.ts; full non-tax refresh (rates, benchmarks, case study) still pending; 2026-10-20: default rate moved to 7.40% via src/lib/market-data.ts; rate-coupled FAQ/article numbers recomputed and <Sources> added. Non-rate figures (tax, insurance, benchmarks, case-study assumptions) still need the full calculator-refresh audit"
+      "status": "done",
+      "note": "2026-10-21: 0.9% tax and 0.685% insurance assumptions verified, rates from market-data.ts; Sources added",
+      "completedAt": "2026-10-21T12:00:00.000Z"
     },
     {
       "id": "p3-calc-fire-calculator",
@@ -594,7 +660,9 @@
       "slug": "fire-calculator",
       "priority": "P3",
       "reason": "Published 2026-08-25 — refresh FIRE number assumptions",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: assumptions re-verified; Sources added"
     },
     {
       "id": "p3-calc-net-worth",
@@ -602,7 +670,9 @@
       "slug": "net-worth",
       "priority": "P3",
       "reason": "Published 2026-08-25 — refresh net worth benchmarks by age",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: 2025 SCF benchmarks; Sources added"
     },
     {
       "id": "p3-calc-student-loan",
@@ -610,7 +680,9 @@
       "slug": "student-loan",
       "priority": "P3",
       "reason": "Published 2026-08-27 — refresh federal student loan rates",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: 6.52% 2026-27 rate, RAP/SAVE status; Sources added; infographic regenerated at 6.52%"
     },
     {
       "id": "p3-calc-inflation",
@@ -618,7 +690,9 @@
       "slug": "inflation",
       "priority": "P3",
       "reason": "Published 2026-08-29 — refresh CPI data and inflation rate",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: CPI-U Sep 2026; category table recomputed from BLS series (Sep 2006 to Sep 2026); infographic regenerated; Sources added"
     },
     {
       "id": "p3-calc-roi",
@@ -626,7 +700,9 @@
       "slug": "roi",
       "priority": "P3",
       "reason": "Published 2026-08-30 — refresh ROI examples with current data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: examples re-verified; Sources added"
     },
     {
       "id": "p3-calc-amortization",
@@ -634,7 +710,8 @@
       "slug": "amortization",
       "priority": "P3",
       "reason": "Published 2026-08-31 — refresh amortization example rates",
-      "status": "pending"
+      "status": "pending",
+      "note": "2026-10-20: default rate from market-data.ts, sources added; non-rate figures still need the calculator-refresh audit"
     },
     {
       "id": "p3-calc-down-payment",
@@ -642,8 +719,9 @@
       "slug": "down-payment",
       "priority": "P3",
       "reason": "Published 2026-09-01 — refresh PMI rate data",
-      "status": "pending",
-      "note": "2026-10-20: default rate moved to 7.40% via src/lib/market-data.ts; rate-coupled FAQ/article numbers recomputed and <Sources> added. Non-rate figures (tax, insurance, benchmarks, case-study assumptions) still need the full calculator-refresh audit"
+      "status": "done",
+      "note": "2026-10-21: non-rate figures audited; infographic regenerated to match the calculator table; Sources added",
+      "completedAt": "2026-10-21T12:00:00.000Z"
     },
     {
       "id": "p3-calc-dividend",
@@ -651,15 +729,18 @@
       "slug": "dividend",
       "priority": "P3",
       "reason": "Published 2026-09-03 — refresh dividend yield examples",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: yield examples re-verified; Sources added"
     },
     {
       "id": "p3-calc-simple-interest",
       "type": "calculator-refresh",
       "slug": "simple-interest",
-      "priority": "P3",
-      "reason": "Published 2026-09-07 — refresh interest rate examples",
-      "status": "pending"
+      "priority": "P4",
+      "reason": "Evergreen math/method page with no market figures: refresh yearly, only with substantive content changes (no date-only bumps). Originally: Published 2026-09-07 — refresh interest rate examples",
+      "status": "pending",
+      "notBefore": "2027-01-05"
     },
     {
       "id": "p3-calc-salary-to-hourly",
@@ -668,7 +749,7 @@
       "priority": "P3",
       "reason": "Published 2026-09-09 — refresh median salary data",
       "status": "pending",
-      "note": "2026-10-20: tax figures in the article/FAQ now read from tax-data.ts; full non-tax refresh (rates, benchmarks, case study) still pending"
+      "note": "2026-10-20: tax figures read from tax-data.ts; median salary data still needs verification"
     },
     {
       "id": "p3-calc-tip-calculator",
@@ -676,15 +757,18 @@
       "slug": "tip-calculator",
       "priority": "P3",
       "reason": "Published 2026-09-11 — refresh tipping norms and examples",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: tipping norms re-verified; Sources added"
     },
     {
       "id": "p3-calc-break-even",
       "type": "calculator-refresh",
       "slug": "break-even",
-      "priority": "P3",
-      "reason": "Published 2026-09-14 — refresh business cost examples",
-      "status": "pending"
+      "priority": "P4",
+      "reason": "Evergreen math/method page with no market figures: refresh yearly, only with substantive content changes (no date-only bumps). Originally: Published 2026-09-14 — refresh business cost examples",
+      "status": "pending",
+      "notBefore": "2027-01-05"
     },
     {
       "id": "p3-calc-house-payment",
@@ -692,8 +776,9 @@
       "slug": "house-payment",
       "priority": "P3",
       "reason": "Published 2026-09-17 — refresh property tax and insurance data",
-      "status": "pending",
-      "note": "2026-10-20: default rate moved to 7.40% via src/lib/market-data.ts; rate-coupled FAQ/article numbers recomputed and <Sources> added. Non-rate figures (tax, insurance, benchmarks, case-study assumptions) still need the full calculator-refresh audit"
+      "status": "done",
+      "note": "2026-10-21: 0.9% tax and $2,400 insurance assumptions; infographic regenerated; Sources added",
+      "completedAt": "2026-10-21T12:00:00.000Z"
     },
     {
       "id": "p3-calc-debt-to-income",
@@ -701,7 +786,9 @@
       "slug": "debt-to-income",
       "priority": "P3",
       "reason": "Published 2026-09-18 — refresh DTI threshold guidelines",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: CFPB General QM price-based rule and FHA 31/43 guidance; Sources added"
     },
     {
       "id": "p3-calc-car-affordability",
@@ -709,7 +796,9 @@
       "slug": "car-affordability",
       "priority": "P3",
       "reason": "Published 2026-09-19 — refresh auto pricing and loan data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: 7.54% default APR, worked example recomputed; infographic regenerated; Sources added"
     },
     {
       "id": "p3-calc-hourly-to-salary",
@@ -717,15 +806,17 @@
       "slug": "hourly-to-salary",
       "priority": "P3",
       "reason": "Published 2026-09-20 — refresh wage data and tax examples",
-      "status": "pending"
+      "status": "pending",
+      "note": "2026-10-20: tax example refreshed from tax-data.ts; wage data still needs verification"
     },
     {
       "id": "p3-calc-margin-calculator",
       "type": "calculator-refresh",
       "slug": "margin-calculator",
-      "priority": "P3",
-      "reason": "Published 2026-09-21 — refresh margin benchmarks by industry",
-      "status": "pending"
+      "priority": "P4",
+      "reason": "Evergreen math/method page with no market figures: refresh yearly, only with substantive content changes (no date-only bumps). Originally: Published 2026-09-21 — refresh margin benchmarks by industry",
+      "status": "pending",
+      "notBefore": "2027-01-05"
     },
     {
       "id": "p3-calc-lease-vs-buy-car",
@@ -733,7 +824,9 @@
       "slug": "lease-vs-buy-car",
       "priority": "P3",
       "reason": "Published 2026-09-22 — refresh lease rate and residual data",
-      "status": "pending"
+      "status": "done",
+      "completedAt": "2026-10-21T12:00:00.000Z",
+      "note": "2026-10-21: lease $385 / residual 53% / 7.54% APR; infographic regenerated (the old one contradicted the page); Sources added"
     },
     {
       "id": "p3-calc-refinance-calculator",
@@ -741,7 +834,8 @@
       "slug": "refinance-calculator",
       "priority": "P3",
       "reason": "Published 2026-09-23 — refresh refinance rate comparison data",
-      "status": "pending"
+      "status": "pending",
+      "note": "2026-10-20: new-rate default from market-data.ts, sources added; current-rate anchor (7.79%, Oct 2023 peak) is intentional; non-rate figures still need the audit"
     },
     {
       "id": "p5-new-calc-rmd",

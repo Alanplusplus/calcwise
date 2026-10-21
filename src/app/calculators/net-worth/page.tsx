@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     question: "What is a good net worth target?",
-    answer: "A common rule of thumb is one times your annual salary by 30, three times by 40, six times by 50, and eight times by 60. Adjust based on your retirement goals and expected expenses.",
+    answer: "Fidelity's 2026 guidelines target 1× salary in retirement savings by 30, 3× by 40, 6× by 50, and 10× by 67. Total net worth benchmarks differ — the Fed's 2025 SCF median is $33,000 under 35 and $155,600 for ages 35–44.",
   },
 ];
 

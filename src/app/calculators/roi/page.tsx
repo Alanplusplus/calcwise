@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What is a good ROI percentage?",
-    answer: "Depends on investment type and risk. Stock market: 7–10% annually is strong. Business investments: 15–20%+ is worthwhile. Marketing campaigns: 500% (5:1) is the paid advertising benchmark.",
+    answer: "Depends on type and risk. U.S. stocks: near 10% nominal long-run total return (1928–2025) is a solid benchmark. Business projects: compare annualized ROI to your cost of capital. Always weigh results against a Treasury yield near 5% (Oct. 2026).",
   },
   {
     question: "Does ROI account for inflation?",

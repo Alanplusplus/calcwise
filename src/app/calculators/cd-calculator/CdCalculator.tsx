@@ -31,7 +31,7 @@ interface Props {
 
 export function CdCalculator({ defaults }: Props) {
   const [deposit, setDeposit] = useState(defaults?.deposit || "10000");
-  const [apy, setApy] = useState(defaults?.apy || "4.75");
+  const [apy, setApy] = useState(defaults?.apy || "4.55");
   const [termMonths, setTermMonths] = useState(defaults?.termMonths || "12");
   const [compounding, setCompounding] = useState(defaults?.compounding || "daily");
 

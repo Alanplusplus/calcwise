@@ -28,7 +28,7 @@ export function DownPaymentArticle() {
       <figure className="my-8 overflow-hidden rounded-xl border border-ink-200">
         <Image
           src="/images/down-payment-infographic.webp"
-          alt="Down payment guide infographic comparing 3.5%, 5%, 10%, 15%, and 20% down payment scenarios with PMI costs and monthly payment differences"
+          alt="Table comparing 3.5%, 5%, 10%, 15%, and 20% down payments on a $350,000 home with cash needed, monthly principal and interest, and PMI at a 7.40% mortgage rate"
           width={1200}
           height={800}
           className="w-full"
@@ -39,9 +39,18 @@ export function DownPaymentArticle() {
       <p>
         The conventional wisdom of "20% down" persists, but the reality is more nuanced. According
         to the National Association of Realtors, the median down payment for first-time buyers
-        in 2025 was just 8%, while repeat buyers averaged 19%. Several loan programs allow
-        significantly less:
+        in 2025 was 10% (the highest share recorded since 1989), while repeat buyers averaged 23%
+        and all buyers 19%. Several loan programs allow significantly less:
       </p>
+      <Sources
+        items={[
+          {
+            label: "NAR 2025 Profile of Home Buyers and Sellers (July 2024–June 2025 purchases)",
+            href: "https://www.nar.realtor/press-releases/first-time-home-buyer-share-falls-to-historic-low-of-21-median-age-rises-to-40",
+          },
+        ]}
+        checked="October 2026"
+      />
       <ul>
         <li>
           <strong>Conventional loans:</strong> As low as 3% down for first-time buyers through
@@ -55,8 +64,8 @@ export function DownPaymentArticle() {
         </li>
         <li>
           <strong>VA loans:</strong> 0% down for eligible military service members and veterans.
-          No PMI required, though a funding fee applies (1.25% to 3.3% depending on service
-          category and down payment).
+          No PMI required, though a VA funding fee applies (typical range roughly 1.25% to 3.3% of
+          the loan for most first-use purchases, with exemptions for disabled veterans).
         </li>
         <li>
           <strong>USDA loans:</strong> 0% down for eligible rural and suburban properties in
@@ -65,11 +74,22 @@ export function DownPaymentArticle() {
       </ul>
       <p>
         The 20% threshold remains significant because it eliminates PMI on conventional loans.
-        On a $350,000 home at a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% mortgage rate, PMI at 0.7% of the loan amount adds roughly $194/month when you put
-        only 5% down versus zero PMI at 20% down — that is $2,333/year in additional cost until
+        On a $350,000 home at a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% mortgage rate, PMI at 0.7% of the loan amount (the
+        calculator's typical assumption for sub-20% conventional loans) adds roughly $194/month when you put
+        only 5% down versus zero PMI at 20% down — that is $2,328/year in additional cost until
         you build sufficient equity.
       </p>
-      <Sources items={MORTGAGE_MARKET_SOURCES} checked={MORTGAGE_MARKET.checkedLabel} />
+      <Sources
+        items={[
+          ...MORTGAGE_MARKET_SOURCES,
+          {
+            label: "CFPB — What is private mortgage insurance?",
+            href: "https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/",
+          },
+        ]}
+        checked={MORTGAGE_MARKET.checkedLabel}
+        note="PMI percentages are illustrative; actual quotes depend on credit score and loan-to-value."
+      />
       <p>
         For a complete analysis of how much home you can afford at
         different income levels, see our{" "}

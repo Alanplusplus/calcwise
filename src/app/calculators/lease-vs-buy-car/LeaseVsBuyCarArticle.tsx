@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Sources } from "@/components/Sources";
 
 export function LeaseVsBuyCarArticle() {
   return (
@@ -7,7 +8,7 @@ export function LeaseVsBuyCarArticle() {
       <figure className="my-8">
         <Image
           src="/images/lease-vs-buy-car-infographic.webp"
-          alt="Infographic comparing leasing vs buying a car showing total costs, monthly payments, and equity over a 5-year period"
+          alt="Lease vs buy comparison for a $35,000 car showing monthly payments of $385 and $651 and 5-year net costs of $42,217 for leasing and $42,971 for buying"
           width={1200}
           height={800}
           className="rounded-lg border border-ink-200"
@@ -47,7 +48,7 @@ export function LeaseVsBuyCarArticle() {
       <h2>Key Financial Concepts</h2>
       <h3>Residual Value</h3>
       <p>
-        Residual value is the predicted worth of a vehicle at the end of its lease term, expressed as a percentage of MSRP. A $35,000 car with a 55% residual after 36 months is expected to be worth $19,250 at lease end. Higher residual values lead to lower lease payments because you are paying for less depreciation. Brands like Toyota, Honda, and Subaru tend to have higher residuals (55-62%) due to strong resale demand, while luxury brands like BMW and Mercedes often fall in the 48-55% range.
+        Residual value is the predicted worth of a vehicle at the end of its lease term, expressed as a percentage of MSRP. A $35,000 car with a 53% residual after 36 months is expected to be worth $18,550 at lease end — near Edmunds' planning assumption of about 53% on a 36-month lease. Higher residuals lower your payment because you finance less depreciation. Edmunds notes typical 36-month residuals between 45% and 60%, with strong brands sometimes reaching the mid-60s.
       </p>
       <h3>Money Factor</h3>
       <p>
@@ -55,7 +56,7 @@ export function LeaseVsBuyCarArticle() {
       </p>
       <h3>Depreciation</h3>
       <p>
-        New cars lose roughly 20% of their value in the first year and 15% per year thereafter. After five years, a typical vehicle retains about 40% of its original value. A $35,000 car is worth approximately $28,000 after year one and $15,500 after year five. Depreciation is the largest hidden cost of car ownership and the primary driver of lease payments since you are funding exactly this loss.
+        Edmunds' Q1 2026 used-market report shows three-year-old vehicles retaining about 66% of original MSRP on average — a five-year low that still implies steep early loss on many new models. This calculator's default 15% annual depreciation assumption on a $35,000 purchase yields about $15,530 of value after five years. Depreciation is the largest hidden ownership cost and the base of your lease payment.
       </p>
       <h3>Opportunity Cost</h3>
       <p>
@@ -64,11 +65,28 @@ export function LeaseVsBuyCarArticle() {
 
       <h2>Case Study: Marcus Compares a 2026 Honda CR-V in Atlanta</h2>
       <p>
-        Marcus is a 34-year-old marketing manager in Atlanta earning $88,000 per year. He is deciding between leasing and buying a 2026 Honda CR-V EX-L with an MSRP of $38,400. He has $6,000 saved for a down payment and no trade-in vehicle. His credit score of 740 qualifies him for a 5.9% APR purchase loan from his credit union.
+        Marcus is a 34-year-old marketing manager in Atlanta earning $88,000 per year. He is deciding between leasing and buying a 2026 Honda CR-V EX-L with an MSRP of $38,400 — near Kelley Blue Book's September 2026 compact-SUV average transaction price ($37,614). He has $6,000 saved for a down payment and no trade-in. His 740 credit score qualifies him for about 6.15% APR on a new-car loan (Experian Q2 2026 prime average).
       </p>
       <p>
-        The dealer offers a 36-month lease at $389/month with $2,500 due at signing and a 58% residual value ($22,272). Georgia's sales tax rate is 6.6% (title ad valorem tax, applied at purchase for buyers). Marcus estimates $2,040/year for full-coverage insurance if he buys and $2,400/year if he leases (gap insurance included). He budgets $500/year for maintenance.
+        The dealer offers a 36-month lease at $389/month with $2,500 due at signing and a 58% residual value ($22,272). Georgia's sales tax rate is 6.6% on purchases. Marcus estimates $2,040/year for full-coverage insurance if he buys and $2,400/year if he leases. He budgets $500/year for maintenance and compares five years of ownership in the calculator.
       </p>
+      <Sources
+        items={[
+          {
+            label: "Kelley Blue Book / Cox Automotive — Sept. 2026 ATP ($50,562 industry; $37,614 compact SUV)",
+            href: "https://www.coxautoinc.com/insights/sept-2026-atp-report/",
+          },
+          {
+            label: "Experian — Auto Loan Rates and Financing (Q2 2026 prime new APR 6.15%)",
+            href: "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          },
+          {
+            label: "Edmunds — lease residual guidance (45–60% typical on 36 months)",
+            href: "https://www.edmunds.com/car-leasing/four-ways-to-spot-a-good-lease.html",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <table>
         <thead>
@@ -81,7 +99,7 @@ export function LeaseVsBuyCarArticle() {
         <tbody>
           <tr>
             <td>Monthly Payment</td>
-            <td>$641</td>
+            <td>$678</td>
             <td>$389</td>
           </tr>
           <tr>
@@ -90,9 +108,9 @@ export function LeaseVsBuyCarArticle() {
             <td>$2,500</td>
           </tr>
           <tr>
-            <td>Total Payments (5 yr)</td>
-            <td>$38,460</td>
-            <td>$23,340 + $5,000 (2 lease terms)</td>
+            <td>Total Loan/Lease Payments (5 yr)</td>
+            <td>$40,680</td>
+            <td>$23,340 + second lease cycle</td>
           </tr>
           <tr>
             <td>Insurance (5 yr)</td>
@@ -106,18 +124,18 @@ export function LeaseVsBuyCarArticle() {
           </tr>
           <tr>
             <td>Vehicle Value at Year 5</td>
-            <td>$17,030</td>
+            <td>$17,038</td>
             <td>$0</td>
           </tr>
           <tr>
             <td>Net 5-Year Cost</td>
-            <td>$42,664</td>
-            <td>$45,374</td>
+            <td>$44,865</td>
+            <td>$44,380</td>
           </tr>
         </tbody>
       </table>
       <p>
-        Buying saves Marcus approximately $2,710 over five years. The buy option costs more per month ($641 vs $389) but leaves him with a vehicle worth $17,030 at year five. However, Marcus values always driving a newer car and plans to relocate in three years, making a lease more practical for his lifestyle despite the higher net cost. This illustrates why the cheapest option on paper is not always the best fit. To evaluate whether his monthly payment fits comfortably in his budget, Marcus also runs his numbers through the{" "}
+        Buying costs Marcus about $485 more over five years in this model — the lease looks slightly cheaper on net cost even though the buy path builds $17,038 in resale value. The buy option still costs more per month ($678 vs $389). Marcus values always driving a newer car and plans to relocate in three years, so he may choose the lease for flexibility despite similar lifetime cost. To evaluate whether his monthly payment fits comfortably in his budget, Marcus also runs his numbers through the{" "}
         <Link href="/calculators/loan-comparison" className="text-brand-600 hover:text-brand-800 font-medium">
           Loan Comparison Calculator
         </Link>{" "}
@@ -126,7 +144,7 @@ export function LeaseVsBuyCarArticle() {
 
       <h2>Lease vs Buy: Scenario Comparison Table</h2>
       <p>
-        The following table compares the net cost of leasing versus buying across different vehicle price points, assuming a 5-year comparison period, 6.5% APR, 36-month lease terms, 55% residual value, and $300/month insurance and maintenance combined.
+        The following table compares five-year net cost using the same logic as this calculator: 7.54% APR purchase loans (G.19 August 2026 bank average), 15% down, 7% sales tax, 60-month buy term, 36-month lease cycles with monthly lease payments at roughly 1.1% of MSRP, $2,000 due at signing each cycle, 15% annual depreciation on purchases, $1,800/year insurance if you buy versus $2,100/year if you lease, and $600/year maintenance. Your dealer quote will differ.
       </p>
       <table>
         <thead>
@@ -141,50 +159,63 @@ export function LeaseVsBuyCarArticle() {
         <tbody>
           <tr>
             <td>$25,000</td>
-            <td>$21,800</td>
-            <td>$26,100</td>
-            <td>$4,300</td>
+            <td>$34,086</td>
+            <td>$35,155</td>
+            <td>$1,069</td>
             <td>Buy</td>
           </tr>
           <tr>
             <td>$30,000</td>
-            <td>$27,400</td>
-            <td>$30,900</td>
-            <td>$3,500</td>
+            <td>$38,503</td>
+            <td>$38,686</td>
+            <td>$183</td>
             <td>Buy</td>
           </tr>
           <tr>
             <td>$35,000</td>
-            <td>$33,100</td>
-            <td>$35,700</td>
-            <td>$2,600</td>
-            <td>Buy</td>
+            <td>$42,920</td>
+            <td>$42,217</td>
+            <td>$703</td>
+            <td>Lease</td>
           </tr>
           <tr>
             <td>$45,000</td>
-            <td>$44,300</td>
-            <td>$45,300</td>
-            <td>$1,000</td>
-            <td>Buy</td>
+            <td>$51,755</td>
+            <td>$49,279</td>
+            <td>$2,476</td>
+            <td>Lease</td>
           </tr>
           <tr>
             <td>$55,000</td>
-            <td>$55,600</td>
-            <td>$54,900</td>
-            <td>$700</td>
+            <td>$60,589</td>
+            <td>$56,341</td>
+            <td>$4,248</td>
             <td>Lease</td>
           </tr>
           <tr>
             <td>$70,000</td>
-            <td>$72,100</td>
-            <td>$68,400</td>
-            <td>$3,700</td>
+            <td>$73,841</td>
+            <td>$66,934</td>
+            <td>$6,907</td>
             <td>Lease</td>
           </tr>
         </tbody>
       </table>
+      <Sources
+        items={[
+          {
+            label: "Federal Reserve G.19 — 60-month new-car bank APR 7.54% (Aug. 2026)",
+            href: "https://www.federalreserve.gov/releases/g19/current/",
+          },
+        ]}
+        checked="October 2026"
+        note="Illustrative lease payments scale with MSRP; enter your dealer worksheet in the calculator."
+      />
       <p>
-        The pattern is clear: buying wins for vehicles under roughly $50,000, where the equity you retain outweighs the payment difference. For more expensive vehicles that depreciate quickly, leasing often wins because you avoid absorbing the steeper value drop. The crossover point varies based on the specific car's residual value, your interest rate, and how long you plan to keep the vehicle.
+        With October 2026 rate assumptions, buying wins on lower MSRPs where equity builds faster than lease payments stack up. Above roughly $32,000–$35,000 in this simplified table, leasing can show a lower net cost — but only if you would have leased twice in five years anyway. The crossover moves with your actual money factor, residual, and mileage.
+      </p>
+      <p>
+        The calculator defaults ($35,000 MSRP, 7.54% buy APR, $385/month lease, 53% residual) produce about $651 per month to buy versus $385 to lease; over five years the buy net cost is near $42,971 and the lease near $42,217 with these inputs.
       </p>
 
       <h2>Tips for Making the Right Choice</h2>

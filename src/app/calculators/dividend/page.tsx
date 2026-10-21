@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "What is a good dividend yield?",
-    answer: "For U.S. large-cap stocks, 2.0% to 4.0% is typical for established dividend payers. Above 6.0% may signal an unsustainable payout or a falling stock price. The S&P 500 average yield has historically ranged from 1.5% to 2.5%.",
+    answer: "For U.S. large-cap dividend payers, 2.0% to 4.0% is common. Above 6.0% may signal elevated cut risk or a falling price. The S&P 500 index yield was about 1.05% in October 2026 (Multpl).",
   },
   {
     question: "Are dividends taxed?",

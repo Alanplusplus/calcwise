@@ -80,7 +80,9 @@ export function NetWorthCalculator({ defaults }: Props) {
   return (
     <div>
       <p className="mb-4 text-sm text-ink-500">
-        Enter your assets and liabilities to calculate your total net worth and asset allocation.
+        Enter your assets and liabilities to calculate total net worth and asset allocation. Age
+        benchmarks on the article use the Federal Reserve 2025 Survey of Consumer Finances (released
+        October 2026).
       </p>
 
       <div className="grid gap-8 lg:grid-cols-2">

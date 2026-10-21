@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Can I deduct student loan interest on my taxes?",
-    answer: "You may deduct up to $2,500/year if MAGI is below the phase-out threshold. The deduction is above-the-line — no itemizing required — saving roughly $550–$925 depending on your bracket.",
+    answer: "You may deduct up to $2,500/year in qualified interest. The deduction phases out between $85,000–$100,000 MAGI (single) and $175,000–$205,000 (joint) for 2026. It is above-the-line — no itemizing required.",
   },
   {
     question: "Is Public Service Loan Forgiveness worth pursuing?",

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27 } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD" });
@@ -94,7 +95,9 @@ interface Props {
 
 export function StudentLoanCalculator({ defaults }: Props) {
   const [balance, setBalance] = useState(defaults?.balance || "35000");
-  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "5.5");
+  const [interestRate, setInterestRate] = useState(
+    defaults?.interestRate || String(FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27)
+  );
   const [termYears, setTermYears] = useState(defaults?.termYears || "10");
   const [extraPayment, setExtraPayment] = useState(defaults?.extraPayment || "0");
 
@@ -197,6 +200,12 @@ export function StudentLoanCalculator({ defaults }: Props) {
           helpText="Additional amount applied to principal each month"
         />
       </div>
+      <p className="mt-3 text-sm text-ink-500">
+        Default rate {FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27}% is the fixed undergraduate Direct
+        Subsidized/Unsubsidized rate for loans first disbursed July 1, 2026 through June 30, 2027
+        (FSA Partner Announcement GENERAL-26-33, June 4, 2026). Graduate Direct Unsubsidized
+        loans are 8.07%; Direct PLUS loans are 9.07% for the same period.
+      </p>
 
       {results && (
         <div className="mt-8">

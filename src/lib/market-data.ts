@@ -34,3 +34,29 @@ export const MORTGAGE_MARKET_SOURCES: SourceLink[] = [
 
 /** Calculator default for the interest-rate input, as the string the inputs hold. */
 export const DEFAULT_MORTGAGE_RATE = String(MORTGAGE_MARKET.thirtyYear);
+
+/**
+ * Other consumer-credit benchmarks used as calculator defaults. Same rule as the mortgage
+ * rates: import from here, never paste the figure. Update when the source release changes
+ * (see `calculator-refresh` in `.cursor/rules/refresh-content.mdc`).
+ */
+
+/** Fed G.19 commercial bank credit card APR, accounts assessed interest (Aug. 2026). Not the 21.19% all-accounts average. */
+export const G19_CREDIT_CARD_APR = {
+  assessedInterest: 22.36,
+  allAccounts: 21.19,
+  asOfLabel: "August 2026",
+  checkedLabel: "October 2026",
+  sources: [
+    {
+      label: "Federal Reserve G.19 Consumer Credit (Aug. 2026 data, released Oct. 7, 2026)",
+      href: "https://www.federalreserve.gov/releases/g19/current/",
+    },
+  ],
+} as const;
+
+/** Fed G.19 commercial-bank 60-month new-car APR, August 2026 data (released Oct. 7, 2026), as the string the input holds. */
+export const DEFAULT_NEW_CAR_APR = "7.54";
+
+/** Undergraduate Direct Sub/Unsub rate for loans first disbursed July 1, 2026 to June 30, 2027 (FSA GENERAL-26-33). */
+export const FEDERAL_UNDERGRAD_DIRECT_RATE_2026_27 = 6.52;

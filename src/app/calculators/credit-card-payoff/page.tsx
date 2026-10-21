@@ -21,8 +21,13 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
+    question: "What APR does this calculator use by default?",
+    answer:
+      "The default is 22.36% — the Federal Reserve G.19 average for credit card accounts assessed interest (August 2026 data). That series covers balances charged interest, not the 21.19% average across all accounts. You can change the rate to match your card.",
+  },
+  {
     question: "Should I pay off credit cards or save first?",
-    answer: "Build a small emergency fund of $1,000–$2,000 first, then focus on high-interest credit card debt. Cards charging 20%+ APR cost far more than you would earn in savings. Once debt is gone, redirect those payments toward savings.",
+    answer: "Build a small emergency fund of $1,000–$2,000 first, then focus on high-interest credit card debt. Cards near the G.19 assessed-interest average (22.36% as of August 2026) cost far more than typical savings yields. Once debt is gone, redirect those payments toward savings.",
   },
   {
     question: "Does paying the minimum hurt my credit score?",

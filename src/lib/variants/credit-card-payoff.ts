@@ -6,42 +6,56 @@ import type { CalculatorVariant } from "./types";
 export const creditCardPayoffVariants: CalculatorVariant[] = [
   {
     slug: "minimum-payment",
-    lastUpdated: "2026-09-03",
+    lastUpdated: "2026-10-21",
     title: "Credit Card Minimum Payment Calculator",
     description:
-      "See the true cost of making only minimum payments on your credit card. Discover how decades of interest add up and how much you save by paying a fixed amount each month.",
-    defaults: { balance: "8000", interestRate: "20.9", fixedPayment: "160" },
+      "Model 2% minimum payments on an $8,000 balance at the 22.36% Fed G.19 assessed-interest APR. See 50-year minimum cost vs a fixed $250 payment.",
+    defaults: {
+      balance: "8000",
+      interestRate: "22.36",
+      fixedPayment: "250",
+      minPercent: "2",
+    },
     intro:
-      "Minimum payments are designed to keep your account in good standing while maximizing the total interest the card issuer collects over time. Most cards calculate the minimum as 1-3% of the outstanding balance or a flat floor of $25, whichever is greater. Early in repayment, the vast majority of each minimum payment covers interest — with only a few dollars reducing principal. This structure creates a repayment timeline that can stretch decades, turning a manageable balance into a five-figure lifetime cost.",
+      "Minimum payments keep your account current while stretching repayment for years or decades. This page uses the same model as the main calculator: minimum due equals 2% of the outstanding balance or $25, whichever is greater — not the alternate 1%-plus-interest formula some issuers use. At the Federal Reserve G.19 average of 22.36% APR for accounts assessed interest (August 2026), an $8,000 balance illustrates how little of each minimum goes to principal and why a fixed payment breaks the cycle.",
     tips: [
-      "On an $8,000 balance at 20.9% APR, the initial minimum payment (2%) is $160. Of that, roughly $139 goes to interest and only $21 reduces your principal — a 13% principal reduction rate.",
-      "Paying only the minimum on this $8,000 balance takes approximately 30 years to clear and costs over $13,500 in total interest, meaning you pay $21,500 total for an $8,000 purchase.",
-      "Switching to a fixed $250/month payment eliminates the same balance in 41 months with $2,190 in interest — saving $11,310 compared to minimum payments.",
-      "Even adding just $40/month above the minimum ($200 total) cuts the payoff from 30 years to approximately 57 months and saves roughly $8,200 in interest. Each extra dollar accelerates principal reduction exponentially.",
-      "The minimum payment percentage itself matters: a 2% minimum on $8,000 starts at $160 and declines. A 3% minimum starts at $240 but pays off in about 12 years instead of 30 — still expensive, but dramatically faster than the 2% floor most cards use.",
+      "On $8,000 at 22.36% APR, the first 2% minimum is $160. Monthly interest is about $149, so only $11 reduces principal — roughly 7% of the payment.",
+      "Paying only the 2% minimum on $8,000 at 22.36% still leaves about $3,521 owed after 50 years in this model, with about $61,061 in interest paid over that period.",
+      "Switching to a fixed $250/month payment clears the same balance in 50 months with about $4,282 in interest — roughly $56,779 less interest than the 50-year minimum path above.",
+      "A fixed $200/month payment pays off in 75 months with about $6,818 in interest — still far faster than minimum-only repayment at this APR.",
+      "Many issuers also use 1% of balance plus all finance charges; on $8,000 at 22.36% that starts near $229/month and pays off in about 278 months with roughly $13,831 in interest — better than 2%, but still costly versus a fixed $250.",
     ],
     keyResults: [
-      { label: "Initial minimum payment (2%)", value: "$160/month" },
-      { label: "Interest portion of first payment", value: "$139 (87%)" },
-      { label: "Principal portion of first payment", value: "$21 (13%)" },
-      { label: "Years to payoff at minimum only", value: "~30 years" },
-      { label: "Total interest at minimum payments", value: "~$13,500" },
+      { label: "Initial minimum (2% of $8,000)", value: "$160/month" },
+      { label: "Interest portion of first payment", value: "$149 (93%)" },
+      { label: "Principal portion of first payment", value: "$11 (7%)" },
+      { label: "Minimum-only path (50-year cap)", value: "$3,521 still owed" },
+      { label: "Interest over 50 years at minimum", value: "~$61,061" },
     ],
     comparisonNote:
-      "Switching from minimum payments to a fixed $250/month on this $8,000 balance cuts payoff from roughly 30 years to 41 months and reduces total interest from $13,500 to $2,190 — a savings of $11,310. The fixed payment also eliminates the declining-payment trap, where each month your minimum drops slightly and extends the repayment timeline even further.",
+      "Moving from minimum-only payments to a fixed $250/month on this $8,000 balance cuts payoff from never (within the 50-year model cap) to 50 months and reduces interest from about $61,061 over that minimum period to $4,282 on the fixed plan — a savings of about $56,779 before counting the remaining $3,521 balance the minimum path would still carry. Fixed payments eliminate the declining-minimum trap that extends high-APR debt for decades.",
     faq: [
       {
         q: "How do credit card issuers calculate minimum payments?",
-        a: "Most issuers use one of two methods: a flat percentage of the outstanding balance (typically 1-3%, with a $25-$35 floor) or 1% of the balance plus all accrued interest and fees. On an $8,000 balance at 20.9% APR, a 2% minimum starts at $160, while the 1%-plus-interest method yields about $219. Check your cardholder agreement to see which formula your issuer applies.",
+        a: "Common formulas include a flat percentage of balance (often 1% to 3% with a $25–$35 floor) or 1% of balance plus accrued interest and fees. This variant uses 2% or $25, whichever is greater. On $8,000 at 22.36% APR, that yields a $160 first minimum; the 1%-plus-interest method would start near $229. Check your cardholder agreement for your issuer’s exact rule.",
       },
       {
         q: "Why does my credit card balance barely decrease with minimum payments?",
-        a: "At 20.9% APR, your $8,000 balance generates roughly $139 in monthly interest. When your minimum payment is $160, only $21 goes toward principal — just 13% of the payment. As the balance slowly drops, the minimum payment declines too, which means even less principal gets paid each month. This compounding effect is why minimum-only repayment can stretch across decades.",
+        a: "At 22.36% APR, $8,000 generates about $149 in monthly interest. A $160 minimum leaves only $11 for principal. As the balance inches down, the 2% minimum drops too, which slows principal reduction further — one reason high-APR balances can persist for decades on minimums alone.",
       },
       {
         q: "How can I break the minimum payment cycle?",
-        a: "Set a fixed payment amount — even $50 above the minimum — and automate it so it never drops as your balance declines. On this $8,000 balance, paying $250/month instead of the minimum saves over $11,000 in interest and clears the debt in under four years. If you cannot increase payments, a 0% balance transfer with a firm payoff deadline can provide temporary relief, but only if you stop adding new charges.",
+        a: "Pick a fixed payment above your current minimum — $250/month on this $8,000 example pays off in 50 months at 22.36% — and automate it so the amount never falls as the balance declines. If you cannot raise payments, a 0% balance transfer only helps if you stop new charges and pay off before the promo rate ends.",
       },
     ],
+    sources: [
+      {
+        label: "Federal Reserve G.19 Consumer Credit (Aug. 2026 data, released Oct. 7, 2026)",
+        href: "https://www.federalreserve.gov/releases/g19/current/",
+      },
+    ],
+    sourcesChecked: "October 2026",
+    sourcesNote:
+      "APR is the G.19 “accounts assessed interest” series (22.36%), not the 21.19% average across all accounts. Minimum payments follow 2% of balance or $25, whichever is greater.",
   },
 ];

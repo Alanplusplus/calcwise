@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { LONG_TERM_BRACKETS, TAX_DATA, TAX_SOURCES, usd } from "@/lib/tax-data";
+
+const SP500_BENCHMARK = 10.0;
+const SP500_REAL_BENCHMARK = 6.8;
 
 export function InvestmentReturnArticle() {
+  const ltcg0Single = usd(LONG_TERM_BRACKETS.single[0].upTo);
+
   return (
     <>
       <h2>Understanding Investment Returns</h2>
@@ -8,19 +15,24 @@ export function InvestmentReturnArticle() {
         Your investment return includes two components: capital gains (the
         increase in your investment's value) and income (dividends,
         interest, or distributions received). This calculator combines both to
-        give you a complete picture of your investment performance.
+        give you a complete picture of your investment performance. With the
+        default inputs ($10,000 invested, $16,105 ending value, $250 per year in
+        dividends, five years), total return is 73.6% and annualized return (CAGR)
+        is about 11.7% — a strong but plausible equity outcome, not a guarantee
+        of future results.
       </p>
 
       <h2>Total Return vs. Annualized Return (CAGR)</h2>
       <p>
         <strong>Total return</strong> shows your overall gain as a percentage of
-        your initial investment. If you invested $10,000 and it's now worth
-        $15,000, your total return is 50%.
+        your initial investment. If you invested $10,000 and it is now worth
+        $16,105 with $1,250 in dividends received over five years, your total
+        return is 73.6% ($7,355 gain on $10,000).
       </p>
       <p>
         <strong>Annualized return (CAGR)</strong> — Compound Annual Growth
         Rate — normalizes that return to a per-year rate, accounting for
-        compounding. A 50% total return over 5 years is approximately 8.45%
+        compounding. A 73.6% total return over 5 years is approximately 11.7%
         annualized. CAGR is the best metric for comparing investments held for
         different time periods. To project future growth with compounding, use
         our{" "}
@@ -33,20 +45,70 @@ export function InvestmentReturnArticle() {
         .
       </p>
 
-      <h2>Historical Benchmark Returns</h2>
+      <h2>Historical Benchmark Returns (U.S.)</h2>
+      <p>
+        Long-run benchmarks help you judge whether realized returns are in line
+        with history. Figures below are geometric (compound) annual averages from
+        complete calendar years unless noted.
+      </p>
       <ul>
-        <li><strong>S&P 500:</strong> ~10% annual average (1926-2024), ~7% after inflation</li>
-        <li><strong>Total US Bond Market:</strong> ~5% annual average</li>
-        <li><strong>International Stocks:</strong> ~8% annual average</li>
-        <li><strong>Real Estate (REITs):</strong> ~9-11% annual average</li>
-        <li><strong>Gold:</strong> ~7% annual average (highly volatile)</li>
-        <li><strong>Cash/Savings:</strong> ~3% annual average (varies dramatically by era)</li>
+        <li>
+          <strong>S&P 500 (total return, dividends reinvested):</strong> about{" "}
+          {SP500_BENCHMARK.toFixed(1)}% per year from 1928 through 2025; about{" "}
+          {SP500_REAL_BENCHMARK.toFixed(1)}% after CPI inflation over the same
+          span (Damodaran, January 2026 data update).
+        </li>
+        <li>
+          <strong>2025 calendar year:</strong> S&P 500 total return about 17.7%
+          (16.4% price change plus about 1.3% dividend yield), per the same
+          2026 update — near the long-run median for single years.
+        </li>
+        <li>
+          <strong>10-year U.S. Treasury (nominal yield):</strong> about 5.15% on
+          October 19, 2026 (Fed H.15 / FRED DGS10) — a current risk-free
+          reference, not a multi-decade average.
+        </li>
+        <li>
+          <strong>3-month T-bills and 10-year Treasuries (1928–2025):</strong>{" "}
+          about 3.3% and 4.9% geometric averages in Damodaran's historical
+          dataset — lower return than stocks, with far less equity-style
+          volatility.
+        </li>
+        <li>
+          <strong>S&P 500 dividend yield (index level):</strong> about 1.05% as
+          of October 20, 2026 (Multpl estimate from trailing dividends and index
+          price) — well below the long-run average near 4% because price gains
+          outpaced payout growth.
+        </li>
       </ul>
+      <Sources
+        items={[
+          {
+            label: "Damodaran (NYU Stern), Data Update 2 for 2026 (Jan. 2026)",
+            href: "https://aswathdamodaran.blogspot.com/2026/01/data-update-2-for-2026-equities-get.html",
+          },
+          {
+            label: "Damodaran historical returns 1928–2025 (Jan. 2026)",
+            href: "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html",
+          },
+          {
+            label: "Federal Reserve H.15 (Oct. 20, 2026 release)",
+            href: "https://www.federalreserve.gov/releases/h15/",
+          },
+          {
+            label: "Multpl S&P 500 dividend yield (Oct. 20, 2026)",
+            href: "https://www.multpl.com/s-p-500-dividend-yield",
+          },
+        ]}
+        checked="October 2026"
+        note="Past performance does not predict future results. Use a range of assumptions for planning."
+      />
       <p>
         Use these benchmarks to evaluate whether your investments are
-        outperforming or underperforming the market. If your stock portfolio
-        consistently trails the S&P 500, you might be better served by a simple
-        index fund. If you're just getting started, read{" "}
+        outperforming or underperforming a simple index fund. If your stock
+        portfolio consistently trails the S&P 500 over 5–10 years, a low-cost
+        index fund may be the more reliable choice. If you are just getting
+        started, read{" "}
         <Link
           href="/guides/how-to-start-investing-1000"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -58,16 +120,18 @@ export function InvestmentReturnArticle() {
 
       <h2>Why Dividends Matter</h2>
       <p>
-        Dividends have contributed approximately 40% of the S&P 500's total
-        return historically. An investment that grows from $10,000 to $12,000
-        while also paying $800 in dividends has a true return of $2,800 (28%),
-        not just $2,000 (20%).
+        Dividends have contributed about 31% of the S&P 500's long-term
+        total return since 1926, with the rest from price appreciation (S&P Dow
+        Jones Indices research, data through February 2025). An investment that
+        grows from $10,000 to $12,000 while also paying $800 in dividends has a
+        true return of $2,800 (28%), not just $2,000 (20%).
       </p>
       <p>
-        Reinvesting dividends amplifies compound growth significantly. $10,000
-        invested in the S&P 500 in 1990 would be worth about $110,000 by 2024
-        without reinvesting dividends, but approximately $210,000 with dividends
-        reinvested. For more concrete illustrations, see{" "}
+        Reinvesting dividends amplifies compound growth. In S&P DJI's
+        illustration, $100 in the index on January 1, 1930 would have grown to
+        about 278 times by February 2025 on price alone, but to about 9,584
+        times with dividends reinvested — same index, very different outcome.
+        For more illustrations, see{" "}
         <Link
           href="/guides/compound-interest-real-examples"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -76,42 +140,55 @@ export function InvestmentReturnArticle() {
         </Link>
         .
       </p>
+      <Sources
+        items={[
+          {
+            label: "S&P DJI, Dividend Aristocrats research (Feb. 2025 data)",
+            href: "https://www.spglobal.com/spdji/en/documents/research/research-sp500-dividend-aristocrats.pdf",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>Accounting for Inflation</h2>
       <p>
         A 10% nominal return during a year with 3% inflation produces a real
-        return of approximately 7%. When evaluating long-term investment
-        performance, always consider whether your returns are beating inflation —
-        otherwise your purchasing power isn't actually growing.
+        return of approximately 7%. Over 1928–2025, the S&P 500's real
+        compound return was about 6.8% (Damodaran, CPI-adjusted). When evaluating
+        long-term performance, compare your CAGR to a real benchmark near 6–7%
+        for broad U.S. equities — otherwise you may overestimate purchasing-power
+        gains.
       </p>
 
       <h2>Case Study: Sarah Compares Three Strategies</h2>
       <p>
-        Sarah, a 32-year-old marketing manager in Manchester, received a
-        $15,000 bonus in January 2019 and wanted to measure how three choices
-        performed over five years. She tracked each path with this calculator
-        using initial value, ending value, and dividends where applicable.
+        Sarah, a 32-year-old marketing manager in Denver, received a $15,000
+        bonus in January 2021 and tracked three choices through December 2025
+        using this calculator (initial value, ending value, dividends where
+        applicable).
       </p>
       <ul>
         <li>
           <strong>Option A — S&P 500 index fund:</strong> She invested the full
-          $15,000, reinvested dividends, and paid a 0.03% expense ratio. By
-          December 2024 her account was about $24,200, implying roughly 9.8%
-          annualized before fees and about 9.5% net — close to the long-run US
-          equity benchmark.
+          $15,000 with dividends reinvested and a 0.03% expense ratio. Calendar
+          2021–2025 total returns on the index were roughly +28.7%, −18.1%,
+          +26.3%, +25.0%, and +17.9% (S&P Dow Jones Indices / SPXTR series).
+          Her account finished near $28,400 — about 13.6% annualized before
+          taxes, ahead of the very long-run ~10% average but in line with the
+          strong 2023–2025 streak.
         </li>
         <li>
           <strong>Option B — High-yield savings:</strong> She parked $15,000 at
-          an average 4.2% APY with no market risk. After five years she had
-          roughly $18,400, or about 4.0% annualized — solid for cash, but far
-          below equity growth over the same window.
+          an average 4.1% APY with no market risk. After five years she had about
+          $18,300, or about 4.0% annualized — competitive for cash in 2024–2026,
+          but below equity growth over the same window.
         </li>
         <li>
           <strong>Option C — Single stock pick:</strong> She bought $15,000 of
-          one tech name, received $420 in dividends, and sold for $19,100 after
-          a volatile ride. Total gain $4,520 (30.1% total), but annualized
-          return was only about 5.4% because of a sharp drawdown in year three
-          that recovered late. Her{" "}
+          one hypothetical tech holding, received $420 in dividends, and sold for
+          $19,100 after a volatile ride. Total gain $4,520 (30.1% total), but
+          annualized return was only about 5.4% because of a sharp drawdown in
+          year three. Her{" "}
           <Link
             href="/calculators/roi"
             className="text-brand-600 hover:text-brand-800 font-medium"
@@ -123,16 +200,16 @@ export function InvestmentReturnArticle() {
       </ul>
       <p>
         Sarah's takeaway: headline percentages mislead when time and income
-        differ. She now benchmarks every holding against 7–10% long-run stock
-        expectations and uses our{" "}
+        differ. She now benchmarks every holding against a 6–10% long-run equity
+        range and uses our{" "}
         <Link
           href="/calculators/retirement"
           className="text-brand-600 hover:text-brand-800 font-medium"
         >
           Retirement Calculator
         </Link>{" "}
-        to see whether her 401(k) and ISA contributions still put her on track
-        for £1.2M by age 65 at a conservative 6.5% blend.
+        to see whether her 401(k) deferrals still put her on track for $1.5
+        million by age 65 at a conservative 6.5% nominal blend.
       </p>
 
       <h2>$10,000 Growth at 6%, 8%, and 10% Annual Returns</h2>
@@ -183,11 +260,12 @@ export function InvestmentReturnArticle() {
 
       <h3>What's a good annualized return?</h3>
       <p>
-        For a diversified stock portfolio, matching or slightly trailing the
-        market (8-10% nominal) is considered good. Consistently beating the
-        market by 2%+ annually puts you among the top investors globally. Be
-        wary of any investment promising consistent returns above 12% — the
-        risk is likely much higher than advertised.
+        For a diversified U.S. stock portfolio, matching the long-run S&P 500
+        total return near {SP500_BENCHMARK.toFixed(0)}% nominal (about{" "}
+        {SP500_REAL_BENCHMARK.toFixed(1)}% real) is a solid outcome. Be wary of
+        any strategy promising steady returns far above that without explaining
+        extra risk. Over 1–3 years, anything from −20% to +30% can happen in
+        equities (2022 and 2023 are recent examples).
       </p>
 
       <h3>How do I account for additional contributions?</h3>
@@ -217,7 +295,7 @@ export function InvestmentReturnArticle() {
         Average annual return adds each year's percentage and divides by
         the number of years. If you earn +20%, −10%, and +15% over three years,
         the simple average is 8.3%. CAGR instead links those years geometrically
-        and might show about 7.4% — the rate that actually turns your starting
+        and shows about 7.5% — the rate that actually turns your starting
         balance into your ending balance. Use CAGR when comparing funds or
         reporting performance to avoid overstating results after volatile years.
       </p>
@@ -225,13 +303,19 @@ export function InvestmentReturnArticle() {
       <h3>How do taxes affect my reported return?</h3>
       <p>
         This tool measures pre-tax account growth unless you enter values already
-        net of tax. In the US, long-term capital gains on assets held over one
-        year are often taxed at 0%, 15%, or 20% depending on income; qualified
-        dividends follow similar brackets. A 10% pre-tax CAGR might feel like
-        8.5% after a 15% tax drag on gains. Track cost basis separately and
-        subtract estimated tax when judging whether you beat a 7% inflation-adjusted
+        net of tax. In the U.S. for tax year {TAX_DATA.taxYear}, qualified
+        dividends and long-term capital gains on assets held over one year are
+        often taxed at 0%, 15%, or 20% depending on taxable income — the 0%
+        rate applies up to about {ltcg0Single} for single filers ({TAX_DATA.checkedOnLabel} IRS
+        figures). A 10% pre-tax CAGR might feel like 8.5% after a 15% tax drag
+        on gains. Track cost basis separately and subtract estimated tax when
+        judging whether you beat a {SP500_REAL_BENCHMARK.toFixed(1)}% real
         target.
       </p>
+      <Sources
+        items={[TAX_SOURCES.capitalGains, TAX_SOURCES.federalRates]}
+        checked="October 2026"
+      />
     </>
   );
 }

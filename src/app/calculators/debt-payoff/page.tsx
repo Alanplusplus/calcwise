@@ -29,6 +29,11 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
+    question: "What interest rate is prefilled in the calculator?",
+    answer:
+      "22.36% — the Federal Reserve G.19 average for credit card accounts assessed interest (August 2026). Change it to match student loans (for example 6.52% on 2026–27 undergraduate Direct Loans), auto loans, or other debt.",
+  },
+  {
     question: "Should I save or pay off debt?",
     answer: "If your debt interest rate exceeds your savings rate (almost always true for credit cards), prioritize debt payoff. Maintain a small emergency fund ($1,000–$2,000) so unexpected expenses don't force you back into debt.",
   },

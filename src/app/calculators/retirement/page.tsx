@@ -30,7 +30,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What return rate should I assume?",
-    answer: "For a diversified portfolio, 7% (after inflation) is common for stocks over long periods. Use 5–6% for a mix of stocks and bonds or for conservative planning.",
+    answer: "For a diversified stock-heavy portfolio, 7% nominal is a common long-run planning assumption. Use 5–6% for a balanced stock/bond mix or conservative projections.",
+  },
+  {
+    question: "How much do I need with the calculator's default inputs?",
+    answer: "At age 30 retiring at 65 with $50,000 saved, $1,000/month contributions, 7% returns, $60,000 desired income, and a 4% withdrawal rate, the projection is about $2.38 million versus a $1.5 million target — on track, with about $95,000/year sustainable at 4%.",
   },
   {
     question: "When should I start saving for retirement?",

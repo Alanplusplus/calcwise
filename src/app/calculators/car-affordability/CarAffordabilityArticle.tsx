@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Sources } from "@/components/Sources";
 
 export function CarAffordabilityArticle() {
   return (
@@ -7,7 +8,7 @@ export function CarAffordabilityArticle() {
       <figure className="my-8">
         <Image
           src="/images/car-affordability-infographic.webp"
-          alt="Infographic showing the 20/4/10 rule for car affordability with income-based vehicle budget recommendations"
+          alt="Infographic walking through the 10% car budget rule for a $72,000 income: a $600 monthly budget, a $260 loan payment, and a maximum car price of about $18,745 at 7.54% APR over 48 months"
           width={1200}
           height={800}
           className="rounded-lg border border-ink-200"
@@ -35,12 +36,29 @@ export function CarAffordabilityArticle() {
       </p>
       <ul>
         <li><strong>20% down payment</strong> — Put at least 20% of the vehicle purchase price down at signing. On a $30,000 car, that means $6,000 upfront. A larger down payment reduces your loan balance, lowers monthly payments, and helps you avoid being upside-down (owing more than the car is worth) if you need to sell early.</li>
-        <li><strong>4-year maximum loan term</strong> — Finance the vehicle for no more than 48 months. A 60-month loan on a $25,000 balance at 6.5% APR costs $489 per month and $4,340 in total interest. Stretching to 72 months drops the payment to $420 but pushes total interest to $5,240 — an extra $900 for the same car.</li>
-        <li><strong>10% of gross income for all car costs</strong> — Your combined monthly loan payment, insurance, and fuel should not exceed 10% of gross monthly income. Someone earning $72,000 per year ($6,000/month gross) has a $600 monthly car budget. With $160 for insurance and $140 for fuel, the maximum loan payment is $300 per month.</li>
+        <li><strong>4-year maximum loan term</strong> — Finance the vehicle for no more than 48 months. On a $21,750 loan (a $25,000 car with $5,000 down and 7% tax), 48 months at the Federal Reserve G.19 60-month bank average of 7.54% (August 2026) costs about $526 per month and $3,512 in interest. Stretching to 60 months drops the payment to $436 but adds $912 in total interest.</li>
+        <li><strong>10% of gross income for all car costs</strong> — Your combined monthly loan payment, insurance, and fuel should not exceed 10% of gross monthly income. Someone earning $72,000 per year ($6,000/month gross) has a $600 monthly car budget. With $165 for insurance and $175 for fuel, the maximum loan payment is $260 per month.</li>
       </ul>
       <p>
-        The 10% rule uses gross income (before taxes), not take-home pay. This is intentional — it builds in a buffer for taxes, retirement contributions, and unexpected expenses. If your gross monthly income is $5,417 ($65,000/year), your total car budget is $542 per month. After $150 for insurance and $150 for fuel, you can afford a loan payment of roughly $242 per month on a 60-month term at 6.5% APR, which supports a car priced around $18,500 with a $5,000 down payment.
+        The 10% rule uses gross income (before taxes), not take-home pay. If your gross monthly income is $5,417 ($65,000/year), your total car budget is $542 per month. After $150 for insurance and $150 for fuel, you can afford a loan payment of roughly $242 per month on a 60-month term at 7.54% APR — supporting a maximum car price near $17,050 with a $5,000 down payment in this calculator.
       </p>
+      <Sources
+        items={[
+          {
+            label: "Federal Reserve G.19 Consumer Credit (Aug. 2026, released Oct. 7, 2026)",
+            href: "https://www.federalreserve.gov/releases/g19/current/",
+          },
+          {
+            label: "Kelley Blue Book / Cox Automotive — Sept. 2026 average transaction price ($50,562)",
+            href: "https://www.coxautoinc.com/insights/sept-2026-atp-report/",
+          },
+          {
+            label: "Experian — Auto Loan Rates and Financing (Q2 2026)",
+            href: "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>Case Study: Sophia Buys Her First Car in Phoenix</h2>
       <p>
@@ -75,7 +93,7 @@ export function CarAffordabilityArticle() {
           </tr>
           <tr>
             <td>Interest Rate / Term</td>
-            <td>6.5% APR / 48 months</td>
+            <td>7.54% APR / 48 months</td>
           </tr>
           <tr>
             <td>Insurance + Fuel</td>
@@ -84,10 +102,10 @@ export function CarAffordabilityArticle() {
         </tbody>
       </table>
       <p>
-        Using the 10% rule, Sophia's total car budget is $600 per month ($6,000 x 0.10). After subtracting $340 for insurance and fuel, her maximum loan payment is $260 per month. At 6.5% over 48 months, that supports a loan of $10,970, plus her $8,000 down payment, for a maximum car price of $18,970. Her $8,000 down payment represents 42% of that price — well above the 20% threshold. Her 48-month term passes the 4-year rule. Total monthly car costs of $600 equal exactly 10% of gross income, earning an "Excellent" affordability rating.
+        Using the 10% rule, Sophia's total car budget is $600 per month ($6,000 x 0.10). After subtracting $340 for insurance and fuel, her maximum loan payment is $260 per month. At 7.54% over 48 months, that supports a loan of about $10,745, plus her $8,000 down payment, for a maximum car price near $18,745. Her 48-month term passes the 4-year rule. Total monthly car costs of $600 equal exactly 10% of gross income, earning an "Excellent" affordability rating.
       </p>
       <p>
-        After car costs and existing debts, Sophia retains $3,660 per month from take-home pay ($4,600 - $600 - $380). She decides to target a $17,500 used Toyota Corolla, which produces a $227 monthly payment, $567 total monthly car costs (9.5% of gross income), and leaves her $3,693 per month for rent, groceries, and savings. For a broader view of her overall spending, she checks her numbers against the{" "}
+        After car costs and existing debts, Sophia retains $3,620 per month from take-home pay ($4,600 - $600 - $380). She targets a $17,500 used Toyota Corolla, which produces a $260 monthly payment, $600 total monthly car costs (10.0% of gross income), and leaves her $3,620 for rent, groceries, and savings. For a broader view of her overall spending, she checks her numbers against the{" "}
         <Link href="/calculators/budget-50-30-20" className="text-brand-600 hover:text-brand-800 font-medium">
           50/30/20 Budget Calculator
         </Link>
@@ -96,7 +114,7 @@ export function CarAffordabilityArticle() {
 
       <h2>Car Affordability by Income Level</h2>
       <p>
-        The table below shows recommended car budgets at common salary levels. Assumptions: 6.5% APR, 48-month loan term, $150/month insurance, $150/month fuel, and a 20% down payment. Actual affordability varies based on your debts, credit score, and local insurance rates.
+        The table below shows recommended car budgets at common salary levels. Assumptions: 7.54% APR (Federal Reserve G.19 60-month bank average, August 2026), 48-month loan term, $150/month insurance, $150/month fuel, and a 20% down payment (max price = max loan ÷ 0.80). Actual affordability varies based on your debts, credit score, and local insurance rates.
       </p>
       <table>
         <thead>
@@ -114,47 +132,47 @@ export function CarAffordabilityArticle() {
             <td>$3,333</td>
             <td>$333/mo</td>
             <td>$33/mo</td>
-            <td>$9,200</td>
+            <td>$1,700</td>
           </tr>
           <tr>
             <td>$55,000</td>
             <td>$4,583</td>
             <td>$458/mo</td>
             <td>$158/mo</td>
-            <td>$14,700</td>
+            <td>$8,200</td>
           </tr>
           <tr>
             <td>$70,000</td>
             <td>$5,833</td>
             <td>$583/mo</td>
             <td>$283/mo</td>
-            <td>$20,200</td>
+            <td>$14,600</td>
           </tr>
           <tr>
             <td>$85,000</td>
             <td>$7,083</td>
             <td>$708/mo</td>
             <td>$408/mo</td>
-            <td>$25,700</td>
+            <td>$21,100</td>
           </tr>
           <tr>
             <td>$100,000</td>
             <td>$8,333</td>
             <td>$833/mo</td>
             <td>$533/mo</td>
-            <td>$31,200</td>
+            <td>$27,600</td>
           </tr>
           <tr>
             <td>$120,000</td>
             <td>$10,000</td>
             <td>$1,000/mo</td>
             <td>$700/mo</td>
-            <td>$38,500</td>
+            <td>$36,200</td>
           </tr>
         </tbody>
       </table>
       <p>
-        Notice how insurance and fuel consume a fixed portion of the budget regardless of income. At $40,000/year, $300 in insurance and fuel leaves only $33 for the loan payment — which is why lower-income buyers often need larger down payments or shorter commutes to stay within the 10% guideline. At $120,000/year, the same $300 in operating costs leaves $700 for the loan, supporting a car priced nearly four times higher. Check your full debt picture with our{" "}
+        Notice how insurance and fuel consume a fixed portion of the budget regardless of income. At $40,000/year, $300 in insurance and fuel leaves only $33 for the loan payment — which is why lower-income buyers often need larger down payments, shorter commutes, or used vehicles below Cox Automotive's $27,235 average used listing price (mid-October 2026). At $120,000/year, the same $300 in operating costs leaves $700 for the loan, supporting a car priced more than twenty times the $40,000 row above. Check your full debt picture with our{" "}
         <Link href="/calculators/debt-to-income" className="text-brand-600 hover:text-brand-800 font-medium">
           Debt-to-Income Calculator
         </Link>{" "}
@@ -163,10 +181,10 @@ export function CarAffordabilityArticle() {
 
       <h2>Tips for Getting the Best Deal</h2>
       <p>
-        <strong>Get pre-approved before visiting dealerships.</strong> A pre-approval letter from your bank or credit union gives you a firm rate and budget ceiling. Credit unions often offer rates 1-2 percentage points below dealer financing — on a $20,000 loan over 48 months, the difference between 5.5% and 7.5% APR is $19 per month and $912 over the life of the loan.
+        <strong>Get pre-approved before visiting dealerships.</strong> A pre-approval letter from your bank or credit union gives you a firm rate and budget ceiling. On a $21,750 loan over 48 months, the difference between 6.35% (Experian Q2 2026 new average) and 7.54% (G.19 bank average) is about $14 per month and $672 in total interest.
       </p>
       <p>
-        <strong>Compare new vs. certified pre-owned.</strong> A 2-year-old certified pre-owned vehicle typically costs 25-35% less than its new equivalent while retaining most of its warranty coverage. A new 2025 Honda Civic EX at $28,500 versus a 2023 CPO model at $22,400 saves $6,100 upfront and roughly $115 per month on a 48-month loan at 6.5% APR.
+        <strong>Compare new vs. certified pre-owned.</strong> Kelley Blue Book's September 2026 compact-car average transaction price was $27,977 versus a $50,562 industry average for all new vehicles. A 2-year-old certified Honda near $22,000 saves thousands upfront versus new and cuts the loan payment by roughly $100 per month at 7.54% over 48 months compared with financing $28,000.
       </p>
       <p>
         <strong>Negotiate the out-the-door price, not the monthly payment.</strong> Dealers can extend loan terms or inflate trade-in values to hit a target monthly payment while increasing total cost. Focus on the total purchase price, interest rate, and loan term as separate line items. A $350/month payment over 72 months costs $25,200 total; the same payment over 48 months on a cheaper car costs $16,800.
@@ -188,7 +206,7 @@ export function CarAffordabilityArticle() {
 
       <h3>What if I cannot afford 20% down?</h3>
       <p>
-        Many buyers start with less than 20% down, especially on first purchases. If you put 10% down on a $25,000 car ($2,500), your loan balance is $22,500 instead of $20,000 — adding roughly $47 per month on a 48-month loan at 6.5% APR. The trade-off is higher monthly payments and greater risk of negative equity. Consider saving longer, buying a less expensive vehicle, or looking at certified pre-owned models in the $15,000-$20,000 range where a $3,000-$4,000 down payment meets the 20% threshold.
+        Many buyers start with less than 20% down, especially on first purchases. If you put 10% down on a $25,000 car ($2,500) instead of 20%, the tax-inclusive loan rises by about $2,000 — adding roughly $48 per month on a 48-month loan at 7.54% APR. The trade-off is higher monthly payments and greater risk of negative equity. Consider saving longer, buying below the $27,977 compact-car average, or targeting used inventory near $15,000–$20,000 where a $3,000–$4,000 down payment meets the 20% threshold.
       </p>
 
       <h3>Does the 10% rule include maintenance and repairs?</h3>
@@ -198,12 +216,16 @@ export function CarAffordabilityArticle() {
 
       <h3>How does my credit score affect affordability?</h3>
       <p>
-        Credit score directly impacts your interest rate, which changes how much car your monthly payment can support. On a $22,000 loan over 48 months, a borrower with a 760+ credit score might qualify for 5.5% APR ($511/month, $2,528 total interest), while a borrower at 620 might pay 12% APR ($581/month, $5,888 total interest). That $70/month difference reduces the maximum car price by approximately $3,000 at the same payment level. Check your credit report before shopping and consider delaying a purchase if you can improve your score by 30-50 points within six months.
+        Credit score directly impacts your interest rate, which changes how much car your monthly payment can support. Experian's Q2 2026 averages show super-prime new borrowers at 4.41% APR versus deep-subprime at 16.11% on the same loan amount — a spread of hundreds of dollars per month. On a $22,000 loan over 48 months, a 3-point APR reduction saves about $700 in total interest. Check your credit report before shopping and consider delaying a purchase if you can improve your score by 30–50 points within six months.
       </p>
 
       <h3>Is leasing a better option if I cannot meet the 20/4/10 rule?</h3>
       <p>
-        Leasing typically offers lower monthly payments — a $30,000 car might lease for $350/month versus $570/month to purchase over 48 months at 6.5% APR. However, leases come with mileage limits (usually 10,000-12,000 miles per year), wear-and-tear charges, and no equity at the end of the term. If your 10% budget is $450/month and a purchase requires $570/month, leasing at $350/month plus $150 insurance leaves $50 for fuel — tight but workable. Run the numbers for both options over a 3-year period before deciding, and avoid leasing if you drive more than 15,000 miles per year.
+        Leasing typically offers lower monthly payments — Edmunds' lease calculator guidance uses about 53% residual value on a 36-month term as a planning assumption, which often produces payments below a 7.54% purchase loan on the same MSRP. However, leases come with mileage limits (usually 10,000–12,000 miles per year), wear-and-tear charges, and no equity. Run both paths in our{" "}
+        <Link href="/calculators/lease-vs-buy-car" className="text-brand-600 hover:text-brand-800 font-medium">
+          Lease vs Buy Car Calculator
+        </Link>{" "}
+        before deciding, and avoid leasing if you drive more than 15,000 miles per year.
       </p>
     </>
   );

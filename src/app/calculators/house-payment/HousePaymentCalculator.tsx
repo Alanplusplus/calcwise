@@ -22,8 +22,8 @@ export function HousePaymentCalculator({ defaults }: Props) {
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "70000");
   const [loanTerm, setLoanTerm] = useState(defaults?.loanTerm || "30");
   const [interestRate, setInterestRate] = useState(defaults?.interestRate || DEFAULT_MORTGAGE_RATE);
-  const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "1.1");
-  const [homeInsurance, setHomeInsurance] = useState(defaults?.homeInsurance || "1800");
+  const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "0.9");
+  const [homeInsurance, setHomeInsurance] = useState(defaults?.homeInsurance || "2400");
   const [pmiRate, setPmiRate] = useState(defaults?.pmiRate || "0.5");
   const [hoaFees, setHoaFees] = useState(defaults?.hoaFees || "0");
 

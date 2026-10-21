@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { G19_CREDIT_CARD_APR } from "@/lib/market-data";
 
 export function DebtPayoffArticle() {
   return (
@@ -39,10 +41,9 @@ export function DebtPayoffArticle() {
       <h3>The Snowball Method (Best for Motivation)</h3>
       <p>
         Pay minimums on all debts, then put extra money toward the smallest
-        balance first. The quick wins of eliminating smaller debts create
-        momentum and motivation. Studies show people using this method are more
-        likely to become debt-free because the psychological wins keep them
-        going.
+        balance first. Clearing a small balance frees its minimum payment for
+        the next target, which can keep you motivated when the math-heavy
+        avalanche method feels slow.
       </p>
       <p>
         Learn the full comparison in our guide: <Link href="/guides/debt-avalanche-vs-snowball" className="text-brand-600 hover:text-brand-800 font-medium">Debt Avalanche vs Snowball: Which Gets You Debt-Free Faster?</Link>
@@ -51,27 +52,27 @@ export function DebtPayoffArticle() {
       <h2>Case Study: Avalanche vs Snowball on $28,000 of Debt</h2>
       <p>
         James, a 35-year-old engineer, owes $28,000 across three accounts: a
-        $12,000 credit card at 22.99% APR ($240 minimum), a $6,000 store card at
-        19.99% APR ($120 minimum), and a $10,000 auto loan at 6.9% APR ($198
-        minimum). His total minimums are $558 per month. After trimming dining
-        and streaming subscriptions, he frees up $400 extra and commits $958
-        per month to debt payoff.
+        $12,000 credit card at {G19_CREDIT_CARD_APR.assessedInterest}% APR (near
+        the Fed G.19 assessed-interest average, $240 minimum at 2%), a $6,000
+        store card at 19.99% APR ($120 minimum), and a $10,000 auto loan at 7.54%
+        APR (near the G.19 60-month new-car bank average, $198 minimum). His
+        total minimums are about $558 per month. After trimming dining and
+        subscriptions, he frees $400 extra and commits $958 per month to debt
+        payoff.
       </p>
+      <Sources
+        items={[...G19_CREDIT_CARD_APR.sources]}
+        checked={G19_CREDIT_CARD_APR.checkedLabel}
+        note="Credit card APR uses G.19 accounts assessed interest (22.36%, August 2026). Auto rate is illustrative near the G.19 commercial-bank 60-month new-car average (7.54%, August 2026)."
+      />
       <p>
-        Using the avalanche method, James attacks the 22.99% card first while
-        paying minimums elsewhere. That card clears in about 14 months; he then
-        rolls the full $958 toward the 19.99% balance. In this scenario, he
-        becomes debt-free in roughly 31 months and pays about $4,180 in total
-        interest on the original $28,000.
-      </p>
-      <p>
-        With the snowball method, he pays off the $6,000 store card first for a
-        quick win, then the $10,000 auto loan, then the $12,000 card. The
-        timeline stretches to about 33 months with roughly $4,720 in interest —
-        about $540 more than avalanche. James chooses avalanche because the
-        $540 savings matters more to him than an early psychological win, but
-        either path beats making minimums only, which would keep him in debt for
-        7+ years and cost over $9,000 in interest. Run your own balances in this
+        Using the avalanche method, James attacks the highest-APR card first
+        while paying minimums elsewhere, then rolls freed payments down the rate
+        ladder. That approach minimizes total interest versus snowball order on
+        the same $958 monthly pool. Either structured method beats paying
+        minimums only on revolving debt at {G19_CREDIT_CARD_APR.assessedInterest}%
+        APR, where 2% minimums can leave balances for decades. Run your own
+        balances in this
         calculator, or compare consolidation offers with our{" "}
         <Link href="/calculators/loan-comparison" className="text-brand-600 hover:text-brand-800 font-medium">Loan Comparison Calculator</Link>.
       </p>
@@ -83,11 +84,11 @@ export function DebtPayoffArticle() {
         longer and maximizes their interest revenue.
       </p>
       <p>
-        Example: A $10,000 credit card balance at 19.9% APR with only minimum
-        payments would take over 35 years to pay off and cost approximately
-        $16,000 in interest — more than the original balance. Increasing the
-        payment to $300/month cuts the timeline to 44 months and total interest
-        to about $3,100.
+        Example: A $10,000 credit card balance at {G19_CREDIT_CARD_APR.assessedInterest}%
+        APR with 2%/$25 minimums still owes thousands after 50 years in this
+        model and accrues well over $60,000 in interest in that period. Increasing
+        to a fixed $300/month payment clears the same balance in 53 months with
+        about $5,771 in total interest.
       </p>
       <p>
         For credit card-specific strategies, try our <Link href="/calculators/credit-card-payoff" className="text-brand-600 hover:text-brand-800 font-medium">Credit Card Payoff Calculator</Link> which models minimum payments vs. fixed payments, and read{" "}
@@ -113,10 +114,10 @@ export function DebtPayoffArticle() {
 
       <h2>Where to Find Extra Money for Debt Payoff</h2>
       <ul>
-        <li><strong>Audit subscriptions:</strong> most people have $50-$200/month in subscriptions they barely use.</li>
+        <li><strong>Audit subscriptions:</strong> cancel unused streaming, gym, or app charges — even $75/month redirected to debt cuts interest on a 22% balance.</li>
         <li><strong>Side income:</strong> freelancing, selling unused items, or a part-time gig. Direct 100% of extra income to debt.</li>
-        <li><strong>Tax refund:</strong> the average US tax refund is ~$3,000. Applied to debt, this could save $1,000+ in interest.</li>
-        <li><strong>Negotiate rates:</strong> call your credit card company and ask for a lower rate. A drop from 22% to 16% saves significant interest.</li>
+        <li><strong>Tax refund or bonus:</strong> a single $2,000 lump sum on a $15,000 balance at 22.36% APR can shave several months off a fixed $400/month plan.</li>
+        <li><strong>Negotiate rates:</strong> call your credit card company and ask for a lower APR. A 3-point drop on a $10,000 balance saves hundreds per year in interest.</li>
         <li><strong>Balance transfer:</strong> a 0% APR promotional card gives you 12-21 months of interest-free payoff time (watch for transfer fees).</li>
       </ul>
 

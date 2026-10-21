@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { RETIREMENT_LIMITS, usd } from "@/lib/tax-data";
 
 export function FireArticle() {
   return (
@@ -49,10 +51,10 @@ export function FireArticle() {
         depleting the principal over a 30-year retirement.
       </p>
       <p>
-        Some planners recommend a more conservative 3.5% rate given lower expected future returns
-        and longer retirement horizons for early retirees. A 3.5% rate means multiplying expenses
-        by roughly 28.6 instead of 25. For detailed retirement planning scenarios, see our guide
-        on{" "}
+        Morningstar's February 2026 update estimates a 3.9% starting rate for new retirees
+        seeking fixed inflation-adjusted withdrawals over 30 years (90% success in their model).
+        Early retirees with 40+ year horizons often plan at 3.5% (about 28.6× expenses) or use
+        flexible spending. For detailed retirement planning scenarios, see our guide on{" "}
         <Link
           href="/guides/how-much-to-retire-at-55"
           className="text-brand-600 hover:text-brand-800 font-medium"
@@ -61,6 +63,15 @@ export function FireArticle() {
         </Link>
         .
       </p>
+      <Sources
+        items={[
+          {
+            label: "Morningstar, safe withdrawal rate research (Feb. 18, 2026)",
+            href: "https://www.morningstar.com/retirement/morningstars-retirement-income-research-finding-your-safe-withdrawal-rate",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>Types of FIRE</h2>
       <p>
@@ -92,31 +103,31 @@ export function FireArticle() {
         </li>
       </ul>
 
-      <h2>Case Study: Michael's Path to FIRE at 42</h2>
+      <h2>Case Study: Michael's Path to FIRE at 49</h2>
       <p>
         Michael is a 32-year-old software engineer earning $90,000 after taxes in Denver,
-        Colorado. He currently spends $45,000 per year — including $18,000 on housing, $6,000 on
-        food, $5,000 on transportation, and $16,000 on everything else. He has $120,000 saved
-        across his 401(k), Roth IRA, and taxable brokerage account.
+        Colorado. He spends $45,000 per year — $18,000 on housing, $6,000 on food, $5,000 on
+        transportation, and $16,000 on everything else — and has $120,000 across his 401(k), Roth
+        IRA, and taxable brokerage.
       </p>
       <p>
-        Michael's savings rate is 50% — he saves $45,000 per year. His FIRE number at a 4%
-        withdrawal rate is $1,125,000 ($45,000 divided by 0.04). Using our calculator with a 7%
-        expected return and 3% expense inflation, Michael reaches FIRE in approximately 10 years
-        at age 42.
+        His savings rate is 50% ($45,000 per year). At a 4% withdrawal rate his initial FIRE
+        number is $1,125,000. With 7% returns and 3% expense inflation, this calculator shows
+        about 17 years to FIRE — age 49, not 42 — because the inflation-adjusted target rises
+        each year while contributions stay flat in nominal dollars.
       </p>
       <p>
-        Here is how his wealth builds: starting with $120,000, adding $45,000 annually, and
-        compounding at 7%, his portfolio crosses $500,000 by year 5, $750,000 by year 7, and
-        surpasses $1.125 million by year 10. Even accounting for inflation increasing his target
-        to roughly $1.46 million, his portfolio growth outpaces the rising target because
-        investment returns exceed the inflation rate.
+        Year-by-year with the same assumptions: the portfolio reaches about $445,000 by year 5,
+        $797,000 by year 9, and crosses the inflation-adjusted target near year 17 (portfolio
+        about $1.35 million versus a target near $1.33 million). Returns above inflation help,
+        but the timeline is longer than a static 25× rule suggests.
       </p>
       <p>
-        Michael's key decisions: he maxes his 401(k) and Roth IRA ($30,500 combined in
-        2024), lives in a modest apartment rather than buying, drives a used car, and cooks most
-        meals at home. His high income in a moderate cost-of-living city makes a 50% savings rate
-        achievable without extreme deprivation.
+        Michael maxes tax-advantaged accounts where possible — in 2026 that is up to{" "}
+        {usd(RETIREMENT_LIMITS.employeeDeferral)} in his 401(k) and {usd(RETIREMENT_LIMITS.ira)} in
+        his IRA ({usd(RETIREMENT_LIMITS.employeeDeferral + RETIREMENT_LIMITS.ira)} combined before
+        catch-up) — and sends overflow to taxable index funds. A moderate cost-of-living city
+        makes a 50% rate feasible without extreme frugality.
       </p>
 
       <h2>Comparison Table: Years to FIRE at Different Savings Rates</h2>
@@ -140,28 +151,28 @@ export function FireArticle() {
             <td className="py-2 text-ink-600">20%</td>
             <td className="py-2 text-ink-600">$62,500</td>
             <td className="py-2 text-ink-600">$12,500</td>
-            <td className="py-2 text-ink-600">32 years</td>
+            <td className="py-2 text-ink-600">40 years</td>
             <td className="py-2 text-ink-600">$1,250,000</td>
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 text-ink-600">30%</td>
             <td className="py-2 text-ink-600">$71,429</td>
             <td className="py-2 text-ink-600">$21,429</td>
-            <td className="py-2 text-ink-600">22 years</td>
+            <td className="py-2 text-ink-600">31 years</td>
             <td className="py-2 text-ink-600">$1,250,000</td>
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 text-ink-600">50%</td>
             <td className="py-2 text-ink-600">$100,000</td>
             <td className="py-2 text-ink-600">$50,000</td>
-            <td className="py-2 text-ink-600">11 years</td>
+            <td className="py-2 text-ink-600">18 years</td>
             <td className="py-2 text-ink-600">$1,250,000</td>
           </tr>
           <tr>
             <td className="py-2 text-ink-600">70%</td>
             <td className="py-2 text-ink-600">$166,667</td>
             <td className="py-2 text-ink-600">$116,667</td>
-            <td className="py-2 text-ink-600">6 years</td>
+            <td className="py-2 text-ink-600">9 years</td>
             <td className="py-2 text-ink-600">$1,250,000</td>
           </tr>
         </tbody>
@@ -251,11 +262,21 @@ export function FireArticle() {
 
       <h3>What savings rate do I need for FIRE?</h3>
       <p>
-        A 50% savings rate typically leads to FIRE in 15 to 17 years. A 65% rate can achieve it
-        in 10 to 12 years. The average American saves roughly 5% to 7% of income, which is why
-        traditional retirement at 65 remains the norm. Even increasing from 10% to 25% makes a
-        dramatic difference.
+        With this calculator's inflation-adjusted target, a 50% rate ($50,000 saved on $100,000
+        income, $50,000 expenses) from $100,000 starting balance takes about 18 years at 7% returns.
+        A 70% rate reaches FIRE in about 9 years on the same assumptions. The BEA personal saving
+        rate averaged about 4.7% from January through August 2026 — far below FIRE levels.
       </p>
+      <Sources
+        items={[
+          {
+            label: "BEA personal saving rate (August 2026 release)",
+            href: "https://www.bea.gov/data/income-saving/personal-saving-rate",
+          },
+        ]}
+        checked="October 2026"
+        note="FIRE timelines in the comparison table assume $100,000 starting balance, $50,000 expenses, 7% returns, 4% withdrawal, and 3% expense inflation."
+      />
 
       <h3>Is 7% a realistic return assumption?</h3>
       <p>

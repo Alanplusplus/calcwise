@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Sources } from "@/components/Sources";
 
 export function InflationArticle() {
   return (
     <>
       <Image
         src="/images/inflation-infographic.webp"
-        alt="Inflation impact infographic showing how purchasing power declines over 30 years at 3% annual inflation, with future cost projections and category-specific inflation rates"
+        alt="Inflation infographic showing $100 losing purchasing power at 3% inflation (74% after 10 years, 55% after 20, 41% after 30) and the average yearly BLS price change by category from September 2006 to September 2026"
         width={1200}
         height={800}
         className="rounded-lg border border-ink-200"
@@ -17,29 +18,46 @@ export function InflationArticle() {
         Inflation measures the rate at which the general level of prices for
         goods and services rises over time, eroding the purchasing power of each
         dollar you hold. When inflation runs at 3% per year, something that costs
-        $100 today will cost $103 next year, $134 in 10 years, and $243 in 30
-        years. The effect compounds, which means the damage accelerates the
-        longer you hold cash without earning a return that outpaces inflation.
+        $100 today will cost $103 next year, about $134 in 10 years, and $243 in 30
+        years. At the September 2026 CPI-U pace of 3.7%, that same $100 item needs
+        about $104 next year and $144 in 10 years. The effect compounds, which means
+        the damage accelerates the longer you hold cash without earning a return
+        that outpaces inflation.
       </p>
       <p>
         The U.S. Bureau of Labor Statistics tracks inflation through the Consumer
-        Price Index (CPI), which measures price changes across a basket of goods
-        including food, housing, transportation, medical care, and recreation.
-        The Federal Reserve targets an average annual inflation rate of 2%, but
-        actual inflation has ranged from near-zero to over 9% in recent decades.
+        Price Index (CPI). The all-items CPI-U rose 3.7% for the 12 months ending
+        September 2026 (index level 336.940, released October 14, 2026). Core
+        inflation (all items less food and energy) rose 2.6%, while the food index
+        rose 2.5% and energy 20.4%. The Federal Reserve targets 2% inflation over
+        the longer run as measured by PCE, which often runs slightly below CPI-U.
         Understanding your personal inflation rate — weighted toward the
         categories you spend the most on — is more useful than watching headline
         CPI alone.
       </p>
       <p>
-        Inflation is not uniformly distributed across categories. Healthcare and
-        education costs have historically inflated at 5-7% annually, far outpacing
-        the 2-3% average for general goods. Housing in high-demand markets has
-        seen similar above-average increases. If your budget skews heavily toward
-        these categories, your effective inflation rate may be double the official
-        figure. Use the calculator above to model different rates and see how
-        they compound over your specific time horizon.
+        Inflation is not uniformly distributed across categories. In the 20 years
+        from September 2006 to September 2026, the BLS index for college tuition
+        and fees rose 3.4% a year and shelter rose 3.1%, versus 2.6% for all
+        items, while information technology commodities fell 3.0% a year. If your
+        budget skews toward the faster-rising categories, your personal inflation
+        rate can sit above the headline figure. Use the calculator above to model
+        different rates and see how they compound over your specific time horizon.
       </p>
+      <Sources
+        items={[
+          {
+            label: "BLS CPI — September 2026 (released Oct. 14, 2026)",
+            href: "https://www.bls.gov/news.release/cpi.htm",
+          },
+          {
+            label: "Federal Reserve — 2% longer-run PCE inflation objective",
+            href: "https://www.federalreserve.gov/faqs/economy_14400.htm",
+          },
+        ]}
+        checked="October 2026"
+        note="Headline CPI-U can differ from the Fed's PCE target; both are useful for planning bounds."
+      />
 
       <h2>The Rule of 72: A Mental Shortcut</h2>
       <p>
@@ -68,10 +86,13 @@ export function InflationArticle() {
 
       <h2>Inflation Categories: What Rises Fastest</h2>
       <p>
-        Not all prices move at the same rate. The table below shows average
-        annual inflation rates by category over the past two decades, based on
-        CPI component data. These differences have a dramatic compounding effect
-        over 20-30 year horizons.
+        Not all prices move at the same rate. The table below shows the average
+        annual change in selected BLS CPI-U categories from September 2006 to
+        September 2026 (not seasonally adjusted, U.S. city average), and what $100
+        of each category would cost after 20 and 30 years. The 20-year column is
+        the measured change; the 30-year column assumes the same rate continues.
+        Small differences in the rate compound into large differences over long
+        horizons.
       </p>
       <table className="w-full text-sm">
         <thead>
@@ -85,60 +106,77 @@ export function InflationArticle() {
         <tbody>
           <tr className="border-b border-ink-100">
             <td className="py-2 pr-4">General CPI (All Items)</td>
-            <td className="py-2 pr-4">2.8%</td>
-            <td className="py-2 pr-4">$174</td>
-            <td className="py-2">$228</td>
+            <td className="py-2 pr-4">2.6%</td>
+            <td className="py-2 pr-4">$166</td>
+            <td className="py-2">$214</td>
           </tr>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4">Healthcare</td>
-            <td className="py-2 pr-4">5.2%</td>
-            <td className="py-2 pr-4">$275</td>
-            <td className="py-2">$459</td>
+            <td className="py-2 pr-4">Medical Care</td>
+            <td className="py-2 pr-4">2.9%</td>
+            <td className="py-2 pr-4">$175</td>
+            <td className="py-2">$232</td>
           </tr>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4">College Tuition</td>
-            <td className="py-2 pr-4">6.0%</td>
-            <td className="py-2 pr-4">$321</td>
-            <td className="py-2">$574</td>
+            <td className="py-2 pr-4">College Tuition & Fees</td>
+            <td className="py-2 pr-4">3.4%</td>
+            <td className="py-2 pr-4">$195</td>
+            <td className="py-2">$272</td>
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 pr-4">Housing (Shelter)</td>
-            <td className="py-2 pr-4">3.5%</td>
-            <td className="py-2 pr-4">$199</td>
-            <td className="py-2">$281</td>
+            <td className="py-2 pr-4">3.1%</td>
+            <td className="py-2 pr-4">$185</td>
+            <td className="py-2">$251</td>
           </tr>
           <tr className="border-b border-ink-100">
-            <td className="py-2 pr-4">Food</td>
+            <td className="py-2 pr-4">Food at Home</td>
             <td className="py-2 pr-4">2.6%</td>
-            <td className="py-2 pr-4">$167</td>
-            <td className="py-2">$216</td>
+            <td className="py-2 pr-4">$166</td>
+            <td className="py-2">$213</td>
           </tr>
           <tr>
-            <td className="py-2 pr-4">Electronics</td>
+            <td className="py-2 pr-4">IT Commodities (computers, phones, software)</td>
             <td className="py-2 pr-4">-3.0%</td>
-            <td className="py-2 pr-4">$54</td>
+            <td className="py-2 pr-4">$55</td>
             <td className="py-2">$40</td>
           </tr>
         </tbody>
       </table>
       <p>
-        Healthcare and education stand out as the two categories that erode
-        purchasing power the fastest. A medical procedure costing $10,000 today
-        will cost approximately $27,500 in 20 years at 5.2% annual inflation.
-        This is why health savings accounts (HSAs) and education-specific
-        investment vehicles like 529 plans are critical — they help your savings
-        grow at rates that can match or exceed these category-specific inflation
-        rates.
+        College tuition and shelter rose faster than the headline index, while
+        medical care ran only slightly above it (2.9% versus 2.6%). A medical
+        bill that cost $10,000 in September 2006 would cost about $17,500 in
+        September 2026 at the measured pace. CPI tracks the price of a fixed
+        basket of services, not your total spending, so your own healthcare and
+        tuition bills can grow faster than the index as usage and quality change.
+        Many planners therefore model 4–5% for those categories as a deliberate
+        cushion; that is a planning choice, not a BLS measurement. Health savings
+        accounts (HSAs) and 529 plans are common ways to earmark money for these
+        costs.{" "}
+        <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">
+          Set a savings goal
+        </Link>{" "}
+        with the category-specific rate you choose.
       </p>
+      <Sources
+        items={[
+          {
+            label: "BLS CPI-U category indexes via FRED (CPIAUCNS, CPIMEDNS, CUUR0000SEEB, CUUR0000SAH1, CUUR0000SAF11, CUUR0000SEEE)",
+            href: "https://fred.stlouisfed.org/series/CPIAUCNS",
+          },
+        ]}
+        checked="October 2026"
+        note="Rates are compound annual changes from September 2006 to September 2026; the 30-year column extends the same rate."
+      />
 
       <h2>Case Study: David, a 35-Year-Old Planning for Retirement</h2>
       <p>
         David earns $85,000 per year and spends approximately $4,500 per month
         on living expenses. He plans to retire at 65, giving him a 30-year
-        planning horizon. At the headline 3% inflation rate, his current $4,500
-        monthly expense budget will need to cover $10,900 per month in 30 years
-        to maintain the same standard of living. That translates to $131,000 per
-        year in future dollars.
+        planning horizon. At 3% inflation, his $4,500 monthly budget requires
+        about $10,900 per month in 30 years ($131,000 per year in future dollars).
+        Stress-testing at 3.7% (near the September 2026 CPI pace) pushes that need
+        to about $13,100 per month ($157,000 per year).
       </p>
       <p>
         David currently has $95,000 in his 401(k) and contributes $800 per month.
@@ -195,6 +233,12 @@ export function InflationArticle() {
             <td className="py-2 pr-4">$67,200</td>
             <td className="py-2 pr-4">$90,300</td>
             <td className="py-2">$121,360</td>
+          </tr>
+          <tr className="border-b border-ink-100">
+            <td className="py-2 pr-4">3.7%</td>
+            <td className="py-2 pr-4">$71,905</td>
+            <td className="py-2 pr-4">$103,406</td>
+            <td className="py-2">$148,707</td>
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 pr-4">4%</td>
@@ -275,12 +319,13 @@ export function InflationArticle() {
       <h2>Frequently Asked Questions</h2>
       <h3>What is a good inflation rate to use for planning?</h3>
       <p>
-        For general financial planning, 3% is the most commonly used estimate.
-        The Federal Reserve targets 2%, but actual inflation has averaged closer
-        to 3% when measured over multi-decade periods. If you are planning for
-        healthcare or education expenses, use 5-6% for those specific categories.
-        Conservative planners run scenarios at both 2% and 4% to bracket
-        uncertainty.
+        For general financial planning, 3% remains a common long-run estimate,
+        while 3.7% reflects the September 2026 CPI-U 12-month change. The Federal
+        Reserve targets 2% PCE inflation over the longer run — often below
+        headline CPI. BLS data show 2.9% a year for medical care and 3.4% for
+        college tuition and fees over the past 20 years, so a 4–5% assumption for
+        those categories is a deliberate cushion rather than a measured rate.
+        Conservative planners bracket scenarios at 2%, 3.7%, and 4%.
       </p>
       <h3>Does inflation affect everyone equally?</h3>
       <p>

@@ -42,15 +42,15 @@ export function RentVsBuyArticle() {
       <p>
         Many first-time buyers focus exclusively on the mortgage payment and overlook the ongoing
         costs that make homeownership significantly more expensive than the sticker price suggests.
-        Property taxes typically run 1% to 2% of home value annually and tend to rise over time,
-        even when your mortgage payment stays fixed. Maintenance and repairs average 1% to 2% of
-        home value per year — a $350,000 home may require $3,500 to $7,000 annually for HVAC
-        service, roof repairs, plumbing, and general upkeep.
+        Property taxes typically run 0.9% to 2% of home value annually (the 2024 national effective
+        average was 0.89%) and tend to rise over time, even when your mortgage payment stays fixed.
+        Maintenance and repairs average 1% to 2% of home value per year — a $350,000 home may require
+        $3,500 to $7,000 annually for HVAC service, roof repairs, plumbing, and general upkeep.
       </p>
       <p>
-        Homeowners insurance adds another $1,200 to $2,000 per year depending on location and
-        coverage. Closing costs at purchase — including origination fees, title insurance, and
-        inspections — typically total 2% to 5% of the purchase price. If you sell within a few
+        Homeowners insurance adds another $2,000 to $2,900 per year on many mid-priced homes in 2026
+        quotes, depending on location and coverage. Closing costs at purchase — including origination
+        fees, title insurance, and inspections — typically total 2% to 5% of the purchase price. If you sell within a few
         years, you will also pay 5% to 6% in real estate agent commissions. These costs do not build
         equity and are easy to underestimate when comparing a mortgage payment to a rent check.
       </p>
@@ -92,28 +92,45 @@ export function RentVsBuyArticle() {
         Alex and Jamie are a dual-income couple in Austin, Texas, earning a combined $145,000
         per year. They have saved $70,000 for a down payment and are deciding between buying a
         $350,000 townhouse or continuing to rent a comparable two-bedroom apartment for $2,100
-        per month.
+        per month (above the $1,694 national median asking rent Realtor.com reported for September 2026).
       </p>
       <p>
         Using a {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% mortgage rate on a 30-year loan, their monthly mortgage payment would be
-        approximately $1,939. Adding property taxes ($350/month), insurance (about $102/month at
-        0.35% of value), and maintenance ($292/month at 1% annually), their total monthly ownership
-        cost reaches roughly $2,683 — about $583 more than their $2,100 rent in year one.
+        approximately $1,939. Adding property taxes ($263/month at 0.9%), insurance (about $200/month at
+        0.685% of value), and maintenance ($292/month at 1% annually), their total monthly ownership
+        cost reaches roughly $2,693 — about $593 more than their $2,100 rent in year one.
       </p>
-      <Sources items={MORTGAGE_MARKET_SOURCES} checked={MORTGAGE_MARKET.checkedLabel} />
+      <Sources
+        items={[
+          ...MORTGAGE_MARKET_SOURCES,
+          {
+            label: "Realtor.com rental report (Sept. 2026 median asking rent $1,694)",
+            href: "https://www.realtor.com/research/september-2026-rent/",
+          },
+          {
+            label: "NAHB analysis of Census ACS 2024 (0.89% effective property tax rate)",
+            href: "https://www.nahb.org/blog/2025/12/property-taxes-2024-residential",
+          },
+          {
+            label: "LendingTree State of Home Insurance 2026 ($350k dwelling)",
+            href: "https://www.lendingtree.com/insurance/state-of-home-insurance/",
+          },
+        ]}
+        checked={MORTGAGE_MARKET.checkedLabel}
+      />
       <p>
         Over seven years with 3% home appreciation and 3% annual rent increases (and 7% investment
         returns on the renter's portfolio), buying builds approximately $174,000 in home equity.
-        Alex and Jamie's net cost of buying after that equity is about $138,000. As renters investing
+        Alex and Jamie's net cost of buying after that equity is about $139,000. As renters investing
         their $70,000 down payment plus monthly savings when owning costs more, their portfolio grows
-        to approximately $164,000 while their net cost of renting is about $29,000. Buying ends with
-        roughly $9,200 more net wealth than renting over this seven-year horizon.
+        to approximately $166,000 while their net cost of renting is about $27,000. Buying ends with
+        roughly $8,000 more net wealth than renting over this seven-year horizon.
       </p>
       <p>
         In this scenario, buying wins over seven years because appreciation and principal paydown
         outpace the renter's invested savings when rent is only modestly below ownership cost. With
         the same inputs but $2,000/month rent (the calculator default), renting leads by about
-        $2,500 in net wealth — a reminder that a slightly lower rent check can flip the outcome at
+        $3,700 in net wealth — a reminder that a slightly lower rent check can flip the outcome at
         today's {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% rate.
       </p>
 
@@ -194,7 +211,7 @@ export function RentVsBuyArticle() {
             <td className="py-2 text-ink-600">$500,000</td>
             <td className="py-2 text-ink-600">$2,800</td>
             <td className="py-2 text-ink-600">$248,000</td>
-            <td className="py-2 text-ink-600">$258,000</td>
+            <td className="py-2 text-ink-600">$260,000</td>
             <td className="py-2 text-ink-600">Rent</td>
           </tr>
           <tr>

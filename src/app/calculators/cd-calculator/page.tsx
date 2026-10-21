@@ -11,12 +11,16 @@ const calc = getCalculator("cd-calculator")!;
 
 const faqs = [
   {
+    question: "What CD APY should I use in the calculator?",
+    answer: "Use the APY quoted on your bank's disclosure for the exact term. For context, the FDIC national average for 12-month CDs was 1.76% on October 19, 2026, while top online 1-year CDs reached about 4.55% to 4.60% APY the same week (NerdWallet, Oct. 20, 2026). This calculator defaults to 4.55% with daily compounding — a top-tier observation, not the branch-bank average.",
+  },
+  {
     question: "Are CD earnings taxable?",
     answer: "Yes. CD interest is taxed as ordinary income in the year it is credited to your account, even if you cannot withdraw it without penalty until maturity. Your bank will send a Form 1099-INT if you earn more than $10 in interest.",
   },
   {
     question: "What happens when my CD matures?",
-    answer: "Most banks offer a grace period of 7 to 10 days after maturity during which you can withdraw funds without penalty. If you take no action, the CD typically auto-renews at the current rate for the same term — which may be higher or lower than your original rate.",
+    answer: "Most banks offer a grace period of 7 to 10 days after maturity during which you can withdraw funds without penalty. If you take no action, the CD typically auto-renews at the bank's current rate for the same term — often near the FDIC national average unless you shop top online APYs again.",
   },
   {
     question: "Can I lose money on a CD?",

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What is a good inflation rate to use for planning?",
-    answer: "Use 3% for general financial planning. The Fed targets 2%, but multi-decade averages are closer to 3%. Use 5–6% for healthcare or education expenses specifically.",
+    answer: "Use 3% for long-run planning or 3.7% to mirror the September 2026 CPI-U 12-month change. The Fed targets 2% PCE inflation. BLS data show 2.9% a year for medical care and 3.4% for college tuition and fees over the past 20 years, so 4–5% for those categories is a planning cushion rather than a measured rate.",
   },
   {
     question: "Does inflation affect everyone equally?",

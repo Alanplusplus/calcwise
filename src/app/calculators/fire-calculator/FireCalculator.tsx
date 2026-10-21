@@ -149,7 +149,7 @@ export function FireCalculator({ defaults }: Props) {
           min={2}
           max={8}
           step={0.5}
-          helpText="Typically 3.5–4% based on the Trinity Study"
+          helpText="4% is common; Morningstar's 2026 base case for new retirees is 3.9%"
         />
         <InputField
           label="Annual Expense Inflation"

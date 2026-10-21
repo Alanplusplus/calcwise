@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+import { MORTGAGE_MARKET } from "@/lib/market-data";
 
 export function DebtToIncomeArticle() {
   return (
@@ -34,7 +36,7 @@ export function DebtToIncomeArticle() {
       </p>
       <ul>
         <li><strong>Front-End DTI (Housing Ratio)</strong> — Only your housing costs: mortgage or rent payment, property taxes, homeowners insurance, and HOA fees if applicable. Most conventional lenders want this at or below 28%.</li>
-        <li><strong>Back-End DTI (Total Debt Ratio)</strong> — All recurring monthly obligations: housing costs plus car payments, student loans, credit card minimums, personal loans, child support, and alimony. Conventional lenders typically cap this at 36%, though some programs allow up to 43% or even 50%.</li>
+        <li><strong>Back-End DTI (Total Debt Ratio)</strong> — All recurring monthly obligations: housing costs plus car payments, student loans, credit card minimums, personal loans, child support, and alimony. Conventional guidelines often target 36% back-end; FHA manual underwriting uses 43% standard and up to 50% with compensating factors.</li>
       </ul>
       <p>
         The formula is straightforward: <strong>DTI = Total Monthly Debt Payments / Gross Monthly Income x 100</strong>. For example, if you earn $6,000/month and pay $2,400 in total debts, your back-end DTI is 40%.
@@ -79,15 +81,28 @@ export function DebtToIncomeArticle() {
             <td>For eligible rural properties; income limits apply</td>
           </tr>
           <tr>
-            <td>Qualified Mortgage (QM)</td>
+            <td>General Qualified Mortgage (QM)</td>
             <td>N/A</td>
-            <td>43%</td>
-            <td>Federal standard under Dodd-Frank; exceeding disqualifies from QM safe harbor</td>
+            <td>No fixed DTI cap</td>
+            <td>Since 2021, General QM uses a price-based test (APR vs. APOR), not a 43% DTI limit; lenders still must consider DTI or residual income</td>
           </tr>
         </tbody>
       </table>
+      <Sources
+        items={[
+          {
+            label: "CFPB — General QM final rule (Dec. 29, 2020; mandatory compliance 2021)",
+            href: "https://www.federalregister.gov/documents/2020/12/29/2020-27567/qualified-mortgage-definition-under-the-truth-in-lending-act-regulation-z-general-qm-loan-definition",
+          },
+          {
+            label: "HUD FHA Handbook 4000.1 Update 18 (Aug. 12, 2026)",
+            href: "https://www.hud.gov/sites/default/files/Housing/documents/40001-hsgh-Update-18.pdf",
+          },
+        ]}
+        checked="October 2026"
+      />
       <p>
-        Keep in mind these are guidelines, not hard ceilings for every lender. Strong compensating factors — large cash reserves, excellent credit scores above 740, or a substantial down payment — can sometimes offset a higher DTI. However, staying within these ranges gives you the best rates and most options. Use our{" "}
+        These are guidelines, not guarantees. Automated underwriting (Fannie Mae Desktop Underwriter, FHA TOTAL Scorecard) may approve higher DTIs when credit, reserves, and loan structure are strong. Staying near 36% back-end keeps the widest conventional options. Use our{" "}
         <Link href="/calculators/home-affordability" className="text-brand-600 hover:text-brand-800 font-medium">
           Home Affordability Calculator
         </Link>{" "}
@@ -128,10 +143,10 @@ export function DebtToIncomeArticle() {
         Their non-housing debt alone is $950/month, which means 9.5% of gross income is already committed before any housing costs. Under the conventional 36% back-end limit, they can allocate a maximum of $3,600/month to total debt. Subtracting existing debts: $3,600 - $950 = $2,650 maximum for housing (PITI).
       </p>
       <p>
-        Under the 28% front-end rule, their maximum housing payment is $2,800/month. Since their back-end constraint ($2,650) is more restrictive, that becomes the binding limit. At 6.5% interest on a 30-year term with 10% down, this supports a home price of approximately $380,000.
+        Under the 28% front-end rule, their maximum housing payment is $2,800/month. Since their back-end constraint ($2,650) is more restrictive, that becomes the binding limit. At the Freddie Mac PMMS 30-year average of {MORTGAGE_MARKET.thirtyYear.toFixed(2)}% ({MORTGAGE_MARKET.asOfLabel}), a $2,650 principal-and-interest payment on a 30-year loan supports roughly a $383,000 loan balance — about a $425,000 purchase with 10% down before taxes and insurance.
       </p>
       <p>
-        However, if they pay off the credit card debt first ($120/month eliminated), their maximum housing jumps to $2,770 — enough to afford a $395,000 home. And if Jason pays off the car within 6 months, they gain another $450/month of capacity. This is why reducing existing debt before applying for a mortgage can dramatically increase your buying power.
+        Paying off the $120/month credit card minimums first raises their housing room to $2,770/month. Paying off Jason's $450 car note later adds another $450/month of capacity. Reducing fixed payments before you apply often increases buying power more than saving an equal dollar amount toward down payment.
       </p>
 
       <h2>DTI by Income Level: What You Can Afford</h2>
@@ -242,7 +257,7 @@ export function DebtToIncomeArticle() {
 
       <h3>What is a good debt-to-income ratio?</h3>
       <p>
-        A back-end DTI of 36% or lower is considered good by most conventional lenders. Below 20% is excellent and gives you maximum borrowing flexibility. Between 36% and 43% is acceptable for some loan programs like FHA, but may result in higher interest rates. Above 43% makes qualifying for most mortgages difficult.
+        A back-end DTI of 36% or lower aligns with common conventional guidelines. Below 20% is excellent. Between 36% and 43% can still qualify through FHA manual underwriting or strong automated approvals. Above 43% usually requires FHA compensating factors or non-QM products; General QM eligibility is not a fixed 43% DTI test since the 2021 price-based rule.
       </p>
 
       <h3>Does rent count as debt in the DTI calculation?</h3>
@@ -261,7 +276,7 @@ export function DebtToIncomeArticle() {
 
       <h3>Can I get a mortgage with a 50% DTI?</h3>
       <p>
-        It is difficult but not impossible. FHA loans may allow up to 50% back-end DTI with compensating factors such as large cash reserves (3+ months of payments), a credit score above 680, or a significant down payment. Some non-QM lenders offer products for higher DTI borrowers, typically at higher interest rates. However, a 50% DTI leaves very little financial cushion and increases the risk of payment stress.
+        FHA manual underwriting may allow up to 50% back-end DTI with two compensating factors (for example strong reserves plus minimal payment shock). Automated FHA approvals sometimes exceed 43% when the full file is strong. General QM loans no longer use a 43% DTI cutoff — they use pricing tests — but lenders still evaluate whether you can repay. A 50% DTI leaves little cushion for taxes, utilities, and emergencies.
       </p>
 
       <h3>Do utility bills and subscriptions affect my DTI?</h3>

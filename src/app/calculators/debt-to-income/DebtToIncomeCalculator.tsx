@@ -2,6 +2,18 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { Sources } from "@/components/Sources";
+
+const DTI_GUIDELINE_SOURCES = [
+  {
+    label: "CFPB — General QM final rule (price-based QM; Dec. 29, 2020)",
+    href: "https://www.federalregister.gov/documents/2020/12/29/2020-27567/qualified-mortgage-definition-under-the-truth-in-lending-act-regulation-z-general-qm-loan-definition",
+  },
+  {
+    label: "HUD FHA Handbook 4000.1 — manual underwriting ratios",
+    href: "https://www.hud.gov/sites/default/files/Housing/documents/40001-hsgh-Update-18.pdf",
+  },
+] as const;
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -12,11 +24,11 @@ function formatPercent(n: number): string {
 }
 
 function getDtiRating(dti: number): { label: string; color: string; bg: string; description: string } {
-  if (dti <= 20) return { label: "Excellent", color: "text-green-700", bg: "bg-green-50", description: "Very manageable debt load. You are in a strong position for any loan." };
-  if (dti <= 36) return { label: "Good", color: "text-brand-700", bg: "bg-brand-50", description: "Healthy range. Most lenders consider this acceptable for conventional mortgages." };
-  if (dti <= 43) return { label: "Acceptable", color: "text-amber-700", bg: "bg-amber-50", description: "At the upper limit for most mortgage programs. Reducing debt would strengthen your position." };
-  if (dti <= 50) return { label: "High", color: "text-orange-700", bg: "bg-orange-50", description: "Many conventional lenders will decline applications in this range. FHA may allow up to 50% in some cases." };
-  return { label: "Very High", color: "text-red-700", bg: "bg-red-50", description: "Significantly above qualifying thresholds. Focus on paying down debt before applying for new credit." };
+  if (dti <= 20) return { label: "Excellent", color: "text-green-700", bg: "bg-green-50", description: "Very manageable debt load. You are in a strong position for most loan programs." };
+  if (dti <= 36) return { label: "Good", color: "text-brand-700", bg: "bg-brand-50", description: "Within common conventional back-end guidelines (36%). Strong compensating factors are usually not required." };
+  if (dti <= 43) return { label: "Acceptable", color: "text-amber-700", bg: "bg-amber-50", description: "Above the 36% conventional benchmark but within FHA manual underwriting (43% back-end). Conventional approval may need higher credit, reserves, or lower LTV." };
+  if (dti <= 50) return { label: "High", color: "text-orange-700", bg: "bg-orange-50", description: "FHA manual underwriting may allow up to 50% back-end with two compensating factors. Many conventional lenders tighten above 45% even though General QM no longer uses a fixed 43% DTI cap." };
+  return { label: "Very High", color: "text-red-700", bg: "bg-red-50", description: "Above typical FHA manual maximums. Pay down debt or increase documented income before applying for a mortgage." };
 }
 
 interface Props {
@@ -73,11 +85,11 @@ export function DebtToIncomeCalculator({ defaults }: Props) {
     ].filter((d) => d.amount > 0);
 
     const thresholds = [
-      { label: "Conventional Mortgage (Front-End)", limit: 28, your: frontEndDti, type: "Housing only" },
-      { label: "Conventional Mortgage (Back-End)", limit: 36, your: backEndDti, type: "All debt" },
-      { label: "FHA Loan Maximum", limit: 43, your: backEndDti, type: "All debt" },
-      { label: "Qualified Mortgage (QM) Limit", limit: 43, your: backEndDti, type: "All debt" },
-      { label: "VA Loan Guideline", limit: 41, your: backEndDti, type: "All debt" },
+      { label: "Conventional (Front-End guideline)", limit: 28, your: frontEndDti, type: "Housing only" },
+      { label: "Conventional (Back-End guideline)", limit: 36, your: backEndDti, type: "All debt" },
+      { label: "FHA Manual (standard back-end)", limit: 43, your: backEndDti, type: "All debt" },
+      { label: "FHA Manual (max w/ comp. factors)", limit: 50, your: backEndDti, type: "All debt" },
+      { label: "VA residual-income benchmark", limit: 41, your: backEndDti, type: "All debt" },
     ];
 
     return {
@@ -301,6 +313,12 @@ export function DebtToIncomeCalculator({ defaults }: Props) {
               </table>
             </div>
           </div>
+
+          <Sources
+            items={[...DTI_GUIDELINE_SOURCES]}
+            checked="October 2026"
+            note="General QM status is price-based (APR vs. APOR), not a fixed 43% DTI test since mandatory compliance in 2021. FHA ratios shown are manual underwriting benchmarks; TOTAL Scorecard approvals may differ."
+          />
 
           {/* Room to Borrow */}
           <div className="mt-6 grid gap-4 sm:grid-cols-3">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Sources } from "@/components/Sources";
 
 export function RoiArticle() {
   return (
@@ -154,7 +155,7 @@ export function RoiArticle() {
         <tbody>
           <tr className="border-b border-ink-100">
             <td className="py-2 pr-4">S&P 500 Index</td>
-            <td className="py-2 pr-4">10-11%</td>
+            <td className="py-2 pr-4">~10% long-run total return</td>
             <td className="py-2 pr-4">10+ years</td>
             <td className="py-2">Moderate</td>
           </tr>
@@ -178,7 +179,7 @@ export function RoiArticle() {
           </tr>
           <tr className="border-b border-ink-100">
             <td className="py-2 pr-4">High-Yield Savings</td>
-            <td className="py-2 pr-4">4-5%</td>
+            <td className="py-2 pr-4">4-5% (varies with Fed policy)</td>
             <td className="py-2 pr-4">Any</td>
             <td className="py-2">Very Low</td>
           </tr>
@@ -193,8 +194,10 @@ export function RoiArticle() {
       <p>
         These figures represent broad averages. Individual results vary
         enormously based on timing, location, execution, and market conditions.
-        The S&P 500 returned -18.1% in 2022 and +26.3% in 2023 — the annual
-        average only materializes over multi-decade holding periods. Build a
+        The S&P 500 total return was −18.11% in calendar 2022 and +26.29% in
+        2023 (S&P Dow Jones Indices). The ~10% long-run compound average
+        (1928–2025, Damodaran) only materializes over multi-decade holding
+        periods. Build a
         diversified portfolio and track your actual returns with our{" "}
         <Link
           href="/calculators/investment-return"
@@ -204,6 +207,19 @@ export function RoiArticle() {
         </Link>{" "}
         to compare against these benchmarks.
       </p>
+      <Sources
+        items={[
+          {
+            label: "S&P DJI Market Attributes (Dec. 2023, 2022–2023 returns)",
+            href: "https://www.spglobal.com/spdji/en/documents/commentary/market-attributes-us-equities-202312.pdf",
+          },
+          {
+            label: "Damodaran historical returns 1928–2025 (Jan. 2026)",
+            href: "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>How to Improve Your ROI</h2>
       <p>
@@ -276,14 +292,13 @@ export function RoiArticle() {
       <h3>What is a good ROI percentage?</h3>
       <p>
         A "good" ROI depends entirely on the investment type and risk
-        level. For stock market investments, 7-10% annually (after inflation) is
-        considered strong based on historical S&P 500 returns. For business
-        investments, anything above 15-20% annually is generally worthwhile. For
-        marketing campaigns, a minimum ROI of 500% (5:1 ratio) is the standard
-        benchmark for paid advertising. Any ROI above 0% means you earned more
-        than you spent, but you should always compare against the risk-free rate
-        (currently around 4.5% via Treasury bonds) to determine if the extra
-        risk was worth it.
+        level.         For stock market investments, matching the long-run S&P 500 total return
+        near 10% nominal (about 6.8% after inflation, 1928–2025) is a strong
+        outcome. For business projects, double-digit annualized ROI often has to
+        clear your cost of capital. Any ROI above 0% means you earned more than
+        you spent, but compare against a risk-free reference — the 10-year
+        Treasury yield was about 5.15% on October 19, 2026 (Fed H.15) — before
+        you judge whether extra risk was worth it.
       </p>
       <h3>Does ROI account for inflation?</h3>
       <p>

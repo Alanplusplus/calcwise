@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { InputField } from "@/components/InputField";
+import { DEFAULT_NEW_CAR_APR } from "@/lib/market-data";
 
 function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -78,7 +79,7 @@ export function CarAffordabilityCalculator({ defaults }: Props) {
   const [monthlyDebts, setMonthlyDebts] = useState(defaults?.monthlyDebts || "500");
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "5000");
   const [tradeIn, setTradeIn] = useState(defaults?.tradeIn || "0");
-  const [interestRate, setInterestRate] = useState(defaults?.interestRate || "6.5");
+  const [interestRate, setInterestRate] = useState(defaults?.interestRate || DEFAULT_NEW_CAR_APR);
   const [termMonths, setTermMonths] = useState(defaults?.termMonths || "60");
   const [insurance, setInsurance] = useState(defaults?.insurance || "150");
   const [fuel, setFuel] = useState(defaults?.fuel || "150");

@@ -23,8 +23,8 @@ export function HomeAffordabilityCalculator({ defaults }: Props) {
   const [downPayment, setDownPayment] = useState(defaults?.downPayment || "40000");
   const [interestRate, setInterestRate] = useState(defaults?.interestRate || DEFAULT_MORTGAGE_RATE);
   const [loanTerm, setLoanTerm] = useState(defaults?.loanTerm || "30");
-  const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "1.2");
-  const [homeownersInsurance, setHomeownersInsurance] = useState(defaults?.homeownersInsurance || "1500");
+  const [propertyTaxRate, setPropertyTaxRate] = useState(defaults?.propertyTaxRate || "0.9");
+  const [homeownersInsurance, setHomeownersInsurance] = useState(defaults?.homeownersInsurance || "2400");
 
   const results = useMemo(() => {
     const income = parseFloat(annualIncome) || 0;

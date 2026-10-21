@@ -16,7 +16,7 @@ interface Props {
 
 export function TipCalculator({ defaults }: Props) {
   const [billAmount, setBillAmount] = useState(defaults?.billAmount || "85.00");
-  const [tipPercentage, setTipPercentage] = useState(defaults?.tipPercentage || "18");
+  const [tipPercentage, setTipPercentage] = useState(defaults?.tipPercentage || "20");
   const [numberOfPeople, setNumberOfPeople] = useState(defaults?.numberOfPeople || "2");
 
   const results = useMemo(() => {

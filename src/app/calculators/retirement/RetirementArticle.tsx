@@ -16,42 +16,66 @@ export function RetirementArticle() {
         See how compound growth builds your nest egg over time with our <Link href="/calculators/compound-interest" className="text-brand-600 hover:text-brand-800 font-medium">Compound Interest Calculator</Link>.
       </p>
 
-      <h2>The 4% Rule Explained</h2>
+      <h2>The 4% Rule and Safe Withdrawal Rates</h2>
       <p>
-        The 4% rule is a widely-used retirement planning guideline developed
-        from the "Trinity Study." It states that you can withdraw 4%
-        of your portfolio in your first year of retirement, then adjust for
-        inflation each year after, with a high probability that your money lasts
-        30+ years.
+        The 4% rule comes from William Bengen's research and the Trinity Study:
+        withdraw 4% of the portfolio in year one, adjust for inflation thereafter,
+        and historical US stock/bond mixes often sustained 30-year retirements.
+        This calculator defaults to 4% for the target nest egg and sustainable
+        income lines.
       </p>
       <p>
-        To find how much you need: divide your desired annual income by 0.04.
-        For $60,000/year in retirement income, you need $1,500,000 saved.
+        To find how much you need: divide desired annual income by your withdrawal
+        rate. At 4%, $60,000 per year requires $1,500,000 ($60,000 ÷ 0.04). At
+        Morningstar's 2026 base-case starting rate of 3.9% for new retirees with
+        a 30-year horizon, the same $60,000 needs about $1,538,000.
       </p>
       <p>
-        This rule assumes a balanced portfolio (roughly 50-60% stocks, 40-50%
-        bonds) and has historically worked in 95% of 30-year periods. Some
-        financial planners now recommend a more conservative 3.5% rate given
-        lower expected future returns.
+        Longer retirements (FIRE at 40 or 50) often use 3.5% or flexible spending
+        rules instead of a fixed real withdrawal. Morningstar also models flexible
+        strategies above 5% for retirees who can trim spending in bad years.
       </p>
+      <Sources
+        items={[
+          {
+            label: "Morningstar, safe withdrawal rate research (Feb. 18, 2026)",
+            href: "https://www.morningstar.com/retirement/morningstars-retirement-income-research-finding-your-safe-withdrawal-rate",
+          },
+        ]}
+        checked="October 2026"
+        note="3.9% is Morningstar's fixed real withdrawal base case for new 2026 retirees; the 4% rule remains a common planning default."
+      />
 
       <h2>How Much Do You Actually Need?</h2>
-      <p>Common benchmarks by age (as a multiple of annual salary):</p>
+      <p>
+        Fidelity publishes age-based savings factors (multiples of current salary)
+        assuming 15% annual savings from age 25, retirement at 67, and no pension:
+      </p>
       <ul>
-        <li><strong>Age 30:</strong> 1x your annual salary saved</li>
-        <li><strong>Age 35:</strong> 2x your annual salary</li>
-        <li><strong>Age 40:</strong> 3x your annual salary</li>
-        <li><strong>Age 45:</strong> 4x your annual salary</li>
-        <li><strong>Age 50:</strong> 6x your annual salary</li>
-        <li><strong>Age 55:</strong> 7x your annual salary</li>
-        <li><strong>Age 60:</strong> 8x your annual salary</li>
-        <li><strong>Age 67:</strong> 10x your annual salary</li>
+        <li><strong>Age 30:</strong> 1× salary</li>
+        <li><strong>Age 35:</strong> 2× salary</li>
+        <li><strong>Age 40:</strong> 3× salary</li>
+        <li><strong>Age 45:</strong> 4× salary</li>
+        <li><strong>Age 50:</strong> 6× salary</li>
+        <li><strong>Age 55:</strong> 7× salary</li>
+        <li><strong>Age 60:</strong> 8× salary</li>
+        <li><strong>Age 67:</strong> 10× salary</li>
       </ul>
       <p>
-        These are general guidelines. Your actual need depends on your desired
-        lifestyle, healthcare costs, Social Security benefits, pension income,
-        and where you plan to live.
+        On a $90,000 salary, 3× at 40 means about $270,000 in retirement accounts;
+        10× at 67 means $900,000 — a checkpoint separate from this calculator's
+        spending-based target. Pension income, lower spending, or later retirement
+        change the number you actually need.
       </p>
+      <Sources
+        items={[
+          {
+            label: "Fidelity Viewpoints, How much do I need to retire? (Sept. 25, 2026)",
+            href: "https://www.fidelity.com/viewpoints/retirement/how-much-do-i-need-to-retire",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>Case Study: Linda, 42, Targeting Retirement at 62</h2>
       <p>
@@ -63,14 +87,15 @@ export function RetirementArticle() {
         first 6% of salary.
       </p>
       <p>
-        Assuming 7% average annual returns before inflation, her existing
-        balance and contributions grow to roughly $1.62 million by age 62 —
-        about $130,000 short of her goal. To close the gap, she can raise
-        contributions by $175 per month (to $1,125 total), retire at 63 instead
-        of 62, or plan on $65,000 spending ($1,625,000 target), which her
-        projected nest egg nearly covers. She uses this calculator to test each
-        lever before committing. For aggressive early-retirement targets, pair
-        those runs with our{" "}
+        At 7% returns, her balance and $950 monthly contributions grow to about
+        $1.07 million by 62 — roughly $681,000 below the $1.75 million target.
+        The calculator shows about $2,258 per month of total savings (including
+        her $950) to hit the goal on time — an extra $1,308 per month, not a
+        small tweak. Retiring at 63 with unchanged $950 contributions reaches
+        about $1.16 million, or she can cut spending to $65,000 ($1.625 million
+        target) and still need more than $950 per month. She uses this calculator
+        to test each lever. For aggressive
+        early-retirement targets, pair those runs with our{" "}
         <Link href="/calculators/fire-calculator" className="text-brand-600 hover:text-brand-800 font-medium">FIRE Calculator</Link>{" "}
         and the{" "}
         <Link href="/calculators/savings-goal" className="text-brand-600 hover:text-brand-800 font-medium">Savings Goal Calculator</Link>{" "}
@@ -118,11 +143,14 @@ export function RetirementArticle() {
         </table>
       </div>
       <p>
-        At 67, many US workers can claim full Social Security, so $65,000 from
-        investments might supplement $24,000-$30,000 in benefits rather than
-        replace an entire paycheck. Retiring at 55 with the same lifestyle often
-        means saving an extra $375,000-$400,000 versus a 65-year-old target, or
-        working part-time for the first decade to limit portfolio withdrawals.
+        With the calculator's default inputs (age 30, retire at 65, $50,000 saved,
+        $1,000 per month, 7% return, $60,000 desired income, 4% withdrawal), the
+        projection is about $2.38 million versus a $1.5 million target — on track
+        with roughly $95,000 per year of sustainable income at 4%. At 67, full
+        Social Security replaces part of that need: SSA estimates the average
+        retired-worker benefit at $2,170 per month in January 2027 after the 3.6%
+        COLA, so $65,000 from investments might stack on top of about $26,000 in
+        benefits rather than replace an entire paycheck.
       </p>
 
       <h2>Retirement Account Types</h2>
@@ -175,16 +203,33 @@ export function RetirementArticle() {
 
       <h2>Social Security Considerations</h2>
       <p>
-        Social Security replaces roughly 40% of pre-retirement income for
-        average earners. The full retirement age is 67 for those born after
-        1960. Claiming at 62 reduces benefits by ~30%, while delaying to 70
-        increases them by ~24% versus full retirement age.
+        Full retirement age is 67 for workers born in 1960 or later. Claiming at
+        62 permanently reduces the monthly benefit by about 30% versus waiting
+        until 67; delaying to 70 adds up to 24% above the full retirement age
+        amount. SSA's estimate for the average retired-worker benefit in January
+        2027 is $2,170 per month after the 3.6% COLA ($2,095 before it); the
+        September 2026 statistical snapshot shows $2,089 for retired workers in
+        current payment status.
       </p>
       <p>
-        For planning purposes, it's prudent to estimate Social Security
-        will cover 25-40% of your retirement income needs and save enough to
-        fund the rest independently.
+        For planning, download your my Social Security statement for a personal
+        estimate, then decide how much portfolio income must cover healthcare,
+        travel, and housing. Many planners treat Social Security as a partial
+        offset, not the entire income floor.
       </p>
+      <Sources
+        items={[
+          {
+            label: "SSA, 2027 COLA fact sheet (Oct. 2026)",
+            href: "https://www.ssa.gov/news/en/cola/factsheets/2027.html",
+          },
+          {
+            label: "SSA Monthly Statistical Snapshot, September 2026",
+            href: "https://www.ssa.gov/policy/docs/quickfacts/stat_snapshot/",
+          },
+        ]}
+        checked="October 2026"
+      />
 
       <h2>Frequently Asked Questions</h2>
 

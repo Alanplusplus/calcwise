@@ -15,7 +15,7 @@ export function SavingsGoalCalculator({ defaults }: Props) {
   const [goalAmount, setGoalAmount] = useState(defaults?.goalAmount || "50000");
   const [currentSavings, setCurrentSavings] = useState(defaults?.currentSavings || "5000");
   const [timeframe, setTimeframe] = useState(defaults?.timeframe || "5");
-  const [annualReturn, setAnnualReturn] = useState(defaults?.annualReturn || "5");
+  const [annualReturn, setAnnualReturn] = useState(defaults?.annualReturn || "4.25");
 
   const results = useMemo(() => {
     const goal = parseFloat(goalAmount) || 0;

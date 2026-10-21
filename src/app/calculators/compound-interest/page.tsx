@@ -12,7 +12,7 @@ const calc = getCalculator("compound-interest")!;
 const faqs = [
   {
     question: "What's a good rate of return to assume?",
-    answer: "For stock market investments over 20+ years, 7% (inflation-adjusted) is a commonly used conservative estimate. For savings accounts or CDs, use the current advertised rate.",
+    answer: "For long-term stock market planning, 7% nominal is a common conservative default in this calculator. S&P 500 10-year total returns were near 15.5% as of September 2026 (S&P Dow Jones Indices), but future results vary. For cash goals, use current HYSA APYs near 4.2-4.35% (October 2026 top offers) or CD rates quoted on your bank's disclosure.",
   },
   {
     question: "How often should I contribute?",
