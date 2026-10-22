@@ -102,6 +102,16 @@ export function Footer() {
                   FAQ
                 </Link>
               </li>
+              <li>
+                <a
+                  href={site.github}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-sm text-ink-500 hover:text-brand-600"
+                >
+                  Source on GitHub
+                </a>
+              </li>
             </ul>
           </div>
 

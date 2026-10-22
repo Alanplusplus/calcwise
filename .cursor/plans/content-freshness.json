@@ -347,7 +347,8 @@
       "priority": "P1T",
       "trigger": "IRS Rev. Proc. with 2027 inflation adjustments",
       "reason": "Not published as of 2026-10-21 (prior releases: 2025-10-09, 2024-10-22, 2023-11-09; statutory deadline Dec 15). Check weekly; when it appears update src/lib/tax-data.ts (2027 brackets, standard deduction, LTCG thresholds, 401(k)/IRA limits) and grep for 2026 tax figures in articles, FAQs, guides, variants. SSA 2027 wage base ($192,300) and COLA (3.6%) are already applied elsewhere; HSA 2027 limits are $4,500 / $9,000 (Rev. Proc. 2026-24).",
-      "status": "pending"
+      "status": "pending",
+      "note": "Checked 2026-10-23: IRS has still not published the 2027 Rev. Proc.; only third-party projections exist (do not use). Next weekly check 2026-10-30."
     },
     {
       "id": "p1r-report-mortgage-affordability-by-state",

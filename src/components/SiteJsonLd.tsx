@@ -8,6 +8,7 @@ export function SiteJsonLd() {
     url: site.url,
     logo: `${site.url}/icon.png`,
     description: site.description,
+    sameAs: [site.github],
   };
 
   const websiteSchema = {
