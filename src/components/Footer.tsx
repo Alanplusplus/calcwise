@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { LogoMark, Wordmark } from "./Logo";
 
 const popularCalculators = [
   { slug: "mortgage", label: "Mortgage Calculator" },
@@ -25,7 +26,10 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <h3 className="text-lg font-bold text-brand-700">{site.name}</h3>
+            <Link href="/" aria-label={`${site.name} home`} className="inline-flex items-center gap-2">
+              <LogoMark className="h-7 w-7 shrink-0" />
+              <Wordmark className="text-lg" />
+            </Link>
             <p className="mt-2 text-sm text-ink-500">
               Free, accurate financial calculators to help you make confident
               money decisions. No signup required.

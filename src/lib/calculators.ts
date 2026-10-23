@@ -151,17 +151,6 @@ export const calculators: Calculator[] = [
     relatedGuides: [],
   },
   {
-    slug: "basic",
-    title: "Basic Calculator",
-    shortTitle: "Basic",
-    description: "A simple everyday calculator for quick math — addition, subtraction, multiplication, division, percentages, and more.",
-    category: "planning",
-    datePublished: "2026-08-10",
-    lastUpdated: "2026-09-26",
-    relatedCalculators: ["compound-interest", "savings-goal", "investment-return"],
-    relatedGuides: [],
-  },
-  {
     slug: "home-affordability",
     title: "Home Affordability Calculator",
     shortTitle: "Home Affordability",

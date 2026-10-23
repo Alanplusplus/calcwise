@@ -600,15 +600,6 @@
       "note": "2026-10-21: G.19 7.54% default (market-data.ts); Sources added"
     },
     {
-      "id": "p3-calc-basic",
-      "type": "calculator-refresh",
-      "slug": "basic",
-      "priority": "P4",
-      "reason": "Evergreen math/method page with no market figures: refresh yearly, only with substantive content changes (no date-only bumps). Originally: Published 2026-08-10 — refresh article with practical examples",
-      "status": "pending",
-      "notBefore": "2027-01-05"
-    },
-    {
       "id": "p3-calc-credit-card-payoff",
       "type": "calculator-refresh",
       "slug": "credit-card-payoff",

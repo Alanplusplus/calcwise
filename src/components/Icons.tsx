@@ -136,7 +136,6 @@ const iconMap: Record<string, (props: IconProps) => React.JSX.Element> = {
   "loan-comparison": ScaleIcon,
   "emergency-fund": ShieldIcon,
   "auto-loan": CarIcon,
-  basic: CalculatorIcon,
   "home-affordability": HomeIcon,
   "cd-calculator": ChartIcon,
   "budget-50-30-20": CalculatorIcon,

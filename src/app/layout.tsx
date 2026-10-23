@@ -23,13 +23,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/icon.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
-  },
+  // Icons come from the file conventions in this folder (favicon.ico, icon.svg,
+  // icon.png, apple-icon.png). Declaring them here too would emit duplicate links.
   openGraph: {
     type: "website",
     locale: "en_US",

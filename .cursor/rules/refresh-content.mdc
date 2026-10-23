@@ -23,7 +23,7 @@ Most pages are evergreen or move on a published calendar, so a daily one-item ru
 | Quarterly sweep | all time-sensitive items | First week of Jan, Apr, Jul, Oct: check every source in this table once, refresh only what moved |
 | Yearly (P4) | evergreen items | Once a year, or sooner if an input the page quotes changes |
 
-Evergreen items (math or method pages with no market figures: `basic`, `simple-interest`, `break-even`, `margin-calculator`, `budget-50-30-20`, and tip-calculator etiquette text) belong in P4 and are refreshed yearly. Do not bump their `lastUpdated` without a substantive content change.
+Evergreen items (math or method pages with no market figures: `simple-interest`, `break-even`, `margin-calculator`, `budget-50-30-20`, and tip-calculator etiquette text) belong in P4 and are refreshed yearly. Do not bump their `lastUpdated` without a substantive content change.
 
 ## Step 0: Read Plan & Pick Due Items
 

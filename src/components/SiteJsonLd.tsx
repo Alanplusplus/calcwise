@@ -6,7 +6,7 @@ export function SiteJsonLd() {
     "@type": "Organization",
     name: site.name,
     url: site.url,
-    logo: `${site.url}/icon.png`,
+    logo: `${site.url}/icon-512.png`,
     description: site.description,
     sameAs: [site.github],
   };
@@ -15,6 +15,7 @@ export function SiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: site.name,
+    alternateName: new URL(site.url).hostname.replace(/^www\./, ""),
     url: site.url,
     description: site.description,
   };
