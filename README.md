@@ -3,6 +3,7 @@
 CalcWise is a collection of free online financial calculators and plain-English guides for US and UK readers: mortgage, loan, savings, investing, retirement, debt payoff, tax, paycheck, and more.
 
 **Live site: [https://www.calcwise.tools](https://www.calcwise.tools)**
+**Translated Version: [English](https://www-calcwise-tools.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp&_x_tr_hist=true)**
 
 ## What it offers
 
