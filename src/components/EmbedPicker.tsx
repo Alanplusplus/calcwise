@@ -13,7 +13,7 @@ export interface EmbedPickerItem {
 function buildSnippet(item: EmbedPickerItem, autoResize: boolean): string {
   const lines = [
     `<iframe src="${site.url}/embed/${item.slug}" title="${item.title} by ${site.name}" width="100%" height="${item.height}" style="border:0;width:100%;max-width:720px" loading="lazy"></iframe>`,
-    `<p style="font-size:13px;margin:6px 0 0"><a href="${site.url}/calculators/${item.slug}">${item.title}</a> by <a href="${site.url}">${site.name}</a></p>`,
+    `<p style="font-size:13px;margin:6px 0 0">${item.title} by <a href="${site.url}/calculators/${item.slug}">${site.name}</a></p>`,
   ];
   if (autoResize) {
     lines.push(`<script async src="${site.url}/embed.js"></script>`);

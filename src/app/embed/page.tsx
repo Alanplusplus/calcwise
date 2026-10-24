@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "Is the embeddable calculator free?",
-    answer: `Yes. There is no account, fee, or traffic cap, and commercial sites are welcome. The only condition is that the credit line under the frame (a link to the calculator page and to ${site.name}) stays in place.`,
+    answer: `Yes. There is no account, fee, or traffic cap, and commercial sites are welcome. The only condition is that the credit line under the frame (the calculator name and a ${site.name} link to its page) stays in place. The link is a plain link, and you decide whether to add rel attributes such as nofollow to it.`,
   },
   {
     question: "Do the calculators collect my visitors' numbers?",
@@ -112,8 +112,9 @@ export default function EmbedPage() {
             Embedding is free for personal, editorial, educational, and commercial sites.
           </li>
           <li>
-            Keep the credit line below the frame. It links to the calculator page and to{" "}
-            {site.name}.
+            Keep the credit line below the frame. It names the calculator and links to its page
+            on {site.name}. The link is a plain link; whether to add{" "}
+            <code>rel=&quot;nofollow&quot;</code> or any other rel attribute to it is your decision.
           </li>
           <li>
             Do not copy the calculator code, cover or restyle the frame so that it appears to be

@@ -43,10 +43,10 @@ export default function AboutPage() {
         <h2>Our Approach</h2>
         <ul>
           <li>
-            <strong>Accuracy first:</strong> Our calculators use
-            industry-standard financial formulas. We test edge cases and verify
-            results against established financial tools. The formulas,
-            assumptions, and data sources behind each tool are documented on
+            <strong>Accuracy first:</strong> Our calculators use standard
+            financial formulas, and every input has minimum and maximum bounds
+            so a formula cannot break. The formulas, assumptions, data sources,
+            and known limits behind each tool are documented on
             our <Link href="/methodology">methodology page</Link>.
           </li>
           <li>
@@ -55,9 +55,11 @@ export default function AboutPage() {
             practical tips — not just a number output.
           </li>
           <li>
-            <strong>No data collection:</strong> All calculations happen
-            client-side in your browser. We use no cookies for tracking and
-            don't require any personal information.
+            <strong>Private by design:</strong> All calculations happen
+            client-side in your browser, so the numbers you enter never reach
+            us. We use no tracking cookies and don't require any personal
+            information. The only measurement is anonymous, cookieless
+            page-view statistics.
           </li>
           <li>
             <strong>Always free:</strong> We will never charge for calculator
@@ -65,13 +67,25 @@ export default function AboutPage() {
           </li>
         </ul>
 
+        <h2>Who Maintains CalcWise</h2>
+        <p>
+          CalcWise is built and maintained by Alan, an independent developer.
+          Parts of the site's content, including guides and calculator
+          articles, are drafted with the help of AI tools.
+        </p>
+
         <h2>Editorial Standards</h2>
         <p>
-          Content on CalcWise is researched and written by our editorial team
-          with input from finance professionals. We update articles regularly to
-          reflect current rates, tax rules, and financial best practices. Guides
-          show a "last updated" date so you know how current the
-          information is.
+          Our review process checks every rate, limit, tax bracket, and
+          benchmark against a primary source, such as the IRS, the Census
+          Bureau, or Freddie Mac. Pages that have been through it show a
+          Sources line with links and the month the figures were checked; the{" "}
+          <Link href="/methodology">methodology page</Link> lists which pages
+          are covered and which are still waiting. Guides show a "last
+          updated" date so you know how current the information is. If you
+          find an error, email{" "}
+          <a href="mailto:hello@calcwise.tools">hello@calcwise.tools</a> and
+          we will check it against the source.
         </p>
         <p>
           While we strive for accuracy, our tools and content are for

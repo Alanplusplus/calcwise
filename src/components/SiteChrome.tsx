@@ -1,5 +1,6 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/next";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
@@ -14,6 +15,9 @@ interface SiteChromeProps {
  * Wraps the site header/footer so the iframe-only pages under /embed/[slug]
  * render the calculator on its own. /embed (the copy-the-code page) keeps the
  * normal chrome because only paths with a slug segment are framed.
+ *
+ * Vercel Web Analytics (cookieless, anonymized) is mounted only outside the
+ * framed pages, so embedded calculators on other sites are never measured.
  */
 export function SiteChrome({ header, footer, jsonLd, children }: SiteChromeProps) {
   const pathname = usePathname();
@@ -29,6 +33,7 @@ export function SiteChrome({ header, footer, jsonLd, children }: SiteChromeProps
       {header}
       <main className="flex-1">{children}</main>
       {footer}
+      <Analytics />
     </>
   );
 }

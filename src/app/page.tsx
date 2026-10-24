@@ -118,8 +118,8 @@ export default function HomePage() {
               </div>
               <h3 className="mt-3 font-semibold text-ink-800">Accurate Results</h3>
               <p className="mt-1 text-sm text-ink-500">
-                Our calculators use industry-standard formulas reviewed by
-                financial professionals.
+                Standard financial formulas, with the assumptions and data
+                sources behind every tool documented on our methodology page.
               </p>
             </div>
             <div>
