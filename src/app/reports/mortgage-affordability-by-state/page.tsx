@@ -110,8 +110,8 @@ const faqs = [
     answer: `${guideline}% of gross monthly income is the common front-end guideline from the 28/36 rule: housing costs at or under 28% of income and total debt payments at or under 36%. Lenders apply their own limits and many approve higher ratios, so treat ${guideline}% as a planning benchmark, not a cutoff.`,
   },
   {
-    question: "Why does the report use 2024 home values with a 2026 mortgage rate?",
-    answer: `The American Community Survey is the Census Bureau's largest household survey. It publishes median home value, property taxes, and household income for every state from one consistent source, with margins of error. The latest release covers ${REPORT.acsYear}. The 2025 estimates are scheduled for release on October 29, 2026, and this report will be refreshed afterward. Using a current rate on older values shows what ${REPORT.acsYear} homes cost to finance today.`,
+    question: `Why does the report pair ${REPORT.acsYear} home values with a current mortgage rate?`,
+    answer: `The American Community Survey is the Census Bureau's largest household survey. It publishes median home value, property taxes, and household income for every state from one consistent source, with margins of error. The ${REPORT.acsYear} estimates were released on October 29, 2026 and are the latest available. The next release, covering 2026, is expected in fall 2027. Home values have moved since the survey year, so the result shows what a ${REPORT.acsYear} median home costs to finance at today's rate.`,
   },
   {
     question: "Does the payment include insurance and HOA dues?",
@@ -207,9 +207,9 @@ export default function MortgageAffordabilityByStatePage() {
 
       <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">{h1}</h1>
       <p className="mt-3 text-sm text-ink-500">
-        Published {longDate.format(new Date(REPORT.datePublished))} · Housing and income
-        data: Census ACS {REPORT.acsYear} 1-year · Mortgage rate: Freddie Mac,{" "}
-        {REPORT.mortgageRateDate}
+        Published {longDate.format(new Date(REPORT.datePublished))} · Updated{" "}
+        {longDate.format(new Date(REPORT.dateModified))} · Housing and income data: Census ACS{" "}
+        {REPORT.acsYear} 1-year · Mortgage rate: Freddie Mac, {REPORT.mortgageRateDate}
       </p>
 
       <div className="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5">
@@ -409,9 +409,9 @@ export default function MortgageAffordabilityByStatePage() {
           <li>
             <strong>Values are from {REPORT.acsYear}; the rate is from {REPORT.mortgageRateDate}.</strong>{" "}
             Home values have moved since the survey year. The result is the cost of financing a{" "}
-            {REPORT.acsYear} median home at today’s rate. The Census Bureau has scheduled
-            the 2025 ACS 1-year release for October 29, 2026, and we will update this report
-            after it.
+            {REPORT.acsYear} median home at today’s rate. The 2025 estimates came out on
+            October 29, 2026; the 2026 estimates are expected in fall 2027, and we will update
+            this report after that release.
           </li>
           <li>
             <strong>Values are owner estimates.</strong> ACS asks owners what their home is
@@ -461,12 +461,12 @@ export default function MortgageAffordabilityByStatePage() {
           REPORT_SOURCES.acsHome,
           REPORT_SOURCES.acsTax,
           REPORT_SOURCES.acsIncome,
-          REPORT_SOURCES.acsBrief,
+          REPORT_SOURCES.acsFile,
           REPORT_SOURCES.pmms,
           REPORT_SOURCES.acsRelease,
         ]}
         checked="October 2026"
-        note={`Median home value and median household income for all 51 places were checked against the Census Bureau's own published tables, and property tax figures against data.census.gov and a second compilation of the same table. See our methodology page for how we verify figures.`}
+        note={`The estimates and margins of error for all 50 states, DC, and the U.S. (three tables each) were read from the Census Bureau's ACS 1-year Summary File on October 29, 2026, the day it was released. The Census API requires a key, so the Summary File was used instead. The national median household income of $${us.income.toLocaleString("en-US")} matches the figure reported with the release. See our methodology page for how we verify figures.`}
       />
 
       <section className="mt-12 rounded-xl border border-ink-200 bg-white p-6 shadow-card">
