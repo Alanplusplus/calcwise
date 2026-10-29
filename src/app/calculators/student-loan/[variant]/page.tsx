@@ -58,30 +58,29 @@ export default async function VariantPage({ params }: Props) {
         <span className="text-ink-700">{variant.title}</span>
       </nav>
 
-      <div className="mb-8 flex items-start gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-          <CategoryIcon name={calc.slug} />
-        </div>
-        <div>
-          <h1 className="text-3xl font-bold text-ink-900">{variant.title}</h1>
-          <p className="mt-2 text-lg text-ink-600">{variant.description}</p>
-        </div>
-      </div>
+      <header className="mb-8 max-w-4xl">
+        <p className="eyebrow flex items-center gap-2">
+          <CategoryIcon name={calc.slug} className="h-4 w-4" />
+          {calc.shortTitle} scenario
+        </p>
+        <h1 className="mt-3 text-3xl font-bold text-ink-900">{variant.title}</h1>
+        <p className="mt-3 text-lg leading-relaxed text-ink-600">{variant.description}</p>
+      </header>
 
       <div className="mb-6 rounded-lg border border-brand-200 bg-brand-50 p-4">
         <p className="text-ink-700">{variant.intro}</p>
       </div>
 
-      <div className="rounded-xl border border-ink-200 bg-white p-6 shadow-card sm:p-8">
+      <div className="calc-widget rounded-xl border border-ink-200 border-t-[3px] border-t-brand-800 bg-white p-6 shadow-card sm:p-8">
         <StudentLoanCalculator defaults={variant.defaults} />
       </div>
 
       <div className="mt-8">
-        <h2 className="text-xl font-bold text-ink-900">Key Considerations</h2>
+        <h2 className="text-2xl font-semibold text-ink-900">Key Considerations</h2>
         <ul className="mt-4 space-y-3">
           {variant.tips.map((tip, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
+              <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
               <span className="text-ink-700">{tip}</span>
             </li>
           ))}
@@ -92,11 +91,11 @@ export default async function VariantPage({ params }: Props) {
 
       {/* Related variants */}
       <div className="mt-8 border-t border-ink-200 pt-6">
-        <p className="text-sm font-medium text-ink-600">See also:</p>
+        <p className="eyebrow">See also</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {studentLoanVariants.filter((v) => v.slug !== slug).slice(0, 4).map((v) => (
             <Link key={v.slug} href={`/calculators/student-loan/${v.slug}`}
-              className="rounded-md border border-ink-200 px-3 py-1.5 text-sm text-ink-600 hover:border-brand-300 hover:text-brand-600">
+              className="rounded-full border border-ink-300 bg-white px-3.5 py-1.5 text-sm text-ink-700 transition-colors hover:border-brand-700 hover:text-brand-700">
               {v.title}
             </Link>
           ))}
@@ -106,7 +105,7 @@ export default async function VariantPage({ params }: Props) {
       {/* Related Calculators */}
       {calc.relatedCalculators && calc.relatedCalculators.length > 0 && (
         <div className="mt-8 border-t border-ink-200 pt-6">
-          <p className="text-sm font-medium text-ink-600">Related Tools:</p>
+          <p className="eyebrow">Related tools</p>
           <div className="mt-2 grid gap-2 sm:grid-cols-3">
             {calculators.filter((c) => calc.relatedCalculators!.includes(c.slug)).map((c) => (
               <Link key={c.slug} href={`/calculators/${c.slug}`}
@@ -124,7 +123,7 @@ export default async function VariantPage({ params }: Props) {
         const guides = getGuidesBySlug(calc.relatedGuides!);
         return guides.length > 0 ? (
           <div className="mt-6 border-t border-ink-200 pt-6">
-            <p className="text-sm font-medium text-ink-600">Learn More:</p>
+            <p className="eyebrow">Learn more</p>
             <ul className="mt-2 space-y-2">
               {guides.slice(0, 2).map((g) => (
                 <li key={g.slug}>

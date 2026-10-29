@@ -229,7 +229,7 @@ export function HousePaymentCalculator({ defaults }: Props) {
 
           {/* Summary Cards */}
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg bg-accent-50 p-4 text-center">
+            <div className="result-plain rounded-lg bg-accent-50 p-4 text-center">
               <p className="text-sm font-medium text-accent-700">Loan Amount</p>
               <p className="mt-1 text-xl font-bold text-accent-900">{formatCurrency(results.loanAmount)}</p>
             </div>

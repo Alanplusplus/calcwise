@@ -14,20 +14,15 @@ export function VariantSections({ variant }: Props) {
   return (
     <>
       {keyResults && keyResults.length > 0 && (
-        <div className="mt-8">
-          <h2 className="text-xl font-bold text-ink-900">Quick Numbers</h2>
-          <div className="mt-4 overflow-hidden rounded-lg border border-ink-200">
+        <div className="mt-10">
+          <h2 className="text-2xl font-semibold text-ink-900">Quick Numbers</h2>
+          <div className="mt-4 overflow-hidden rounded-xl border border-ink-200 bg-white shadow-card">
             <table className="w-full text-left text-sm">
-              <tbody>
+              <tbody className="divide-y divide-ink-100">
                 {keyResults.map((r, i) => (
-                  <tr
-                    key={i}
-                    className={i % 2 === 0 ? "bg-white" : "bg-ink-50"}
-                  >
-                    <td className="px-4 py-3 font-medium text-ink-700">
-                      {r.label}
-                    </td>
-                    <td className="px-4 py-3 text-right font-semibold text-ink-900">
+                  <tr key={i}>
+                    <td className="px-5 py-3.5 text-ink-600">{r.label}</td>
+                    <td className="numeral px-5 py-3.5 text-right text-lg font-semibold text-ink-900">
                       {r.value}
                     </td>
                   </tr>
@@ -39,27 +34,27 @@ export function VariantSections({ variant }: Props) {
       )}
 
       {comparisonNote && (
-        <div className="mt-8">
-          <h2 className="text-xl font-bold text-ink-900">How This Compares</h2>
-          <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 p-4">
-            <p className="text-ink-700">{comparisonNote}</p>
+        <div className="mt-10">
+          <h2 className="text-2xl font-semibold text-ink-900">How This Compares</h2>
+          <div className="mt-4 rounded-xl border border-ink-200 border-l-[3px] border-l-gold-500 bg-white p-5 shadow-card">
+            <p className="leading-relaxed text-ink-700">{comparisonNote}</p>
           </div>
         </div>
       )}
 
       {faq && faq.length > 0 && (
-        <div className="mt-8">
+        <div className="mt-10">
           <FaqJsonLd
             faqs={faq.map((f) => ({ question: f.q, answer: f.a }))}
           />
-          <h2 className="text-xl font-bold text-ink-900">
+          <h2 className="text-2xl font-semibold text-ink-900">
             Frequently Asked Questions
           </h2>
-          <dl className="mt-4 space-y-4">
+          <dl className="mt-5 divide-y divide-ink-200 border-y border-ink-200">
             {faq.map((f, i) => (
-              <div key={i}>
-                <dt className="font-semibold text-ink-900">{f.q}</dt>
-                <dd className="mt-1 text-ink-700">{f.a}</dd>
+              <div key={i} className="py-5">
+                <dt className="font-serif text-lg font-semibold leading-snug text-ink-900">{f.q}</dt>
+                <dd className="mt-2 leading-relaxed text-ink-700">{f.a}</dd>
               </div>
             ))}
           </dl>
@@ -71,7 +66,7 @@ export function VariantSections({ variant }: Props) {
           items={sources}
           checked={sourcesChecked}
           note={sourcesNote}
-          className="mt-8 border-t border-ink-200 pt-4"
+          className="mt-8"
         />
       )}
     </>

@@ -85,8 +85,8 @@ export default async function EmbedPage({
     <div id={ROOT_ID} className="p-2 sm:p-3">
       {/* Let the host page's background show around the card */}
       <style>{"html,body{background:transparent}"}</style>
-      <div className="rounded-xl border border-ink-200 bg-white p-4 shadow-card sm:p-6">
-        <h1 className="mb-4 text-lg font-bold text-ink-900">{calculator.title}</h1>
+      <div className="calc-widget rounded-xl border border-ink-200 border-t-[3px] border-t-brand-800 bg-white p-4 shadow-card sm:p-6">
+        <h1 className="mb-4 text-xl font-semibold text-ink-900">{calculator.title}</h1>
         <Calculator />
       </div>
       <p className="mt-2 text-center text-xs text-ink-500">

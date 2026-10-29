@@ -21,8 +21,12 @@ interface SourcesProps {
  */
 export function Sources({ items, checked, note, className = "mt-3" }: SourcesProps) {
   return (
-    <p className={`${className} text-xs text-ink-500`}>
-      {items.length === 1 ? "Source" : "Sources"}:{" "}
+    <p
+      className={`${className} border-l-2 border-gold-300 pl-3 text-xs leading-relaxed text-ink-500`}
+    >
+      <span className="mr-1 font-semibold uppercase tracking-[0.1em] text-ink-600">
+        {items.length === 1 ? "Source" : "Sources"}
+      </span>{" "}
       {items.map((item, i) => (
         <span key={item.href}>
           {i > 0 && ", "}
@@ -30,7 +34,7 @@ export function Sources({ items, checked, note, className = "mt-3" }: SourcesPro
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="source-link underline decoration-ink-300 underline-offset-2 transition-colors hover:text-brand-700 hover:decoration-brand-600"
           >
             {item.label}
           </a>

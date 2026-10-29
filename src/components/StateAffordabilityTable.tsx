@@ -80,29 +80,29 @@ export function StateAffordabilityTable({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="e.g. Texas or TX"
-            className="w-48 rounded-md border border-ink-200 bg-white px-3 py-1.5 text-sm text-ink-900"
+            className="w-52 rounded-lg border border-ink-300 bg-white px-3 py-2 text-sm text-ink-900 shadow-input transition-colors focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/15"
           />
         </label>
         <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-500">
           <li className="flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-sm bg-emerald-500" />
+            <span className="inline-block h-2.5 w-2.5 rounded-sm bg-accent-500" />
             At or under {guidelinePct}%
           </li>
           <li className="flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-sm bg-amber-500" />
+            <span className="inline-block h-2.5 w-2.5 rounded-sm bg-warning" />
             {guidelinePct}% to {farAbove}%
           </li>
           <li className="flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-sm bg-red-500" />
+            <span className="inline-block h-2.5 w-2.5 rounded-sm bg-negative" />
             Over {farAbove}%
           </li>
         </ul>
       </div>
 
-      <div className="mt-3 overflow-x-auto rounded-xl border border-ink-200 bg-white">
+      <div className="mt-3 overflow-x-auto rounded-xl border border-ink-200 bg-white shadow-card">
         <table className="w-full min-w-[820px] text-sm">
-          <thead className="bg-ink-50 text-xs text-ink-600">
-            <tr>
+          <thead className="bg-paper-2 text-[0.6875rem] uppercase tracking-[0.07em] text-ink-600">
+            <tr className="border-b-2 border-brand-800">
               {columns.map((col) => (
                 <th
                   key={col.key}
@@ -110,7 +110,7 @@ export function StateAffordabilityTable({
                   aria-sort={
                     col.key === sortKey ? (asc ? "ascending" : "descending") : "none"
                   }
-                  className={`px-3 py-2.5 font-semibold ${col.align === "right" ? "text-right" : "text-left"}`}
+                  className={`px-3 py-3 font-semibold ${col.align === "right" ? "text-right" : "text-left"}`}
                 >
                   <button
                     type="button"
@@ -130,12 +130,12 @@ export function StateAffordabilityTable({
             {visible.map((r) => {
               const color =
                 r.share <= guidelinePct
-                  ? "bg-emerald-500"
+                  ? "bg-accent-500"
                   : r.share <= farAbove
-                    ? "bg-amber-500"
-                    : "bg-red-500";
+                    ? "bg-warning"
+                    : "bg-negative";
               return (
-                <tr key={r.abbr} className="hover:bg-ink-50">
+                <tr key={r.abbr} className="transition-colors hover:bg-gold-50">
                   <td className="px-3 py-2 text-ink-500">{r.rank}</td>
                   <td className="px-3 py-2 font-medium text-ink-900">{r.name}</td>
                   <td className="px-3 py-2 text-right tabular-nums text-ink-700">{usd.format(r.value)}</td>

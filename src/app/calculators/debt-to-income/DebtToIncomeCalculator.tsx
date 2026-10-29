@@ -207,7 +207,7 @@ export function DebtToIncomeCalculator({ defaults }: Props) {
         <div className="mt-8">
           {/* Primary DTI Results */}
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className={`rounded-lg ${results.frontEndRating.bg} p-5 text-center`}>
+            <div className={`result-plain rounded-lg ${results.frontEndRating.bg} p-5 text-center`}>
               <p className={`text-sm font-medium ${results.frontEndRating.color}`}>Front-End DTI (Housing Only)</p>
               <p className={`mt-1 text-3xl font-bold ${results.frontEndRating.color}`}>
                 {formatPercent(results.frontEndDti)}
@@ -216,7 +216,7 @@ export function DebtToIncomeCalculator({ defaults }: Props) {
                 {results.frontEndRating.label}
               </p>
             </div>
-            <div className={`rounded-lg ${results.backEndRating.bg} p-5 text-center`}>
+            <div className={`result-plain rounded-lg ${results.backEndRating.bg} p-5 text-center`}>
               <p className={`text-sm font-medium ${results.backEndRating.color}`}>Back-End DTI (All Debt)</p>
               <p className={`mt-1 text-3xl font-bold ${results.backEndRating.color}`}>
                 {formatPercent(results.backEndDti)}
@@ -322,7 +322,7 @@ export function DebtToIncomeCalculator({ defaults }: Props) {
 
           {/* Room to Borrow */}
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg bg-accent-50 p-4 text-center">
+            <div className="result-plain rounded-lg bg-accent-50 p-4 text-center">
               <p className="text-sm font-medium text-accent-700">Max Housing at 28% DTI</p>
               <p className="mt-1 text-xl font-bold text-accent-900">{formatCurrency(results.maxHousingAt28)}/mo</p>
               <p className="mt-1 text-xs text-accent-600">

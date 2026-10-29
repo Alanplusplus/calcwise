@@ -92,7 +92,7 @@ export function EmergencyFundCalculator() {
                 {formatCurrency(results.monthlyExpenses)}
               </p>
             </div>
-            <div className="rounded-lg bg-brand-50 p-4 text-center">
+            <div className="result-hero rounded-lg bg-brand-50 p-4 text-center">
               <p className="text-sm font-medium text-brand-700">
                 Target ({results.targetMonths} months)
               </p>

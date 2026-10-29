@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categories, getCalculatorsByCategory } from "@/lib/calculators";
 import { site } from "@/lib/site";
-import { CategoryIcon } from "@/components/Icons";
+import { CalculatorCard } from "@/components/CalculatorCard";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -33,43 +33,50 @@ export default async function CategoryPage({ params }: Props) {
   if (!category) notFound();
 
   const calcs = getCalculatorsByCategory(slug);
+  const others = categories.filter((c) => c.slug !== slug);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-      <nav className="mb-6 text-sm text-ink-500">
-        <Link href="/" className="hover:text-brand-600">Home</Link>
-        <span className="mx-2">/</span>
-        <span className="text-ink-700">{category.name}</span>
+    <div className="mx-auto max-w-6xl px-4 pb-6 pt-8 sm:px-6">
+      <nav aria-label="Breadcrumb" className="mb-7 text-[0.8125rem] text-ink-500">
+        <Link href="/" className="transition-colors hover:text-brand-700">
+          Home
+        </Link>
+        <span aria-hidden="true" className="mx-2 text-ink-300">
+          /
+        </span>
+        <span aria-current="page" className="text-ink-800">
+          {category.name}
+        </span>
       </nav>
 
-      <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">
-        {category.name} Calculators
-      </h1>
-      <p className="mt-2 text-lg text-ink-600">{category.description}</p>
+      <header className="border-b border-ink-200 pb-8">
+        <p className="eyebrow">{calcs.length} calculators</p>
+        <h1 className="mt-3 text-[2.25rem] font-semibold text-ink-900 sm:text-[2.875rem]">
+          {category.name} Calculators
+        </h1>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-ink-600">{category.description}</p>
+      </header>
 
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {calcs.map((calc) => (
-          <Link
-            key={calc.slug}
-            href={`/calculators/${calc.slug}`}
-            className="group rounded-xl border border-ink-200 bg-white p-6 shadow-card transition-shadow hover:shadow-card-hover"
-          >
-            <div className="flex items-start gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-                <CategoryIcon name={calc.slug} />
-              </div>
-              <div>
-                <h2 className="font-semibold text-ink-800 group-hover:text-brand-600">
-                  {calc.shortTitle}
-                </h2>
-                <p className="mt-1 text-sm text-ink-500">
-                  {calc.description}
-                </p>
-              </div>
-            </div>
-          </Link>
+          <CalculatorCard key={calc.slug} calc={calc} heading="h2" />
         ))}
       </div>
+
+      <nav aria-label="Other categories" className="mt-14 border-t border-ink-200 pt-6">
+        <p className="eyebrow">Explore other categories</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {others.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/calculators/category/${c.slug}`}
+              className="rounded-full border border-ink-300 bg-white px-4 py-1.5 text-sm text-ink-700 transition-colors hover:border-brand-700 hover:bg-brand-800 hover:text-white"
+            >
+              {c.name}
+            </Link>
+          ))}
+        </div>
+      </nav>
     </div>
   );
 }

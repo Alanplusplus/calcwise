@@ -235,7 +235,7 @@ export function RefinanceCalculator({ defaults }: Props) {
 
           {/* Key Metrics */}
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg bg-accent-50 p-4 text-center">
+            <div className="result-plain rounded-lg bg-accent-50 p-4 text-center">
               <p className="text-xs font-medium text-accent-600">Lifetime Savings</p>
               <p className={`mt-1 text-lg font-bold ${results.lifetimeSavings > 0 ? "text-green-700" : "text-red-700"}`}>{results.lifetimeSavings > 0 ? "" : "-"}{formatCurrency(Math.abs(results.lifetimeSavings))}</p>
             </div>

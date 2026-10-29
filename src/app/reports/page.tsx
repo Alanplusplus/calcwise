@@ -25,48 +25,65 @@ const monthYear = new Intl.DateTimeFormat("en-US", {
 
 export default function ReportsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-4xl px-4 pb-6 pt-8 sm:px-6">
       <BreadcrumbJsonLd items={[{ name: "Data Reports", href: "/reports" }]} />
 
-      <nav className="mb-6 text-sm text-ink-500">
-        <Link href="/" className="hover:text-brand-600">
+      <nav aria-label="Breadcrumb" className="mb-7 text-[0.8125rem] text-ink-500">
+        <Link href="/" className="transition-colors hover:text-brand-700">
           Home
         </Link>
-        <span className="mx-2">/</span>
-        <span className="text-ink-700">Data Reports</span>
+        <span aria-hidden="true" className="mx-2 text-ink-300">
+          /
+        </span>
+        <span aria-current="page" className="text-ink-800">
+          Data Reports
+        </span>
       </nav>
 
-      <h1 className="text-3xl font-bold text-ink-900">Data Reports</h1>
-      <p className="mt-3 text-lg text-ink-600">
-        Each report starts from a public dataset, applies the same formulas as our calculators,
-        and publishes the result for every state. Inputs, assumptions, and limits are written
-        out, and the full table is free to download, so anyone can check the work.
-      </p>
+      <header className="border-b border-ink-200 pb-8">
+        <p className="eyebrow">Original research</p>
+        <h1 className="mt-3 text-[2.25rem] font-semibold text-ink-900 sm:text-[2.875rem]">
+          Data Reports
+        </h1>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-ink-600">
+          Each report starts from a public dataset, applies the same formulas as our calculators,
+          and publishes the result for every state. Inputs, assumptions, and limits are written
+          out, and the full table is free to download, so anyone can check the work.
+        </p>
+      </header>
 
-      <div className="mt-8 space-y-4">
+      <div className="mt-9 space-y-5">
         {reports.map((report) => (
           <Link
             key={report.slug}
             href={report.path}
-            className="block rounded-xl border border-ink-200 bg-white p-6 shadow-card transition-shadow hover:shadow-card-hover"
+            className="group block rounded-xl border border-ink-200 border-l-[3px] border-l-gold-500 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover sm:p-8"
           >
-            <p className="text-xs font-medium uppercase tracking-wide text-brand-600">
-              Updated {monthYear.format(new Date(report.dateModified))}
-            </p>
-            <h2 className="mt-1 text-xl font-bold text-ink-900">{report.title}</h2>
-            <p className="mt-2 text-sm text-ink-600">{report.description}</p>
-            <p className="mt-3 text-xs text-ink-500">Data: {report.dataSource}</p>
+            <p className="eyebrow">Updated {monthYear.format(new Date(report.dateModified))}</p>
+            <h2 className="mt-2 text-[1.625rem] font-semibold leading-snug text-ink-900 transition-colors group-hover:text-brand-700">
+              {report.title}
+            </h2>
+            <p className="mt-3 max-w-2xl leading-relaxed text-ink-600">{report.description}</p>
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-ink-100 pt-4 text-[0.8125rem]">
+              <span className="text-ink-500">Data: {report.dataSource}</span>
+              <span className="inline-flex items-center gap-1.5 font-semibold text-brand-700">
+                Read the report
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
+                  →
+                </span>
+              </span>
+            </div>
           </Link>
         ))}
       </div>
 
-      <p className="mt-8 text-sm text-ink-600">
+      <p className="mt-10 max-w-3xl text-sm leading-relaxed text-ink-600">
         Every report follows the standards on our{" "}
-        <Link href="/methodology" className="text-brand-600 underline">
+        <Link href="/methodology" className="font-medium text-brand-700 underline decoration-gold-400 decoration-[1.5px] underline-offset-[3px]">
           methodology page
         </Link>
-        : primary sources, a stated check date, and plain-language limits. To use a figure in
-        your own work, see the citation and license note at the end of each report.
+        : primary sources, a stated check date, and plain-language limits. To use a figure in your
+        own work, see the citation and license note at the end of each report.
       </p>
     </div>
   );

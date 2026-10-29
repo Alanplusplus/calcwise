@@ -213,7 +213,7 @@ export default function MortgageAffordabilityByStatePage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5">
-        <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">Quick answer</p>
+        <p className="eyebrow">Quick answer</p>
         <p className="mt-2 text-base leading-relaxed text-ink-800">
           At the {REPORT.mortgageRateDate} average 30-year rate of {rate}%, the payment on the
           median U.S. home takes <strong>{pct1(us.share)}</strong> of the median household’s
@@ -246,10 +246,17 @@ export default function MortgageAffordabilityByStatePage() {
             note: `${usd0(us.incomeNeeded - us.income)} above the national median`,
           },
         ].map((card) => (
-          <div key={card.label} className="rounded-xl border border-ink-200 bg-white p-4 shadow-card">
-            <p className="text-xs font-medium text-ink-500">{card.label}</p>
-            <p className="mt-1 text-2xl font-bold text-ink-900">{card.value}</p>
-            <p className="mt-1 text-xs text-ink-500">{card.note}</p>
+          <div
+            key={card.label}
+            className="rounded-xl border border-ink-200 border-t-[3px] border-t-gold-500 bg-white p-4 shadow-card"
+          >
+            <p className="text-[0.6875rem] font-semibold uppercase leading-snug tracking-[0.09em] text-ink-500">
+              {card.label}
+            </p>
+            <p className="numeral mt-2 text-[1.875rem] font-semibold leading-none text-ink-900">
+              {card.value}
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-ink-500">{card.note}</p>
           </div>
         ))}
       </div>

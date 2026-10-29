@@ -47,7 +47,7 @@ export function BudgetCalculator({ defaults }: Props) {
       {results && (
         <div className="mt-8">
           <div className="grid gap-4 lg:grid-cols-3">
-            <div className="rounded-lg bg-brand-50 p-5">
+            <div className="result-plain rounded-lg bg-brand-50 p-5">
               <p className="text-sm font-medium text-brand-700">Needs — 50%</p>
               <p className="mt-1 text-3xl font-bold text-brand-900">
                 {formatCurrency(results.needs)}

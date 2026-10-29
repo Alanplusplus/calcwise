@@ -20,129 +20,101 @@ const featuredGuides = [
   { slug: "save-50000-in-3-years", label: "Save $50K in 3 Years" },
 ];
 
+const companyLinks = [
+  { href: "/guides", label: "All Guides" },
+  { href: "/about", label: "About Us" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/reports", label: "Data Reports" },
+  { href: "/embed", label: "Embed Calculators" },
+  { href: "/contact", label: "Contact" },
+  { href: "/faq", label: "FAQ" },
+];
+
+const linkClass =
+  "text-sm text-[#b9c4d4] transition-colors hover:text-white focus-visible:text-white";
+
+function Column({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h4 className="eyebrow eyebrow-light">{title}</h4>
+      <ul className="mt-4 space-y-2.5">{children}</ul>
+    </div>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="border-t border-ink-200 bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-1">
-            <Link href="/" aria-label={`${site.name} home`} className="inline-flex items-center gap-2">
-              <LogoMark className="h-7 w-7 shrink-0" />
-              <Wordmark className="text-lg" />
+    <footer className="mt-16 bg-brand-950 text-[#b9c4d4]">
+      <div className="h-px bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
+      <div className="mx-auto max-w-6xl px-4 pb-10 pt-14 sm:px-6">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_0.8fr]">
+          <div>
+            <Link href="/" aria-label={`${site.name} home`} className="inline-flex items-center gap-2.5">
+              <LogoMark className="h-8 w-8 shrink-0" />
+              <Wordmark className="text-[1.5rem]" tone="light" />
             </Link>
-            <p className="mt-2 text-sm text-ink-500">
-              Free, accurate financial calculators to help you make confident
-              money decisions. No signup required.
+            <p className="mt-4 max-w-xs text-sm leading-relaxed">
+              Free, accurate financial calculators built on primary-source data. No signup, and
+              the numbers you enter never leave your browser.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-ink-800">Calculators</h4>
-            <ul className="mt-2 space-y-1.5">
-              {popularCalculators.map((calc) => (
-                <li key={calc.slug}>
-                  <Link
-                    href={`/calculators/${calc.slug}`}
-                    className="text-sm text-ink-500 hover:text-brand-600"
-                  >
-                    {calc.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Column title="Calculators">
+            {popularCalculators.map((calc) => (
+              <li key={calc.slug}>
+                <Link href={`/calculators/${calc.slug}`} className={linkClass}>
+                  {calc.label}
+                </Link>
+              </li>
+            ))}
+          </Column>
 
-          <div>
-            <h4 className="font-semibold text-ink-800">Guides</h4>
-            <ul className="mt-2 space-y-1.5">
-              {featuredGuides.map((guide) => (
-                <li key={guide.slug}>
-                  <Link
-                    href={`/guides/${guide.slug}`}
-                    className="text-sm text-ink-500 hover:text-brand-600"
-                  >
-                    {guide.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Column title="Guides">
+            {featuredGuides.map((guide) => (
+              <li key={guide.slug}>
+                <Link href={`/guides/${guide.slug}`} className={linkClass}>
+                  {guide.label}
+                </Link>
+              </li>
+            ))}
+          </Column>
 
-          <div>
-            <h4 className="font-semibold text-ink-800">Company</h4>
-            <ul className="mt-2 space-y-1.5">
-              <li>
-                <Link href="/guides" className="text-sm text-ink-500 hover:text-brand-600">
-                  All Guides
+          <Column title="Company">
+            {companyLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className={linkClass}>
+                  {item.label}
                 </Link>
               </li>
-              <li>
-                <Link href="/about" className="text-sm text-ink-500 hover:text-brand-600">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/methodology" className="text-sm text-ink-500 hover:text-brand-600">
-                  Methodology
-                </Link>
-              </li>
-              <li>
-                <Link href="/reports" className="text-sm text-ink-500 hover:text-brand-600">
-                  Data Reports
-                </Link>
-              </li>
-              <li>
-                <Link href="/embed" className="text-sm text-ink-500 hover:text-brand-600">
-                  Embed Calculators
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-ink-500 hover:text-brand-600">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-sm text-ink-500 hover:text-brand-600">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={site.github}
-                  target="_blank"
-                  rel="noopener"
-                  className="text-sm text-ink-500 hover:text-brand-600"
-                >
-                  Source on GitHub
-                </a>
-              </li>
-            </ul>
-          </div>
+            ))}
+            <li>
+              <a href={site.github} target="_blank" rel="noopener" className={linkClass}>
+                Source on GitHub
+              </a>
+            </li>
+          </Column>
 
-          <div>
-            <h4 className="font-semibold text-ink-800">Legal</h4>
-            <ul className="mt-2 space-y-1.5">
-              <li>
-                <Link href="/privacy" className="text-sm text-ink-500 hover:text-brand-600">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-sm text-ink-500 hover:text-brand-600">
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <Column title="Legal">
+            <li>
+              <Link href="/privacy" className={linkClass}>
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className={linkClass}>
+                Terms of Service
+              </Link>
+            </li>
+          </Column>
         </div>
 
-        <div className="mt-10 border-t border-ink-200 pt-6 text-center text-sm text-ink-400">
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-[#8d9bb0] sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="mt-1">
-            Calculators are for educational purposes only. Consult a financial
-            advisor for personalized advice.
+          <p>
+            Calculators are for educational purposes only. Consult a financial advisor for
+            personalized advice.
           </p>
         </div>
       </div>
