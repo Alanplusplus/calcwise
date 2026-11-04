@@ -260,6 +260,16 @@ export const guides: Guide[] = [
     relatedCalculators: ["debt-to-income", "mortgage", "home-affordability"],
     relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
   },
+  {
+    slug: "simple-vs-compound-interest",
+    title: "Simple vs Compound Interest: What's the Difference and Why It Matters",
+    description: "Simple vs compound interest explained: the formulas, a $10,000 example over 30 years, and how to tell which one your loan, card, or savings uses.",
+    published: true,
+    datePublished: "2026-11-04",
+    lastUpdated: "2026-11-04",
+    relatedCalculators: ["simple-interest", "compound-interest", "savings-goal"],
+    relatedGuides: ["compound-interest-real-examples", "high-yield-savings-vs-cd", "how-to-pay-off-credit-card-fast"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

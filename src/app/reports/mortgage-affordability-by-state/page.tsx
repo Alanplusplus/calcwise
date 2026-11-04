@@ -534,6 +534,13 @@ export default function MortgageAffordabilityByStatePage() {
           ))}
         </div>
         <p className="mt-4 text-sm text-ink-600">
+          Companion report:{" "}
+          <Link href="/reports/rent-vs-buy-by-state" className="text-brand-600 underline">
+            rent vs buy by state
+          </Link>
+          , which sets the same payments against each state’s median rent.
+        </p>
+        <p className="mt-2 text-sm text-ink-600">
           Related guides:{" "}
           <Link href="/guides/how-much-house-can-i-afford" className="text-brand-600 underline">
             How much house can I afford

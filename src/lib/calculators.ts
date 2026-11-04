@@ -60,7 +60,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-08-10",
     lastUpdated: "2026-10-22",
     relatedCalculators: ["savings-goal", "investment-return", "retirement"],
-    relatedGuides: ["compound-interest-real-examples", "save-50000-in-3-years"],
+    relatedGuides: ["compound-interest-real-examples", "simple-vs-compound-interest", "save-50000-in-3-years"],
   },
   {
     slug: "savings-goal",
@@ -313,7 +313,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-09-07",
     lastUpdated: "2026-09-07",
     relatedCalculators: ["compound-interest", "cd-calculator", "savings-goal"],
-    relatedGuides: ["compound-interest-real-examples", "high-yield-savings-vs-cd"],
+    relatedGuides: ["simple-vs-compound-interest", "compound-interest-real-examples", "high-yield-savings-vs-cd"],
   },
   {
     slug: "salary-to-hourly",

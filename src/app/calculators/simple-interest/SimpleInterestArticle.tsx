@@ -129,7 +129,11 @@ export function SimpleInterestArticle() {
       <p>
         The table above reveals a critical insight: for short periods (one to three years), simple and compound interest produce nearly identical
         results. But as time extends, the gap becomes dramatic. At 30 years, compound interest generates more than double the return of simple interest
-        on the same principal and rate.
+        on the same principal and rate. Our guide to{" "}
+        <Link href="/guides/simple-vs-compound-interest" className="text-brand-600 hover:text-brand-800 font-medium">
+          simple vs compound interest
+        </Link>{" "}
+        explains APR vs APY and shows which method cards, savings accounts, auto loans, and student loans use.
       </p>
 
       <h3>Where You Will Encounter Simple Interest</h3>

@@ -245,6 +245,19 @@ export default function RentVsBuyDecisionGuide() {
             checked="October 2026"
             note="National effective property tax rate (~0.89%) = aggregate real estate taxes on owner-occupied homes (ACS table B25090) divided by aggregate home value (B25082). Insurance and maintenance percentages are planning assumptions."
           />
+          <p className="mt-4 text-ink-700">
+            To see how the monthly gap between owning and renting varies by
+            location, our{" "}
+            <Link
+              href="/reports/rent-vs-buy-by-state"
+              className="font-medium text-brand-600 underline"
+            >
+              rent vs buy by state report
+            </Link>{" "}
+            sets the payment on the median home against the median rent in all 50
+            states and DC, and lists the mortgage rate at which the two cost the
+            same in each state.
+          </p>
 
           <h3 className="mt-8 text-xl font-semibold text-ink-800">
             Hidden Costs Most Renters Never Pay
