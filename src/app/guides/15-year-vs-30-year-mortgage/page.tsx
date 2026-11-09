@@ -9,7 +9,7 @@ import { Sources } from "@/components/Sources";
 import { RETIREMENT_LIMITS, usd } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "15-Year vs 30-Year Mortgage: Which Saves You More Money?",
+  title: "15-Year vs 30-Year Mortgage: Which Saves More?",
   description:
     "Compare 15-year vs 30-year mortgages with real numbers on a $350K loan. See monthly payments, total interest, break-even analysis, and who wins.",
   keywords: [

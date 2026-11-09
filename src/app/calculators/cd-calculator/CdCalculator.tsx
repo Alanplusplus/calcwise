@@ -34,6 +34,7 @@ export function CdCalculator({ defaults }: Props) {
   const [apy, setApy] = useState(defaults?.apy || "4.55");
   const [termMonths, setTermMonths] = useState(defaults?.termMonths || "12");
   const [compounding, setCompounding] = useState(defaults?.compounding || "daily");
+  const [rateType, setRateType] = useState(defaults?.rateType === "stated" ? "stated" : "apy");
 
   const results = useMemo(() => {
     const principal = parseFloat(deposit) || 0;
@@ -42,11 +43,13 @@ export function CdCalculator({ defaults }: Props) {
     const n = COMPOUNDING_OPTIONS[compounding] || 365;
     const years = months / 12;
 
-    const periodicRate = rate / n;
-    const totalPeriods = n * years;
-    const finalValue = principal * Math.pow(1 + periodicRate, totalPeriods);
+    // APY already includes the effect of compounding, so balance = principal x (1 + APY)^years.
+    // A stated rate (APR) compounded n times per year is first converted to its APY.
+    const apyDecimal = rateType === "stated" ? Math.pow(1 + rate / n, n) - 1 : rate;
+    const finalValue = principal * Math.pow(1 + apyDecimal, years);
     const totalInterest = finalValue - principal;
-    const effectiveAnnualRate = (Math.pow(1 + periodicRate, n) - 1) * 100;
+    const effectiveAnnualRate = apyDecimal * 100;
+    const totalReturn = principal > 0 ? (finalValue / principal - 1) * 100 : 0;
 
     const monthsToShow = Math.min(12, months);
     const monthlyData: MonthRow[] = [];
@@ -54,8 +57,7 @@ export function CdCalculator({ defaults }: Props) {
     let cumulativeInterest = 0;
 
     for (let month = 1; month <= monthsToShow; month++) {
-      const monthFraction = month / 12;
-      const monthBalance = principal * Math.pow(1 + periodicRate, n * monthFraction);
+      const monthBalance = principal * Math.pow(1 + apyDecimal, month / 12);
       const monthInterest = monthBalance - balance;
       cumulativeInterest = monthBalance - principal;
       balance = monthBalance;
@@ -72,10 +74,11 @@ export function CdCalculator({ defaults }: Props) {
       finalValue,
       totalInterest,
       effectiveAnnualRate,
-      inputApy: parseFloat(apy) || 0,
+      totalReturn,
+      inputRate: parseFloat(apy) || 0,
       monthlyData,
     };
-  }, [deposit, apy, termMonths, compounding]);
+  }, [deposit, apy, termMonths, compounding, rateType]);
 
   return (
     <div>
@@ -88,8 +91,22 @@ export function CdCalculator({ defaults }: Props) {
           prefix="$"
           min={0}
         />
+        <div>
+          <label htmlFor="rateType" className="block text-sm font-medium text-ink-700">
+            Rate Type
+          </label>
+          <select
+            id="rateType"
+            value={rateType}
+            onChange={(e) => setRateType(e.target.value)}
+            className="mt-1 w-full rounded-lg border border-ink-300 bg-white px-3 py-2.5 text-ink-900 shadow-input focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+          >
+            <option value="apy">APY (compounding included)</option>
+            <option value="stated">Stated rate (APR, compounded)</option>
+          </select>
+        </div>
         <InputField
-          label="APY"
+          label={rateType === "apy" ? "APY" : "Stated Interest Rate"}
           id="apy"
           value={apy}
           onChange={setApy}
@@ -107,22 +124,24 @@ export function CdCalculator({ defaults }: Props) {
           min={1}
           max={120}
         />
-        <div>
-          <label htmlFor="compounding" className="block text-sm font-medium text-ink-700">
-            Compounding Frequency
-          </label>
-          <select
-            id="compounding"
-            value={compounding}
-            onChange={(e) => setCompounding(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-ink-300 bg-white px-3 py-2.5 text-ink-900 shadow-input focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
-          >
-            <option value="daily">Daily</option>
-            <option value="monthly">Monthly</option>
-            <option value="quarterly">Quarterly</option>
-            <option value="annually">Annually</option>
-          </select>
-        </div>
+        {rateType === "stated" && (
+          <div>
+            <label htmlFor="compounding" className="block text-sm font-medium text-ink-700">
+              Compounding Frequency
+            </label>
+            <select
+              id="compounding"
+              value={compounding}
+              onChange={(e) => setCompounding(e.target.value)}
+              className="mt-1 w-full rounded-lg border border-ink-300 bg-white px-3 py-2.5 text-ink-900 shadow-input focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+            >
+              <option value="daily">Daily</option>
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="annually">Annually</option>
+            </select>
+          </div>
+        )}
       </div>
 
       {results && (
@@ -141,15 +160,19 @@ export function CdCalculator({ defaults }: Props) {
               </p>
             </div>
             <div className="rounded-lg bg-ink-100 p-4 text-center">
-              <p className="text-sm font-medium text-ink-600">Stated APY</p>
+              <p className="text-sm font-medium text-ink-600">
+                {rateType === "apy" ? "APY" : "Stated Rate"}
+              </p>
               <p className="mt-1 text-2xl font-bold text-ink-800">
-                {formatPercent(results.inputApy)}
+                {formatPercent(results.inputRate)}
               </p>
             </div>
             <div className="rounded-lg bg-ink-100 p-4 text-center">
-              <p className="text-sm font-medium text-ink-600">Effective Annual Rate</p>
+              <p className="text-sm font-medium text-ink-600">
+                {rateType === "apy" ? "Total Return Over Term" : "Effective APY"}
+              </p>
               <p className="mt-1 text-2xl font-bold text-ink-800">
-                {formatPercent(results.effectiveAnnualRate)}
+                {formatPercent(rateType === "apy" ? results.totalReturn : results.effectiveAnnualRate)}
               </p>
             </div>
           </div>

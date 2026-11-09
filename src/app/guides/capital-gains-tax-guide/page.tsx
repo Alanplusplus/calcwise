@@ -20,11 +20,13 @@ import {
 const LT = LONG_TERM_BRACKETS;
 
 export const metadata: Metadata = {
-  title: "Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe",
-  description: "Understand 2026 capital gains tax rates, brackets for every filing status, and proven strategies to minimize your tax bill on stocks, real estate, and crypto.",
+  title: "Capital Gains Tax 2026: Rates & Brackets",
+  description:
+    "Understand 2026 capital gains tax rates and brackets for every filing status, plus strategies to cut your bill on stocks, real estate, and crypto.",
   openGraph: {
-    title: `Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe | ${site.name}`,
-    description: "Understand 2026 capital gains tax rates, brackets for every filing status, and proven strategies to minimize your tax bill on stocks, real estate, and crypto.",
+    title: `Capital Gains Tax 2026: Rates & Brackets | ${site.name}`,
+    description:
+      "Understand 2026 capital gains tax rates and brackets for every filing status, plus strategies to cut your bill on stocks, real estate, and crypto.",
     type: "article",
   },
 };

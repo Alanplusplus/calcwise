@@ -9,9 +9,9 @@ import { Sources } from "@/components/Sources";
 import { LONG_TERM_TOP_RATE, TAX_DATA, TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "How to Calculate ROI: Formula, Examples, and Common Mistakes",
+  title: "How to Calculate ROI: Formula and Examples",
   description:
-    "Learn how to calculate return on investment (ROI) with the simple formula, five real-world examples across marketing, real estate, and stocks, plus common mistakes that inflate your numbers.",
+    "Learn how to calculate ROI with the simple formula, five real-world examples across marketing, real estate, and stocks, plus mistakes that inflate numbers.",
   keywords: [
     "how to calculate ROI",
     "ROI formula",

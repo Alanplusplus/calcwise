@@ -9,9 +9,9 @@ import { Sources } from "@/components/Sources";
 import { STANDARD_DEDUCTIONS, TAX_DATA, TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "How Much House Can I Afford? Complete Guide by Income Level",
+  title: "How Much House Can I Afford? By Income Guide",
   description:
-    "Find out exactly how much home you can afford based on your salary. Includes income-based affordability tables, the 28/36 rule explained, a real case study, and common mistakes to avoid.",
+    "Find how much home you can afford from your salary: income-based tables, the 28/36 rule, a real case study, and common mortgage mistakes to avoid.",
   keywords: [
     "how much house can I afford",
     "home affordability by income",

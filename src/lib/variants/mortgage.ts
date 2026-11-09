@@ -21,7 +21,7 @@ export const mortgageVariants: CalculatorVariant[] = [
     lastUpdated: "2026-10-21",
     sources: [...MORTGAGE_MARKET_SOURCES],
     sourcesChecked: MORTGAGE_MARKET.checkedLabel,
-    title: "$200,000 Mortgage Calculator — Monthly Payment & Total Interest",
+    title: "$200,000 Home Mortgage Payment Calculator",
     description:
       "Calculate monthly P&I on a $200,000 home with 20% down at the 7.40% Freddie Mac 30-year average. See total interest, 28% income rule, and amortization.",
     defaults: { homePrice: "200000", downPayment: "40000" },
@@ -67,7 +67,7 @@ export const mortgageVariants: CalculatorVariant[] = [
     lastUpdated: "2026-10-21",
     sources: [...MORTGAGE_MARKET_SOURCES, NAR_EXISTING_HOME_SALES],
     sourcesChecked: MORTGAGE_MARKET.checkedLabel,
-    title: "$300,000 Mortgage Calculator — Monthly Payment & Amortization",
+    title: "$300,000 Home Mortgage Payment Calculator",
     description:
       "Run a $300,000 mortgage at the 7.40% PMMS 30-year average with 20% down. Compare terms, total interest, required income, and amortization schedule.",
     defaults: { homePrice: "300000", downPayment: "60000" },
@@ -251,7 +251,7 @@ export const mortgageVariants: CalculatorVariant[] = [
     lastUpdated: "2026-10-21",
     sources: [...MORTGAGE_MARKET_SOURCES],
     sourcesChecked: MORTGAGE_MARKET.checkedLabel,
-    title: "15-Year Mortgage Calculator",
+    title: "15-Year Mortgage Calculator: Compare vs 30-Year",
     description:
       "Compare 15-year vs 30-year payments on a $350,000 home. Uses PMMS averages 6.71% (15-yr) and 7.40% (30-yr) on a $280,000 loan balance.",
     defaults: {

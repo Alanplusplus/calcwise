@@ -250,7 +250,7 @@ export const roiVariants: CalculatorVariant[] = [
   {
     slug: "education-degree",
     lastUpdated: "2026-10-21",
-    title: "Education & Degree ROI Calculator — 10-Year Payback",
+    title: "Education Degree ROI Calculator, 10 Years",
     description:
       "Compare $80,000 tuition to a $15,000 annual earnings premium with 3% growth. See 115% 10-year ROI and break-even near year 6.",
     defaults: {

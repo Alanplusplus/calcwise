@@ -10,8 +10,8 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 const calc = getCalculator("savings-goal")!;
 
 export const metadata: Metadata = {
-  title: "Savings Goal Calculator — How Much to Save Each Month",
-  description: "Figure out exactly how much to save each month to reach your financial goal by your target date. Works for house down payments, vacations, new cars, college funds, and more.",
+  title: "Savings Goal Calculator: Monthly Amount to Save",
+  description: "Figure out how much to save each month to reach your goal by your target date. Works for a house down payment, vacation, new car, or college fund.",
   keywords: [
     "savings goal calculator",
     "savings goal",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "savings plan calculator",
   ],
   openGraph: {
-    title: `Savings Goal Calculator — How Much to Save Each Month | ${site.name}`,
+    title: `Savings Goal Calculator: Monthly Amount to Save | ${site.name}`,
     description: calc.description,
     type: "website",
   },

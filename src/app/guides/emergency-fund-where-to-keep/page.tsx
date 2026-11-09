@@ -8,7 +8,7 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "Where to Keep Your Emergency Fund for the Best Interest Rate",
+  title: "Emergency Fund: Where to Keep It for Best APY",
   description:
     "Where to keep your emergency fund for the best interest rate. Compare HYSAs, money market accounts, CDs, and more with real APY numbers and a case study.",
   keywords: [

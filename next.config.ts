@@ -14,6 +14,23 @@ const nextConfig: NextConfig = {
         destination: "/",
         statusCode: 301,
       },
+      // Number-only variants removed earlier still show up in Search Console
+      // and return 404; send them to the closest topical calculator instead.
+      {
+        source: "/calculators/compound-interest/:amount(1000-start|5000-start)",
+        destination: "/calculators/compound-interest",
+        statusCode: 301,
+      },
+      {
+        source: "/calculators/debt-payoff/30000-student-loan",
+        destination: "/calculators/student-loan",
+        statusCode: 301,
+      },
+      {
+        source: "/calculators/debt-payoff/5000-credit-card",
+        destination: "/calculators/credit-card-payoff",
+        statusCode: 301,
+      },
     ];
   },
 };

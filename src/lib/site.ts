@@ -6,4 +6,6 @@ export const site = {
   url: "https://www.calcwise.tools",
   author: "CalcWise Team",
   github: "https://github.com/Alanplusplus/calcwise",
+  // Google Tag Manager container. The GA4 tag itself is configured inside the container.
+  gtmId: "GTM-P33FLHC8",
 };

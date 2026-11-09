@@ -9,7 +9,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 const calc = getCalculator("net-worth")!;
 
 export const metadata: Metadata = {
-  title: "Net Worth Calculator — Track Your Financial Health",
+  title: "Net Worth Calculator with Age Benchmarks",
   description: "Calculate your net worth by adding up all assets and subtracting liabilities. Compare to age-group benchmarks and track your financial progress over time.",
   keywords: [
     "net worth calculator",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "financial health calculator",
   ],
   openGraph: {
-    title: `Net Worth Calculator — Track Your Financial Health | ${site.name}`,
+    title: `Net Worth Calculator with Age Benchmarks | ${site.name}`,
     description: calc.description,
     type: "website",
   },

@@ -33,7 +33,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
   keywords: [
     "mortgage payment calculator",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "mortgage interest calculator",
   ],
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `${calc.seoTitle ?? calc.title} | ${site.name}`,
     description: calc.description,
     type: "website",
   },

@@ -3,8 +3,8 @@ import { site } from "@/lib/site";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions",
-  description: "Answers to common questions about CalcWise financial calculators, accuracy, privacy, and how to use our free tools.",
+  title: "CalcWise FAQ: Accuracy, Privacy & How to Use",
+  description: "Answers to common questions about CalcWise financial calculators, including accuracy, privacy, and how to use our free tools with no signup.",
 };
 
 const faqs = [

@@ -40,9 +40,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Compare Loans Side by Side — Free Loan Comparison Calculator",
+  title: "Loan Comparison Calculator: Compare Side by Side",
   description:
-    "Compare multiple loan offers side by side. See monthly payments, total interest, and true cost differences instantly. Works for mortgages, auto loans, personal loans, and student loans.",
+    "Compare multiple loan offers side by side. See monthly payments, total interest, and true cost differences for mortgage, auto, and student loans.",
   keywords: [
     "loan comparison calculator",
     "compare loans side by side",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     "interest rate comparison calculator",
   ],
   openGraph: {
-    title: `Compare Loans Side by Side — Free Loan Comparison Calculator | ${site.name}`,
+    title: `Loan Comparison Calculator: Compare Side by Side | ${site.name}`,
     description:
       "Compare multiple loan offers side by side. See monthly payments, total interest, and true cost differences instantly.",
     type: "website",

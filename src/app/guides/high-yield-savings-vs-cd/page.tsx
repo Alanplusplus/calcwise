@@ -8,7 +8,7 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "High-Yield Savings Account vs CD: Which Is Better in 2026?",
+  title: "HYSA vs CD in 2026: Which Account Fits Your Cash?",
   description:
     "High yield savings vs CD with October 2026 APYs. See when a HYSA wins on flexibility, when a CD wins on rate-locking, plus a $30,000 example.",
   keywords: [

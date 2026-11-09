@@ -8,11 +8,13 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "Debt-to-Income Ratio: What It Is and Why Lenders Care",
-  description: "Understand what debt-to-income ratio is, how lenders use front-end and back-end DTI to evaluate your mortgage application, and actionable strategies to lower your ratio before applying.",
+  title: "Debt-to-Income Ratio: What Lenders Want to See",
+  description:
+    "Learn what debt-to-income ratio is, how lenders use front-end and back-end DTI on mortgage applications, and ways to lower your ratio before you apply.",
   openGraph: {
-    title: `Debt-to-Income Ratio: What It Is and Why Lenders Care | ${site.name}`,
-    description: "Understand what debt-to-income ratio is, how lenders use front-end and back-end DTI to evaluate your mortgage application, and actionable strategies to lower your ratio before applying.",
+    title: `Debt-to-Income Ratio: What Lenders Want to See | ${site.name}`,
+    description:
+      "Learn what debt-to-income ratio is, how lenders use front-end and back-end DTI on mortgage applications, and ways to lower your ratio before you apply.",
     type: "article",
   },
 };

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About CalcWise: Sourced Financial Calculators",
   description: `Learn about ${site.name} — our mission to provide free, accurate financial calculators to help everyone make smarter money decisions.`,
 };
 
@@ -57,9 +57,10 @@ export default function AboutPage() {
           <li>
             <strong>Private by design:</strong> All calculations happen
             client-side in your browser, so the numbers you enter never reach
-            us. We use no tracking cookies and don't require any personal
-            information. The only measurement is anonymous, cookieless
-            page-view statistics.
+            us, and we don't require any personal information. We measure
+            traffic with Google Analytics and Vercel's cookieless Web
+            Analytics, which record page views and traffic sources, never
+            anything you type into a calculator.
           </li>
           <li>
             <strong>Always free:</strong> We will never charge for calculator

@@ -33,10 +33,10 @@ export const guides: Guide[] = [
   {
     slug: "save-50000-in-3-years",
     title: "How to Save $50,000 in 3 Years: A Realistic Plan",
-    description: "A step-by-step plan to save $50,000 in 3 years on an average salary. Includes monthly targets, budget breakdowns, a real case study, and strategies that actually work.",
+    description: "Saving $50,000 in 3 years takes about $1,295 a month at 4.50%. See the monthly math for 1 to 5 years, the income you need, and a real case study.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-10-20",
+    lastUpdated: "2026-11-09",
     relatedCalculators: ["savings-goal", "compound-interest"],
     relatedGuides: ["50-30-20-budget-rule", "high-yield-savings-vs-cd"],
   },
@@ -163,7 +163,7 @@ export const guides: Guide[] = [
   {
     slug: "how-much-car-can-i-afford",
     title: "How Much Car Can I Afford? The Complete 2026 Guide by Salary",
-    description: "Find out how much car you can afford based on your salary using the 20/4/10 rule. Includes affordability tables by income, a real case study, and total cost of ownership breakdown.",
+    description: "Find how much car you can afford at $40K to $150K salaries using the 20/4/10 rule. See max car price, loan payment, and insurance and fuel costs.",
     published: true,
     datePublished: "2026-08-26",
     lastUpdated: "2026-10-19",

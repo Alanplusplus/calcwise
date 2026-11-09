@@ -8,7 +8,7 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "Student Loan Repayment: 7 Strategies to Pay Off Debt Faster in 2026",
+  title: "Student Loan Repayment: 7 Strategies for 2026",
   description:
     "Compare 7 student loan repayment strategies on a $40,000 balance: standard, RAP, refinancing, PSLF, employer help and faster payoff. Updated Oct 2026.",
   keywords: [

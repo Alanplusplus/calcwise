@@ -26,7 +26,7 @@ export const retirementVariants: CalculatorVariant[] = [
   {
     slug: "retire-at-40",
     lastUpdated: "2026-10-21",
-    title: "Retire at 40 (FIRE) Calculator — Savings & FIRE Number",
+    title: "Retire at 40 FIRE Calculator: Savings Goal",
     description:
       "Plan financial independence at 40. See portfolio size, monthly savings at 7% returns, and how a 4% withdrawal rate maps to $50,000 annual spending.",
     defaults: { currentAge: "25", retirementAge: "40", desiredIncome: "50000", currentSavings: "0", monthlyContribution: "0" },
@@ -74,7 +74,7 @@ export const retirementVariants: CalculatorVariant[] = [
   {
     slug: "retire-at-50",
     lastUpdated: "2026-10-21",
-    title: "Retire at 50 Calculator — Savings Target & Timeline",
+    title: "Retire at 50 Calculator: Savings Timeline",
     description:
       "Model retirement at 50 with $60,000 desired income, 7% returns, and 4% withdrawals. See monthly savings needed from age 30 with $50,000 already saved.",
     defaults: { currentAge: "30", retirementAge: "50", desiredIncome: "60000", currentSavings: "50000", monthlyContribution: "0" },
@@ -122,7 +122,7 @@ export const retirementVariants: CalculatorVariant[] = [
   {
     slug: "retire-at-55",
     lastUpdated: "2026-10-21",
-    title: "Retire at 55 Calculator — Rule of 55 & Savings Plan",
+    title: "Retire at 55 Calculator: Rule of 55 Plan",
     description:
       "Calculate savings to retire at 55 with $60,000 annual income, Rule of 55 401(k) access, and 25 years of compounding from age 30.",
     defaults: { currentAge: "30", retirementAge: "55", desiredIncome: "60000", currentSavings: "50000", monthlyContribution: "0" },
@@ -169,7 +169,7 @@ export const retirementVariants: CalculatorVariant[] = [
   {
     slug: "retire-at-60",
     lastUpdated: "2026-10-21",
-    title: "Retire at 60 Calculator — Nest Egg & Catch-Up Savings",
+    title: "Retire at 60 Calculator: Nest Egg & Catch-Up",
     description:
       "Plan retirement at 60 with $70,000 desired income, 7% returns, and 401(k) catch-up limits. Five-year Medicare bridge and Social Security at 62.",
     defaults: { currentAge: "35", retirementAge: "60", desiredIncome: "70000", currentSavings: "50000", monthlyContribution: "0" },
@@ -217,7 +217,7 @@ export const retirementVariants: CalculatorVariant[] = [
   {
     slug: "retire-at-67",
     lastUpdated: "2026-10-21",
-    title: "Retire at 67 Calculator — Full Social Security & Medicare",
+    title: "Retire at 67 Calculator: Full Social Security",
     description:
       "Model retirement at full Social Security age 67 with $75,000 income goal, Medicare already active, and 32 years to save from age 35.",
     defaults: { currentAge: "35", retirementAge: "67", desiredIncome: "75000", currentSavings: "50000", monthlyContribution: "0" },

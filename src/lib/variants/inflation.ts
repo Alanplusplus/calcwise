@@ -63,7 +63,7 @@ export const inflationVariants: CalculatorVariant[] = [
   {
     slug: "college-cost-18-years",
     lastUpdated: "2026-10-21",
-    title: "College Cost Inflation Over 18 Years",
+    title: "18-Year College Cost Inflation Calculator",
     description:
       "Project in-state public college costs from the College Board's $30,990 average budget. Model 529 savings at 5% education inflation over 18 years.",
     defaults: { currentAmount: "30990", inflationRate: "5", years: "18" },
@@ -106,7 +106,7 @@ export const inflationVariants: CalculatorVariant[] = [
   {
     slug: "grocery-budget-10-years",
     lastUpdated: "2026-10-21",
-    title: "Grocery Budget Inflation Over 10 Years",
+    title: "10-Year Grocery Budget Inflation Calculator",
     description:
       "Project a $800 monthly grocery budget at 3.5% inflation over 10 years. Compare to BLS food indexes (September 2026 CPI).",
     defaults: { currentAmount: "800", inflationRate: "3.5", years: "10" },
@@ -192,7 +192,7 @@ export const inflationVariants: CalculatorVariant[] = [
   {
     slug: "100-dollar-purchasing-power",
     lastUpdated: "2026-10-21",
-    title: "What Will $100 Be Worth in the Future?",
+    title: "$100 Future Purchasing Power Calculator",
     description:
       "See how $100 loses purchasing power over 10, 20, and 30 years. Compare 3% planning rates to the 3.7% September 2026 CPI pace.",
     defaults: { currentAmount: "100", inflationRate: "3", years: "20" },

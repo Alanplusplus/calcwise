@@ -15,9 +15,9 @@ import {
 } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "How Much Do I Need to Retire at 55? Complete 2026 Guide",
+  title: "Retire at 55: How Much Money You Need in 2026",
   description:
-    "Most people need about $1.9M-$3.1M to retire at 55 including a healthcare reserve. Covers the 4% rule of thumb, 2026 ACA and Medicare costs, portfolio targets, and a step-by-step plan.",
+    "Most people need about $1.9M-$3.1M to retire at 55 including healthcare reserve. Covers the 4% rule, 2026 ACA and Medicare costs, and a step-by-step plan.",
   keywords: [
     "how much do I need to retire at 55",
     "how much to retire at 55",

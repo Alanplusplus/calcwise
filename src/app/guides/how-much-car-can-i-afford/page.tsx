@@ -8,11 +8,13 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "How Much Car Can I Afford? The Complete 2026 Guide by Salary",
+  title: "How Much Car Can I Afford? 2026 Guide by Salary",
   description:
-    "Find out how much car you can afford based on your salary using the 20/4/10 rule. Includes affordability tables by income, a real case study, and total cost of ownership breakdown.",
+    "Find how much car you can afford at $40K to $150K salaries using the 20/4/10 rule. See max car price, loan payment, and insurance and fuel costs.",
   keywords: [
     "how much car can I afford",
+    "car payment percentage of income",
+    "how much should I spend on a car if I make 60k",
     "car affordability by salary",
     "20/4/10 rule car buying",
     "how much should I spend on a car",
@@ -26,6 +28,16 @@ const faqs = [
     question: "How much car can I afford on a $50,000 salary?",
     answer:
       "On a $50,000 salary, the strict 20/4/10 rule leaves very little room for a loan in October 2026. Ten percent of your $4,167 gross monthly income is $417. Full-coverage insurance averages roughly $200 a month (between Insurify's $187 and Bankrate's $225 national averages) and fuel for 12,000 miles at 32 mpg and $4.33 a gallon costs about $135, so only about $82 is left for a payment. At 7.0% APR over 48 months, $82 a month supports a $3,400 loan, or a car of about $4,260 with 20% down. In practice, a $50,000 earner is better off targeting a reliable used car in the $10,000-$15,000 range bought mostly with savings. Stretching to 15% of gross income ($625 a month) lifts the loan payment to about $290, a $12,100 loan, and a car of about $15,100 with 20% down, but that breaks the guideline and should be a deliberate choice.",
+  },
+  {
+    question: "What percentage of my income should go to a car payment?",
+    answer:
+      "Under the 20/4/10 rule, the payment, insurance, and fuel together stay under 10% of gross monthly income. Because insurance and fuel use about $335 of that, the loan payment alone ends up around 2% of gross income at $50,000 ($82 of $4,167), 3% at $60,000 ($165 of $5,000), and 6% at $100,000 ($498 of $8,333). The market runs much higher: the $787 average new-car payment (Edmunds, Q3 2026) equals 9.4% of gross monthly income at $100,000 and 15.7% at $60,000, before insurance or fuel.",
+  },
+  {
+    question: "How much should I spend on a car if I make $60,000 or $100,000?",
+    answer:
+      "At $60,000 ($5,000 a month gross), the 10% budget is $500. After about $335 for insurance and fuel, $165 is left for a loan payment, which supports a car of about $8,600 with 20% down at 7.0% APR over 48 months. At $100,000 ($8,333 a month), the budget is $833, leaving $498 for the payment and a car of about $26,000. Both figures use the same 20% down, 48-month, October 2026 insurance and fuel assumptions as the salary table above.",
   },
   {
     question: "What is the 20/4/10 rule for buying a car?",
@@ -61,7 +73,7 @@ export default function HowMuchCarCanIAffordGuide() {
       <FaqJsonLd faqs={faqs} />
       <ArticleJsonLd
         title="How Much Car Can I Afford? The Complete 2026 Guide by Salary"
-        description="Find out how much car you can afford based on your salary using the 20/4/10 rule. Includes affordability tables by income, a real case study, and total cost of ownership breakdown."
+        description="Find how much car you can afford at $40K to $150K salaries using the 20/4/10 rule. See max car price, loan payment, and insurance and fuel costs."
         slug="how-much-car-can-i-afford"
         datePublished="2026-08-26"
         dateModified="2026-10-19"

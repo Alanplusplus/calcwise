@@ -14,9 +14,9 @@ import {
 } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "Rent vs Buy in 2026: How to Make the Right Decision",
+  title: "Rent vs Buy in 2026: Break-Even & Framework",
   description:
-    "Should you rent or buy in 2026? Compare real monthly costs, break-even timelines at 7.40% PMMS rates, and a step-by-step framework for your housing decision.",
+    "Should you rent or buy in 2026? Compare monthly costs, break-even at 7.40% PMMS rates, and a step-by-step framework for your housing decision.",
   keywords: [
     "should I rent or buy a house",
     "rent vs buy calculator",

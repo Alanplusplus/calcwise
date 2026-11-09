@@ -15,7 +15,7 @@ import {
   MORTGAGE_MARKET_SOURCES,
 } from "@/lib/market-data";
 
-const title = "Simple vs Compound Interest: Differences and Examples";
+const title = "Simple vs Compound Interest: Formulas & Examples";
 const h1 = "Simple vs Compound Interest: What’s the Difference and Why It Matters";
 const description =
   "Simple vs compound interest explained: the formulas, a $10,000 example over 30 years, and how to tell which one your loan, card, or savings uses.";

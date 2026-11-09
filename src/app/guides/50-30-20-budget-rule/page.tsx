@@ -8,7 +8,7 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "The 50/30/20 Budget Rule Explained with Real Examples",
+  title: "50/30/20 Budget Rule Explained with Real Examples",
   description:
     "Learn the 50/30/20 budget rule with real income examples, a category breakdown, a Denver case study, and a step-by-step needs-wants-savings plan.",
   keywords: [

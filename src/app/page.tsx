@@ -10,7 +10,7 @@ import { StateShareChart } from "@/components/StateShareChart";
 import { CheckCircleIcon, LockIcon, ShieldIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: `${site.name} – Free Online Financial Calculators`,
+  title: { absolute: `${site.name} – Free Online Financial Calculators & Guides` },
   description: site.description,
 };
 

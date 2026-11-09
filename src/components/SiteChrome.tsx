@@ -3,6 +3,7 @@
 import { Analytics } from "@vercel/analytics/next";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 
 interface SiteChromeProps {
   header: ReactNode;
@@ -16,8 +17,9 @@ interface SiteChromeProps {
  * render the calculator on its own. /embed (the copy-the-code page) keeps the
  * normal chrome because only paths with a slug segment are framed.
  *
- * Vercel Web Analytics (cookieless, anonymized) is mounted only outside the
- * framed pages, so embedded calculators on other sites are never measured.
+ * Vercel Web Analytics (cookieless, anonymized) and Google Tag Manager (GA4)
+ * are mounted only outside the framed pages, so embedded calculators on other
+ * sites are never measured.
  */
 export function SiteChrome({ header, footer, jsonLd, children }: SiteChromeProps) {
   const pathname = usePathname();
@@ -34,6 +36,7 @@ export function SiteChrome({ header, footer, jsonLd, children }: SiteChromeProps
       <main className="flex-1">{children}</main>
       {footer}
       <Analytics />
+      <GoogleTagManager />
     </>
   );
 }

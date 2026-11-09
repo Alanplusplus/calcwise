@@ -19,7 +19,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   {
     slug: "15000-car",
     lastUpdated: "2026-10-21",
-    title: "Auto Loan Calculator for a $15,000 Car",
+    title: "$15,000 Car Auto Loan Payment Calculator",
     description:
       "Estimate payments on a $15,000 used car with $3,000 down at Edmunds' Q3 2026 used APR average (10.6%). See interest, 48-month cost, and equity tips.",
     defaults: {
@@ -68,7 +68,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   {
     slug: "25000-car",
     lastUpdated: "2026-10-21",
-    title: "Auto Loan Calculator for a $25,000 Car",
+    title: "$25,000 Car Auto Loan Payment Calculator",
     description:
       "Model a $25,000 car loan with $5,000 down at the Fed G.19 60-month bank average (7.54%, Aug 2026). Compare 48- vs 60-month interest and payment.",
     defaults: {
@@ -116,7 +116,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   {
     slug: "35000-car",
     lastUpdated: "2026-10-21",
-    title: "Auto Loan Calculator for a $35,000 Car",
+    title: "$35,000 Car Auto Loan Payment Calculator",
     description:
       "Calculate payments on a $35,000 vehicle with $7,000 down at 7.54% (G.19 Aug 2026). See 60-month interest, income needs, and GAP considerations.",
     defaults: {
@@ -164,7 +164,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   {
     slug: "50000-car",
     lastUpdated: "2026-10-21",
-    title: "Auto Loan Calculator for a $50,000 Car",
+    title: "$50,000 Car Auto Loan Payment Calculator",
     description:
       "Finance a $50,000 vehicle with $10,000 down at the G.19 72-month bank average (7.17%, Aug 2026). Compare interest, payment, and luxury depreciation.",
     defaults: {
@@ -213,7 +213,7 @@ export const autoLoanVariants: CalculatorVariant[] = [
   {
     slug: "72-month",
     lastUpdated: "2026-10-21",
-    title: "72-Month Auto Loan Calculator",
+    title: "72-Month Auto Loan Calculator, $30K Car",
     description:
       "See the cost of a 72-month auto loan vs 48 months on a $30,000 car. Uses G.19 Aug 2026 bank rates (7.17% / 7.54%) with $5,000 down.",
     defaults: {

@@ -4,9 +4,9 @@ export const compoundInterestVariants: CalculatorVariant[] = [
   {
     slug: "10-percent",
     lastUpdated: "2026-10-21",
-    title: "Compound Interest at 10% Annual Return",
+    title: "10% Annual Compound Interest Calculator",
     description:
-      "Model 10% annual growth on $10,000 with $500/month over 20 years. Final balance about $453,000 — a planning rate above 7%, below recent S&P 500 10-year returns.",
+      "Model 10% growth on $10,000 with $500/month over 20 years. Final balance about $453,000 — a planning rate above 7%, below recent S&P 500 returns.",
     defaults: { principal: "10000", monthlyContribution: "500", annualRate: "10", years: "20" },
     intro:
       "Ten percent annual return is a common shorthand for long-run U.S. large-cap equity performance, though actual year-to-year results swing widely. S&P Dow Jones Indices reported a 13.44% 10-year annualized price return and roughly 15.5% 10-year total return on the S&P 500 as of September 30, 2026 — both above this scenario's 10% assumption. Use 10% as an aspirational stress test; plan withdrawals and retirement timelines at 7% so bear markets do not force you to sell low.",

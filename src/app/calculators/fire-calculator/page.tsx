@@ -9,8 +9,8 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 const calc = getCalculator("fire-calculator")!;
 
 export const metadata: Metadata = {
-  title: "FIRE Calculator — Financial Independence, Retire Early",
-  description: "Calculate your FIRE number and see how soon you can reach financial independence. Based on your savings rate, expenses, and investment returns. Free and instant.",
+  title: "FIRE Calculator: Your FIRE Number and Timeline",
+  description: "Calculate your FIRE number and see how soon you can reach financial independence from your savings rate, expenses, and investment returns. Free.",
   keywords: [
     "FIRE calculator",
     "financial independence retire early",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "retirement savings rate calculator",
   ],
   openGraph: {
-    title: `FIRE Calculator — Financial Independence, Retire Early | ${site.name}`,
+    title: `FIRE Calculator: Your FIRE Number and Timeline | ${site.name}`,
     description: calc.description,
     type: "website",
   },

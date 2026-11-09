@@ -24,9 +24,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Emergency Fund Calculator — How Much Do You Really Need?",
+  title: "Emergency Fund Calculator: How Much You Need",
   description:
-    "Calculate your ideal emergency fund size based on monthly expenses, income stability, and risk factors. Most experts recommend 3-8 months of expenses. Find your number in seconds.",
+    "Calculate your ideal emergency fund from monthly expenses, income stability, and risk factors. Most experts recommend 3-8 months of expenses.",
   keywords: [
     "emergency fund calculator",
     "how to calculate emergency fund",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "emergency savings calculator",
   ],
   openGraph: {
-    title: `Emergency Fund Calculator — How Much Do You Really Need? | ${site.name}`,
+    title: `Emergency Fund Calculator: How Much You Need | ${site.name}`,
     description:
       "Calculate your ideal emergency fund size based on monthly expenses, income stability, and risk factors.",
     type: "website",

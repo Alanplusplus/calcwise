@@ -9,9 +9,9 @@ import { Sources } from "@/components/Sources";
 import { TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "How to Start Investing with $1,000: A Beginner's Step-by-Step Guide",
+  title: "Start Investing with $1,000: Step-by-Step Guide",
   description:
-    "Learn how to start investing with $1,000: where to open an account, what index funds to buy (VTI, VOO, VTSAX), and a real case study with 10-, 20-, and 30-year projections.",
+    "Learn how to start investing with $1,000: where to open an account, index funds to buy (VTI, VOO, VTSAX), and 10-, 20-, and 30-year projection examples.",
   keywords: [
     "how to start investing with $1000",
     "investing with 1000 dollars",

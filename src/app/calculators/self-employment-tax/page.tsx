@@ -10,10 +10,10 @@ import { ADDITIONAL_MEDICARE_THRESHOLDS, SOCIAL_SECURITY_WAGE_BASE, usd } from "
 const calc = getCalculator("self-employment-tax")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `${calc.seoTitle ?? calc.title} | ${site.name}`,
     description: calc.description,
     type: "website",
   },

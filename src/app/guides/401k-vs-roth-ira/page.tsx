@@ -9,7 +9,7 @@ import { Sources } from "@/components/Sources";
 import { TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "401(k) vs Roth IRA: Which Retirement Account Is Better for You?",
+  title: "401(k) vs Roth IRA: Which Fits You in 2026?",
   description:
     "Compare 401(k) vs Roth IRA for 2026: $24,500 vs $7,500 limits, tax treatment, employer match, Roth income limits, and which account fits your income.",
   keywords: [

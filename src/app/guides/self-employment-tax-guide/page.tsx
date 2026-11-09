@@ -19,11 +19,13 @@ import {
 } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "Self-Employment Tax Explained: What Freelancers and 1099 Workers Must Know",
-  description: "Learn how self employment tax works in 2026: the 15.3% rate, Social Security wage base, deductible half, quarterly payments, and strategies to reduce what freelancers owe.",
+  title: "Self-Employment Tax 2026: Guide for 1099 Workers",
+  description:
+    "Learn self employment tax in 2026: the 15.3% rate, Social Security wage base, deductible half, quarterly payments, and ways to reduce what you owe.",
   openGraph: {
-    title: `Self-Employment Tax Explained: What Freelancers and 1099 Workers Must Know | ${site.name}`,
-    description: "Learn how self employment tax works in 2026: the 15.3% rate, Social Security wage base, deductible half, quarterly payments, and strategies to reduce what freelancers owe.",
+    title: `Self-Employment Tax 2026: Guide for 1099 Workers | ${site.name}`,
+    description:
+      "Learn self employment tax in 2026: the 15.3% rate, Social Security wage base, deductible half, quarterly payments, and ways to reduce what you owe.",
     type: "article",
   },
 };

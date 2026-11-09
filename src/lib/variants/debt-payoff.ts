@@ -6,7 +6,7 @@ export const debtPayoffVariants: CalculatorVariant[] = [
   {
     slug: "50000-student-loan",
     lastUpdated: "2026-10-21",
-    title: "Pay Off $50,000 Student Loan — 6.52% Standard Plan",
+    title: "Pay Off $50,000 Student Loan Calculator",
     description:
       "Plan payoff for $50,000 in federal Direct Loans at the 6.52% 2026–27 undergraduate rate. Compare standard, extra payments, PSLF, and refinance.",
     defaults: { balance: "50000", interestRate: "6.52", monthlyPayment: "569", extraPayment: "100" },

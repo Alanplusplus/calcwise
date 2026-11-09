@@ -24,7 +24,7 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   {
     slug: "restaurant-dinner",
     lastUpdated: "2026-10-21",
-    title: "Restaurant Dinner Tip Calculator",
+    title: "Restaurant Dinner Tip Calculator at $120",
     description:
       "Calculate tip on a $120 dinner at 20%. Toast averaged 19.1% at full-service restaurants in Q2 2026 — see split-check totals.",
     defaults: {
@@ -71,9 +71,9 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   {
     slug: "group-dinner",
     lastUpdated: "2026-10-21",
-    title: "Group Dinner Tip Calculator (6 People)",
+    title: "Group Dinner Tip Calculator, Six Guests",
     description:
-      "Split a $350 pre-tax bill plus 20% tip among six guests. See $70 per person and auto-gratuity pitfalls.",
+      "Split a $350 pre-tax bill plus 20% tip among six guests. See $70 per person, auto-gratuity at 18% ($63), and split-check pitfalls.",
     defaults: {
       billAmount: "350.00",
       tipPercentage: "20",
@@ -118,9 +118,9 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   {
     slug: "coffee-shop",
     lastUpdated: "2026-10-21",
-    title: "Coffee Shop Tip Calculator",
+    title: "Coffee Shop Tip Calculator, $7.50 Order",
     description:
-      "Tip on a $7.50 cafe order. Bankrate found 18% of coffee shop users always tip in 2025 — flat $1–$2 is typical.",
+      "Tip on a $7.50 cafe order at 15–20%. Bankrate: 18% of coffee customers always tip in 2025 — flat $1–$2 is typical on small tickets.",
     defaults: {
       billAmount: "7.50",
       tipPercentage: "15",
@@ -165,9 +165,9 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   {
     slug: "food-delivery",
     lastUpdated: "2026-10-21",
-    title: "Food Delivery Tip Calculator",
+    title: "Food Delivery Tip Calculator, $45 Order",
     description:
-      "Tip on a $45 delivery order at 20% ($9). See $5 minimum guidance and bad-weather adjustments.",
+      "Tip on a $45 delivery order at 20% ($9). See $5 minimum guidance, bad-weather bumps to 25–30%, and pre-tip effects on wait times.",
     defaults: {
       billAmount: "45.00",
       tipPercentage: "20",
@@ -212,9 +212,9 @@ export const tipCalculatorVariants: CalculatorVariant[] = [
   {
     slug: "salon-haircut",
     lastUpdated: "2026-10-21",
-    title: "Hair Salon Tip Calculator",
+    title: "Hair Salon Tip Calculator for $65 Haircut",
     description:
-      "Calculate 20% on a $65 haircut ($13 tip, $78 total). Bankrate: 54% always tip stylists in 2025.",
+      "Calculate 20% on a $65 haircut ($13 tip, $78 total). Bankrate: 54% always tip stylists in 2025; assistants often get $3–$5 cash.",
     defaults: {
       billAmount: "65.00",
       tipPercentage: "20",

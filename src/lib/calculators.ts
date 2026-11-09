@@ -1,6 +1,8 @@
 export interface Calculator {
   slug: string;
   title: string;
+  /** Title tag only (H1 and cards keep `title`). Page title + " | CalcWise" should total 50-60 characters. */
+  seoTitle?: string;
   shortTitle: string;
   description: string;
   category: string;
@@ -14,6 +16,10 @@ export interface Category {
   slug: string;
   name: string;
   description: string;
+  /** Title tag only; title + " | CalcWise" should total 50-60 characters. */
+  seoTitle?: string;
+  /** Meta description, 120-155 characters. */
+  seoDescription?: string;
 }
 
 export const categories: Category[] = [
@@ -21,21 +27,29 @@ export const categories: Category[] = [
     slug: "loans",
     name: "Loans & Mortgages",
     description: "Calculate payments, interest, and amortization for all types of loans.",
+    seoTitle: "Mortgage & Loan Calculators: Payment & Interest",
+    seoDescription: "Free mortgage, auto, and refinance calculators for monthly payments, total interest, amortization, affordability, and down payment planning.",
   },
   {
     slug: "savings",
     name: "Savings & Investment",
     description: "Plan your savings goals, investment growth, and retirement funds.",
+    seoTitle: "Savings & Investment Calculators: Grow Your Money",
+    seoDescription: "Free calculators for compound interest, savings goals, CD earnings, dividends, ROI, and investment returns. See how your money grows over time.",
   },
   {
     slug: "debt",
     name: "Debt Management",
     description: "Strategize your debt payoff and understand the true cost of borrowing.",
+    seoTitle: "Debt Management Calculators: Payoff & DTI",
+    seoDescription: "Free debt calculators: build a payoff plan with snowball or avalanche, pay off credit cards, plan student loan repayment, and check your DTI.",
   },
   {
     slug: "planning",
     name: "Financial Planning",
     description: "Budget, plan for emergencies, and make informed financial decisions.",
+    seoTitle: "Financial Planning Calculators: Retire & Budget",
+    seoDescription: "Free calculators for retirement, emergency funds, budgeting, FIRE, income tax, paychecks, net worth, and inflation. Plan with real numbers.",
   },
 ];
 
@@ -43,8 +57,9 @@ export const calculators: Calculator[] = [
   {
     slug: "mortgage",
     title: "Mortgage Payment Calculator",
+    seoTitle: "Mortgage Payment Calculator with Amortization",
     shortTitle: "Mortgage",
-    description: "Calculate your monthly mortgage payment, total interest, and view a full amortization schedule for your home loan.",
+    description: "Calculate your monthly mortgage payment, total interest, and view a full amortization schedule for your home loan. Free, with no signup.",
     category: "loans",
     datePublished: "2026-08-10",
     lastUpdated: "2026-10-21",
@@ -54,6 +69,7 @@ export const calculators: Calculator[] = [
   {
     slug: "compound-interest",
     title: "Compound Interest Calculator",
+    seoTitle: "Compound Interest Calculator with Contributions",
     shortTitle: "Compound Interest",
     description: "See how your money grows over time with compound interest. Compare different compounding frequencies and contribution schedules.",
     category: "savings",
@@ -76,8 +92,9 @@ export const calculators: Calculator[] = [
   {
     slug: "investment-return",
     title: "Investment Return Calculator",
+    seoTitle: "Annual Rate of Return Calculator for Investments",
     shortTitle: "Investment Return",
-    description: "Calculate the total return and annualized performance of your investments including dividends and contributions.",
+    description: "Calculate the total return and annualized performance of your investments including dividends and contributions. Free, no signup needed.",
     category: "savings",
     datePublished: "2026-08-10",
     lastUpdated: "2026-10-21",
@@ -98,6 +115,7 @@ export const calculators: Calculator[] = [
   {
     slug: "credit-card-payoff",
     title: "Credit Card Payoff Calculator",
+    seoTitle: "Credit Card Payoff Calculator: Months & Interest",
     shortTitle: "Credit Card Payoff",
     description: "Calculate how long it takes to pay off credit card debt and how much interest you'll pay with minimum vs. fixed payments.",
     category: "debt",
@@ -109,8 +127,9 @@ export const calculators: Calculator[] = [
   {
     slug: "retirement",
     title: "Retirement Savings Calculator",
+    seoTitle: "Retirement Savings Calculator: Are You on Track?",
     shortTitle: "Retirement",
-    description: "Estimate how much you need to save for retirement and whether you're on track to meet your goals.",
+    description: "Estimate how much you need to save for retirement and whether you're on track to meet your goals. Free retirement calculator, no signup.",
     category: "planning",
     datePublished: "2026-08-10",
     lastUpdated: "2026-10-21",
@@ -142,8 +161,9 @@ export const calculators: Calculator[] = [
   {
     slug: "auto-loan",
     title: "Auto Loan Calculator",
+    seoTitle: "Auto Loan Calculator: Car Payment & Interest",
     shortTitle: "Auto Loan",
-    description: "Calculate your monthly car payment, total interest cost, and view the full amortization schedule for your auto loan.",
+    description: "Calculate your monthly car payment and total interest cost, and view the full amortization schedule for your auto loan. Free, no signup.",
     category: "loans",
     datePublished: "2026-08-19",
     lastUpdated: "2026-10-21",
@@ -164,17 +184,19 @@ export const calculators: Calculator[] = [
   {
     slug: "cd-calculator",
     title: "CD Interest Calculator",
+    seoTitle: "CD Calculator: Interest, APY & Maturity Value",
     shortTitle: "CD Interest",
-    description: "Calculate how much interest you'll earn on a Certificate of Deposit based on deposit amount, term, APY, and compounding frequency.",
+    description: "Calculate how much interest a CD earns from your deposit, term, and APY or stated rate. See the maturity value and a month-by-month growth table.",
     category: "savings",
     datePublished: "2026-08-25",
-    lastUpdated: "2026-10-21",
+    lastUpdated: "2026-11-09",
     relatedCalculators: ["compound-interest", "savings-goal", "investment-return"],
     relatedGuides: ["high-yield-savings-vs-cd", "emergency-fund-where-to-keep"],
   },
   {
     slug: "budget-50-30-20",
     title: "50/30/20 Budget Calculator",
+    seoTitle: "50/30/20 Budget Calculator: Needs, Wants, Savings",
     shortTitle: "50/30/20 Budget",
     description: "Apply the 50/30/20 budget rule to your income. See exactly how much to allocate to needs, wants, and savings each month.",
     category: "planning",
@@ -186,6 +208,7 @@ export const calculators: Calculator[] = [
   {
     slug: "rent-vs-buy",
     title: "Rent vs Buy Calculator",
+    seoTitle: "Rent vs Buy Calculator: Total Cost & Break-Even",
     shortTitle: "Rent vs Buy",
     description: "Compare the true cost of renting vs buying a home over time. See your break-even point and which option builds more wealth.",
     category: "planning",
@@ -208,6 +231,7 @@ export const calculators: Calculator[] = [
   {
     slug: "income-tax",
     title: "Income Tax Calculator",
+    seoTitle: "2026 Income Tax Calculator: Federal Tax & Rates",
     shortTitle: "Income Tax",
     description: "Estimate your federal income tax for 2026 based on filing status, income, deductions, and credits. See your effective and marginal tax rates.",
     category: "planning",
@@ -230,6 +254,7 @@ export const calculators: Calculator[] = [
   {
     slug: "paycheck",
     title: "Paycheck Calculator",
+    seoTitle: "Paycheck Calculator: Take-Home Pay After Taxes",
     shortTitle: "Paycheck",
     description: "Estimate your take-home pay after federal and state taxes, Social Security, Medicare, and retirement contributions from each paycheck.",
     category: "planning",
@@ -241,6 +266,7 @@ export const calculators: Calculator[] = [
   {
     slug: "student-loan",
     title: "Student Loan Calculator",
+    seoTitle: "Student Loan Calculator: Payment & Payoff Date",
     shortTitle: "Student Loan",
     description: "Calculate your student loan monthly payment, total interest cost, and payoff timeline. Compare standard, graduated, and accelerated repayment plans.",
     category: "debt",
@@ -252,6 +278,7 @@ export const calculators: Calculator[] = [
   {
     slug: "inflation",
     title: "Inflation Calculator",
+    seoTitle: "Inflation Calculator: Adjust Dollars Over Time",
     shortTitle: "Inflation",
     description: "Calculate how inflation erodes purchasing power over time. See the future cost of goods and the real value of your savings at any inflation rate.",
     category: "planning",
@@ -263,6 +290,7 @@ export const calculators: Calculator[] = [
   {
     slug: "roi",
     title: "ROI Calculator",
+    seoTitle: "ROI Calculator: Total and Annualized Return",
     shortTitle: "ROI",
     description: "Calculate your return on investment for any project or asset. Compare initial costs, ongoing expenses, and revenue to find total and annualized ROI.",
     category: "savings",
@@ -285,6 +313,7 @@ export const calculators: Calculator[] = [
   {
     slug: "down-payment",
     title: "Down Payment Calculator",
+    seoTitle: "Down Payment Calculator: How Much to Put Down",
     shortTitle: "Down Payment",
     description: "Calculate how much down payment you need for a home, compare PMI costs at different percentages, and see how long it takes to save your target amount.",
     category: "loans",
@@ -296,6 +325,7 @@ export const calculators: Calculator[] = [
   {
     slug: "dividend",
     title: "Dividend Calculator",
+    seoTitle: "Dividend Calculator: Income, Yield & DRIP Growth",
     shortTitle: "Dividend",
     description: "Calculate dividend income, yield, and growth over time. See how reinvesting dividends with DRIP accelerates portfolio growth and compounds your returns.",
     category: "savings",
@@ -307,6 +337,7 @@ export const calculators: Calculator[] = [
   {
     slug: "simple-interest",
     title: "Simple Interest Calculator",
+    seoTitle: "Simple Interest Calculator with Daily Interest",
     shortTitle: "Simple Interest",
     description: "Calculate simple interest on loans or investments. Enter principal, rate, and time to see total interest earned, final amount, and daily interest accrual.",
     category: "savings",
@@ -318,6 +349,7 @@ export const calculators: Calculator[] = [
   {
     slug: "salary-to-hourly",
     title: "Salary to Hourly Calculator",
+    seoTitle: "Salary to Hourly Calculator: After PTO & Taxes",
     shortTitle: "Salary to Hourly",
     description: "Convert your annual salary to an hourly rate, see your effective rate after PTO, and view a full pay period breakdown with after-tax estimates.",
     category: "planning",
@@ -329,6 +361,7 @@ export const calculators: Calculator[] = [
   {
     slug: "tip-calculator",
     title: "Tip Calculator",
+    seoTitle: "Tip Calculator: Split the Bill by Person",
     shortTitle: "Tip",
     description: "Calculate the right tip amount for any service. Split bills among multiple people and see per-person totals with customizable tip percentages.",
     category: "planning",
@@ -340,8 +373,9 @@ export const calculators: Calculator[] = [
   {
     slug: "break-even",
     title: "Break-Even Calculator",
+    seoTitle: "Break-Even Calculator: Units and Revenue",
     shortTitle: "Break-Even",
-    description: "Calculate your break-even point in units and revenue. See how fixed costs, variable costs, and price per unit determine when your business starts turning a profit.",
+    description: "Calculate your break-even point in units and revenue. See how fixed costs, variable costs, and price per unit set when a business turns a profit.",
     category: "planning",
     datePublished: "2026-09-14",
     lastUpdated: "2026-09-14",
@@ -351,6 +385,7 @@ export const calculators: Calculator[] = [
   {
     slug: "capital-gains-tax",
     title: "Capital Gains Tax Calculator",
+    seoTitle: "Capital Gains Tax Calculator: Short vs Long Term",
     shortTitle: "Capital Gains Tax",
     description: "Estimate your capital gains tax on stocks, real estate, and other investments. Compare short-term vs long-term rates and see your net profit after taxes.",
     category: "planning",
@@ -362,8 +397,9 @@ export const calculators: Calculator[] = [
   {
     slug: "self-employment-tax",
     title: "Self-Employment Tax Calculator",
+    seoTitle: "Self-Employment Tax Calculator for 1099 Income",
     shortTitle: "Self-Employment Tax",
-    description: "Calculate your self-employment tax (Social Security and Medicare) as a freelancer or 1099 contractor. See your SE tax, deductible half, and quarterly estimated payments.",
+    description: "Calculate self-employment tax (Social Security and Medicare) for freelancers and 1099 contractors, plus the deductible half and quarterly estimates.",
     category: "planning",
     datePublished: "2026-09-16",
     lastUpdated: "2026-10-20",
@@ -373,6 +409,7 @@ export const calculators: Calculator[] = [
   {
     slug: "house-payment",
     title: "House Payment Calculator",
+    seoTitle: "House Payment Calculator: PITI and PMI Included",
     shortTitle: "House Payment",
     description: "Calculate your total monthly house payment including principal, interest, property taxes, insurance, and PMI. See how each component adds up.",
     category: "loans",
@@ -384,8 +421,9 @@ export const calculators: Calculator[] = [
   {
     slug: "debt-to-income",
     title: "Debt-to-Income Ratio Calculator",
+    seoTitle: "Debt-to-Income Ratio Calculator: Front & Back DTI",
     shortTitle: "Debt-to-Income",
-    description: "Calculate your debt-to-income ratio (DTI) to see how lenders evaluate your finances. Compare front-end and back-end DTI against mortgage qualification thresholds.",
+    description: "Calculate your debt-to-income ratio (DTI) and compare front-end and back-end DTI against common mortgage qualification thresholds.",
     category: "debt",
     datePublished: "2026-09-18",
     lastUpdated: "2026-10-21",
@@ -395,6 +433,7 @@ export const calculators: Calculator[] = [
   {
     slug: "car-affordability",
     title: "Car Affordability Calculator",
+    seoTitle: "Car Affordability Calculator: 20/4/10 Rule",
     shortTitle: "Car Affordability",
     description: "Find out how much car you can afford based on your income, expenses, and down payment. Uses the 20/4/10 rule to recommend a safe vehicle budget.",
     category: "loans",
@@ -406,6 +445,7 @@ export const calculators: Calculator[] = [
   {
     slug: "hourly-to-salary",
     title: "Hourly to Salary Calculator",
+    seoTitle: "Hourly to Salary Calculator with Overtime Pay",
     shortTitle: "Hourly to Salary",
     description: "Convert your hourly wage to an annual salary, see gross and net pay at every frequency, and model overtime earnings with a full reference table.",
     category: "planning",
@@ -417,6 +457,7 @@ export const calculators: Calculator[] = [
   {
     slug: "margin-calculator",
     title: "Profit Margin Calculator",
+    seoTitle: "Profit Margin Calculator: Gross, Operating, Net",
     shortTitle: "Profit Margin",
     description: "Calculate gross, operating, and net profit margins from revenue and costs. Compare margin scenarios and see how pricing changes affect your bottom line.",
     category: "planning",
@@ -428,6 +469,7 @@ export const calculators: Calculator[] = [
   {
     slug: "lease-vs-buy-car",
     title: "Lease vs Buy Car Calculator",
+    seoTitle: "Lease vs Buy Car Calculator: 3-6 Year Cost",
     shortTitle: "Lease vs Buy Car",
     description: "Compare the total cost of leasing vs buying a car over 3-6 years. See monthly payments, equity, and which option saves you more money.",
     category: "loans",
@@ -439,8 +481,9 @@ export const calculators: Calculator[] = [
   {
     slug: "refinance-calculator",
     title: "Mortgage Refinance Calculator",
+    seoTitle: "Mortgage Refinance Calculator: Break-Even Point",
     shortTitle: "Refinance",
-    description: "Calculate how much you could save by refinancing your mortgage. Compare your current loan to a new rate and see monthly savings, break-even point, and total interest saved.",
+    description: "Calculate how much you could save by refinancing your mortgage. Compare your current loan to a new rate and see monthly savings and break-even point.",
     category: "loans",
     datePublished: "2026-09-23",
     lastUpdated: "2026-10-22",

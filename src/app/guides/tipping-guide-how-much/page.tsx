@@ -8,9 +8,9 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "How Much Should You Tip? The Complete 2026 Tipping Guide by Service",
+  title: "How Much to Tip in 2026: Guide by Service",
   description:
-    "Learn exactly how much to tip at restaurants, coffee shops, for delivery, at salons, and for group dinners. Specific dollar amounts, percentage ranges, and etiquette rules for every situation.",
+    "Learn how much to tip at restaurants, coffee shops, delivery, salons, and group dinners with dollar amounts, percentage ranges, and etiquette rules.",
   keywords: [
     "how much to tip",
     "tipping guide",

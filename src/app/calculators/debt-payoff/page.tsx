@@ -10,8 +10,8 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 const calc = getCalculator("debt-payoff")!;
 
 export const metadata: Metadata = {
-  title: "Debt Payoff Calculator — Snowball vs Avalanche Methods",
-  description: "Create a debt payoff plan using avalanche or snowball methods. See exactly when you'll be debt-free and how much interest you'll save. Works for credit cards, student loans, and more.",
+  title: "Debt Payoff Calculator: Snowball vs Avalanche",
+  description: "Build a debt payoff plan with the avalanche or snowball method. See your debt-free date and the interest you'll save on cards, student loans, and more.",
   keywords: [
     "debt payoff calculator",
     "debt snowball vs debt avalanche",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "credit card debt calculator",
   ],
   openGraph: {
-    title: `Debt Payoff Calculator — Snowball vs Avalanche | ${site.name}`,
+    title: `Debt Payoff Calculator: Snowball vs Avalanche | ${site.name}`,
     description: calc.description,
     type: "website",
   },

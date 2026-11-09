@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <h1 className="text-3xl font-bold text-ink-900">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
+      <p className="mt-2 text-sm text-ink-500">Last updated: November 2026</p>
 
       <div className="prose mt-8">
         <p>
@@ -57,9 +57,22 @@ export default function PrivacyPage() {
 
         <h3>Analytics</h3>
         <p>
-          We may use privacy-respecting analytics to understand traffic patterns
-          and popular content. This helps us decide which calculators to build
-          and which content to improve.
+          We use Google Analytics 4, loaded through Google Tag Manager, to
+          understand traffic patterns and popular content. Google Analytics sets
+          cookies (such as _ga) that distinguish visitors and sessions, and
+          reports page views, approximate location, device type, and how you
+          arrived at the site. We also use Vercel Web Analytics, which is
+          cookieless. None of these tools receive the numbers you enter into a
+          calculator. You can opt out of Google Analytics with the{" "}
+          <a
+            href="https://tools.google.com/dlpage/gaoptout"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Google Analytics opt-out browser add-on
+          </a>
+          , by blocking cookies in your browser settings, or by using a content
+          blocker. The calculators work the same either way.
         </p>
 
         <h2>How We Use Information</h2>
@@ -74,7 +87,8 @@ export default function PrivacyPage() {
         <h2>Third-Party Services</h2>
         <p>We may use the following third-party services:</p>
         <ul>
-          <li><strong>Vercel:</strong> website hosting and content delivery</li>
+          <li><strong>Vercel:</strong> website hosting, content delivery, and cookieless Web Analytics</li>
+          <li><strong>Google Tag Manager and Google Analytics 4:</strong> traffic measurement</li>
         </ul>
         <p>
           Each of these services has its own privacy policy governing the data
@@ -84,8 +98,9 @@ export default function PrivacyPage() {
         <h2>Data Retention</h2>
         <p>
           Server logs are retained for up to 30 days and then deleted.
-          Analytics data is retained in aggregate form. We do not maintain
-          individual user profiles or long-term personal data stores.
+          Analytics data is kept for the retention period configured in our
+          Google Analytics and Vercel accounts. We do not maintain individual
+          user profiles or long-term personal data stores.
         </p>
 
         <h2>Your Rights</h2>

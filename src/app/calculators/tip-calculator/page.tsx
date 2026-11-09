@@ -9,9 +9,9 @@ import { tipCalculatorVariants } from "@/lib/variants/tip-calculator";
 const calc = getCalculator("tip-calculator")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
-  openGraph: { title: `${calc.title} | ${site.name}`, description: calc.description, type: "website" },
+  openGraph: { title: `${calc.seoTitle ?? calc.title} | ${site.name}`, description: calc.description, type: "website" },
 };
 
 export default function TipPage() {

@@ -25,11 +25,13 @@ function qualifiedDividendTaxSummary(): string {
 }
 
 export const metadata: Metadata = {
-  title: "Dividend Investing for Beginners: How to Build Passive Income",
-  description: "Learn how to start dividend investing from scratch. Covers dividend yield, DRIP reinvestment, Dividend Aristocrats, and a step-by-step portfolio plan with real numbers.",
+  title: "Dividend Investing for Beginners: Get Started",
+  description:
+    "Start dividend investing from scratch: dividend yield, DRIP reinvestment, Dividend Aristocrats, and a step-by-step portfolio plan with real numbers.",
   openGraph: {
-    title: `Dividend Investing for Beginners: How to Build Passive Income | ${site.name}`,
-    description: "Learn how to start dividend investing from scratch. Covers dividend yield, DRIP reinvestment, Dividend Aristocrats, and a step-by-step portfolio plan with real numbers.",
+    title: `Dividend Investing for Beginners: Get Started | ${site.name}`,
+    description:
+      "Start dividend investing from scratch: dividend yield, DRIP reinvestment, Dividend Aristocrats, and a step-by-step portfolio plan with real numbers.",
     type: "article",
   },
 };

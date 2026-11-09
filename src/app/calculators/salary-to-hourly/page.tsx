@@ -21,9 +21,9 @@ import {
 const calc = getCalculator("salary-to-hourly")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
-  openGraph: { title: `${calc.title} | ${site.name}`, description: calc.description, type: "website" },
+  openGraph: { title: `${calc.seoTitle ?? calc.title} | ${site.name}`, description: calc.description, type: "website" },
 };
 
 const faqs = [

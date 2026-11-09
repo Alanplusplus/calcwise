@@ -10,10 +10,10 @@ import { LONG_TERM_BRACKETS, NIIT_THRESHOLDS, usd } from "@/lib/tax-data";
 const calc = getCalculator("capital-gains-tax")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `${calc.seoTitle ?? calc.title} | ${site.name}`,
     description: calc.description,
     type: "website",
   },

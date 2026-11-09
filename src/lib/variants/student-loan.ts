@@ -30,9 +30,9 @@ export const studentLoanVariants: CalculatorVariant[] = [
   {
     slug: "20000-loan",
     lastUpdated: "2026-10-21",
-    title: "Student Loan Calculator for $20,000",
+    title: "$20,000 Student Loan Payment Calculator",
     description:
-      "Calculate monthly payments on a $20,000 student loan at the 6.52% federal undergrad rate. See ~$227/mo over 10 years, total interest, and payoff with extra payments.",
+      "Calculate payments on a $20,000 loan at the 6.52% federal undergrad rate. Standard payment ~$227/mo over 10 years, total interest, and extra payoff.",
     defaults: { balance: "20000", interestRate: "6.52", termYears: "10" },
     intro:
       "A $20,000 balance is typical for graduates who covered much of an in-state public degree with grants or part-time work. At the 6.52% fixed rate on new undergraduate Direct Loans disbursed between July 1, 2026 and June 30, 2027, the standard 10-year payment is about $227 — high enough to notice, but usually manageable on a full-time salary without income-driven repayment. Extra principal payments often beat refinancing at this balance because federal protections (deferment, RAP eligibility, PSLF on Direct Loans) are worth more than a small private rate discount.",
@@ -75,9 +75,9 @@ export const studentLoanVariants: CalculatorVariant[] = [
   {
     slug: "40000-loan",
     lastUpdated: "2026-10-21",
-    title: "Student Loan Calculator for $40,000",
+    title: "$40,000 Student Loan Payment Calculator",
     description:
-      "Run the numbers on a $40,000 student loan at 6.52%. Standard payment is ~$455/mo for 10 years — see total interest, RAP trade-offs, and employer assistance.",
+      "Model a $40,000 student loan at 6.52%. Standard payment ~$455/mo for 10 years — total interest, RAP trade-offs, and employer Section 127 help.",
     defaults: { balance: "40000", interestRate: "6.52", termYears: "10" },
     intro:
       "Forty thousand dollars sits near typical undergraduate borrowing for a four-year degree with partial aid. At the 6.52% undergraduate Direct Loan rate for 2026–27 disbursements, the standard payment is about $455 per month — a line item that belongs in any post-grad budget. Employer Section 127 assistance (up to $5,250 tax-free per year in 2026) and targeted extra payments can shave years off the term without giving up federal loan protections.",
@@ -118,7 +118,7 @@ export const studentLoanVariants: CalculatorVariant[] = [
   {
     slug: "60000-loan",
     lastUpdated: "2026-10-21",
-    title: "Student Loan Calculator for $60,000",
+    title: "$60,000 Student Loan Payment Calculator",
     description:
       "Plan repayment for $60,000 in student loans at 6.52%. Standard payment ~$682/mo over 10 years — compare RAP, refinancing, and avalanche payoff.",
     defaults: { balance: "60000", interestRate: "6.52", termYears: "10" },
@@ -161,7 +161,7 @@ export const studentLoanVariants: CalculatorVariant[] = [
   {
     slug: "100000-loan",
     lastUpdated: "2026-10-21",
-    title: "Student Loan Calculator for $100,000",
+    title: "$100,000 Student Loan Payment Calculator",
     description:
       "Model a $100,000 student loan at 6.52%. Standard payment ~$1,137/mo, $136,380 total repayment — PSLF, RAP, and refinance trade-offs.",
     defaults: { balance: "100000", interestRate: "6.52", termYears: "10" },

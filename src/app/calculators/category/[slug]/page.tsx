@@ -18,11 +18,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = categories.find((c) => c.slug === slug);
   if (!category) return {};
   return {
-    title: `${category.name} Calculators`,
-    description: `Free ${category.name.toLowerCase()} calculators: ${category.description}`,
+    title: category.seoTitle ?? `${category.name} Calculators`,
+    description:
+      category.seoDescription ?? `Free ${category.name.toLowerCase()} calculators: ${category.description}`,
     openGraph: {
-      title: `${category.name} Calculators | ${site.name}`,
-      description: category.description,
+      title: `${category.seoTitle ?? `${category.name} Calculators`} | ${site.name}`,
+      description: category.seoDescription ?? category.description,
     },
   };
 }

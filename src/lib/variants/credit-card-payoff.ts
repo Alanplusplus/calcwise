@@ -8,7 +8,7 @@ export const creditCardPayoffVariants: CalculatorVariant[] = [
   {
     slug: "minimum-payment",
     lastUpdated: "2026-10-22",
-    title: "Credit Card Minimum Payment Calculator",
+    title: "$8,000 Credit Card Minimum Payment Calculator",
     description:
       "Model interest-plus-1% minimum payments on an $8,000 balance at the 22.36% Fed G.19 APR. Compare 278 months of minimums with a fixed $250 payment.",
     defaults: {

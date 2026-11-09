@@ -25,7 +25,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
   keywords: [
     "compound interest calculator",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "interest calculator",
   ],
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `${calc.seoTitle ?? calc.title} | ${site.name}`,
     description: calc.description,
     type: "website",
   },

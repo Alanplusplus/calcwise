@@ -8,9 +8,9 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "How to Pay Off $10,000 in Credit Card Debt: 5 Proven Strategies",
+  title: "Pay Off $10K Credit Card Debt: 5 Strategies",
   description:
-    "Learn 5 proven strategies to pay off $10,000 in credit card debt fast. Real math on balance transfers, consolidation loans, snowball method, and side income.",
+    "Learn 5 proven strategies to pay off $10,000 in credit card debt. Real math on balance transfers, consolidation loans, snowball method, and side income.",
   keywords: [
     "how to pay off credit card debt fast",
     "pay off credit card debt fast",

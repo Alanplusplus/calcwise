@@ -8,10 +8,9 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title:
-    "Amortization Schedule Explained: How Your Loan Payments Actually Work",
+  title: "Amortization Explained: How Loan Payments Work",
   description:
-    "Understand how an amortization schedule splits every loan payment into principal and interest. See a real 30-year mortgage example, learn the formula, and download a free schedule.",
+    "See how an amortization schedule splits each payment into principal and interest, with a real 30-year mortgage example, the formula, and a free schedule.",
   keywords: [
     "amortization schedule explained",
     "amortization schedule",

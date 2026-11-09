@@ -8,7 +8,7 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "Debt Avalanche vs Snowball Method: Which Gets You Debt-Free Faster?",
+  title: "Debt Avalanche vs Snowball: Which Wins?",
   description:
     "Debt avalanche vs snowball compared with real numbers. See which payoff method saves more interest, gets you debt-free faster, and fits your personality.",
   keywords: [

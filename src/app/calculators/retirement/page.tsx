@@ -10,7 +10,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 const calc = getCalculator("retirement")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
   keywords: [
     "retirement savings calculator",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "am I on track for retirement",
   ],
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `${calc.seoTitle ?? calc.title} | ${site.name}`,
     description: calc.description,
     type: "website",
   },

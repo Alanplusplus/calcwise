@@ -152,7 +152,7 @@ export const savingsGoalVariants: CalculatorVariant[] = [
     lastUpdated: "2026-10-21",
     title: "Vacation Savings Calculator — $5,000 Trip Fund",
     description:
-      "Save $5,000 in 12 months from $500 at 4.25% APY. About $366/month ($85/week) with ~$108 from interest.",
+      "Save $5,000 in 12 months from $500 at 4.25% APY. About $366/month ($85/week) to fund the trip, with roughly $108 earned from interest.",
     defaults: { goalAmount: "5000", currentSavings: "500", timeframe: "1" },
     intro:
       "A $5,000 budget covers a week-long trip for two with room for dining and activities when you save over 12 months instead of charging the card. With $500 already earmarked and 4.25% APY in a travel sinking fund, the calculator shows about $366 per month — roughly $85 per week — to land at $5,000 without paying 20%+ credit card APR on the balance.",
@@ -195,7 +195,7 @@ export const savingsGoalVariants: CalculatorVariant[] = [
     lastUpdated: "2026-10-21",
     title: "College Fund Savings Calculator — 18-Year Plan",
     description:
-      "Reach $100,000 in 18 years from $10,000 at 7% annual return. About $151/month with compound growth supplying ~$57,500.",
+      "Reach $100,000 in 18 years from $10,000 at 7% annual return. About $151/month needed, with compound growth supplying roughly $57,500.",
     defaults: {
       goalAmount: "100000",
       currentSavings: "10000",

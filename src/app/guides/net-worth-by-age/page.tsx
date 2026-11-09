@@ -9,7 +9,7 @@ import { Sources } from "@/components/Sources";
 import { TAX_SOURCES } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "Average Net Worth by Age in 2026 — Where Do You Stand?",
+  title: "Net Worth by Age in 2026: Where Do You Stand?",
   description:
     "Median net worth by age from the Fed's 2025 SCF (released Oct 2026): under 35 $33K, 35-44 $156K, 55-64 $412K. Compare your net worth to peers.",
   keywords: [

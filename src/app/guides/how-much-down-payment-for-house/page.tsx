@@ -8,9 +8,9 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "How Much Down Payment Do You Need for a House in 2026?",
+  title: "House Down Payment in 2026: Minimums & PMI Costs",
   description:
-    "Find out how much down payment you need for a house in 2026. Compare conventional, FHA, VA, and USDA loan minimums with real dollar amounts, PMI costs, and savings strategies.",
+    "Find out how much down payment you need for a house in 2026. Compare conventional, FHA, VA, and USDA minimums with dollar amounts, PMI, and savings tips.",
   keywords: [
     "how much down payment for a house",
     "down payment for house",

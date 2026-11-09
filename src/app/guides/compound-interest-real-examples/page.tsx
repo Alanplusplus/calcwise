@@ -8,7 +8,7 @@ import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
 
 export const metadata: Metadata = {
-  title: "Compound Interest: 5 Real-Life Examples That Show Its Power",
+  title: "Compound Interest: 5 Real Examples with Numbers",
   description:
     "Real-life compound interest examples with exact numbers: retirement investing, credit card debt, student loans, and high-yield savings.",
   keywords: [

@@ -10,10 +10,10 @@ import { STANDARD_DEDUCTIONS, usd } from "@/lib/tax-data";
 const calc = getCalculator("rent-vs-buy")!;
 
 export const metadata: Metadata = {
-  title: calc.title,
+  title: calc.seoTitle ?? calc.title,
   description: calc.description,
   openGraph: {
-    title: `${calc.title} | ${site.name}`,
+    title: `${calc.seoTitle ?? calc.title} | ${site.name}`,
     description: calc.description,
     type: "website",
   },

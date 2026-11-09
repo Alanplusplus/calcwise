@@ -3,7 +3,7 @@ import Link from "next/link";
 import { guides } from "@/lib/guides";
 
 export const metadata: Metadata = {
-  title: "Financial Guides & Articles",
+  title: "Financial Guides: Mortgages, Savings & Investing",
   description: "In-depth financial guides with real examples, comparison tables, and actionable strategies for mortgages, savings, investing, and debt payoff.",
 };
 

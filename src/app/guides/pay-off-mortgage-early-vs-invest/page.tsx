@@ -14,9 +14,9 @@ import {
 } from "@/lib/tax-data";
 
 export const metadata: Metadata = {
-  title: "Pay Off Mortgage Early vs Invest: The Math Behind the Decision",
+  title: "Pay Mortgage Early or Invest? The Real Math",
   description:
-    "Should you pay off your mortgage early or invest the extra money? We run the real numbers at today's rates so you can see exactly which option builds more wealth.",
+    "Should you pay off your mortgage early or invest the extra money? We run the real numbers at today's rates so you can see which option builds more wealth.",
   keywords: [
     "is it better to pay off mortgage early or invest",
     "pay off mortgage or invest calculator",
