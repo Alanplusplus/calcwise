@@ -609,6 +609,10 @@ export default function RentVsBuyByStatePage() {
           <Link href="/reports/mortgage-affordability-by-state" className="text-brand-600 underline">
             mortgage affordability by state report
           </Link>
+          , the{" "}
+          <Link href="/reports/housing-cost-burden-by-state" className="text-brand-600 underline">
+            housing cost burden by state report
+          </Link>
           , and the guides{" "}
           <Link href="/guides/rent-vs-buy-decision" className="text-brand-600 underline">
             rent vs buy in 2026

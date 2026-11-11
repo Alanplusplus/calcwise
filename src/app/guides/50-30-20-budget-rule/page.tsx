@@ -645,7 +645,15 @@ export default function Budget503020Guide() {
                 $6,250 take-home paycheck, even $2,000 rent is 32% before
                 groceries, insurance, or transportation. Residents in these cities
                 often use a modified 60/20/20 or 65/15/20 split until income rises
-                or housing costs stabilize.
+                or housing costs stabilize. Our{" "}
+                <Link
+                  href="/reports/housing-cost-burden-by-state"
+                  className="text-brand-600 underline"
+                >
+                  housing cost burden by state report
+                </Link>{" "}
+                shows the share of renters and owners in every state who spend
+                30% or more of their gross income on housing.
               </p>
             </div>
             <div className="rounded-lg border border-ink-200 bg-white p-5">

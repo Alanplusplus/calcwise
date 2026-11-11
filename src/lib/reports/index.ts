@@ -1,5 +1,6 @@
 import { REPORT } from "./mortgage-affordability-by-state";
 import { REPORT as RENT_VS_BUY } from "./rent-vs-buy-by-state";
+import { REPORT as COST_BURDEN, US_RESULT as COST_BURDEN_US } from "./housing-cost-burden-by-state";
 
 export interface ReportListing {
   slug: string;
@@ -12,6 +13,15 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: COST_BURDEN.slug,
+    path: COST_BURDEN.path,
+    title: "Housing Cost Burden by State: Households Paying 30% or More of Income",
+    description: `How many renters and owners spend 30% or more, and 50% or more, of income on housing, for all 50 states and DC. Nationally ${COST_BURDEN_US.allShare30.pct.toFixed(1)}% of households and ${COST_BURDEN_US.renterShare30.pct.toFixed(1)}% of renters.`,
+    datePublished: COST_BURDEN.datePublished,
+    dateModified: COST_BURDEN.dateModified,
+    dataSource: `Census ACS ${COST_BURDEN.acsYear} 1-year (B25070, B25091), HUD definitions`,
+  },
   {
     slug: RENT_VS_BUY.slug,
     path: RENT_VS_BUY.path,
