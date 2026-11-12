@@ -1,6 +1,8 @@
 import { REPORT } from "./mortgage-affordability-by-state";
 import { REPORT as RENT_VS_BUY } from "./rent-vs-buy-by-state";
 import { REPORT as COST_BURDEN, US_RESULT as COST_BURDEN_US } from "./housing-cost-burden-by-state";
+import { REPORT as INSURANCE, STATE_RESULTS as INSURANCE_STATES, US_RESULT as INSURANCE_US } from "./homeowners-insurance-by-state";
+import { REPORT as CARS, STATE_RESULTS as CAR_STATES, US_RESULT as CARS_US } from "./car-ownership-by-state";
 
 export interface ReportListing {
   slug: string;
@@ -13,6 +15,24 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: CARS.slug,
+    path: CARS.path,
+    title: "Car Ownership by State: Vehicles per Household and What They Cost",
+    description: `Vehicles per household in all 50 states and DC, from ${CAR_STATES[CAR_STATES.length - 1].perHh.value.toFixed(2)} to ${CAR_STATES[0].perHh.value.toFixed(2)} (${CARS_US.perHh.value.toFixed(2)} nationally), the share of households with no vehicle, and what insurance and fuel take of income.`,
+    datePublished: CARS.datePublished,
+    dateModified: CARS.dateModified,
+    dataSource: `Census ACS ${CARS.acsYear} 1-year (B25044, B25046), AAA Your Driving Costs 2026`,
+  },
+  {
+    slug: INSURANCE.slug,
+    path: INSURANCE.path,
+    title: "Homeowners Insurance Cost by State: What Owners Actually Pay",
+    description: `Typical annual premium for owners with a mortgage in all 50 states and DC, from $${INSURANCE_STATES[INSURANCE_STATES.length - 1].mortMedian.toLocaleString("en-US")} to $${INSURANCE_STATES[0].mortMedian.toLocaleString("en-US")} (about $${INSURANCE_US.mortMedian.toLocaleString("en-US")} nationally), and how much insurance adds to the monthly payment.`,
+    datePublished: INSURANCE.datePublished,
+    dateModified: INSURANCE.dateModified,
+    dataSource: `Census ACS ${INSURANCE.acsYear} 1-year (B25141), Freddie Mac PMMS`,
+  },
   {
     slug: COST_BURDEN.slug,
     path: COST_BURDEN.path,

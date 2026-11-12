@@ -3,7 +3,7 @@ import { getCalculator } from "@/lib/calculators";
 import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { SavingsGoalCalculator } from "./SavingsGoalCalculator";
-import { SavingsGoalArticle } from "./SavingsGoalArticle";
+import { SavingsGoalArticle, weeklySavingsFaq } from "./SavingsGoalArticle";
 import { savingsGoalVariants } from "@/lib/variants/savings-goal";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
+  weeklySavingsFaq,
   {
     question: "What return rate should I use?",
     answer: "High-yield savings: 4.2–4.35% APY (top online offers, October 2026). FDIC national average savings was 0.38% the same month. Long-term investment goals: 6–7% planning rate. Use 0% only for checking (not recommended beyond short-term goals).",

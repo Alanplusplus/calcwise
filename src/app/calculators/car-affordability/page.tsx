@@ -3,12 +3,13 @@ import { getCalculator } from "@/lib/calculators";
 import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { CarAffordabilityCalculator } from "./CarAffordabilityCalculator";
-import { CarAffordabilityArticle } from "./CarAffordabilityArticle";
+import { CarAffordabilityArticle, salary60kFaq } from "./CarAffordabilityArticle";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 const calc = getCalculator("car-affordability")!;
 
 const faqs = [
+  salary60kFaq,
   {
     question: "What is the 20/4/10 rule for cars?",
     answer:

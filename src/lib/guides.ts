@@ -32,11 +32,11 @@ export const guides: Guide[] = [
   },
   {
     slug: "save-50000-in-3-years",
-    title: "How to Save $50,000 in 3 Years: A Realistic Plan",
+    title: "How to Save $50,000 in 3 Years: 1, 2 & 3-Year Plans",
     description: "Saving $50,000 in 3 years takes about $1,295 a month at 4.50%. See the monthly math for 1 to 5 years, the income you need, and a real case study.",
     published: true,
     datePublished: "2026-08-24",
-    lastUpdated: "2026-11-09",
+    lastUpdated: "2026-11-12",
     relatedCalculators: ["savings-goal", "compound-interest"],
     relatedGuides: ["50-30-20-budget-rule", "high-yield-savings-vs-cd"],
   },
@@ -166,7 +166,7 @@ export const guides: Guide[] = [
     description: "Find how much car you can afford at $40K to $150K salaries using the 20/4/10 rule. See max car price, loan payment, and insurance and fuel costs.",
     published: true,
     datePublished: "2026-08-26",
-    lastUpdated: "2026-10-19",
+    lastUpdated: "2026-11-12",
     relatedCalculators: ["auto-loan", "car-affordability", "budget-50-30-20", "savings-goal"],
     relatedGuides: ["50-30-20-budget-rule", "save-50000-in-3-years"],
   },
@@ -269,6 +269,17 @@ export const guides: Guide[] = [
     lastUpdated: "2026-11-04",
     relatedCalculators: ["simple-interest", "compound-interest", "savings-goal"],
     relatedGuides: ["compound-interest-real-examples", "high-yield-savings-vs-cd", "how-to-pay-off-credit-card-fast"],
+  },
+  {
+    slug: "break-even-analysis-guide",
+    title: "Break-Even Analysis: How to Know When Your Business Starts Making Money",
+    description:
+      "Break-even analysis in units and dollars: formulas, contribution margin, Etsy and Amazon fees, margin of safety, and a restaurant case study.",
+    published: true,
+    datePublished: "2026-11-12",
+    lastUpdated: "2026-11-12",
+    relatedCalculators: ["break-even", "roi", "savings-goal"],
+    relatedGuides: ["how-to-calculate-roi", "save-50000-in-3-years", "self-employment-tax-guide"],
   },
 ];
 

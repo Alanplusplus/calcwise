@@ -55,7 +55,7 @@ export function MortgageArticle() {
       </p>
       <ul>
         <li><strong>Property taxes</strong> — the national effective rate on owner-occupied homes averaged 0.89% of value in 2024 (about $8.88 per $1,000), but state rates span roughly 0.26% in Hawaii to 2.08% in New Jersey.</li>
-        <li><strong>Homeowners insurance</strong> — national averages near $2,400 per year on a $350,000 dwelling are common in 2026 quotes, with wide swings in coastal and wildfire-prone states.</li>
+        <li><strong>Homeowners insurance</strong> — national averages near $2,400 per year on a $350,000 dwelling are common in 2026 quotes, with wide swings in coastal and wildfire-prone states. For what existing owners actually pay in each state, see our <Link href="/reports/homeowners-insurance-by-state">homeowners insurance by state report</Link>.</li>
         <li><strong>PMI (Private Mortgage Insurance)</strong> — required if your down payment is less than 20%, typically 0.5% to 1.5% of the loan amount per year.</li>
         <li><strong>HOA fees</strong> — if applicable, can range from $100 to $1,000+ per month.</li>
       </ul>

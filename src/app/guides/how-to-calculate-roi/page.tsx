@@ -490,7 +490,23 @@ export default function HowToCalculateRoiGuide() {
             to model sensitivity: even if revenue growth is only 25% of
             projections ($7,000/year net instead of $18,000), the 5-year ROI
             is still -30% -- meaning he loses money. This downside scenario
-            helps him set a minimum revenue target to monitor monthly.
+            helps him set a minimum revenue target to monitor monthly. For the
+            sales volume that covers fixed and variable costs before profit, see
+            our{" "}
+            <Link
+              href="/guides/break-even-analysis-guide"
+              className="text-brand-600 hover:text-brand-800 font-medium"
+            >
+              break-even analysis guide
+            </Link>{" "}
+            and the{" "}
+            <Link
+              href="/calculators/break-even"
+              className="text-brand-600 hover:text-brand-800 font-medium"
+            >
+              Break-Even Calculator
+            </Link>
+            .
           </p>
         </section>
 

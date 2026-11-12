@@ -1,6 +1,63 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Sources } from "@/components/Sources";
+import { DEFAULT_NEW_CAR_APR } from "@/lib/market-data";
+import { US_RESULT as carOwnership } from "@/lib/reports/car-ownership-by-state";
+
+const WORKED_EXAMPLE_APR = parseFloat(DEFAULT_NEW_CAR_APR);
+const WORKED_EXAMPLE_TERM_MONTHS = 48;
+const WORKED_EXAMPLE_INSURANCE = 150;
+const WORKED_EXAMPLE_FUEL = 150;
+const WORKED_EXAMPLE_OPERATING =
+  WORKED_EXAMPLE_INSURANCE + WORKED_EXAMPLE_FUEL;
+
+function calcMaxLoanFromPayment(
+  payment: number,
+  annualRate: number,
+  termMonths: number,
+): number {
+  if (payment <= 0) return 0;
+  const r = annualRate / 100 / 12;
+  if (r === 0) return payment * termMonths;
+  return payment * ((1 - Math.pow(1 + r, -termMonths)) / r);
+}
+
+function formatUsdWhole(n: number): string {
+  return n.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
+}
+
+const WORKED_EXAMPLE_INCOMES = [40_000, 60_000, 80_000, 100_000] as const;
+
+const workedExamples = WORKED_EXAMPLE_INCOMES.map((annualIncome) => {
+  const grossMonthly = annualIncome / 12;
+  const totalCarCeiling = grossMonthly * 0.1;
+  const maxLoanPayment = Math.max(0, totalCarCeiling - WORKED_EXAMPLE_OPERATING);
+  const maxLoan = calcMaxLoanFromPayment(
+    maxLoanPayment,
+    WORKED_EXAMPLE_APR,
+    WORKED_EXAMPLE_TERM_MONTHS,
+  );
+  const maxCarPrice = maxLoan / 0.8;
+  return {
+    annualIncome,
+    grossMonthly,
+    totalCarCeiling,
+    maxLoanPayment,
+    maxCarPrice,
+  };
+});
+
+const workedExample60k = workedExamples.find((r) => r.annualIncome === 60_000)!;
+
+/** Plain-text FAQ entry, exported so the page's FAQ JSON-LD matches what readers see. */
+export const salary60kFaq = {
+  question: "How much car can I afford on a $60,000 salary?",
+  answer: `About ${formatUsdWhole(workedExample60k.maxCarPrice)}. At $60,000 per year (${formatUsdWhole(workedExample60k.grossMonthly)}/month gross), the 20/4/10 rule allows ${formatUsdWhole(workedExample60k.totalCarCeiling)} per month for payment, insurance, and fuel combined. Subtracting ${formatUsdWhole(WORKED_EXAMPLE_OPERATING)} for the calculator's illustrative insurance and fuel defaults leaves ${formatUsdWhole(workedExample60k.maxLoanPayment)} for the loan at ${WORKED_EXAMPLE_APR}% over 48 months with 20% down. The salary guide reaches a lower figure, about $8,600, because it uses Edmunds' 7.0% Q3 2026 APR and higher insurance and fuel costs ($335 a month).`,
+};
 
 export function CarAffordabilityArticle() {
   return (
@@ -23,7 +80,11 @@ export function CarAffordabilityArticle() {
         Enter your annual gross income, monthly take-home pay, and existing debt payments to establish your financial baseline. Add your planned down payment, trade-in value, expected interest rate, loan term, and estimated monthly insurance and fuel costs. The calculator instantly computes your maximum affordable car price using the 20/4/10 rule and shows whether your budget passes each criterion.
       </p>
       <p>
-        Results update in real time as you adjust any field. The top summary cards display your max affordable car price, recommended monthly loan payment, and your 10% gross income budget. Below that, an affordability rating color-codes whether your total car costs (payment plus insurance plus fuel) fall within 10%, 15%, or 20% of gross monthly income. Use the price comparison table to see how a $25,000 car compares to a $35,000 option at your specific loan terms. For detailed payment breakdowns on a specific vehicle price, try our{" "}
+        Results update in real time as you adjust any field. The top summary cards display your max affordable car price, recommended monthly loan payment, and your 10% gross income budget. Below that, an affordability rating color-codes whether your total car costs (payment plus insurance plus fuel) fall within 10%, 15%, or 20% of gross monthly income. Use the price comparison table to see how a $25,000 car compares to a $35,000 option at your specific loan terms. For salary-specific walkthroughs, insurance benchmarks, and when to stretch the 10% rule, read our{" "}
+        <Link href="/guides/how-much-car-can-i-afford" className="text-brand-600 hover:text-brand-800 font-medium">
+          how much car can I afford guide
+        </Link>
+        ; for detailed payment breakdowns on a specific vehicle price, try our{" "}
         <Link href="/calculators/auto-loan" className="text-brand-600 hover:text-brand-800 font-medium">
           Auto Loan Calculator
         </Link>
@@ -59,6 +120,94 @@ export function CarAffordabilityArticle() {
         ]}
         checked="October 2026"
       />
+
+      <h2 id="worked-examples-20410">Worked examples (20/4/10 at this calculator's defaults)</h2>
+      <p>
+        On a $60,000 salary, 20/4/10 caps total car costs at{" "}
+        {formatUsdWhole(workedExample60k.totalCarCeiling)}/month; after{" "}
+        {formatUsdWhole(WORKED_EXAMPLE_OPERATING)} for insurance and fuel,{" "}
+        {formatUsdWhole(workedExample60k.maxLoanPayment)} is left for the loan
+        payment, which supports a maximum car price of about{" "}
+        {formatUsdWhole(workedExample60k.maxCarPrice)} with 20% down at{" "}
+        {WORKED_EXAMPLE_APR}% APR over 48 months. The table below uses the same
+        assumptions for other incomes; for Edmunds Q3 2026 averages and
+        $335/month operating costs, see the{" "}
+        <Link
+          href="/guides/how-much-car-can-i-afford"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          salary-by-salary car affordability guide
+        </Link>
+        .
+      </p>
+      <p className="text-sm text-ink-600">
+        Assumptions: {WORKED_EXAMPLE_APR}% APR (Federal Reserve G.19
+        commercial-bank 60-month new-vehicle average, August 2026, matching this
+        calculator's default rate field), 48-month term, 20% down (max car
+        price = max loan ÷ 0.80),{" "}
+        {formatUsdWhole(WORKED_EXAMPLE_INSURANCE)}/month illustrative insurance
+        and {formatUsdWhole(WORKED_EXAMPLE_FUEL)}/month illustrative
+        fuel/maintenance in the 10% bucket (matching the calculator field
+        defaults, not national full-coverage averages).
+      </p>
+      <div className="overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="border-b border-ink-200 bg-ink-50">
+              <th className="px-4 py-3 text-left font-semibold text-ink-700">
+                Gross income
+              </th>
+              <th className="px-4 py-3 text-left font-semibold text-ink-700">
+                10% monthly ceiling
+              </th>
+              <th className="px-4 py-3 text-left font-semibold text-ink-700">
+                Insurance + fuel allowance
+              </th>
+              <th className="px-4 py-3 text-left font-semibold text-ink-700">
+                Max loan payment
+              </th>
+              <th className="px-4 py-3 text-left font-semibold text-ink-700">
+                Max car price (20% down)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {workedExamples.map((row) => (
+              <tr key={row.annualIncome} className="border-b border-ink-100">
+                <td className="px-4 py-3 font-medium text-ink-800">
+                  {formatUsdWhole(row.annualIncome)}
+                </td>
+                <td className="px-4 py-3">
+                  {formatUsdWhole(row.totalCarCeiling)}/mo
+                </td>
+                <td className="px-4 py-3">
+                  {formatUsdWhole(WORKED_EXAMPLE_OPERATING)}/mo
+                </td>
+                <td className="px-4 py-3">
+                  {formatUsdWhole(row.maxLoanPayment)}/mo
+                </td>
+                <td className="px-4 py-3 font-medium text-brand-700">
+                  {row.maxLoanPayment <= 0
+                    ? "Cash only"
+                    : formatUsdWhole(row.maxCarPrice)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        {`The ${formatUsdWhole(workedExamples[0].annualIncome)} row shows the rule's limit at low incomes: the ${formatUsdWhole(workedExamples[0].totalCarCeiling)} monthly ceiling is almost used up by ${formatUsdWhole(WORKED_EXAMPLE_OPERATING)} of insurance and fuel, so only ${formatUsdWhole(workedExamples[0].maxLoanPayment)} is left for a payment and the realistic plan is a used vehicle bought mostly with savings. Each extra $1,000 of income adds about ${formatUsdWhole(100 / 12)} to the monthly ceiling.`}
+      </p>
+      <p>
+        {`For context on how many vehicles households actually carry, the 2025 American Community Survey counts ${carOwnership.perHh.value.toFixed(2)} vehicles per U.S. household, and ${carOwnership.noneShare.pct.toFixed(1)}% of households have none. Our `}
+        <Link href="/reports/car-ownership-by-state" className="text-brand-600 hover:text-brand-800 font-medium">
+          car ownership by state report
+        </Link>
+        {" "}
+        shows the figures for every state and what AAA's average insurance and fuel costs take of local incomes.
+      </p>
 
       <h2>Case Study: Sophia Buys Her First Car in Phoenix</h2>
       <p>
@@ -114,7 +263,15 @@ export function CarAffordabilityArticle() {
 
       <h2>Car Affordability by Income Level</h2>
       <p>
-        The table below shows recommended car budgets at common salary levels. Assumptions: 7.54% APR (Federal Reserve G.19 60-month bank average, August 2026), 48-month loan term, $150/month insurance, $150/month fuel, and a 20% down payment (max price = max loan ÷ 0.80). Actual affordability varies based on your debts, credit score, and local insurance rates.
+        For $40,000, $60,000, $80,000, and $100,000 gross income at this tool's field defaults, use the{" "}
+        <Link href="#worked-examples-20410" className="text-brand-600 hover:text-brand-800 font-medium">
+          worked examples table
+        </Link>{" "}
+        above (same figures as the{" "}
+        <Link href="/guides/how-much-car-can-i-afford" className="text-brand-600 hover:text-brand-800 font-medium">
+          salary car affordability guide
+        </Link>
+        's calculator-aligned snapshot). The extended table below adds other salary points with the same 7.54% APR, 48-month term, $150/month illustrative insurance, $150/month illustrative fuel, and 20% down (max price = max loan ÷ 0.80). Actual affordability varies with debts, credit score, and local insurance rates.
       </p>
       <table>
         <thead>
@@ -132,7 +289,7 @@ export function CarAffordabilityArticle() {
             <td>$3,333</td>
             <td>$333/mo</td>
             <td>$33/mo</td>
-            <td>$1,700</td>
+            <td>$1,722</td>
           </tr>
           <tr>
             <td>$55,000</td>
@@ -160,7 +317,7 @@ export function CarAffordabilityArticle() {
             <td>$8,333</td>
             <td>$833/mo</td>
             <td>$533/mo</td>
-            <td>$27,600</td>
+            <td>$27,551</td>
           </tr>
           <tr>
             <td>$120,000</td>
@@ -198,6 +355,18 @@ export function CarAffordabilityArticle() {
       </p>
 
       <h2>Frequently Asked Questions</h2>
+
+      <h3>{salary60kFaq.question}</h3>
+      <p>
+        {salary60kFaq.answer} Our{" "}
+        <Link
+          href="/guides/how-much-car-can-i-afford"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          car affordability by salary guide
+        </Link>{" "}
+        shows the same salaries under the Edmunds assumptions.
+      </p>
 
       <h3>Should I use gross or net income for the 10% rule?</h3>
       <p>

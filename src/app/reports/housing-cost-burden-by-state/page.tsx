@@ -705,6 +705,14 @@ export default function HousingCostBurdenByStatePage() {
           <Link href="/reports/mortgage-affordability-by-state" className="text-brand-600 underline">
             mortgage affordability by state report
           </Link>
+          , the{" "}
+          <Link href="/reports/homeowners-insurance-by-state" className="text-brand-600 underline">
+            homeowners insurance by state report
+          </Link>
+          , the{" "}
+          <Link href="/reports/car-ownership-by-state" className="text-brand-600 underline">
+            car ownership by state report
+          </Link>
           , and the guides{" "}
           <Link href="/guides/50-30-20-budget-rule" className="text-brand-600 underline">
             the 50/30/20 budget rule

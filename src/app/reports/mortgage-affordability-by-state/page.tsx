@@ -538,8 +538,13 @@ export default function MortgageAffordabilityByStatePage() {
           <Link href="/reports/rent-vs-buy-by-state" className="text-brand-600 underline">
             rent vs buy by state
           </Link>
-          , which sets the same payments against each state’s median rent. For how many households
-          already spend 30% or more of income on housing, see{" "}
+          , which sets the same payments against each state’s median rent. These payments leave out
+          homeowners insurance; the{" "}
+          <Link href="/reports/homeowners-insurance-by-state" className="text-brand-600 underline">
+            homeowners insurance by state report
+          </Link>{" "}
+          adds the typical premium to the same payment. For how many households already spend 30% or
+          more of income on housing, see{" "}
           <Link href="/reports/housing-cost-burden-by-state" className="text-brand-600 underline">
             housing cost burden by state
           </Link>

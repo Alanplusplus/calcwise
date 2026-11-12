@@ -6,6 +6,52 @@ import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { Sources } from "@/components/Sources";
+import { DEFAULT_NEW_CAR_APR } from "@/lib/market-data";
+import { US_RESULT as carOwnership } from "@/lib/reports/car-ownership-by-state";
+
+const CALC_ALIGNED_APR = parseFloat(DEFAULT_NEW_CAR_APR);
+const CALC_ALIGNED_TERM = 48;
+const CALC_ALIGNED_INSURANCE = 150;
+const CALC_ALIGNED_FUEL = 150;
+const CALC_ALIGNED_OPERATING = CALC_ALIGNED_INSURANCE + CALC_ALIGNED_FUEL;
+
+function calcMaxLoanFromPaymentGuide(
+  payment: number,
+  annualRate: number,
+  termMonths: number,
+): number {
+  if (payment <= 0) return 0;
+  const r = annualRate / 100 / 12;
+  if (r === 0) return payment * termMonths;
+  return payment * ((1 - Math.pow(1 + r, -termMonths)) / r);
+}
+
+function formatUsdGuide(n: number): string {
+  return n.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
+}
+
+const calcAlignedIncomes = [40_000, 60_000, 80_000, 100_000] as const;
+
+const calcAlignedExamples = calcAlignedIncomes.map((annualIncome) => {
+  const grossMonthly = annualIncome / 12;
+  const ceiling = grossMonthly * 0.1;
+  const maxPayment = Math.max(0, ceiling - CALC_ALIGNED_OPERATING);
+  const maxLoan = calcMaxLoanFromPaymentGuide(
+    maxPayment,
+    CALC_ALIGNED_APR,
+    CALC_ALIGNED_TERM,
+  );
+  return {
+    annualIncome,
+    ceiling,
+    maxPayment,
+    maxCarPrice: maxLoan / 0.8,
+  };
+});
 
 export const metadata: Metadata = {
   title: "How Much Car Can I Afford? 2026 Guide by Salary",
@@ -167,6 +213,13 @@ export default function HowMuchCarCanIAffordGuide() {
           />
           <p className="mt-4 text-sm text-ink-600">
             Use our{" "}
+            <Link
+              href="/calculators/car-affordability"
+              className="font-medium text-brand-600 underline"
+            >
+              Car Affordability Calculator
+            </Link>{" "}
+            for 20/4/10 limits from your income, or the{" "}
             <Link
               href="/calculators/auto-loan"
               className="font-medium text-brand-600 underline"
@@ -426,6 +479,74 @@ export default function HowMuchCarCanIAffordGuide() {
               gross income to fit within 10% before insurance or fuel.
             </p>
           </div>
+
+          <h3 className="mt-10 text-xl font-semibold text-ink-900">
+            Same four salaries at the Car Affordability Calculator defaults
+          </h3>
+          <p className="mt-3 text-ink-700">
+            The salary table above uses Edmunds' 7.0% Q3 2026 APR and $335/month
+            for sourced insurance and fuel benchmarks. Our{" "}
+            <Link
+              href="/calculators/car-affordability"
+              className="font-medium text-brand-600 underline"
+            >
+              Car Affordability Calculator
+            </Link>{" "}
+            instead defaults to the Federal Reserve G.19 bank average (
+            {CALC_ALIGNED_APR}% APR) and $150/month illustrative insurance plus
+            $150/month fuel — the same math as the worked-examples table on that
+            page. Use this snapshot when you want quoted figures to match the
+            tool exactly.
+          </p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="border-b-2 border-ink-200 bg-ink-50">
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Gross income
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    10% monthly ceiling
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Insurance + fuel ({formatUsdGuide(CALC_ALIGNED_OPERATING)}/mo)
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Max loan payment
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-ink-800">
+                    Max car price (20% down)
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-ink-100">
+                {calcAlignedExamples.map((row) => (
+                  <tr key={row.annualIncome}>
+                    <td className="px-4 py-3 font-medium">
+                      {formatUsdGuide(row.annualIncome)}
+                    </td>
+                    <td className="px-4 py-3">{formatUsdGuide(row.ceiling)}/mo</td>
+                    <td className="px-4 py-3">
+                      {formatUsdGuide(CALC_ALIGNED_OPERATING)}/mo
+                    </td>
+                    <td className="px-4 py-3">
+                      {formatUsdGuide(row.maxPayment)}/mo
+                    </td>
+                    <td className="px-4 py-3 font-medium text-brand-700">
+                      {row.maxPayment <= 0
+                        ? "Cash only"
+                        : formatUsdGuide(row.maxCarPrice)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-ink-500">
+            Computed with M = L × r ÷ (1 − (1 + r)⁻ⁿ) inverted for max loan,
+            then max price = loan ÷ 0.80; {CALC_ALIGNED_APR}% APR, 48 months, illustrative $150 + $150 operating
+            costs.
+          </p>
         </section>
 
         {/* Total Cost of Ownership */}
@@ -826,6 +947,19 @@ export default function HowMuchCarCanIAffordGuide() {
           <h2 className="text-2xl font-bold text-ink-900">
             Step-by-Step: How to Calculate Your Car Budget
           </h2>
+          <p className="mt-4 text-ink-700">
+            To run your own numbers with the same defaults as the calculator-aligned
+            salary table ({CALC_ALIGNED_APR}% APR, 48 months, $150 + $150 for
+            insurance and fuel), open the{" "}
+            <Link
+              href="/calculators/car-affordability"
+              className="font-medium text-brand-600 underline"
+            >
+              free Car Affordability Calculator
+            </Link>
+            . The steps below walk through the manual version with Edmunds-style
+            $335/month operating costs on a $72,000 example.
+          </p>
           <div className="mt-6 space-y-4">
             <div className="flex gap-4 rounded-lg border border-ink-200 bg-white p-5">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">
@@ -870,7 +1004,14 @@ export default function HowMuchCarCanIAffordGuide() {
                   Calculate your maximum loan amount
                 </h3>
                 <p className="mt-1 text-sm text-ink-700">
-                  Use the{" "}
+                  Open the{" "}
+                  <Link
+                    href="/calculators/car-affordability"
+                    className="font-medium text-brand-600 underline"
+                  >
+                    Car Affordability Calculator
+                  </Link>{" "}
+                  to apply 20/4/10 to your income in one pass, or use the{" "}
                   <Link
                     href="/calculators/auto-loan"
                     className="font-medium text-brand-600 underline"
@@ -1015,6 +1156,18 @@ export default function HowMuchCarCanIAffordGuide() {
           </p>
         </section>
 
+        <p className="mt-10 text-sm text-ink-600">
+          {`How common is it to run two or three vehicles on one income? In the 2025 American Community Survey the average U.S. household has ${carOwnership.perHh.value.toFixed(2)} vehicles and ${carOwnership.noneShare.pct.toFixed(1)}% of households have none. Our `}
+          <Link
+            href="/reports/car-ownership-by-state"
+            className="text-brand-600 underline hover:text-brand-800"
+          >
+            car ownership by state report
+          </Link>
+          {" "}
+          breaks that down for all 50 states and DC and shows what AAA's average insurance and fuel costs would take of each state's median income.
+        </p>
+
         {/* CTA Section */}
         <section className="mt-12 rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 text-center">
           <h2 className="text-2xl font-bold text-ink-900">
@@ -1027,8 +1180,14 @@ export default function HowMuchCarCanIAffordGuide() {
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
-              href="/calculators/auto-loan"
+              href="/calculators/car-affordability"
               className="rounded-lg bg-brand-600 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-brand-700"
+            >
+              Car Affordability Calculator
+            </Link>
+            <Link
+              href="/calculators/auto-loan"
+              className="rounded-lg border border-brand-300 bg-white px-6 py-3 font-medium text-brand-700 shadow-sm transition-colors hover:bg-brand-50"
             >
               Auto Loan Calculator
             </Link>
@@ -1037,12 +1196,6 @@ export default function HowMuchCarCanIAffordGuide() {
               className="rounded-lg border border-brand-300 bg-white px-6 py-3 font-medium text-brand-700 shadow-sm transition-colors hover:bg-brand-50"
             >
               50/30/20 Budget Calculator
-            </Link>
-            <Link
-              href="/calculators/car-affordability"
-              className="rounded-lg border border-brand-300 bg-white px-6 py-3 font-medium text-brand-700 shadow-sm transition-colors hover:bg-brand-50"
-            >
-              Car Affordability Calculator
             </Link>
             <Link
               href="/calculators/lease-vs-buy-car"

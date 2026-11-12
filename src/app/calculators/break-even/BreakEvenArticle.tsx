@@ -1,5 +1,98 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Sources } from "@/components/Sources";
+
+const usd0 = (n: number) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
+const usd2 = (n: number) =>
+  new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(n);
+const num0 = (n: number) => n.toLocaleString("en-US", { maximumFractionDigits: 0 });
+const pct0 = (r: number) => `${(r * 100).toFixed(0)}%`;
+
+const beUnits = (fixed: number, price: number, vc: number) => {
+  const cm = price - vc;
+  return cm > 0 ? Math.ceil(fixed / cm) : 0;
+};
+const beRevenueFromRatio = (fixed: number, cmr: number) => (cmr > 0 ? fixed / cmr : 0);
+
+const HW_FIXED_35K = 35000;
+const HW_CMR = 0.4;
+const hwRevenue = beRevenueFromRatio(HW_FIXED_35K, HW_CMR);
+
+const APP_FIXED = 2500;
+const APP_CM = 8;
+const appDownloadsRaw = APP_FIXED / APP_CM;
+const appDownloads = Math.ceil(appDownloadsRaw);
+
+/** FAQ entries rendered at the bottom of the article and reused for the page's FAQ JSON-LD. */
+export const breakEvenFaqs: { question: string; answer: string }[] = [
+  {
+    question: "How much revenue must I earn if fixed costs are $35,000 and the contribution margin ratio is 40%?",
+    answer: `${usd0(hwRevenue)}. Divide ${usd0(HW_FIXED_35K)} by 0.40. At a 40% margin ratio, each dollar of revenue leaves ${usd2(0.4)} after variable costs toward fixed overhead.`,
+  },
+  {
+    question:
+      "A mobile app has $2,500 in monthly fixed expenses and a contribution margin of $8 per download. How many downloads to break even?",
+    answer: `${num0(appDownloads)} downloads per month (${usd0(APP_FIXED)} ÷ ${usd2(APP_CM)} = ${appDownloadsRaw.toFixed(1)}, rounded up). Treat app-store commissions like marketplace fees: subtract them from price before you divide fixed costs by contribution margin.`,
+  },
+  {
+    question: "What is a break-even point?",
+    answer:
+      "The break-even point is the exact number of units you must sell, or the total revenue you must earn, for your total revenue to equal your total costs. Below this point, you operate at a loss. Above it, every additional unit sold generates profit. For a business with $10,000 in monthly fixed costs selling a product at $50 with a $25 variable cost, the break-even point is 400 units, or $20,000 in revenue.",
+  },
+  {
+    question: "How do I calculate break-even in dollars instead of units?",
+    answer:
+      "Divide your fixed costs by the contribution margin ratio (contribution margin divided by price per unit). If your price is $50 and variable cost is $25, the contribution margin ratio is 50%. With $10,000 in fixed costs: $10,000 / 0.50 = $20,000 in break-even revenue. This approach is especially useful for service businesses or companies with many product lines.",
+  },
+  {
+    question: "What happens if my variable cost is higher than my price?",
+    answer:
+      "If your variable cost exceeds your selling price, you have a negative contribution margin, which means you lose money on every unit sold. No amount of sales volume can overcome this deficit. You must either raise your price or reduce your variable costs before a break-even point can exist.",
+  },
+  {
+    question: "How does break-even analysis help with pricing?",
+    answer:
+      "By running price sensitivity scenarios in the calculator, you can see exactly how a price increase or decrease affects the number of units you need to sell. A small price increase often reduces the break-even volume dramatically because it widens the contribution margin. This analysis helps you find the optimal balance between price competitiveness and profitability.",
+  },
+  {
+    question: "Can I use break-even analysis for a service business?",
+    answer:
+      'Yes. For service businesses, treat your hourly or project rate as the "price per unit" and any per-project costs (subcontractors, materials, travel) as variable costs. Fixed costs include rent, software, insurance, and your own salary draw. The formula works identically, with each billable hour or project replacing a physical unit.',
+  },
+];
+
+const DEF_FC = 10000;
+const DEF_PRICE = 50;
+const DEF_VC = 25;
+const defCm = DEF_PRICE - DEF_VC;
+const defCmr = defCm / DEF_PRICE;
+const defBeUnits = beUnits(DEF_FC, DEF_PRICE, DEF_VC);
+const defBeRevenue = defBeUnits * DEF_PRICE;
+
+const ETSY_TXN = 0.065;
+const ETSY_PAY_PCT = 0.03;
+const ETSY_PAY_FLAT = 0.25;
+const ETSY_LISTING = 0.2;
+const etsyFeesPerOrder = (price: number) =>
+  price * ETSY_TXN + price * ETSY_PAY_PCT + ETSY_PAY_FLAT + ETSY_LISTING;
+
+const ETSY_PRICE = 28;
+const ETSY_BASE_VC = 8.5;
+const ETSY_FC = 1000;
+const etsyFees = etsyFeesPerOrder(ETSY_PRICE);
+const etsyEffectiveVc = ETSY_BASE_VC + etsyFees;
+const etsyCmNoFee = ETSY_PRICE - ETSY_BASE_VC;
+const etsyBeUnitsNoFee = beUnits(ETSY_FC, ETSY_PRICE, ETSY_BASE_VC);
+const etsyBeRevenueNoFee = etsyBeUnitsNoFee * ETSY_PRICE;
+const etsyCmWithFee = ETSY_PRICE - etsyEffectiveVc;
+const etsyBeUnitsWithFee = beUnits(ETSY_FC, ETSY_PRICE, etsyEffectiveVc);
+const etsyBeRevenueWithFee = etsyBeUnitsWithFee * ETSY_PRICE;
 
 export function BreakEvenArticle() {
   return (
@@ -56,6 +149,73 @@ export function BreakEvenArticle() {
         with $10,000 in fixed costs and a $5,000 profit target needs to cover $15,000 total,
         which at a $25 contribution margin means selling 600 units.
       </p>
+
+      <h2>Worked Examples</h2>
+      <p>
+        These three problems use the same formulas as the calculator above. For margin-of-safety
+        math, Amazon referral fees, and a full restaurant case study, see our{" "}
+        <Link
+          href="/guides/break-even-analysis-guide"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          break-even analysis guide
+        </Link>
+        . To translate price and cost into contribution margin before you divide, try the{" "}
+        <Link
+          href="/calculators/margin-calculator"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          Profit Margin Calculator
+        </Link>
+        .
+      </p>
+
+      <h3>Given total fixed costs of $35,000 and a contribution margin ratio of 40%</h3>
+      <p>
+        Break-even revenue in dollars is fixed costs divided by the contribution margin ratio:{" "}
+        {usd0(HW_FIXED_35K)} ÷ {pct0(HW_CMR)} = {usd0(hwRevenue)}. You need {usd0(hwRevenue)} in
+        sales before profit starts, because every dollar of revenue contributes 40 cents toward
+        covering fixed costs after variable expenses.
+      </p>
+
+      <h3>
+        A mobile app has $2,500 in monthly fixed expenses and $8 contribution margin per download
+      </h3>
+      <p>
+        Break-even downloads = {usd0(APP_FIXED)} ÷ {usd2(APP_CM)} = {appDownloadsRaw.toFixed(1)},
+        rounded up to {num0(appDownloads)} paid downloads per month. Fractional downloads are not
+        sold, so you ceil to {num0(appDownloads)}: download {num0(appDownloads - 1)} and you are
+        still {usd2(APP_FIXED - (appDownloads - 1) * APP_CM)} short of covering fixed costs.
+      </p>
+
+      <h3>Break-even in dollars with and without a per-order platform fee</h3>
+      <p>
+        Default product math (matches the calculator defaults): price {usd2(DEF_PRICE)}, variable
+        cost {usd2(DEF_VC)}, contribution margin {usd2(defCm)}, margin ratio {pct0(defCmr)}, and{" "}
+        {usd0(DEF_FC)} fixed costs. Break-even revenue = {usd0(DEF_FC)} ÷ {pct0(defCmr)} ={" "}
+        {usd0(defBeRevenue)} ({num0(defBeUnits)} units × {usd2(DEF_PRICE)}).
+      </p>
+      <p>
+        Marketplace fees belong in variable cost because they scale with each order. A {usd2(ETSY_PRICE)}{" "}
+        handmade item with {usd2(ETSY_BASE_VC)} in materials and {usd0(ETSY_FC)} monthly fixed costs
+        has contribution margin {usd2(etsyCmNoFee)} and breaks even at {num0(etsyBeUnitsNoFee)} orders (
+        {usd0(etsyBeRevenueNoFee)} in revenue) before fees. Add Etsy’s listing, 6.5% transaction, and 3% + {usd2(ETSY_PAY_FLAT)} payment
+        processing ({usd2(etsyFees)} per order at this price) and effective variable cost rises to{" "}
+        {usd2(etsyEffectiveVc)}. Contribution margin falls to {usd2(etsyCmWithFee)}, break-even climbs
+        to {num0(etsyBeUnitsWithFee)} orders, and break-even revenue becomes{" "}
+        {usd0(etsyBeRevenueWithFee)}, {usd0(etsyBeRevenueWithFee - etsyBeRevenueNoFee)} more than
+        the no-fee case.
+      </p>
+      <Sources
+        items={[
+          {
+            label: "Etsy Help Center — fees and US payment processing (3% + $0.25)",
+            href: "https://help.etsy.com/hc/en-us/articles/115014483627-What-are-the-Fees-and-Taxes-for-Selling-on-Etsy",
+          },
+        ]}
+        checked="November 2026"
+        note="Etsy fee stack matches our break-even analysis guide; dollar break-evens are computed from the constants above."
+      />
 
       <h2>Key Concepts in Break-Even Analysis</h2>
       <p>
@@ -250,44 +410,11 @@ export function BreakEvenArticle() {
       </p>
 
       <h2>FAQ</h2>
-      <p>
-        <strong>What is a break-even point?</strong> The break-even point is the exact number
-        of units you must sell, or the total revenue you must earn, for your total revenue to
-        equal your total costs. Below this point, you operate at a loss. Above it, every
-        additional unit sold generates profit. For a business with $10,000 in monthly fixed
-        costs selling a product at $50 with a $25 variable cost, the break-even point is 400
-        units, or $20,000 in revenue.
-      </p>
-      <p>
-        <strong>How do I calculate break-even in dollars instead of units?</strong> Divide your
-        fixed costs by the contribution margin ratio (contribution margin divided by price per
-        unit). If your price is $50 and variable cost is $25, the contribution margin ratio is
-        50%. With $10,000 in fixed costs: $10,000 / 0.50 = $20,000 in break-even revenue. This
-        approach is especially useful for service businesses or companies with many product
-        lines.
-      </p>
-      <p>
-        <strong>What happens if my variable cost is higher than my price?</strong> If your
-        variable cost exceeds your selling price, you have a negative contribution margin,
-        which means you lose money on every unit sold. No amount of sales volume can overcome
-        this deficit. You must either raise your price or reduce your variable costs before a
-        break-even point can exist.
-      </p>
-      <p>
-        <strong>How does break-even analysis help with pricing?</strong> By running price
-        sensitivity scenarios in the calculator, you can see exactly how a price increase or
-        decrease affects the number of units you need to sell. A small price increase often
-        reduces the break-even volume dramatically because it widens the contribution margin.
-        This analysis helps you find the optimal balance between price competitiveness and
-        profitability.
-      </p>
-      <p>
-        <strong>Can I use break-even analysis for a service business?</strong> Yes. For service
-        businesses, treat your hourly or project rate as the "price per unit" and any
-        per-project costs (subcontractors, materials, travel) as variable costs. Fixed costs
-        include rent, software, insurance, and your own salary draw. The formula works
-        identically, with each billable hour or project replacing a physical unit.
-      </p>
+      {breakEvenFaqs.map((faq) => (
+        <p key={faq.question}>
+          <strong>{faq.question}</strong> {faq.answer}
+        </p>
+      ))}
     </>
   );
 }

@@ -224,7 +224,15 @@ export default function HowMuchHouseGuide() {
               state-by-state mortgage affordability report
             </Link>{" "}
             compares the payment on the median home in all 50 states and DC with local
-            household income.
+            household income. Insurance is the line that varies most by place: our{" "}
+            <Link
+              href="/reports/homeowners-insurance-by-state"
+              className="font-medium text-brand-600 underline"
+            >
+              homeowners insurance by state report
+            </Link>{" "}
+            shows the typical premium that owners with a mortgage pay in each state, from well under
+            to well over the 0.55% of home value assumed in the table below.
           </p>
         </section>
 

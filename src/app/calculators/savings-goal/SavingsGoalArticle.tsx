@@ -1,6 +1,56 @@
 import Link from "next/link";
 import { Sources } from "@/components/Sources";
 
+const TABLE_APY = 4.25;
+const TABLE_CURRENT = 0;
+const TABLE_GOALS = [5000, 10000, 25000, 50000] as const;
+const TABLE_YEARS = [1, 2, 3, 5] as const;
+
+function monthlyDepositNeeded(
+  goal: number,
+  current: number,
+  years: number,
+  annualRatePct: number
+): number {
+  const months = years * 12;
+  const monthlyRate = annualRatePct / 100 / 12;
+  const futureValueOfCurrent = current * Math.pow(1 + monthlyRate, months);
+  const amountNeeded = goal - futureValueOfCurrent;
+  if (amountNeeded <= 0) return 0;
+  if (monthlyRate === 0) return amountNeeded / months;
+  return amountNeeded / ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+}
+
+const weeklyFromMonthly = (monthly: number) => (monthly * 12) / 52;
+
+const fmtUsd = (n: number) =>
+  new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(Math.max(0, n));
+
+const tableRows = TABLE_GOALS.map((goal) => ({
+  goal,
+  cells: TABLE_YEARS.map((years) => {
+    const monthly = monthlyDepositNeeded(goal, TABLE_CURRENT, years, TABLE_APY);
+    const weekly = weeklyFromMonthly(monthly);
+    return { years, monthly, weekly };
+  }),
+}));
+
+const example10k2yMonthly = monthlyDepositNeeded(10000, TABLE_CURRENT, 2, TABLE_APY);
+const example10k2yWeekly = weeklyFromMonthly(example10k2yMonthly);
+const example10k3yWeekly = weeklyFromMonthly(
+  monthlyDepositNeeded(10000, TABLE_CURRENT, 3, TABLE_APY)
+);
+
+/** Same text as the visible FAQ entry, exported so the page's FAQ JSON-LD matches what readers see. */
+export const weeklySavingsFaq = {
+  question: "How much do I need to save a week to reach my goal?",
+  answer: `${fmtUsd(example10k2yWeekly)} per week for 104 weeks gets you to ${fmtUsd(10000)} in 2 years at ${TABLE_APY}% APY with ${fmtUsd(TABLE_CURRENT)} starting balance, about ${fmtUsd(example10k2yMonthly)} per month before weekly smoothing (monthly × 12 ÷ 52). Your number changes with goal size, deadline, current savings, and rate, so use the calculator inputs for your case and the weekly column in the table for common goal and horizon pairs.`,
+};
+
 export function SavingsGoalArticle() {
   return (
     <>
@@ -16,6 +66,64 @@ export function SavingsGoalArticle() {
       </p>
       <p>
         See exactly how your savings grow with interest using our <Link href="/calculators/compound-interest" className="text-brand-600 hover:text-brand-800 font-medium">Compound Interest Calculator</Link>.
+      </p>
+
+      <h2>How much to save each week</h2>
+      <p>
+        <strong>
+          To reach {fmtUsd(10000)} in 2 years starting from {fmtUsd(TABLE_CURRENT)}, you need about{" "}
+          {fmtUsd(example10k2yWeekly)} a week (or {fmtUsd(example10k2yMonthly)} per month) at{" "}
+          {TABLE_APY}% APY with monthly compounding.
+        </strong>
+      </p>
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full text-sm border border-ink-200">
+          <caption className="mb-2 text-left text-sm text-ink-600">
+            Required deposits with {fmtUsd(TABLE_CURRENT)} already saved, {TABLE_APY}% annual return,
+            monthly compounding, and end-of-month contributions (same math as the calculator). Weekly
+            amount = monthly × 12 ÷ 52.
+          </caption>
+          <thead className="bg-ink-100">
+            <tr>
+              <th className="px-3 py-2 text-left font-medium text-ink-600">Goal</th>
+              {TABLE_YEARS.map((y) => (
+                <th key={y} className="px-3 py-2 text-right font-medium text-ink-600">
+                  {y} {y === 1 ? "year" : "years"}
+                  <span className="block text-xs font-normal text-ink-500">week / month</span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {tableRows.map((row) => (
+              <tr key={row.goal} className="border-t border-ink-100">
+                <td className="px-3 py-2 font-medium text-ink-800">{fmtUsd(row.goal)}</td>
+                {row.cells.map((cell) => (
+                  <td key={cell.years} className="px-3 py-2 text-right text-ink-800">
+                    <span className="font-medium">{fmtUsd(cell.weekly)}</span>
+                    <span className="block text-xs text-ink-500">{fmtUsd(cell.monthly)}/mo</span>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Read the table by picking your target in the left column, then the years you have. For a{" "}
+        {fmtUsd(10000)} goal, pushing the deadline from 2 years to 3 years drops the weekly deposit
+        from about {fmtUsd(example10k2yWeekly)} to {fmtUsd(example10k3yWeekly)} — roughly{" "}
+        {fmtUsd(example10k2yWeekly - example10k3yWeekly)} less from each paycheck while interest has
+        an extra 12 months to compound. If your balance is already above zero, enter current savings
+        in the tool above; required weekly deposits fall because interest works on that head start.
+        For a multi-year plan toward a larger target, our{" "}
+        <Link
+          href="/guides/save-50000-in-3-years"
+          className="text-brand-600 hover:text-brand-800 font-medium"
+        >
+          guide to saving $50,000 in 3 years
+        </Link>{" "}
+        walks through automation and rate shopping at a similar yield band.
       </p>
 
       <h2>Setting Realistic Savings Goals</h2>
@@ -169,6 +277,9 @@ export function SavingsGoalArticle() {
       </p>
 
       <h2>Frequently Asked Questions</h2>
+
+      <h3>{weeklySavingsFaq.question}</h3>
+      <p>{weeklySavingsFaq.answer}</p>
 
       <h3>What return rate should I use?</h3>
       <p>

@@ -3,7 +3,8 @@ import { getCalculator } from "@/lib/calculators";
 import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { BreakEvenCalculator } from "./BreakEvenCalculator";
-import { BreakEvenArticle } from "./BreakEvenArticle";
+import { BreakEvenArticle, breakEvenFaqs } from "./BreakEvenArticle";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 const calc = getCalculator("break-even")!;
 
@@ -15,8 +16,11 @@ export const metadata: Metadata = {
 
 export default function BreakEvenPage() {
   return (
-    <CalculatorShell calculator={calc} article={<BreakEvenArticle />}>
-      <BreakEvenCalculator />
-    </CalculatorShell>
+    <>
+      <FaqJsonLd faqs={breakEvenFaqs} />
+      <CalculatorShell calculator={calc} article={<BreakEvenArticle />}>
+        <BreakEvenCalculator />
+      </CalculatorShell>
+    </>
   );
 }

@@ -181,7 +181,16 @@ export default function GuidePage() {
           business expenses — $6,200 for software subscriptions, $4,800 for a home office deduction,
           $3,500 for a new laptop and monitor, $8,400 in subcontractor fees, $4,600 for
           professional development and conferences, and $2,500 in travel — his{" "}
-          <strong>net self-employment income is $95,000</strong>.
+          <strong>net self-employment income is $95,000</strong>. Before tax planning, he also tracks
+          how many billable projects cover his fixed software and subcontract costs each month — the
+          same break-even logic in our{" "}
+          <Link
+            href="/guides/break-even-analysis-guide"
+            className="text-brand-600 hover:text-brand-800 font-medium"
+          >
+            break-even analysis guide
+          </Link>
+          .
         </p>
 
         <p>
