@@ -281,6 +281,17 @@ export const guides: Guide[] = [
     relatedCalculators: ["break-even", "roi", "savings-goal"],
     relatedGuides: ["how-to-calculate-roi", "save-50000-in-3-years", "self-employment-tax-guide"],
   },
+  {
+    slug: "salary-vs-hourly-pay",
+    title: "Salary vs Hourly Pay: Which Is Better for You in 2026?",
+    description:
+      "Salary vs hourly pay in 2026: compare offers with overtime, PTO, federal exempt rules, BLS benefits data, take-home math, and a job-offer checklist.",
+    published: true,
+    datePublished: "2026-11-14",
+    lastUpdated: "2026-11-14",
+    relatedCalculators: ["salary-to-hourly", "paycheck", "budget-50-30-20"],
+    relatedGuides: ["50-30-20-budget-rule", "self-employment-tax-guide", "save-50000-in-3-years"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

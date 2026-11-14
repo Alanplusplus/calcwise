@@ -770,6 +770,10 @@ export default function CarOwnershipByStatePage() {
           <Link href="/reports/rent-vs-buy-by-state" className="text-brand-600 underline">
             rent vs buy by state report
           </Link>
+          ,{" "}
+          <Link href="/reports/retirement-income-by-state" className="text-brand-600 underline">
+            Social Security and retirement income by state report
+          </Link>
           , and the guide{" "}
           <Link href="/guides/how-much-car-can-i-afford" className="text-brand-600 underline">
             how much car you can afford

@@ -802,6 +802,16 @@ export default function HowMuchToRetireAt55Guide() {
             and target retirement age to see exactly where you stand and what it
             takes to retire at 55.
           </p>
+          <p className="mt-3 text-sm text-ink-600">
+            Curious how other households fund retirement? Our{" "}
+            <Link
+              href="/reports/retirement-income-by-state"
+              className="text-brand-600 underline"
+            >
+              Social Security and retirement income by state report
+            </Link>{" "}
+            shows how many receive each income type and how much.
+          </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/calculators/retirement"

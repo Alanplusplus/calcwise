@@ -3,6 +3,7 @@ import { REPORT as RENT_VS_BUY } from "./rent-vs-buy-by-state";
 import { REPORT as COST_BURDEN, US_RESULT as COST_BURDEN_US } from "./housing-cost-burden-by-state";
 import { REPORT as INSURANCE, STATE_RESULTS as INSURANCE_STATES, US_RESULT as INSURANCE_US } from "./homeowners-insurance-by-state";
 import { REPORT as CARS, STATE_RESULTS as CAR_STATES, US_RESULT as CARS_US } from "./car-ownership-by-state";
+import { REPORT as RETIREMENT, US_RESULT as RETIREMENT_US } from "./retirement-income-by-state";
 
 export interface ReportListing {
   slug: string;
@@ -15,6 +16,15 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: RETIREMENT.slug,
+    path: RETIREMENT.path,
+    title: "Social Security and Retirement Income by State: Who Receives It and How Much",
+    description: `Share of households with Social Security (${RETIREMENT_US.ssShare.pct.toFixed(1)}% nationally) and retirement income (${RETIREMENT_US.retShare.pct.toFixed(1)}%), the average amounts, and the median income of householders 65 and over, for all 50 states and DC.`,
+    datePublished: RETIREMENT.datePublished,
+    dateModified: RETIREMENT.dateModified,
+    dataSource: `Census ACS ${RETIREMENT.acsYear} 1-year (B19055, B19059, B19065, B19069, B19049), SSA Monthly Statistical Snapshot`,
+  },
   {
     slug: CARS.slug,
     path: CARS.path,

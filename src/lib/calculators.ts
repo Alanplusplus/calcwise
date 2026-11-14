@@ -261,7 +261,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-08-25",
     lastUpdated: "2026-10-20",
     relatedCalculators: ["income-tax", "budget-50-30-20", "savings-goal"],
-    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay"],
   },
   {
     slug: "student-loan",
@@ -356,7 +356,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-09-09",
     lastUpdated: "2026-10-22",
     relatedCalculators: ["paycheck", "income-tax", "budget-50-30-20"],
-    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay"],
   },
   {
     slug: "tip-calculator",
@@ -452,7 +452,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-09-20",
     lastUpdated: "2026-10-22",
     relatedCalculators: ["salary-to-hourly", "paycheck", "income-tax", "budget-50-30-20"],
-    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay"],
   },
   {
     slug: "margin-calculator",

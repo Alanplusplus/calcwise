@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Sources } from "@/components/Sources";
 import { HSA_LIMITS, RETIREMENT_LIMITS, TAX_DATA, TAX_SOURCES, usd } from "@/lib/tax-data";
+import { REPORT as RETIREMENT_INCOME_REPORT, US_RESULT as retirementIncome, pct1, usd0 } from "@/lib/reports/retirement-income-by-state";
 
 export function RetirementArticle() {
   return (
@@ -216,6 +217,13 @@ export function RetirementArticle() {
         estimate, then decide how much portfolio income must cover healthcare,
         travel, and housing. Many planners treat Social Security as a partial
         offset, not the entire income floor.
+      </p>
+      <p>
+        {`In the ${RETIREMENT_INCOME_REPORT.acsYear} American Community Survey, ${pct1(retirementIncome.ssShare.pct)} of U.S. households received Social Security (averaging ${usd0(retirementIncome.ssMean.value)} a year) and ${pct1(retirementIncome.retShare.pct)} had retirement, survivor, or disability income (averaging ${usd0(retirementIncome.retMean.value)}). State-by-state figures are in our `}
+        <Link href="/reports/retirement-income-by-state" className="text-brand-600 hover:text-brand-800 font-medium">
+          Social Security and retirement income by state report
+        </Link>
+        .
       </p>
       <Sources
         items={[
