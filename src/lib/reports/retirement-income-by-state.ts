@@ -219,13 +219,13 @@ export interface Ratio {
   moe: number;
 }
 
-const rss = (xs: number[]) => Math.sqrt(xs.reduce((s, x) => s + x * x, 0));
+export const rss = (xs: number[]) => Math.sqrt(xs.reduce((s, x) => s + x * x, 0));
 
 /**
  * Share of a group that is also part of a larger group (num is a subset of den), with the margin of
  * error for a proportion from the ACS General Handbook, chapter 8.
  */
-function share(num: number, numMoe: number, den: number, denMoe: number): Share {
+export function share(num: number, numMoe: number, den: number, denMoe: number): Share {
   const p = num / den;
   const inner = numMoe * numMoe - p * p * denMoe * denMoe;
   const moe =
@@ -236,7 +236,7 @@ function share(num: number, numMoe: number, den: number, denMoe: number): Share 
 }
 
 /** Ratio of two estimates that are not nested (ACS General Handbook, chapter 8, ratios). */
-function ratio(num: number, numMoe: number, den: number, denMoe: number): Ratio {
+export function ratio(num: number, numMoe: number, den: number, denMoe: number): Ratio {
   const r = num / den;
   return { value: r, moe: Math.sqrt(numMoe * numMoe + r * r * denMoe * denMoe) / den };
 }

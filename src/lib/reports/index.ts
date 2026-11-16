@@ -4,6 +4,7 @@ import { REPORT as COST_BURDEN, US_RESULT as COST_BURDEN_US } from "./housing-co
 import { REPORT as INSURANCE, STATE_RESULTS as INSURANCE_STATES, US_RESULT as INSURANCE_US } from "./homeowners-insurance-by-state";
 import { REPORT as CARS, STATE_RESULTS as CAR_STATES, US_RESULT as CARS_US } from "./car-ownership-by-state";
 import { REPORT as RETIREMENT, US_RESULT as RETIREMENT_US } from "./retirement-income-by-state";
+import { REPORT as MORTGAGE_FREE, US_RESULT as MORTGAGE_FREE_US } from "./mortgage-free-homeowners-by-state";
 
 export interface ReportListing {
   slug: string;
@@ -16,6 +17,15 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: MORTGAGE_FREE.slug,
+    path: MORTGAGE_FREE.path,
+    title: "Mortgage-Free Homeowners by State: Who Owns Free and Clear",
+    description: `Share of homeowners with no mortgage (${MORTGAGE_FREE_US.noMortShare.pct.toFixed(1)}% nationally) in all 50 states and DC, how many owners 65 and over still owe (${MORTGAGE_FREE_US.mort65Share.pct.toFixed(1)}%), second mortgage use, and monthly owner costs.`,
+    datePublished: MORTGAGE_FREE.datePublished,
+    dateModified: MORTGAGE_FREE.dateModified,
+    dataSource: `Census ACS ${MORTGAGE_FREE.acsYear} 1-year (B25081, B25027, B25088, B25077)`,
+  },
   {
     slug: RETIREMENT.slug,
     path: RETIREMENT.path,

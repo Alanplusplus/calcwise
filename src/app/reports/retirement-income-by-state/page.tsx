@@ -755,13 +755,21 @@ export default function RetirementIncomeByStatePage() {
           <Link href="/reports/car-ownership-by-state" className="text-brand-600 underline">
             car ownership by state report
           </Link>
+          ,{" "}
+          <Link href="/reports/mortgage-free-homeowners-by-state" className="text-brand-600 underline">
+            mortgage-free homeowners by state report
+          </Link>
           , and the guides{" "}
           <Link href="/guides/how-much-to-retire-at-55" className="text-brand-600 underline">
             how much to retire at 55
-          </Link>{" "}
-          and{" "}
+          </Link>
+          ,{" "}
           <Link href="/guides/401k-vs-roth-ira" className="text-brand-600 underline">
             401(k) vs Roth IRA
+          </Link>
+          , and{" "}
+          <Link href="/guides/pay-off-mortgage-before-retirement" className="text-brand-600 underline">
+            pay off your mortgage before retirement
           </Link>
           .
         </p>

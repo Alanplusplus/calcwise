@@ -64,7 +64,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-08-10",
     lastUpdated: "2026-10-21",
     relatedCalculators: ["loan-comparison", "home-affordability", "auto-loan"],
-    relatedGuides: ["how-much-house-can-i-afford", "15-year-vs-30-year-mortgage", "pay-off-mortgage-early-vs-invest"],
+    relatedGuides: ["how-much-house-can-i-afford", "15-year-vs-30-year-mortgage", "pay-off-mortgage-early-vs-invest", "pay-off-mortgage-before-retirement"],
   },
   {
     slug: "compound-interest",
@@ -134,7 +134,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-08-10",
     lastUpdated: "2026-10-21",
     relatedCalculators: ["compound-interest", "fire-calculator", "savings-goal"],
-    relatedGuides: ["how-much-to-retire-at-55", "401k-vs-roth-ira"],
+    relatedGuides: ["how-much-to-retire-at-55", "401k-vs-roth-ira", "pay-off-mortgage-before-retirement"],
   },
   {
     slug: "loan-comparison",
@@ -308,7 +308,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-08-31",
     lastUpdated: "2026-10-22",
     relatedCalculators: ["mortgage", "auto-loan", "loan-comparison"],
-    relatedGuides: ["15-year-vs-30-year-mortgage", "pay-off-mortgage-early-vs-invest"],
+    relatedGuides: ["15-year-vs-30-year-mortgage", "pay-off-mortgage-early-vs-invest", "pay-off-mortgage-before-retirement"],
   },
   {
     slug: "down-payment",

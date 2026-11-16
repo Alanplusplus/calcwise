@@ -543,7 +543,15 @@ export default function PayOffMortgageVsInvestGuide() {
               retirement without a mortgage payment dramatically reduces your
               required withdrawal rate. A $2,000/month mortgage payment means
               you need $600,000 less in your retirement portfolio (using the 4%
-              rule).
+              rule). If the payoff money sits in a traditional IRA or 401(k),
+              read our{" "}
+              <Link
+                href="/guides/pay-off-mortgage-before-retirement"
+                className="text-brand-600 underline"
+              >
+                tax math on paying off a mortgage before retirement
+              </Link>{" "}
+              first.
             </li>
             <li>
               <strong>Your mortgage rate is above 7%.</strong> At rates this
@@ -807,7 +815,7 @@ export default function PayOffMortgageVsInvestGuide() {
             ))}
           </div>
         </section>
-        <RelatedGuides currentSlug="pay-off-mortgage-early-vs-invest" relatedSlugs={["how-much-house-can-i-afford", "how-to-start-investing-1000"]} />
+        <RelatedGuides currentSlug="pay-off-mortgage-early-vs-invest" relatedSlugs={["pay-off-mortgage-before-retirement", "how-much-house-can-i-afford", "how-to-start-investing-1000"]} />
       </article>
     </>
   );

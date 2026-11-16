@@ -847,7 +847,7 @@ export default function HowMuchToRetireAt55Guide() {
             ))}
           </div>
         </section>
-        <RelatedGuides currentSlug="how-much-to-retire-at-55" relatedSlugs={["401k-vs-roth-ira", "compound-interest-real-examples"]} />
+        <RelatedGuides currentSlug="how-much-to-retire-at-55" relatedSlugs={["401k-vs-roth-ira", "compound-interest-real-examples", "pay-off-mortgage-before-retirement"]} />
       </article>
     </>
   );

@@ -292,6 +292,17 @@ export const guides: Guide[] = [
     relatedCalculators: ["salary-to-hourly", "paycheck", "budget-50-30-20"],
     relatedGuides: ["50-30-20-budget-rule", "self-employment-tax-guide", "save-50000-in-3-years"],
   },
+  {
+    slug: "pay-off-mortgage-before-retirement",
+    title: "Should You Pay Off Your Mortgage Before You Retire? The Tax Math",
+    description:
+      "Pay off your mortgage before retirement? See the tax cost of IRA withdrawals, Medicare surcharges, and the break-even return, using 2026 brackets.",
+    published: true,
+    datePublished: "2026-11-16",
+    lastUpdated: "2026-11-16",
+    relatedCalculators: ["mortgage", "amortization", "retirement"],
+    relatedGuides: ["pay-off-mortgage-early-vs-invest", "401k-vs-roth-ira", "how-much-to-retire-at-55"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
