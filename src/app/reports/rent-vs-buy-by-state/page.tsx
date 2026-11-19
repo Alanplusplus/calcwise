@@ -621,6 +621,10 @@ export default function RentVsBuyByStatePage() {
           <Link href="/reports/car-ownership-by-state" className="text-brand-600 underline">
             car ownership by state report
           </Link>
+          , the{" "}
+          <Link href="/reports/six-figure-households-by-state" className="text-brand-600 underline">
+            six-figure households by state report
+          </Link>
           , and the guides{" "}
           <Link href="/guides/rent-vs-buy-decision" className="text-brand-600 underline">
             rent vs buy in 2026

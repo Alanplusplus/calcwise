@@ -5,6 +5,7 @@ import { REPORT as INSURANCE, STATE_RESULTS as INSURANCE_STATES, US_RESULT as IN
 import { REPORT as CARS, STATE_RESULTS as CAR_STATES, US_RESULT as CARS_US } from "./car-ownership-by-state";
 import { REPORT as RETIREMENT, US_RESULT as RETIREMENT_US } from "./retirement-income-by-state";
 import { REPORT as MORTGAGE_FREE, US_RESULT as MORTGAGE_FREE_US } from "./mortgage-free-homeowners-by-state";
+import { REPORT as SIX_FIGURE, US_RESULT as SIX_FIGURE_US, STATE_RESULTS as SIX_FIGURE_STATES } from "./six-figure-households-by-state";
 
 export interface ReportListing {
   slug: string;
@@ -17,6 +18,15 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: SIX_FIGURE.slug,
+    path: SIX_FIGURE.path,
+    title: "Six-Figure Households by State: Who Earns $100,000 or More",
+    description: `Share of households with income of $100,000 or more (${SIX_FIGURE_US.h100Share.pct.toFixed(1)}% nationally) in all 50 states and DC, from ${SIX_FIGURE_STATES[SIX_FIGURE_STATES.length - 1].h100Share.pct.toFixed(1)}% to ${SIX_FIGURE_STATES[0].h100Share.pct.toFixed(1)}%, the percentile of $100K, top-20% cutoffs, and what housing takes of it.`,
+    datePublished: SIX_FIGURE.datePublished,
+    dateModified: SIX_FIGURE.dateModified,
+    dataSource: `Census ACS ${SIX_FIGURE.acsYear} 1-year (B19001, B19080, B19083, B20017), SSA Wage Statistics`,
+  },
   {
     slug: MORTGAGE_FREE.slug,
     path: MORTGAGE_FREE.path,

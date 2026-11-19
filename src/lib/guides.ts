@@ -303,6 +303,17 @@ export const guides: Guide[] = [
     relatedCalculators: ["mortgage", "amortization", "retirement"],
     relatedGuides: ["pay-off-mortgage-early-vs-invest", "401k-vs-roth-ira", "how-much-to-retire-at-55"],
   },
+  {
+    slug: "is-100k-a-good-salary",
+    title: "Is $100,000 a Good Salary? Rank, Take-Home Pay, and Rent by State",
+    description:
+      "Is $100,000 a good salary in 2026? See where it ranks, the take-home after federal tax and FICA, and what rent and a home payment take in each state.",
+    published: true,
+    datePublished: "2026-11-19",
+    lastUpdated: "2026-11-19",
+    relatedCalculators: ["paycheck", "home-affordability", "budget-50-30-20"],
+    relatedGuides: ["salary-vs-hourly-pay", "50-30-20-budget-rule", "how-much-house-can-i-afford"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

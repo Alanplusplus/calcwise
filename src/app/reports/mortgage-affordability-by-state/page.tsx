@@ -548,6 +548,10 @@ export default function MortgageAffordabilityByStatePage() {
           <Link href="/reports/housing-cost-burden-by-state" className="text-brand-600 underline">
             housing cost burden by state
           </Link>
+          . To see how many households earn $100,000 or more in your state and what these payments take of that income, see{" "}
+          <Link href="/reports/six-figure-households-by-state" className="text-brand-600 underline">
+            six-figure households by state
+          </Link>
           .
         </p>
         <p className="mt-2 text-sm text-ink-600">

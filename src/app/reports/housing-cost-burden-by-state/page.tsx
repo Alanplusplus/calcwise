@@ -713,6 +713,10 @@ export default function HousingCostBurdenByStatePage() {
           <Link href="/reports/car-ownership-by-state" className="text-brand-600 underline">
             car ownership by state report
           </Link>
+          , the{" "}
+          <Link href="/reports/six-figure-households-by-state" className="text-brand-600 underline">
+            six-figure households by state report
+          </Link>
           , and the guides{" "}
           <Link href="/guides/50-30-20-budget-rule" className="text-brand-600 underline">
             the 50/30/20 budget rule
