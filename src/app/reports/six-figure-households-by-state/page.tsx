@@ -830,6 +830,10 @@ export default function SixFigureHouseholdsPage() {
           <Link href="/reports/retirement-income-by-state" className="text-brand-600 underline">
             Social Security and retirement income by state report
           </Link>
+          ,{" "}
+          <Link href="/reports/self-employment-by-state" className="text-brand-600 underline">
+            self-employment by state report
+          </Link>
           , and the guides{" "}
           <Link href="/guides/is-100k-a-good-salary" className="text-brand-600 underline">
             is $100,000 a good salary
@@ -837,6 +841,10 @@ export default function SixFigureHouseholdsPage() {
           ,{" "}
           <Link href="/guides/salary-vs-hourly-pay" className="text-brand-600 underline">
             salary vs hourly pay
+          </Link>
+          ,{" "}
+          <Link href="/guides/how-much-should-a-freelancer-charge" className="text-brand-600 underline">
+            how much should a freelancer charge
           </Link>
           , and{" "}
           <Link href="/guides/50-30-20-budget-rule" className="text-brand-600 underline">

@@ -6,6 +6,7 @@ import { REPORT as CARS, STATE_RESULTS as CAR_STATES, US_RESULT as CARS_US } fro
 import { REPORT as RETIREMENT, US_RESULT as RETIREMENT_US } from "./retirement-income-by-state";
 import { REPORT as MORTGAGE_FREE, US_RESULT as MORTGAGE_FREE_US } from "./mortgage-free-homeowners-by-state";
 import { REPORT as SIX_FIGURE, US_RESULT as SIX_FIGURE_US, STATE_RESULTS as SIX_FIGURE_STATES } from "./six-figure-households-by-state";
+import { REPORT as SELF_EMPLOYED, US_RESULT as SELF_EMPLOYED_US, STATE_RESULTS as SELF_EMPLOYED_STATES } from "./self-employment-by-state";
 
 export interface ReportListing {
   slug: string;
@@ -18,6 +19,15 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: SELF_EMPLOYED.slug,
+    path: SELF_EMPLOYED.path,
+    title: "Self-Employment by State: Who Works for Themselves and What They Earn",
+    description: `Share of workers who are self-employed (${SELF_EMPLOYED_US.seWorkerShare.pct.toFixed(1)}% nationally) in all 50 states and DC, from ${SELF_EMPLOYED_STATES[SELF_EMPLOYED_STATES.length - 1].seWorkerShare.pct.toFixed(1)}% to ${SELF_EMPLOYED_STATES[0].seWorkerShare.pct.toFixed(1)}%, how many are incorporated, mean self-employment income, and the self-employment tax on it.`,
+    datePublished: SELF_EMPLOYED.datePublished,
+    dateModified: SELF_EMPLOYED.dateModified,
+    dataSource: `Census ACS ${SELF_EMPLOYED.acsYear} 1-year (B24080, B19053, B19063, B19052, B19062), IRS and SSA self-employment tax rules`,
+  },
   {
     slug: SIX_FIGURE.slug,
     path: SIX_FIGURE.path,

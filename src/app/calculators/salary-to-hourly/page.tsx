@@ -10,7 +10,7 @@ import {
   DENVER_MIN_WAGE_2026,
   FEDERAL_MINIMUM_WAGE,
   FLSA_EXEMPT_MIN_ANNUAL,
-  KFF_SINGLE_PREMIUM_2025,
+  KFF_SINGLE_PREMIUM_2026,
   OEWS_MEDIAN_HOURLY_MAY_2025,
   STANDARD_PAID_HOURS_PER_YEAR,
   annualFromHourly,
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     question: "How much is employer health insurance worth when comparing offers?",
-    answer: `KFF’s 2025 employer survey shows an average single-coverage premium of ${usdWhole(KFF_SINGLE_PREMIUM_2025)}/year. When comparing a contract rate to W-2 pay, add the premium you would pay out of pocket (or the employer share you would lose) to the hourly job’s gross pay before deciding.`,
+    answer: `KFF’s 2026 employer survey shows an average single-coverage premium of ${usdWhole(KFF_SINGLE_PREMIUM_2026)}/year. When comparing a contract rate to W-2 pay, add the premium you would pay out of pocket (or the employer share you would lose) to the hourly job’s gross pay before deciding.`,
   },
   {
     question: "What is the minimum wage if my offer sounds low?",

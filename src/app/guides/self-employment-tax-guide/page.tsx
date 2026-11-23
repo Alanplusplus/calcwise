@@ -219,6 +219,22 @@ export default function GuidePage() {
           deductible expense and contributes $22,500 to a Solo 401(k) to cut his income tax.
         </p>
 
+        <p>
+          If you are deciding what to charge rather than what you will owe, our{" "}
+          <Link
+            href="/guides/how-much-should-a-freelancer-charge"
+            className="text-brand-600 hover:text-brand-800 font-medium"
+          >
+            guide to how much a freelancer should charge
+          </Link>{" "}
+          works backward from a salary to the hourly rate that covers this tax, health insurance, and
+          retirement saving. The{" "}
+          <Link href="/reports/self-employment-by-state" className="text-brand-600 hover:text-brand-800 font-medium">
+            self-employment by state report
+          </Link>{" "}
+          shows how common self-employment is in each state and what households earn from it.
+        </p>
+
         <Sources
           items={[
             TAX_SOURCES.revProc,

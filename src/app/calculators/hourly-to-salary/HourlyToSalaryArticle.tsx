@@ -10,8 +10,8 @@ import {
   CPS_MEDIAN_HOUSEHOLD_INCOME_2024,
   FEDERAL_MINIMUM_WAGE,
   FLSA_EXEMPT_MIN_ANNUAL,
-  KFF_EMPLOYER_SHARE_SINGLE_2025,
-  KFF_SINGLE_PREMIUM_2025,
+  KFF_EMPLOYER_SHARE_SINGLE_2026,
+  KFF_SINGLE_PREMIUM_2026,
   OEWS_MEDIAN_HOURLY_MAY_2025,
   STANDARD_PAID_HOURS_PER_YEAR,
   WAGE_BENCHMARK_SOURCES,
@@ -287,7 +287,7 @@ export function HourlyToSalaryArticle() {
       </p>
       <ul>
         <li>
-          <strong>Benefits value:</strong> KFF reports an average single health premium of {usdWhole(KFF_SINGLE_PREMIUM_2025)} in 2025 ({usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)} paid by employers on average). A $22/hour job with full health coverage may be
+          <strong>Benefits value:</strong> KFF reports an average single health premium of {usdWhole(KFF_SINGLE_PREMIUM_2026)} in 2026 ({usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)} paid by employers on average). A $22/hour job with full health coverage may be
           worth more than a $25/hour job without it. Add the premium you would pay out of pocket before comparing.
         </li>
         <li>
@@ -306,7 +306,7 @@ export function HourlyToSalaryArticle() {
           stability than a $25/hour position that fluctuates between 25 and 45 hours weekly.
         </li>
       </ul>
-      <Sources items={[WAGE_BENCHMARK_SOURCES.kff2025]} checked="October 2026" />
+      <Sources items={[WAGE_BENCHMARK_SOURCES.kff2026]} checked="November 2026" />
 
       <h2>Tips for Negotiating a Higher Hourly Rate</h2>
       <p>
@@ -371,9 +371,9 @@ export function HourlyToSalaryArticle() {
 
       <h3>Should I take the higher hourly rate or the salaried position?</h3>
       <p>
-        Compare total compensation, not just the top-line numbers. A $28/hour position ({usdWhole(annualFromHourly(28))}
-        annual at 40 hours) with health insurance worth {usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)}/year (employer share of average single premium) and a 4% 401(k) match ({usdWhole(Math.round(annualFromHourly(28) * 0.04))})
-        has total compensation near {usdWhole(Math.round(annualFromHourly(28) + KFF_EMPLOYER_SHARE_SINGLE_2025 + annualFromHourly(28) * 0.04))}. A salaried position at $62,000 without benefits has a
+        Compare total compensation, not just the top-line numbers. A $28/hour position ({usdWhole(annualFromHourly(28))}{" "}
+        annual at 40 hours) with health insurance worth {usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)}/year (employer share of average single premium) and a 4% 401(k) match ({usdWhole(Math.round(annualFromHourly(28) * 0.04))})
+        has total compensation near {usdWhole(Math.round(annualFromHourly(28) + KFF_EMPLOYER_SHARE_SINGLE_2026 + annualFromHourly(28) * 0.04))}. A salaried position at $62,000 without benefits has a
         lower total package despite a similar base. Also consider overtime eligibility — hourly
         workers earn extra for hours over 40, while many salaried roles are overtime-exempt only if they meet both the duties test and the {usdWhole(FLSA_EXEMPT_MIN_ANNUAL)} salary threshold.
       </p>

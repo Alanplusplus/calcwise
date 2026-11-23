@@ -10,8 +10,8 @@ import {
   FEDERAL_MINIMUM_WAGE,
   FLSA_EXEMPT_MIN_ANNUAL,
   FLSA_EXEMPT_MIN_WEEKLY,
-  KFF_EMPLOYER_SHARE_SINGLE_2025,
-  KFF_SINGLE_PREMIUM_2025,
+  KFF_EMPLOYER_SHARE_SINGLE_2026,
+  KFF_SINGLE_PREMIUM_2026,
   OEWS_MEDIAN_HOURLY_MAY_2025,
   STANDARD_PAID_HOURS_PER_YEAR,
   WAGE_BENCHMARK_SOURCES,
@@ -99,14 +99,14 @@ export function SalaryToHourlyArticle() {
 
       <p>
         When comparing a salaried position to an hourly job or freelance contract, several factors beyond the base number matter significantly.
-        For full-time private-sector workers, BLS employer-cost data show benefits averaging {ECEC_BENEFITS_SHARE_FULLTIME_PRIVATE_PCT}% of total compensation (June 2026), on top of wages and salaries. Employer-sponsored health insurance alone averaged {usdWhole(KFF_SINGLE_PREMIUM_2025)} in total premium for single coverage in 2025 (KFF survey), with employers paying about {usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)} of that amount. An hourly worker earning $35 per hour
+        For full-time private-sector workers, BLS employer-cost data show benefits averaging {ECEC_BENEFITS_SHARE_FULLTIME_PRIVATE_PCT}% of total compensation (June 2026), on top of wages and salaries. Employer-sponsored health insurance alone averaged {usdWhole(KFF_SINGLE_PREMIUM_2026)} in total premium for single coverage in 2026 (KFF survey), with employers paying about {usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)} of that amount. An hourly worker earning $35 per hour
         with no benefits has a total compensation value of approximately {usdWhole(annualFromHourly(35))} annually — but a salaried employee at $65,000 with a standard
-        benefits package may have total compensation exceeding {usdWhole(65000 + KFF_EMPLOYER_SHARE_SINGLE_2025 + 65000 * 0.04)} when health and a 4% 401(k) match are included.
+        benefits package may have total compensation exceeding {usdWhole(65000 + KFF_EMPLOYER_SHARE_SINGLE_2026 + 65000 * 0.04)} when health and a 4% 401(k) match are included.
       </p>
       <Sources
-        items={[WAGE_BENCHMARK_SOURCES.blsEcecJun2026, WAGE_BENCHMARK_SOURCES.kff2025]}
-        checked="October 2026"
-        note="KFF 2026 employer survey results were scheduled for release October 22, 2026; figures above are from the 2025 survey."
+        items={[WAGE_BENCHMARK_SOURCES.blsEcecJun2026, WAGE_BENCHMARK_SOURCES.kff2026]}
+        checked="November 2026"
+        note="KFF premiums are national averages from the 2026 Employer Health Benefits Survey (released October 22, 2026); your own plan will differ."
       />
 
       <p>
@@ -146,15 +146,15 @@ export function SalaryToHourlyArticle() {
         <li><strong>Offer A total comp hourly:</strong> {usdWhole(81080)} / 1,824 = {usd2(81080 / 1824)}/hr</li>
         <li><strong>Offer B annual (40hrs x 52wks):</strong> $42 x 2,080 = {usdWhole(annualFromHourly(42))} gross</li>
         <li><strong>Offer B self-employment tax (illustrative 15.3% on gross):</strong> {usdWhole(Math.round(87360 * 0.153))}</li>
-        <li><strong>Offer B health insurance (self-paid, near KFF single premium):</strong> ~{usdWhole(KFF_SINGLE_PREMIUM_2025)}/year</li>
-        <li><strong>Offer B net annual (after SE tax and insurance):</strong> {usdWhole(87360 - Math.round(87360 * 0.153) - KFF_SINGLE_PREMIUM_2025)} (self-paid premium at KFF average)</li>
+        <li><strong>Offer B health insurance (self-paid, near KFF single premium):</strong> ~{usdWhole(KFF_SINGLE_PREMIUM_2026)}/year</li>
+        <li><strong>Offer B net annual (after SE tax and insurance):</strong> {usdWhole(87360 - Math.round(87360 * 0.153) - KFF_SINGLE_PREMIUM_2026)} (self-paid premium at KFF average)</li>
         <li><strong>Offer B no paid time off:</strong> Taking 4 weeks off costs {usdWhole(42 * 40 * 4)} in lost billable income</li>
       </ul>
 
       <p>
         After running the numbers, Rachel discovered that Offer A was actually worth more per working hour when factoring in benefits and paid
         leave. The salaried position provided an effective total-comp value of {usd2(81080 / 1824)}/hr, while the $42/hr contract yielded approximately
-        {usd2((87360 - Math.round(87360 * 0.153) - KFF_SINGLE_PREMIUM_2025) / 2080)}/hr after simplified self-employment costs and a full-year schedule — and only if she worked all 52 weeks with no unpaid leave. Rachel accepted Offer A.
+        {usd2((87360 - Math.round(87360 * 0.153) - KFF_SINGLE_PREMIUM_2026) / 2080)}/hr after simplified self-employment costs and a full-year schedule — and only if she worked all 52 weeks with no unpaid leave. Rachel accepted Offer A.
       </p>
 
       <h3>Salary to Hourly Conversion Table by Income Level</h3>
@@ -237,8 +237,8 @@ export function SalaryToHourlyArticle() {
       <h4>Is a $30/hour job better than a $55,000 salary?</h4>
       <p>
         At 40 hours per week and 52 weeks, $30/hour equals {usdWhole(annualFromHourly(30))} annually — {usdWhole(annualFromHourly(30) - 55000)} more in gross pay than $55,000. However, if the salaried position
-        includes health insurance (KFF 2025 average single premium {usdWhole(KFF_SINGLE_PREMIUM_2025)}), retirement match ($2,200+ at 4%), and paid leave ({usdWhole(30 * 40 * 3)}+ value for three weeks), the $55,000 salary may offer
-        higher total compensation of approximately {usdWhole(55000 + KFF_EMPLOYER_SHARE_SINGLE_2025 + 2200 + 3600)}. Always compare total packages, not headline numbers. Check your take-home with our{" "}
+        includes health insurance (KFF 2026 average single premium {usdWhole(KFF_SINGLE_PREMIUM_2026)}), retirement match ($2,200+ at 4%), and paid leave ({usdWhole(30 * 40 * 3)}+ value for three weeks), the $55,000 salary may offer
+        higher total compensation of approximately {usdWhole(55000 + KFF_EMPLOYER_SHARE_SINGLE_2026 + 2200 + 3600)}. Always compare total packages, not headline numbers. Check your take-home with our{" "}
         <Link href="/guides/50-30-20-budget-rule" className="text-brand-600 hover:text-brand-800 font-medium">guide to the 50/30/20 budget rule</Link>{" "}
         to see how each option impacts your monthly budget.
       </p>

@@ -354,9 +354,9 @@ export const calculators: Calculator[] = [
     description: "Convert your annual salary to an hourly rate, see your effective rate after PTO, and view a full pay period breakdown with after-tax estimates.",
     category: "planning",
     datePublished: "2026-09-09",
-    lastUpdated: "2026-10-22",
+    lastUpdated: "2026-11-23",
     relatedCalculators: ["paycheck", "income-tax", "budget-50-30-20"],
-    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay", "is-100k-a-good-salary"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay", "is-100k-a-good-salary", "how-much-should-a-freelancer-charge"],
   },
   {
     slug: "tip-calculator",
@@ -380,7 +380,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-09-14",
     lastUpdated: "2026-11-12",
     relatedCalculators: ["roi", "budget-50-30-20", "savings-goal"],
-    relatedGuides: ["how-to-calculate-roi", "break-even-analysis-guide", "self-employment-tax-guide"],
+    relatedGuides: ["how-to-calculate-roi", "break-even-analysis-guide", "self-employment-tax-guide", "how-much-should-a-freelancer-charge"],
   },
   {
     slug: "capital-gains-tax",
@@ -404,7 +404,7 @@ export const calculators: Calculator[] = [
     datePublished: "2026-09-16",
     lastUpdated: "2026-10-20",
     relatedCalculators: ["income-tax", "paycheck", "budget-50-30-20", "salary-to-hourly"],
-    relatedGuides: ["self-employment-tax-guide", "401k-vs-roth-ira", "50-30-20-budget-rule"],
+    relatedGuides: ["self-employment-tax-guide", "401k-vs-roth-ira", "50-30-20-budget-rule", "how-much-should-a-freelancer-charge"],
   },
   {
     slug: "house-payment",
@@ -450,9 +450,9 @@ export const calculators: Calculator[] = [
     description: "Convert your hourly wage to an annual salary, see gross and net pay at every frequency, and model overtime earnings with a full reference table.",
     category: "planning",
     datePublished: "2026-09-20",
-    lastUpdated: "2026-10-22",
+    lastUpdated: "2026-11-23",
     relatedCalculators: ["salary-to-hourly", "paycheck", "income-tax", "budget-50-30-20"],
-    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay"],
+    relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay", "how-much-should-a-freelancer-charge"],
   },
   {
     slug: "margin-calculator",

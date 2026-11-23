@@ -22,7 +22,7 @@ import {
   BLS_AVERAGE_HOURLY_ALL_PRIVATE_SEP_2026,
   FLSA_EXEMPT_MIN_ANNUAL,
   FLSA_EXEMPT_MIN_WEEKLY,
-  KFF_EMPLOYER_SHARE_SINGLE_2025,
+  KFF_EMPLOYER_SHARE_SINGLE_2026,
   OEWS_MEDIAN_HOURLY_MAY_2025,
   STANDARD_PAID_HOURS_PER_YEAR,
   WAGE_BENCHMARK_SOURCES,
@@ -38,7 +38,7 @@ const metadataTitle = "Salary vs Hourly: Which Pays More in 2026?";
 const description =
   "Salary vs hourly pay in 2026: compare offers with overtime, PTO, federal exempt rules, BLS benefits data, take-home math, and a job-offer checklist.";
 const datePublished = "2026-11-14";
-const dateModified = "2026-11-14";
+const dateModified = "2026-11-23";
 
 export const metadata: Metadata = {
   title: metadataTitle,
@@ -217,7 +217,7 @@ const danielaHourlyEffective = effectiveHourlyRate(danielaHourlyGross, DANIELA_A
 const danielaSalaryTakeHome = estimateAnnualTakeHomeSingle(DANIELA_SALARY);
 const danielaHourlyTakeHome = estimateAnnualTakeHomeSingle(danielaHourlyGross, danielaPremium);
 const danielaTakeHomeDiff = danielaHourlyTakeHome - danielaSalaryTakeHome;
-const danielaHealthGap = KFF_EMPLOYER_SHARE_SINGLE_2025 - danielaTakeHomeDiff;
+const danielaHealthGap = KFF_EMPLOYER_SHARE_SINGLE_2026 - danielaTakeHomeDiff;
 const danielaOvertimeDeductionSavings =
   danielaHourlyTakeHome - estimateAnnualTakeHomeSingle(danielaHourlyGross);
 const danielaHoursToMatchGross = hoursToMatchSalary(DANIELA_SALARY, DANIELA_HOURLY, danielaUnpaidCost);
@@ -229,7 +229,7 @@ function danielaHoursToMatchTotalValue(): number {
   for (let h = HOURS_PER_WEEK; h <= 70; h += 0.25) {
     const gross = grossHourlyAnnual(DANIELA_HOURLY, h) - danielaUnpaidCost;
     const takeHome = estimateAnnualTakeHomeSingle(gross, overtimePremium(DANIELA_HOURLY, h));
-    if (takeHome - danielaSalaryTakeHome >= KFF_EMPLOYER_SHARE_SINGLE_2025) return h;
+    if (takeHome - danielaSalaryTakeHome >= KFF_EMPLOYER_SHARE_SINGLE_2026) return h;
   }
   return 70;
 }
@@ -252,7 +252,7 @@ const faqs = [
   },
   {
     question: "Is $25 an hour a good salary?",
-    answer: `${usd2(COMPARE_HOURLY)} per hour at 40 hours is ${usdWhole(annualFromHourly(COMPARE_HOURLY))} gross per year, the same nominal rate as a ${usdWhole(COMPARE_SALARY)} salary. BLS reported average hourly earnings of private employees at ${usd2(BLS_AVERAGE_HOURLY_ALL_PRIVATE_SEP_2026)} in September 2026 and a median of ${usd2(OEWS_MEDIAN_HOURLY_MAY_2025)} in the May 2025 occupational employment survey, so ${usd2(COMPARE_HOURLY)} sits slightly above the national median but below the recent average. A single filer keeps about ${usdWhole(hourly40TakeHome)} per year after federal tax and FICA (about ${usd0(hourly40TakeHome / 12)}/month, with no state income tax in this example), which leaves ${usd0((hourly40TakeHome / 12) * 0.5)} a month for needs under a 50/30/20 budget. A few overtime hours per week, or employer health coverage worth about ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)} a year (KFF 2025 survey), can matter more than the ${usd2(COMPARE_HOURLY)} headline rate.`,
+    answer: `${usd2(COMPARE_HOURLY)} per hour at 40 hours is ${usdWhole(annualFromHourly(COMPARE_HOURLY))} gross per year, the same nominal rate as a ${usdWhole(COMPARE_SALARY)} salary. BLS reported average hourly earnings of private employees at ${usd2(BLS_AVERAGE_HOURLY_ALL_PRIVATE_SEP_2026)} in September 2026 and a median of ${usd2(OEWS_MEDIAN_HOURLY_MAY_2025)} in the May 2025 occupational employment survey, so ${usd2(COMPARE_HOURLY)} sits slightly above the national median but below the recent average. A single filer keeps about ${usdWhole(hourly40TakeHome)} per year after federal tax and FICA (about ${usd0(hourly40TakeHome / 12)}/month, with no state income tax in this example), which leaves ${usd0((hourly40TakeHome / 12) * 0.5)} a month for needs under a 50/30/20 budget. A few overtime hours per week, or employer health coverage worth about ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)} a year (KFF 2026 survey), can matter more than the ${usd2(COMPARE_HOURLY)} headline rate.`,
   },
   {
     question: "How much overtime makes hourly pay beat salary?",
@@ -468,7 +468,7 @@ export default function SalaryVsHourlyPayGuide() {
             {`In June 2026, BLS reported private-industry employer compensation cost ${usd2(ECEC_TOTAL_COMP_HOURLY_PRIVATE)} per hour worked: wages ${usd2(ECEC_WAGE_COST_HOURLY_PRIVATE)} (${pct1(ECEC_WAGES_SHARE * 100)}) and benefits ${usd2(ECEC_BENEFIT_COST_HOURLY_PRIVATE)} (${pct1(ECEC_BENEFITS_SHARE * 100)}). For full-time private workers, paid leave alone cost employers ${usd2(ECEC_FULLTIME_PAID_LEAVE_HOURLY)} per hour worked, ${pct1(ECEC_FULLTIME_PAID_LEAVE_SHARE * 100)} of the ${usd2(ECEC_FULLTIME_TOTAL_COMP_HOURLY)} total. Salaried and hourly full-time jobs often differ most in how much of that paid leave actually reaches the worker.`}
           </p>
           <p>
-            {`On access, ${BLS_PAID_VACATION_ACCESS_PCT}% of private-industry workers had paid vacation and ${BLS_PAID_HOLIDAY_ACCESS_PCT}% had paid holidays in March 2026. Among those with paid vacation, the mean after one year of service was ${BLS_PAID_VACATION_DAYS_AFTER_1YR} days, and paid holidays averaged ${BLS_PAID_HOLIDAY_DAYS} days. KFF estimates employers contributed ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)} toward the average single health premium in 2025, a dollar figure worth adding when a salaried package includes subsidized medical and an hourly quote does not.`}
+            {`On access, ${BLS_PAID_VACATION_ACCESS_PCT}% of private-industry workers had paid vacation and ${BLS_PAID_HOLIDAY_ACCESS_PCT}% had paid holidays in March 2026. Among those with paid vacation, the mean after one year of service was ${BLS_PAID_VACATION_DAYS_AFTER_1YR} days, and paid holidays averaged ${BLS_PAID_HOLIDAY_DAYS} days. KFF estimates employers contributed ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)} toward the average single health premium in 2026, a dollar figure worth adding when a salaried package includes subsidized medical and an hourly quote does not.`}
           </p>
           <Sources
             items={[
@@ -489,7 +489,7 @@ export default function SalaryVsHourlyPayGuide() {
                 label: "BLS Characteristics of Minimum Wage Workers, 2024 (hourly-paid share)",
                 href: "https://www.bls.gov/opub/reports/minimum-wage/2024/home.htm",
               },
-              WAGE_BENCHMARK_SOURCES.kff2025,
+              WAGE_BENCHMARK_SOURCES.kff2026,
             ]}
             checked="November 2026"
             note="Benefit access is not the same as participation; employer cost averages include workers who do not enroll in every plan."
@@ -497,7 +497,7 @@ export default function SalaryVsHourlyPayGuide() {
 
           <h2>Case Study: Daniela, 29, Austin, TX</h2>
           <p>
-            {`Daniela is an operations analyst in Austin choosing between two offers for the same role at regional distributors. Both jobs run about ${DANIELA_AVG_HOURS} hours in a typical week. Offer A is a ${usdWhole(DANIELA_SALARY)} exempt salary with ${BLS_PTO_DAYS_TOTAL} paid days off (${BLS_PAID_HOLIDAY_DAYS} holidays + ${BLS_PAID_VACATION_DAYS_AFTER_1YR} vacation days, the BLS averages) and employer-paid health insurance worth about ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)} a year (the KFF 2025 employer share of an average single premium). Offer B is ${usd2(DANIELA_HOURLY)} an hour, non-exempt, with ${DANIELA_HOURLY_PAID_DAYS} paid days off and no premium subsidy. Texas has no state wage income tax, so the federal-only math below is her whole tax picture.`}
+            {`Daniela is an operations analyst in Austin choosing between two offers for the same role at regional distributors. Both jobs run about ${DANIELA_AVG_HOURS} hours in a typical week. Offer A is a ${usdWhole(DANIELA_SALARY)} exempt salary with ${BLS_PTO_DAYS_TOTAL} paid days off (${BLS_PAID_HOLIDAY_DAYS} holidays + ${BLS_PAID_VACATION_DAYS_AFTER_1YR} vacation days, the BLS averages) and employer-paid health insurance worth about ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)} a year (the KFF 2026 employer share of an average single premium). Offer B is ${usd2(DANIELA_HOURLY)} an hour, non-exempt, with ${DANIELA_HOURLY_PAID_DAYS} paid days off and no premium subsidy. Texas has no state wage income tax, so the federal-only math below is her whole tax picture.`}
           </p>
           <p>
             <strong>Gross pay.</strong>
@@ -509,7 +509,7 @@ export default function SalaryVsHourlyPayGuide() {
           </p>
           <p>
             <strong>Health coverage.</strong>
-            {` The salaried job also carries employer health insurance worth roughly ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)} a year. Daniela would have to replace that herself on the hourly job (your own premium will differ; this is the KFF average employer share, not a quote). Counting it, Offer A is ahead by about ${usdWhole(danielaHealthGap)}. On gross pay alone the hourly job passes the salary at about ${danielaHoursToMatchGross.toFixed(1)} hours a week, so at her expected ${DANIELA_AVG_HOURS} hours it looks like the winner. Gross is the wrong finish line when one offer includes insurance: after tax, the hourly job only catches up at about ${danielaHoursToMatchValue.toFixed(1)} hours a week.`}
+            {` The salaried job also carries employer health insurance worth roughly ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)} a year. Daniela would have to replace that herself on the hourly job (your own premium will differ; this is the KFF average employer share, not a quote). Counting it, Offer A is ahead by about ${usdWhole(danielaHealthGap)}. On gross pay alone the hourly job passes the salary at about ${danielaHoursToMatchGross.toFixed(1)} hours a week, so at her expected ${DANIELA_AVG_HOURS} hours it looks like the winner. Gross is the wrong finish line when one offer includes insurance: after tax, the hourly job only catches up at about ${danielaHoursToMatchValue.toFixed(1)} hours a week.`}
           </p>
           <p>
             <strong>Budget check.</strong>
@@ -517,10 +517,10 @@ export default function SalaryVsHourlyPayGuide() {
             <Link href="/guides/50-30-20-budget-rule" className="text-brand-600 hover:text-brand-800 font-medium">
               50/30/20 budget rule guide
             </Link>
-            {`, needs take up 50% of take-home pay: ${usd0(danielaNeedsSalary)} a month on salary versus ${usd0(danielaNeedsHourly)} on hourly. That ${usd0(danielaNeedsHourly - danielaNeedsSalary)} monthly difference is smaller than the ${usd0(KFF_EMPLOYER_SHARE_SINGLE_2025 / 12)} a month the health subsidy is worth.`}
+            {`, needs take up 50% of take-home pay: ${usd0(danielaNeedsSalary)} a month on salary versus ${usd0(danielaNeedsHourly)} on hourly. That ${usd0(danielaNeedsHourly - danielaNeedsSalary)} monthly difference is smaller than the ${usd0(KFF_EMPLOYER_SHARE_SINGLE_2026 / 12)} a month the health subsidy is worth.`}
           </p>
           <p>
-            {`Daniela's decision: unless the hourly employer offers health coverage or she can get a plan for much less than ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2025)} a year, the salary wins on total compensation even though the hourly job pays more cash. If she expects overtime to hold at ${danielaHoursToMatchValue.toFixed(1)} hours a week or more, or Offer B adds benefits, the answer flips. Either way, the hourly upside only exists while overtime is scheduled, recorded, and paid.`}
+            {`Daniela's decision: unless the hourly employer offers health coverage or she can get a plan for much less than ${usdWhole(KFF_EMPLOYER_SHARE_SINGLE_2026)} a year, the salary wins on total compensation even though the hourly job pays more cash. If she expects overtime to hold at ${danielaHoursToMatchValue.toFixed(1)} hours a week or more, or Offer B adds benefits, the answer flips. Either way, the hourly upside only exists while overtime is scheduled, recorded, and paid.`}
           </p>
 
           <h2>How to Compare Two Pay Offers in Six Steps</h2>

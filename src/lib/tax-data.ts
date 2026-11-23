@@ -238,6 +238,34 @@ export const ADDITIONAL_MEDICARE_THRESHOLDS: Record<"single" | "mfj", number> = 
 /** Net earnings from self-employment are multiplied by this factor before SE tax is applied (IRC 1402). */
 export const SE_EARNINGS_FACTOR = 0.9235;
 
+/**
+ * Federal income tax on taxable income, wages and ordinary business income only (no capital gains), from the
+ * ordinary brackets above. The caller subtracts the standard deduction and any QBI deduction first.
+ */
+export function federalIncomeTax(taxable: number, status: FilingStatus = "single"): number {
+  let tax = 0;
+  let prev = 0;
+  for (const bracket of ORDINARY_BRACKETS[status]) {
+    if (taxable <= prev) break;
+    tax += (Math.min(taxable, bracket.upTo) - prev) * bracket.rate;
+    prev = bracket.upTo;
+  }
+  if (taxable > prev) tax += (taxable - prev) * TOP_ORDINARY_RATE;
+  return tax;
+}
+
+/**
+ * Self-employment tax on net profit, tax year 2026: net profit is multiplied by 92.35%, the 12.4% Social
+ * Security part applies up to the wage base, and the 2.9% Medicare part applies to everything (IRC 1401 and
+ * 1402). The 0.9% Additional Medicare Tax and the $400 minimum are not modeled.
+ */
+export function selfEmploymentTax(net: number) {
+  const earnings = Math.max(0, net) * SE_EARNINGS_FACTOR;
+  const socialSecurity = Math.min(earnings, SOCIAL_SECURITY_WAGE_BASE) * SOCIAL_SECURITY_SELF_EMPLOYED_RATE;
+  const medicare = earnings * MEDICARE_SELF_EMPLOYED_RATE;
+  return { earnings, socialSecurity, medicare, total: socialSecurity + medicare };
+}
+
 /** Format a whole-dollar figure for page text, e.g. 184500 -> "$184,500". */
 export function usd(n: number): string {
   return `$${n.toLocaleString("en-US")}`;

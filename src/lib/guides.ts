@@ -288,7 +288,7 @@ export const guides: Guide[] = [
       "Salary vs hourly pay in 2026: compare offers with overtime, PTO, federal exempt rules, BLS benefits data, take-home math, and a job-offer checklist.",
     published: true,
     datePublished: "2026-11-14",
-    lastUpdated: "2026-11-14",
+    lastUpdated: "2026-11-23",
     relatedCalculators: ["salary-to-hourly", "paycheck", "budget-50-30-20"],
     relatedGuides: ["50-30-20-budget-rule", "self-employment-tax-guide", "save-50000-in-3-years"],
   },
@@ -313,6 +313,17 @@ export const guides: Guide[] = [
     lastUpdated: "2026-11-19",
     relatedCalculators: ["paycheck", "home-affordability", "budget-50-30-20"],
     relatedGuides: ["salary-vs-hourly-pay", "50-30-20-budget-rule", "how-much-house-can-i-afford"],
+  },
+  {
+    slug: "how-much-should-a-freelancer-charge",
+    title: "How Much Should a Freelancer Charge? The Hourly Rate That Matches a $90,000 Salary",
+    description:
+      "How much should a freelancer charge? Matching a $90,000 salary takes $112,298 in revenue, or $87.19 an hour at 1,288 billable hours. See the 2026 math.",
+    published: true,
+    datePublished: "2026-11-23",
+    lastUpdated: "2026-11-23",
+    relatedCalculators: ["self-employment-tax", "salary-to-hourly", "income-tax"],
+    relatedGuides: ["self-employment-tax-guide", "salary-vs-hourly-pay", "break-even-analysis-guide"],
   },
 ];
 

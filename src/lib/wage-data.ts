@@ -18,18 +18,25 @@ export const BLS_MEDIAN_WEEKLY_FULL_TIME_Q2_2026 = 1251;
 /** CPS ASEC / Income in the United States: 2024, money income median household. */
 export const CPS_MEDIAN_HOUSEHOLD_INCOME_2024 = 83730;
 
-/** KFF 2025 Employer Health Benefits Survey: average annual single premium. */
-export const KFF_SINGLE_PREMIUM_2025 = 9325;
+/** KFF 2026 Employer Health Benefits Survey (released Oct. 22, 2026): average annual single premium. */
+export const KFF_SINGLE_PREMIUM_2026 = 9804;
 
-/** KFF 2025: average worker contribution toward single premium. */
-export const KFF_WORKER_SHARE_SINGLE_2025 = 1440;
+/** KFF 2026: average worker contribution toward the single premium. */
+export const KFF_WORKER_SHARE_SINGLE_2026 = 1672;
 
-/** Employer share of KFF 2025 average single premium. */
-export const KFF_EMPLOYER_SHARE_SINGLE_2025 =
-  KFF_SINGLE_PREMIUM_2025 - KFF_WORKER_SHARE_SINGLE_2025;
+/** Employer share of the KFF 2026 average single premium. */
+export const KFF_EMPLOYER_SHARE_SINGLE_2026 = KFF_SINGLE_PREMIUM_2026 - KFF_WORKER_SHARE_SINGLE_2026;
 
 /** BLS ECEC June 2026: benefits share of total compensation, full-time private industry. */
 export const ECEC_BENEFITS_SHARE_FULLTIME_PRIVATE_PCT = 31.5;
+
+/** BLS ECEC June 2026 (released Sep. 9, 2026), full-time private industry, dollars per hour worked. */
+export const ECEC_FULLTIME_PRIVATE_JUN_2026 = {
+  wagesPerHour: 36.97,
+  benefitsPerHour: 17.03,
+  paidLeavePct: 8.1,
+  legallyRequiredPct: 7.0,
+} as const;
 
 /** DOL FLSA white-collar exempt minimum salary (2019 rule restored May 2026). */
 export const FLSA_EXEMPT_MIN_WEEKLY = 684;
@@ -86,9 +93,9 @@ export const WAGE_BENCHMARK_SOURCES = {
     label: "BLS Employer Costs for Employee Compensation, June 2026 (released Sep. 9, 2026)",
     href: "https://www.bls.gov/news.release/ecec.htm",
   },
-  kff2025: {
-    label: "KFF 2025 Employer Health Benefits Survey (Sep. 2025)",
-    href: "https://www.kff.org/health-costs/2025-employer-health-benefits-survey/",
+  kff2026: {
+    label: "KFF 2026 Employer Health Benefits Survey (Oct. 22, 2026)",
+    href: "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/",
   },
   dolExempt: {
     label: "DOL FLSA salary-level thresholds (2019 rule in effect)",
