@@ -1,3 +1,4 @@
+import { founderPerson } from "@/lib/author";
 import { site } from "@/lib/site";
 
 export function SiteJsonLd() {
@@ -8,6 +9,7 @@ export function SiteJsonLd() {
     url: site.url,
     logo: `${site.url}/icon-512.png`,
     description: site.description,
+    founder: founderPerson(),
   };
 
   const websiteSchema = {

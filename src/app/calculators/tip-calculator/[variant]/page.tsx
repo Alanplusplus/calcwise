@@ -8,6 +8,8 @@ import { TipCalculator } from "../TipCalculator";
 import { tipCalculatorVariants } from "@/lib/variants/tip-calculator";
 import { CategoryIcon } from "@/components/Icons";
 import { VariantSections } from "@/components/VariantSections";
+import { VariantJsonLd } from "@/components/VariantJsonLd";
+import { VariantByline } from "@/components/VariantByline";
 
 interface Props {
   params: Promise<{ variant: string }>;
@@ -36,6 +38,7 @@ export default async function VariantPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <VariantJsonLd calc={calc} variant={variant} />
       <nav className="mb-6 text-sm text-ink-500">
         <Link href="/" className="hover:text-brand-600">Home</Link>
         <span className="mx-2">/</span>
@@ -51,6 +54,7 @@ export default async function VariantPage({ params }: Props) {
         </p>
         <h1 className="mt-3 text-3xl font-bold text-ink-900">{variant.title}</h1>
         <p className="mt-3 text-lg leading-relaxed text-ink-600">{variant.description}</p>
+        <VariantByline variant={variant} />
       </header>
 
       <div className="mb-6 rounded-lg border border-brand-200 bg-brand-50 p-4">

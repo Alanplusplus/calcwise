@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
@@ -319,6 +320,7 @@ export default function Save50000In3YearsGuide() {
             {moneyCents(PLAN_2Y.monthlyAtApy)}/month (2 years)—see the sections below.
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: November 2026</p>
+          <AuthorByline />
         </header>
 
         {/* TL;DR */}

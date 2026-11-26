@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
@@ -96,6 +97,7 @@ export default function CompoundInterestRealExamplesGuide() {
             compounding helps you and where it works against you.
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
+          <AuthorByline />
         </header>
 
         {/* TL;DR */}

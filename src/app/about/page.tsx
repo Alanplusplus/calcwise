@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { founderPerson } from "@/lib/author";
 import { site } from "@/lib/site";
+
+const profileSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: `${site.url}/about`,
+  dateModified: "2026-11-26",
+  mainEntity: founderPerson(),
+};
 
 export const metadata: Metadata = {
   title: "About CalcWise: Sourced Financial Calculators",
@@ -10,6 +19,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
+      />
       <h1 className="text-3xl font-bold text-ink-900">About {site.name}</h1>
 
       <div className="prose mt-8">
@@ -68,11 +81,19 @@ export default function AboutPage() {
           </li>
         </ul>
 
-        <h2>Who Maintains CalcWise</h2>
+        <h2 id="founder">Who Maintains CalcWise</h2>
         <p>
-          CalcWise is built and maintained by Alan, an independent developer.
+          CalcWise is founded, built, and maintained by{" "}
+          <a href={site.founder.linkedin} rel="author noopener" target="_blank">
+            {site.founder.name}
+          </a>
+          , an independent developer. He writes the calculators, checks the
+          tax, wage, and rate figures against primary sources, and answers
+          every email sent to{" "}
+          <a href="mailto:hello@calcwise.tools">hello@calcwise.tools</a>.
           Parts of the site's content, including guides and calculator
-          articles, are drafted with the help of AI tools.
+          articles, are drafted with the help of AI tools and then reviewed
+          against those sources before publishing.
         </p>
 
         <h2>Editorial Standards</h2>

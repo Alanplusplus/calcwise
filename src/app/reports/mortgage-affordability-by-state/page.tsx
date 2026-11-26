@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
@@ -211,6 +212,7 @@ export default function MortgageAffordabilityByStatePage() {
         {longDate.format(new Date(REPORT.dateModified))} · Housing and income data: Census ACS{" "}
         {REPORT.acsYear} 1-year · Mortgage rate: Freddie Mac, {REPORT.mortgageRateDate}
       </p>
+      <AuthorByline />
 
       <div className="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5">
         <p className="eyebrow">Quick answer</p>

@@ -7,16 +7,20 @@ function formatCurrency(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 }
 
-export function EmergencyFundCalculator() {
-  const [housing, setHousing] = useState("1500");
-  const [utilities, setUtilities] = useState("200");
-  const [groceries, setGroceries] = useState("500");
-  const [transportation, setTransportation] = useState("400");
-  const [insurance, setInsurance] = useState("300");
-  const [debtPayments, setDebtPayments] = useState("200");
-  const [other, setOther] = useState("300");
-  const [currentSavings, setCurrentSavings] = useState("5000");
-  const [months, setMonths] = useState("6");
+interface Props {
+  defaults?: Record<string, string>;
+}
+
+export function EmergencyFundCalculator({ defaults }: Props) {
+  const [housing, setHousing] = useState(defaults?.housing || "1500");
+  const [utilities, setUtilities] = useState(defaults?.utilities || "200");
+  const [groceries, setGroceries] = useState(defaults?.groceries || "500");
+  const [transportation, setTransportation] = useState(defaults?.transportation || "400");
+  const [insurance, setInsurance] = useState(defaults?.insurance || "300");
+  const [debtPayments, setDebtPayments] = useState(defaults?.debtPayments || "200");
+  const [other, setOther] = useState(defaults?.other || "300");
+  const [currentSavings, setCurrentSavings] = useState(defaults?.currentSavings || "5000");
+  const [months, setMonths] = useState(defaults?.months || "6");
 
   const results = useMemo(() => {
     const monthlyExpenses =

@@ -76,6 +76,49 @@ export function SalaryToHourlyArticle() {
         from 2,080 to 1,880, pushing the effective rate from {usd2(65000 / 2080)} to {usd2(65000 / 1880)} per hour on a $65,000 salary.
       </p>
 
+      <h3>Salary to Hourly Chart: $30,000 to $200,000 a Year</h3>
+
+      <p>
+        Every row uses the same formula, annual salary divided by {STANDARD_PAID_HOURS_PER_YEAR.toLocaleString()} paid hours, so you can find
+        your number without running the calculator. For a quick mental estimate, drop the last three zeros, halve it, and take off about 4%:
+        $100,000 becomes 100, then 50, then {usd2(hourlyFromAnnual(100000))}. Annual salary figures that are not in the chart, such as $73,000 or $145,000, follow the same
+        rule: $73,000 is {usd2(hourlyFromAnnual(73000))} an hour and $145,000 is {usd2(hourlyFromAnnual(145000))}.
+      </p>
+
+      <div className="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Annual Salary</th>
+              <th>Hourly</th>
+              <th>Weekly</th>
+              <th>Biweekly</th>
+              <th>Monthly</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              30000, 35000, 40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000, 80000,
+              85000, 90000, 95000, 100000, 110000, 120000, 130000, 140000, 150000, 175000, 200000,
+            ].map((s) => (
+              <tr key={s}>
+                <td>{usdWhole(s)}</td>
+                <td>{usd2(hourlyFromAnnual(s))}</td>
+                <td>{usdWhole(Math.round(s / 52))}</td>
+                <td>{usdWhole(Math.round(s / 26))}</td>
+                <td>{usdWhole(Math.round(s / 12))}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        All figures are gross pay before taxes, at 40 hours a week for 52 weeks. If you work longer weeks, the real hourly rate is lower: a $75,000
+        salary is {usd2(hourlyFromAnnual(75000))} at 40 hours but {usd2(75000 / (50 * 52))} at 50 hours. Want the opposite conversion? Use the{" "}
+        <Link href="/calculators/hourly-to-salary" className="text-brand-600 hover:text-brand-800 font-medium">Hourly to Salary Calculator</Link>.
+      </p>
+
       <h3>How Your Rate Compares to National Wage Benchmarks</h3>
 
       <p>

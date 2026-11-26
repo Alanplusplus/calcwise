@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
@@ -473,6 +474,7 @@ export default function PayOffMortgageBeforeRetirementGuide() {
             {`You are about to retire with ${usd0(BALANCE)} left on a ${pct2(RATE * 100)} mortgage and most of your savings in a traditional IRA or 401(k). Wiping out the loan would remove a ${usd0(monthlyPayment)} monthly payment from your retirement budget, so it sounds like an easy win. The catch is that money in a pre-tax account is not worth ${usd0(BALANCE)} once the IRS takes its share. For a married couple in the ${TAX_DATA.taxYear} brackets with ${usd0(BASE_INCOME)} of other income, getting ${usd0(BALANCE)} out of an IRA in one year takes a ${usd0(lump.gross)} withdrawal and costs ${usd0(lump.tax)} in federal tax. This guide shows what the withdrawal really costs, how to cut the total cost by about ${usd0(lumpSavings)}, and when paying off the mortgage before retirement still makes sense.`}
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: November 2026</p>
+          <AuthorByline />
         </header>
 
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">

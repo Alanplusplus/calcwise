@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
@@ -219,6 +220,7 @@ export default function BreakEvenAnalysisGuide() {
             model leaves out.
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: November 2026</p>
+          <AuthorByline />
         </header>
 
         <section className="mt-10 rounded-xl border border-brand-200 bg-brand-50 p-6">

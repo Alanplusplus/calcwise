@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
@@ -176,6 +177,7 @@ export default function HowMuchShouldAFreelancerChargeGuide() {
             {`You earn ${usdWhole(SALARY)} a year, and a client offers freelance work at ${usdWhole(LOW_RATE)} an hour, close to what your salary pays per paid hour (${usd2(w2.hourly)}). It sounds like a fair swap, and it is not: at ${usdWhole(LOW_RATE)} an hour and ${base.toLocaleString("en-US")} billable hours you would keep ${usdWhole(low.cash)} after tax, health insurance, and retirement saving, while the salary leaves ${usdWhole(w2.cash)}. So how much should a freelancer charge? For this job, about ${usd2(r.hourly)} an hour, or ${usdWhole(r.revenue)} of revenue a year. This guide shows where each dollar of that gap comes from, using 2026 federal tax rules, KFF health premiums, and BLS benefit costs, then walks through a case study and checks the target against what self-employed households earn in Census data.`}
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: November 2026</p>
+          <AuthorByline />
         </header>
 
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">

@@ -1,3 +1,4 @@
+import { founderPerson } from "@/lib/author";
 import { site } from "@/lib/site";
 
 interface ArticleJsonLdProps {
@@ -32,11 +33,7 @@ export function ArticleJsonLd({
     url: pageUrl,
     datePublished: toIsoWithTz(datePublished),
     dateModified: toIsoWithTz(dateModified || datePublished),
-    author: {
-      "@type": "Organization",
-      name: site.name,
-      url: site.url,
-    },
+    author: founderPerson(),
     publisher: {
       "@type": "Organization",
       name: site.name,

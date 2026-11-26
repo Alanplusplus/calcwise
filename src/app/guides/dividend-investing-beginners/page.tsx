@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -88,6 +89,7 @@ export default function GuidePage() {
 
       <h1 className="text-3xl font-bold text-ink-900 sm:text-4xl">Dividend Investing for Beginners: How to Build Passive Income</h1>
       <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
+      <AuthorByline />
 
       <article className="prose mt-8">
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">

@@ -10,6 +10,11 @@ export interface Calculator {
   lastUpdated: string;
   relatedCalculators?: string[];
   relatedGuides?: string[];
+  /**
+   * Answer-first block shown under the calculator. Write the formula and one worked
+   * example with real dollar amounts so search engines and AI assistants can quote it.
+   */
+  quickAnswer?: { question: string; answer: string };
 }
 
 export interface Category {
@@ -75,7 +80,7 @@ export const calculators: Calculator[] = [
     category: "savings",
     datePublished: "2026-08-10",
     lastUpdated: "2026-10-22",
-    relatedCalculators: ["savings-goal", "investment-return", "retirement"],
+    relatedCalculators: ["savings-goal", "investment-return", "retirement", "simple-interest"],
     relatedGuides: ["compound-interest-real-examples", "simple-vs-compound-interest", "save-50000-in-3-years"],
   },
   {
@@ -86,7 +91,7 @@ export const calculators: Calculator[] = [
     category: "savings",
     datePublished: "2026-08-10",
     lastUpdated: "2026-11-12",
-    relatedCalculators: ["compound-interest", "emergency-fund", "retirement"],
+    relatedCalculators: ["compound-interest", "emergency-fund", "retirement", "cd-calculator"],
     relatedGuides: ["save-50000-in-3-years", "high-yield-savings-vs-cd"],
   },
   {
@@ -154,9 +159,14 @@ export const calculators: Calculator[] = [
     description: "Determine how much you should have in your emergency fund based on your monthly expenses and risk factors.",
     category: "planning",
     datePublished: "2026-08-10",
-    lastUpdated: "2026-10-21",
+    lastUpdated: "2026-11-26",
     relatedCalculators: ["savings-goal", "budget-50-30-20", "cd-calculator"],
     relatedGuides: ["emergency-fund-where-to-keep", "50-30-20-budget-rule"],
+    quickAnswer: {
+      question: "How much should I have in an emergency fund?",
+      answer:
+        "Emergency fund = essential monthly expenses × months of cover. With $3,400 of essential expenses, 3 months is $10,200, 6 months is $20,400, and 12 months is $40,800. Three months suits a stable dual-income household, six months suits most people, and nine to twelve months suits self-employed workers or anyone in a volatile industry.",
+    },
   },
   {
     slug: "auto-loan",
@@ -178,20 +188,25 @@ export const calculators: Calculator[] = [
     category: "loans",
     datePublished: "2026-08-25",
     lastUpdated: "2026-10-21",
-    relatedCalculators: ["mortgage", "rent-vs-buy", "down-payment"],
+    relatedCalculators: ["mortgage", "rent-vs-buy", "down-payment", "debt-to-income"],
     relatedGuides: ["how-much-house-can-i-afford", "rent-vs-buy-decision"],
   },
   {
     slug: "cd-calculator",
-    title: "CD Interest Calculator",
-    seoTitle: "CD Calculator: Interest, APY & Maturity Value",
-    shortTitle: "CD Interest",
-    description: "Calculate how much interest a CD earns from your deposit, term, and APY or stated rate. See the maturity value and a month-by-month growth table.",
+    title: "Certificate of Deposit (CD) Calculator",
+    seoTitle: "Certificate of Deposit Calculator: APY & Interest",
+    shortTitle: "CD Calculator",
+    description: "Certificate of deposit calculator: enter your deposit, term, and APY or stated rate to see CD interest, maturity value, and a month-by-month growth table.",
     category: "savings",
     datePublished: "2026-08-25",
-    lastUpdated: "2026-11-09",
-    relatedCalculators: ["compound-interest", "savings-goal", "investment-return"],
+    lastUpdated: "2026-11-26",
+    relatedCalculators: ["compound-interest", "savings-goal", "investment-return", "emergency-fund"],
     relatedGuides: ["high-yield-savings-vs-cd", "emergency-fund-where-to-keep"],
+    quickAnswer: {
+      question: "How much interest does a CD earn?",
+      answer:
+        "CD interest = deposit × ((1 + APY) ^ years − 1). A $10,000 CD at 4.55% APY earns $455 over 12 months (maturity value $10,455), about $225 over 6 months, and $2,492 over 5 years at the same APY, for a maturity value of $12,492. APY already includes compounding, so enter the APY rather than compounding it a second time.",
+    },
   },
   {
     slug: "budget-50-30-20",
@@ -260,7 +275,7 @@ export const calculators: Calculator[] = [
     category: "planning",
     datePublished: "2026-08-25",
     lastUpdated: "2026-10-20",
-    relatedCalculators: ["income-tax", "budget-50-30-20", "savings-goal"],
+    relatedCalculators: ["income-tax", "budget-50-30-20", "savings-goal", "hourly-to-salary"],
     relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay", "is-100k-a-good-salary"],
   },
   {
@@ -295,9 +310,14 @@ export const calculators: Calculator[] = [
     description: "Calculate your return on investment for any project or asset. Compare initial costs, ongoing expenses, and revenue to find total and annualized ROI.",
     category: "savings",
     datePublished: "2026-08-30",
-    lastUpdated: "2026-10-21",
+    lastUpdated: "2026-11-26",
     relatedCalculators: ["investment-return", "compound-interest", "savings-goal"],
     relatedGuides: ["how-to-calculate-roi", "how-to-start-investing-1000"],
+    quickAnswer: {
+      question: "How do you calculate ROI?",
+      answer:
+        "ROI = (final value − initial cost) ÷ initial cost × 100. Put in $10,000 and get back $12,500, and ROI is 25%. If that took 3 years, the annualized ROI is about 7.7% per year ((1.25 ^ (1/3)) − 1), which is the number to compare against other investments. A negative result is a loss: getting back $8,000 on $10,000 is −20%.",
+    },
   },
   {
     slug: "amortization",
@@ -342,9 +362,14 @@ export const calculators: Calculator[] = [
     description: "Calculate simple interest on loans or investments. Enter principal, rate, and time to see total interest earned, final amount, and daily interest accrual.",
     category: "savings",
     datePublished: "2026-09-07",
-    lastUpdated: "2026-09-07",
+    lastUpdated: "2026-11-26",
     relatedCalculators: ["compound-interest", "cd-calculator", "savings-goal"],
     relatedGuides: ["simple-vs-compound-interest", "compound-interest-real-examples", "high-yield-savings-vs-cd"],
+    quickAnswer: {
+      question: "How do you calculate simple interest?",
+      answer:
+        "Simple interest = principal × annual rate × years. $10,000 at 5% for 3 years earns $1,500 (total $11,500), or about $1.37 per day. The same $10,000 at 5% compounded annually would earn $1,576.25, so simple interest gives up $76.25 over 3 years, and the gap widens every year after that.",
+    },
   },
   {
     slug: "salary-to-hourly",
@@ -354,9 +379,14 @@ export const calculators: Calculator[] = [
     description: "Convert your annual salary to an hourly rate, see your effective rate after PTO, and view a full pay period breakdown with after-tax estimates.",
     category: "planning",
     datePublished: "2026-09-09",
-    lastUpdated: "2026-11-23",
-    relatedCalculators: ["paycheck", "income-tax", "budget-50-30-20"],
+    lastUpdated: "2026-11-26",
+    relatedCalculators: ["hourly-to-salary", "paycheck", "income-tax", "budget-50-30-20"],
     relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay", "is-100k-a-good-salary", "how-much-should-a-freelancer-charge"],
+    quickAnswer: {
+      question: "How do you convert a salary to an hourly rate?",
+      answer:
+        "Hourly rate = annual salary ÷ 2,080 paid hours (40 hours × 52 weeks). $50,000 is $24.04 an hour, $75,000 is $36.06, and $100,000 is $48.08 before taxes. If you take 25 days of paid time off, divide by 1,880 working hours instead: $100,000 becomes $53.19 for each hour you actually work.",
+    },
   },
   {
     slug: "tip-calculator",
@@ -366,9 +396,14 @@ export const calculators: Calculator[] = [
     description: "Calculate the right tip amount for any service. Split bills among multiple people and see per-person totals with customizable tip percentages.",
     category: "planning",
     datePublished: "2026-09-11",
-    lastUpdated: "2026-10-21",
+    lastUpdated: "2026-11-26",
     relatedCalculators: ["budget-50-30-20", "salary-to-hourly", "paycheck"],
     relatedGuides: ["50-30-20-budget-rule"],
+    quickAnswer: {
+      question: "How do you calculate a tip?",
+      answer:
+        "Tip = bill × tip percentage. On an $84 bill, 15% is $12.60, 18% is $15.12, and 20% is $16.80. At 18% the total is $99.12, or $24.78 each when four people split it. For a quick estimate, move the decimal one place to get 10% (10% of $150 is $15), then add half of that for 15%.",
+    },
   },
   {
     slug: "break-even",
@@ -426,9 +461,14 @@ export const calculators: Calculator[] = [
     description: "Calculate your debt-to-income ratio (DTI) and compare front-end and back-end DTI against common mortgage qualification thresholds.",
     category: "debt",
     datePublished: "2026-09-18",
-    lastUpdated: "2026-10-21",
+    lastUpdated: "2026-11-26",
     relatedCalculators: ["home-affordability", "mortgage", "budget-50-30-20", "credit-card-payoff"],
     relatedGuides: ["debt-to-income-ratio-guide", "how-much-house-can-i-afford", "rent-vs-buy-decision"],
+    quickAnswer: {
+      question: "How do you calculate debt-to-income ratio?",
+      answer:
+        "DTI = total monthly debt payments ÷ gross monthly income × 100. With $2,400 of monthly debt payments (housing, car, student loan, and card minimums) on $6,000 of gross income, DTI is 40%. Conventional lenders generally target 36% or lower, and FHA manual underwriting uses 43% as its standard limit; automated underwriting can approve higher ratios when credit and reserves are strong.",
+    },
   },
   {
     slug: "car-affordability",
@@ -450,9 +490,14 @@ export const calculators: Calculator[] = [
     description: "Convert your hourly wage to an annual salary, see gross and net pay at every frequency, and model overtime earnings with a full reference table.",
     category: "planning",
     datePublished: "2026-09-20",
-    lastUpdated: "2026-11-23",
+    lastUpdated: "2026-11-26",
     relatedCalculators: ["salary-to-hourly", "paycheck", "income-tax", "budget-50-30-20"],
     relatedGuides: ["50-30-20-budget-rule", "401k-vs-roth-ira", "salary-vs-hourly-pay", "how-much-should-a-freelancer-charge"],
+    quickAnswer: {
+      question: "How do you convert an hourly wage to an annual salary?",
+      answer:
+        "Annual salary = hourly rate × hours per week × weeks per year. At 40 hours for 52 weeks, $20 an hour is $41,600, $25 is $52,000, and $30 is $62,400 before taxes. Working 20 hours a week at $25 pays $26,000 a year, and 5 hours of weekly overtime at time-and-a-half adds $9,375 over 50 weeks.",
+    },
   },
   {
     slug: "margin-calculator",

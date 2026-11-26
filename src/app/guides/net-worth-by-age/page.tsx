@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
@@ -102,6 +103,7 @@ export default function NetWorthByAgeGuide() {
             the calculation, and shows you how to close the gaps.
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: October 2026 (Federal Reserve 2025 SCF, released October 9, 2026)</p>
+          <AuthorByline />
         </header>
 
         {/* TL;DR */}

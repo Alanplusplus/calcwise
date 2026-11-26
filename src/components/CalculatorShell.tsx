@@ -2,6 +2,7 @@ import Link from "next/link";
 import { calculators, categories } from "@/lib/calculators";
 import { getGuidesBySlug } from "@/lib/guides";
 import { isEmbeddable } from "@/lib/embeds";
+import { site } from "@/lib/site";
 import { CategoryIcon } from "./Icons";
 import { BreadcrumbJsonLd } from "./BreadcrumbJsonLd";
 import { WebApplicationJsonLd } from "./WebApplicationJsonLd";
@@ -14,6 +15,8 @@ interface Props {
   children: React.ReactNode;
   article?: React.ReactNode;
   variants?: CalculatorVariant[];
+  /** Extra content rendered right under the calculator widget, e.g. a link to the inverse calculator. */
+  afterWidget?: React.ReactNode;
 }
 
 const updatedFormat = new Intl.DateTimeFormat("en-US", {
@@ -23,7 +26,7 @@ const updatedFormat = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
 });
 
-export function CalculatorShell({ calculator, children, article, variants }: Props) {
+export function CalculatorShell({ calculator, children, article, variants, afterWidget }: Props) {
   const related = calculator.relatedCalculators
     ? calculators.filter((c) => calculator.relatedCalculators!.includes(c.slug))
     : calculators
@@ -98,6 +101,19 @@ export function CalculatorShell({ calculator, children, article, variants }: Pro
           </li>
           <li className="flex items-center gap-2">
             <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-gold-500" />
+            By{" "}
+            <a
+              href={site.founder.linkedin}
+              rel="author noopener"
+              target="_blank"
+              className="font-medium text-ink-700 underline decoration-gold-400 decoration-[1.5px] underline-offset-4 hover:text-brand-700"
+            >
+              {site.founder.name}
+            </a>
+            , {site.founder.jobTitle}
+          </li>
+          <li className="flex items-center gap-2">
+            <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-gold-500" />
             Runs in your browser
           </li>
           <li className="flex items-center gap-2">
@@ -123,6 +139,24 @@ export function CalculatorShell({ calculator, children, article, variants }: Pro
           </Link>
           .
         </p>
+      )}
+
+      {afterWidget}
+
+      {/* Quick answer: formula plus a worked example, written to be quoted */}
+      {calculator.quickAnswer && (
+        <section
+          aria-labelledby="quick-answer"
+          className="mt-8 rounded-xl border border-ink-200 border-l-[3px] border-l-gold-500 bg-white p-5 shadow-card sm:p-6"
+        >
+          <h2 id="quick-answer" className="eyebrow font-sans">
+            Quick answer
+          </h2>
+          <p className="mt-2 font-serif text-[1.125rem] font-semibold leading-snug text-ink-900">
+            {calculator.quickAnswer.question}
+          </p>
+          <p className="mt-2 leading-relaxed text-ink-700">{calculator.quickAnswer.answer}</p>
+        </section>
       )}
 
       {/* Popular Scenarios (variant links) */}

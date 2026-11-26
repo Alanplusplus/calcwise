@@ -3,8 +3,10 @@ import { getCalculator } from "@/lib/calculators";
 import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { InverseCalculatorNote } from "@/components/InverseCalculatorNote";
 import { HourlyToSalaryCalculator } from "./HourlyToSalaryCalculator";
 import { HourlyToSalaryArticle } from "./HourlyToSalaryArticle";
+import { hourlyToSalaryVariants } from "@/lib/variants/hourly-to-salary";
 import {
   ARIZONA_MIN_WAGE_2026,
   BLS_AVERAGE_HOURLY_ALL_PRIVATE_SEP_2026,
@@ -55,7 +57,16 @@ export default function HourlyToSalaryPage() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
-      <CalculatorShell calculator={calc} article={<HourlyToSalaryArticle />}>
+      <CalculatorShell
+        calculator={calc}
+        article={<HourlyToSalaryArticle />}
+        variants={hourlyToSalaryVariants}
+        afterWidget={
+          <InverseCalculatorNote href="/calculators/salary-to-hourly" linkText="Salary to Hourly Calculator">
+            Starting from an annual salary and want the hourly rate? Use the
+          </InverseCalculatorNote>
+        }
+      >
         <HourlyToSalaryCalculator />
       </CalculatorShell>
     </>

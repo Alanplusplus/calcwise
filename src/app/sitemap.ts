@@ -2,20 +2,7 @@ import type { MetadataRoute } from "next";
 import { calculators, categories } from "@/lib/calculators";
 import { guides } from "@/lib/guides";
 import { site } from "@/lib/site";
-import { mortgageVariants } from "@/lib/variants/mortgage";
-import { savingsGoalVariants } from "@/lib/variants/savings-goal";
-import { retirementVariants } from "@/lib/variants/retirement";
-import { debtPayoffVariants } from "@/lib/variants/debt-payoff";
-import { compoundInterestVariants } from "@/lib/variants/compound-interest";
-import { inflationVariants } from "@/lib/variants/inflation";
-import { roiVariants } from "@/lib/variants/roi";
-import { autoLoanVariants } from "@/lib/variants/auto-loan";
-import { studentLoanVariants } from "@/lib/variants/student-loan";
-import { creditCardPayoffVariants } from "@/lib/variants/credit-card-payoff";
-import { cdVariants } from "@/lib/variants/cd-calculator";
-import { homeAffordabilityVariants } from "@/lib/variants/home-affordability";
-import { dividendVariants } from "@/lib/variants/dividend";
-import { tipCalculatorVariants } from "@/lib/variants/tip-calculator";
+import { variantRegistry } from "@/lib/variants";
 import type { CalculatorVariant } from "@/lib/variants/types";
 
 function variantPages(base: string, calcSlug: string, variants: CalculatorVariant[]) {
@@ -59,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/reports/six-figure-households-by-state`, lastModified: new Date("2026-11-19"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/reports/self-employment-by-state`, lastModified: new Date("2026-11-23"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/embed`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.6 },
-    { url: `${base}/about`, lastModified: new Date("2026-11-09"), changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${base}/about`, lastModified: new Date("2026-11-26"), changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${base}/contact`, lastModified: new Date("2026-08-10"), changeFrequency: "monthly" as const, priority: 0.4 },
     { url: `${base}/privacy`, lastModified: new Date("2026-11-09"), changeFrequency: "yearly" as const, priority: 0.3 },
     { url: `${base}/terms`, lastModified: new Date("2026-10-20"), changeFrequency: "yearly" as const, priority: 0.3 },
@@ -94,19 +81,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryPages,
     ...calculatorPages,
     ...guidePages,
-    ...variantPages(base, "mortgage", mortgageVariants),
-    ...variantPages(base, "savings-goal", savingsGoalVariants),
-    ...variantPages(base, "retirement", retirementVariants),
-    ...variantPages(base, "debt-payoff", debtPayoffVariants),
-    ...variantPages(base, "compound-interest", compoundInterestVariants),
-    ...variantPages(base, "inflation", inflationVariants),
-    ...variantPages(base, "roi", roiVariants),
-    ...variantPages(base, "auto-loan", autoLoanVariants),
-    ...variantPages(base, "student-loan", studentLoanVariants),
-    ...variantPages(base, "credit-card-payoff", creditCardPayoffVariants),
-    ...variantPages(base, "cd-calculator", cdVariants),
-    ...variantPages(base, "home-affordability", homeAffordabilityVariants),
-    ...variantPages(base, "dividend", dividendVariants),
-    ...variantPages(base, "tip-calculator", tipCalculatorVariants),
+    ...variantRegistry.flatMap(({ calculator, variants }) => variantPages(base, calculator, variants)),
   ];
 }

@@ -3,8 +3,10 @@ import { getCalculator } from "@/lib/calculators";
 import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { InverseCalculatorNote } from "@/components/InverseCalculatorNote";
 import { SalaryToHourlyCalculator } from "./SalaryToHourlyCalculator";
 import { SalaryToHourlyArticle } from "./SalaryToHourlyArticle";
+import { salaryToHourlyVariants } from "@/lib/variants/salary-to-hourly";
 import {
   BLS_AVERAGE_HOURLY_ALL_PRIVATE_SEP_2026,
   DENVER_MIN_WAGE_2026,
@@ -53,7 +55,16 @@ export default function SalaryToHourlyPage() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
-      <CalculatorShell calculator={calc} article={<SalaryToHourlyArticle />}>
+      <CalculatorShell
+        calculator={calc}
+        article={<SalaryToHourlyArticle />}
+        variants={salaryToHourlyVariants}
+        afterWidget={
+          <InverseCalculatorNote href="/calculators/hourly-to-salary" linkText="Hourly to Salary Calculator">
+            Starting from an hourly wage and want the annual figure? Use the
+          </InverseCalculatorNote>
+        }
+      >
         <SalaryToHourlyCalculator />
       </CalculatorShell>
     </>

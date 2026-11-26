@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
@@ -341,6 +342,7 @@ export default function SixFigureHouseholdsPage() {
       <p className="mt-3 text-sm text-ink-500">
         {`Published ${longDate.format(new Date(REPORT.datePublished))} · Data: Census ACS ${REPORT.acsYear} 1-year · Tables B19001, B19080, B19083, B20017`}
       </p>
+      <AuthorByline />
 
       <div className="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5">
         <p className="eyebrow">Quick answer</p>

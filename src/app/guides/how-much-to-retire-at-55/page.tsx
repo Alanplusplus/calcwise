@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
@@ -103,6 +104,7 @@ export default function HowMuchToRetireAt55Guide() {
             case study, and a step-by-step plan to get there.
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
+          <AuthorByline />
         </header>
 
         {/* TL;DR */}

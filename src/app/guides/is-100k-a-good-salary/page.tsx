@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
@@ -269,6 +270,7 @@ export default function Is100kAGoodSalaryGuide() {
             {`You have an offer, a raise, or a household income of exactly $100,000, and you want to know whether that is a good number. The answer needs three figures, not one: where $100,000 ranks among earners and among households, how much of it is left after federal tax and payroll tax (${usdWhole(base.cash)} a year for a single filer), and what housing takes of it where you live. This guide builds each figure from 2026 federal tax tables, Social Security Administration wage statistics, and Census Bureau data for all 50 states and DC, then runs a Texas and California case study with the same salary.`}
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: November 2026</p>
+          <AuthorByline />
         </header>
 
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleJsonLd } from "@/components/ArticleJsonLd";
@@ -295,6 +296,7 @@ export default function SalaryVsHourlyPayGuide() {
             {`You have two offers for the same logistics coordinator role: ${usdWhole(COMPARE_SALARY)} salaried (exempt) or ${usd2(COMPARE_HOURLY)} per hour (non-exempt). The headline numbers match, since ${usdWhole(COMPARE_SALARY)} ÷ ${STANDARD_PAID_HOURS_PER_YEAR.toLocaleString("en-US")} hours = ${usd2(nominalEquivCompare)} per hour, but your choice changes overtime pay, how paid time off affects cash flow, and what happens when steady 45-hour weeks replace a 40-hour expectation. This guide walks through the formulas, federal and California exempt rules, BLS compensation benchmarks, take-home pay with ${TAX_DATA.taxYear} federal tax tables (including the new overtime deduction), and an Austin case study so you can compare offers on your own terms.`}
           </p>
           <p className="mt-2 text-sm text-ink-500">Last updated: November 2026</p>
+          <AuthorByline />
         </header>
 
         <div className="rounded-lg border-l-4 border-brand-500 bg-brand-50 p-4 my-6">

@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { CalculatorShell } from "@/components/CalculatorShell";
 import { EmergencyFundCalculator } from "./EmergencyFundCalculator";
 import { EmergencyFundArticle } from "./EmergencyFundArticle";
+import { emergencyFundVariants } from "@/lib/variants/emergency-fund";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 
 const calc = getCalculator("emergency-fund")!;
@@ -46,7 +47,7 @@ export default function EmergencyFundPage() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
-      <CalculatorShell calculator={calc} article={<EmergencyFundArticle />}>
+      <CalculatorShell calculator={calc} article={<EmergencyFundArticle />} variants={emergencyFundVariants}>
         <EmergencyFundCalculator />
       </CalculatorShell>
     </>

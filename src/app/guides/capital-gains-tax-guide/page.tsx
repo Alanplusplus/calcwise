@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -85,6 +86,7 @@ export default function GuidePage() {
         Capital Gains Tax 2026: Rates, Brackets, and How to Minimize What You Owe
       </h1>
       <p className="mt-2 text-sm text-ink-500">Last updated: October 2026</p>
+      <AuthorByline />
 
       <article className="prose mt-8">
         <p>
