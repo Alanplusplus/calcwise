@@ -545,7 +545,11 @@ export default function MortgageAffordabilityByStatePage() {
           <Link href="/reports/homeowners-insurance-by-state" className="text-brand-600 underline">
             homeowners insurance by state report
           </Link>{" "}
-          adds the typical premium to the same payment. For how many households already spend 30% or
+          adds the typical premium to the same payment, and the{" "}
+          <Link href="/reports/property-tax-by-state" className="text-brand-600 underline">
+            property tax by state report
+          </Link>{" "}
+          breaks down the tax line, including the effective rate and how many owners pay $3,000 or more. For how many households already spend 30% or
           more of income on housing, see{" "}
           <Link href="/reports/housing-cost-burden-by-state" className="text-brand-600 underline">
             housing cost burden by state

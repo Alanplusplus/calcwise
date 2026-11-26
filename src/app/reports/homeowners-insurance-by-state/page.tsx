@@ -715,6 +715,10 @@ export default function HomeownersInsuranceByStatePage() {
         </div>
         <p className="mt-4 text-sm text-ink-600">
           Related: our{" "}
+          <Link href="/reports/property-tax-by-state" className="text-brand-600 underline">
+            property tax by state report
+          </Link>
+          ,{" "}
           <Link href="/reports/mortgage-affordability-by-state" className="text-brand-600 underline">
             mortgage affordability by state report
           </Link>

@@ -748,6 +748,10 @@ export default function MortgageFreeHomeownersPage() {
         </div>
         <p className="mt-4 text-sm text-ink-600">
           Related: our{" "}
+          <Link href="/reports/property-tax-by-state" className="text-brand-600 underline">
+            property tax by state report
+          </Link>
+          ,{" "}
           <Link href="/reports/retirement-income-by-state" className="text-brand-600 underline">
             Social Security and retirement income by state report
           </Link>

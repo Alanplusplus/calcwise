@@ -6,6 +6,7 @@ import { REPORT as CARS, STATE_RESULTS as CAR_STATES, US_RESULT as CARS_US } fro
 import { REPORT as RETIREMENT, US_RESULT as RETIREMENT_US } from "./retirement-income-by-state";
 import { REPORT as MORTGAGE_FREE, US_RESULT as MORTGAGE_FREE_US } from "./mortgage-free-homeowners-by-state";
 import { REPORT as SIX_FIGURE, US_RESULT as SIX_FIGURE_US, STATE_RESULTS as SIX_FIGURE_STATES } from "./six-figure-households-by-state";
+import { REPORT as PROPERTY_TAX, US_RESULT as PROPERTY_TAX_US, STATE_RESULTS as PROPERTY_TAX_STATES } from "./property-tax-by-state";
 import { REPORT as SELF_EMPLOYED, US_RESULT as SELF_EMPLOYED_US, STATE_RESULTS as SELF_EMPLOYED_STATES } from "./self-employment-by-state";
 
 export interface ReportListing {
@@ -19,6 +20,15 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: PROPERTY_TAX.slug,
+    path: PROPERTY_TAX.path,
+    title: "Property Tax by State: What Owners Pay and the Effective Tax Rate",
+    description: `Median property tax bill in all 50 states and DC, from $${PROPERTY_TAX_STATES[PROPERTY_TAX_STATES.length - 1].med.toLocaleString("en-US")} to $${PROPERTY_TAX_STATES[0].med.toLocaleString("en-US")} ($${PROPERTY_TAX_US.med.toLocaleString("en-US")} nationally), the effective rate, how many owners pay $3,000 or more, and the bill on a $400,000 home.`,
+    datePublished: PROPERTY_TAX.datePublished,
+    dateModified: PROPERTY_TAX.dateModified,
+    dataSource: `Census ACS ${PROPERTY_TAX.acsYear} 1-year (B25102, B25103, B25090, B25077, B19013)`,
+  },
   {
     slug: SELF_EMPLOYED.slug,
     path: SELF_EMPLOYED.path,
