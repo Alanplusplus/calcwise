@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { StateNameLink } from "./StateNameLink";
 
 export interface BurdenTableRow {
   rank: number;
@@ -139,7 +140,9 @@ export function StateBurdenTable({ rows, usShare }: { rows: BurdenTableRow[]; us
               return (
                 <tr key={r.abbr} className="transition-colors hover:bg-gold-50">
                   <td className="px-3 py-2 text-ink-500">{r.rank}</td>
-                  <td className="px-3 py-2 font-medium text-ink-900">{r.name}</td>
+                  <td className="px-3 py-2 font-medium text-ink-900">
+                  <StateNameLink abbr={r.abbr} name={r.name} />
+                </td>
                   <td className="px-3 py-2 text-right tabular-nums text-ink-700">{r.renter30.toFixed(1)}%</td>
                   <td className="px-3 py-2 text-right tabular-nums text-ink-700">{r.renter50.toFixed(1)}%</td>
                   <td className="px-3 py-2 text-right tabular-nums text-ink-700">{r.mort30.toFixed(1)}%</td>

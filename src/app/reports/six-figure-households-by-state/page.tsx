@@ -7,6 +7,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { Sources } from "@/components/Sources";
 import { StateIncomeTable } from "@/components/StateIncomeTable";
 import { site } from "@/lib/site";
+import { reportCitation, reportH1 } from "@/lib/reports/press";
 import {
   AFFORDABILITY_PINNED,
   CSV_HEADER,
@@ -27,7 +28,7 @@ import {
 } from "@/lib/reports/six-figure-households-by-state";
 
 const title = "Percent of Households Making $100K or More by State";
-const h1 = "Six-Figure Households by State: Who Earns $100,000 or More";
+const h1 = reportH1(REPORT.slug);
 
 const longList = (items: string[]) =>
   items.length <= 2
@@ -256,7 +257,7 @@ export const metadata: Metadata = {
   },
 };
 
-const citation = `${site.name} (${new Date(REPORT.dateModified).getUTCFullYear()}). ${h1}. ${site.url}${REPORT.path}. Data: U.S. Census Bureau, ${REPORT.acsYear} American Community Survey 1-year estimates (B19001, B19080, B19083, B20017, B19013); Social Security Administration, Wage Statistics for ${WAGE_EARNERS.year}.`;
+const citation = reportCitation(REPORT.slug);
 
 function DatasetJsonLd() {
   const schema = {
@@ -779,6 +780,13 @@ export default function SixFigureHouseholdsPage() {
           page. The Census Bureau and Social Security Administration inputs are public domain.
         </p>
         <p className="mt-3 rounded-lg bg-ink-50 p-3 text-xs leading-relaxed text-ink-700">{citation}</p>
+        <p className="mt-3 text-sm text-ink-600">
+          Writing about this data? The{" "}
+          <Link href="/reports/press" className="text-brand-600 underline">
+            press page
+          </Link>{" "}
+          has a citation for every report, the data dictionary of each CSV, and the limits of the data.
+        </p>
         <p className="mt-3 text-sm text-ink-600">
           Want a calculator on your site?{" "}
           <Link href="/embed#paycheck" className="text-brand-600 underline">

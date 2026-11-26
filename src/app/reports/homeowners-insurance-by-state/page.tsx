@@ -7,6 +7,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { Sources } from "@/components/Sources";
 import { StateInsuranceTable } from "@/components/StateInsuranceTable";
 import { site } from "@/lib/site";
+import { reportCitation, reportH1 } from "@/lib/reports/press";
 import {
   BRACKET_EDGES,
   BRACKET_LABELS,
@@ -28,7 +29,7 @@ import {
 import { monthlyPrincipalInterest } from "@/lib/reports/mortgage-affordability-by-state";
 
 const title = "Homeowners Insurance Cost by State: What Owners Pay";
-const h1 = "Homeowners Insurance Cost by State: What Owners Actually Pay";
+const h1 = reportH1(REPORT.slug);
 
 const longList = (items: string[]) =>
   items.length <= 2
@@ -217,7 +218,7 @@ export const metadata: Metadata = {
   },
 };
 
-const citation = `${site.name} (${new Date(REPORT.dateModified).getUTCFullYear()}). ${h1}. ${site.url}${REPORT.path}. Data: U.S. Census Bureau, ${REPORT.acsYear} American Community Survey 1-year estimates (B25141, B25077, B25103, B19013); Freddie Mac PMMS, ${REPORT.mortgageRateDate}.`;
+const citation = reportCitation(REPORT.slug);
 
 function DatasetJsonLd() {
   const schema = {
@@ -673,6 +674,13 @@ export default function HomeownersInsuranceByStatePage() {
           page. The Census Bureau inputs are public domain.
         </p>
         <p className="mt-3 rounded-lg bg-ink-50 p-3 text-xs leading-relaxed text-ink-700">{citation}</p>
+        <p className="mt-3 text-sm text-ink-600">
+          Writing about this data? The{" "}
+          <Link href="/reports/press" className="text-brand-600 underline">
+            press page
+          </Link>{" "}
+          has a citation for every report, the data dictionary of each CSV, and the limits of the data.
+        </p>
         <p className="mt-3 text-sm text-ink-600">
           Want a calculator on your site?{" "}
           <Link href="/embed#mortgage" className="text-brand-600 underline">

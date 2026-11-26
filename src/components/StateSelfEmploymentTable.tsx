@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { StateNameLink } from "./StateNameLink";
 
 export interface SelfEmploymentTableRow {
   rank: number;
@@ -138,7 +139,9 @@ export function StateSelfEmploymentTable({
             {visible.map((r) => (
               <tr key={r.abbr} className="transition-colors hover:bg-gold-50">
                 <td className="px-3 py-2 text-ink-500">{r.rank}</td>
-                <td className="px-3 py-2 font-medium text-ink-900">{r.name}</td>
+                <td className="px-3 py-2 font-medium text-ink-900">
+                  <StateNameLink abbr={r.abbr} name={r.name} />
+                </td>
                 <td className="px-3 py-2">
                   <div className="flex items-center gap-2">
                     <div

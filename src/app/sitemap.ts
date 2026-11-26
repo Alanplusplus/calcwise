@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { calculators, categories } from "@/lib/calculators";
 import { guides } from "@/lib/guides";
+import { PILOT_STATES } from "@/lib/reports/pilot-states";
+import { LATEST_REPORT_DATE } from "@/lib/reports/press";
 import { site } from "@/lib/site";
 import { variantRegistry } from "@/lib/variants";
 import type { CalculatorVariant } from "@/lib/variants/types";
@@ -46,6 +48,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/reports/six-figure-households-by-state`, lastModified: new Date("2026-11-19"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/reports/self-employment-by-state`, lastModified: new Date("2026-11-23"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/reports/property-tax-by-state`, lastModified: new Date("2026-11-26"), changeFrequency: "monthly" as const, priority: 0.8 },
+    // The press page and the state pages are built from the report data, so they change when a report does.
+    { url: `${base}/reports/press`, lastModified: new Date(LATEST_REPORT_DATE), changeFrequency: "monthly" as const, priority: 0.6 },
+    ...PILOT_STATES.map((s) => ({
+      url: `${base}/states/${s.slug}`,
+      lastModified: new Date(LATEST_REPORT_DATE),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
     { url: `${base}/embed`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${base}/about`, lastModified: new Date("2026-11-26"), changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${base}/contact`, lastModified: new Date("2026-08-10"), changeFrequency: "monthly" as const, priority: 0.4 },

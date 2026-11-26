@@ -83,7 +83,13 @@ export default function ReportsPage() {
           methodology page
         </Link>
         : primary sources, a stated check date, and plain-language limits. To use a figure in your
-        own work, see the citation and license note at the end of each report.
+        own work, see the citation and license note at the end of each report. Writing about this
+        data? The{" "}
+        <Link href="/reports/press" className="font-medium text-brand-700 underline decoration-gold-400 decoration-[1.5px] underline-offset-[3px]">
+          press page
+        </Link>{" "}
+        lists every report with its key number, a ready-made citation, and a data dictionary for each
+        CSV.
       </p>
     </div>
   );

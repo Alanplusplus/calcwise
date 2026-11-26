@@ -51,6 +51,8 @@ export const REPORT = {
   dateModified: "2026-11-12",
   /** ACS survey year of every vehicle and income figure */
   acsYear: 2025,
+  /** Version label of the CSV download. It is part of the download file name. */
+  csvVersion: 1,
   /** The 20/4/10 rule: payment plus insurance plus fuel at or below this share of gross income */
   guidelinePct: 10,
 } as const;

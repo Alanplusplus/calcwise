@@ -7,6 +7,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { Sources } from "@/components/Sources";
 import { StateBurdenTable } from "@/components/StateBurdenTable";
 import { site } from "@/lib/site";
+import { reportCitation, reportH1 } from "@/lib/reports/press";
 import {
   CSV_HEADER,
   REPORT,
@@ -23,7 +24,7 @@ import {
 import { REPORT as RENT_REPORT, US_RESULT as RENT_US } from "@/lib/reports/rent-vs-buy-by-state";
 
 const title = "Housing Cost Burden by State: 30%+ of Income";
-const h1 = "Housing Cost Burden by State: Households Paying 30% or More of Income";
+const h1 = reportH1(REPORT.slug);
 const description = `Share of renters and owners spending 30% or more of income on housing in all 50 states and DC, with severe burden, 2025 ACS data, and a free CSV.`;
 
 export const metadata: Metadata = {
@@ -205,7 +206,7 @@ const faqs = [
   },
 ];
 
-const citation = `${site.name} (${new Date(REPORT.dateModified).getUTCFullYear()}). ${h1}. ${site.url}${REPORT.path}. Data: U.S. Census Bureau, ${REPORT.acsYear} American Community Survey 1-year estimates (B25070, B25091, B25071, B25092, B25064, B25119).`;
+const citation = reportCitation(REPORT.slug);
 
 function DatasetJsonLd() {
   const schema = {
@@ -658,6 +659,13 @@ export default function HousingCostBurdenByStatePage() {
           page. The Census Bureau inputs are public domain.
         </p>
         <p className="mt-3 rounded-lg bg-ink-50 p-3 text-xs leading-relaxed text-ink-700">{citation}</p>
+        <p className="mt-3 text-sm text-ink-600">
+          Writing about this data? The{" "}
+          <Link href="/reports/press" className="text-brand-600 underline">
+            press page
+          </Link>{" "}
+          has a citation for every report, the data dictionary of each CSV, and the limits of the data.
+        </p>
         <p className="mt-3 text-sm text-ink-600">
           Want a calculator on your site?{" "}
           <Link href="/embed#mortgage" className="text-brand-600 underline">

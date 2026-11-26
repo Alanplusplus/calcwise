@@ -50,6 +50,8 @@ export const REPORT = {
   dateModified: "2026-11-11",
   /** ACS survey year of every figure */
   acsYear: 2025,
+  /** Version label of the CSV download. It is part of the download file name. */
+  csvVersion: 1,
   /** Share of income at or above which a household is called cost-burdened (HUD, 24 CFR 91.5) */
   burdenPct: 30,
   /** Share of income at or above which a household is called severely cost-burdened */

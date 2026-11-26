@@ -7,6 +7,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { Sources } from "@/components/Sources";
 import { StateVehicleTable } from "@/components/StateVehicleTable";
 import { site } from "@/lib/site";
+import { reportCitation, reportH1 } from "@/lib/reports/press";
 import {
   AAA,
   AAA_FUEL_PER_YEAR,
@@ -29,7 +30,7 @@ import {
 } from "@/lib/reports/car-ownership-by-state";
 
 const title = "Car Ownership by State: Vehicles per Household";
-const h1 = "Car Ownership by State: Vehicles per Household and What They Cost";
+const h1 = reportH1(REPORT.slug);
 
 const longList = (items: string[]) =>
   items.length <= 2
@@ -206,7 +207,7 @@ export const metadata: Metadata = {
   },
 };
 
-const citation = `${site.name} (${new Date(REPORT.dateModified).getUTCFullYear()}). ${h1}. ${site.url}${REPORT.path}. Data: U.S. Census Bureau, ${REPORT.acsYear} American Community Survey 1-year estimates (B25044, B25046, B19013); AAA, Your Driving Costs ${AAA.year}.`;
+const citation = reportCitation(REPORT.slug);
 
 function DatasetJsonLd() {
   const schema = {
@@ -723,6 +724,13 @@ export default function CarOwnershipByStatePage() {
           page. The Census Bureau inputs are public domain.
         </p>
         <p className="mt-3 rounded-lg bg-ink-50 p-3 text-xs leading-relaxed text-ink-700">{citation}</p>
+        <p className="mt-3 text-sm text-ink-600">
+          Writing about this data? The{" "}
+          <Link href="/reports/press" className="text-brand-600 underline">
+            press page
+          </Link>{" "}
+          has a citation for every report, the data dictionary of each CSV, and the limits of the data.
+        </p>
         <p className="mt-3 text-sm text-ink-600">
           Want a calculator on your site?{" "}
           <Link href="/embed#auto-loan" className="text-brand-600 underline">

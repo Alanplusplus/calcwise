@@ -22,10 +22,11 @@ import {
   type SelfEmploymentResult,
 } from "@/lib/reports/self-employment-by-state";
 import { site } from "@/lib/site";
+import { reportCitation, reportH1 } from "@/lib/reports/press";
 import { MEDICARE_EMPLOYEE_RATE, SOCIAL_SECURITY_EMPLOYEE_RATE, TAX_DATA, usd } from "@/lib/tax-data";
 
 const title = "Self-Employment Rate by State: Who Works for Themselves";
-const h1 = "Self-Employment by State: Who Works for Themselves and What They Earn";
+const h1 = reportH1(REPORT.slug);
 
 const longList = (items: string[]) =>
   items.length <= 2
@@ -244,7 +245,7 @@ export const metadata: Metadata = {
   },
 };
 
-const citation = `${site.name} (${new Date(REPORT.dateModified).getUTCFullYear()}). ${h1}. ${site.url}${REPORT.path}. Data: U.S. Census Bureau, ${REPORT.acsYear} American Community Survey 1-year estimates (B24080, B19053, B19063, B19052, B19062, B19013).`;
+const citation = reportCitation(REPORT.slug);
 
 function DatasetJsonLd() {
   const schema = {
@@ -726,6 +727,13 @@ export default function SelfEmploymentByStatePage() {
           page. The Census Bureau inputs are public domain.
         </p>
         <p className="mt-3 rounded-lg bg-ink-50 p-3 text-xs leading-relaxed text-ink-700">{citation}</p>
+        <p className="mt-3 text-sm text-ink-600">
+          Writing about this data? The{" "}
+          <Link href="/reports/press" className="text-brand-600 underline">
+            press page
+          </Link>{" "}
+          has a citation for every report, the data dictionary of each CSV, and the limits of the data.
+        </p>
         <p className="mt-3 text-sm text-ink-600">
           Want a calculator on your site?{" "}
           <Link href="/embed#salary-to-hourly" className="text-brand-600 underline">

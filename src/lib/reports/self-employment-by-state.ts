@@ -64,6 +64,8 @@ export const REPORT = {
   dateModified: "2026-11-23",
   /** ACS survey year of every figure */
   acsYear: 2025,
+  /** Version label of the CSV download. It is part of the download file name. */
+  csvVersion: 1,
 } as const;
 
 if (AFFORDABILITY_REPORT.acsYear !== REPORT.acsYear) {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { StateNameLink } from "./StateNameLink";
 
 export interface StateTableRow {
   rank: number;
@@ -137,7 +138,9 @@ export function StateAffordabilityTable({
               return (
                 <tr key={r.abbr} className="transition-colors hover:bg-gold-50">
                   <td className="px-3 py-2 text-ink-500">{r.rank}</td>
-                  <td className="px-3 py-2 font-medium text-ink-900">{r.name}</td>
+                  <td className="px-3 py-2 font-medium text-ink-900">
+                  <StateNameLink abbr={r.abbr} name={r.name} />
+                </td>
                   <td className="px-3 py-2 text-right tabular-nums text-ink-700">{usd.format(r.value)}</td>
                   <td className="px-3 py-2 text-right tabular-nums text-ink-700">{usd.format(r.income)}</td>
                   <td className="px-3 py-2 text-right tabular-nums text-ink-700">{usd.format(r.payment)}</td>

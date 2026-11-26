@@ -53,6 +53,8 @@ export const REPORT = {
   dateModified: "2026-11-26",
   /** ACS survey year of every figure */
   acsYear: 2025,
+  /** Version label of the CSV download. It is part of the download file name. */
+  csvVersion: 1,
   /** Round home value used for the "bill on a typical home" column, dollars */
   illustrativeHome: 400000,
   /** Annual tax thresholds of the published brackets used for the "pays this much" shares */

@@ -7,6 +7,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { Sources } from "@/components/Sources";
 import { StateAffordabilityTable } from "@/components/StateAffordabilityTable";
 import { site } from "@/lib/site";
+import { reportCitation, reportH1 } from "@/lib/reports/press";
 import {
   CSV_HEADER,
   REPORT,
@@ -23,7 +24,7 @@ const rate = REPORT.mortgageRate.toFixed(2);
 const yearAgoRate = REPORT.mortgageRateYearAgo.toFixed(2);
 
 const title = "Mortgage Affordability by State: Home vs. Income";
-const h1 = "Mortgage Affordability by State: Median Home vs. Median Income";
+const h1 = reportH1(REPORT.slug);
 const description = `The monthly payment on each state's median home at ${rate}%, as a share of median household income. Ranked for all 50 states and DC, with a free CSV.`;
 
 export const metadata: Metadata = {
@@ -125,7 +126,7 @@ const faqs = [
   },
 ];
 
-const citation = `${site.name} (${new Date(REPORT.dateModified).getUTCFullYear()}). ${h1}. ${site.url}${REPORT.path}. Data: U.S. Census Bureau, ${REPORT.acsYear} American Community Survey 1-year estimates (B25077, B25103, B19013); Freddie Mac Primary Mortgage Market Survey, ${REPORT.mortgageRateDate}.`;
+const citation = reportCitation(REPORT.slug);
 
 function DatasetJsonLd() {
   const schema = {
@@ -495,6 +496,13 @@ export default function MortgageAffordabilityByStatePage() {
           this page. The Census Bureau inputs are public domain.
         </p>
         <p className="mt-3 rounded-lg bg-ink-50 p-3 text-xs leading-relaxed text-ink-700">{citation}</p>
+        <p className="mt-3 text-sm text-ink-600">
+          Writing about this data? The{" "}
+          <Link href="/reports/press" className="text-brand-600 underline">
+            press page
+          </Link>{" "}
+          has a citation for every report, the data dictionary of each CSV, and the limits of the data.
+        </p>
         <p className="mt-3 text-sm text-ink-600">
           Want the calculator itself on your site?{" "}
           <Link href="/embed#mortgage" className="text-brand-600 underline">

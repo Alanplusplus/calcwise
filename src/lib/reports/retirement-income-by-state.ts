@@ -49,6 +49,8 @@ export const REPORT = {
   dateModified: "2026-11-14",
   /** ACS survey year of every income and household figure */
   acsYear: 2025,
+  /** Version label of the CSV download. It is part of the download file name. */
+  csvVersion: 1,
   /** Withdrawal rate used to express a yearly income as the savings that would produce it */
   withdrawalRatePct: 4,
 } as const;

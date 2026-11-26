@@ -35,6 +35,8 @@ export const REPORT = {
   dateModified: "2026-11-04",
   /** ACS survey year of every housing, rent, and income figure */
   acsYear: 2025,
+  /** Version label of the CSV download. It is part of the download file name. */
+  csvVersion: 1,
   /**
    * Freddie Mac PMMS 30-year fixed average, week of October 29, 2026. Pinned on purpose: a dated
    * report must not change when the weekly average does, so it does not read `src/lib/market-data.ts`.
