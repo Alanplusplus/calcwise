@@ -784,9 +784,17 @@ export default function CarOwnershipByStatePage() {
           <Link href="/reports/retirement-income-by-state" className="text-brand-600 underline">
             Social Security and retirement income by state report
           </Link>
-          , and the guide{" "}
+          , the{" "}
+          <Link href="/reports/commute-time-by-state" className="text-brand-600 underline">
+            commute time by state report
+          </Link>
+          , and the guides{" "}
           <Link href="/guides/how-much-car-can-i-afford" className="text-brand-600 underline">
             how much car you can afford
+          </Link>{" "}
+          and{" "}
+          <Link href="/guides/is-a-long-commute-worth-it" className="text-brand-600 underline">
+            is a long commute worth it
           </Link>
           .
         </p>

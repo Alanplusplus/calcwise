@@ -1,6 +1,6 @@
 /**
  * Figures for the state pages (/states/[state]). Every value, national value, rank, and margin of error
- * is read from the ten report data modules and formatted with the same helpers the report pages use;
+ * is read from the eleven report data modules and formatted with the same helpers the report pages use;
  * no number is typed in here.
  *
  * Ranks compare the 50 states and DC (51 places). A metric that a report ranks by carries that report's
@@ -18,6 +18,7 @@ import * as mortgageFree from "./mortgage-free-homeowners-by-state";
 import * as sixFigure from "./six-figure-households-by-state";
 import * as propertyTax from "./property-tax-by-state";
 import * as selfEmployment from "./self-employment-by-state";
+import * as commute from "./commute-time-by-state";
 import { ACS_YEARS, PRESS_ROWS, reportH1, type ReportSlug } from "./press";
 import { PILOT_STATES, type PilotStateSlug } from "./pilot-states";
 
@@ -38,6 +39,7 @@ const FORMATS = {
   pct2: { value: (n) => `${n.toFixed(2)}%`, moe: (n) => `±${n.toFixed(2)} pts` },
   ratio2: { value: (n) => `${n.toFixed(2)}x`, moe: (n) => `±${n.toFixed(2)}` },
   dec2: { value: (n) => n.toFixed(2), moe: (n) => `±${n.toFixed(3)}` },
+  min1: { value: (n) => `${n.toFixed(1)} minutes`, moe: (n) => `±${n.toFixed(2)} minutes` },
 } satisfies Record<string, Format>;
 
 type FormatKey = keyof typeof FORMATS;
@@ -173,6 +175,7 @@ const M = mortgageFree;
 const S = sixFigure;
 const P = propertyTax;
 const E = selfEmployment;
+const W = commute;
 
 /** First metric of each report is the one the press page shows as the report's key figure. */
 export const METRICS: Metric[] = [
@@ -405,6 +408,29 @@ export const METRICS: Metric[] = [
     fmt: "usd",
     value: (r) => r.seMean.value,
     moe: (r) => r.seMean.moe,
+  }),
+
+  // Commute time
+  defineMetric(W.STATE_RESULTS, W.US_RESULT, {
+    id: "commute-mean",
+    report: W.REPORT.slug,
+    label: "Mean one-way commute",
+    phrase: "mean one-way commute time",
+    sub: "Workers 16 and over who do not work from home",
+    fmt: "min1",
+    value: (r) => r.meanMin.value,
+    moe: (r) => r.meanMin.moe,
+    reportRank: "highest-first",
+  }),
+  defineMetric(W.STATE_RESULTS, W.US_RESULT, {
+    id: "commute-wfh",
+    report: W.REPORT.slug,
+    label: "Workers who work from home",
+    phrase: "share of workers who work from home",
+    sub: "Share of all workers 16 and over",
+    fmt: "pct1",
+    value: (r) => r.wfhShare.pct,
+    moe: (r) => r.wfhShare.moe,
   }),
 ];
 

@@ -1,5 +1,5 @@
 /**
- * Facts about the ten state reports that the press page, the state pages, and the reports' own
+ * Facts about the eleven state reports that the press page, the state pages, and the reports' own
  * "Cite or reuse" sections share. Dates, ACS years, rates, and paths are read from each report's REPORT
  * object; nothing numeric is typed in here.
  *
@@ -20,6 +20,7 @@ import * as mortgageFree from "./mortgage-free-homeowners-by-state";
 import * as sixFigure from "./six-figure-households-by-state";
 import * as propertyTax from "./property-tax-by-state";
 import * as selfEmployment from "./self-employment-by-state";
+import * as commute from "./commute-time-by-state";
 
 interface ReportMeta {
   slug: string;
@@ -43,6 +44,11 @@ interface Entry {
 
 /** Newest report first, the same order as the reports index. */
 const ENTRIES = [
+  {
+    report: commute.REPORT,
+    h1: "Commute Time by State: How Long Workers Travel and Who Works From Home",
+    tables: "B08301, B08303, B08013, B08121, B19013",
+  },
   {
     report: propertyTax.REPORT,
     h1: "Property Tax by State: What Homeowners Pay and the Effective Rate",

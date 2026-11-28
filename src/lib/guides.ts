@@ -325,6 +325,17 @@ export const guides: Guide[] = [
     relatedCalculators: ["self-employment-tax", "salary-to-hourly", "income-tax"],
     relatedGuides: ["self-employment-tax-guide", "salary-vs-hourly-pay", "break-even-analysis-guide"],
   },
+  {
+    slug: "is-a-long-commute-worth-it",
+    title: "Is a Long Commute Worth It? The Raise You Need for Each Extra Minute of Drive",
+    description:
+      "Is a long commute worth it? A $14,000 raise for a 58-minute drive leaves $27.92 an hour against $28.45. See the break-even raise.",
+    published: true,
+    datePublished: "2026-11-28",
+    lastUpdated: "2026-11-28",
+    relatedCalculators: ["paycheck", "salary-to-hourly", "car-affordability"],
+    relatedGuides: ["how-much-car-can-i-afford", "salary-vs-hourly-pay", "is-100k-a-good-salary"],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

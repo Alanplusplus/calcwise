@@ -657,7 +657,7 @@ export default function SalaryVsHourlyPayGuide() {
 
         <RelatedGuides
           currentSlug={slug}
-          relatedSlugs={["50-30-20-budget-rule", "self-employment-tax-guide", "save-50000-in-3-years"]}
+          relatedSlugs={["50-30-20-budget-rule", "self-employment-tax-guide", "is-a-long-commute-worth-it"]}
         />
       </article>
     </>

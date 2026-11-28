@@ -1235,7 +1235,7 @@ export default function HowMuchCarCanIAffordGuide() {
         </section>
         <RelatedGuides
           currentSlug="how-much-car-can-i-afford"
-          relatedSlugs={["50-30-20-budget-rule", "save-50000-in-3-years", "how-much-house-can-i-afford"]}
+          relatedSlugs={["50-30-20-budget-rule", "is-a-long-commute-worth-it", "how-much-house-can-i-afford"]}
         />
       </article>
     </>

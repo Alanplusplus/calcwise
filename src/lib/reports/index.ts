@@ -8,6 +8,7 @@ import { REPORT as MORTGAGE_FREE, US_RESULT as MORTGAGE_FREE_US } from "./mortga
 import { REPORT as SIX_FIGURE, US_RESULT as SIX_FIGURE_US, STATE_RESULTS as SIX_FIGURE_STATES } from "./six-figure-households-by-state";
 import { REPORT as PROPERTY_TAX, US_RESULT as PROPERTY_TAX_US, STATE_RESULTS as PROPERTY_TAX_STATES } from "./property-tax-by-state";
 import { REPORT as SELF_EMPLOYED, US_RESULT as SELF_EMPLOYED_US, STATE_RESULTS as SELF_EMPLOYED_STATES } from "./self-employment-by-state";
+import { REPORT as COMMUTE, US_RESULT as COMMUTE_US, STATE_RESULTS as COMMUTE_STATES } from "./commute-time-by-state";
 
 export interface ReportListing {
   slug: string;
@@ -20,6 +21,15 @@ export interface ReportListing {
 }
 
 export const reports: ReportListing[] = [
+  {
+    slug: COMMUTE.slug,
+    path: COMMUTE.path,
+    title: "Commute Time by State: How Long Workers Travel and Who Works From Home",
+    description: `Mean one-way commute in all 50 states and DC, from ${COMMUTE_STATES[COMMUTE_STATES.length - 1].meanMin.value.toFixed(1)} to ${COMMUTE_STATES[0].meanMin.value.toFixed(1)} minutes (${COMMUTE_US.meanMin.value.toFixed(1)} nationally), the hours a year that adds up to, the share of commuters at 60 minutes or more, and who works from home (${COMMUTE_US.wfhShare.pct.toFixed(1)}%).`,
+    datePublished: COMMUTE.datePublished,
+    dateModified: COMMUTE.dateModified,
+    dataSource: `Census ACS ${COMMUTE.acsYear} 1-year (B08301, B08303, B08013, B08121, B19013)`,
+  },
   {
     slug: PROPERTY_TAX.slug,
     path: PROPERTY_TAX.path,

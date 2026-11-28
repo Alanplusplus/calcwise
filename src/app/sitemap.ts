@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/guides`, lastModified: guidesUpdated, changeFrequency: "daily" as const, priority: 0.8 },
     { url: `${base}/faq`, lastModified: new Date("2026-10-20"), changeFrequency: "weekly" as const, priority: 0.7 },
     { url: `${base}/methodology`, lastModified: new Date("2026-10-20"), changeFrequency: "monthly" as const, priority: 0.6 },
-    { url: `${base}/reports`, lastModified: new Date("2026-11-26"), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${base}/reports`, lastModified: new Date("2026-11-28"), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/reports/mortgage-affordability-by-state`, lastModified: new Date("2026-10-29"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/reports/rent-vs-buy-by-state`, lastModified: new Date("2026-11-04"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/reports/housing-cost-burden-by-state`, lastModified: new Date("2026-11-11"), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/reports/six-figure-households-by-state`, lastModified: new Date("2026-11-19"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/reports/self-employment-by-state`, lastModified: new Date("2026-11-23"), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/reports/property-tax-by-state`, lastModified: new Date("2026-11-26"), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/reports/commute-time-by-state`, lastModified: new Date("2026-11-28"), changeFrequency: "monthly" as const, priority: 0.8 },
     // The press page and the state pages are built from the report data, so they change when a report does.
     { url: `${base}/reports/press`, lastModified: new Date(LATEST_REPORT_DATE), changeFrequency: "monthly" as const, priority: 0.6 },
     ...PILOT_STATES.map((s) => ({

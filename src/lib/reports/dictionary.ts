@@ -1,5 +1,5 @@
 /**
- * Data dictionary for the ten CSV downloads.
+ * Data dictionary for the eleven CSV downloads.
  *
  * The rows are generated from each report's CSV_HEADER, so the dictionary always lists exactly the
  * columns the file has, in the file's order. TypeScript refuses to compile when a column has no entry
@@ -20,6 +20,7 @@ import * as mortgageFree from "./mortgage-free-homeowners-by-state";
 import * as sixFigure from "./six-figure-households-by-state";
 import * as propertyTax from "./property-tax-by-state";
 import * as selfEmployment from "./self-employment-by-state";
+import * as commute from "./commute-time-by-state";
 import { csvFilename } from "./csv";
 import type { ReportSlug } from "./press";
 
@@ -437,8 +438,42 @@ const selfEmploymentDict = build(SE.slug, SE, selfEmployment.CSV_HEADER, "1 = th
   median_household_income_usd: d(USD_YR, "Median household income", "B19013_001"),
 });
 
+// ---- Commute time -------------------------------------------------------------------------------------------------------
+
+const CT = commute.REPORT;
+const CT_HOURS = `Calculated from B08013, B08303: one-way mean doubled for the round trip and multiplied by ${CT.commuteDays} commuting days`;
+
+const commuteDict = build(CT.slug, CT, commute.CSV_HEADER, "1 = the longest mean one-way commute", {
+  workers_16plus: d("workers", "Workers 16 and over, all means of transportation including worked from home", "B08301_001"),
+  workers_who_commute: d("workers", "Workers 16 and over who did not work from home: the people the travel-time figures describe", "B08303_001"),
+  mean_one_way_commute_minutes: d("minutes", "Mean one-way travel time to work of workers who did not work from home: aggregate minutes divided by commuters", "B08013_001 over B08303_001"),
+  round_trip_commute_hours_per_year: d("hours per year", `Mean one-way commute doubled for the round trip and multiplied by ${CT.commuteDays} commuting days (5 days a week for 50 weeks), converted to hours`, CT_HOURS),
+  effective_hourly_pay_drop_pct: d(PCT, `Share of an hour of pay lost when the round trip counts as time given to the job: commute hours divided by (${CT.commuteDays} days of ${CT.workdayHours} hours on the job plus commute hours)`, CT_HOURS),
+  commuters_under_15_minutes_pct: d(PCT, "Commuters whose one-way trip is under 15 minutes, as a share of commuters", "B08303_002 to _004 over _001"),
+  commuters_15_to_29_minutes_pct: d(PCT, "Commuters whose one-way trip is 15 to 29 minutes, as a share of commuters", "B08303_005 to _007 over _001"),
+  commuters_30_to_44_minutes_pct: d(PCT, "Commuters whose one-way trip is 30 to 44 minutes, as a share of commuters", "B08303_008 to _010 over _001"),
+  commuters_45_to_59_minutes_pct: d(PCT, "Commuters whose one-way trip is 45 to 59 minutes, as a share of commuters", "B08303_011 over _001"),
+  commuters_60_to_89_minutes_pct: d(PCT, "Commuters whose one-way trip is 60 to 89 minutes, as a share of commuters", "B08303_012 over _001"),
+  commuters_90_plus_minutes_pct: d(PCT, "Commuters whose one-way trip is 90 minutes or more, as a share of commuters", "B08303_013 over _001"),
+  commuters_60_plus_minutes: d("workers", "Commuters whose one-way trip is 60 minutes or more", "B08303_012 plus _013"),
+  commuters_60_plus_minutes_pct: d(PCT, "Commuters whose one-way trip is 60 minutes or more, as a share of commuters", "B08303_012 and _013 over _001"),
+  worked_from_home_workers: d("workers", "Workers 16 and over who worked from home", "B08301_021"),
+  worked_from_home_pct: d(PCT, "Workers who worked from home as a share of all workers 16 and over", "B08301_021 over _001"),
+  drove_alone_pct: d(PCT, "Workers who drove alone in a car, truck, or van, as a share of all workers", "B08301_003 over _001"),
+  carpooled_pct: d(PCT, "Workers who carpooled, as a share of all workers", "B08301_004 over _001"),
+  public_transit_pct: d(PCT, "Workers who took public transportation (bus, subway, commuter rail, light rail, ferry; taxicab excluded), as a share of all workers", "B08301_010 over _001"),
+  walked_or_bicycled_pct: d(PCT, "Workers who walked or bicycled, as a share of all workers", "B08301_018 and _019 over _001"),
+  other_means_pct: d(PCT, "Workers who used a taxi or ride-hailing service, a motorcycle, or another means, as a share of all workers", "B08301_016, _017, _020 over _001"),
+  median_earnings_all_workers_usd: d(USD_YR, "Median earnings in the past 12 months of workers 16 and over with earnings, in 2025 dollars", "B08121_001"),
+  median_earnings_drove_alone_usd: d(USD_YR, "Median earnings of workers who drove alone", "B08121_002"),
+  median_earnings_worked_from_home_usd: d(USD_YR, "Median earnings of workers who worked from home", "B08121_007"),
+  worked_from_home_to_drove_alone_earnings_ratio: d("ratio", "Median earnings of workers who worked from home divided by median earnings of workers who drove alone", "B08121_007 over _002"),
+  median_household_income_usd: d(USD_YR, "Median household income", "B19013_001"),
+});
+
 /** Newest report first, the same order as the press page table. */
 export const DICTIONARIES: Dictionary[] = [
+  commuteDict,
   propertyTaxDict,
   selfEmploymentDict,
   sixFigureDict,
